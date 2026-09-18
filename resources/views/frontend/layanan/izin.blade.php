@@ -31,7 +31,7 @@
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 space-y-10">
 
     {{-- JUDUL RESMI HALAMAN (SESUAI ELEMETOR ORIGINAL) --}}
-    <div class="text-center max-w-2xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto reveal-fade-up">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-indigo-600 tracking-tight uppercase">
             PERMOHONAN IZIN KUNJUNGAN KE SEKOLAH
         </h2>
@@ -63,7 +63,7 @@
     @endif
 
     {{-- DETAIL PERSYARATAN & INFORMASI PELAYANAN (ACCORDION RESMI) --}}
-    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm" x-data="{ activeTab: 0 }">
+    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm reveal-fade-up delay-1" x-data="{ activeTab: 0 }">
         @php
             $defaultIzinTabs = [
                 [
@@ -118,7 +118,7 @@
     </div>
 
     {{-- FORM CONTAINER --}}
-    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-md space-y-6">
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-md space-y-6 reveal-fade-up delay-2">
         <form action="{{ route('layanan.izin.submit') }}" method="POST" enctype="multipart/form-data" class="space-y-5">
             @csrf
 

@@ -32,83 +32,83 @@
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
             <a href="{{ route('home') }}" class="flex items-center group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[55%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
                 <div class="h-12 sm:h-16 flex items-center py-1 min-w-0 max-w-full">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="240" height="56" fetchpriority="high" decoding="async" class="h-8 sm:h-14 w-auto max-w-full sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
+                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="240" height="56" fetchpriority="high" decoding="async" class="h-8 sm:h-14 w-auto max-w-full sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/logo-ishum-square.png'">
                 </div>
             </a>
 
             {{-- DESKTOP NAVIGATION (Ringkas, Rapi & Elegan) --}}
-            <nav class="hidden lg:flex items-center space-x-1.5 font-bold text-sm text-white" aria-label="Navigasi Utama">
+            <nav class="hidden lg:flex items-center space-x-1 xl:space-x-1.5 font-bold text-xs xl:text-sm text-white" aria-label="Navigasi Utama">
                 
                 {{-- 1. Beranda --}}
-                <a href="{{ route('home') }}" class="px-3.5 py-2 rounded-xl hover:bg-white/15 transition {{ request()->routeIs('home') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                <a href="{{ route('home') }}" class="px-3 py-2 rounded-xl whitespace-nowrap hover:bg-white/15 transition {{ request()->routeIs('home') ? 'bg-white/20 text-white shadow-inner' : '' }}">
                     Beranda
                 </a>
 
                 {{-- 2. Profil Dropdown --}}
                 <div class="relative group py-2" id="nav-dropdown-profil">
-                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Profil" class="px-3.5 py-2 rounded-xl inline-flex items-center hover:bg-white/15 transition {{ request()->is('sambutan*', 'tentang*', 'visi*', 'sejarah*', 'anggota*', 'struktur*', 'bidang*', 'dpc*', 'dewan*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Profil" class="px-3 py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('sambutan*', 'tentang*', 'visi*', 'sejarah*', 'anggota*', 'struktur*', 'bidang*', 'dpc*', 'dewan*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
                         <span>Profil</span>
                         <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"></i>
                     </button>
                     {{-- Safe Hover Bridge Container --}}
-                    <div class="absolute left-0 top-full pt-1 w-64 hidden group-hover:block transition-all duration-150 z-50">
-                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2.5 text-gray-800 animate-fadeIn">
-                            <a href="{{ route('page.sambutan') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-user-tie w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Sambutan Kepala Sekolah
+                    <div class="absolute left-0 top-full pt-1 w-52 hidden group-hover:block transition-all duration-150 z-50">
+                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2 text-gray-800 animate-fadeIn">
+                            <a href="{{ route('page.sambutan') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap" title="Sambutan Kepala Sekolah">
+                                <i class="fa-solid fa-user-tie w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Sambutan <span class="sr-only">Kepala Sekolah</span>
                             </a>
-                            <a href="{{ route('page.tentang-kami') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-school w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Profil Singkat Sekolah
+                            <a href="{{ route('page.tentang-kami') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-school w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Profil Singkat
                             </a>
-                            <a href="{{ route('page.visi-misi') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-compass w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Visi dan Misi
+                            <a href="{{ route('page.visi-misi') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-compass w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Visi &amp; Misi
                             </a>
-                            <a href="{{ route('page.sejarah') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-landmark w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Sejarah Sekolah
+                            <a href="{{ route('page.sejarah') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-landmark w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Sejarah
                             </a>
                             <div class="border-t border-gray-100 my-1"></div>
-                            <a href="{{ route('dewan.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-chalkboard-user w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Dewan Guru &amp; GTK
+                            <a href="{{ route('dewan.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-chalkboard-user w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Dewan Guru
                             </a>
-                            <a href="{{ route('page.struktur') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-sitemap w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Struktur Organisasi
+                            <a href="{{ route('page.struktur') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-sitemap w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Struktur Organisasi
                             </a>
-                            <a href="{{ route('bidang.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-layer-group w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Fasilitas &amp; Sarana
+                            <a href="{{ route('bidang.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-layer-group w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Fasilitas
                             </a>
-                            <a href="{{ route('dpc.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-star-and-crescent w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Program Unggulan
+                            <a href="{{ route('dpc.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-star-and-crescent w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Program Unggulan
                             </a>
                         </div>
                     </div>
                 </div>
 
-                {{-- 3. Kabar & Galeri Dropdown --}}
+                {{-- 3. Kabar Dropdown --}}
                 <div class="relative group py-2" id="nav-dropdown-kabar">
-                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Kabar & Galeri" class="px-3.5 py-2 rounded-xl inline-flex items-center hover:bg-white/15 transition {{ request()->is('artikel*', 'agenda*', 'pengumuman*', 'galeri*', 'video*', 'testimonial*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
-                        <span>Kabar &amp; Galeri</span>
+                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Kabar" class="px-3 py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('artikel*', 'agenda*', 'pengumuman*', 'galeri*', 'video*', 'testimonial*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                        <span>Kabar</span>
                         <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"></i>
                     </button>
                     {{-- Safe Hover Bridge Container --}}
-                    <div class="absolute left-0 top-full pt-1 w-60 hidden group-hover:block transition-all duration-150 z-50">
-                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2.5 text-gray-800 animate-fadeIn">
-                            <a href="{{ route('artikel.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-newspaper w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Berita &amp; Prestasi Siswa
+                    <div class="absolute left-0 top-full pt-1 w-52 hidden group-hover:block transition-all duration-150 z-50">
+                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2 text-gray-800 animate-fadeIn">
+                            <a href="{{ route('artikel.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-newspaper w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Berita &amp; Prestasi
                             </a>
-                            <a href="{{ route('galeri.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-images w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Galeri Foto Kegiatan
+                            <a href="{{ route('galeri.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-images w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Galeri Foto
                             </a>
-                            <a href="{{ route('video.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-brands fa-youtube w-5 text-red-600 mr-2 text-sm" aria-hidden="true"></i> Video Kegiatan &amp; Dokumentasi
+                            <a href="{{ route('video.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-brands fa-youtube w-4 text-red-600 mr-2 text-xs" aria-hidden="true"></i> Video Kegiatan
                             </a>
                             <div class="border-t border-gray-100 my-1"></div>
-                            <a href="{{ route('agenda.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-calendar-days w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Agenda Akademik
+                            <a href="{{ route('agenda.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-calendar-days w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Agenda
                             </a>
-                            <a href="{{ route('pengumuman.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-bullhorn w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Pengumuman Sekolah
+                            <a href="{{ route('pengumuman.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-bullhorn w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Pengumuman
                             </a>
-                            <a href="{{ route('testimonial.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-comment-dots w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Testimoni Wali &amp; Alumni
+                            <a href="{{ route('testimonial.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-comment-dots w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Testimoni
                             </a>
                         </div>
                     </div>
@@ -116,68 +116,68 @@
 
                 {{-- 4. Download Dropdown --}}
                 <div class="relative group py-2" id="nav-dropdown-download">
-                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Download" class="px-3.5 py-2 rounded-xl inline-flex items-center hover:bg-white/15 transition {{ request()->is('download*', 'e-book*', 'hymne*', 'logo*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Download" class="px-3 py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('download*', 'e-book*', 'hymne*', 'logo*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
                         <span>Download</span>
                         <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"></i>
                     </button>
                     {{-- Safe Hover Bridge Container --}}
-                    <div class="absolute left-0 top-full pt-1 w-56 hidden group-hover:block transition-all duration-150 z-50">
-                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2.5 text-gray-800 animate-fadeIn">
-                            <a href="{{ route('download.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-folder-open w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Semua Berkas Publik
+                    <div class="absolute left-0 top-full pt-1 w-48 hidden group-hover:block transition-all duration-150 z-50">
+                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2 text-gray-800 animate-fadeIn">
+                            <a href="{{ route('download.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-folder-open w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Semua Berkas
                             </a>
-                            <a href="{{ route('download.ebook') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-book-open w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> E-Book &amp; Modul Siswa
+                            <a href="{{ route('download.ebook') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap" title="E-Library & Modul Siswa">
+                                <i class="fa-solid fa-book-open w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> E-Book &amp; Modul <span class="sr-only">E-Library &amp; Modul Siswa</span>
                             </a>
-                            <a href="{{ route('download.hymne-mars') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-music w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Mars JSIT Indonesia
+                            <a href="{{ route('download.hymne-mars') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-music w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Mars JSIT
                             </a>
-                            <a href="{{ route('download.logo') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-image w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Logo Resmi Sekolah
+                            <a href="{{ route('download.logo') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-image w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Logo Sekolah
                             </a>
                         </div>
                     </div>
                 </div>
 
-                {{-- 5. Layanan Publik Dropdown --}}
+                {{-- 5. Layanan Dropdown --}}
                 <div class="relative group py-2" id="nav-dropdown-layanan">
-                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Layanan Publik" class="px-3.5 py-2 rounded-xl inline-flex items-center hover:bg-white/15 transition {{ request()->is('layanan*', 'izin-sekolah*', 'permohonan-kerja-sama*', 'sewa-barang*') ? 'bg-white/20 text-white font-bold shadow-inner' : '' }}">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Layanan" class="px-3 py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('layanan*', 'izin-sekolah*', 'permohonan-kerja-sama*', 'sewa-barang*') ? 'bg-white/20 text-white font-bold shadow-inner' : '' }}">
                         <span>Layanan</span>
                         <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"></i>
                     </button>
                     {{-- Safe Hover Bridge Container --}}
-                    <div class="absolute left-0 top-full pt-1 w-64 hidden group-hover:block transition-all duration-150 z-50">
-                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2.5 text-gray-800 animate-fadeIn">
-                            <a href="{{ route('layanan.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-handshake-angle w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Portal Layanan Terpadu
+                    <div class="absolute left-0 top-full pt-1 w-48 hidden group-hover:block transition-all duration-150 z-50">
+                        <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2 text-gray-800 animate-fadeIn">
+                            <a href="{{ route('layanan.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-handshake-angle w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Portal Layanan
                             </a>
                             <div class="border-t border-gray-100 my-1"></div>
-                            <a href="{{ route('layanan.izin') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-id-card-clip w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Permohonan Izin Kunjungan
+                            <a href="{{ route('layanan.izin') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-id-card-clip w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Izin Kunjungan
                             </a>
-                            <a href="{{ route('layanan.kerjasama') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-handshake w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Permohonan Kerja Sama
+                            <a href="{{ route('layanan.kerjasama') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-handshake w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Kerja Sama
                             </a>
-                            <a href="{{ route('layanan.sewa') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-building-user w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Permohonan Sewa Barang
+                            <a href="{{ route('layanan.sewa') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-building-user w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Sewa Barang
                             </a>
                         </div>
                     </div>
                 </div>
 
                 {{-- 6. Kontak --}}
-                <a href="{{ route('hubungi') }}" class="px-3.5 py-2 rounded-xl hover:bg-white/15 transition {{ request()->routeIs('hubungi') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                <a href="{{ route('hubungi') }}" class="px-3 py-2 rounded-xl whitespace-nowrap hover:bg-white/15 transition {{ request()->routeIs('hubungi') ? 'bg-white/20 text-white shadow-inner' : '' }}">
                     Kontak
                 </a>
             </nav>
 
             {{-- TOMBOL AKSI: DAFTAR SPMB (WARNA GOLD/AMBER RADIANT) & LOGIN --}}
-            <div class="hidden lg:flex items-center space-x-3">
-                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-5 py-2.5 rounded-full text-xs font-black shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 transition flex items-center space-x-2 transform hover:scale-105" aria-label="Pendaftaran SPMB Online SMPS IT Ishlahul Ummah Prabumulih">
+            <div class="hidden lg:flex items-center space-x-2 shrink-0">
+                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-4 py-2 rounded-full text-xs font-black shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 transition flex items-center space-x-1.5 transform hover:scale-105 whitespace-nowrap" aria-label="Pendaftaran SPMB Online SMPS IT Ishlahul Ummah Prabumulih">
                     <i class="fa-solid fa-graduation-cap text-xs text-slate-950" aria-hidden="true"></i>
                     <span>Daftar SPMB</span>
                 </a>
-                <a href="/login" class="text-white hover:text-amber-300 px-3 py-2 text-xs font-bold transition flex items-center space-x-1 rounded-xl hover:bg-white/10" aria-label="Login Admin">
+                <a href="/login" class="text-white hover:text-amber-300 px-2.5 py-2 text-xs font-bold transition flex items-center space-x-1 rounded-xl hover:bg-white/10 whitespace-nowrap" aria-label="Login Admin">
                     <i class="fa-solid fa-lock text-[11px]" aria-hidden="true"></i>
                     <span>Login</span>
                 </a>
@@ -185,7 +185,7 @@
 
             {{-- MOBILE TOP RIGHT: Tombol SPMB & Hamburger --}}
             <div class="flex lg:hidden items-center space-x-1.5 shrink-0 ml-auto">
-                <a href="{{ route('ppdb.index') }}" aria-label="Pendaftaran SPMB Online" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-black shadow transition flex items-center min-h-[34px] flex-shrink-0">
+                <a href="{{ route('ppdb.index') }}" aria-label="Pendaftaran SPMB Online" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2.5 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-black shadow transition flex items-center min-h-[34px] flex-shrink-0">
                     <span>SPMB</span>
                 </a>
                 <button id="mobile-menu-toggle" type="button" class="text-white hover:text-amber-200 p-1 rounded-lg focus:outline-none w-9 h-9 flex items-center justify-center flex-shrink-0 cursor-pointer" aria-label="Buka Menu Navigasi">
@@ -211,25 +211,25 @@
             <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
                 <i class="fa-solid fa-school mr-2 text-amber-500"></i> Profil Sekolah
             </div>
-            <a href="{{ route('page.sambutan') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Sambutan Kepala Sekolah</a>
-            <a href="{{ route('page.tentang-kami') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Profil Singkat Sekolah</a>
-            <a href="{{ route('page.visi-misi') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Visi dan Misi</a>
-            <a href="{{ route('page.sejarah') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Sejarah Sekolah</a>
-            <a href="{{ route('dewan.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Dewan Guru &amp; GTK</a>
+            <a href="{{ route('page.sambutan') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Sambutan</a>
+            <a href="{{ route('page.tentang-kami') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Profil Singkat</a>
+            <a href="{{ route('page.visi-misi') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Visi &amp; Misi</a>
+            <a href="{{ route('page.sejarah') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Sejarah</a>
+            <a href="{{ route('dewan.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Dewan Guru</a>
             <a href="{{ route('page.struktur') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Struktur Organisasi</a>
-            <a href="{{ route('bidang.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Fasilitas &amp; Sarana Prasarana</a>
+            <a href="{{ route('bidang.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Fasilitas</a>
             <a href="{{ route('dpc.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Program Unggulan</a>
         </div>
 
-        {{-- Mobile Kabar & Galeri Submenu --}}
+        {{-- Mobile Kabar Submenu --}}
         <div class="border-t border-gray-100 pt-2">
             <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
-                <i class="fa-solid fa-newspaper mr-2 text-amber-500"></i> Kabar &amp; Galeri
+                <i class="fa-solid fa-newspaper mr-2 text-amber-500"></i> Kabar Sekolah
             </div>
-            <a href="{{ route('artikel.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Berita &amp; Prestasi Siswa</a>
-            <a href="{{ route('galeri.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Galeri Foto Kegiatan</a>
+            <a href="{{ route('artikel.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Berita &amp; Prestasi</a>
+            <a href="{{ route('galeri.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Galeri Foto</a>
             <a href="{{ route('video.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Video Kegiatan</a>
-            <a href="{{ route('agenda.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Agenda Akademik</a>
+            <a href="{{ route('agenda.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Agenda</a>
             <a href="{{ route('pengumuman.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Pengumuman</a>
             <a href="{{ route('testimonial.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Testimoni</a>
         </div>
@@ -239,21 +239,21 @@
             <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
                 <i class="fa-solid fa-download mr-2 text-amber-500"></i> Download Berkas
             </div>
-            <a href="{{ route('download.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Semua Berkas Publik</a>
-            <a href="{{ route('download.ebook') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">E-Library &amp; Modul Siswa</a>
-            <a href="{{ route('download.hymne-mars') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Mars JSIT Indonesia</a>
-            <a href="{{ route('download.logo') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Logo Resmi Sekolah</a>
+            <a href="{{ route('download.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Semua Berkas</a>
+            <a href="{{ route('download.ebook') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">E-Book &amp; Modul <span class="sr-only">E-Library &amp; Modul Siswa</span></a>
+            <a href="{{ route('download.hymne-mars') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Mars JSIT</a>
+            <a href="{{ route('download.logo') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Logo Sekolah</a>
         </div>
 
-        {{-- Mobile Layanan Publik Submenu --}}
+        {{-- Mobile Layanan Submenu --}}
         <div class="border-t border-gray-100 pt-2">
             <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
-                <i class="fa-solid fa-handshake-angle mr-2 text-amber-500"></i> Layanan Publik
+                <i class="fa-solid fa-handshake-angle mr-2 text-amber-500"></i> Layanan
             </div>
-            <a href="{{ route('layanan.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Portal Layanan Terpadu</a>
-            <a href="{{ route('layanan.izin') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Permohonan Izin Kunjungan</a>
-            <a href="{{ route('layanan.kerjasama') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Permohonan Kerja Sama</a>
-            <a href="{{ route('layanan.sewa') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Permohonan Sewa Barang</a>
+            <a href="{{ route('layanan.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Portal Layanan</a>
+            <a href="{{ route('layanan.izin') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Izin Kunjungan</a>
+            <a href="{{ route('layanan.kerjasama') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Kerja Sama</a>
+            <a href="{{ route('layanan.sewa') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Sewa Barang</a>
         </div>
 
         <div class="border-t border-gray-100 pt-2 space-y-1">

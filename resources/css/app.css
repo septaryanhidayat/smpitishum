@@ -166,12 +166,12 @@ img, video, iframe, canvas, svg {
 }
 
 /* ========================================================
-   SNAPPY FAST FADE-UP ANIMATIONS (SCROLL TRIGGERED)
+   ELEGANT FADE-UP ANIMATIONS (SMOOTH & ATTRACTIVE)
    ======================================================== */
 .reveal-fade-up {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
@@ -181,11 +181,11 @@ img, video, iframe, canvas, svg {
 }
 
 /* Stagger delay utilities */
-.delay-1 { transition-delay: 60ms; }
-.delay-2 { transition-delay: 120ms; }
-.delay-3 { transition-delay: 180ms; }
-.delay-4 { transition-delay: 240ms; }
-.delay-5 { transition-delay: 300ms; }
-.delay-6 { transition-delay: 360ms; }
-.delay-7 { transition-delay: 420ms; }
-.delay-8 { transition-delay: 480ms; }
+.delay-1 { transition-delay: 90ms; }
+.delay-2 { transition-delay: 180ms; }
+.delay-3 { transition-delay: 270ms; }
+.delay-4 { transition-delay: 360ms; }
+.delay-5 { transition-delay: 450ms; }
+.delay-6 { transition-delay: 540ms; }
+.delay-7 { transition-delay: 630ms; }
+.delay-8 { transition-delay: 720ms; }

@@ -5,8 +5,8 @@
 
 @section('content')
 {{-- HERO HEADER & BREADCRUMB --}}
-<div class="bg-gradient-to-r from-gray-900 to-[#00913e] text-white py-10 sm:py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-10 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left reveal-fade-up">
         <nav class="text-xs text-gray-300 mb-3 flex items-center justify-center sm:justify-start space-x-2 flex-wrap">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
@@ -169,7 +169,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             {{-- Card Visi --}}
-            <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl border border-green-100 flex flex-col justify-between space-y-6">
+            <div class="bg-gradient-to-br from-indigo-50/70 to-blue-50/70 p-8 rounded-3xl border border-indigo-100 flex flex-col justify-between space-y-6">
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-base shadow">

@@ -121,7 +121,7 @@
 
                 <div class="pt-2">
                     @if(!empty($bank1Rek))
-                        <button onclick="copyToClipboard('{{ $bank1Rek }}', '{{ $bank1Name }}')" class="w-full bg-gradient-to-r from-emerald-600 to-[#00913e] hover:from-emerald-700 hover:to-emerald-800 text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-indigo-600/20 transition flex items-center justify-center space-x-2 cursor-pointer">
+                        <button onclick="copyToClipboard('{{ $bank1Rek }}', '{{ $bank1Name }}')" class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-indigo-600/20 transition flex items-center justify-center space-x-2 cursor-pointer">
                             <i class="fa-regular fa-copy text-sm"></i>
                             <span>Salin Nomor Rekening</span>
                         </button>
@@ -181,7 +181,7 @@
     </div>
 
     {{-- KARTU KONFIRMASI WHATSAPP & PANDUAN --}}
-    <div class="bg-gradient-to-br from-emerald-700 via-[#00913e] to-emerald-800 text-white rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden reveal-fade-up">
+    <div class="bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-950 text-white rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden reveal-fade-up border border-indigo-500/20">
         <div class="absolute -bottom-16 -right-16 w-64 h-64 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative z-10">
             <div class="md:col-span-2 space-y-3">

@@ -31,7 +31,7 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     
     {{-- JUDUL RESMI SESUAI TAMPILAN WEB UTAMA --}}
-    <div class="text-center max-w-3xl mx-auto mb-14">
+    <div class="text-center max-w-3xl mx-auto mb-14 reveal-fade-up">
         <h2 class="text-3xl sm:text-4xl font-black text-indigo-600 tracking-tight uppercase">
             LAYANAN TERPADU
         </h2>
@@ -48,7 +48,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         
         {{-- LAYANAN 1: IZIN KUNJUNGAN KE SEKOLAH --}}
-        <a href="{{ route('layanan.izin') }}" class="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:-translate-y-2">
+        <a href="{{ route('layanan.izin') }}" class="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:-translate-y-2 reveal-fade-up delay-1">
             {{-- ILUSTRASI: Operator & Laptop Kunjungan --}}
             <div class="w-36 h-36 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <svg viewBox="0 0 160 140" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@
         </a>
 
         {{-- LAYANAN 2: PERMOHONAN KERJA SAMA --}}
-        <a href="{{ route('layanan.kerjasama') }}" class="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:-translate-y-2">
+        <a href="{{ route('layanan.kerjasama') }}" class="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:-translate-y-2 reveal-fade-up delay-2">
             {{-- ILUSTRASI: Dua Orang Berdialog & Berkas Kemitraan --}}
             <div class="w-36 h-36 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <svg viewBox="0 0 160 140" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,8 +122,8 @@
             </span>
         </a>
 
-        {{-- LAYANAN 3: SEWA MENYEWA BARANG SEKOLAH --}}
-        <a href="{{ route('layanan.sewa') }}" class="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:-translate-y-2">
+        {{-- LAYANAN 3: SEWA BARANG & FASILITAS SEKOLAH --}}
+        <a href="{{ route('layanan.sewa') }}" class="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:-translate-y-2 reveal-fade-up delay-3">
             {{-- ILUSTRASI: Rocket, Buku, Keyboard & Fasilitas Sarana --}}
             <div class="w-36 h-36 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <svg viewBox="0 0 160 140" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,7 +168,7 @@
     </div>
 
     {{-- KONTEN PANDUAN DAN FAQ LAYANAN --}}
-    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-gray-100 shadow-sm space-y-6">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-gray-100 shadow-sm space-y-6 reveal-fade-up delay-1">
         <div class="border-b border-gray-100 pb-4">
             <h3 class="text-xl font-bold text-gray-900 flex items-center space-x-2">
                 <i class="fa-solid fa-circle-info text-indigo-600"></i>
