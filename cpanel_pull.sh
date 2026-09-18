@@ -30,8 +30,9 @@ cd "$TARGET_DIR"
 echo -e "${YELLOW}[1/6] Direktori kerja:${NC} $TARGET_DIR"
 
 # 1. Tarik pembaruan terbaru dari GitHub (origin main)
-echo -e "${YELLOW}[2/6] Menjalankan git pull dari origin main...${NC}"
-git pull origin main
+echo -e "${YELLOW}[2/6] Mengambil pembaruan terbaru dari GitHub (origin main)...${NC}"
+git fetch origin main
+git reset --hard origin/main
 
 # 2. Pastikan struktur folder storage & cache lengkap
 echo -e "${YELLOW}[3/6] Menyiapkan struktur direktori storage & cache...${NC}"
