@@ -274,7 +274,7 @@
 
             <div class="p-6 space-y-6">
                 {{-- Bank 1: Utama (BSI) --}}
-                <div class="p-5 rounded-2xl bg-indigo-50/60/50 border border-indigo-200/80 space-y-4">
+                <div class="p-5 rounded-2xl bg-indigo-50/50 border border-indigo-200/80 space-y-4">
                     <div class="flex items-center justify-between">
                         <h3 class="text-xs font-black text-emerald-900 uppercase tracking-wider flex items-center">
                             <i class="fa-solid fa-star text-emerald-500 mr-2"></i>

@@ -58,7 +58,7 @@
                 <span class="text-slate-400 font-normal text-[11px]">(Opsional)</span>
             @endif
         </label>
-        <div class="p-4 bg-indigo-50/60/50 border-2 border-dashed border-indigo-300 rounded-2xl transition hover:border-indigo-600 hover:bg-indigo-50/60">
+        <div class="p-4 bg-indigo-50/50 border-2 border-dashed border-indigo-300 rounded-2xl transition hover:border-indigo-600 hover:bg-indigo-50/60">
             <input type="file" name="{{ $key }}" id="{{ $key }}" {{ $required ? 'required' : '' }} accept=".pdf,image/*" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 file:cursor-pointer file:shadow-md transition">
             
             @if($key === 'payment_proof')

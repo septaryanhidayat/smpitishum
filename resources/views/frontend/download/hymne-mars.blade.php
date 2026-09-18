@@ -57,7 +57,7 @@
         </div>
 
         {{-- Lirik Mars Resmi JSIT Indonesia --}}
-        <div class="bg-indigo-50/60/70 p-8 sm:p-10 rounded-2xl border border-indigo-200 text-center space-y-6 text-sm sm:text-base text-gray-900 leading-relaxed font-serif">
+        <div class="bg-indigo-50/70 p-8 sm:p-10 rounded-2xl border border-indigo-200 text-center space-y-6 text-sm sm:text-base text-gray-900 leading-relaxed font-serif">
             <h3 class="font-sans text-xs font-black text-emerald-900 uppercase tracking-widest mb-6">
                 LIRIK MARS RESMI JSIT INDONESIA
             </h3>

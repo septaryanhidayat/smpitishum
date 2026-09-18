@@ -95,7 +95,7 @@
             @endif
 
             {{-- Social Share Buttons --}}
-            <div class="mt-8 p-5 bg-indigo-50/60/60 rounded-2xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="mt-8 p-5 bg-indigo-50/60 rounded-2xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="text-xs font-bold text-gray-700 uppercase tracking-wider flex items-center">
                     <i class="fa-solid fa-share-nodes text-indigo-600 mr-2 text-base"></i>
                     Bagikan Berita Ini:

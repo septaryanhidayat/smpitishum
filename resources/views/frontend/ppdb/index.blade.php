@@ -34,12 +34,12 @@
             </div>
 
             {{-- CTA Quick Buttons --}}
-            <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-                <a href="{{ route('ppdb.form') }}" class="inline-flex items-center space-x-2 bg-[#da251c] hover:bg-[#b91c1c] text-white px-7 py-3 rounded-2xl text-xs sm:text-sm font-black transition shadow-lg shadow-red-500/25 transform hover:scale-105">
+            <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-2">
+                <a href="{{ route('ppdb.form') }}" class="w-full sm:w-auto justify-center text-center inline-flex items-center space-x-2 bg-[#da251c] hover:bg-[#b91c1c] text-white px-7 py-3 rounded-2xl text-xs sm:text-sm font-black transition shadow-lg shadow-red-500/25 transform hover:scale-105">
                     <i class="fa-solid fa-file-pen text-sm"></i>
                     <span>Isi Formulir Online</span>
                 </a>
-                <a href="{{ route('home') }}" class="inline-flex items-center space-x-2 bg-slate-900 hover:bg-black text-white px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-sm">
+                <a href="{{ route('home') }}" class="w-full sm:w-auto justify-center text-center inline-flex items-center space-x-2 bg-slate-900 hover:bg-black text-white px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-sm">
                     <i class="fa-solid fa-house text-xs"></i>
                     <span>Beranda Sekolah</span>
                 </a>
@@ -49,7 +49,7 @@
                         $cleanHotline = '62' . substr($cleanHotline, 1);
                     }
                 @endphp
-                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
+                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="w-full sm:w-auto justify-center text-center inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>Hotline WhatsApp ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </a>
@@ -319,7 +319,7 @@
                         </p>
                     </div>
                 </div>
-                <span class="mt-6 inline-flex items-center space-x-2 bg-[#da251c] hover:bg-[#b91c1c] text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
+                <span class="mt-6 w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#da251c] hover:bg-[#b91c1c] text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
                     <i class="fa-solid fa-file-pen"></i>
                     <span>Isi Formulir Online Sekarang</span>
                 </span>
@@ -349,7 +349,7 @@
                         </p>
                     </div>
                 </div>
-                <span class="mt-6 inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
+                <span class="mt-6 w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
                     <i class="fa-brands fa-whatsapp text-base"></i>
                     <span>Chat WhatsApp Panitia ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </span>

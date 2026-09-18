@@ -45,7 +45,7 @@
                 {!! $bidang->description !!}
             </div>
 
-            <div class="mt-8 p-6 bg-indigo-50/60/60 rounded-2xl border border-indigo-100 space-y-3 text-xs sm:text-sm">
+            <div class="mt-8 p-6 bg-indigo-50/60 rounded-2xl border border-indigo-100 space-y-3 text-xs sm:text-sm">
                 <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-2">Informasi Layanan Fasilitas</h3>
                 <p class="flex items-start"><i class="fa-solid fa-location-dot text-indigo-600 mt-1 mr-3 w-4"></i><span>{{ $bidang->address ?: 'Kompleks Sekolah SMPS IT Ishlahul Ummah Prabumulih, Prabumulih, Sumatera Selatan' }}</span></p>
                 <p class="flex items-center"><i class="fa-solid fa-phone text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->phone ?: '0852-6990-8696' }}</span></p>

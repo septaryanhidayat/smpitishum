@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export REPOPATH=/home/berandad/repositories/smpitishum
+    - export REPOPATH=${REPOPATH:-/home/berandad/repositories/smpitishum}
     - /bin/mkdir -p $REPOPATH/storage/framework/sessions $REPOPATH/storage/framework/views $REPOPATH/storage/framework/cache/data $REPOPATH/storage/logs $REPOPATH/bootstrap/cache $REPOPATH/public/uploads
-    - /bin/chmod -R 775 $REPOPATH/storage $REPOPATH/bootstrap/cache
-    - /bin/chmod -R 755 $REPOPATH/public
-    - /bin/touch $REPOPATH/public/index.php
+    - /bin/chmod -R 775 $REPOPATH/storage $REPOPATH/bootstrap/cache 2>/dev/null || true
+    - /bin/chmod -R 755 $REPOPATH/public 2>/dev/null || true
+    - /bin/touch $REPOPATH/public/index.php 2>/dev/null || true

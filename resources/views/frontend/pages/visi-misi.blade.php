@@ -5,30 +5,30 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-10 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center justify-center sm:justify-start space-x-2 flex-wrap">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Visi dan Misi</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Visi & Misi Sekolah</h1>
-        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Visi & Misi Sekolah</h1>
+        <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
             Arah dan komitmen luhur SMPS IT Ishlahul Ummah Prabumulih dalam membimbing generasi unggul berkarakter Qur'ani dan berwawasan masa depan.
         </p>
     </div>
 </div>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
         
         {{-- KOLOM UTAMA (2/3) --}}
         <div class="lg:col-span-8 space-y-8">
             
             {{-- KARTU VISI --}}
-            <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up">
+            <div class="bg-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-gray-100 reveal-fade-up">
                 <div class="flex items-center space-x-3 mb-6">
                     <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center text-2xl flex-shrink-0 shadow-inner">
                         <i class="fa-solid fa-compass"></i>
@@ -160,7 +160,7 @@
 
                 <div class="space-y-4">
                     @forelse($latestAgendas ?? [] as $la)
-                        <a href="{{ route('agenda.show', $la->slug) }}" class="flex items-start space-x-3 group p-3 rounded-xl hover:bg-indigo-50/60/50 transition">
+                        <a href="{{ route('agenda.show', $la->slug) }}" class="flex items-start space-x-3 group p-3 rounded-xl hover:bg-indigo-50/50 transition">
                             <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 flex flex-col items-center justify-center flex-shrink-0 font-bold text-xs">
                                 <span class="text-sm font-extrabold leading-none">{{ $la->event_date ? $la->event_date->format('d') : '01' }}</span>
                                 <span class="text-[9px] uppercase">{{ $la->event_date ? $la->event_date->translatedFormat('M') : 'SMP' }}</span>

@@ -178,7 +178,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-gray-600 leading-relaxed">
-            <div class="p-5 rounded-2xl bg-indigo-50/60/70 border border-indigo-100 space-y-2">
+            <div class="p-5 rounded-2xl bg-indigo-50/70 border border-indigo-100 space-y-2">
                 <div class="font-bold text-emerald-900 text-sm flex items-center space-x-2">
                     <span class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-extrabold">1</span>
                     <span>Pengisian Formulir</span>

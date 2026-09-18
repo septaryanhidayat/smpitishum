@@ -213,7 +213,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/60/50 hover:border-indigo-200 transition">
+            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/50 hover:border-indigo-200 transition">
                 <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 font-black text-lg flex items-center justify-center mx-auto shadow-sm">
                     1
                 </div>
@@ -223,7 +223,7 @@
                 </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/60/50 hover:border-indigo-200 transition">
+            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/50 hover:border-indigo-200 transition">
                 <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 font-black text-lg flex items-center justify-center mx-auto shadow-sm">
                     2
                 </div>
@@ -233,7 +233,7 @@
                 </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/60/50 hover:border-indigo-200 transition">
+            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/50 hover:border-indigo-200 transition">
                 <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 font-black text-lg flex items-center justify-center mx-auto shadow-sm">
                     3
                 </div>
@@ -246,7 +246,7 @@
     </div>
 
     {{-- TRANSPARANSI PENGELOLAAN DANA PENDIDIKAN --}}
-    <div class="bg-indigo-50/60/80 border-l-4 border-indigo-600 p-6 sm:p-8 rounded-3xl shadow-sm text-xs sm:text-sm text-gray-700 space-y-3 reveal-fade-up">
+    <div class="bg-indigo-50/80 border-l-4 border-indigo-600 p-6 sm:p-8 rounded-3xl shadow-sm text-xs sm:text-sm text-gray-700 space-y-3 reveal-fade-up">
         <h4 class="font-extrabold text-gray-900 flex items-center text-sm sm:text-base">
             <i class="fa-solid fa-scale-balanced mr-2.5 text-indigo-600 text-lg"></i>
             <span>Akuntabilitas & Tata Kelola Infaq Yayasan</span>

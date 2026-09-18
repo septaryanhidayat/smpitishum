@@ -66,7 +66,7 @@
                             Kini, SMPS IT Ishlahul Ummah Prabumulih telah berkembang menjadi salah satu sekolah rujukan di Prabumulih yang menerapkan Kurikulum Merdeka yang disempurnakan dengan kurikulum kekhasan Islam Terpadu Plus, didukung oleh tenaga pendidik berkualifikasi magister dan sertifikasi pendidik profesional.
                         </p>
 
-                        <p class="font-medium text-gray-900 bg-indigo-50/60/80 p-5 rounded-2xl border-l-4 border-indigo-600">
+                        <p class="font-medium text-gray-900 bg-indigo-50/80 p-5 rounded-2xl border-l-4 border-indigo-600">
                             Dengan memegang teguh semboyan <em>Qur'ani, Berprestasi, dan Berakhlak Mulia</em>, SMPS IT Ishlahul Ummah Prabumulih terus melangkah maju, berinovasi tanpa henti, dan bertekad mencetak calon pemimpin bangsa yang siap berkontribusi bagi kemaslahatan umat dan dunia.
                         </p>
                     @endif
@@ -118,7 +118,7 @@
 
                 <div class="space-y-4">
                     @forelse($latestAgendas ?? [] as $la)
-                        <a href="{{ route('agenda.show', $la->slug) }}" class="flex items-start space-x-3 group p-3 rounded-xl hover:bg-indigo-50/60/50 transition">
+                        <a href="{{ route('agenda.show', $la->slug) }}" class="flex items-start space-x-3 group p-3 rounded-xl hover:bg-indigo-50/50 transition">
                             <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 flex flex-col items-center justify-center flex-shrink-0 font-bold text-xs">
                                 <span class="text-sm font-extrabold leading-none">{{ $la->event_date ? $la->event_date->format('d') : '01' }}</span>
                                 <span class="text-[9px] uppercase">{{ $la->event_date ? $la->event_date->translatedFormat('M') : 'SMP' }}</span>

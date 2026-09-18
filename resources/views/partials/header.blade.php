@@ -1,14 +1,14 @@
 {{-- TOP MINI BAR (Elegan: Kontak Telepon & Email Resmi SMPS IT Ishlahul Ummah Prabumulih) --}}
-<div class="bg-[#0f172a] text-slate-200 text-xs py-2 border-b border-indigo-900/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-start items-center space-x-4 sm:space-x-6">
-        <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="flex items-center text-slate-200 hover:text-amber-300 transition py-1 text-xs font-semibold" aria-label="Hubungi Telepon {{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}">
-            <i class="fa-solid fa-phone mr-2 text-amber-400" aria-hidden="true"></i>
+<div class="bg-[#0f172a] text-slate-200 text-xs py-2 border-b border-indigo-900/60 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-center sm:justify-start items-center space-x-2 sm:space-x-6 text-center flex-wrap">
+        <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold whitespace-nowrap" aria-label="Hubungi Telepon {{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}">
+            <i class="fa-solid fa-phone mr-1.5 text-amber-400" aria-hidden="true"></i>
             <span>{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}</span>
         </a>
-        <span class="text-indigo-900" aria-hidden="true">|</span>
-        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}" class="flex items-center text-slate-200 hover:text-amber-300 transition py-1 text-xs font-semibold" aria-label="Kirim Email ke {{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}">
-            <i class="fa-solid fa-envelope mr-2 text-amber-400" aria-hidden="true"></i>
-            <span>{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}</span>
+        <span class="text-indigo-900 hidden sm:inline" aria-hidden="true">|</span>
+        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}" class="hidden sm:flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold truncate max-w-xs" aria-label="Kirim Email ke {{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}">
+            <i class="fa-solid fa-envelope mr-1.5 text-amber-400" aria-hidden="true"></i>
+            <span class="truncate">{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}</span>
         </a>
         <span class="hidden md:inline text-indigo-900" aria-hidden="true">|</span>
         <span class="hidden md:flex items-center text-slate-300 text-xs">
@@ -20,13 +20,13 @@
 
 {{-- MAIN STICKY NAVBAR (Royal Indigo & Electric Blue #4338ca / #2563eb / Radiant Gold #f59e0b) --}}
 <header class="sticky top-0 z-50 bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 sm:h-20">
             
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
             <a href="{{ route('home') }}" class="flex items-center space-x-3 group flex-shrink-0" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="h-16 flex items-center py-1">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="max-h-16 w-auto object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
+                <div class="h-14 sm:h-16 flex items-center py-1">
+                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="max-h-11 sm:max-h-16 w-auto object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
                 </div>
             </a>
 

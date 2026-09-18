@@ -144,8 +144,8 @@
 
                 {{-- SUBMIT BUTTON --}}
                 <div class="pt-8 pb-4 text-center">
-                    <button type="submit" class="w-full sm:w-auto min-w-[320px] bg-gradient-to-r from-[#da251c] to-[#b91c1c] hover:from-[#b91c1c] hover:to-[#991c1c] text-white font-black text-base sm:text-lg px-10 py-4 rounded-2xl shadow-xl shadow-red-500/30 hover:shadow-2xl transition-all transform hover:-translate-y-1 cursor-pointer uppercase tracking-wider inline-flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-paper-plane text-xl"></i>
+                    <button type="submit" class="w-full sm:w-auto sm:min-w-[320px] max-w-full bg-gradient-to-r from-[#da251c] to-[#b91c1c] hover:from-[#b91c1c] hover:to-[#991c1c] text-white font-black text-sm sm:text-lg px-6 sm:px-10 py-4 rounded-2xl shadow-xl shadow-red-500/30 hover:shadow-2xl transition-all transform hover:-translate-y-1 cursor-pointer uppercase tracking-wider inline-flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-paper-plane text-lg sm:text-xl"></i>
                         <span>Kirim Formulir Pendaftaran</span>
                     </button>
                     @if($formSettings['wa_confirm'])
@@ -159,7 +159,7 @@
 
             {{-- FOOTER --}}
             <div class="pt-8 text-center border-t border-slate-100">
-                <div class="flex items-center justify-between text-[11px] text-slate-400">
+                <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2 text-center sm:text-left">
                     <span>PPDB SMPS IT Ishlahul Ummah Prabumulih</span>
                     <span>Hak Cipta Dilindungi Undang-Undang</span>
                 </div>

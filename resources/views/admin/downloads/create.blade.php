@@ -45,7 +45,7 @@
             </div>
 
             {{-- UPLOAD GAMBAR COVER (UNTUK E-BOOK / MODUL) --}}
-            <div class="p-5 rounded-2xl bg-indigo-50/60/50 border border-indigo-200/80 space-y-3">
+            <div class="p-5 rounded-2xl bg-indigo-50/50 border border-indigo-200/80 space-y-3">
                 <div class="flex items-center space-x-2">
                     <i class="fa-solid fa-image text-indigo-600"></i>
                     <label for="cover_image" class="block text-xs font-bold text-slate-900 uppercase tracking-wider">

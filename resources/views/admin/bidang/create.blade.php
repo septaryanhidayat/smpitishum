@@ -24,7 +24,7 @@
             </div>
 
             {{-- UPLOAD FOTO UTAMA FASILITAS --}}
-            <div class="p-5 bg-indigo-50/60/40 rounded-2xl border border-indigo-100 space-y-3">
+            <div class="p-5 bg-indigo-50/40 rounded-2xl border border-indigo-100 space-y-3">
                 <label class="block text-xs font-bold text-indigo-600 uppercase tracking-wider">
                     Foto Utama Fasilitas Sekolah (Thumbnail)
                 </label>

@@ -128,7 +128,7 @@
                     </p>
                 </section>
 
-                <section class="space-y-2 bg-indigo-50/60/50 p-6 rounded-2xl border border-indigo-100">
+                <section class="space-y-2 bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
                         <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">9</span>
                         <span>Kontak Sekolah</span>

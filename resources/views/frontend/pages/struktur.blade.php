@@ -5,26 +5,26 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-10 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center justify-center sm:justify-start space-x-2 flex-wrap">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Struktur Organisasi</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Struktur Organisasi Sekolah</h1>
-        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Struktur Organisasi Sekolah</h1>
+        <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
             Susunan manajemen kepemimpinan dan organisasi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
 </div>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-16">
+<div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-12 sm:space-y-16">
     
     {{-- SEKSI 1: STRUKTUR ORGANISASI SEKOLAH (KOSONGKAN JIKA TIDAK ADA NAMA2 RESMI / DATA DARI DB) --}}
-    <section class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
+    <section class="bg-white p-5 sm:p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
         <div class="text-center max-w-2xl mx-auto mb-8">
             <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">Bagan Organisasi</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
@@ -34,11 +34,11 @@
         </div>
 
         @if(!empty($page?->content) && trim(strip_tags($page->content)) !== '')
-            <div class="prose-content max-w-4xl mx-auto text-gray-700 text-justify text-sm sm:text-base leading-relaxed bg-slate-50/70 p-6 sm:p-10 rounded-2xl border border-slate-100">
+            <div class="prose-content max-w-4xl mx-auto text-gray-700 text-left sm:text-justify text-xs sm:text-base leading-relaxed bg-slate-50/70 p-5 sm:p-10 rounded-2xl border border-slate-100">
                 {!! $page->content !!}
             </div>
         @else
-            <div class="max-w-md mx-auto text-center py-12 px-4 space-y-4">
+            <div class="max-w-md mx-auto text-center py-8 sm:py-12 px-4 space-y-4">
                 <div class="w-16 h-16 rounded-2xl bg-indigo-50/60 text-indigo-600 flex items-center justify-center text-3xl mx-auto shadow-inner">
                     <i class="fa-solid fa-sitemap"></i>
                 </div>
@@ -51,13 +51,13 @@
     </section>
 
     {{-- SEKSI 2: FASILITAS & SARANA PRASARANA SEKOLAH --}}
-    <section class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+    <section class="bg-white p-5 sm:p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 mb-8 text-center sm:text-left">
             <div>
                 <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">Sarana &amp; Prasarana Sekolah</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">Fasilitas Unggulan SMPS IT Ishlahul Ummah Prabumulih</h2>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">Fasilitas Unggulan SMPS IT Ishlahul Ummah Prabumulih</h2>
             </div>
-            <a href="{{ route('bidang.index') }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-[#da251c] flex-shrink-0 transition">
+            <a href="{{ route('bidang.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center text-xs font-bold text-indigo-600 hover:text-[#da251c] flex-shrink-0 transition">
                 <span>Lihat Selengkapnya</span>
                 <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
             </a>
@@ -92,16 +92,16 @@
     </section>
 
     {{-- SEKSI 3: PROGRAM UNGGULAN SEKOLAH --}}
-    <section class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+    <section class="bg-white p-5 sm:p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 mb-8 text-center sm:text-left">
             <div>
                 <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">Kurikulum &amp; Karakter</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
+                <h2 class="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                     Program Unggulan Siswa Ishum
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan santri menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
             </div>
-            <a href="{{ route('dpc.index') }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-[#da251c] flex-shrink-0 transition">
+            <a href="{{ route('dpc.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center text-xs font-bold text-indigo-600 hover:text-[#da251c] flex-shrink-0 transition">
                 <span>Lihat Semua Program</span>
                 <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
             </a>

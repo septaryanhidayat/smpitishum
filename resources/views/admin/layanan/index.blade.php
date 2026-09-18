@@ -20,7 +20,7 @@
             <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider block mb-1">Disetujui</span>
             <div class="text-xl sm:text-2xl font-black text-blue-800">{{ $stats['approved'] }}</div>
         </div>
-        <div class="bg-indigo-50/60/70 p-4 rounded-2xl border border-indigo-200/60 shadow-xs">
+        <div class="bg-indigo-50/70 p-4 rounded-2xl border border-indigo-200/60 shadow-xs">
             <span class="text-[11px] font-bold text-indigo-700 uppercase tracking-wider block mb-1">Selesai</span>
             <div class="text-xl sm:text-2xl font-black text-indigo-800">{{ $stats['completed'] }}</div>
         </div>

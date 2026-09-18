@@ -31,20 +31,22 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-indigo-950/60 to-slate-950/40"></div>
 
                 {{-- Konten Hero Rata Tengah --}}
-                <div class="absolute inset-0 flex items-center justify-center pt-2 pb-16 sm:pb-14">
-                    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-3 sm:space-y-4">
-                        <span class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30">
-                            <i class="fa-solid fa-star text-[10px]"></i>
-                            <span>SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
-                        </span>
-                        <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-tight" x-text="slide.title"></h1>
-                        <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none" x-text="slide.subtitle"></p>
-                        <div class="pt-2 sm:pt-3 flex flex-wrap justify-center gap-3">
-                            <a :href="slide.btn_link" class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-7 sm:px-9 py-3 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
+                <div class="absolute inset-0 flex items-center justify-center pt-2 pb-14 sm:pb-14 px-2">
+                    <div class="max-w-4xl mx-auto px-2 sm:px-6 text-center text-white space-y-2.5 sm:space-y-4 w-full">
+                        <div>
+                            <span class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[95%] truncate sm:overflow-visible">
+                                <i class="fa-solid fa-star text-[9px] mr-1"></i>
+                                <span>SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
+                            </span>
+                        </div>
+                        <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-snug sm:leading-tight px-1" x-text="slide.title"></h1>
+                        <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none px-2" x-text="slide.subtitle"></p>
+                        <div class="pt-1 sm:pt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-xs sm:max-w-md mx-auto">
+                            <a :href="slide.btn_link" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
                                 <span x-text="slide.btn_text"></span>
                                 <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                             </a>
-                            <a href="{{ route('ppdb.index') }}" class="inline-flex items-center justify-center bg-indigo-600/80 hover:bg-indigo-600 text-white px-6 sm:px-8 py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105">
+                            <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600/80 hover:bg-indigo-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105">
                                 <i class="fa-solid fa-graduation-cap mr-2"></i>
                                 <span>Info SPMB</span>
                             </a>
@@ -56,10 +58,10 @@
     </div>
 
     {{-- Carousel Controls (Panah Samping) --}}
-    <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide sebelumnya">
+    <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length" class="absolute left-1.5 sm:left-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide sebelumnya">
         <i class="fa-solid fa-chevron-left text-xs sm:text-sm" aria-hidden="true"></i>
     </button>
-    <button @click="activeSlide = (activeSlide + 1) % slides.length" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide berikutnya">
+    <button @click="activeSlide = (activeSlide + 1) % slides.length" class="absolute right-1.5 sm:right-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide berikutnya">
         <i class="fa-solid fa-chevron-right text-xs sm:text-sm" aria-hidden="true"></i>
     </button>
 
@@ -125,7 +127,7 @@
                         <i class="{{ $qm->icon }} text-lg sm:text-xl md:text-2xl transition-colors duration-300" aria-hidden="true"></i>
                     @endif
                 </div>
-                <span class="text-[11px] sm:text-[11px] md:text-xs font-bold text-slate-800 group-hover:text-indigo-700 text-center leading-tight truncate w-full tracking-tight px-0.5">
+                <span class="text-[10px] sm:text-[11px] md:text-xs font-bold text-slate-800 group-hover:text-indigo-700 text-center leading-tight line-clamp-2 break-words w-full tracking-tight px-0.5 min-h-[24px] sm:min-h-[28px] flex items-center justify-center">
                     {{ $qm->name }}
                 </span>
             </a>
@@ -230,20 +232,20 @@
      ======================================================== --}}
 <section class="py-12 sm:py-16 bg-gradient-to-b from-slate-50 via-indigo-50/30 to-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="relative bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-900 rounded-3xl sm:rounded-[32px] p-6 sm:p-10 lg:p-12 shadow-2xl text-white border border-indigo-400/20 overflow-hidden reveal-fade-up">
+        <div class="relative bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-900 rounded-3xl sm:rounded-[32px] p-4 sm:p-8 lg:p-12 shadow-2xl text-white border border-indigo-400/20 overflow-hidden reveal-fade-up">
             {{-- Decorative glow circles --}}
             <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
                 {{-- Left: Flyer Visual Box --}}
                 <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative group max-w-xs sm:max-w-sm w-full">
-                        <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-400 via-blue-400 to-indigo-500 rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative group max-w-[260px] sm:max-w-xs md:max-w-sm w-full mx-auto">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 via-blue-400 to-indigo-500 rounded-2xl blur-xs opacity-75 group-hover:opacity-100 transition duration-500"></div>
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border-2 border-white/20 aspect-[3/4]">
                             <img src="/uploads/flyer-spmb-smpit-ishum.png" alt="Flyer SPMB Gelombang Exclusive & Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
-                            <div class="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md py-2 px-3 rounded-xl border border-white/10 text-center">
-                                <span class="text-[11px] font-black text-amber-300 uppercase tracking-wider">
+                            <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-slate-950/85 backdrop-blur-md py-1.5 px-2.5 rounded-xl border border-white/10 text-center">
+                                <span class="text-[10px] sm:text-[11px] font-black text-amber-300 uppercase tracking-wider">
                                     <i class="fa-solid fa-bullhorn mr-1"></i> Pengumuman Resmi Sekolah
                                 </span>
                             </div>
@@ -252,56 +254,56 @@
                 </div>
 
                 {{-- Right: Informasi Detail & Action --}}
-                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-black uppercase tracking-wider">
-                        <i class="fa-solid fa-certificate"></i>
-                        <span>Penerimaan Santri Baru Gelombang Exclusive</span>
+                <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[10px] sm:text-xs font-black uppercase tracking-wider max-w-[95%]">
+                        <i class="fa-solid fa-certificate text-xs flex-shrink-0"></i>
+                        <span class="truncate sm:overflow-visible">Penerimaan Santri Baru Gelombang Exclusive</span>
                     </div>
 
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
+                    <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
                         SPMB Gelombang Exclusive &amp; Class Meeting Semester Genap
                     </h2>
 
-                    <p class="text-sm sm:text-base text-indigo-100 leading-relaxed">
+                    <p class="text-xs sm:text-base text-indigo-100 leading-relaxed">
                         Bergabunglah bersama keluarga besar <strong>SMPS IT Ishlahul Ummah Prabumulih</strong>. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing &amp; teknologi.
                     </p>
 
                     {{-- 3 Key Benefit Cards --}}
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center">
-                            <div class="text-amber-400 text-xl font-black mb-1">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1 sm:pt-2">
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
+                            <div class="text-amber-400 text-lg sm:text-xl font-black mb-1">
                                 <i class="fa-solid fa-users"></i>
                             </div>
-                            <h4 class="text-xs font-black uppercase tracking-wider text-white">KUOTA TERBATAS</h4>
+                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">KUOTA TERBATAS</h4>
                             <p class="text-xs text-amber-300 font-bold mt-0.5">Hanya 24 Santri</p>
                         </div>
 
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center">
-                            <div class="text-amber-400 text-xl font-black mb-1">
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
+                            <div class="text-amber-400 text-lg sm:text-xl font-black mb-1">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </div>
-                            <h4 class="text-xs font-black uppercase tracking-wider text-white">CASH BACK 1 JUTA</h4>
+                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">CASH BACK 1 JUTA</h4>
                             <p class="text-xs text-amber-300 font-bold mt-0.5">Alumni SDIT Ishum 1 &amp; 2</p>
                         </div>
 
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center">
-                            <div class="text-amber-400 text-xl font-black mb-1">
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
+                            <div class="text-amber-400 text-lg sm:text-xl font-black mb-1">
                                 <i class="fa-solid fa-calendar-check"></i>
                             </div>
-                            <h4 class="text-xs font-black uppercase tracking-wider text-white">CLASS MEETING</h4>
+                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">CLASS MEETING</h4>
                             <p class="text-xs text-amber-300 font-bold mt-0.5">Mulai Rabu, 17 Juni</p>
                         </div>
                     </div>
 
                     {{-- Action Hotline & Buttons --}}
-                    <div class="pt-3 flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
-                        <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-8 py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
+                    <div class="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 justify-center lg:justify-start w-full">
+                        <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
                             <i class="fa-solid fa-graduation-cap mr-2"></i>
                             <span>Daftar SPMB Online</span>
                         </a>
 
-                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
-                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
+                            <i class="fa-brands fa-whatsapp text-base mr-2"></i>
                             <span>Narahubung: 0852-6990-8696</span>
                         </a>
                     </div>
@@ -355,12 +357,12 @@
 
                 <div class="w-24 h-1 bg-indigo-600 mx-auto lg:mx-0 my-4 rounded-full"></div>
 
-                <div class="flex items-center justify-center lg:justify-start space-x-3.5 pt-2">
-                    <a href="{{ route('page.sambutan') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2 w-full">
+                    <a href="{{ route('page.sambutan') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition space-x-2">
                         <i class="fa-solid fa-book-open"></i>
                         <span>Sambutan Lengkap</span>
                     </a>
-                    <a href="{{ route('page.visi-misi') }}" class="bg-slate-900 hover:bg-black text-white px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                    <a href="{{ route('page.visi-misi') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-900 hover:bg-black text-white px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition space-x-2">
                         <span>Visi &amp; Misi</span>
                         <i class="fa-regular fa-circle-dot"></i>
                     </a>
@@ -431,8 +433,8 @@
             {{-- 3 Side Posts --}}
             <div class="lg:col-span-5 space-y-4">
                 @foreach($sidePosts as $index => $sp)
-                <article class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition flex items-center space-x-4 group reveal-fade-up delay-{{ $index + 2 }}">
-                    <div class="w-24 h-24 sm:w-28 sm:h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+                <article class="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-gray-100 hover:shadow-md transition flex items-center space-x-3 sm:space-x-4 group reveal-fade-up delay-{{ $index + 2 }}">
+                    <div class="w-20 h-20 sm:w-28 sm:h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
                         <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </div>
                     <div class="flex-1 min-w-0 space-y-1">
@@ -826,7 +828,7 @@
             <div x-data="{
                 current: 0,
                 items: {{ Js::from($galleryRow1) }},
-                perView: 3,
+                perView: 1,
                 timer: null,
                 updatePerView() {
                     if (window.innerWidth < 640) {
@@ -857,7 +859,7 @@
                 <div class="overflow-hidden py-2 px-1">
                     <div class="flex transition-transform duration-700 ease-out" :style="'transform: translateX(-' + (current * (100 / perView)) + '%)'">
                         <template x-for="(item, idx) in items" :key="idx">
-                            <div class="flex-shrink-0 px-2 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
+                            <div class="flex-shrink-0 px-1.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-64 sm:h-80 md:h-96 lg:h-[380px] rounded-3xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800/80 group">
                                     <img :src="item.url" :alt="item.title" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
@@ -869,11 +871,11 @@
                     </div>
                 </div>
 
-                <button @click="prev()" class="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto sebelumnya">
-                    <i class="fa-solid fa-chevron-left text-sm"></i>
+                <button @click="prev()" class="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto sebelumnya">
+                    <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
                 </button>
-                <button @click="next()" class="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto berikutnya">
-                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                <button @click="next()" class="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto berikutnya">
+                    <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
                 </button>
             </div>
 
@@ -881,7 +883,7 @@
             <div x-data="{
                 current: 0,
                 items: {{ Js::from($galleryRow2) }},
-                perView: 4,
+                perView: 1,
                 timer: null,
                 updatePerView() {
                     if (window.innerWidth < 640) {
@@ -914,7 +916,7 @@
                 <div class="overflow-hidden py-2 px-1">
                     <div class="flex transition-transform duration-700 ease-out" :style="'transform: translateX(-' + (current * (100 / perView)) + '%)'">
                         <template x-for="(item, idx) in items" :key="idx">
-                            <div class="flex-shrink-0 px-2 sm:px-2.5" :style="'width: ' + (100 / perView) + '%'">
+                            <div class="flex-shrink-0 px-1.5 sm:px-2.5" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-52 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-xl bg-neutral-900 border border-neutral-800/80 group">
                                     <img :src="item.url" :alt="item.title" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
@@ -926,10 +928,10 @@
                     </div>
                 </div>
 
-                <button @click="prev()" class="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto sebelumnya">
+                <button @click="prev()" class="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto sebelumnya">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
-                <button @click="next()" class="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto berikutnya">
+                <button @click="next()" class="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center border border-white/20 shadow-2xl z-20 backdrop-blur-sm transition duration-200" aria-label="Foto berikutnya">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
@@ -960,12 +962,12 @@
                 Wujudkan impian putra-putri Anda menjadi generasi berakhlak Qur'ani, cerdas, berdaya saing global, dan berprestasi. Kuota terbatas hanya 24 kursi per kelas!
             </p>
         </div>
-        <div class="flex flex-wrap sm:flex-nowrap items-center justify-center lg:justify-end gap-3 flex-shrink-0">
-            <a href="{{ route('ppdb.index') }}" aria-label="Daftar Sekarang SPMB Online" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-700 text-slate-950 font-black text-xs sm:text-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition flex-shrink-0 whitespace-nowrap min-h-[44px] flex items-center justify-center transform hover:scale-105">
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-3 w-full sm:w-auto">
+            <a href="{{ route('ppdb.index') }}" aria-label="Daftar Sekarang SPMB Online" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-700 text-slate-950 font-black text-xs sm:text-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition min-h-[44px] flex items-center justify-center transform hover:scale-105">
                 <span>Daftar SPMB Online</span>
                 <i class="fa-solid fa-graduation-cap ml-2 text-slate-950"></i>
             </a>
-            <a href="{{ route('download.index') }}" aria-label="Unduh Brosur Informasi" class="bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full border border-white/20 transition flex-shrink-0 whitespace-nowrap min-h-[44px] flex items-center justify-center">
+            <a href="{{ route('download.index') }}" aria-label="Unduh Brosur Informasi" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full border border-white/20 transition min-h-[44px] flex items-center justify-center">
                 Unduh Brosur
             </a>
         </div>
@@ -994,7 +996,7 @@
             <div x-data="{
                 current: 0,
                 items: {{ Js::from($ebooks) }},
-                perView: 4,
+                perView: 1,
                 timer: null,
                 updatePerView() {
                     if (window.innerWidth < 640) {
@@ -1028,7 +1030,7 @@
                 stop() {
                     clearInterval(this.timer);
                 }
-            }" x-init="updatePerView(); window.addEventListener('resize', () => updatePerView()); start()" @mouseenter="stop()" @mouseleave="start()" class="relative px-2 sm:px-4">
+            }" x-init="updatePerView(); window.addEventListener('resize', () => updatePerView()); start()" @mouseenter="stop()" @mouseleave="start()" class="relative px-1 sm:px-4">
                 
                 <div class="overflow-hidden py-3">
                     <div class="flex transition-transform duration-500 ease-out" :style="'transform: translateX(-' + (current * (100 / perView)) + '%)'">
@@ -1045,15 +1047,15 @@
                     </div>
                 </div>
 
-                <button @click="prev()" class="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center transition border border-slate-700 shadow-2xl z-20" aria-label="Modul sebelumnya">
+                <button @click="prev()" class="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center transition border border-slate-700 shadow-2xl z-20" aria-label="Modul sebelumnya">
                     <i class="fa-solid fa-chevron-left text-xs sm:text-sm" aria-hidden="true"></i>
                 </button>
-                <button @click="next()" class="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center transition border border-slate-700 shadow-2xl z-20" aria-label="Modul berikutnya">
+                <button @click="next()" class="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-900/80 hover:bg-indigo-600 text-white flex items-center justify-center transition border border-slate-700 shadow-2xl z-20" aria-label="Modul berikutnya">
                     <i class="fa-solid fa-chevron-right text-xs sm:text-sm" aria-hidden="true"></i>
                 </button>
 
                 <div class="pt-6 flex justify-center">
-                    <a href="{{ route('download.ebook') }}" aria-label="Akses Perpustakaan Digital SMPS IT Ishlahul Ummah Prabumulih" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-xs sm:text-sm px-8 py-3.5 rounded-2xl shadow-xl transition flex items-center space-x-2 transform hover:scale-105 min-h-[44px]">
+                    <a href="{{ route('download.ebook') }}" aria-label="Akses Perpustakaan Digital SMPS IT Ishlahul Ummah Prabumulih" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-2xl shadow-xl transition flex items-center justify-center space-x-2 transform hover:scale-105 min-h-[44px]">
                         <i class="fa-solid fa-download" aria-hidden="true"></i>
                         <span>Akses Semua Modul &amp; E-Book</span>
                     </a>
@@ -1097,9 +1099,9 @@
                     <div class="w-10 h-10 rounded-full overflow-hidden bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-xs flex-shrink-0 mx-auto sm:mx-0">
                         <img src="{{ $t->photo_url }}" alt="Foto {{ $t->name }}" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($t->name) }}&background=4338ca&color=fff'">
                     </div>
-                    <div class="min-w-0">
-                        <h3 class="font-bold text-xs text-gray-900 truncate text-center sm:text-left">{{ $t->name }}</h3>
-                        <p class="text-[11px] text-indigo-600 font-semibold truncate text-center sm:text-left">{{ $t->profession ?? 'Wali Santri / Alumni' }}</p>
+                    <div class="min-w-0 w-full text-center sm:text-left">
+                        <h3 class="font-bold text-xs text-gray-900 break-words leading-tight">{{ $t->name }}</h3>
+                        <p class="text-[11px] text-indigo-600 font-semibold break-words mt-0.5">{{ $t->profession ?? 'Wali Santri / Alumni' }}</p>
                     </div>
                 </div>
             </div>
@@ -1122,33 +1124,33 @@
         <h2 class="sr-only">Aksi dan Layanan Cepat</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             
-            <a href="{{ route('ppdb.index') }}" class="bg-white p-4 rounded-2xl border-t-4 border-indigo-600 shadow-sm hover:shadow-md transition flex items-center space-x-3.5 group reveal-fade-up delay-1" aria-label="Pendaftaran SPMB Online SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="w-12 h-12 rounded-full bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition" aria-hidden="true">
+            <a href="{{ route('ppdb.index') }}" class="bg-white p-4 rounded-2xl border-t-4 border-indigo-600 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-1" aria-label="Pendaftaran SPMB Online SMPS IT Ishlahul Ummah Prabumulih">
+                <div class="w-12 h-12 rounded-full bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition mx-auto sm:mx-0" aria-hidden="true">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
                     <h3 class="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition">SPMB Online SMPS IT</h3>
-                    <p class="text-xs text-gray-600">Pendaftaran santri baru gelombang exclusive</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Pendaftaran santri baru gelombang exclusive</p>
                 </div>
             </a>
 
-            <a href="https://wa.me/6285269908696" target="_blank" class="bg-white p-4 rounded-2xl border-t-4 border-amber-500 shadow-sm hover:shadow-md transition flex items-center space-x-3.5 group reveal-fade-up delay-2" aria-label="Hubungi Hotline Sekolah via WhatsApp">
-                <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-amber-500 group-hover:text-white transition" aria-hidden="true">
+            <a href="https://wa.me/6285269908696" target="_blank" class="bg-white p-4 rounded-2xl border-t-4 border-amber-500 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-2" aria-label="Hubungi Hotline Sekolah via WhatsApp">
+                <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-amber-500 group-hover:text-white transition mx-auto sm:mx-0" aria-hidden="true">
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
                 <div>
                     <h3 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition">Hotline WA: 0852-6990-8696</h3>
-                    <p class="text-xs text-gray-600">Layanan informasi SPMB &amp; kegiatan santri</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Layanan informasi SPMB &amp; kegiatan santri</p>
                 </div>
             </a>
 
-            <a href="{{ route('donasi') }}" class="bg-white p-4 rounded-2xl border-t-4 border-blue-600 shadow-sm hover:shadow-md transition flex items-center space-x-3.5 group reveal-fade-up delay-3" aria-label="Infaq & Beasiswa Ishum">
-                <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition" aria-hidden="true">
+            <a href="{{ route('donasi') }}" class="bg-white p-4 rounded-2xl border-t-4 border-blue-600 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-3" aria-label="Infaq & Beasiswa Ishum">
+                <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition mx-auto sm:mx-0" aria-hidden="true">
                     <i class="fa-solid fa-hand-holding-heart"></i>
                 </div>
                 <div>
                     <h3 class="font-bold text-sm text-gray-900 group-hover:text-blue-600 transition">Infaq &amp; Beasiswa Santri</h3>
-                    <p class="text-xs text-gray-600">Dukung sarana &amp; beasiswa penghafal Qur'an</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Dukung sarana &amp; beasiswa penghafal Qur'an</p>
                 </div>
             </a>
 

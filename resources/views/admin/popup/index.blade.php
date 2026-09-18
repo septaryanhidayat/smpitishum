@@ -23,9 +23,9 @@
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-8">
             
             {{-- SAKELAR AKTIF/NONAKTIF --}}
-            <div class="p-5 rounded-2xl {{ $popup['active'] == '1' ? 'bg-indigo-50/60/80 border-2 border-indigo-300' : 'bg-slate-50 border-2 border-slate-200' }} flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition">
+            <div class="p-5 rounded-2xl {{ $popup['active'] == '1' ? 'bg-indigo-50/80 border-2 border-indigo-300' : 'bg-slate-50 border-2 border-slate-200' }} flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition">
                 <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-2xl {{ $popup['active'] == '1' ? 'bg-indigo-50/600 text-white shadow-md shadow-emerald-500/30' : 'bg-slate-300 text-slate-600' }} flex items-center justify-center text-xl flex-shrink-0 transition">
+                    <div class="w-12 h-12 rounded-2xl {{ $popup['active'] == '1' ? 'bg-indigo-600 text-white shadow-md shadow-emerald-500/30' : 'bg-slate-300 text-slate-600' }} flex items-center justify-center text-xl flex-shrink-0 transition">
                         <i class="fa-solid fa-bullhorn"></i>
                     </div>
                     <div>
@@ -70,7 +70,7 @@
                         <label for="popup_image_file" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                             Ganti Gambar Banner Baru (Choose File)
                         </label>
-                        <div class="p-4 bg-indigo-50/60/50 border-2 border-dashed border-indigo-300 rounded-2xl transition hover:border-indigo-600 hover:bg-indigo-50/60">
+                        <div class="p-4 bg-indigo-50/50 border-2 border-dashed border-indigo-300 rounded-2xl transition hover:border-indigo-600 hover:bg-indigo-50/60">
                             <input type="file" name="popup_image_file" id="popup_image_file" accept="image/*" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 file:cursor-pointer file:shadow-md transition">
                             <p class="text-[11px] text-slate-500 mt-2">Gambar otomatis dikompres dan dikonversi ke format modern WebP.</p>
                         </div>

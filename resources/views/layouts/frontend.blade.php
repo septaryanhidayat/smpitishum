@@ -65,7 +65,7 @@
 
     @stack('styles')
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
 
     {{-- HEADER --}}
     @include('partials.header')
@@ -100,7 +100,7 @@
     @endif
 
     {{-- MAIN CONTENT --}}
-    <main class="flex-grow">
+    <main class="flex-grow w-full max-w-full overflow-x-hidden">
         @yield('content')
     </main>
 

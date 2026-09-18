@@ -39,7 +39,7 @@
         </div>
 
         {{-- INFO JALUR & PROGRAM PILIHAN --}}
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 bg-indigo-50/60/70 rounded-2xl border border-indigo-200 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 bg-indigo-50/70 rounded-2xl border border-indigo-200 text-xs">
             <div>
                 <span class="text-slate-400 block text-[10px] font-bold uppercase">Gelombang</span>
                 <span class="font-black text-indigo-600">{{ $ppdb->wave ?: 'Gelombang 1' }}</span>

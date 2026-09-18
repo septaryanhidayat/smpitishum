@@ -34,12 +34,12 @@
         </div>
 
         {{-- DISPLAY EMBLEM LOGO --}}
-        <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-3xl bg-indigo-50/60/50 p-8 shadow-inner border border-indigo-100 flex items-center justify-center relative group">
+        <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-3xl bg-indigo-50/50 p-8 shadow-inner border border-indigo-100 flex items-center justify-center relative group">
             <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
         </div>
 
         <div>
-            <a href="/uploads/logo-ishum-square.png" download="logo-ishum-square.png" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-2xl text-xs sm:text-sm font-bold shadow-lg hover:shadow-xl transition space-x-2 transform hover:scale-105">
+            <a href="/uploads/logo-ishum-square.png" download="logo-ishum-square.png" class="w-full sm:w-auto inline-flex items-center justify-center text-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 sm:px-8 py-3.5 rounded-2xl text-xs sm:text-sm font-bold shadow-lg hover:shadow-xl transition space-x-2 transform hover:scale-105">
                 <i class="fa-solid fa-download text-sm"></i>
                 <span>Download Lambang Emblem (Format Vektor SVG)</span>
             </a>
