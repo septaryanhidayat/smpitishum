@@ -1,7 +1,10 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/berandad/repositories/smaitishum/
-    - /bin/touch $DEPLOYPATH/public/index.php
-    - /bin/chmod -R 775 $DEPLOYPATH/storage $DEPLOYPATH/bootstrap/cache
-    - /bin/chmod -R 755 $DEPLOYPATH/public/uploads
+    - export REPOPATH=/home/berandad/repositories/smpitishum
+    - /bin/mkdir -p $REPOPATH/storage/framework/sessions $REPOPATH/storage/framework/views $REPOPATH/storage/framework/cache/data $REPOPATH/storage/logs $REPOPATH/bootstrap/cache $REPOPATH/public/uploads
+    - /bin/chmod -R 775 $REPOPATH/storage $REPOPATH/bootstrap/cache
+    - /bin/chmod -R 755 $REPOPATH/public
+    - /bin/touch $REPOPATH/public/index.php
+    - if [ -d "/home/berandad/public_html" ]; then /bin/cp -r $REPOPATH/public/. /home/berandad/public_html/ 2>/dev/null || true; fi
+    - if [ -d "/home/berandad/smpitishumpbm.sch.id" ]; then /bin/cp -r $REPOPATH/public/. /home/berandad/smpitishumpbm.sch.id/ 2>/dev/null || true; fi

@@ -1,87 +1,154 @@
-# 🚀 Panduan Deployment Laravel SMPS IT Ishlahul Ummah Prabumulih ke cPanel
+# 🚀 Panduan Deployment & Konfigurasi cPanel SMPS IT Ishlahul Ummah Prabumulih
 
-Panduan lengkap langkah demi langkah untuk mengunggah dan mengaktifkan website Laravel 12 (PHP 8.4) SMPS IT Ishlahul Ummah Prabumulih ke hosting cPanel dengan database MySQL.
+Panduan lengkap untuk hosting cPanel akun **`berandad`** (Domain: `https://smpitishumpbm.sch.id`).
 
 ---
 
-## 📋 1. Persyaratan Server / Hosting cPanel & Solusi PHP
+## ⚡ 1. Solusi PHP 8.4 via `.htaccess` (Tanpa MultiPHP / Select PHP)
 
-Website SMPS IT Ishlahul Ummah Prabumulih dibangun menggunakan Laravel modern yang membutuhkan PHP 8.2+ (direkomendasikan **PHP 8.4**).
+Jika server cPanel Anda default-nya PHP 8.1 dan MultiPHP / Select PHP sering gagal, Anda dapat **memaksa web server (Apache/LiteSpeed) menggunakan PHP 8.4** langsung dari file `.htaccess`.
 
-### A. Solusi Web (Otomatis via `.htaccess`)
-Web server (Apache / LiteSpeed) di cPanel dapat dipaksa menggunakan PHP 8.4 secara lokal untuk folder website Anda melalui file `.htaccess`. Baris berikut sudah terpasang di file `.htaccess` dan `public/.htaccess`:
+Baris berikut sudah dipasang di `.htaccess` (root repositori) dan `public/.htaccess`:
+
 ```apache
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php84” package as the default “PHP” programming language.
 <IfModule mime_module>
   AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
 </IfModule>
-```
-*Catatan:*
-- Jika hosting Anda memakai **EasyApache 4**: handler di atas langsung mengaktifkan PHP 8.4.
-- Jika hosting memakai **CloudLinux**: ubah `ea-php84` menjadi `alt-php84`.
-- Jika server hosting hanya menyediakan maksimal PHP 8.3 atau 8.2, cukup ganti angkanya menjadi `ea-php83` atau `ea-php82`.
-
-### B. Solusi Terminal cPanel (CLI / Artisan)
-Untuk menjalankan perintah Laravel dengan PHP 8.4 di cPanel Terminal:
-```bash
-echo "alias php='/usr/local/bin/ea-php84'" >> ~/.bashrc
-source ~/.bashrc
+# php -- END cPanel-generated handler, do not edit
 ```
 
----
-
-## 🗄️ 2. Persiapan Database MySQL
-
-1. Buka cPanel dan pilih menu **MySQL® Databases**.
-2. Buat database baru, contoh: `username_smpitishum`.
-3. Buat pengguna MySQL baru, contoh: `username_ishumuser` dengan kata sandi yang kuat.
-4. Hubungkan pengguna tersebut ke database dengan memberikan **All Privileges** (Semua Hak Akses).
-5. Opsi Import Cepat:
-   - Buka **phpMyAdmin**, pilih database yang baru dibuat, lalu pilih tab **Import**.
-   - Unggah file `database/cpanel_school_mysql_dump.sql`.
-   - Klik **Go** / **Kirim** untuk mengimpor seluruh skema dan data resmi.
-   - Atau via Terminal cPanel:
-     ```bash
-     php artisan migrate --seed
-     ```
-
----
-
-## 🚀 3. Deployment Menggunakan cPanel Git™ Version Control
-
-### Langkah Clone Repositori di cPanel:
-1. Buka cPanel Anda dan klik menu **Git™ Version Control**.
-2. Klik tombol **Create**.
-3. Masukkan informasi repositori:
-   - **Clone URL**: `https://github.com/septaryanhidayat/smpitishum.git`
-   - **Repository Path**: `/home/username/smpitishum`
-   - **Repository Name**: `smpitishum`
-4. Klik tombol **Create**.
-
-### Langkah Konfigurasi Awal (.env & Vendor):
-1. Buka menu **Terminal** di cPanel Anda.
-2. Masuk ke folder repositori:
-   ```bash
-   cd ~/smpitishum
-   cp .env.example .env
-   php artisan key:generate
+### ⚠️ Catatan Penting Tipe Server cPanel:
+1. **Jika hosting menggunakan EasyApache 4 (standar cPanel)**:
+   Handler `application/x-httpd-ea-php84` di atas akan langsung mengaktifkan PHP 8.4.
+2. **Jika hosting menggunakan CloudLinux (PHP Selector)**:
+   Ganti tulisan `ea-php84` menjadi `alt-php84`:
+   ```apache
+   <IfModule mime_module>
+     AddHandler application/x-httpd-alt-php84 .php .php8 .phtml
+   </IfModule>
    ```
-3. Install dependensi:
-   ```bash
-   composer install --no-dev --optimize-autoloader
-   ```
-4. Hubungkan storage & optimasi cache:
-   ```bash
-   php artisan storage:link
-   php artisan optimize
-   ```
+3. **Jika server hosting belum menginstall PHP 8.4**:
+   Laravel di website ini kompatibel dengan PHP 8.2 & PHP 8.3. Cukup ubah ke `ea-php83` atau `alt-php83`.
+
+### 🔍 Cara Cek Versi PHP Aktif Secara Real-Time:
+Buka di browser:
+👉 **`https://smpitishumpbm.sch.id/check.php`**
+Halaman ini akan menampilkan secara transparan versi PHP yang sedang dieksekusi oleh web server Apache, lokasi document root, serta status koneksi database.
 
 ---
 
-## 🔐 4. Akses Panel Admin Website
+## 🗄️ 2. Konfigurasi File `.env` Produksi di cPanel
 
-- **URL Login**: `https://domain-anda.com/login`
-- **Email Administrator**: `admin@smpitishum.sch.id`
-- **Password**: Password default seeder yang Anda tetapkan
+Salin konfigurasi berikut ke file `.env` di folder repositori `/home/berandad/repositories/smpitishum/.env`:
+
+```env
+# ==============================================================================
+# ENVIRONMENT SETTINGS - SMPS IT ISHLAHUL UMMAH PRABUMULIH (CPANEL PRODUCTION)
+# ==============================================================================
+APP_NAME="SMPS IT Ishlahul Ummah Prabumulih"
+APP_ENV=production
+APP_KEY=base64:/pHX1Fa5FrzEUD5baFuzVKajWGQ4oUjuO53ytzrw2ac=
+APP_DEBUG=false
+APP_URL=https://smpitishumpbm.sch.id
+
+APP_LOCALE=id
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=id_ID
+
+APP_MAINTENANCE_DRIVER=file
+
+BCRYPT_ROUNDS=12
+
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=error
+
+# ==============================================================================
+# DATABASE CPANEL (MySQL di cPanel)
+# ==============================================================================
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=berandad_db_smpitishum
+DB_USERNAME=berandad_admin_smpitishum
+DB_PASSWORD=P4l3mb4ng123!
+
+SESSION_DRIVER=database
+SESSION_LIFETIME=120
+SESSION_ENCRYPT=false
+SESSION_PATH=/
+SESSION_DOMAIN=null
+
+BROADCAST_CONNECTION=log
+FILESYSTEM_DISK=public
+QUEUE_CONNECTION=sync
+
+CACHE_STORE=database
+# CACHE_PREFIX=
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_CLIENT=phpredis
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=log
+MAIL_SCHEME=null
+MAIL_HOST=127.0.0.1
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_FROM_ADDRESS="admin@smpitishumpbm.sch.id"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+VITE_APP_NAME="${APP_NAME}"
+
+# cPanel Setup Helper Secret Token
+CPANEL_SETUP_TOKEN=SmpItIshum2026Setup
+```
 
 ---
-Dikelola dengan bangga oleh **SMPS IT Ishlahul Ummah Prabumulih**.
+
+## 🚀 3. Git™ Version Control & Deployment di cPanel
+
+Berdasarkan pengaturan Git di cPanel Anda:
+* **Repository Path**: `/home/berandad/repositories/smpitishum`
+* **Remote URL**: `https://github.com/septaryanhidayat/smpitishum.git`
+* **Branch**: `main`
+
+### Langkah Update & Deploy:
+1. Buka menu **Git™ Version Control** di cPanel.
+2. Klik tombol **Manage** pada repositori `smpitishum`.
+3. Buka tab **Pull or Deploy**.
+4. Klik tombol biru **Update from Remote** untuk menarik commit terbaru dari GitHub.
+5. Klik tombol biru **Deploy HEAD Commit** untuk menjalankan proses deployment otomatis yang didefinisikan dalam `.cpanel.yml`.
+
+### Otomasi File `.cpanel.yml`:
+File `.cpanel.yml` telah dikonfigurasi untuk:
+- Mengatur izin akses direktori `storage/` dan `bootstrap/cache` ke `0775`.
+- Mengatur direktori `public/` ke `0755`.
+- Otomatis menyalin (*synchronize*) aset web dan file `.htaccess` ke `/home/berandad/public_html` (jika domain Anda mengarah ke `public_html`).
+
+---
+
+## 🛠️ 4. Tool Pembantu: cPanel Setup Helper
+
+Untuk memudahkan operasional tanpa perlu terminal SSH:
+Akses di browser:
+👉 **`https://smpitishumpbm.sch.id/cpanel_setup.php?token=SmpItIshum2026Setup&action=status`**
+
+Fitur 1-klik yang tersedia:
+* **Perbaiki Izin Folder Storage** (`action=fix_storage`): Memastikan semua folder cache, session, view, dan log memiliki izin tulis (0775).
+* **Ekstrak Vendor ZIP** (`action=extract_vendor`): Jika composer di terminal cPanel terbatas, Anda cukup meng-upload `vendor.zip` via File Manager lalu klik tombol ekstrak.
+* **Jalankan Migrasi Database** (`action=migrate`): Menjalankan migrasi tabel database Laravel secara langsung.
+* **Git Pull & Sync Otomatis** (`action=git_pull`): Melakukan pull git langsung dari browser.
