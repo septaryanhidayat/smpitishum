@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 test('admin can manage users with multi roles', function () {
     $superAdmin = User::create([
-        'name' => 'Super Admin Robbani',
-        'email' => 'superadmin@robbani.sch.id',
+        'name' => 'Super Admin Ishum',
+        'email' => 'superadmin@smpitishum.sch.id',
         'password' => Hash::make('Secret12345!'),
         'role' => 'super_admin',
     ]);
@@ -17,19 +17,19 @@ test('admin can manage users with multi roles', function () {
     $this->actingAs($superAdmin);
 
     // List users
-    $this->get('/admin/users')->assertStatus(200)->assertSee('Super Admin Robbani');
+    $this->get('/admin/users')->assertStatus(200)->assertSee('Super Admin Ishum');
 
     // Create editor user
     $response = $this->post('/admin/users', [
         'name' => 'Editor Berita',
-        'email' => 'editor@robbani.sch.id',
+        'email' => 'editor@smpitishum.sch.id',
         'password' => 'Password123!',
         'role' => 'editor',
     ]);
 
     $response->assertRedirect('/admin/users');
     $this->assertDatabaseHas('users', [
-        'email' => 'editor@robbani.sch.id',
+        'email' => 'editor@smpitishum.sch.id',
         'role' => 'editor',
     ]);
 });
@@ -37,13 +37,13 @@ test('admin can manage users with multi roles', function () {
 test('admin can manage static profile pages with rich content', function () {
     $admin = User::create([
         'name' => 'Admin Content',
-        'email' => 'content@robbani.sch.id',
+        'email' => 'content@smpitishum.sch.id',
         'password' => Hash::make('Secret12345!'),
         'role' => 'admin',
     ]);
 
     $page = Post::create([
-        'title' => 'Visi Misi Sekolah Robbani',
+        'title' => 'Visi Misi Sekolah Ishum',
         'slug' => 'visi-misi-sekolah',
         'content' => '<p>Visi dan misi sekolah mencetak generasi Qurani.</p>',
         'type' => 'page',
@@ -52,11 +52,11 @@ test('admin can manage static profile pages with rich content', function () {
 
     $this->actingAs($admin);
 
-    $this->get('/admin/pages')->assertStatus(200)->assertSee('Visi Misi Sekolah Robbani');
+    $this->get('/admin/pages')->assertStatus(200)->assertSee('Visi Misi Sekolah Ishum');
 
     // Edit page
     $response = $this->put("/admin/pages/{$page->id}", [
-        'title' => 'Visi Misi SMA IT Plus Robbani Terbaru',
+        'title' => 'Visi Misi SMPS IT Ishlahul Ummah Terbaru',
         'content' => '<p>Konten baru yang telah diedit via WYSIWYG.</p>',
         'status' => 'publish',
     ]);
@@ -64,14 +64,14 @@ test('admin can manage static profile pages with rich content', function () {
     $response->assertRedirect('/admin/pages');
     $this->assertDatabaseHas('posts', [
         'id' => $page->id,
-        'title' => 'Visi Misi SMA IT Plus Robbani Terbaru',
+        'title' => 'Visi Misi SMPS IT Ishlahul Ummah Terbaru',
     ]);
 });
 
 test('admin can view activity and security logs and download backup', function () {
     $admin = User::create([
         'name' => 'Admin Security',
-        'email' => 'sec@robbani.sch.id',
+        'email' => 'sec@smpitishum.sch.id',
         'password' => Hash::make('Secret12345!'),
         'role' => 'admin',
     ]);
@@ -98,7 +98,7 @@ test('admin can view activity and security logs and download backup', function (
 test('admin can update seo and opengraph settings', function () {
     $admin = User::create([
         'name' => 'Admin SEO',
-        'email' => 'seo@robbani.sch.id',
+        'email' => 'seo@smpitishum.sch.id',
         'password' => Hash::make('Secret12345!'),
         'role' => 'admin',
     ]);
@@ -108,27 +108,27 @@ test('admin can update seo and opengraph settings', function () {
     $this->get('/admin/settings')->assertStatus(200)->assertSee('SEO & Social Share (OpenGraph)', false);
 
     $response = $this->post('/admin/settings', [
-        'site_name' => 'SMA IT Plus Robbani Official',
-        'og_title' => 'Official SMA IT Plus Robbani',
-        'og_description' => 'Website Resmi SMA IT Plus Robbani',
+        'site_name' => 'SMPS IT Ishlahul Ummah Official',
+        'og_title' => 'Official SMPS IT Ishlahul Ummah',
+        'og_description' => 'Website Resmi SMPS IT Ishlahul Ummah',
         'twitter_card' => 'summary_large_image',
     ]);
 
     $response->assertRedirect();
     $this->assertDatabaseHas('settings', [
         'key' => 'site_name',
-        'value' => 'SMA IT Plus Robbani Official',
+        'value' => 'SMPS IT Ishlahul Ummah Official',
     ]);
     $this->assertDatabaseHas('settings', [
         'key' => 'og_title',
-        'value' => 'Official SMA IT Plus Robbani',
+        'value' => 'Official SMPS IT Ishlahul Ummah',
     ]);
 });
 
 test('gallery displays uploaded photos on galeri page and home page', function () {
     $photo = Post::create([
-        'title' => 'Dokumentasi Wisuda Tahfidz Robbani Terkini',
-        'slug' => 'dokumentasi-wisuda-tahfidz-robbani-terkini',
+        'title' => 'Dokumentasi Wisuda Tahfidz Ishum Terkini',
+        'slug' => 'dokumentasi-wisuda-tahfidz-ishum-terkini',
         'type' => 'gallery',
         'status' => 'publish',
         'featured_image' => '/uploads/galeri/test_tahfidz.webp',
@@ -139,7 +139,7 @@ test('gallery displays uploaded photos on galeri page and home page', function (
     // Check on /galeri page
     $this->get('/galeri')
         ->assertStatus(200)
-        ->assertSee('Dokumentasi Wisuda Tahfidz Robbani Terkini')
+        ->assertSee('Dokumentasi Wisuda Tahfidz Ishum Terkini')
         ->assertSee('/uploads/galeri/test_tahfidz.webp');
 
     // Check on homepage
@@ -151,7 +151,7 @@ test('gallery displays uploaded photos on galeri page and home page', function (
 test('admin can manage bidang with rich content', function () {
     $admin = User::create([
         'name' => 'Admin Sarana',
-        'email' => 'sarana@robbani.sch.id',
+        'email' => 'sarana@smpitishum.sch.id',
         'password' => Hash::make('Secret12345!'),
         'role' => 'admin',
     ]);

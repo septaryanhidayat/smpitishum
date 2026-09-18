@@ -21,7 +21,7 @@
         {{-- Judul --}}
         <div>
             <label for="title" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Judul {{ $currentTypeTitle }} *</label>
-            <input type="text" name="title" id="title" required value="{{ old('title') }}" placeholder="Masukkan judul yang menarik..." class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+            <input type="text" name="title" id="title" required value="{{ old('title') }}" placeholder="Masukkan judul yang menarik..." class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             @error('title') <p class="text-red-500 text-[11px] mt-1">{{ $message }}</p> @enderror
         </div>
 

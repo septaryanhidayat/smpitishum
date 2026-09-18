@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO BREADCRUMB HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Layanan Publik</span>
@@ -20,7 +20,7 @@
             </div>
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Portal Layanan Terpadu</h1>
-                <p class="text-sm text-emerald-100 mt-1 font-light">
+                <p class="text-sm text-indigo-100 mt-1 font-light">
                     Satu pintu pelayanan administrasi, perizinan kunjungan resmi, dan kemitraan SMPS IT Ishum.
                 </p>
             </div>
@@ -32,13 +32,13 @@
     
     {{-- JUDUL RESMI SESUAI TAMPILAN WEB UTAMA --}}
     <div class="text-center max-w-3xl mx-auto mb-14">
-        <h2 class="text-3xl sm:text-4xl font-black text-[#00913e] tracking-tight uppercase">
+        <h2 class="text-3xl sm:text-4xl font-black text-indigo-600 tracking-tight uppercase">
             LAYANAN TERPADU
         </h2>
         <p class="text-base sm:text-lg font-bold text-[#da251c] mt-1">
             SMPS IT Ishlahul Ummah Prabumulih
         </p>
-        <div class="w-20 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
         <p class="text-xs sm:text-sm text-gray-500 mt-3 font-light">
             Pilih jenis layanan administrasi di bawah ini untuk mengajukan permohonan secara online dan terhubung langsung dengan bagian humas sekolah.
         </p>
@@ -73,13 +73,13 @@
                 </svg>
             </div>
             
-            <h3 class="font-extrabold text-[#00913e] text-lg group-hover:text-[#da251c] transition leading-snug mb-3">
+            <h3 class="font-extrabold text-indigo-600 text-lg group-hover:text-[#da251c] transition leading-snug mb-3">
                 Permohonan Izin Kunjungan ke Sekolah
             </h3>
             <p class="text-xs text-gray-500 leading-relaxed font-light mb-6">
                 Layanan pengajuan izin resmi untuk kegiatan studi banding, observasi edukatif, riset, atau kunjungan instansi kedinasan.
             </p>
-            <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-[#00913e] group-hover:text-[#da251c] transition">
+            <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-indigo-600 group-hover:text-[#da251c] transition">
                 <span>Buka Formulir</span>
                 <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition"></i>
             </span>
@@ -110,13 +110,13 @@
                 </svg>
             </div>
             
-            <h3 class="font-extrabold text-[#00913e] text-lg group-hover:text-[#da251c] transition leading-snug mb-3">
+            <h3 class="font-extrabold text-indigo-600 text-lg group-hover:text-[#da251c] transition leading-snug mb-3">
                 Permohonan Kerja Sama
             </h3>
             <p class="text-xs text-gray-500 leading-relaxed font-light mb-6">
                 Kemitraan strategis dunia industri, perguruan tinggi, lembaga dakwah, sponsorship, program beasiswa, dan instansi formal.
             </p>
-            <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-[#00913e] group-hover:text-[#da251c] transition">
+            <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-indigo-600 group-hover:text-[#da251c] transition">
                 <span>Buka Formulir</span>
                 <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition"></i>
             </span>
@@ -153,13 +153,13 @@
                 </svg>
             </div>
             
-            <h3 class="font-extrabold text-[#00913e] text-lg group-hover:text-[#da251c] transition leading-snug mb-3">
+            <h3 class="font-extrabold text-indigo-600 text-lg group-hover:text-[#da251c] transition leading-snug mb-3">
                 Permohonan Sewa Menyewa Barang Sekolah
             </h3>
             <p class="text-xs text-gray-500 leading-relaxed font-light mb-6">
                 Fasilitas Hall Serbaguna Ishum, laboratorium komputer, lapangan olahraga, audio sound system, dan tenda kegiatan sekolah.
             </p>
-            <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-[#00913e] group-hover:text-[#da251c] transition">
+            <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-indigo-600 group-hover:text-[#da251c] transition">
                 <span>Buka Formulir</span>
                 <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition"></i>
             </span>
@@ -171,16 +171,16 @@
     <div class="bg-white rounded-3xl p-8 sm:p-12 border border-gray-100 shadow-sm space-y-6">
         <div class="border-b border-gray-100 pb-4">
             <h3 class="text-xl font-bold text-gray-900 flex items-center space-x-2">
-                <i class="fa-solid fa-circle-info text-[#00913e]"></i>
+                <i class="fa-solid fa-circle-info text-indigo-600"></i>
                 <span>Ketentuan &amp; Prosedur Layanan Terpadu</span>
             </h3>
             <p class="text-xs text-gray-500 mt-1">Panduan umum dalam mengajukan permohonan layanan di SMPS IT Ishlahul Ummah Prabumulih.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-gray-600 leading-relaxed">
-            <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-100 space-y-2">
+            <div class="p-5 rounded-2xl bg-indigo-50/60/70 border border-indigo-100 space-y-2">
                 <div class="font-bold text-emerald-900 text-sm flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-[#00913e] text-white flex items-center justify-center text-xs font-extrabold">1</span>
+                    <span class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-extrabold">1</span>
                     <span>Pengisian Formulir</span>
                 </div>
                 <p>Isi formulir online secara lengkap dengan data identitas pemohon, asal instansi, tujuan kegiatan, serta lampiran surat resmi atau proposal pendukung.</p>
@@ -209,7 +209,7 @@
                 <span class="font-bold text-sm text-slate-800 block">Butuh bantuan cepat atau konfirmasi darurat?</span>
                 <span class="text-xs text-slate-500">Hubungi Hotline Humas &amp; Sekretariat SMPS IT Ishlahul Ummah Prabumulih.</span>
             </div>
-            <a href="https://wa.me/6282182680647?text=Assalamu'alaikum%20Humas%20SMA%20IT%20Ishum,%20saya%20ingin%20bertanya%20mengenai%20Layanan%20Terpadu%20Sekolah." target="_blank" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-emerald-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow transition shrink-0">
+            <a href="https://wa.me/6282182680647?text=Assalamu'alaikum%20Humas%20SMP%20IT%20Ishum,%20saya%20ingin%20bertanya%20mengenai%20Layanan%20Terpadu%20Sekolah." target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow transition shrink-0">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
                 <span>Chat WhatsApp Humas</span>
             </a>

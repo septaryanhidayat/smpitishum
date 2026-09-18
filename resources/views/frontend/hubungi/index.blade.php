@@ -5,15 +5,15 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Hubungi Kami</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Hubungi SMPS IT Ishlahul Ummah Prabumulih</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Kami siap melayani pertanyaan seputar PPDB, kurikulum tahfidz & sains, program asrama, maupun kunjungan ke kampus.
         </p>
     </div>
@@ -32,19 +32,19 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
             Silakan Hubungi Tim Humas & Layanan Sekolah Kami
         </h2>
-        <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
     {{-- 4 ICON BOXES --}}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {{-- Box 1: Phone --}}
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 hover:shadow-xl transition transform hover:-translate-y-1 space-y-4 reveal-fade-up">
-            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-[#00913e] flex items-center justify-center text-2xl shadow-inner">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center text-2xl shadow-inner">
                 <i class="fa-solid fa-phone"></i>
             </div>
             <div>
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Telepon Kantor :</span>
-                <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="text-base font-extrabold text-gray-900 hover:text-[#00913e] transition mt-1 block">
+                <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="text-base font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block">
                     {{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}
                 </a>
                 <p class="text-xs text-gray-500 mt-1">Layanan administrasi tata usaha pada jam kerja (07.30 - 16.00 WIB).</p>
@@ -58,7 +58,7 @@
             </div>
             <div>
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Email Resmi :</span>
-                <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}" class="text-sm font-extrabold text-gray-900 hover:text-[#00913e] transition mt-1 block break-all">
+                <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}" class="text-sm font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block break-all">
                     {{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}
                 </a>
                 <p class="text-xs text-gray-500 mt-1">Surat-menyurat dan permohonan informasi akademik resmi.</p>
@@ -74,12 +74,12 @@
             }
         @endphp
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 hover:shadow-xl transition transform hover:-translate-y-1 space-y-4 reveal-fade-up delay-2">
-            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl shadow-inner">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center text-2xl shadow-inner">
                 <i class="fa-brands fa-whatsapp"></i>
             </div>
             <div>
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">WhatsApp PPDB :</span>
-                <a href="https://wa.me/{{ $cleanWa }}" target="_blank" class="text-base font-extrabold text-gray-900 hover:text-[#00913e] transition mt-1 block">
+                <a href="https://wa.me/{{ $cleanWa }}" target="_blank" class="text-base font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block">
                     {{ $rawPhone }}
                 </a>
                 <p class="text-xs text-gray-500 mt-1">Konsultasi cepat PPDB dan beasiswa santri via chat.</p>
@@ -109,10 +109,10 @@
         </div>
 
         @if(session('success'))
-            <div class="mb-6 bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl">
+            <div class="mb-6 bg-indigo-50/60 border-l-4 border-emerald-500 p-4 rounded-r-xl">
                 <div class="flex items-center">
                     <i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i>
-                    <p class="text-xs font-semibold text-emerald-700">{{ session('success') }}</p>
+                    <p class="text-xs font-semibold text-indigo-700">{{ session('success') }}</p>
                 </div>
             </div>
         @endif
@@ -127,30 +127,30 @@
 
             <div>
                 <label for="nama" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Nama Lengkap Orang Tua / Siswa *</label>
-                <input type="text" name="nama" id="nama" required value="{{ old('nama') }}" placeholder="Tuliskan nama lengkap Anda..." class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] transition">
+                <input type="text" name="nama" id="nama" required value="{{ old('nama') }}" placeholder="Tuliskan nama lengkap Anda..." class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
                 @error('nama') <p class="text-red-500 text-[11px] mt-1">{{ $message }}</p> @enderror
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                     <label for="email" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Alamat Email</label>
-                    <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="nama@email.com" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] transition">
+                    <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="nama@email.com" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
                     @error('email') <p class="text-red-500 text-[11px] mt-1">{{ $message }}</p> @enderror
                 </div>
                 <div>
                     <label for="whatsapp" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Nomor WhatsApp / HP</label>
-                    <input type="text" name="whatsapp" id="whatsapp" value="{{ old('whatsapp') }}" placeholder="08xxxxxxxxxx" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] transition">
+                    <input type="text" name="whatsapp" id="whatsapp" value="{{ old('whatsapp') }}" placeholder="08xxxxxxxxxx" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
                     @error('whatsapp') <p class="text-red-500 text-[11px] mt-1">{{ $message }}</p> @enderror
                 </div>
             </div>
 
             <div>
                 <label for="saran_kritik" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Pesan / Pertanyaan PPDB *</label>
-                <textarea name="saran_kritik" id="saran_kritik" rows="5" required placeholder="Tuliskan pertanyaan atau pesan Anda dengan jelas..." class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] transition">{{ old('saran_kritik') }}</textarea>
+                <textarea name="saran_kritik" id="saran_kritik" rows="5" required placeholder="Tuliskan pertanyaan atau pesan Anda dengan jelas..." class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">{{ old('saran_kritik') }}</textarea>
                 @error('saran_kritik') <p class="text-red-500 text-[11px] mt-1">{{ $message }}</p> @enderror
             </div>
 
-            <button type="submit" class="w-full bg-[#00913e] hover:bg-emerald-800 text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2">
+            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2">
                 <i class="fa-solid fa-paper-plane text-sm"></i>
                 <span>Kirimkan Pesan Pertanyaan</span>
             </button>

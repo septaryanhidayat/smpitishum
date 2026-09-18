@@ -12,7 +12,7 @@
         <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div class="space-y-2">
                 <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/80 px-3 py-1 rounded-full text-xs text-amber-400 font-semibold">
-                    <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i>
+                    <i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i>
                     <span>Sistem Aktif & Terlindungi</span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -116,18 +116,18 @@
         </div>
 
         {{-- Card 4: Keamanan & Log (Hijau Zamrud / Emerald Luminous) --}}
-        <div class="bg-gradient-to-br from-[#059669] via-[#10b981] to-[#14b8a6] text-white rounded-3xl p-6 shadow-lg shadow-emerald-500/20 border border-emerald-300/30 relative overflow-hidden group hover:scale-[1.02] transition duration-300">
+        <div class="bg-gradient-to-br from-[#059669] via-[#10b981] to-[#14b8a6] text-white rounded-3xl p-6 shadow-lg shadow-emerald-500/20 border border-indigo-300/30 relative overflow-hidden group hover:scale-[1.02] transition duration-300">
             <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
             <div class="flex items-center justify-between mb-4 relative z-10">
-                <span class="text-xs font-bold text-emerald-100 uppercase tracking-wider">Keamanan Siber</span>
+                <span class="text-xs font-bold text-indigo-100 uppercase tracking-wider">Keamanan Siber</span>
                 <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xl shadow-inner group-hover:rotate-6 transition duration-300">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
             </div>
             <div class="text-3xl sm:text-4xl font-black text-white tracking-tight relative z-10">
-                {{ $stats['security_threats'] ?? 0 }} <span class="text-base font-medium text-emerald-200">ancaman</span>
+                {{ $stats['security_threats'] ?? 0 }} <span class="text-base font-medium text-indigo-200">ancaman</span>
             </div>
-            <div class="flex items-center space-x-2 text-xs text-emerald-100 font-semibold mt-3 relative z-10">
+            <div class="flex items-center space-x-2 text-xs text-indigo-100 font-semibold mt-3 relative z-10">
                 <i class="fa-solid fa-lock text-white"></i>
                 <span>Firewall & WAF aktif</span>
             </div>
@@ -138,8 +138,8 @@
     <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
             <div>
-                <div class="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 px-3 py-0.5 rounded-full text-xs font-bold mb-1">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <div class="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-700 px-3 py-0.5 rounded-full text-xs font-bold mb-1">
+                    <span class="w-2 h-2 rounded-full bg-indigo-50/600 animate-pulse"></span>
                     <span>Real-Time Visitor Insights</span>
                 </div>
                 <h3 class="font-black text-slate-900 text-lg">Ringkasan Analitik Pengunjung & Tren Hari Ini</h3>
@@ -168,7 +168,7 @@
                 <div class="flex flex-wrap items-center gap-3 pt-1">
                     <form action="{{ route('admin.migrate') }}" method="POST" onsubmit="return confirm('Jalankan migrasi database sekarang?');">
                         @csrf
-                        <button type="submit" class="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                        <button type="submit" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-sm cursor-pointer">
                             <i class="fa-solid fa-play text-[10px]"></i>
                             <span>Jalankan Migrasi Database Otomatis Sekarang</span>
                         </button>
@@ -295,7 +295,7 @@
                                 <img src="{{ $post->featured_image ?? '/uploads/logo-ishum-square.png' }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
                             </div>
                             <div class="min-w-0">
-                                <a href="{{ route('admin.posts.edit', $post) }}" class="font-bold text-xs sm:text-sm text-slate-800 hover:text-[#00913e] truncate block">
+                                <a href="{{ route('admin.posts.edit', $post) }}" class="font-bold text-xs sm:text-sm text-slate-800 hover:text-indigo-600 truncate block">
                                     {{ $post->title }}
                                 </a>
                                 <div class="flex items-center space-x-3 text-[11px] text-slate-400 mt-1">

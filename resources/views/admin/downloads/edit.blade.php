@@ -27,7 +27,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label for="category_type" class="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-1.5">Kategori Berkas <span class="text-red-500">*</span></label>
-                    <select name="category_type" id="category_type" required class="w-full bg-slate-50 text-xs font-semibold text-slate-900 rounded-xl px-4 py-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] transition cursor-pointer">
+                    <select name="category_type" id="category_type" required class="w-full bg-slate-50 text-xs font-semibold text-slate-900 rounded-xl px-4 py-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition cursor-pointer">
                         <option value="E-Book" {{ old('category_type', $download->category_type) === 'E-Book' ? 'selected' : '' }}>E-Book &amp; Modul Digital</option>
                         <option value="Panduan & Kurikulum" {{ old('category_type', $download->category_type) === 'Panduan & Kurikulum' ? 'selected' : '' }}>Panduan Akademik &amp; Kurikulum</option>
                         <option value="Formulir & Brosur" {{ old('category_type', $download->category_type) === 'Formulir & Brosur' ? 'selected' : '' }}>Formulir PPDB &amp; Brosur</option>
@@ -40,7 +40,7 @@
                 <div>
                     <label class="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-1.5">File Berkas Saat Ini</label>
                     <div class="flex items-center space-x-2 p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs truncate">
-                        <i class="fa-solid fa-file-circle-check text-[#00913e] shrink-0"></i>
+                        <i class="fa-solid fa-file-circle-check text-indigo-600 shrink-0"></i>
                         <a href="{{ $download->file_path }}" target="_blank" class="font-mono text-blue-600 hover:underline truncate">{{ basename($download->file_path) }}</a>
                         <span class="text-slate-400 text-[11px] shrink-0">({{ $download->file_size ?: 'File' }})</span>
                     </div>
@@ -58,9 +58,9 @@
             </div>
 
             {{-- COVER IMAGE PREVIEW & UPLOAD --}}
-            <div class="p-5 rounded-2xl bg-emerald-50/50 border border-emerald-200/80 space-y-4">
+            <div class="p-5 rounded-2xl bg-indigo-50/60/50 border border-indigo-200/80 space-y-4">
                 <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-image text-[#00913e]"></i>
+                    <i class="fa-solid fa-image text-indigo-600"></i>
                     <label for="cover_image" class="block text-xs font-bold text-slate-900 uppercase tracking-wider">
                         Cover E-Book / Dokumen (Pilih File Gambar)
                     </label>
@@ -68,7 +68,7 @@
 
                 <div class="flex flex-col sm:flex-row items-start gap-4">
                     @if(!empty($download->cover_image))
-                        <div class="w-24 h-32 rounded-xl overflow-hidden border border-emerald-200 shadow-sm shrink-0 bg-white">
+                        <div class="w-24 h-32 rounded-xl overflow-hidden border border-indigo-200 shadow-sm shrink-0 bg-white">
                             <img src="{{ asset($download->cover_image) }}" alt="Cover {{ $download->title }}" class="w-full h-full object-cover">
                         </div>
                     @endif
@@ -85,7 +85,7 @@
             {{-- DESKRIPSI --}}
             <div>
                 <label for="description" class="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-1.5">Deskripsi / Sinopsis Singkat</label>
-                <textarea name="description" id="description" rows="3" placeholder="Keterangan singkat isi materi atau modul..." class="w-full bg-slate-50 text-xs font-medium text-slate-900 rounded-xl p-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] transition">{{ old('description', $download->description) }}</textarea>
+                <textarea name="description" id="description" rows="3" placeholder="Keterangan singkat isi materi atau modul..." class="w-full bg-slate-50 text-xs font-medium text-slate-900 rounded-xl p-3 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">{{ old('description', $download->description) }}</textarea>
                 @error('description') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 

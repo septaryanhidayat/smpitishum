@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span>Akademik</span>
@@ -15,7 +15,7 @@
             <span class="text-amber-300 font-semibold">Program Unggulan</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Unggulan SMPS IT Ishlahul Ummah Prabumulih</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Kurikulum terintegrasi yang dirancang khusus untuk mengoptimalkan potensi ruhiyah, intelektual, dan kepemimpinan santri.
         </p>
     </div>
@@ -29,7 +29,7 @@
             Program Khusus Siswa Ishum
         </h2>
         <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan santri menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
-        <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -39,13 +39,13 @@
                     {{-- FOTO DOKUMENTASI PROGRAM --}}
                     <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
                         <img src="{{ $dpc->thumbnail_url }}" alt="{{ $dpc->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/tahfidz-ishum.webp'">
-                        <span class="absolute top-3.5 left-3.5 bg-[#00913e] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
+                        <span class="absolute top-3.5 left-3.5 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
                             {{ $dpc->address ?: 'Program Unggulan' }}
                         </span>
                     </div>
 
                     <div class="p-6 sm:p-7 space-y-3">
-                        <h3 class="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-[#00913e] transition leading-snug">
+                        <h3 class="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-indigo-600 transition leading-snug">
                             {{ $dpc->name }}
                         </h3>
 
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="px-6 sm:px-7 pb-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
-                    <span class="inline-flex items-center space-x-1.5 text-xs font-bold text-[#00913e]">
+                    <span class="inline-flex items-center space-x-1.5 text-xs font-bold text-indigo-600">
                         <i class="fa-solid fa-star text-amber-400 text-xs"></i>
                         <span>Unggulan Terpadu</span>
                     </span>

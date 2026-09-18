@@ -205,7 +205,7 @@
                 </a>
 
                 <a href="{{ route('download.logo') }}" class="flex items-center p-4 rounded-2xl border border-gray-200 hover:border-indigo-600 hover:bg-indigo-50/40 transition group shadow-xs">
-                    <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg mr-3.5 flex-shrink-0 group-hover:scale-105 transition">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-100 text-indigo-700 flex items-center justify-center text-lg mr-3.5 flex-shrink-0 group-hover:scale-105 transition">
                         <i class="fa-solid fa-image"></i>
                     </div>
                     <div>
@@ -300,7 +300,7 @@
                             <span>Daftar SPMB Online</span>
                         </a>
 
-                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
+                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
                             <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
                             <span>Narahubung: 0852-6990-8696</span>
                         </a>
@@ -322,7 +322,7 @@
             <div class="lg:col-span-5 reveal-fade-up delay-1">
                 <div class="max-w-sm mx-auto">
                     <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-indigo-50 bg-gradient-to-b from-indigo-50 to-blue-100 aspect-[4/5] relative">
-                        <img src="/uploads/campus-smpit-ishum.webp" alt="Kepala SMPS IT Ishlahul Ummah Prabumulih, Mulyani Rahayu, S.T., M.Pd" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
+                        <img src="/uploads/dewan/kepala-sekolah.webp" alt="Kepala SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-indigo-950/80 via-transparent to-transparent flex items-end p-5">
                             <div class="text-white text-center w-full">
                                 <span class="bg-amber-400 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Kepala Sekolah</span>
@@ -330,7 +330,7 @@
                         </div>
                     </div>
                     <p class="font-black text-gray-900 text-lg sm:text-xl text-center mt-4 tracking-tight">
-                        Mulyani Rahayu, S.T., M.Pd
+                        Anita Carlyna, S.IP., M.Pd., Gr
                     </p>
                     <p class="text-xs text-indigo-600 font-bold text-center">Kepala SMPS IT Ishlahul Ummah Prabumulih</p>
                 </div>

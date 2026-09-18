@@ -19,7 +19,7 @@
     <div class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-3">
         @foreach($typeLabels as $tKey => $tInfo)
             <a href="{{ route('admin.posts.index', ['type' => $tKey]) }}" 
-               class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl font-bold text-xs transition {{ ($type ?? 'post') === $tKey ? 'bg-[#00913e] text-white shadow-sm' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200' }}">
+               class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl font-bold text-xs transition {{ ($type ?? 'post') === $tKey ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200' }}">
                 <i class="fa-solid {{ $tInfo['icon'] }}"></i>
                 <span>{{ $tInfo['title'] }}</span>
                 <span class="ml-1.5 px-2 py-0.5 rounded-full text-[10px] {{ ($type ?? 'post') === $tKey ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600' }}">
@@ -33,10 +33,10 @@
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <form action="{{ route('admin.posts.index') }}" method="GET" class="relative w-full sm:w-80">
             <input type="hidden" name="type" value="{{ $type ?? 'post' }}">
-            <input type="text" name="q" placeholder="Cari {{ strtolower($currentMeta['singular']) }}..." value="{{ request('q') }}" class="w-full bg-white text-xs text-gray-800 rounded-xl pl-9 pr-4 py-2.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+            <input type="text" name="q" placeholder="Cari {{ strtolower($currentMeta['singular']) }}..." value="{{ request('q') }}" class="w-full bg-white text-xs text-gray-800 rounded-xl pl-9 pr-4 py-2.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400 text-xs"></i>
         </form>
-        <a href="{{ route('admin.posts.create', ['type' => $type ?? 'post']) }}" class="bg-[#00913e] hover:bg-[#007532] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow transition flex items-center space-x-2">
+        <a href="{{ route('admin.posts.create', ['type' => $type ?? 'post']) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow transition flex items-center space-x-2">
             <i class="fa-solid fa-plus"></i>
             <span>Tambah {{ $currentMeta['singular'] }} Baru</span>
         </a>
@@ -71,13 +71,13 @@
                                 </div>
                             </td>
                             <td class="py-3 px-4 font-bold text-gray-900 max-w-xs">
-                                <a href="{{ route('artikel.show', $p->slug) }}" target="_blank" class="hover:text-[#00913e] transition line-clamp-2">
+                                <a href="{{ route('artikel.show', $p->slug) }}" target="_blank" class="hover:text-indigo-600 transition line-clamp-2">
                                     {{ $p->title }}
                                 </a>
                             </td>
                             <td class="py-3 px-4">
                                 @if($p->categories->isNotEmpty())
-                                    <span class="bg-emerald-50 text-[#00913e] font-semibold px-2 py-0.5 rounded-full text-[10px]">
+                                    <span class="bg-indigo-50/60 text-indigo-600 font-semibold px-2 py-0.5 rounded-full text-[10px]">
                                         {{ $p->categories->first()->name }}
                                     </span>
                                 @else

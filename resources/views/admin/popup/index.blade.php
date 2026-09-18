@@ -23,16 +23,16 @@
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-8">
             
             {{-- SAKELAR AKTIF/NONAKTIF --}}
-            <div class="p-5 rounded-2xl {{ $popup['active'] == '1' ? 'bg-emerald-50/80 border-2 border-emerald-300' : 'bg-slate-50 border-2 border-slate-200' }} flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition">
+            <div class="p-5 rounded-2xl {{ $popup['active'] == '1' ? 'bg-indigo-50/60/80 border-2 border-indigo-300' : 'bg-slate-50 border-2 border-slate-200' }} flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition">
                 <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-2xl {{ $popup['active'] == '1' ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30' : 'bg-slate-300 text-slate-600' }} flex items-center justify-center text-xl flex-shrink-0 transition">
+                    <div class="w-12 h-12 rounded-2xl {{ $popup['active'] == '1' ? 'bg-indigo-50/600 text-white shadow-md shadow-emerald-500/30' : 'bg-slate-300 text-slate-600' }} flex items-center justify-center text-xl flex-shrink-0 transition">
                         <i class="fa-solid fa-bullhorn"></i>
                     </div>
                     <div>
                         <h4 class="font-extrabold text-slate-900 text-sm">Status Popup Banner di Halaman Beranda</h4>
                         <p class="text-xs text-slate-500 mt-0.5">
                             @if($popup['active'] == '1')
-                                <span class="text-emerald-700 font-bold"><i class="fa-solid fa-circle-check mr-1"></i> Popup Sedang AKTIF</span> &mdash; Tampil saat pengunjung membuka beranda.
+                                <span class="text-indigo-700 font-bold"><i class="fa-solid fa-circle-check mr-1"></i> Popup Sedang AKTIF</span> &mdash; Tampil saat pengunjung membuka beranda.
                             @else
                                 <span class="text-slate-500 font-semibold"><i class="fa-solid fa-circle-xmark mr-1"></i> Popup Sedang NONAKTIF</span> &mdash; Tidak akan muncul di beranda.
                             @endif
@@ -43,7 +43,7 @@
                 <div class="flex items-center space-x-3">
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" name="popup_active" value="1" {{ $popup['active'] == '1' ? 'checked' : '' }} class="sr-only peer">
-                        <div class="w-14 h-7 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[4px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#00913e]"></div>
+                        <div class="w-14 h-7 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[4px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-indigo-600"></div>
                         <span class="ml-3 text-xs font-bold text-slate-700 select-none">
                             {{ $popup['active'] == '1' ? 'Aktif' : 'Nonaktif' }}
                         </span>
@@ -70,8 +70,8 @@
                         <label for="popup_image_file" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                             Ganti Gambar Banner Baru (Choose File)
                         </label>
-                        <div class="p-4 bg-emerald-50/50 border-2 border-dashed border-emerald-300 rounded-2xl transition hover:border-[#00913e] hover:bg-emerald-50">
-                            <input type="file" name="popup_image_file" id="popup_image_file" accept="image/*" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-[#00913e] file:text-white hover:file:bg-[#007a34] file:cursor-pointer file:shadow-md transition">
+                        <div class="p-4 bg-indigo-50/60/50 border-2 border-dashed border-indigo-300 rounded-2xl transition hover:border-indigo-600 hover:bg-indigo-50/60">
+                            <input type="file" name="popup_image_file" id="popup_image_file" accept="image/*" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 file:cursor-pointer file:shadow-md transition">
                             <p class="text-[11px] text-slate-500 mt-2">Gambar otomatis dikompres dan dikonversi ke format modern WebP.</p>
                         </div>
                     </div>
@@ -79,24 +79,24 @@
                     {{-- Judul Popup --}}
                     <div>
                         <label for="popup_title" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Judul Popup Banner <span class="text-red-500">*</span></label>
-                        <input type="text" name="popup_title" id="popup_title" required value="{{ old('popup_title', $popup['title']) }}" placeholder="Contoh: Penerimaan Peserta Didik Baru (PPDB) TP 2026/2027" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="popup_title" id="popup_title" required value="{{ old('popup_title', $popup['title']) }}" placeholder="Contoh: Penerimaan Peserta Didik Baru (PPDB) TP 2026/2027" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     {{-- Subjudul Popup --}}
                     <div>
                         <label for="popup_subtitle" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Subjudul / Deskripsi Promo</label>
-                        <input type="text" name="popup_subtitle" id="popup_subtitle" value="{{ old('popup_subtitle', $popup['subtitle']) }}" placeholder="Contoh: Potongan Biaya Masuk s.d 50% - Kuota Terbatas!" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="popup_subtitle" id="popup_subtitle" value="{{ old('popup_subtitle', $popup['subtitle']) }}" placeholder="Contoh: Potongan Biaya Masuk s.d 50% - Kuota Terbatas!" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     {{-- Teks Tombol CTA & Tautan URL --}}
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label for="popup_button_text" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Teks Tombol Aksi <span class="text-red-500">*</span></label>
-                            <input type="text" name="popup_button_text" id="popup_button_text" required value="{{ old('popup_button_text', $popup['button_text']) }}" placeholder="Contoh: Daftar PPDB Sekarang" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                            <input type="text" name="popup_button_text" id="popup_button_text" required value="{{ old('popup_button_text', $popup['button_text']) }}" placeholder="Contoh: Daftar PPDB Sekarang" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                         </div>
                         <div>
                             <label for="popup_link" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tautan URL Tujuan <span class="text-red-500">*</span></label>
-                            <input type="text" name="popup_link" id="popup_link" required value="{{ old('popup_link', $popup['link']) }}" placeholder="Contoh: /ppdb atau https://..." class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                            <input type="text" name="popup_link" id="popup_link" required value="{{ old('popup_link', $popup['link']) }}" placeholder="Contoh: /ppdb atau https://..." class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
 
             {{-- ACTION BUTTONS --}}
             <div class="pt-6 border-t border-slate-100 flex items-center justify-end space-x-3">
-                <button type="submit" class="bg-[#00913e] hover:bg-[#007a34] text-white font-black text-xs sm:text-sm px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 transition cursor-pointer flex items-center space-x-2">
+                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm px-8 py-3.5 rounded-xl shadow-lg shadow-indigo-600/25 transition cursor-pointer flex items-center space-x-2">
                     <i class="fa-solid fa-floppy-disk"></i>
                     <span>Simpan Pengaturan Popup Banner</span>
                 </button>

@@ -484,7 +484,7 @@ class ImportIshumBackupCommand extends Command
                     'excerpt' => Str::limit(strip_tags($cleanContent), 160),
                     'status' => 'publish',
                     'type' => 'post',
-                    'featured_image' => $featImage ?: '/uploads/campus-robbani.jpg',
+                    'featured_image' => $featImage ?: '/uploads/campus-smpit-ishum.webp',
                     'author_id' => $authorId,
                     'published_at' => $date,
                     'meta_title' => $art['title'].' - SMPS IT Ishlahul Ummah',
@@ -524,7 +524,7 @@ class ImportIshumBackupCommand extends Command
                     'excerpt' => Str::limit(strip_tags($cleanContent), 160),
                     'status' => 'publish',
                     'type' => 'prestasi',
-                    'featured_image' => $featImage ?: '/uploads/campus-robbani.jpg',
+                    'featured_image' => $featImage ?: '/uploads/campus-smpit-ishum.webp',
                     'author_id' => $authorId,
                     'published_at' => $date,
                     'meta_title' => 'Prestasi: '.$item['title'].' - SMPS IT Ishlahul Ummah',
@@ -562,7 +562,7 @@ class ImportIshumBackupCommand extends Command
                     'excerpt' => Str::limit(strip_tags($cleanContent), 160),
                     'status' => 'publish',
                     'type' => 'ekskul',
-                    'featured_image' => $featImage ?: '/uploads/campus-robbani.jpg',
+                    'featured_image' => $featImage ?: '/uploads/campus-smpit-ishum.webp',
                     'author_id' => $authorId,
                     'published_at' => now(),
                     'meta_title' => 'Ekstrakurikuler '.$item['title'].' - SMPS IT Ishlahul Ummah',
@@ -737,7 +737,7 @@ class ImportIshumBackupCommand extends Command
                     'location' => 'Kampus SMPS IT Ishlahul Ummah Prabumulih',
                     'event_date' => $date,
                     'status' => 'publish',
-                    'featured_image' => $img ?: '/uploads/campus-robbani.jpg',
+                    'featured_image' => $img ?: '/uploads/campus-smpit-ishum.webp',
                 ]
             );
         }
@@ -761,7 +761,7 @@ class ImportIshumBackupCommand extends Command
                     'title' => $pe['title'],
                     'content' => $cleanContent,
                     'status' => 'publish',
-                    'featured_image' => $img ?: '/uploads/campus-robbani.jpg',
+                    'featured_image' => $img ?: '/uploads/campus-smpit-ishum.webp',
                 ]
             );
         }

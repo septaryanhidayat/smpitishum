@@ -50,11 +50,11 @@ class AdminBackupController extends Controller
             'status' => 'warning',
         ]);
 
-        $filename = 'robbani_school_database_backup_'.date('Y-m-d_His').'.sql';
+        $filename = 'smpitishum_database_backup_'.date('Y-m-d_His').'.sql';
 
         return response()->streamDownload(function () {
             echo "-- ==========================================================\n";
-            echo "-- SMPS IT PLUS ROBBANI - DATABASE SQL DUMP\n";
+            echo "-- SMPS IT ISHLAHUL UMMAH PRABUMULIH - DATABASE SQL DUMP\n";
             echo '-- Generated at: '.date('Y-m-d H:i:s')."\n";
             echo "-- Platform: Laravel 12 / MySQL 8 & MariaDB Compatible\n";
             echo "-- ==========================================================\n\n";

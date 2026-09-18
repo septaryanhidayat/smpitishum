@@ -39,7 +39,7 @@
                                     <div>
                                         <span>{{ $user->name }}</span>
                                         @if($user->id === auth()->id())
-                                            <span class="ml-1 text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">Akun Anda</span>
+                                            <span class="ml-1 text-[10px] bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded font-bold">Akun Anda</span>
                                         @endif
                                     </div>
                                 </div>

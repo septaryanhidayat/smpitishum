@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('download.index') }}" class="hover:text-white transition">Download</a>
@@ -15,7 +15,7 @@
             <span class="text-amber-300 font-semibold">Modul & E-Book</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">E-Book & Modul Pembelajaran Digital</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Buku panduan siswa, modul tahfidz mutqin, buku saku adab santri, dan materi suplemen sains SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
@@ -30,7 +30,7 @@
             Modul Pembelajaran &amp; Literasi Santri
         </h2>
         <p class="text-xs sm:text-sm text-gray-500 mt-1">Silakan unduh modul resmi pegangan santri dan guru untuk memperluas wawasan keislaman, sains terpadu, dan pembinaan karakter.</p>
-        <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -43,7 +43,7 @@
                              alt="{{ $eb->title }}" 
                              class="h-full w-full object-cover object-center group-hover:scale-105 transition duration-500"
                              onerror="this.src='/uploads/covers/cover-tahfidz-mutqin.webp'">
-                        <span class="absolute top-3 left-3 bg-[#00913e] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
+                        <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
                             {{ $eb->category_type ?? 'E-Book Resmi' }}
                         </span>
                         @if($eb->file_size)
@@ -67,10 +67,10 @@
                 {{-- FOOTER INFO & BUTTON DOWNLOAD --}}
                 <div class="p-6 pt-0 border-t border-gray-100 mt-2 space-y-3">
                     <div class="flex items-center justify-between text-[11px] text-gray-400 pt-3">
-                        <span><i class="fa-solid fa-school mr-1 text-[#00913e]"></i>SMPS IT Ishum</span>
+                        <span><i class="fa-solid fa-school mr-1 text-indigo-600"></i>SMPS IT Ishum</span>
                         <span><i class="fa-solid fa-download mr-1 text-amber-500"></i>{{ number_format($eb->download_count ?? 150) }} unduhan</span>
                     </div>
-                    <a href="{{ route('download.file', $eb->id) }}" class="w-full bg-[#00913e] hover:bg-emerald-800 text-white py-3 rounded-xl text-xs font-bold shadow-md transition flex items-center justify-center space-x-2">
+                    <a href="{{ route('download.file', $eb->id) }}" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl text-xs font-bold shadow-md transition flex items-center justify-center space-x-2">
                         <i class="fa-solid fa-cloud-arrow-down text-sm"></i>
                         <span>Download Modul (PDF)</span>
                     </a>

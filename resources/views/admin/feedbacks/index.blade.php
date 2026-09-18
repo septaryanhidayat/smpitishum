@@ -52,7 +52,7 @@
                                     @if($fb->status === 'unread')
                                         <form action="{{ route('admin.feedbacks.read', $fb->id) }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white text-[11px] font-semibold transition" title="Tandai Sudah Dibaca">
+                                            <button type="submit" class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white text-[11px] font-semibold transition" title="Tandai Sudah Dibaca">
                                                 <i class="fa-solid fa-check mr-1"></i> Dibaca
                                             </button>
                                         </form>

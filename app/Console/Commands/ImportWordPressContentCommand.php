@@ -238,7 +238,6 @@ class ImportWordPressContentCommand extends Command
             if ($guid) {
                 $this->urlMap[$guid] = $finalUrl;
             }
-            $this->urlMap['http://oganilir.pks.id/wp-content/uploads/'.$attachedFile] = $finalUrl;
             $this->urlMap['https://smpitishum.sch.id/wp-content/uploads/'.$attachedFile] = $finalUrl;
             $this->urlMap['/wp-content/uploads/'.$attachedFile] = $finalUrl;
 
@@ -470,8 +469,8 @@ class ImportWordPressContentCommand extends Command
                     ]
                 );
             } elseif ($type === 'dosen') {
-                // Anggota Dewan PKS
-                $jabatan = $meta['jabatan'] ?? 'Anggota Fraksi PKS DPRD OI';
+                // Guru & Tenaga Kependidikan
+                $jabatan = $meta['jabatan'] ?? 'Guru / Tenaga Kependidikan';
                 $profil = $meta['profil-singkat'] ?? $rawContent;
                 AnggotaDewan::updateOrCreate(
                     ['slug' => $slug],
@@ -568,7 +567,7 @@ class ImportWordPressContentCommand extends Command
             }
 
             if ($currentTable === 'download') {
-                // (1, 'publish', 'Logo PKS', 'PNG', 3144, 14, '2023-08-26 08:02:32', '2025-09-22 10:06:01')
+                // (1, 'publish', 'Logo Resmi', 'PNG', 3144, 14, '2023-08-26 08:02:32', '2025-09-22 10:06:01')
                 if (preg_match("/\((\d+),\s*'([^']+)',\s*'([^']+)',\s*'([^']+)',\s*(\d+)/", $line, $m)) {
                     $title = $m[3];
                     $jenis = $m[4];

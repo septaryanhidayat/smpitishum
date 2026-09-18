@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span>Profil</span>
@@ -15,7 +15,7 @@
             <span class="text-amber-300 font-semibold">Sejarah</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sejarah SMPS IT Ishlahul Ummah Prabumulih</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Jejak langkah pengabdian, dedikasi pendidik, dan perjalanan membangun peradaban pendidikan Islam terpadu di Kabupaten Prabumulih.
         </p>
     </div>
@@ -38,7 +38,7 @@
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                         Membangun Generasi Emas Ishum di Bumi Caram Seguguk
                     </h2>
-                    <div class="w-16 h-1 bg-[#00913e] rounded-full mt-3"></div>
+                    <div class="w-16 h-1 bg-indigo-600 rounded-full mt-3"></div>
                 </div>
 
                 {{-- SEJARAH LENGKAP SEKOLAH --}}
@@ -66,7 +66,7 @@
                             Kini, SMPS IT Ishlahul Ummah Prabumulih telah berkembang menjadi salah satu sekolah rujukan di Prabumulih yang menerapkan Kurikulum Merdeka yang disempurnakan dengan kurikulum kekhasan Islam Terpadu Plus, didukung oleh tenaga pendidik berkualifikasi magister dan sertifikasi pendidik profesional.
                         </p>
 
-                        <p class="font-medium text-gray-900 bg-emerald-50/80 p-5 rounded-2xl border-l-4 border-[#00913e]">
+                        <p class="font-medium text-gray-900 bg-indigo-50/60/80 p-5 rounded-2xl border-l-4 border-indigo-600">
                             Dengan memegang teguh semboyan <em>Qur'ani, Berprestasi, dan Berakhlak Mulia</em>, SMPS IT Ishlahul Ummah Prabumulih terus melangkah maju, berinovasi tanpa henti, dan bertekad mencetak calon pemimpin bangsa yang siap berkontribusi bagi kemaslahatan umat dan dunia.
                         </p>
                     @endif
@@ -81,7 +81,7 @@
             <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 reveal-fade-up">
                 <div class="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
                     <h3 class="font-extrabold text-gray-900 text-base">Kabar Sekolah</h3>
-                    <a href="{{ route('artikel.index') }}" class="text-xs font-bold text-[#00913e] hover:text-orange-500">
+                    <a href="{{ route('artikel.index') }}" class="text-xs font-bold text-indigo-600 hover:text-orange-500">
                         Lihat Semua &rarr;
                     </a>
                 </div>
@@ -93,7 +93,7 @@
                                 <img src="{{ $lp->featured_image }}" alt="{{ $lp->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-800 group-hover:text-[#00913e] transition line-clamp-2 leading-snug">
+                                <h4 class="text-xs font-bold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
                                     {{ $lp->title }}
                                 </h4>
                                 <span class="text-[11px] text-gray-400 block mt-1">
@@ -111,20 +111,20 @@
             <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 reveal-fade-up delay-1">
                 <div class="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
                     <h3 class="font-extrabold text-gray-900 text-base">Agenda Akademik</h3>
-                    <a href="{{ route('agenda.index') }}" class="text-xs font-bold text-[#00913e] hover:text-orange-500">
+                    <a href="{{ route('agenda.index') }}" class="text-xs font-bold text-indigo-600 hover:text-orange-500">
                         Lihat Semua &rarr;
                     </a>
                 </div>
 
                 <div class="space-y-4">
                     @forelse($latestAgendas ?? [] as $la)
-                        <a href="{{ route('agenda.show', $la->slug) }}" class="flex items-start space-x-3 group p-3 rounded-xl hover:bg-emerald-50/50 transition">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-[#00913e] flex flex-col items-center justify-center flex-shrink-0 font-bold text-xs">
+                        <a href="{{ route('agenda.show', $la->slug) }}" class="flex items-start space-x-3 group p-3 rounded-xl hover:bg-indigo-50/60/50 transition">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 flex flex-col items-center justify-center flex-shrink-0 font-bold text-xs">
                                 <span class="text-sm font-extrabold leading-none">{{ $la->event_date ? $la->event_date->format('d') : '01' }}</span>
-                                <span class="text-[9px] uppercase">{{ $la->event_date ? $la->event_date->translatedFormat('M') : 'SMA' }}</span>
+                                <span class="text-[9px] uppercase">{{ $la->event_date ? $la->event_date->translatedFormat('M') : 'SMP' }}</span>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-800 group-hover:text-[#00913e] transition line-clamp-2 leading-snug">
+                                <h4 class="text-xs font-bold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
                                     {{ $la->title }}
                                 </h4>
                                 <span class="text-[11px] text-gray-400 block mt-1">
@@ -139,12 +139,12 @@
             </div>
 
             {{-- CTA BANNER --}}
-            <div class="bg-gradient-to-br from-emerald-950 via-[#00913e] to-emerald-900 text-white p-6 sm:p-8 rounded-3xl shadow-xl space-y-4 text-center reveal-fade-up delay-2">
+            <div class="bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl space-y-4 text-center reveal-fade-up delay-2">
                 <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mx-auto border border-red-500/30">
                     <i class="fa-solid fa-handshake-angle"></i>
                 </div>
                 <h3 class="text-xl font-extrabold">Bergabung Bersama Kami!</h3>
-                <p class="text-xs text-emerald-100 leading-relaxed">
+                <p class="text-xs text-indigo-100 leading-relaxed">
                     Daftarkan putra-putri tercinta sekarang dan jadilah bagian dari keluarga besar SMPS IT Ishlahul Ummah Prabumulih.
                 </p>
                 <div class="pt-2">

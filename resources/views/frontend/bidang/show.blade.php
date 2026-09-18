@@ -3,9 +3,9 @@
 @section('title', $bidang->name . ' - SMPS IT Ishlahul Ummah Prabumulih')
 
 @section('content')
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('bidang.index') }}" class="hover:text-white transition">Fasilitas</a>
@@ -13,7 +13,7 @@
             <span class="text-amber-300 font-semibold">{{ $bidang->name }}</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $bidang->name }}</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light">Sarana & Prasarana SMPS IT Ishlahul Ummah Prabumulih</p>
+        <p class="text-sm text-indigo-100 mt-2 font-light">Sarana & Prasarana SMPS IT Ishlahul Ummah Prabumulih</p>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
             </div>
 
             <div class="flex items-center space-x-4 pb-6 border-b border-gray-100">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-[#00913e] flex items-center justify-center text-2xl flex-shrink-0 overflow-hidden border border-emerald-200">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center text-2xl flex-shrink-0 overflow-hidden border border-indigo-200">
                     @if(!empty($bidang->icon) && !str_starts_with($bidang->icon, 'http') && !str_starts_with($bidang->icon, '/'))
                         <i class="{{ $bidang->icon }}"></i>
                     @else
@@ -45,11 +45,11 @@
                 {!! $bidang->description !!}
             </div>
 
-            <div class="mt-8 p-6 bg-emerald-50/60 rounded-2xl border border-emerald-100 space-y-3 text-xs sm:text-sm">
+            <div class="mt-8 p-6 bg-indigo-50/60/60 rounded-2xl border border-indigo-100 space-y-3 text-xs sm:text-sm">
                 <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-2">Informasi Layanan Fasilitas</h3>
-                <p class="flex items-start"><i class="fa-solid fa-location-dot text-[#00913e] mt-1 mr-3 w-4"></i><span>{{ $bidang->address ?: 'Kompleks Sekolah SMPS IT Ishlahul Ummah Prabumulih, Prabumulih, Sumatera Selatan' }}</span></p>
-                <p class="flex items-center"><i class="fa-solid fa-phone text-[#00913e] mr-3 w-4"></i><span>{{ $bidang->phone ?: '0852-6990-8696' }}</span></p>
-                <p class="flex items-center"><i class="fa-solid fa-envelope text-[#00913e] mr-3 w-4"></i><span>{{ $bidang->email ?: 'smpitishlahulummah.2015@yahoo.com' }}</span></p>
+                <p class="flex items-start"><i class="fa-solid fa-location-dot text-indigo-600 mt-1 mr-3 w-4"></i><span>{{ $bidang->address ?: 'Kompleks Sekolah SMPS IT Ishlahul Ummah Prabumulih, Prabumulih, Sumatera Selatan' }}</span></p>
+                <p class="flex items-center"><i class="fa-solid fa-phone text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->phone ?: '0852-6990-8696' }}</span></p>
+                <p class="flex items-center"><i class="fa-solid fa-envelope text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->email ?: 'smpitishlahulummah.2015@yahoo.com' }}</span></p>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
                 <ul class="space-y-3 text-xs">
                     @foreach($otherBidangs as $oB)
                         <li>
-                            <a href="{{ route('bidang.show', $oB->slug) }}" class="flex items-center py-2 px-3 rounded-xl hover:bg-emerald-50 hover:text-[#00913e] text-gray-700 transition">
+                            <a href="{{ route('bidang.show', $oB->slug) }}" class="flex items-center py-2 px-3 rounded-xl hover:bg-indigo-50/60 hover:text-indigo-600 text-gray-700 transition">
                                 <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-gray-400"></i>
                                 <span class="font-medium">{{ $oB->name }}</span>
                             </a>

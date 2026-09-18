@@ -71,7 +71,7 @@
                     <a href="{{ $siteSettings['social_youtube'] ?? 'https://www.youtube.com/@smpitishlahulummahprabumul6398' }}" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-red-600 hover:scale-110 transition shadow" aria-label="Kunjungi YouTube SMPS IT Ishlahul Ummah Prabumulih">
                         <i class="fa-brands fa-youtube text-base" aria-hidden="true"></i>
                     </a>
-                    <a href="https://wa.me/6285269908696" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-emerald-600 hover:scale-110 transition shadow" aria-label="Hubungi WhatsApp SMPS IT Ishlahul Ummah Prabumulih">
+                    <a href="https://wa.me/6285269908696" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-indigo-600 hover:scale-110 transition shadow" aria-label="Hubungi WhatsApp SMPS IT Ishlahul Ummah Prabumulih">
                         <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
                     </a>
                 </div>

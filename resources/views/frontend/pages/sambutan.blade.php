@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', 'Sambutan Kepala Sekolah - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Mulyani Rahayu, S.T., M.Pd.')
+@section('meta_description', 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,7 +12,7 @@
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
-            <span class="text-[#ef4444] font-semibold">Sambutan Kepala Sekolah</span>
+            <span class="text-amber-400 font-bold">Sambutan Kepala Sekolah</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sambutan Kepala Sekolah</h1>
         <p class="text-sm text-gray-200 mt-2 font-light">
@@ -24,24 +24,24 @@
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-100 reveal-fade-up">
         @php
-            $kepsekPhoto = $kepsek?->photo ?: '/uploads/2022/11/img-20240928-220852-scaled.webp';
-            $kepsekName = $kepsek?->name ?: 'Mulyani Rahayu, S.T., M.Pd';
+            $kepsekPhoto = $kepsek?->photo ?: '/uploads/dewan/kepala-sekolah.webp';
+            $kepsekName = $kepsek?->name ?: 'Anita Carlyna, S.IP., M.Pd., Gr';
             $kepsekPos = $kepsek?->position ?: 'Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih';
         @endphp
 
         {{-- PROFIL PIMPINAN HEADER --}}
         <div class="flex flex-col md:flex-row items-center gap-8 mb-8 pb-8 border-b border-gray-100 text-center md:text-left">
-            <div class="w-48 h-56 sm:w-52 sm:h-60 rounded-2xl overflow-hidden shadow-lg border-4 border-white ring-4 ring-green-100 flex-shrink-0 bg-green-50 mx-auto md:mx-0">
+            <div class="w-48 h-56 sm:w-52 sm:h-60 rounded-2xl overflow-hidden shadow-lg border-4 border-white ring-4 ring-indigo-100 flex-shrink-0 bg-indigo-50 mx-auto md:mx-0">
                 <img src="{{ asset($kepsekPhoto) }}" alt="{{ $kepsekName }} - {{ $kepsekPos }}" class="w-full h-full object-cover object-top" onerror="this.src='/uploads/logo-ishum-square.png'">
             </div>
             <div class="space-y-2 text-center md:text-left">
-                <span class="inline-block bg-green-100 text-[#00913e] text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
                     {{ $kepsekPos }}
                 </span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
                     {{ $kepsekName }}
                 </h2>
-                <p class="text-xs sm:text-sm text-[#00913e] font-semibold">Pendidik Berpengalaman &amp; Praktisi Pendidikan Karakter Islami</p>
+                <p class="text-xs sm:text-sm text-indigo-600 font-semibold">Pendidik Berpengalaman &amp; Praktisi Pendidikan Karakter Islami</p>
                 <p class="text-xs sm:text-sm text-gray-600 italic pt-1">"Membina Generasi Qur'ani, Berakhlak Mulia, Cerdas, dan Siap Memimpin Peradaban Masa Depan."</p>
             </div>
         </div>
@@ -70,7 +70,7 @@
                         <h3 class="font-bold text-gray-900 text-base">{{ strtoupper($kepsekName) }}</h3>
                         <p class="text-xs text-gray-500">{{ $kepsekPos }}</p>
                     </div>
-                    <div class="inline-flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-xl text-xs text-[#00913e] border border-green-200">
+                    <div class="inline-flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-xl text-xs text-indigo-600 border border-green-200">
                         <i class="fa-solid fa-certificate text-[#da251c]"></i>
                         <span>Akreditasi A Unggul</span>
                     </div>
@@ -78,18 +78,18 @@
             @endif
         </div>
 
-        {{-- CTA DAFTAR PPDB --}}
-        <div class="mt-10 pt-8 border-t border-gray-100 bg-gradient-to-r from-[#00913e] via-[#05a849] to-[#b91c1c] rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+        {{-- CTA DAFTAR SPMB --}}
+        <div class="mt-10 pt-8 border-t border-gray-100 bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-900 rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl border border-indigo-500/30">
             <div>
-                <h4 class="text-xl font-extrabold">Pendaftaran Peserta Didik Baru (PPDB)</h4>
-                <p class="text-xs sm:text-sm text-green-100 mt-1">Mari bergabung bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Gelombang pendaftaran siswa baru telah dibuka.</p>
+                <h4 class="text-xl font-extrabold text-white">Pendaftaran Santri Baru (SPMB Online)</h4>
+                <p class="text-xs sm:text-sm text-indigo-200 mt-1">Mari bergabung bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Gelombang exclusive kuota terbatas telah dibuka.</p>
             </div>
             <div class="flex flex-wrap gap-3 flex-shrink-0">
-                <a href="{{ route('ppdb.index') }}" class="bg-white text-[#00913e] hover:bg-red-50 px-5 py-2.5 rounded-xl font-bold text-xs shadow transition flex items-center">
-                    <i class="fa-solid fa-graduation-cap mr-1.5 text-[#da251c]"></i> Daftar PPDB Online
+                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-6 py-2.5 rounded-xl font-black text-xs shadow-lg transition flex items-center transform hover:scale-105">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> Daftar SPMB Online
                 </a>
-                <a href="{{ route('hubungi') }}" class="bg-black/30 hover:bg-black/40 text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow transition flex items-center">
-                    <i class="fa-solid fa-phone mr-1.5"></i> Hubungi Kami
+                <a href="{{ route('hubungi') }}" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-xl font-bold text-xs shadow transition flex items-center">
+                    <i class="fa-solid fa-phone mr-1.5 text-amber-400"></i> Hubungi Kami
                 </a>
             </div>
         </div>

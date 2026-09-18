@@ -4,17 +4,17 @@
 @section('meta_description', 'Penerimaan Peserta Didik Baru (PPDB/SPMB) SMPS IT Ishlahul Ummah Prabumulih Tahun Pelajaran ' . ($settings['year'] ?? '2026/2027') . '. Informasi alur, syarat, jadwal, biaya, dan formulir pendaftaran online.')
 
 @section('content')
-<div class="bg-gradient-to-b from-emerald-50/50 via-white to-gray-50 py-10">
+<div class="bg-gradient-to-b from-indigo-50/40 via-white to-slate-50 py-10">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {{-- HEADER BRAND & HERO TITLE --}}
         <div class="text-center space-y-4 reveal-fade-up">
-            <div class="inline-block p-2.5 bg-white rounded-3xl shadow-md border border-emerald-100">
+            <div class="inline-block p-2.5 bg-white rounded-3xl shadow-md border border-indigo-100">
                 <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah" class="h-24 sm:h-28 w-auto object-contain mx-auto">
             </div>
             <div>
-                <div class="inline-flex items-center space-x-2 bg-emerald-100 text-[#00913e] px-4 py-1.5 rounded-full text-xs font-black mb-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                <div class="inline-flex items-center space-x-2 bg-emerald-100 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-black mb-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 animate-pulse"></span>
                     <span>Pendaftaran Santri Baru Telah Dibuka</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight uppercase">
@@ -49,7 +49,7 @@
                         $cleanHotline = '62' . substr($cleanHotline, 1);
                     }
                 @endphp
-                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#007532] text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
+                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>Hotline WhatsApp ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </a>
@@ -58,9 +58,9 @@
 
         {{-- VIDEO PROFILE RESMI SMPS IT ISHLAHUL UMMAH EMBED --}}
         @if(!empty($settings['youtube_id']))
-            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-100 reveal-fade-up">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-indigo-100 reveal-fade-up">
                 <div class="text-center max-w-2xl mx-auto mb-6">
-                    <span class="text-xs font-black uppercase tracking-widest text-[#00913e] bg-emerald-50 px-3 py-1 rounded-full">
+                    <span class="text-xs font-black uppercase tracking-widest text-indigo-600 bg-indigo-50/60 px-3 py-1 rounded-full">
                         <i class="fa-solid fa-play-circle mr-1"></i> Profil Sekolah
                     </span>
                     <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">Mengenal SMPS IT Ishlahul Ummah Prabumulih</h2>
@@ -90,24 +90,24 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {{-- Jam Operasional --}}
-            <div class="bg-white border-2 border-emerald-300 rounded-3xl p-6 sm:p-7 shadow-sm flex flex-col justify-between">
+            <div class="bg-white border-2 border-indigo-300 rounded-3xl p-6 sm:p-7 shadow-sm flex flex-col justify-between">
                 <div class="space-y-2">
-                    <span class="inline-block bg-emerald-700 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    <span class="inline-block bg-indigo-700 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
                         Layanan Terpadu
                     </span>
                     <h3 class="text-lg sm:text-xl font-black text-slate-950 tracking-tight uppercase">
                         JAM OPERASIONAL SPMB
                     </h3>
-                    <p class="text-xs font-bold text-[#00913e]">
+                    <p class="text-xs font-bold text-indigo-600">
                         Tersedia Layanan Konsultasi Offline &amp; Online
                     </p>
                     <ul class="text-xs text-slate-900 font-medium space-y-2 pt-2">
                         <li class="flex items-center space-x-2">
-                            <i class="fa-regular fa-clock text-[#00913e] font-bold"></i>
+                            <i class="fa-regular fa-clock text-indigo-600 font-bold"></i>
                             <span>{{ $settings['operational_weekday'] ?? "Senin – Jum'at: Pukul 08.00 – 15.00 WIB" }}</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <i class="fa-regular fa-clock text-[#00913e] font-bold"></i>
+                            <i class="fa-regular fa-clock text-indigo-600 font-bold"></i>
                             <span>{{ $settings['operational_weekend'] ?? 'Sabtu: Pukul 08.00 – 12.00 WIB' }}</span>
                         </li>
                         <li class="flex items-center space-x-2">
@@ -117,13 +117,13 @@
                     </ul>
                 </div>
                 <div class="pt-4 mt-4 border-t border-slate-200">
-                    <p class="text-xs text-slate-700 font-bold">* Biaya Formulir Pendaftaran: <strong class="text-[#00913e]">{{ $settings['registration_fee'] ?? 'Rp 250.000,-' }}</strong></p>
+                    <p class="text-xs text-slate-700 font-bold">* Biaya Formulir Pendaftaran: <strong class="text-indigo-600">{{ $settings['registration_fee'] ?? 'Rp 250.000,-' }}</strong></p>
                 </div>
             </div>
 
             {{-- Rekening Resmi Pembayaran Formulir --}}
-            <div class="bg-gradient-to-br from-[#064e3b] via-[#043d2e] to-[#022c22] text-white rounded-3xl p-6 sm:p-7 shadow-xl border-2 border-emerald-500/50 flex flex-col justify-between relative overflow-hidden" x-data="{ copied: false }">
-                <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-950 text-white rounded-3xl p-6 sm:p-7 shadow-xl border-2 border-indigo-500/30 flex flex-col justify-between relative overflow-hidden" x-data="{ copied: false }">
+                <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
                 <div class="space-y-3.5 relative z-10">
                     <div class="flex items-center justify-between">
                         <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
@@ -139,7 +139,7 @@
                     </h3>
                     <div class="bg-black/35 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-emerald-400/30 space-y-2">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs text-emerald-100 font-extrabold uppercase tracking-wider">Nomor Rekening:</span>
+                            <span class="text-xs text-indigo-100 font-extrabold uppercase tracking-wider">Nomor Rekening:</span>
                             <span class="text-xs text-amber-300 font-black bg-emerald-900/80 px-2.5 py-0.5 rounded-lg border border-emerald-500/40">
                                 Kode Bank: {{ $settings['bank_code'] ?? '451' }}
                             </span>
@@ -147,7 +147,7 @@
                         <div class="text-3xl sm:text-4xl font-black text-amber-300 font-mono tracking-wider drop-shadow-md">
                             {{ $settings['bank_account'] ?? '7011304251' }}
                         </div>
-                        <div class="text-xs text-emerald-100 font-medium pt-1 flex items-center justify-between border-t border-white/10">
+                        <div class="text-xs text-indigo-100 font-medium pt-1 flex items-center justify-between border-t border-white/10">
                             <span>Atas Nama:</span>
                             <strong class="text-white font-black text-sm uppercase">{{ $settings['bank_holder'] ?? 'YL. Fatmawati' }}</strong>
                         </div>
@@ -157,7 +157,7 @@
                 <div class="pt-4 mt-3 relative z-10 flex items-center justify-between gap-3">
                     <button 
                         @click="navigator.clipboard.writeText('{{ $settings['bank_account'] ?? '7011304251' }}'); copied = true; setTimeout(() => copied = false, 2500)"
-                        class="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-950/40 cursor-pointer flex-shrink-0">
+                        class="inline-flex items-center space-x-2 bg-indigo-50/600 hover:bg-emerald-400 text-slate-950 text-xs font-black px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-950/40 cursor-pointer flex-shrink-0">
                         <i class="fa-regular" :class="copied ? 'fa-check' : 'fa-copy'"></i>
                         <span x-text="copied ? 'Nomor Tersalin!' : 'Salin Nomor Rekening'"></span>
                     </button>
@@ -177,12 +177,12 @@
             <div class="space-y-3">
                 
                 {{-- 1. Alur Pendaftaran --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 1 ? null : 1)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeLeft = (activeLeft === 1 ? null : 1)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>1. Alur Pendaftaran</span>
                         <i class="fa-solid" :class="activeLeft === 1 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeLeft === 1" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2.5 bg-white border-t border-emerald-100 leading-relaxed">
+                    <div x-show="activeLeft === 1" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2.5 bg-white border-t border-indigo-100 leading-relaxed">
                         @php
                             $linesAlur = array_values(array_filter(array_map('trim', explode("\n", (string) ($settings['alur'] ?? '')))));
                         @endphp
@@ -199,12 +199,12 @@
                 </div>
 
                 {{-- 2. Syarat Pendaftaran --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 2 ? null : 2)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeLeft = (activeLeft === 2 ? null : 2)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>2. Syarat Pendaftaran</span>
                         <i class="fa-solid" :class="activeLeft === 2 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeLeft === 2" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed">
+                    <div x-show="activeLeft === 2" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed">
                         @php
                             $linesSyarat = array_values(array_filter(array_map('trim', explode("\n", (string) ($settings['syarat'] ?? '')))));
                         @endphp
@@ -221,39 +221,39 @@
                 </div>
 
                 {{-- 3. Jalur Prestasi --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 3 ? null : 3)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeLeft = (activeLeft === 3 ? null : 3)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>3. Jalur Prestasi &amp; Keringanan</span>
                         <i class="fa-solid" :class="activeLeft === 3 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeLeft === 3" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['prestasi'] ?? '-' }}</div>
+                    <div x-show="activeLeft === 3" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['prestasi'] ?? '-' }}</div>
                 </div>
 
                 {{-- 4. Jalur Hafizh Al-Qur'an --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 4 ? null : 4)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeLeft = (activeLeft === 4 ? null : 4)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>4. Jalur Hafizh Al-Qur'an (Tahfidz)</span>
                         <i class="fa-solid" :class="activeLeft === 4 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeLeft === 4" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['tahfidz'] ?? '-' }}</div>
+                    <div x-show="activeLeft === 4" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['tahfidz'] ?? '-' }}</div>
                 </div>
 
                 {{-- 5. Jalur Alumni SMPIT Ishum --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 5 ? null : 5)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeLeft = (activeLeft === 5 ? null : 5)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>5. Jalur Alumni SMPIT Ishum</span>
                         <i class="fa-solid" :class="activeLeft === 5 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeLeft === 5" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['alumni'] ?? '-' }}</div>
+                    <div x-show="activeLeft === 5" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['alumni'] ?? '-' }}</div>
                 </div>
 
                 {{-- 6. Jalur Tes Mandiri --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 6 ? null : 6)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeLeft = (activeLeft === 6 ? null : 6)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>6. Jalur Reguler / Tes Mandiri</span>
                         <i class="fa-solid" :class="activeLeft === 6 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeLeft === 6" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['mandiri'] ?? '-' }}</div>
+                    <div x-show="activeLeft === 6" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['mandiri'] ?? '-' }}</div>
                 </div>
 
             </div>
@@ -262,39 +262,39 @@
             <div class="space-y-3">
                 
                 {{-- 7. Jadwal Gelombang PPDB --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeRight = (activeRight === 1 ? null : 1)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeRight = (activeRight === 1 ? null : 1)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>1. Jadwal Gelombang PPDB</span>
                         <i class="fa-solid" :class="activeRight === 1 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeRight === 1" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2.5 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['jadwal_gelombang'] ?? '-' }}</div>
+                    <div x-show="activeRight === 1" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2.5 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['jadwal_gelombang'] ?? '-' }}</div>
                 </div>
 
                 {{-- 8. Rincian Biaya --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeRight = (activeRight === 2 ? null : 2)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeRight = (activeRight === 2 ? null : 2)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>2. Rincian Biaya &amp; Fasilitas Seragam</span>
                         <i class="fa-solid" :class="activeRight === 2 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeRight === 2" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['biaya'] ?? '-' }}</div>
+                    <div x-show="activeRight === 2" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['biaya'] ?? '-' }}</div>
                 </div>
 
                 {{-- 9. Pilihan Program --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeRight = (activeRight === 3 ? null : 3)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeRight = (activeRight === 3 ? null : 3)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>3. Pilihan Program: Boarding (Asrama) &amp; Full Day</span>
                         <i class="fa-solid" :class="activeRight === 3 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeRight === 3" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['boarding'] ?? '-' }}</div>
+                    <div x-show="activeRight === 3" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['boarding'] ?? '-' }}</div>
                 </div>
 
                 {{-- 10. Pengumuman Kelulusan --}}
-                <div class="rounded-2xl border border-emerald-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeRight = (activeRight === 4 ? null : 4)" class="w-full bg-[#00913e] text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                    <button @click="activeRight = (activeRight === 4 ? null : 4)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
                         <span>4. Pengumuman Kelulusan &amp; Daftar Ulang</span>
                         <i class="fa-solid" :class="activeRight === 4 ? 'fa-minus' : 'fa-plus'"></i>
                     </button>
-                    <div x-show="activeRight === 4" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-emerald-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['kelulusan'] ?? '-' }}</div>
+                    <div x-show="activeRight === 4" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['kelulusan'] ?? '-' }}</div>
                 </div>
 
             </div>
@@ -305,13 +305,13 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
             
             {{-- Card 1: Formulir Pendaftaran --}}
-            <a href="{{ route('ppdb.form') }}" class="group bg-white p-8 rounded-3xl border-2 border-emerald-200 hover:border-[#00913e] shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
+            <a href="{{ route('ppdb.form') }}" class="group bg-white p-8 rounded-3xl border-2 border-indigo-200 hover:border-indigo-600 shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
                 <div class="space-y-4">
                     <div class="w-20 h-20 mx-auto rounded-3xl bg-red-50 text-[#da251c] flex items-center justify-center text-4xl shadow-xs group-hover:scale-110 transition duration-300">
                         <i class="fa-solid fa-clipboard-list"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-black text-slate-950 group-hover:text-[#00913e] transition">
+                        <h3 class="text-xl font-black text-slate-950 group-hover:text-indigo-600 transition">
                             Formulir Pendaftaran Online
                         </h3>
                         <p class="text-xs text-slate-700 font-medium mt-2 leading-relaxed">
@@ -332,13 +332,13 @@
                     $cleanHotline2 = '62' . substr($cleanHotline2, 1);
                 }
             @endphp
-            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin berkonsultasi mengenai pendaftaran santri baru.') }}" target="_blank" class="group bg-white p-8 rounded-3xl border-2 border-emerald-200 hover:border-[#00913e] shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
+            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin berkonsultasi mengenai pendaftaran santri baru.') }}" target="_blank" class="group bg-white p-8 rounded-3xl border-2 border-indigo-200 hover:border-indigo-600 shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
                 <div class="space-y-4">
-                    <div class="w-20 h-20 mx-auto rounded-3xl bg-green-50 text-[#00913e] flex items-center justify-center text-4xl shadow-xs group-hover:scale-110 transition duration-300">
+                    <div class="w-20 h-20 mx-auto rounded-3xl bg-green-50 text-indigo-600 flex items-center justify-center text-4xl shadow-xs group-hover:scale-110 transition duration-300">
                         <i class="fa-brands fa-whatsapp text-4xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-black text-slate-950 group-hover:text-[#00913e] transition">
+                        <h3 class="text-xl font-black text-slate-950 group-hover:text-indigo-600 transition">
                             Konsultasi via WhatsApp
                         </h3>
                         <p class="text-xs text-slate-700 font-medium mt-2 leading-relaxed">
@@ -349,7 +349,7 @@
                         </p>
                     </div>
                 </div>
-                <span class="mt-6 inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#007532] text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
+                <span class="mt-6 inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
                     <i class="fa-brands fa-whatsapp text-base"></i>
                     <span>Chat WhatsApp Panitia ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </span>
@@ -363,7 +363,7 @@
                 <h3 class="text-xl sm:text-2xl font-black text-[#da251c] tracking-tight">
                     {{ $settings['closing_title'] ?? 'Terima Kasih Sudah Mendaftar di SMPS IT Ishlahul Ummah Prabumulih' }}
                 </h3>
-                <p class="text-xs sm:text-sm font-semibold text-[#00913e] mt-2 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-xs sm:text-sm font-semibold text-indigo-600 mt-2 max-w-2xl mx-auto leading-relaxed">
                     {{ $settings['closing_desc'] ?? 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin' }}
                 </p>
             </div>
@@ -385,7 +385,7 @@
                 <p class="text-xs font-black text-slate-800 uppercase tracking-widest">
                     Mendidik Sepenuh Cinta
                 </p>
-                <div class="mt-2 text-xs font-extrabold text-[#00913e] tracking-wider uppercase">
+                <div class="mt-2 text-xs font-extrabold text-indigo-600 tracking-wider uppercase">
                     SMPS IT Ishlahul Ummah Prabumulih &bull; Anggota JSIT Indonesia
                 </div>
             </div>

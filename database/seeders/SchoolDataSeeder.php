@@ -54,7 +54,7 @@ class SchoolDataSeeder extends Seeder
             'no_sk_akreditasi' => '1036/BAN-SM/SK/2021',
             'sk_pendirian' => '2.16.72.04.001',
             'sk_izin' => '0876/DPMPTSP.V/IX/2023',
-            'kepala_sekolah' => 'Mulyani Rahayu, S.T., M.Pd',
+            'kepala_sekolah' => 'Anita Carlyna, S.IP., M.Pd., Gr',
             'spmb_promo_title' => 'SPMB Gelombang Exclusive',
             'spmb_promo_cashback' => 'Cash Back 1 Juta',
             'spmb_promo_quota' => '24 Siswa per Kelas',
@@ -97,13 +97,13 @@ class SchoolDataSeeder extends Seeder
         AnggotaDewan::truncate();
         $gurus = $data['gurus'] ?? [
             [
-                'name' => 'Mulyani Rahayu, S.T., M.Pd',
-                'slug' => 'mulyani-rahayu-st-mpd',
+                'name' => 'Anita Carlyna, S.IP., M.Pd., Gr',
+                'slug' => 'anita-carlyna-sip-mpd-gr',
                 'position' => 'Kepala Sekolah',
                 'fraction' => 'Pimpinan Sekolah',
-                'photo' => '/uploads/campus-smpit-ishum.webp',
+                'photo' => '/uploads/dewan/kepala-sekolah.webp',
                 'profile_summary' => 'Kepala SMPS IT Ishlahul Ummah Prabumulih. Berkomitmen mendidik generasi Qur\'ani yang cerdas, berakhlak mulia, dan berprestasi global.',
-                'education' => 'S1 Teknik, S2 Manajemen Pendidikan',
+                'education' => 'S1 Ilmu Administrasi Negara, S2 Manajemen Pendidikan, Gr',
                 'order' => 1,
             ],
         ];
@@ -299,8 +299,8 @@ class SchoolDataSeeder extends Seeder
                 'download_count' => 312,
             ],
             [
-                'title' => 'Panduan Sukses Asesmen Nasional & Masuk SMA/MA Unggulan Favorit',
-                'description' => 'Strategi sukses menembus SMA/MA favorit impian, pembedahan materi literasi dan numerasi Asesmen Nasional.',
+                'title' => 'Panduan Sukses Asesmen Nasional & Masuk Sekolah Lanjutan Unggulan Favorit',
+                'description' => 'Strategi sukses menembus sekolah lanjutan favorit impian, pembedahan materi literasi dan numerasi Asesmen Nasional.',
                 'category_type' => 'E-Book',
                 'file_path' => '/uploads/downloads/panduan-sukses-snbt-ptn.pdf',
                 'cover_image' => '/uploads/covers/cover-sukses-snbt.webp',
@@ -362,8 +362,8 @@ class SchoolDataSeeder extends Seeder
             [
                 'slug' => 'sambutan-kepala-sekolah',
                 'title' => 'Sambutan Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Mulyani Rahayu, S.T., M.Pd.',
-                'featured_image' => '/uploads/campus-smpit-ishum.webp',
+                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr.',
+                'featured_image' => '/uploads/dewan/kepala-sekolah.webp',
                 'content' => <<<'HTML'
 <p><strong>Bismillahirrohmanirrohim. Assalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
 <p>Segala puji dan syukur kita panjatkan kehadirat Allah SWT yang senantiasa melimpahkan rahmat, taufik, dan inayah-Nya kepada kita semua. Sholawat beriring salam senantiasa tercurah kepada junjungan alam Nabi Besar Muhammad SAW, para keluarga, sahabat, dan pengikutnya hingga akhir zaman.</p>
@@ -372,7 +372,7 @@ class SchoolDataSeeder extends Seeder
 <p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada Pembina dan Pengurus Yayasan Ishlahul Ummah, seluruh asatidz dan asatidzah, staf kependidikan, serta para wali santri yang senantiasa membersamai langkah kami dalam mendidik generasi terbaik umat. Mari bersama-sama kita wujudkan anak-anak yang sholih-sholihah, cerdas, berprestasi, dan berakhlakul karimah.</p>
 <p><em>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</em></p>
 <p><strong>Kepala SMPS IT Ishlahul Ummah Prabumulih</strong><br>
-<strong>Mulyani Rahayu, S.T., M.Pd</strong></p>
+<strong>Anita Carlyna, S.IP., M.Pd., Gr</strong></p>
 HTML,
             ],
             [
@@ -401,7 +401,7 @@ HTML,
     <li>Mencapai target hafalan minimal 2 juz Al-Qur'an (Juz 29 dan Juz 30) dengan tajwid tartil.</li>
     <li>Menghasilkan peserta didik yang berkarakter mandiri, santun, berpikir kritis, dan adaptif terhadap teknologi.</li>
     <li>Meraih prestasi gemilang dalam kompetisi sains, keolahragaan, seni Islam, dan baris-berbaris.</li>
-    <li>Mempersiapkan santri melanjutkan ke jenjang SMA/MA/Pesantren unggulan dengan bekal ilmu dan iman yang kokoh.</li>
+    <li>Mempersiapkan santri melanjutkan ke jenjang lanjutan/MA/Pesantren unggulan dengan bekal ilmu dan iman yang kokoh.</li>
 </ul>
 HTML,
             ],
@@ -421,8 +421,8 @@ HTML,
     <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">NPSN</td><td class="py-2.5 text-gray-700">69787455</td></tr>
     <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Bentuk Pendidikan</td><td class="py-2.5 text-gray-700">SMP (Sekolah Menengah Pertama)</td></tr>
     <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Status Sekolah</td><td class="py-2.5 text-gray-700">Swasta (Yayasan Ishlahul Ummah)</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Akreditasi</td><td class="py-2.5 text-gray-700"><span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">TERAKREDITASI B</span></td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Kepala Sekolah</td><td class="py-2.5 text-gray-700">Mulyani Rahayu, S.T., M.Pd</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Akreditasi</td><td class="py-2.5 text-gray-700"><span class="inline-block px-2.5 py-0.5 rounded-full bg-indigo-100 text-school-primary font-bold text-xs">TERAKREDITASI B</span></td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Kepala Sekolah</td><td class="py-2.5 text-gray-700">Anita Carlyna, S.IP., M.Pd., Gr</td></tr>
     <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Alamat Kampus</td><td class="py-2.5 text-gray-700">Jl. Sadewa No. 45 RT 01 RW 04, Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31113</td></tr>
     <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Telepon / WhatsApp</td><td class="py-2.5 text-gray-700">0852-6990-8696 / 0853-7897-4396</td></tr>
     <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Email Resmi</td><td class="py-2.5 text-gray-700">smpitishlahulummah.2015@yahoo.com</td></tr>
@@ -438,7 +438,7 @@ HTML,
 <h3>Sejarah dan Latar Belakang Pendirian</h3>
 <p><strong>SMPS IT Ishlahul Ummah Prabumulih</strong> didirikan di bawah naungan <strong>Yayasan Ishlahul Ummah Prabumulih</strong> sebagai wujud kepedulian terhadap pentingnya pendidikan generasi muda Islam yang seimbang antara ilmu pengetahuan umum dan pemahaman agama yang mendalam.</p>
 <p>Berawal dari kesuksesan pembinaan di tingkat sekolah dasar (SDIT Ishlahul Ummah), masyarakat dan para wali santri mendambakan kelanjutan pendidikan tingkat pertama yang tetap mengusung nilai-nilai Qur'ani dan pembiasaan adab Islami. Maka berdirilah SMPS IT Ishlahul Ummah Prabumulih untuk melayani kebutuhan masyarakat Prabumulih dan sekitarnya.</p>
-<p>Di bawah kepemimpinan <strong>Ibu Mulyani Rahayu, S.T., M.Pd</strong> beserta jajaran dewan guru yang amanah dan kompeten, SMPS IT Ishlahul Ummah terus berinovasi dalam metode pembelajaran, sarana prasarana modern, pembinaan tahfidz 2 juz mutqin, serta prestasi siswa di berbagai ajang kejuaraan daerah dan nasional.</p>
+<p>Di bawah kepemimpinan <strong>Ibu Anita Carlyna, S.IP., M.Pd., Gr</strong> beserta jajaran dewan guru yang amanah dan kompeten, SMPS IT Ishlahul Ummah terus berinovasi dalam metode pembelajaran, sarana prasarana modern, pembinaan tahfidz 2 juz mutqin, serta prestasi siswa di berbagai ajang kejuaraan daerah dan nasional.</p>
 HTML,
             ],
             [
@@ -450,11 +450,11 @@ HTML,
 <h3>Struktur Manajemen Sekolah & Yayasan</h3>
 <ul class="space-y-3 text-gray-800">
     <li><strong>Yayasan Penyelenggara:</strong> Yayasan Ishlahul Ummah Prabumulih</li>
-    <li><strong>Kepala Sekolah:</strong> Mulyani Rahayu, S.T., M.Pd</li>
-    <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> Anita Carlyna, S.IP., M.Pd</li>
+    <li><strong>Kepala Sekolah:</strong> Anita Carlyna, S.IP., M.Pd., Gr</li>
+    <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> Sesiana Giovani Lestari, S.Pd</li>
     <li><strong>Koordinator Bidang Kesiswaan & Ekskul:</strong> Ahmad Fauzan, S.Pd.I</li>
     <li><strong>Koordinator Tahsin & Tahfidz Al-Qur'an (TTQ):</strong> Helen Azmi, S.Pd</li>
-    <li><strong>Koordinator BPI & Bina Karakter:</strong> Sesiana Giovani Lestari, S.Pd</li>
+    <li><strong>Koordinator BPI & Bina Karakter:</strong> Nisa'ul Istiqomah, S.T</li>
     <li><strong>Dewan Guru & Tenaga Kependidikan:</strong> Guru-guru profesional lulusan universitas terkemuka.</li>
 </ul>
 HTML,
@@ -526,37 +526,31 @@ HTML,
             );
         }
 
-        // Galeri Foto Dokumentasi Sekolah SMP IT Ishum
+        // Galeri Foto Dokumentasi Sekolah SMPS IT Ishlahul Ummah Prabumulih
+        Post::where('type', 'gallery')->delete();
+
         $galleryItems = [
-            ['url' => '/uploads/campus-smpit-ishum.webp', 'title' => 'Gedung Kampus SMPS IT Ishlahul Ummah Prabumulih'],
-            ['url' => '/uploads/flyer-spmb-smpit-ishum.webp', 'title' => 'Class Meeting Semester Genap SMP IT Ishum'],
-            ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Aktivitas Belajar Interaktif & Karakter Santri'],
-            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an 2 Juz Mutqin'],
-            ['url' => '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp', 'title' => 'Laboratorium Komputer & Digital Santri'],
-            ['url' => '/uploads/ishum/post_3460_IMG-20241020-WA0007-scaled.webp', 'title' => 'Pembinaan Disiplin & Kepemimpinan Santri'],
-            ['url' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp', 'title' => 'Aula Pertemuan & Munaqosah Qur\'an SIT'],
-            ['url' => '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Terpadu'],
-            ['url' => '/uploads/ishum/post_3467_IMG-20241020-WA0004-scaled.webp', 'title' => 'Ibadah Yaumiyah & Pembiasaan Akhlakul Karimah'],
-            ['url' => '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp', 'title' => 'Halaman Kampus SMPS IT Ishlahul Ummah'],
-            ['url' => '/uploads/ishum/post_3472_IMG-20241020-WA0003-scaled.webp', 'title' => 'Muhadharah & Pembinaan Khitabah Santri'],
-            ['url' => '/uploads/ishum/post_3478_IMG-20241020-WA0008-scaled.webp', 'title' => 'Ukhuwah Islamiyah & Kebersamaan Santri'],
-            ['url' => '/uploads/ishum/prestasi_3513_IMG-20240928-WA0038.webp', 'title' => 'Apresiasi & Penganugerahan Prestasi Santri'],
-            ['url' => '/uploads/ishum/fasilitas_3431_IMG-20241014-WA0013-scaled.webp', 'title' => 'Ruang UKS & Pelayanan Kesehatan Sekolah'],
+            ['url' => '/uploads/galeri/galeri-kampus-terpadu.webp', 'title' => 'Gedung Kampus Terpadu SMPS IT Ishlahul Ummah'],
+            ['url' => '/uploads/galeri/galeri-perpustakaan.webp', 'title' => 'Perpustakaan & Ruang Literasi Santri Ishum'],
+            ['url' => '/uploads/galeri/galeri-lab-sains.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Santri'],
+            ['url' => '/uploads/galeri/galeri-suasana-kelas.webp', 'title' => 'Suasana Belajar Interaktif & Nyaman di Kelas'],
+            ['url' => '/uploads/galeri/galeri-wisuda-tahfidz.webp', 'title' => 'Wisuda Tahfidz & Munaqosah Al-Qur\'an Mutqin'],
+            ['url' => '/uploads/galeri/galeri-panahan-pramuka.webp', 'title' => 'Ekstrakurikuler Panahan & Kepramukaan SIT'],
+            ['url' => '/uploads/galeri/galeri-upacara-santri.webp', 'title' => 'Upacara Bendera & Pembinaan Karakter Santri'],
+            ['url' => '/uploads/galeri/galeri-class-meeting.webp', 'title' => 'Semarak Class Meeting & Sportivitas Santri'],
         ];
 
         foreach ($galleryItems as $idx => $g) {
-            Post::firstOrCreate(
-                ['featured_image' => $g['url']],
-                [
-                    'title' => $g['title'],
-                    'slug' => Str::slug($g['title']).'-'.($idx + 1),
-                    'type' => 'gallery',
-                    'status' => 'publish',
-                    'content' => $g['title'],
-                    'author_id' => 1,
-                    'published_at' => now()->subMinutes(14 - $idx),
-                ]
-            );
+            Post::create([
+                'title' => $g['title'],
+                'slug' => Str::slug($g['title']).'-'.($idx + 1),
+                'type' => 'gallery',
+                'status' => 'publish',
+                'featured_image' => $g['url'],
+                'content' => $g['title'],
+                'author_id' => 1,
+                'published_at' => now()->subMinutes(14 - $idx),
+            ]);
         }
     }
 }

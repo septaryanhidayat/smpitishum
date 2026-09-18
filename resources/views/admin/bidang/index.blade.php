@@ -11,7 +11,7 @@
                 <h2 class="text-lg font-black text-slate-800">Daftar Fasilitas & Sarana Sekolah</h2>
                 <p class="text-xs text-slate-500 mt-0.5">Kelola foto sarana prasarana, deskripsi fasilitas belajar, dan urutan tampil.</p>
             </div>
-            <a href="{{ route('admin.bidang.create') }}" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
+            <a href="{{ route('admin.bidang.create') }}" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
                 <i class="fa-solid fa-plus"></i>
                 <span>Tambah Fasilitas Baru</span>
             </a>
@@ -31,7 +31,7 @@
 
                         <div class="p-5 space-y-3">
                             <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-[#00913e] flex items-center justify-center text-sm shrink-0 overflow-hidden border border-emerald-200">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-indigo-600 flex items-center justify-center text-sm shrink-0 overflow-hidden border border-indigo-200">
                                     @if($b->is_image_icon)
                                         <img src="{{ $b->icon }}" alt="{{ $b->name }}" class="w-full h-full object-contain p-1" onerror="this.src='/uploads/2025/09/logo-thumbnail.webp'">
                                     @else
@@ -52,7 +52,7 @@
                     <div class="p-4 pt-2 border-t border-slate-200/70 flex items-center justify-between text-xs bg-white">
                         <span class="text-slate-400 text-[11px] font-medium">SMPS IT Ishum</span>
                         <div class="flex items-center space-x-2">
-                            <a href="{{ route('admin.bidang.edit', $b) }}" class="p-2 text-slate-600 hover:text-[#00913e] hover:bg-emerald-50 rounded-lg transition" title="Edit Fasilitas">
+                            <a href="{{ route('admin.bidang.edit', $b) }}" class="p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50/60 rounded-lg transition" title="Edit Fasilitas">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                             <form action="{{ route('admin.bidang.destroy', $b) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus fasilitas sekolah ini?');" class="inline">

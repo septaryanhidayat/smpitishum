@@ -8,14 +8,14 @@
 
     {{-- TOP NAVIGATION TABS & EXPORT BUTTONS --}}
     <div class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4">
-        <a href="{{ route('admin.ppdb.index') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-[#00913e] text-white shadow-md transition">
+        <a href="{{ route('admin.ppdb.index') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-indigo-600 text-white shadow-md transition">
             <i class="fa-solid fa-users mr-1.5"></i> Data Calon Santri (Pendaftar)
         </a>
         <a href="{{ route('admin.ppdb.content') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">
             <i class="fa-solid fa-sliders mr-1.5"></i> Pengaturan &amp; Konten Halaman PPDB
         </a>
         <div class="ml-auto flex flex-wrap items-center gap-2">
-            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-emerald-700 hover:bg-emerald-800 text-white shadow-sm transition flex items-center space-x-1.5">
+            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-indigo-700 hover:bg-indigo-700 text-white shadow-sm transition flex items-center space-x-1.5">
                 <i class="fa-solid fa-file-excel"></i>
                 <span>Export Excel</span>
             </a>
@@ -32,7 +32,7 @@
 
     {{-- STATS CARDS --}}
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <a href="{{ route('admin.ppdb.index') }}" class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#00913e] transition">
+        <a href="{{ route('admin.ppdb.index') }}" class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-indigo-600 transition">
             <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Total Pendaftar</span>
             <span class="text-2xl font-black text-slate-900 mt-1 block">{{ number_format($stats['total']) }}</span>
         </a>
@@ -44,8 +44,8 @@
             <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">Terverifikasi</span>
             <span class="text-2xl font-black text-blue-900 mt-1 block">{{ number_format($stats['verified']) }}</span>
         </a>
-        <a href="{{ route('admin.ppdb.index', ['status' => 'accepted']) }}" class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 shadow-xs hover:border-emerald-400 transition">
-            <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block">Diterima</span>
+        <a href="{{ route('admin.ppdb.index', ['status' => 'accepted']) }}" class="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-200 shadow-xs hover:border-emerald-400 transition">
+            <span class="text-[11px] font-bold text-indigo-700 uppercase tracking-wider block">Diterima</span>
             <span class="text-2xl font-black text-emerald-900 mt-1 block">{{ number_format($stats['accepted']) }}</span>
         </a>
     </div>
@@ -61,8 +61,8 @@
             </div>
 
             <form action="{{ route('admin.ppdb.index') }}" method="GET" class="flex items-center gap-2">
-                <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari nama, No. Reg, asal sekolah..." class="bg-slate-50 text-xs text-slate-800 rounded-xl px-4 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] w-48 sm:w-64">
-                <button type="submit" class="bg-[#00913e] hover:bg-[#007532] text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+                <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari nama, No. Reg, asal sekolah..." class="bg-slate-50 text-xs text-slate-800 rounded-xl px-4 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 w-48 sm:w-64">
+                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
@@ -90,13 +90,13 @@
                                 <span class="font-bold text-slate-900 block">{{ $reg->full_name }}</span>
                                 <span class="text-[11px] text-slate-400">{{ $reg->gender }} &bull; {{ $reg->birth_place }}</span>
                                 <div class="mt-1 flex items-center gap-1.5 flex-wrap">
-                                    <span class="text-[10px] bg-emerald-50 text-[#00913e] font-bold px-2 py-0.5 rounded-md border border-emerald-200">{{ $reg->track ?: 'Reguler' }}</span>
+                                    <span class="text-[10px] bg-indigo-50/60 text-indigo-600 font-bold px-2 py-0.5 rounded-md border border-indigo-200">{{ $reg->track ?: 'Reguler' }}</span>
                                     <span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-2 py-0.5 rounded-md border border-slate-200">{{ $reg->program_type ?: 'Boarding' }}</span>
                                 </div>
                             </td>
                             <td class="py-3.5 px-4 text-slate-600 font-medium">{{ $reg->previous_school }}</td>
                             <td class="py-3.5 px-4">
-                                <a href="https://wa.me/{{ preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $reg->phone)) }}" target="_blank" class="text-[#00913e] hover:underline font-bold flex items-center space-x-1">
+                                <a href="https://wa.me/{{ preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $reg->phone)) }}" target="_blank" class="text-indigo-600 hover:underline font-bold flex items-center space-x-1">
                                     <i class="fa-brands fa-whatsapp text-sm"></i>
                                     <span>{{ $reg->phone }}</span>
                                 </a>
@@ -112,7 +112,7 @@
                                     <a href="{{ route('admin.ppdb.show', $reg) }}" class="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition" title="Lihat Detail & Berkas">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
-                                    <a href="{{ route('admin.ppdb.print', $reg) }}" target="_blank" class="p-1.5 text-emerald-600 hover:bg-emerald-50 rounded-lg transition" title="Cetak Bukti Pendaftaran">
+                                    <a href="{{ route('admin.ppdb.print', $reg) }}" target="_blank" class="p-1.5 text-indigo-600 hover:bg-indigo-50/60 rounded-lg transition" title="Cetak Bukti Pendaftaran">
                                         <i class="fa-solid fa-print"></i>
                                     </a>
                                     <form action="{{ route('admin.ppdb.destroy', $reg) }}" method="POST" class="inline">

@@ -5,17 +5,17 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('download.index') }}" class="hover:text-white transition">Download</a>
             <span>/</span>
-            <span class="text-emerald-200 font-semibold">Mars JSIT Indonesia</span>
+            <span class="text-indigo-200 font-semibold">Mars JSIT Indonesia</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Lagu kebanggaan civitas akademika SMPS IT Ishlahul Ummah Prabumulih sebagai bagian dari Jaringan Sekolah Islam Terpadu (JSIT) Indonesia dalam membina generasi Rabbani yang unggul dan berdaya saing global.
         </p>
     </div>
@@ -51,13 +51,13 @@
                 </iframe>
             </div>
             <div class="flex items-center justify-between px-2 text-xs text-slate-300">
-                <span class="flex items-center"><i class="fa-solid fa-music text-emerald-400 mr-2"></i> Mars Resmi JSIT Indonesia</span>
+                <span class="flex items-center"><i class="fa-solid fa-music text-amber-400 mr-2"></i> Mars Resmi JSIT Indonesia</span>
                 <span class="text-slate-400">Audio & Lirik Resmi</span>
             </div>
         </div>
 
         {{-- Lirik Mars Resmi JSIT Indonesia --}}
-        <div class="bg-emerald-50/70 p-8 sm:p-10 rounded-2xl border border-emerald-200 text-center space-y-6 text-sm sm:text-base text-gray-900 leading-relaxed font-serif">
+        <div class="bg-indigo-50/60/70 p-8 sm:p-10 rounded-2xl border border-indigo-200 text-center space-y-6 text-sm sm:text-base text-gray-900 leading-relaxed font-serif">
             <h3 class="font-sans text-xs font-black text-emerald-900 uppercase tracking-widest mb-6">
                 LIRIK MARS RESMI JSIT INDONESIA
             </h3>
@@ -66,7 +66,7 @@
                 Dengan berbekal semangat kami melangkah<br>
                 Menjalin ukhuwah dengan tekad membaja<br>
                 Menuju mutu pendidikan Indonesia<br>
-                Melahirkan generasi cerdas mulia <span class="font-bold text-xs text-emerald-700">(2x)</span>
+                Melahirkan generasi cerdas mulia <span class="font-bold text-xs text-indigo-700">(2x)</span>
             </p>
 
             <div class="py-3">
@@ -83,67 +83,67 @@
                 Di sinilah tempat kami berkarya<br>
                 Menggapai harapan meraih cita-cita<br>
                 Sebagai penggerak dan pemberdaya bangsa<br>
-                Wujudkan masyarakat cerdas dan sejahtera <span class="font-bold text-xs text-emerald-700">(2x)</span>
+                Wujudkan masyarakat cerdas dan sejahtera <span class="font-bold text-xs text-indigo-700">(2x)</span>
             </p>
 
             <div class="py-3">
-                <span class="inline-block text-xs font-bold text-white bg-[#00913e] px-4 py-1 rounded-full uppercase tracking-wider mb-3 font-sans shadow-sm">Reff</span>
+                <span class="inline-block text-xs font-bold text-white bg-indigo-600 px-4 py-1 rounded-full uppercase tracking-wider mb-3 font-sans shadow-sm">Reff</span>
                 <p class="font-bold text-gray-900 text-base sm:text-lg">
                     Kami Jaringan Sekolah Islam Terpadu<br>
                     Bangkit serentak menyongsong peradaban baru<br>
                     Bulatkan tekad dan cita membangun bangsa<br>
-                    Indonesia maju dan berjaya! <span class="text-xs text-emerald-700">(dan berjaya)</span>
+                    Indonesia maju dan berjaya! <span class="text-xs text-indigo-700">(dan berjaya)</span>
                 </p>
             </div>
         </div>
 
         {{-- Profil JSIT Indonesia --}}
-        <div class="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 sm:p-8 border border-emerald-200">
+        <div class="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 sm:p-8 border border-indigo-200">
             <h4 class="text-base font-bold text-emerald-950 flex items-center mb-3">
-                <i class="fa-solid fa-shield-halved text-[#00913e] mr-2"></i> 10 Karakter Santri JSIT (Muwashofat)
+                <i class="fa-solid fa-shield-halved text-indigo-600 mr-2"></i> 10 Karakter Santri JSIT (Muwashofat)
             </h4>
             <p class="text-xs text-gray-700 mb-4 leading-relaxed font-medium">
                 Sebagai sekolah anggota resmi Jaringan Sekolah Islam Terpadu (JSIT) Indonesia, SMPS IT Ishlahul Ummah Prabumulih menanamkan 10 standar kompetensi lulusan santri:
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-800">
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">1</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">1</span>
                     <span><strong>Salimul Aqidah</strong> (Aqidah yang Lurus)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">2</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">2</span>
                     <span><strong>Shahihul Ibadah</strong> (Ibadah yang Benar)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">3</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">3</span>
                     <span><strong>Matinul Khuluq</strong> (Akhlak yang Kokoh)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">4</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">4</span>
                     <span><strong>Qadirun 'alal Kasbi</strong> (Mandiri &amp; Berjiwa Usaha)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">5</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">5</span>
                     <span><strong>Mutsaqqaful Fikri</strong> (Berwawasan Luas &amp; Cerdas)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">6</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">6</span>
                     <span><strong>Qawiyyul Jismi</strong> (Jasmani yang Sehat &amp; Tangguh)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">7</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">7</span>
                     <span><strong>Mujahidun Linafsihi</strong> (Mampu Mengendalikan Diri)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">8</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">8</span>
                     <span><strong>Munazzhamun fi Syu'unihi</strong> (Tertib dalam Segala Urusan)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">9</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">9</span>
                     <span><strong>Haritsun 'ala Waqtihi</strong> (Disiplin Terhadap Waktu)</span>
                 </div>
-                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-emerald-100 shadow-xs">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">10</span>
+                <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">
+                    <span class="w-6 h-6 rounded-full bg-indigo-700 text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0">10</span>
                     <span><strong>Nafi'un Lighairihi</strong> (Bermanfaat Bagi Sesama)</span>
                 </div>
             </div>

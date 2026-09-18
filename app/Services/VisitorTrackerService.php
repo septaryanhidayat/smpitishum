@@ -208,7 +208,7 @@ class VisitorTrackerService
 
         $host = strtolower(parse_url($referer, PHP_URL_HOST) ?? '');
 
-        if (empty($host) || $host === strtolower($currentHost) || str_contains($host, 'robbani.sch.id') || str_contains($host, 'localhost') || str_contains($host, '127.0.0.1')) {
+        if (empty($host) || $host === strtolower($currentHost) || str_contains($host, 'smpitishum.sch.id') || str_contains($host, 'localhost') || str_contains($host, '127.0.0.1')) {
             return 'Direct / Langsung';
         }
 
@@ -315,11 +315,10 @@ class VisitorTrackerService
             'sejarah' => 'Sejarah Sekolah',
             'visi-dan-misi' => 'Visi & Misi Sekolah',
             'tentang-kami' => 'Profil & Tentang Kami',
-            'sambutan-ketua-dpd' => 'Sambutan Kepala Sekolah',
             'sambutan-kepala-sekolah' => 'Sambutan Kepala Sekolah',
-            'struktur-kepengurusan' => 'Struktur Organisasi Sekolah',
-            'anggota-dewan' => 'Dewan Guru & GTK',
+            'struktur-organisasi' => 'Struktur Organisasi Sekolah',
             'dewan-guru' => 'Dewan Guru & GTK',
+            'anggota-dewan' => 'Dewan Guru & GTK',
             'artikel' => 'Kabar & Berita Sekolah',
             'bidang' => 'Fasilitas & Sarana Kampus',
             'fasilitas' => 'Fasilitas & Sarana Kampus',
@@ -329,10 +328,9 @@ class VisitorTrackerService
             'galeri' => 'Galeri Foto Kegiatan',
             'download' => 'Pusat Unduhan Berkas',
             'e-book' => 'Download Modul & E-Book',
-            'hymne-mars' => 'Hymne & Mars Robbani',
-            'hymne-mars' => 'Hymne & Mars Robbani',
-            'hubungi' => 'Konsultasi & Informasi PPDB',
-            'donasi' => 'Infaq & Beasiswa Robbani',
+            'hymne-mars' => 'Hymne & Mars JSIT',
+            'hubungi' => 'Konsultasi & Informasi SPMB',
+            'donasi' => 'Infaq & Beasiswa Ishum',
             'dpc' => 'Program Unggulan Sekolah',
             'program-unggulan' => 'Program Unggulan Sekolah',
         ];

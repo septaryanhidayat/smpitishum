@@ -24,14 +24,14 @@
 @endphp
 
 {{-- HERO HEADER ELEGAN --}}
-<div class="relative bg-gradient-to-br from-emerald-950 via-[#00913e] to-emerald-900 text-white py-14 sm:py-20 overflow-hidden">
+<div class="relative bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-950 text-white py-14 sm:py-20 overflow-hidden">
     {{-- Background Pattern --}}
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#da251c_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
     <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-orange-500/20 blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-amber-500/15 blur-3xl pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <nav class="text-xs text-emerald-200 mb-4 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-4 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-medium">Infaq Pendidikan</span>
@@ -43,7 +43,7 @@
             <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
                 Infaq Pembangunan & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-200">Beasiswa Ishum</span>
             </h1>
-            <p class="text-sm sm:text-base text-emerald-100 mt-4 leading-relaxed font-light">
+            <p class="text-sm sm:text-base text-indigo-100 mt-4 leading-relaxed font-light">
                 Mari bergotong royong membangun sarana laboratorium riset modern, masjid kampus, fasilitas asrama tahfidz, dan program beasiswa bagi santri berprestasi di SMPS IT Ishlahul Ummah Prabumulih.
             </p>
         </div>
@@ -57,7 +57,7 @@
         <p class="text-sm sm:text-base text-gray-800 italic font-medium leading-relaxed max-w-4xl mx-auto">
             "Perumpamaan orang-orang yang menafkahkan hartanya di jalan Allah adalah serupa dengan sebutir benih yang menumbuhkan tujuh bulir, pada tiap-tiap bulir seratus biji. Allah melipatgandakan bagi siapa yang Dia kehendaki."
         </p>
-        <span class="block text-xs font-bold text-[#00913e] tracking-wider uppercase mt-3">— QS. Al-Baqarah: 261 —</span>
+        <span class="block text-xs font-bold text-indigo-600 tracking-wider uppercase mt-3">— QS. Al-Baqarah: 261 —</span>
     </div>
 
     {{-- KARTU REKENING BANK & KONFIRMASI --}}
@@ -70,36 +70,36 @@
             <p class="text-xs sm:text-sm text-gray-500 mt-1.5">
                 Silakan salurkan infaq dan sedekah jariyah Anda melalui rekening perbankan resmi berikut:
             </p>
-            <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {{-- KARTU 1: BANK SUMSEL BABEL SYARIAH --}}
-            <div class="bg-gradient-to-br from-white via-emerald-50/40 to-emerald-50/70 rounded-3xl p-7 sm:p-9 shadow-xl border-2 border-emerald-300/80 flex flex-col justify-between space-y-6 relative overflow-hidden group hover:shadow-2xl transition duration-300 reveal-fade-up">
+            <div class="bg-gradient-to-br from-white via-emerald-50/40 to-emerald-50/70 rounded-3xl p-7 sm:p-9 shadow-xl border-2 border-indigo-300/80 flex flex-col justify-between space-y-6 relative overflow-hidden group hover:shadow-2xl transition duration-300 reveal-fade-up">
                 <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-emerald-400/10 blur-2xl pointer-events-none"></div>
                 
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-black tracking-wide uppercase bg-[#00913e] text-white shadow-sm">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-black tracking-wide uppercase bg-indigo-600 text-white shadow-sm">
                             <i class="fa-solid fa-crown mr-1.5 text-xs"></i> Bank Utama Wilayah
                         </span>
-                        <span class="text-xs font-mono font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-lg">
+                        <span class="text-xs font-mono font-bold text-indigo-800 bg-emerald-100/80 px-2.5 py-1 rounded-lg">
                             Kode: {{ $bank1Code }}
                         </span>
                     </div>
 
                     <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white flex items-center justify-center text-2xl shadow-lg shadow-emerald-600/20 flex-shrink-0">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white flex items-center justify-center text-2xl shadow-lg shadow-indigo-600/20 flex-shrink-0">
                             <i class="fa-solid fa-building-columns"></i>
                         </div>
                         <div>
                             <h3 class="text-xl font-black text-gray-900 leading-tight">{{ $bank1Name }}</h3>
-                            <p class="text-xs text-emerald-800 font-semibold mt-0.5">Mitra Resmi Yayasan Ishum Prabumulih</p>
+                            <p class="text-xs text-indigo-800 font-semibold mt-0.5">Mitra Resmi Yayasan Ishum Prabumulih</p>
                         </div>
                     </div>
 
-                    <div class="bg-white/90 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-emerald-200/80 shadow-inner mt-4 space-y-2">
+                    <div class="bg-white/90 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-indigo-200/80 shadow-inner mt-4 space-y-2">
                         <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider block">Nomor Rekening Infaq</span>
                         @if(!empty($bank1Rek))
                             <div class="flex items-center justify-between">
@@ -121,12 +121,12 @@
 
                 <div class="pt-2">
                     @if(!empty($bank1Rek))
-                        <button onclick="copyToClipboard('{{ $bank1Rek }}', '{{ $bank1Name }}')" class="w-full bg-gradient-to-r from-emerald-600 to-[#00913e] hover:from-emerald-700 hover:to-emerald-800 text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-emerald-600/20 transition flex items-center justify-center space-x-2 cursor-pointer">
+                        <button onclick="copyToClipboard('{{ $bank1Rek }}', '{{ $bank1Name }}')" class="w-full bg-gradient-to-r from-emerald-600 to-[#00913e] hover:from-emerald-700 hover:to-emerald-800 text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-indigo-600/20 transition flex items-center justify-center space-x-2 cursor-pointer">
                             <i class="fa-regular fa-copy text-sm"></i>
                             <span>Salin Nomor Rekening</span>
                         </button>
                     @else
-                        <a href="https://wa.me/{{ $cleanWa }}?text={{ $confirmText }}" target="_blank" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold shadow transition flex items-center justify-center space-x-2">
+                        <a href="https://wa.me/{{ $cleanWa }}?text={{ $confirmText }}" target="_blank" class="w-full bg-indigo-700 hover:bg-indigo-700 text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold shadow transition flex items-center justify-center space-x-2">
                             <i class="fa-brands fa-whatsapp text-base"></i>
                             <span>Konfirmasi Rekening via WhatsApp</span>
                         </a>
@@ -191,16 +191,16 @@
                 <h3 class="text-2xl sm:text-3xl font-black tracking-tight">
                     Sudah Menyalurkan Infaq? Konfirmasi Sekarang
                 </h3>
-                <p class="text-xs sm:text-sm text-emerald-100 leading-relaxed font-light">
+                <p class="text-xs sm:text-sm text-indigo-100 leading-relaxed font-light">
                     Kirimkan bukti transfer Anda ke nomor WhatsApp bendahara sekolah agar donasi Anda tercatat secara akuntabel dan mendapatkan laporan berkala.
                 </p>
             </div>
             <div class="flex flex-col space-y-3">
-                <a href="https://wa.me/{{ $cleanWa }}?text={{ $confirmText }}" target="_blank" class="w-full bg-white hover:bg-gray-100 text-[#00913e] font-extrabold text-xs sm:text-sm py-4 px-6 rounded-2xl shadow-xl transition transform hover:scale-105 flex items-center justify-center space-x-2 text-center">
-                    <i class="fa-brands fa-whatsapp text-lg text-emerald-600"></i>
+                <a href="https://wa.me/{{ $cleanWa }}?text={{ $confirmText }}" target="_blank" class="w-full bg-white hover:bg-gray-100 text-indigo-600 font-extrabold text-xs sm:text-sm py-4 px-6 rounded-2xl shadow-xl transition transform hover:scale-105 flex items-center justify-center space-x-2 text-center">
+                    <i class="fa-brands fa-whatsapp text-lg text-indigo-600"></i>
                     <span>Kirim Bukti Transfer ({{ $confirmPhone }})</span>
                 </a>
-                <span class="text-[11px] text-emerald-200 text-center font-medium">Layanan Bendahara SMPS IT Ishlahul Ummah Prabumulih</span>
+                <span class="text-[11px] text-indigo-200 text-center font-medium">Layanan Bendahara SMPS IT Ishlahul Ummah Prabumulih</span>
             </div>
         </div>
     </div>
@@ -213,8 +213,8 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-emerald-50/50 hover:border-emerald-200 transition">
-                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-[#00913e] font-black text-lg flex items-center justify-center mx-auto shadow-sm">
+            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/60/50 hover:border-indigo-200 transition">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 font-black text-lg flex items-center justify-center mx-auto shadow-sm">
                     1
                 </div>
                 <h4 class="font-extrabold text-sm text-gray-900">Transfer Dana Infaq</h4>
@@ -223,8 +223,8 @@
                 </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-emerald-50/50 hover:border-emerald-200 transition">
-                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-[#00913e] font-black text-lg flex items-center justify-center mx-auto shadow-sm">
+            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/60/50 hover:border-indigo-200 transition">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 font-black text-lg flex items-center justify-center mx-auto shadow-sm">
                     2
                 </div>
                 <h4 class="font-extrabold text-sm text-gray-900">Simpan Bukti Mutasi</h4>
@@ -233,8 +233,8 @@
                 </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-emerald-50/50 hover:border-emerald-200 transition">
-                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-[#00913e] font-black text-lg flex items-center justify-center mx-auto shadow-sm">
+            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center space-y-3 hover:bg-indigo-50/60/50 hover:border-indigo-200 transition">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-indigo-600 font-black text-lg flex items-center justify-center mx-auto shadow-sm">
                     3
                 </div>
                 <h4 class="font-extrabold text-sm text-gray-900">Konfirmasi via WA</h4>
@@ -246,9 +246,9 @@
     </div>
 
     {{-- TRANSPARANSI PENGELOLAAN DANA PENDIDIKAN --}}
-    <div class="bg-emerald-50/80 border-l-4 border-[#00913e] p-6 sm:p-8 rounded-3xl shadow-sm text-xs sm:text-sm text-gray-700 space-y-3 reveal-fade-up">
+    <div class="bg-indigo-50/60/80 border-l-4 border-indigo-600 p-6 sm:p-8 rounded-3xl shadow-sm text-xs sm:text-sm text-gray-700 space-y-3 reveal-fade-up">
         <h4 class="font-extrabold text-gray-900 flex items-center text-sm sm:text-base">
-            <i class="fa-solid fa-scale-balanced mr-2.5 text-[#00913e] text-lg"></i>
+            <i class="fa-solid fa-scale-balanced mr-2.5 text-indigo-600 text-lg"></i>
             <span>Akuntabilitas & Tata Kelola Infaq Yayasan</span>
         </h4>
         <p class="leading-relaxed text-gray-600">
@@ -265,7 +265,7 @@
 
 {{-- TOAST NOTIFIKASI SALIN REKENING --}}
 <div id="copyToast" class="fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl text-xs font-semibold flex items-center space-x-3 transform translate-y-24 opacity-0 transition duration-300 z-50">
-    <div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center">
+    <div class="w-7 h-7 rounded-full bg-indigo-50/600 text-white flex items-center justify-center">
         <i class="fa-solid fa-check text-xs"></i>
     </div>
     <span id="copyToastText">Nomor rekening berhasil disalin!</span>

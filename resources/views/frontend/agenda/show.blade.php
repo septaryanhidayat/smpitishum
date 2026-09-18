@@ -3,9 +3,9 @@
 @section('title', $agenda->title . ' - Agenda SMPS IT Ishlahul Ummah Prabumulih')
 
 @section('content')
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('agenda.index') }}" class="hover:text-white transition">Agenda</a>
@@ -19,9 +19,9 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div class="lg:col-span-2 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-gray-100 space-y-6">
-            <div class="flex flex-wrap items-center gap-4 p-4 bg-emerald-50 rounded-2xl border border-emerald-100 text-xs text-gray-700">
+            <div class="flex flex-wrap items-center gap-4 p-4 bg-indigo-50/60 rounded-2xl border border-indigo-100 text-xs text-gray-700">
                 <div class="flex items-center">
-                    <i class="fa-regular fa-calendar-days text-[#00913e] mr-2 text-base"></i>
+                    <i class="fa-regular fa-calendar-days text-indigo-600 mr-2 text-base"></i>
                     <span class="font-bold">{{ $agenda->event_date ? $agenda->event_date->translatedFormat('l, d F Y') : '-' }}</span>
                 </div>
                 <span>&bull;</span>
@@ -49,7 +49,7 @@
                 </h3>
                 <div class="space-y-3 text-xs">
                     @foreach($otherAgendas as $oA)
-                        <a href="{{ route('agenda.show', $oA->slug) }}" class="block p-3 rounded-xl hover:bg-emerald-50 transition border border-gray-50">
+                        <a href="{{ route('agenda.show', $oA->slug) }}" class="block p-3 rounded-xl hover:bg-indigo-50/60 transition border border-gray-50">
                             <span class="text-[10px] text-orange-600 font-bold block mb-1">
                                 {{ $oA->event_date ? $oA->event_date->format('d M Y') : '' }}
                             </span>

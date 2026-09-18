@@ -11,7 +11,7 @@
                 <h2 class="text-lg font-black text-slate-800">Daftar Program Unggulan Sekolah</h2>
                 <p class="text-xs text-slate-500 mt-0.5">Kelola foto kegiatan, kategori program, koordinator, dan deskripsi capaian santri.</p>
             </div>
-            <a href="{{ route('admin.dpc.create') }}" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
+            <a href="{{ route('admin.dpc.create') }}" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
                 <i class="fa-solid fa-plus"></i>
                 <span>Tambah Program Baru</span>
             </a>
@@ -24,7 +24,7 @@
                         {{-- Foto Cover Program --}}
                         <div class="h-44 w-full bg-slate-200 relative overflow-hidden">
                             <img src="{{ $d->thumbnail_url }}" alt="{{ $d->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/tahfidz-ishum.webp'">
-                            <span class="absolute top-2.5 left-2.5 bg-[#00913e] text-white text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm">
+                            <span class="absolute top-2.5 left-2.5 bg-indigo-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm">
                                 {{ $d->address ?: 'Unggulan' }}
                             </span>
                             <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
@@ -51,7 +51,7 @@
                     <div class="p-4 pt-2 border-t border-slate-200/70 flex items-center justify-between text-xs bg-white">
                         <span class="text-slate-400 text-[11px] font-medium">SMPS IT Ishum</span>
                         <div class="flex items-center space-x-2">
-                            <a href="{{ route('admin.dpc.edit', $d) }}" class="p-2 text-slate-600 hover:text-[#00913e] hover:bg-emerald-50 rounded-lg transition" title="Edit Program">
+                            <a href="{{ route('admin.dpc.edit', $d) }}" class="p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50/60 rounded-lg transition" title="Edit Program">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                             <form action="{{ route('admin.dpc.destroy', $d) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus program unggulan ini?');" class="inline">

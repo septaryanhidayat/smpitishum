@@ -3,9 +3,9 @@
 @section('title', $page->title . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
 
 @section('content')
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">{{ $page->title }}</span>

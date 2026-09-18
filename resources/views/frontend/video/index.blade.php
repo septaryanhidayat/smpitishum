@@ -5,15 +5,15 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Galeri Video</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Video SMPS IT Ishlahul Ummah Prabumulih</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Dokumentasi video liputan kegiatan santri, tasmi' Al-Qur'an, praktikum sains, dan prestasi sekolah.
         </p>
     </div>
@@ -26,7 +26,7 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
             Video Kegiatan Santri Ishum
         </h2>
-        <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -46,7 +46,7 @@
                         </div>
                     </button>
                     <div class="p-6">
-                        <h3 class="font-extrabold text-sm sm:text-base text-gray-900 group-hover:text-[#00913e] transition line-clamp-2 leading-snug">
+                        <h3 class="font-extrabold text-sm sm:text-base text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
                             {{ $vid->title }}
                         </h3>
                         @if($vid->description)

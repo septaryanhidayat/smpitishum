@@ -29,7 +29,7 @@
         <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-200/80">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Aktivitas Hari Ini</span>
             <span class="text-2xl sm:text-3xl font-black text-slate-800">{{ number_format($stats['today']) }}</span>
-            <span class="text-[11px] text-emerald-600 font-semibold block mt-1">Real-time monitoring</span>
+            <span class="text-[11px] text-indigo-600 font-semibold block mt-1">Real-time monitoring</span>
         </div>
     </div>
 

@@ -11,7 +11,7 @@
                 <h2 class="text-lg font-black text-slate-800">Daftar Berkas Publik untuk Diunduh</h2>
                 <p class="text-xs text-slate-500 mt-0.5">Kelola panduan akademik, Logo Resmi Ishum, modul siswa, dan formulir PPDB.</p>
             </div>
-            <a href="{{ route('admin.downloads.create') }}" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
+            <a href="{{ route('admin.downloads.create') }}" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
                 <i class="fa-solid fa-cloud-arrow-up"></i>
                 <span>Tambah Berkas Download</span>
             </a>

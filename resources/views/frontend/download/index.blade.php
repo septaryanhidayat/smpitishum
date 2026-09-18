@@ -5,15 +5,15 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Download</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Pusat Download Dokumen & Modul</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Unduh formulir pendaftaran PPDB, modul pembelajaran tahfidz & sains, kalender akademik, dan aset logo resmi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
@@ -23,19 +23,19 @@
     
     {{-- QUICK CATEGORIES TABS --}}
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 reveal-fade-up">
-        <a href="{{ route('download.index') }}" class="p-4 rounded-2xl border-2 border-[#00913e] bg-emerald-50 text-[#00913e] font-bold text-xs sm:text-sm flex items-center justify-center space-x-2 shadow-sm">
+        <a href="{{ route('download.index') }}" class="p-4 rounded-2xl border-2 border-indigo-600 bg-indigo-50/60 text-indigo-600 font-bold text-xs sm:text-sm flex items-center justify-center space-x-2 shadow-sm">
             <i class="fa-solid fa-folder-open"></i>
             <span>Semua Berkas</span>
         </a>
-        <a href="{{ route('download.ebook') }}" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-[#00913e] hover:text-[#00913e] font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-sm">
+        <a href="{{ route('download.ebook') }}" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-indigo-600 hover:text-indigo-600 font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-sm">
             <i class="fa-solid fa-book"></i>
             <span>Modul & E-Book</span>
         </a>
-        <a href="{{ route('download.hymne-mars') }}" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-[#00913e] hover:text-[#00913e] font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-sm">
+        <a href="{{ route('download.hymne-mars') }}" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-indigo-600 hover:text-indigo-600 font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-sm">
             <i class="fa-solid fa-music"></i>
             <span>Hymne & Mars</span>
         </a>
-        <a href="{{ route('download.logo') }}" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-[#00913e] hover:text-[#00913e] font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-sm">
+        <a href="{{ route('download.logo') }}" class="p-4 rounded-2xl border border-gray-200 bg-white hover:border-indigo-600 hover:text-indigo-600 font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition shadow-sm">
             <i class="fa-solid fa-image"></i>
             <span>Logo Resmi</span>
         </a>
@@ -63,9 +63,9 @@
                 </thead>
                 <tbody class="divide-y divide-gray-100">
                     @forelse($downloads as $dl)
-                        <tr class="hover:bg-emerald-50/50 transition">
+                        <tr class="hover:bg-indigo-50/60/50 transition">
                             <td class="py-4 px-4 font-bold text-gray-900 flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-[#00913e] flex items-center justify-center flex-shrink-0 text-base">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-indigo-600 flex items-center justify-center flex-shrink-0 text-base">
                                     @if(in_array(strtoupper($dl->file_type), ['MP3', 'WAV']))
                                         <i class="fa-solid fa-music"></i>
                                     @elseif(in_array(strtoupper($dl->file_type), ['PDF']))
@@ -92,7 +92,7 @@
                                 {{ number_format($dl->download_count) }} kali
                             </td>
                             <td class="py-4 px-4 text-right">
-                                <a href="{{ route('download.file', $dl->id) }}" class="inline-flex items-center bg-[#00913e] hover:bg-emerald-800 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow transition">
+                                <a href="{{ route('download.file', $dl->id) }}" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow transition">
                                     <i class="fa-solid fa-download mr-1.5"></i> Unduh
                                 </a>
                             </td>

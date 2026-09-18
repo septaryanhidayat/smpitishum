@@ -21,19 +21,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Nama Agenda Kegiatan *</label>
-                    <input type="text" name="title" required placeholder="Contoh: Wisuda Tahfidz Angkatan X" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <input type="text" name="title" required placeholder="Contoh: Wisuda Tahfidz Angkatan X" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Tanggal Pelaksanaan *</label>
-                    <input type="date" name="event_date" required class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <input type="date" name="event_date" required class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Lokasi Tempat *</label>
-                    <input type="text" name="location" required placeholder="Aula Utama Kampus Ishum" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <input type="text" name="location" required placeholder="Aula Utama Kampus Ishum" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Status Agenda</label>
-                    <select name="status" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <select name="status" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                         <option value="upcoming">Akan Datang</option>
                         <option value="ongoing">Sedang Berlangsung</option>
                         <option value="completed">Selesai</option>
@@ -107,11 +107,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="sm:col-span-2">
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Judul Pengumuman *</label>
-                    <input type="text" name="title" required placeholder="Contoh: Pengumuman Seleksi Penerimaan Santri Baru (PPDB)" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <input type="text" name="title" required placeholder="Contoh: Pengumuman Seleksi Penerimaan Santri Baru (PPDB)" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Status Publikasi</label>
-                    <select name="status" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <select name="status" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                         <option value="publish">Publikasikan Langsung</option>
                         <option value="draft">Draft</option>
                     </select>
@@ -119,10 +119,10 @@
             </div>
             <div>
                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Isi Pesan Pengumuman *</label>
-                <textarea name="content" required rows="3" placeholder="Tuliskan detail rincian pengumuman di sini..." class="w-full bg-white text-xs text-slate-800 rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]"></textarea>
+                <textarea name="content" required rows="3" placeholder="Tuliskan detail rincian pengumuman di sini..." class="w-full bg-white text-xs text-slate-800 rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
             </div>
             <div class="flex justify-end">
-                <button type="submit" class="bg-[#00913e] hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 cursor-pointer">
+                <button type="submit" class="bg-indigo-600 hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 cursor-pointer">
                     <i class="fa-solid fa-bullhorn"></i>
                     <span>Terbitkan Pengumuman</span>
                 </button>
@@ -146,7 +146,7 @@
                             <td class="py-3.5 px-4 font-bold text-slate-900">{{ $p->title }}</td>
                             <td class="py-3.5 px-4 text-slate-500">{{ $p->created_at ? $p->created_at->format('d M Y') : '-' }}</td>
                             <td class="py-3.5 px-4">
-                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-800">
                                     {{ ucfirst($p->status) }}
                                 </span>
                             </td>

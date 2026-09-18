@@ -1,134 +1,166 @@
 {
     "gurus": [
         {
-            "name": "Mulyani Rahayu, S.T., M.Pd",
-            "slug": "mulyani-rahayu-st-mpd",
+            "name": "Anita Carlyna, S.IP., M.Pd., Gr",
+            "slug": "anita-carlyna-sip-mpd-gr",
             "position": "Kepala Sekolah",
             "fraction": "Pimpinan Sekolah",
-            "photo": "/uploads/ishum/guru_1813_Ustazah-Sesi.jpg",
-            "profile_summary": "Kepala SMPS IT Ishlahul Ummah Prabumulih. Berkomitmen mendidik generasi penerus yang berkepribadian Islami, unggul dalam hafalan Al-Qur'an, cerdas dalam sains dan teknologi, serta berakhlak mulia.",
-            "education": "S1 Teknik, S2 Manajemen Pendidikan",
+            "photo": "/uploads/dewan/kepala-sekolah.webp",
+            "profile_summary": "Kepala SMPS IT Ishlahul Ummah Prabumulih. Berkomitmen mewujudkan generasi Qur'ani yang berakhlak mulia, berprestasi dalam sains dan teknologi, mandiri, serta berwawasan global di bawah naungan JSIT Indonesia.",
+            "education": "S1 Ilmu Administrasi Negara, Universitas Sriwijaya; S2 Manajemen Pendidikan, Universitas PGRI; Gr (Pendidikan Profesi Guru)",
             "order": 1
-        },
-        {
-            "name": "Anita Carlyna, S.IP., M.Pd",
-            "slug": "anita-carlyna-sip-mpd",
-            "position": "Waka Kurikulum & Guru PPKn",
-            "fraction": "Guru PPKn & Kurikulum",
-            "photo": "/uploads/ishum/guru_1821_IMG_20240928_222131.png",
-            "profile_summary": "Wakil Kepala Sekolah Bidang Kurikulum SMPS IT Ishlahul Ummah Prabumulih, memadukan kurikulum merdeka nasional dengan kurikulum khas JSIT.",
-            "education": "S1 Ilmu Administrasi Negara, Universitas Sriwijaya; S2 Manajemen Pendidikan, Universitas PGRI Palembang",
-            "order": 2
         },
         {
             "name": "Sesiana Giovani Lestari, S.Pd",
             "slug": "sesiana-giovani-lestari-spd",
-            "position": "Guru IPA & Pembina BPI",
-            "fraction": "Guru IPA & Karakter",
-            "photo": "/uploads/ishum/guru_1813_Ustazah-Sesi.jpg",
-            "profile_summary": "Tenaga pendidik profesional SMPS IT Ishlahul Ummah Prabumulih dalam bidang Ilmu Pengetahuan Alam dan pembina program Bina Pribadi Islam (BPI).",
+            "position": "Waka Kurikulum & Guru IPA",
+            "fraction": "Guru IPA & Kurikulum",
+            "photo": "/uploads/dewan/guru-ipa.webp",
+            "profile_summary": "Tenaga pendidik profesional SMPS IT Ishlahul Ummah Prabumulih dalam bidang Ilmu Pengetahuan Alam dan koordinator integrasi Kurikulum Merdeka dengan kurikulum JSIT.",
             "education": "S1 Pendidikan Biologi, Universitas Muhammadiyah Palembang",
-            "order": 3
+            "order": 2
         },
         {
             "name": "Nisa'ul Istiqomah, S.T",
             "slug": "nisaul-istiqomah-st",
-            "position": "Guru Matematika & MIPA",
+            "position": "Guru Matematika & Pembimbing MIPA",
             "fraction": "Guru Matematika",
-            "photo": "/uploads/ishum/guru_2724_IMG_20240928_220722-scaled.jpg",
-            "profile_summary": "Tenaga pendidik matematika dan pembimbing klub olimpiade MIPA SMPS IT Ishlahul Ummah Prabumulih.",
+            "photo": "/uploads/dewan/guru-kelas.webp",
+            "profile_summary": "Tenaga pendidik matematika dan pembimbing klub olimpiade sains santri SMPS IT Ishlahul Ummah Prabumulih.",
             "education": "S1 Teknik Kimia, Universitas Sriwijaya",
-            "order": 4
+            "order": 3
         },
         {
             "name": "Herman Nurdiansyah, S.E",
             "slug": "herman-nurdiansyah-se",
             "position": "Guru PAI, Hadits & PJOK",
             "fraction": "Guru PAI & Olahraga",
-            "photo": "/uploads/ishum/guru_2728_IMG_20240928_220741-scaled.jpg",
-            "profile_summary": "Guru Pendidikan Agama Islam, Hadits, dan PJOK, aktif membina kedisiplinan dan kebugaran santri SMP IT.",
+            "photo": "/uploads/dewan/guru-pjok.webp",
+            "profile_summary": "Guru Pendidikan Agama Islam, Hadits, dan PJOK, aktif membina kedisiplinan, kepemimpinan, dan kebugaran jasmani santri.",
             "education": "STEI Al-Furqon",
-            "order": 5
+            "order": 4
         },
         {
             "name": "Helen Azmi, S.Pd",
             "slug": "helen-azmi-spd",
             "position": "Guru Tahsin & Tahfidz Al-Qur'an (TTQ)",
             "fraction": "Guru TTQ & Keislaman",
-            "photo": "/uploads/ishum/guru_3878_2.png",
-            "profile_summary": "Pengampu program Tahsin dan Tahfidz Al-Qur'an santri, membimbing hafalan minimal 2 juz mutqin dan tartil bacaan.",
+            "photo": "/uploads/dewan/guru-tahfidz.webp",
+            "profile_summary": "Pengampu program Tahsin dan Tahfidz Al-Qur'an santri, membimbing hafalan mutqin minimal 2 juz serta tartil bacaan bersanad.",
             "education": "S1 Pendidikan Agama Islam, STAI Raudhatul Ulum",
-            "order": 6
+            "order": 5
         },
         {
             "name": "Ahmad Fauzan, S.Pd.I",
             "slug": "ahmad-fauzan-spdi",
             "position": "Guru Bahasa Arab & Pembina OSIS",
             "fraction": "Guru Bahasa Arab",
-            "photo": "/uploads/campus-smpit-ishum.webp",
-            "profile_summary": "Membina kompetensi percakapan Bahasa Arab harian dan memfasilitasi organisasi kesiswaan santri (OSIS SMP IT).",
+            "photo": "/uploads/dewan/guru-bahasa.webp",
+            "profile_summary": "Membina kompetensi percakapan Bahasa Arab harian dan memfasilitasi kegiatan kesiswaan serta kepemimpinan santri OSIS SMP IT.",
             "education": "S1 Pendidikan Bahasa Arab, UIN Raden Fatah",
-            "order": 7
+            "order": 6
         },
         {
             "name": "Sarah Ramadhani, S.Pd",
             "slug": "sarah-ramadhani-spd",
             "position": "Guru Bahasa Inggris & Literasi",
             "fraction": "Guru Bahasa Inggris",
-            "photo": "/uploads/activities-smpit-ishum.webp",
-            "profile_summary": "Pengampu mata pelajaran Bahasa Inggris aktif dan pembina kegiatan English Week serta debat pelajar.",
+            "photo": "/uploads/dewan/guru-kelas.webp",
+            "profile_summary": "Pengampu mata pelajaran Bahasa Inggris aktif dan pembina kegiatan English Club, storytelling, dan debat santri.",
             "education": "S1 Pendidikan Bahasa Inggris, Universitas Sriwijaya",
-            "order": 8
+            "order": 7
         }
     ],
     "facilities": [
         {
-            "name": "Ruang Kelas Nyaman & Ber-AC",
-            "slug": "ruang-kelas-nyaman-ber-ac",
+            "name": "Ruang Kelas Nyaman & Multimedia",
+            "slug": "ruang-kelas-nyaman-dan-multimedia",
             "description": "Ruang kelas representatif yang bersih, sejuk dengan pendingin udara (AC), dilengkapi proyektor LCD dan tata letak ergonomis untuk memaksimalkan fokus belajar.",
-            "thumbnail": "/uploads/activities-smpit-ishum.webp",
+            "thumbnail": "/uploads/fasilitas/fasilitas-ruang-kelas.webp",
             "icon": "fa-solid fa-chalkboard-user",
             "order": 1
         },
         {
-            "name": "Masjid & Pusat Ibadah Tholabul 'Ilmi",
-            "slug": "masjid-dan-pusat-ibadah",
-            "description": "Masjid yang luas dan asri sebagai pusat kegiatan ibadah sholat berjamaah 5 waktu, sholat dhuha, tadarus, serta halaqah tahfidz Al-Qur'an santri.",
-            "thumbnail": "/uploads/tahfidz-smpit-ishum.webp",
-            "icon": "fa-solid fa-mosque",
+            "name": "Perpustakaan & Pojok Literasi Digital",
+            "slug": "perpustakaan-dan-pojok-literasi-digital",
+            "description": "Koleksi lengkap buku teks pelajaran, referensi ensiklopedia Islam, sastra ilmiah, komputer literasi digital, dan sudut baca nyaman untuk menumbuhkan gemar membaca.",
+            "thumbnail": "/uploads/fasilitas/fasilitas-perpustakaan.webp",
+            "icon": "fa-solid fa-book-open",
             "order": 2
-        },
-        {
-            "name": "Laboratorium Komputer & Digital Learning",
-            "slug": "laboratorium-komputer",
-            "description": "Laboratorium komputer modern dengan akses internet cepat dan perangkat terkini untuk pembelajaran TIK, ANBK, dan coding dasar.",
-            "thumbnail": "/uploads/activities-smpit-ishum.webp",
-            "icon": "fa-solid fa-desktop",
-            "order": 3
         },
         {
             "name": "Laboratorium IPA & Sains Terpadu",
             "slug": "laboratorium-ipa-sains-terpadu",
-            "description": "Fasilitas laboratorium lengkap untuk eksperimen fisika dan biologi, mendukung Kelompok Ilmiah Remaja (KIR) dan kelas olimpiade.",
-            "thumbnail": "/uploads/campus-smpit-ishum.webp",
+            "description": "Fasilitas laboratorium lengkap untuk eksperimen biologi, fisika, dan kimia dasar, mendukung pembelajaran praktikum dan kelas olimpiade sains.",
+            "thumbnail": "/uploads/fasilitas/fasilitas-lab-ipa.webp",
             "icon": "fa-solid fa-flask-vial",
-            "order": 4
+            "order": 3
         },
         {
-            "name": "Perpustakaan & Sudut Baca Literasi",
-            "slug": "perpustakaan-dan-sudut-baca",
-            "description": "Koleksi lengkap buku teks pelajaran, referensi ensiklopedia Islam, sastra ilmiah, dan sudut baca nyaman untuk menumbuhkan gemar membaca.",
-            "thumbnail": "/uploads/campus-smpit-ishum.webp",
-            "icon": "fa-solid fa-book-open",
-            "order": 5
+            "name": "Masjid & Pusat Ibadah Kampus Ishum",
+            "slug": "masjid-dan-pusat-ibadah",
+            "description": "Masjid kampus yang asri sebagai pusat ibadah sholat berjamaah, sholat dhuha, tadarus Al-Qur'an, dan halaqah tahfidz santri.",
+            "thumbnail": "/uploads/fasilitas/fasilitas-masjid.webp",
+            "icon": "fa-solid fa-mosque",
+            "order": 4
         },
         {
             "name": "Lapangan Olahraga & Area Outbound",
             "slug": "lapangan-olahraga-dan-outbound",
-            "description": "Lapangan olahraga serbaguna untuk futsal, basket, voli, bulutangkis, serta area latihan bela diri karate dan panahan santri.",
-            "thumbnail": "/uploads/flyer-spmb-smpit-ishum.webp",
+            "description": "Lapangan olahraga serbaguna untuk futsal, basket, voli, bulutangkis, serta arena latihan panahan (archery) dan kepanduan Pramuka SIT.",
+            "thumbnail": "/uploads/fasilitas/fasilitas-lapangan.webp",
             "icon": "fa-solid fa-volleyball",
+            "order": 5
+        },
+        {
+            "name": "Gedung Kampus Terpadu",
+            "slug": "gedung-kampus-terpadu",
+            "description": "Kompleks gedung sekolah yang asri, aman, dan berpagar penuh dengan pos satpam 24 jam serta taman hijau yang mendukung kenyamanan belajar.",
+            "thumbnail": "/uploads/fasilitas/fasilitas-gedung-utama.webp",
+            "icon": "fa-solid fa-school",
             "order": 6
+        }
+    ],
+    "galleries": [
+        {
+            "title": "Perpustakaan & Literasi Digital Santri",
+            "image": "/uploads/galeri/galeri-perpustakaan.webp",
+            "category": "Fasilitas & Belajar"
+        },
+        {
+            "title": "Praktikum Sains di Laboratorium IPA",
+            "image": "/uploads/galeri/galeri-lab-sains.webp",
+            "category": "Akademik & Sains"
+        },
+        {
+            "title": "Latihan Olahraga Sunnah Panahan & Pramuka SIT",
+            "image": "/uploads/galeri/galeri-panahan-pramuka.webp",
+            "category": "Ekstrakurikuler"
+        },
+        {
+            "title": "Suasana Pembelajaran Interaktif Kelas Multimedia",
+            "image": "/uploads/galeri/galeri-suasana-kelas.webp",
+            "category": "Pembelajaran"
+        },
+        {
+            "title": "Upacara Bendera Senin & Pembinaan Karakter Santri",
+            "image": "/uploads/galeri/galeri-upacara-santri.webp",
+            "category": "Karakter & Ibadah"
+        },
+        {
+            "title": "Wisuda Tahfidz & Munaqosah Al-Qur'an 2 Juz Mutqin",
+            "image": "/uploads/galeri/galeri-wisuda-tahfidz.webp",
+            "category": "Tahfidz Al-Qur'an"
+        },
+        {
+            "title": "Semarak Class Meeting Semester Genap",
+            "image": "/uploads/galeri/galeri-class-meeting.webp",
+            "category": "Class Meeting"
+        },
+        {
+            "title": "Kompleks Kampus Hijau SMPS IT Ishlahul Ummah Prabumulih",
+            "image": "/uploads/galeri/galeri-kampus-terpadu.webp",
+            "category": "Kampus"
         }
     ],
     "videos": [
@@ -158,22 +190,22 @@
         {
             "name": "H. Bambang Irawan, S.E",
             "profession": "Wali Santri Kelas VIII",
-            "content": "Alhamdulillah, semenjak bersekolah di SMP IT Ishlahul Ummah Prabumulih, perkembangan ibadah dan akhlak anak saya meningkat drastis. Sholat 5 waktu tepat waktu dan hafalannya terus bertambah mutqin.",
-            "photo": "/uploads/ishum/guru_2728_IMG_20240928_220741-scaled.jpg",
+            "content": "Alhamdulillah, semenjak bersekolah di SMP IT Ishlahul Ummah Prabumulih, perkembangan ibadah dan akhlak anak saya meningkat drastis. Sholat 5 waktu tertib dan hafalannya terus bertambah mutqin.",
+            "photo": "/uploads/testimoni/wali-santri-1.webp",
             "status": "publish"
         },
         {
             "name": "Dra. Hj. Nuraini",
             "profession": "Wali Santri Kelas IX",
             "content": "Sekolah Islam Terpadu terbaik di Prabumulih. Para ustaz dan ustazah membimbing anak-anak dengan penuh kasih sayang. Program bilingual dan pembiasaan adabnya sangat terasa manfaatnya.",
-            "photo": "/uploads/ishum/guru_1821_IMG_20240928_222131.png",
+            "photo": "/uploads/testimoni/wali-santri-2.webp",
             "status": "publish"
         },
         {
             "name": "Fathir Rahman",
             "profession": "Alumni SMP IT Ishum",
-            "content": "Tiga tahun belajar di SMP IT Ishlahul Ummah memberikan fondasi yang sangat kokoh bagi saya, baik dalam hafalan Qur'an, kemampuan berbahasa, maupun kepemimpinan di jenjang pendidikan berikutnya.",
-            "photo": "/uploads/ishum/guru_2724_IMG_20240928_220722-scaled.jpg",
+            "content": "Tiga tahun belajar di SMP IT Ishlahul Ummah memberikan fondasi yang sangat kokoh bagi saya, baik dalam hafalan Qur'an, kemampuan sains, maupun kepemimpinan di jenjang pendidikan berikutnya.",
+            "photo": "/uploads/testimoni/alumni-1.webp",
             "status": "publish"
         }
     ],
@@ -199,31 +231,11 @@
             "download_count": 480
         },
         {
-            "title": "Buku Saku Adab & 10 Karakter (Muwashofat) Santri SMP IT",
-            "description": "Pedoman pembiasaan akhlak islami santri JSIT Indonesia dalam kehidupan sehari-hari di sekolah dan rumah.",
-            "category_type": "E-Book",
-            "file_path": "/uploads/downloads/buku-saku-adab-karakter-santri.pdf",
-            "cover_image": "/uploads/activities-smpit-ishum.webp",
-            "file_type": "PDF",
-            "file_size": "950 KB",
-            "download_count": 395
-        },
-        {
-            "title": "Buku Kosakata Harian Bilingual (Bahasa Arab & Inggris)",
-            "description": "Modul praktis percakapan harian 2 bahasa untuk mendukung program English & Arabic Week di sekolah.",
-            "category_type": "E-Book",
-            "file_path": "/uploads/downloads/buku-saku-kosakata-bilingual.pdf",
-            "cover_image": "/uploads/activities-smpit-ishum.webp",
-            "file_type": "PDF",
-            "file_size": "1.1 MB",
-            "download_count": 310
-        },
-        {
             "title": "Logo Resmi Yayasan & SMPS IT Ishlahul Ummah Prabumulih (HD)",
             "description": "File logo resmi sekolah resolusi tinggi format PNG transparan.",
             "category_type": "Logo",
             "file_path": "/uploads/logo-ishum.png",
-            "cover_image": "/uploads/logo-ishum.png",
+            "cover_image": "/uploads/logo-ishum-square.png",
             "file_type": "PNG",
             "file_size": "19 KB",
             "download_count": 890
@@ -233,9 +245,9 @@
         {
             "title": "Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih: Semangat Sportivitas & Ukhuwah",
             "slug": "class-meeting-semester-genap-smp-it-ishlahul-ummah-prabumulih",
-            "content": "<p>SMP IT Ishlahul Ummah Prabumulih kembali menggelar agenda akbar tahunan yaitu <strong>Class Meeting Semester Genap</strong> dengan tema mengobarkan semangat sportivitas, kekompakan, dan ukhuwah Islamiyah antarsantri.</p><p>Kegiatan yang dibuka secara resmi pada Rabu, 17 Juni 2026 ini mempertandingkan berbagai cabang perlombaan, mulai dari keolahragaan (futsal, bola voli, bulutangkis), seni Islam (lomba adzan, tilawatil Qur'an, hadroh), hingga adu kecerdasan dalam cerdas cermat sains dan debat bahasa.</p><p>Kepala SMPS IT Ishlahul Ummah Prabumulih, <strong>Ibu Mulyani Rahayu, S.T., M.Pd</strong>, menyampaikan bahwa Class Meeting ini bukan hanya sekadar ajang kompetisi, namun wahana pembentukan karakter pantang menyerah, kerja sama tim, dan kepemimpinan santri.</p>",
+            "content": "<p>SMP IT Ishlahul Ummah Prabumulih kembali menggelar agenda akbar tahunan yaitu <strong>Class Meeting Semester Genap</strong> dengan tema mengobarkan semangat sportivitas, kekompakan, dan ukhuwah Islamiyah antarsantri.</p><p>Kegiatan yang dibuka secara resmi pada Rabu, 17 Juni 2026 ini mempertandingkan berbagai cabang perlombaan, mulai dari keolahragaan (futsal, bola voli, bulutangkis), seni Islam (lomba adzan, tilawatil Qur'an, hadroh), hingga adu kecerdasan dalam cerdas cermat sains dan debat bahasa.</p><p>Kepala SMPS IT Ishlahul Ummah Prabumulih, <strong>Ibu Anita Carlyna, S.IP., M.Pd., Gr</strong>, menyampaikan bahwa Class Meeting ini bukan hanya sekadar ajang kompetisi, namun wahana pembentukan karakter pantang menyerah, kerja sama tim, dan kepemimpinan santri.</p>",
             "excerpt": "Semarak Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih dengan berbagai cabang lomba olahraga, keislaman, dan unjuk kreativitas santri.",
-            "featured_image": "/uploads/flyer-spmb-smpit-ishum.webp",
+            "featured_image": "/uploads/artikel/artikel-class-meeting.webp",
             "category": "kabar-kampus",
             "views_count": 1420
         },
@@ -244,16 +256,16 @@
             "slug": "spmb-gelombang-exclusive-smp-it-ishlahul-ummah-prabumulih",
             "content": "<p>Kabar gembira bagi para orang tua dan calon santri di Kota Prabumulih dan sekitarnya! <strong>SMPS IT Ishlahul Ummah Prabumulih</strong> secara resmi membuka pendaftaran <strong>SPMB Gelombang Exclusive</strong> untuk tahun ajaran baru.</p><p>Pada gelombang exclusive ini, kuota yang disediakan sangat terbatas, yakni hanya <strong>24 orang per kelas</strong>, demi menjaga kualitas pembelajaran interaktif dan pendampingan tahfidz yang optimal. Selain itu, tersedia promo istimewa berupa <strong>Cash Back Rp 1.000.000,-</strong> khusus bagi alumni SDIT Ishum dan SDIT Ishum 2.</p><p>Pendaftaran dapat dilakukan secara online melalui website resmi atau langsung mengunjungi kampus SMPS IT Ishlahul Ummah di Jl. Sadewa No. 45 Karang Raja Prabumulih Timur. Info narahubung: +62 852-6990-8696 / +62 853-7897-4396.</p>",
             "excerpt": "Penerimaan Peserta Didik Baru (SPMB) Gelombang Exclusive SMPS IT Ishlahul Ummah dibuka dengan kuota terbatas 24 orang dan cashback 1 juta.",
-            "featured_image": "/uploads/flyer-spmb-smpit-ishum.webp",
+            "featured_image": "/uploads/artikel/artikel-spmb-2026.webp",
             "category": "kabar-kampus",
             "views_count": 2180
         },
         {
-            "title": "SMP IT Ishlahul Ummah Prabumulih Raih Prestasi Gemilang dalam Lomba Gerak Jalan Pelajar",
-            "slug": "smp-it-ishlahul-ummah-raih-prestasi-lomba-gerak-jalan-prabumulih",
-            "content": "<p>Regu gerak jalan putra dan putri SMP IT Ishlahul Ummah Prabumulih berhasil mempersembahkan prestasi membanggakan pada ajang Lomba Gerak Jalan tingkat Pelajar SMP se-Kota Prabumulih.</p><p>Dengan barisan yang rapi, langkah tegap, kekompakan yel-yel Islami, serta kedisiplinan tinggi, santri SMP IT Ishum berhasil memukau dewan juri dan ribuan masyarakat yang memadati rute gerak jalan. Prestasi ini membuktikan bahwa santri sekolah Islam terpadu mampu bersaing dan unggul dalam kedisiplinan dan fisik prima.</p>",
-            "excerpt": "Regu santri SMP IT Ishlahul Ummah Prabumulih torehkan prestasi membanggakan dalam ajang lomba gerak jalan tingkat pelajar Kota Prabumulih.",
-            "featured_image": "/uploads/activities-smpit-ishum.webp",
+            "title": "SMP IT Ishlahul Ummah Prabumulih Raih Prestasi Gemilang dalam Olimpiade Sains & Kejuaraan Pelajar",
+            "slug": "smp-it-ishlahul-ummah-raih-prestasi-olimpiade-sains-pelajar",
+            "content": "<p>Santri SMP IT Ishlahul Ummah Prabumulih kembali menorehkan prestasi membanggakan pada ajang Olimpiade Sains dan Kejuaraan Pelajar tingkat Kota Prabumulih dan Provinsi Sumatera Selatan.</p><p>Prestasi ini merupakan buah dari pembinaan intensif di laboratorium sains dan kelas bimbingan MIPA oleh ustadz dan ustadzah pembina. Kepala SMPS IT Ishlahul Ummah, Ibu Anita Carlyna, S.IP., M.Pd., Gr, mengapresiasi dedikasi santri yang terus mengukir prestasi gemilang berlandaskan adab dan ilmu pengetahuan.</p>",
+            "excerpt": "Santri SMP IT Ishlahul Ummah Prabumulih torehkan prestasi membanggakan dalam ajang olimpiade sains dan kejuaraan tingkat pelajar.",
+            "featured_image": "/uploads/artikel/artikel-olimpiade-sains.webp",
             "category": "prestasi-santri",
             "views_count": 1120
         },
@@ -262,7 +274,7 @@
             "slug": "semarak-dakwah-ramadhan-sadarilah-dan-khatmil-quran-smpit-ishum",
             "content": "<p>Mengisi bulan suci Ramadhan dengan amalan terbaik, SMPS IT Ishlahul Ummah Prabumulih menggelar kegiatan tahunan <strong>SADARILAH (Semarak Dakwah Ramadhan Ishlahul Ummah)</strong> yang dipadukan dengan Khatmil Qur'an dan bakti sosial Jum'at Berbagi.</p><p>Seluruh santri berkumpul di masjid kampus untuk mengkhatamkan Al-Qur'an bersama para ustaz dan ustazah, dilanjutkan dengan pendistribusian paket sembako dan takjil kepada warga di sekitar Kelurahan Karang Raja, Prabumulih Timur. Kegiatan ini melatih kepekaan sosial dan kepedulian santri sejak dini.</p>",
             "excerpt": "Rangkaian kegiatan Semarak Dakwah Ramadhan (SADARILAH) dan Khatmil Qur'an melatih kepedulian sosial santri SMP IT Ishlahul Ummah.",
-            "featured_image": "/uploads/tahfidz-smpit-ishum.webp",
+            "featured_image": "/uploads/artikel/artikel-wisuda-tahfidz.webp",
             "category": "kabar-kampus",
             "views_count": 980
         },
@@ -271,16 +283,16 @@
             "slug": "english-and-arabic-week-lingkungan-berbahasa-asing-aktif",
             "content": "<p>Untuk membekali santri menghadapi era global, SMPS IT Ishlahul Ummah Prabumulih menerapkan program unggulan <strong>English & Arabic Week</strong>. Selama pekan bahasa, santri dan guru dibiasakan berkomunikasi dalam Bahasa Arab dan Bahasa Inggris pada aktivitas harian.</p><p>Program ini juga diisi dengan kompetisi pidato (khitabah), lomba bercerita (storytelling), debat, dan spelling bee yang diikuti dengan sangat antusias oleh seluruh siswa kelas VII hingga IX.</p>",
             "excerpt": "Pekan Bahasa Arab dan Inggris di SMP IT Ishlahul Ummah Prabumulih tingkatkan rasa percaya diri santri berkomunikasi dalam bahasa internasional.",
-            "featured_image": "/uploads/activities-smpit-ishum.webp",
+            "featured_image": "/uploads/artikel/artikel-literasi-digital.webp",
             "category": "kabar-kampus",
             "views_count": 840
         },
         {
             "title": "Wisuda Tahfidz & Khotmil Qur'an: Lahirkan Generasi Penghafal Al-Qur'an Berprestasi",
             "slug": "wisuda-tahfidz-dan-khotmil-quran-smp-it-ishlahul-ummah",
-            "content": "<p>Suasana haru dan khidmat menyelimuti wisuda tahfidz Al-Qur'an SMPS IT Ishlahul Ummah Prabumulih. Puluhan santri berhasil menyelesaikan target hafalan minimal 2 juz mutqin lengkap dengan munaqosah tajwid dan makharijul huruf.</p><p>Kepala Sekolah, Ibu Mulyani Rahayu, S.T., M.Pd, menyematkan selempang dan sertifikat tahfidz kepada para wisudawan dan wisudawati, didampingi oleh orang tua yang menitikkan air mata bahagia menyaksikan putra-putrinya memahkotai mereka dengan hafalan kalamullah.</p>",
+            "content": "<p>Suasana haru dan khidmat menyelimuti wisuda tahfidz Al-Qur'an SMPS IT Ishlahul Ummah Prabumulih. Puluhan santri berhasil menyelesaikan target hafalan minimal 2 juz mutqin lengkap dengan munaqosah tajwid dan makharijul huruf.</p><p>Kepala Sekolah, <strong>Ibu Anita Carlyna, S.IP., M.Pd., Gr</strong>, menyematkan selempang dan sertifikat tahfidz kepada para wisudawan dan wisudawati, didampingi oleh orang tua yang menitikkan air mata bahagia menyaksikan putra-putrinya memahkotai mereka dengan hafalan kalamullah.</p>",
             "excerpt": "Prosesi wisuda tahfidz Al-Qur'an SMPS IT Ishlahul Ummah Prabumulih meluluskan puluhan santri penghafal Qur'an 2 juz mutqin.",
-            "featured_image": "/uploads/tahfidz-smpit-ishum.webp",
+            "featured_image": "/uploads/artikel/artikel-wisuda-tahfidz.webp",
             "category": "prestasi-santri",
             "views_count": 1750
         }
@@ -293,7 +305,7 @@
             "location": "Kampus SMP IT Ishlahul Ummah Prabumulih",
             "content": "Upacara pembukaan dan dimulainya pertandingan Class Meeting Semester Genap seluruh santri putra dan putri.",
             "status": "publish",
-            "featured_image": "/uploads/flyer-spmb-smpit-ishum.png"
+            "featured_image": "/uploads/artikel/artikel-class-meeting.webp"
         },
         {
             "title": "Pendaftaran SPMB Gelombang Exclusive",
@@ -302,7 +314,7 @@
             "location": "Kantor SPMB / Online via Website",
             "content": "Penerimaan peserta didik baru gelombang exclusive dengan kuota terbatas 24 siswa dan promo cashback 1 juta.",
             "status": "publish",
-            "featured_image": "/uploads/flyer-spmb-smpit-ishum.png"
+            "featured_image": "/uploads/artikel/artikel-spmb-2026.webp"
         },
         {
             "title": "Munaqosah & Ujian Tahfidz Al-Qur'an",
@@ -311,7 +323,7 @@
             "location": "Masjid Tholabul 'Ilmi Kampus Ishum",
             "content": "Pengujian kelayakan dan kemutqinan hafalan Al-Qur'an 2 juz oleh dewan asatidz pembina TTQ.",
             "status": "publish",
-            "featured_image": "/uploads/tahfidz-smpit-ishum.webp"
+            "featured_image": "/uploads/artikel/artikel-wisuda-tahfidz.webp"
         }
     ],
     "pengumumen": [
@@ -321,7 +333,7 @@
             "content": "Pendaftaran SPMB Gelombang Exclusive SMPS IT Ishlahul Ummah Prabumulih telah dibuka. Kuota hanya 24 kursi per kelas. Segera daftarkan putra-putri Anda melalui portal PPDB online kami atau hubungi WA: 0852-6990-8696.",
             "file_attachment": "/uploads/downloads/panduan-ppdb-ishum.pdf",
             "status": "publish",
-            "featured_image": "/uploads/flyer-spmb-smpit-ishum.png"
+            "featured_image": "/uploads/artikel/artikel-spmb-2026.webp"
         },
         {
             "title": "Jadwal & Tata Tertib Class Meeting Semester Genap",
@@ -329,7 +341,7 @@
             "content": "Seluruh santri diwajibkan mengenakan seragam olahraga resmi sekolah dan menjaga sportivitas serta nilai-nilai ukhuwah selama kegiatan berlangsung.",
             "file_attachment": null,
             "status": "publish",
-            "featured_image": "/uploads/flyer-spmb-smpit-ishum.png"
+            "featured_image": "/uploads/artikel/artikel-class-meeting.webp"
         },
         {
             "title": "Prosedur Klaim Cash Back Rp 1.000.000,- Alumni SDIT Ishum 1 & 2",
@@ -337,7 +349,41 @@
             "content": "Bagi calon santri lulusan SDIT Ishlahul Ummah 1 dan SDIT Ishlahul Ummah 2, silakan melampirkan fotokopi ijazah/surat keterangan lulus saat verifikasi berkas pendaftaran.",
             "file_attachment": null,
             "status": "publish",
-            "featured_image": "/uploads/campus-smpit-ishum.webp"
+            "featured_image": "/uploads/fasilitas/fasilitas-gedung-utama.webp"
+        }
+    ],
+    "galleries": [
+        {
+            "url": "/uploads/galeri/galeri-kampus-terpadu.webp",
+            "title": "Gedung Kampus Terpadu SMPS IT Ishlahul Ummah"
+        },
+        {
+            "url": "/uploads/galeri/galeri-perpustakaan.webp",
+            "title": "Perpustakaan & Ruang Literasi Santri Ishum"
+        },
+        {
+            "url": "/uploads/galeri/galeri-lab-sains.webp",
+            "title": "Laboratorium IPA & Eksperimen Sains Santri"
+        },
+        {
+            "url": "/uploads/galeri/galeri-suasana-kelas.webp",
+            "title": "Suasana Belajar Interaktif & Nyaman di Kelas"
+        },
+        {
+            "url": "/uploads/galeri/galeri-wisuda-tahfidz.webp",
+            "title": "Wisuda Tahfidz & Munaqosah Al-Qur'an Mutqin"
+        },
+        {
+            "url": "/uploads/galeri/galeri-panahan-pramuka.webp",
+            "title": "Ekstrakurikuler Panahan & Kepramukaan SIT"
+        },
+        {
+            "url": "/uploads/galeri/galeri-upacara-santri.webp",
+            "title": "Upacara Bendera & Pembinaan Karakter Santri"
+        },
+        {
+            "url": "/uploads/galeri/galeri-class-meeting.webp",
+            "title": "Semarak Class Meeting & Sportivitas Santri"
         }
     ]
 }

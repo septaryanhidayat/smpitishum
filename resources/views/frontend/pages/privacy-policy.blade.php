@@ -5,15 +5,15 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Kebijakan Privasi</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Kebijakan Privasi (Privacy Policy)</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Komitmen transparansi dan perlindungan privasi data setiap pengunjung situs resmi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
@@ -29,7 +29,7 @@
                 <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">Kebijakan Privasi Website</h2>
                 <p class="text-xs text-gray-500 mt-1">Website Resmi SMPS IT Ishlahul Ummah Prabumulih</p>
             </div>
-            <div class="bg-emerald-50 text-[#00913e] px-4 py-2 rounded-xl text-xs font-bold border border-emerald-200">
+            <div class="bg-indigo-50/60 text-indigo-600 px-4 py-2 rounded-xl text-xs font-bold border border-indigo-200">
                 Terbit: 2026
             </div>
         </div>
@@ -41,7 +41,7 @@
             @else
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">1</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">1</span>
                         <span>Pendahuluan</span>
                     </h3>
                     <p>
@@ -54,7 +54,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">2</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">2</span>
                         <span>Informasi yang Kami Kumpulkan</span>
                     </h3>
                     <p>Kami dapat mengumpulkan informasi dari pengunjung, baik secara langsung maupun tidak langsung, termasuk:</p>
@@ -66,7 +66,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">3</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">3</span>
                         <span>Penggunaan Informasi</span>
                     </h3>
                     <p>Informasi yang kami kumpulkan digunakan untuk keperluan:</p>
@@ -80,7 +80,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">4</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">4</span>
                         <span>Perlindungan Informasi</span>
                     </h3>
                     <p>
@@ -90,7 +90,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">5</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">5</span>
                         <span>Penggunaan Cookies</span>
                     </h3>
                     <p>
@@ -100,7 +100,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">6</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">6</span>
                         <span>Tautan ke Situs Pihak Ketiga</span>
                     </h3>
                     <p>
@@ -110,7 +110,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">7</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">7</span>
                         <span>Hak Pengunjung</span>
                     </h3>
                     <p>
@@ -120,7 +120,7 @@
 
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">8</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">8</span>
                         <span>Perubahan Kebijakan Privasi</span>
                     </h3>
                     <p>
@@ -128,9 +128,9 @@
                     </p>
                 </section>
 
-                <section class="space-y-2 bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100">
+                <section class="space-y-2 bg-indigo-50/60/50 p-6 rounded-2xl border border-indigo-100">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">
-                        <span class="w-7 h-7 rounded-lg bg-[#00913e] text-white inline-flex items-center justify-center text-xs font-bold mr-2">9</span>
+                        <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white inline-flex items-center justify-center text-xs font-bold mr-2">9</span>
                         <span>Kontak Sekolah</span>
                     </h3>
                     <p>Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami:</p>

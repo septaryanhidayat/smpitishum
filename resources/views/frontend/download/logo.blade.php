@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('download.index') }}" class="hover:text-white transition">Download</a>
@@ -15,7 +15,7 @@
             <span class="text-amber-300 font-semibold">Logo</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Logo Resmi SMPS IT Ishlahul Ummah Prabumulih</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Identitas visual, filosofi lambang sekolah, panduan palet warna, dan aset unduhan resmi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
@@ -30,16 +30,16 @@
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                 Logo & Lambang SMPS IT Ishlahul Ummah Prabumulih
             </h2>
-            <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
         </div>
 
         {{-- DISPLAY EMBLEM LOGO --}}
-        <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-3xl bg-emerald-50/50 p-8 shadow-inner border border-emerald-100 flex items-center justify-center relative group">
+        <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-3xl bg-indigo-50/60/50 p-8 shadow-inner border border-indigo-100 flex items-center justify-center relative group">
             <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
         </div>
 
         <div>
-            <a href="/uploads/logo-ishum-square.png" download="logo-ishum-square.png" class="inline-flex items-center bg-[#00913e] hover:bg-emerald-800 text-white px-8 py-3.5 rounded-2xl text-xs sm:text-sm font-bold shadow-lg hover:shadow-xl transition space-x-2 transform hover:scale-105">
+            <a href="/uploads/logo-ishum-square.png" download="logo-ishum-square.png" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-2xl text-xs sm:text-sm font-bold shadow-lg hover:shadow-xl transition space-x-2 transform hover:scale-105">
                 <i class="fa-solid fa-download text-sm"></i>
                 <span>Download Lambang Emblem (Format Vektor SVG)</span>
             </a>
@@ -53,16 +53,16 @@
         {{-- FILOSOFI MAKNA --}}
         <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 reveal-fade-up space-y-5">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-base shadow-inner">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-base shadow-inner">
                     <i class="fa-solid fa-shapes"></i>
                 </div>
                 <h3 class="text-xl font-extrabold text-gray-900">Filosofi Lambang Sekolah</h3>
             </div>
-            <div class="w-12 h-1 bg-[#00913e] rounded-full"></div>
+            <div class="w-12 h-1 bg-indigo-600 rounded-full"></div>
 
             <ul class="space-y-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
                 <li class="flex items-start space-x-3">
-                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-[#00913e] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-indigo-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <div>
@@ -108,15 +108,15 @@
                 </div>
                 <h3 class="text-xl font-extrabold text-gray-900">Palet Warna Resmi</h3>
             </div>
-            <div class="w-12 h-1 bg-[#00913e] rounded-full"></div>
+            <div class="w-12 h-1 bg-indigo-600 rounded-full"></div>
 
             <div class="space-y-4 text-xs sm:text-sm">
                 {{-- Hijau Utama --}}
-                <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-xl bg-[#00913e] shadow-md flex-shrink-0"></div>
+                <div class="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-200 flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 shadow-md flex-shrink-0"></div>
                     <div>
                         <span class="font-extrabold text-gray-900 block text-sm">Hijau Ishum (Dominan)</span>
-                        <code class="text-xs text-[#00913e] font-mono font-bold">HEX: #0D6B38</code>
+                        <code class="text-xs text-indigo-600 font-mono font-bold">HEX: #0D6B38</code>
                         <p class="text-[11px] text-gray-500 mt-0.5">Kedamaian spiritual, keberkahan ilmu, dan naungan Qur'ani.</p>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
     <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up space-y-6">
         <div class="flex items-center justify-between flex-wrap gap-2">
             <h3 class="text-lg sm:text-xl font-extrabold text-gray-900">Varian Logo Sekolah Lainnya</h3>
-            <span class="text-xs bg-emerald-100 text-[#00913e] font-bold px-3 py-1 rounded-full">Format Vektor & Raster</span>
+            <span class="text-xs bg-emerald-100 text-indigo-600 font-bold px-3 py-1 rounded-full">Format Vektor & Raster</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {{-- Logo Header Horizontal --}}
@@ -163,7 +163,7 @@
                         <span class="text-[11px] text-gray-400">Vektor SVG Transparan</span>
                     </div>
                 </div>
-                <a href="/uploads/logo-ishum.png" download="logo-ishum-horizontal.svg" class="w-full text-center bg-[#00913e] hover:bg-emerald-800 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center space-x-1.5 shadow">
+                <a href="/uploads/logo-ishum.png" download="logo-ishum-horizontal.svg" class="w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center space-x-1.5 shadow">
                     <i class="fa-solid fa-download text-[11px]"></i>
                     <span>Unduh Logo Horizontal</span>
                 </a>

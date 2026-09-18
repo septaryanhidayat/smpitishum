@@ -29,7 +29,7 @@
             <div class="bg-white rounded-2xl shadow-xs border border-slate-100 p-6 space-y-5">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[#00913e] flex items-center justify-center font-bold text-lg">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50/60 text-indigo-600 flex items-center justify-center font-bold text-lg">
                             <i class="fa-solid fa-id-card"></i>
                         </div>
                         <div>
@@ -60,7 +60,7 @@
                         <div class="flex items-center space-x-2 mt-0.5">
                             <span class="font-bold text-slate-900 text-sm">{{ $submission->whatsapp }}</span>
                             @if($submission->whatsapp)
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $submission->whatsapp) }}?text={{ urlencode('Halo Bapak/Ibu ' . $submission->name . ', kami dari pihak SMPS IT Ishlahul Ummah Prabumulih terkait pengajuan ' . $submission->service_label . ' Anda...') }}" target="_blank" class="px-2.5 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-[10px] inline-flex items-center space-x-1 shadow-xs transition">
+                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $submission->whatsapp) }}?text={{ urlencode('Halo Bapak/Ibu ' . $submission->name . ', kami dari pihak SMPS IT Ishlahul Ummah Prabumulih terkait pengajuan ' . $submission->service_label . ' Anda...') }}" target="_blank" class="px-2.5 py-1 rounded-lg bg-indigo-50/600 hover:bg-indigo-600 text-white font-bold text-[10px] inline-flex items-center space-x-1 shadow-xs transition">
                                     <i class="fa-brands fa-whatsapp"></i>
                                     <span>Chat WA</span>
                                 </a>
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                             @if($submission->letter_path)
-                                <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Ada</span>
+                                <span class="bg-emerald-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Ada</span>
                             @else
                                 <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-md">Tidak Ada</span>
                             @endif
@@ -128,7 +128,7 @@
                     <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col justify-between space-y-3">
                         <div class="flex items-start justify-between">
                             <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-indigo-700 flex items-center justify-center text-lg font-bold">
                                     <i class="fa-solid fa-id-card"></i>
                                 </div>
                                 <div>
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
                             @if($submission->ktp_path)
-                                <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Ada</span>
+                                <span class="bg-emerald-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Ada</span>
                             @else
                                 <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-md">Tidak Ada</span>
                             @endif
@@ -145,7 +145,7 @@
 
                         @if($submission->ktp_path)
                             <div class="pt-2">
-                                <a href="{{ $submission->ktp_path }}" target="_blank" class="w-full py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center space-x-1.5 transition shadow-xs">
+                                <a href="{{ $submission->ktp_path }}" target="_blank" class="w-full py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs flex items-center justify-center space-x-1.5 transition shadow-xs">
                                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                                     <span>Buka Berkas KTP</span>
                                 </a>
@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                                 @if($submission->npwp_path)
-                                    <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Ada</span>
+                                    <span class="bg-emerald-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Ada</span>
                                 @else
                                     <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-md">Tidak Dilampirkan</span>
                                 @endif
@@ -195,7 +195,7 @@
             {{-- UPDATE STATUS FORM --}}
             <div class="bg-white rounded-2xl shadow-xs border border-slate-100 p-6 space-y-4">
                 <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
-                    <i class="fa-solid fa-sliders text-[#00913e]"></i>
+                    <i class="fa-solid fa-sliders text-indigo-600"></i>
                     <h3 class="font-black text-slate-900 text-sm">Perbarui Status Permohonan</h3>
                 </div>
 
@@ -203,7 +203,7 @@
                     @csrf
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Pilih Status Baru</label>
-                        <select name="status" required class="w-full bg-slate-50 border border-slate-200 text-xs font-bold rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                        <select name="status" required class="w-full bg-slate-50 border border-slate-200 text-xs font-bold rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                             <option value="pending" {{ $submission->status === 'pending' ? 'selected' : '' }}>Menunggu Verifikasi (Pending)</option>
                             <option value="approved" {{ $submission->status === 'approved' ? 'selected' : '' }}>Disetujui / Dijadwalkan (Approved)</option>
                             <option value="completed" {{ $submission->status === 'completed' ? 'selected' : '' }}>Selesai Terlaksana (Completed)</option>
@@ -213,10 +213,10 @@
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Catatan Internal / Alasan</label>
-                        <textarea name="admin_notes" rows="4" placeholder="Tuliskan catatan internal admin, jadwal yang disetujui, atau alasan penolakan..." class="w-full bg-slate-50 border border-slate-200 text-xs rounded-xl p-3 text-slate-800 focus:ring-2 focus:ring-[#00913e] focus:outline-none leading-relaxed">{{ old('admin_notes', $submission->admin_notes) }}</textarea>
+                        <textarea name="admin_notes" rows="4" placeholder="Tuliskan catatan internal admin, jadwal yang disetujui, atau alasan penolakan..." class="w-full bg-slate-50 border border-slate-200 text-xs rounded-xl p-3 text-slate-800 focus:ring-2 focus:ring-indigo-600 focus:outline-none leading-relaxed">{{ old('admin_notes', $submission->admin_notes) }}</textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-[#00913e] hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center justify-center space-x-1.5 shadow-xs">
+                    <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center justify-center space-x-1.5 shadow-xs">
                         <i class="fa-solid fa-floppy-disk"></i>
                         <span>Simpan Perubahan</span>
                     </button>

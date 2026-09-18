@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Berita & Artikel</span>
@@ -27,7 +27,7 @@
                 Kabar & Prestasi Sekolah
             @endif
         </h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Informasi kegiatan santri, prestasi akademik & tahfidz, serta kabar terkini SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
@@ -41,11 +41,11 @@
             
             {{-- Category Filter Pills --}}
             <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none text-xs">
-                <a href="{{ route('artikel.index') }}" class="px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition {{ !request('kategori') && !request('tag') ? 'bg-[#00913e] text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-[#00913e]' }}">
+                <a href="{{ route('artikel.index') }}" class="px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition {{ !request('kategori') && !request('tag') ? 'bg-indigo-600 text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-indigo-50/60 hover:text-indigo-600' }}">
                     Semua
                 </a>
                 @foreach($categories->take(8) as $cat)
-                    <a href="{{ route('artikel.index', ['kategori' => $cat->slug]) }}" class="px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition {{ request('kategori') == $cat->slug ? 'bg-[#00913e] text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-[#00913e]' }}">
+                    <a href="{{ route('artikel.index', ['kategori' => $cat->slug]) }}" class="px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition {{ request('kategori') == $cat->slug ? 'bg-indigo-600 text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-indigo-50/60 hover:text-indigo-600' }}">
                         {{ $cat->name }} ({{ $cat->posts_count }})
                     </a>
                 @endforeach
@@ -62,7 +62,7 @@
                                 <img src="/uploads/campus-smpit-ishum.webp" alt="{{ $post->title }}" class="w-full h-full object-cover">
                             @endif
                             @if($post->categories->isNotEmpty())
-                                <span class="absolute top-3 left-3 bg-[#00913e] text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+                                <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
                                     {{ $post->categories->first()->name }}
                                 </span>
                             @endif
@@ -71,18 +71,18 @@
                         <div class="p-5 flex-grow flex flex-col justify-between space-y-3">
                             <div>
                                 <div class="flex items-center text-[11px] text-gray-400 space-x-2 mb-2">
-                                    <span><i class="fa-regular fa-calendar mr-1 text-[#00913e]"></i>{{ $post->published_at ? $post->published_at->translatedFormat('d M Y') : '-' }}</span>
+                                    <span><i class="fa-regular fa-calendar mr-1 text-indigo-600"></i>{{ $post->published_at ? $post->published_at->translatedFormat('d M Y') : '-' }}</span>
                                     <span>&bull;</span>
                                     <span><i class="fa-regular fa-eye mr-1"></i>{{ number_format($post->views_count) }}</span>
                                 </div>
-                                <h2 class="font-bold text-gray-900 text-sm sm:text-base line-clamp-2 group-hover:text-[#00913e] transition">
+                                <h2 class="font-bold text-gray-900 text-sm sm:text-base line-clamp-2 group-hover:text-indigo-600 transition">
                                     <a href="{{ route('artikel.show', $post->slug) }}">{{ $post->title }}</a>
                                 </h2>
                                 <p class="text-xs text-gray-500 line-clamp-2 mt-2 font-light">
                                     {{ $post->excerpt }}
                                 </p>
                             </div>
-                            <div class="pt-2 border-t border-gray-50 flex items-center justify-between text-xs font-semibold text-[#00913e] group-hover:text-orange-600">
+                            <div class="pt-2 border-t border-gray-50 flex items-center justify-between text-xs font-semibold text-indigo-600 group-hover:text-orange-600">
                                 <span>Baca Selengkapnya</span>
                                 <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </div>
@@ -93,7 +93,7 @@
                         <i class="fa-solid fa-newspaper text-4xl text-gray-300 mb-3"></i>
                         <h3 class="text-base font-bold text-gray-700">Tidak ada artikel ditemukan</h3>
                         <p class="text-xs text-gray-500 mt-1">Coba gunakan kata kunci pencarian yang lain.</p>
-                        <a href="{{ route('artikel.index') }}" class="inline-block mt-4 text-xs font-semibold text-[#00913e] hover:underline">
+                        <a href="{{ route('artikel.index') }}" class="inline-block mt-4 text-xs font-semibold text-indigo-600 hover:underline">
                             Kembali ke Semua Artikel
                         </a>
                     </div>
@@ -113,8 +113,8 @@
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 class="font-bold text-sm text-gray-900 mb-3 uppercase tracking-wider">Cari Artikel</h3>
                 <form action="{{ route('artikel.index') }}" method="GET" class="relative">
-                    <input type="text" name="q" placeholder="Ketik kata kunci..." value="{{ request('q') }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl pl-4 pr-10 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
-                    <button type="submit" class="absolute right-3 top-3 text-gray-400 hover:text-[#00913e]" aria-label="Search">
+                    <input type="text" name="q" placeholder="Ketik kata kunci..." value="{{ request('q') }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl pl-4 pr-10 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                    <button type="submit" class="absolute right-3 top-3 text-gray-400 hover:text-indigo-600" aria-label="Search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
@@ -128,8 +128,8 @@
                 <ul class="space-y-2 text-xs">
                     @foreach($categories->take(12) as $cat)
                         <li>
-                            <a href="{{ route('artikel.index', ['kategori' => $cat->slug]) }}" class="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-emerald-50 hover:text-[#00913e] transition {{ request('kategori') == $cat->slug ? 'text-[#00913e] font-bold bg-emerald-50' : 'text-gray-600' }}">
-                                <span class="flex items-center"><i class="fa-solid fa-folder-open mr-2 text-emerald-400"></i>{{ $cat->name }}</span>
+                            <a href="{{ route('artikel.index', ['kategori' => $cat->slug]) }}" class="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-indigo-50/60 hover:text-indigo-600 transition {{ request('kategori') == $cat->slug ? 'text-indigo-600 font-bold bg-indigo-50/60' : 'text-gray-600' }}">
+                                <span class="flex items-center"><i class="fa-solid fa-folder-open mr-2 text-amber-400"></i>{{ $cat->name }}</span>
                                 <span class="text-gray-400 text-[11px] bg-gray-100 px-2 py-0.5 rounded-full">{{ $cat->posts_count }}</span>
                             </a>
                         </li>
@@ -156,7 +156,7 @@
                                 <span class="text-[10px] text-gray-400 block mb-1">
                                     {{ $rPost->published_at ? $rPost->published_at->translatedFormat('d M Y') : '-' }}
                                 </span>
-                                <h4 class="text-xs font-bold text-gray-800 line-clamp-2 group-hover:text-[#00913e] transition leading-snug">
+                                <h4 class="text-xs font-bold text-gray-800 line-clamp-2 group-hover:text-indigo-600 transition leading-snug">
                                     <a href="{{ route('artikel.show', $rPost->slug) }}">{{ $rPost->title }}</a>
                                 </h4>
                             </div>
@@ -166,10 +166,10 @@
             </div>
 
             {{-- Banner PPDB --}}
-            <div class="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-emerald-900 to-[#00913e] p-6 text-white text-center space-y-3">
+            <div class="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-indigo-900 to-blue-900 p-6 text-white text-center space-y-3">
                 <span class="inline-block bg-orange-500 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white">PPDB Online</span>
                 <h4 class="text-lg font-extrabold text-white">Penerimaan Santri Baru</h4>
-                <p class="text-xs text-emerald-100">Jadilah bagian dari generasi Qur'ani dan saintis berprestasi di SMPS IT Ishlahul Ummah Prabumulih.</p>
+                <p class="text-xs text-indigo-100">Jadilah bagian dari generasi Qur'ani dan saintis berprestasi di SMPS IT Ishlahul Ummah Prabumulih.</p>
                 <a href="{{ route('hubungi') }}" class="inline-block w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold py-2.5 rounded-xl text-xs hover:from-orange-600 hover:to-amber-600 transition shadow">
                     Daftar Sekarang
                 </a>

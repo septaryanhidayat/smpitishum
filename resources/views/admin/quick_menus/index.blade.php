@@ -17,23 +17,23 @@
             </a>
         </div>
 
-        <div class="mt-4 p-3.5 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center justify-between text-xs text-emerald-900">
+        <div class="mt-4 p-3.5 bg-indigo-50/60 border border-indigo-200 rounded-2xl flex items-center justify-between text-xs text-emerald-900">
             <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-circle-info text-emerald-600 text-sm"></i>
+                <i class="fa-solid fa-circle-info text-indigo-600 text-sm"></i>
                 <span><strong>Status Beranda:</strong> Menampilkan 8 menu pertama yang berstatus <strong>Aktif</strong> (Urutan #1 s/d #8). Menu lainnya dinonaktifkan agar beranda tetap rapi.</span>
             </div>
-            <span class="text-[11px] font-bold bg-white text-emerald-700 px-3 py-1 rounded-xl border border-emerald-300 shadow-xs">
+            <span class="text-[11px] font-bold bg-white text-indigo-700 px-3 py-1 rounded-xl border border-indigo-300 shadow-xs">
                 {{ $quickMenus->where('is_active', true)->count() }} Menu Aktif &bull; {{ $quickMenus->where('is_active', false)->count() }} Nonaktif
             </span>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-6">
             @forelse($quickMenus as $qm)
-                <div class="bg-slate-50 rounded-2xl p-4 border {{ $qm->is_active ? 'border-emerald-200 shadow-xs' : 'border-slate-200 opacity-80' }} flex flex-col justify-between items-center text-center space-y-3 hover:shadow-md transition group relative">
+                <div class="bg-slate-50 rounded-2xl p-4 border {{ $qm->is_active ? 'border-indigo-200 shadow-xs' : 'border-slate-200 opacity-80' }} flex flex-col justify-between items-center text-center space-y-3 hover:shadow-md transition group relative">
                     <div class="absolute top-2 right-2">
                         @if($qm->is_active)
-                            <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[9px] font-extrabold bg-emerald-100 text-emerald-700 border border-emerald-300" title="Aktif di Beranda">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span> Aktif
+                            <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[9px] font-extrabold bg-emerald-100 text-indigo-700 border border-indigo-300" title="Aktif di Beranda">
+                                <span class="w-1.5 h-1.5 rounded-full bg-indigo-50/600 mr-1 animate-pulse"></span> Aktif
                             </span>
                         @else
                             <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[9px] font-bold bg-slate-200 text-slate-600 border border-slate-300" title="Nonaktif (Tidak tampil di Beranda)">

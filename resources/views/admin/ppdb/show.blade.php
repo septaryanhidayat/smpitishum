@@ -13,7 +13,7 @@
             <span>Kembali ke Daftar PPDB</span>
         </a>
         <div class="flex items-center space-x-2">
-            <a href="{{ route('admin.ppdb.print', $ppdb) }}" target="_blank" class="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs transition">
+            <a href="{{ route('admin.ppdb.print', $ppdb) }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs transition">
                 <i class="fa-solid fa-print"></i>
                 <span>Cetak Bukti Pendaftaran</span>
             </a>
@@ -39,10 +39,10 @@
         </div>
 
         {{-- INFO JALUR & PROGRAM PILIHAN --}}
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 bg-emerald-50/70 rounded-2xl border border-emerald-200 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 bg-indigo-50/60/70 rounded-2xl border border-indigo-200 text-xs">
             <div>
                 <span class="text-slate-400 block text-[10px] font-bold uppercase">Gelombang</span>
-                <span class="font-black text-[#00913e]">{{ $ppdb->wave ?: 'Gelombang 1' }}</span>
+                <span class="font-black text-indigo-600">{{ $ppdb->wave ?: 'Gelombang 1' }}</span>
             </div>
             <div>
                 <span class="text-slate-400 block text-[10px] font-bold uppercase">Jalur Pendaftaran</span>
@@ -59,7 +59,7 @@
             @csrf
             <div class="w-full sm:w-1/3">
                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Ubah Status</label>
-                <select name="status" class="w-full bg-white text-xs rounded-xl px-3 py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                <select name="status" class="w-full bg-white text-xs rounded-xl px-3 py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     <option value="pending" {{ $ppdb->status === 'pending' ? 'selected' : '' }}>Menunggu Verifikasi</option>
                     <option value="verified" {{ $ppdb->status === 'verified' ? 'selected' : '' }}>Terverifikasi (Berkas Lengkap)</option>
                     <option value="accepted" {{ $ppdb->status === 'accepted' ? 'selected' : '' }}>Diterima Sebagai Santri</option>
@@ -68,9 +68,9 @@
             </div>
             <div class="w-full sm:w-1/2">
                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Catatan Panitia (Opsional)</label>
-                <input type="text" name="notes" value="{{ old('notes', $ppdb->notes) }}" placeholder="Catatan hasil verifikasi..." class="w-full bg-white text-xs rounded-xl px-3 py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                <input type="text" name="notes" value="{{ old('notes', $ppdb->notes) }}" placeholder="Catatan hasil verifikasi..." class="w-full bg-white text-xs rounded-xl px-3 py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             </div>
-            <button type="submit" class="bg-[#00913e] hover:bg-[#007532] text-white font-bold text-xs px-5 py-2 rounded-xl shadow transition cursor-pointer">
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-5 py-2 rounded-xl shadow transition cursor-pointer">
                 Simpan Status
             </button>
         </form>
@@ -79,7 +79,7 @@
     {{-- DATA CALON SISWA --}}
     <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-4">
         <div class="pb-3 border-b border-slate-100 flex items-center space-x-2">
-            <span class="w-6 h-6 rounded-lg bg-emerald-100 text-[#00913e] font-bold text-xs flex items-center justify-center">1</span>
+            <span class="w-6 h-6 rounded-lg bg-emerald-100 text-indigo-600 font-bold text-xs flex items-center justify-center">1</span>
             <h3 class="text-sm font-black text-slate-800 uppercase tracking-wider">Biodata Calon Siswa</h3>
         </div>
 
@@ -114,7 +114,7 @@
             </div>
             <div>
                 <span class="text-slate-400 block mb-0.5">Nomor HP / WhatsApp</span>
-                <a href="https://wa.me/{{ preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $ppdb->phone)) }}" target="_blank" class="text-[#00913e] font-bold hover:underline">
+                <a href="https://wa.me/{{ preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $ppdb->phone)) }}" target="_blank" class="text-indigo-600 font-bold hover:underline">
                     <i class="fa-brands fa-whatsapp mr-1"></i>{{ $ppdb->phone }}
                 </a>
             </div>
@@ -240,7 +240,7 @@
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                     <span class="text-slate-400 block font-semibold">{{ $label }}</span>
                     @if($type === 'file' && !empty($val) && $val !== '-')
-                        <a href="{{ $val }}" target="_blank" class="inline-flex items-center gap-1.5 text-[#00913e] font-bold hover:underline">
+                        <a href="{{ $val }}" target="_blank" class="inline-flex items-center gap-1.5 text-indigo-600 font-bold hover:underline">
                             <i class="fa-solid fa-file-arrow-down"></i>
                             <span>Buka / Unduh Berkas</span>
                         </a>
@@ -266,7 +266,7 @@
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold text-slate-700">Scan Akta Kelahiran</span>
                     @if($ppdb->birth_certificate_path)
-                        <a href="{{ $ppdb->birth_certificate_path }}" target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">
+                        <a href="{{ $ppdb->birth_certificate_path }}" target="_blank" class="text-[11px] font-bold text-indigo-600 hover:underline">
                             <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka File
                         </a>
                     @endif
@@ -295,7 +295,7 @@
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold text-slate-700">Bukti Pembayaran Pendaftaran</span>
                     @if($ppdb->payment_proof_path)
-                        <a href="{{ $ppdb->payment_proof_path }}" target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">
+                        <a href="{{ $ppdb->payment_proof_path }}" target="_blank" class="text-[11px] font-bold text-indigo-600 hover:underline">
                             <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka File
                         </a>
                     @endif

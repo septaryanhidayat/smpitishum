@@ -9,8 +9,8 @@
     {{-- HEADER & FILTER PERIODE --}}
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-3xl shadow-xs border border-slate-200/80">
         <div>
-            <div class="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold mb-1">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <div class="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold mb-1">
+                <span class="w-2 h-2 rounded-full bg-indigo-50/600 animate-pulse"></span>
                 <span>Data Nyata (Real Data Tracking)</span>
             </div>
             <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Statistik Pengunjung & Pembaca</h2>
@@ -55,12 +55,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                 {{-- Opsi 1: Otomatis --}}
                 <div class="bg-white p-5 rounded-2xl border border-amber-200 shadow-xs space-y-3">
-                    <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 uppercase">Cara 1 (Rekomendasi / Paling Praktis)</span>
+                    <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-800 uppercase">Cara 1 (Rekomendasi / Paling Praktis)</span>
                     <h4 class="font-bold text-xs text-slate-800">Satu Klik Migrasi Otomatis</h4>
                     <p class="text-xs text-slate-500">Sistem akan menjalankan perintah migrasi database langsung dari panel ini.</p>
                     <form action="{{ route('admin.migrate') }}" method="POST" onsubmit="return confirm('Jalankan migrasi database sekarang?');">
                         @csrf
-                        <button type="submit" class="w-full inline-flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-sm cursor-pointer">
+                        <button type="submit" class="w-full inline-flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-sm cursor-pointer">
                             <i class="fa-solid fa-play text-xs"></i>
                             <span>Jalankan Migrasi Database Otomatis</span>
                         </button>
@@ -168,9 +168,9 @@ CREATE TABLE IF NOT EXISTS `visitor_logs` (
         </div>
 
         {{-- Card 4: Pengguna Mobile (HP) --}}
-        <div class="bg-gradient-to-br from-[#059669] via-[#10b981] to-[#14b8a6] text-white rounded-3xl p-6 shadow-lg shadow-emerald-500/20 border border-emerald-300/30 relative overflow-hidden group">
+        <div class="bg-gradient-to-br from-[#059669] via-[#10b981] to-[#14b8a6] text-white rounded-3xl p-6 shadow-lg shadow-emerald-500/20 border border-indigo-300/30 relative overflow-hidden group">
             <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold text-emerald-100 uppercase tracking-wider">Pembaca Mobile (HP)</span>
+                <span class="text-xs font-bold text-indigo-100 uppercase tracking-wider">Pembaca Mobile (HP)</span>
                 <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-lg">
                     <i class="fa-solid fa-mobile-screen"></i>
                 </div>
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `visitor_logs` (
             <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">
                 {{ $mobilePercentage }}%
             </div>
-            <div class="text-xs text-emerald-100 mt-2 font-medium">
+            <div class="text-xs text-indigo-100 mt-2 font-medium">
                 Mayoritas pembaca mengakses via smartphone
             </div>
         </div>
@@ -351,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `visitor_logs` (
                     <h3 class="font-extrabold text-slate-800 text-base">Perangkat & Browser Pengunjung</h3>
                     <p class="text-xs text-slate-400">Spesifikasi teknologi yang digunakan pembaca</p>
                 </div>
-                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
+                <div class="w-8 h-8 rounded-xl bg-indigo-50/60 text-indigo-600 flex items-center justify-center text-sm">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
             </div>
@@ -404,8 +404,8 @@ CREATE TABLE IF NOT EXISTS `visitor_logs` (
     <div class="bg-white rounded-3xl shadow-xs border border-slate-200/80 overflow-hidden">
         <div class="p-6 sm:p-8 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-                <div class="inline-flex items-center space-x-2 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-0.5 rounded-full mb-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                <div class="inline-flex items-center space-x-2 text-xs font-bold text-indigo-600 bg-indigo-50/60 px-3 py-0.5 rounded-full mb-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-50/600 animate-ping"></span>
                     <span>Real-Time Visitor Activity</span>
                 </div>
                 <h3 class="font-extrabold text-slate-900 text-lg">Log Kunjungan Pengunjung Terbaru</h3>

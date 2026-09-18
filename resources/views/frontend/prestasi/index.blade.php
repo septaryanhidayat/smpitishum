@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span class="text-amber-300 font-semibold">Prestasi Sekolah</span>
@@ -18,7 +18,7 @@
             </div>
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Prestasi &amp; Penghargaan</h1>
-                <p class="text-sm text-emerald-100 mt-1 font-light">
+                <p class="text-sm text-indigo-100 mt-1 font-light">
                     Bukti nyata kesungguhan pembinaan akademik, sains, tahfidz Qur'an, dan minat bakat di SMPS IT Ishum.
                 </p>
             </div>
@@ -29,19 +29,19 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     {{-- STATS HIGHLIGHT --}}
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-        <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm text-center">
-            <span class="text-2xl sm:text-3xl font-black text-[#00913e] block">20+</span>
+        <div class="bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm text-center">
+            <span class="text-2xl sm:text-3xl font-black text-indigo-600 block">20+</span>
             <span class="text-xs text-gray-600 font-medium">Prestasi Tercatat</span>
         </div>
-        <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm text-center">
+        <div class="bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm text-center">
             <span class="text-2xl sm:text-3xl font-black text-amber-500 block">30 Juz</span>
             <span class="text-xs text-gray-600 font-medium">Hafalan Qur'an</span>
         </div>
-        <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm text-center">
+        <div class="bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm text-center">
             <span class="text-2xl sm:text-3xl font-black text-blue-600 block">Nasional</span>
             <span class="text-xs text-gray-600 font-medium">&amp; Internasional</span>
         </div>
-        <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm text-center">
+        <div class="bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm text-center">
             <span class="text-2xl sm:text-3xl font-black text-purple-600 block">PTN &amp; PTKIN</span>
             <span class="text-xs text-gray-600 font-medium">Lolos SNBP</span>
         </div>
@@ -61,10 +61,10 @@
                 <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                     <div>
                         <div class="text-[11px] text-gray-400 mb-2 flex items-center space-x-1.5">
-                            <i class="fa-regular fa-calendar text-[#00913e]"></i>
+                            <i class="fa-regular fa-calendar text-indigo-600"></i>
                             <span>{{ $item->published_at ? $item->published_at->format('d M Y') : $item->created_at->format('d M Y') }}</span>
                         </div>
-                        <h3 class="font-bold text-gray-900 text-lg group-hover:text-[#00913e] transition line-clamp-2 leading-snug">
+                        <h3 class="font-bold text-gray-900 text-lg group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
                             <a href="{{ route('prestasi.show', $item->slug) }}">
                                 {{ $item->title }}
                             </a>
@@ -74,7 +74,7 @@
                         </p>
                     </div>
                     <div class="pt-3 border-t border-gray-50 flex items-center justify-between">
-                        <span class="text-xs font-semibold text-[#00913e] flex items-center space-x-1 group-hover:translate-x-1 transition">
+                        <span class="text-xs font-semibold text-indigo-600 flex items-center space-x-1 group-hover:translate-x-1 transition">
                             <span>Baca Selengkapnya</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </span>

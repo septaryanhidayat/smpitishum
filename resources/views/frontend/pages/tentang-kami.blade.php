@@ -27,31 +27,31 @@
     <section class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-100 reveal-fade-up">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div class="lg:col-span-4 flex justify-center">
-                <div class="w-56 h-72 sm:w-64 sm:h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-4 ring-green-100 bg-green-50 relative group">
-                    <img src="/uploads/campus-smpit-ishum.webp" alt="Mulyani Rahayu, S.T., M.Pd - Kepala Sekolah" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                <div class="w-56 h-72 sm:w-64 sm:h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-4 ring-indigo-100 bg-indigo-50 relative group">
+                    <img src="/uploads/dewan/kepala-sekolah.webp" alt="Anita Carlyna, S.IP., M.Pd., Gr - Kepala Sekolah" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                     <div class="absolute bottom-3 left-3 text-white">
-                        <span class="block text-sm font-extrabold">Mulyani Rahayu, S.T., M.Pd</span>
+                        <span class="block text-sm font-extrabold">Anita Carlyna, S.IP., M.Pd., Gr</span>
                     </div>
                 </div>
             </div>
             <div class="lg:col-span-8 space-y-4 text-left">
-                <div class="inline-flex items-center space-x-2 bg-green-100 text-[#00913e] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-user-tie"></i>
+                <div class="inline-flex items-center space-x-2 bg-indigo-100 text-indigo-800 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-user-tie text-indigo-600"></i>
                     <span>Sambutan Pimpinan</span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
                     Mendidik Generasi Qur'ani Berprestasi
                 </h2>
-                <div class="w-16 h-1 bg-[#00913e] rounded-full"></div>
+                <div class="w-16 h-1 bg-indigo-600 rounded-full"></div>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    Assalamu'alaikum Warahmatullahi Wabarakatuh. SMPS IT Ishlahul Ummah Prabumulih berdiri dengan tekad kuat menyajikan pendidikan menengah atas yang seimbang antara kematangan spiritual, kemuliaan akhlak, dan keunggulan sains-teknologi. Kami meyakini bahwa generasi terbaik adalah generasi yang menjadikan Al-Qur'an sebagai pedoman hidup sekaligus terampil menguasai ilmu pengetahuan modern.
+                    Assalamu'alaikum Warahmatullahi Wabarakatuh. SMPS IT Ishlahul Ummah Prabumulih berdiri dengan tekad kuat menyajikan pendidikan menengah pertama yang seimbang antara kematangan spiritual, kemuliaan akhlak, dan keunggulan sains-teknologi. Kami meyakini bahwa generasi terbaik adalah generasi yang menjadikan Al-Qur'an sebagai pedoman hidup sekaligus terampil menguasai ilmu pengetahuan modern.
                 </p>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    Dengan tenaga pendidik berkompeten, kurikulum terintegrasi, sarana laboratorium modern, serta lingkungan Islamic Boarding yang kondusif, kami berkomitmen mengantarkan setiap santri menggapai masa depan mulia dan berprestasi di perguruan tinggi terkemuka.
+                    Dengan tenaga pendidik berkompeten, kurikulum terintegrasi JSIT dan nasional, sarana laboratorium modern, serta pembiasaan karakter Islami yang kondusif, kami berkomitmen mengantarkan setiap santri menggapai masa depan mulia dan siap berprestasi ke jenjang pendidikan unggulan.
                 </p>
                 <div class="pt-4">
-                    <a href="{{ route('page.sambutan') }}" class="inline-flex items-center bg-[#00913e] hover:bg-[#007532] text-white px-6 py-3 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition">
+                    <a href="{{ route('page.sambutan') }}" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition">
                         <span>Baca Sambutan Lengkap</span>
                         <i class="fa-solid fa-arrow-right ml-2 text-[11px]"></i>
                     </a>
@@ -99,17 +99,17 @@
         {{-- Card 1: Fasilitas --}}
         <div class="bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between space-y-6 reveal-fade-up">
             <div class="space-y-4">
-                <div class="w-16 h-16 rounded-2xl bg-green-100 text-[#00913e] flex items-center justify-center text-2xl shadow-inner">
+                <div class="w-16 h-16 rounded-2xl bg-green-100 text-indigo-600 flex items-center justify-center text-2xl shadow-inner">
                     <i class="fa-solid fa-layer-group"></i>
                 </div>
-                <span class="text-xs font-bold text-[#00913e] uppercase tracking-wider block">Sarana Sekolah</span>
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Sarana Sekolah</span>
                 <h3 class="text-xl font-extrabold text-gray-900">Fasilitas &amp; Laboratorium</h3>
                 <p class="text-xs text-gray-500 leading-relaxed">
                     Laboratorium sains, lab komputer multimedia, perpustakaan digital, masjid sekolah, sarana olahraga, dan asrama representatif.
                 </p>
             </div>
             <div class="pt-4 border-t border-gray-100">
-                <a href="{{ route('bidang.index') }}" class="inline-flex items-center text-xs font-bold text-[#00913e] hover:text-[#da251c]">
+                <a href="{{ route('bidang.index') }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-[#da251c]">
                     <span>Lihat Semua Fasilitas</span>
                     <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
                 </a>
@@ -139,17 +139,17 @@
         {{-- Card 3: Dewan Guru --}}
         <div class="bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between space-y-6 reveal-fade-up delay-2">
             <div class="space-y-4">
-                <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl shadow-inner">
+                <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-indigo-700 flex items-center justify-center text-2xl shadow-inner">
                     <i class="fa-solid fa-chalkboard-user"></i>
                 </div>
-                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block">Tenaga Pendidik</span>
+                <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider block">Tenaga Pendidik</span>
                 <h3 class="text-xl font-extrabold text-gray-900">Dewan Guru &amp; GTK</h3>
                 <p class="text-xs text-gray-500 leading-relaxed">
                     Para asatidz dan guru lulusan perguruan tinggi terkemuka dalam dan luar negeri yang berjiwa pendidik dan berakhlak mulia.
                 </p>
             </div>
             <div class="pt-4 border-t border-gray-100">
-                <a href="{{ route('dewan.index') }}" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:text-emerald-800">
+                <a href="{{ route('dewan.index') }}" class="inline-flex items-center text-xs font-bold text-indigo-700 hover:text-indigo-800">
                     <span>Lihat Profil Pendidik</span>
                     <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
                 </a>
@@ -160,7 +160,7 @@
     {{-- SEKSI 4: VISI DAN MISI --}}
     <section class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-100 reveal-fade-up space-y-8">
         <div class="text-center max-w-2xl mx-auto">
-            <span class="text-xs font-bold text-[#00913e] uppercase tracking-wider block">Pedoman Pendidikan</span>
+            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Pedoman Pendidikan</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                 Visi dan Misi SMPS IT Ishlahul Ummah Prabumulih
             </h2>
@@ -172,17 +172,17 @@
             <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl border border-green-100 flex flex-col justify-between space-y-6">
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-[#00913e] text-white flex items-center justify-center font-bold text-base shadow">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-base shadow">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-gray-900">Visi Sekolah</h3>
                     </div>
-                    <blockquote class="text-sm sm:text-base text-gray-800 italic leading-relaxed border-l-4 border-[#00913e] pl-4 font-serif">
+                    <blockquote class="text-sm sm:text-base text-gray-800 italic leading-relaxed border-l-4 border-indigo-600 pl-4 font-serif">
                         "Terwujudnya Generasi Qur'ani yang Berakhlak Mulia, Cerdas, Mandiri, Unggul dalam Sains dan Teknologi, serta Berwawasan Global."
                     </blockquote>
                 </div>
                 <div class="pt-2">
-                    <a href="{{ route('page.visi-misi') }}" class="inline-flex items-center text-xs font-bold text-[#00913e] hover:underline">
+                    <a href="{{ route('page.visi-misi') }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:underline">
                         <span>Baca Rincian Visi</span>
                         <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
                     </a>
@@ -206,7 +206,7 @@
                     </ol>
                 </div>
                 <div class="pt-2">
-                    <a href="{{ route('page.visi-misi') }}" class="inline-flex items-center text-xs font-bold text-gray-900 hover:text-[#00913e] transition">
+                    <a href="{{ route('page.visi-misi') }}" class="inline-flex items-center text-xs font-bold text-gray-900 hover:text-indigo-600 transition">
                         <span>Baca Selengkapnya</span>
                         <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
                     </a>
@@ -219,7 +219,7 @@
     @if(isset($testimonials) && $testimonials->isNotEmpty())
     <section class="space-y-8 reveal-fade-up">
         <div class="text-center max-w-2xl mx-auto">
-            <span class="text-xs font-bold text-[#00913e] uppercase tracking-wider block">Aspirasi &amp; Testimoni</span>
+            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Aspirasi &amp; Testimoni</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                 Komentar Alumni &amp; Orang Tua
             </h2>
@@ -237,7 +237,7 @@
                         </p>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3 pt-3 border-t border-gray-50">
-                        <div class="w-10 h-10 rounded-full bg-green-100 text-[#00913e] font-bold flex items-center justify-center flex-shrink-0 overflow-hidden text-sm mx-auto sm:mx-0">
+                        <div class="w-10 h-10 rounded-full bg-green-100 text-indigo-600 font-bold flex items-center justify-center flex-shrink-0 overflow-hidden text-sm mx-auto sm:mx-0">
                             <img src="{{ $testi->photo_url }}" alt="{{ $testi->name }}" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($testi->name) }}&background=0d6b38&color=fff'">
                         </div>
                         <div class="min-w-0">
@@ -249,7 +249,7 @@
             @endforeach
         </div>
         <div class="text-center pt-2">
-            <a href="{{ route('testimonial.index') }}" class="inline-flex items-center text-xs font-bold text-[#00913e] hover:underline">
+            <a href="{{ route('testimonial.index') }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:underline">
                 <span>Lihat Seluruh Testimonial</span>
                 <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
             </a>
@@ -261,11 +261,11 @@
     <section class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up space-y-6">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-                <span class="text-xs font-bold text-[#00913e] uppercase tracking-wider block">Lokasi Sekolah</span>
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Lokasi Sekolah</span>
                 <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">Alamat SMPS IT Ishlahul Ummah Prabumulih</h2>
                 <p class="text-xs text-gray-500 mt-1">Jl. Lintas Timur KM 35, Kel. Prabumulih Indah, Kec. Kota Prabumulih, Sumatera Selatan 30662</p>
             </div>
-            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-[#00913e] hover:bg-[#007532] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow transition flex-shrink-0">
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow transition flex-shrink-0">
                 <i class="fa-solid fa-map-location-dot mr-2"></i> Buka Google Maps
             </a>
         </div>

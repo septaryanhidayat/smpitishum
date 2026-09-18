@@ -32,7 +32,7 @@
                     }
                 @endphp
                 <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
-                    <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah, saya ingin menanyakan jadwal pendaftaran/kuota siswa baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#007532] text-white px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-black transition shadow-lg shadow-emerald-500/25">
+                    <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah, saya ingin menanyakan jadwal pendaftaran/kuota siswa baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-black transition shadow-lg shadow-indigo-600/25">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Hubungi Panitia via WhatsApp</span>
                     </a>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="space-y-1">
-                    <h1 class="text-lg sm:text-xl md:text-2xl font-black text-[#00913e] tracking-tight leading-snug">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-black text-indigo-600 tracking-tight leading-snug">
                         Formulir Pendaftaran Peserta Didik Baru<br>
                         SMPS IT Ishlahul Ummah Prabumulih
                     </h1>
@@ -67,8 +67,8 @@
 
             {{-- KOTAK PENGUMUMAN / INFO ATAS FORM --}}
             @if(!empty($formSettings['announcement']))
-                <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-start space-x-3 shadow-xs">
-                    <div class="w-7 h-7 rounded-xl bg-emerald-200 text-[#00913e] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                <div class="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-200 text-emerald-900 text-xs flex items-start space-x-3 shadow-xs">
+                    <div class="w-7 h-7 rounded-xl bg-emerald-200 text-indigo-600 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
                         <i class="fa-solid fa-bullhorn text-xs"></i>
                     </div>
                     <div class="leading-relaxed">
@@ -104,12 +104,12 @@
                 @foreach($sections as $secKey => $secInfo)
                     @if(!empty($groupedFields[$secKey]) && count($groupedFields[$secKey]) > 0)
                         <div class="space-y-4 pt-4 border-t border-slate-100 first:border-t-0 first:pt-2">
-                            <div class="pb-2 border-b border-emerald-100 flex items-center space-x-2">
-                                <span class="w-6 h-6 rounded-lg bg-emerald-100 text-[#00913e] font-bold text-xs flex items-center justify-center">
+                            <div class="pb-2 border-b border-indigo-100 flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded-lg bg-emerald-100 text-indigo-600 font-bold text-xs flex items-center justify-center">
                                     {{ $sectionIndex++ }}
                                 </span>
                                 <h2 class="text-sm font-black text-slate-800 uppercase tracking-wider flex items-center gap-2">
-                                    <i class="{{ $secInfo['icon'] ?? 'fa-solid fa-folder' }} text-emerald-600"></i>
+                                    <i class="{{ $secInfo['icon'] ?? 'fa-solid fa-folder' }} text-indigo-600"></i>
                                     <span>{{ $secInfo['name'] }}</span>
                                 </h2>
                             </div>
@@ -150,7 +150,7 @@
                     </button>
                     @if($formSettings['wa_confirm'])
                         <p class="text-xs text-slate-600 font-semibold mt-3">
-                            <i class="fa-brands fa-whatsapp text-emerald-600 mr-1 text-sm"></i>
+                            <i class="fa-brands fa-whatsapp text-indigo-600 mr-1 text-sm"></i>
                             Setelah formulir dikirim, seluruh data pendaftaran akan otomatis diteruskan ke WhatsApp Panitia PPDB.
                         </p>
                     @endif

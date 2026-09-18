@@ -45,8 +45,8 @@ test('authenticated admin can view analytics dashboard with real metrics', funct
 
     VisitorLog::create([
         'ip_address' => '103.111.20.5',
-        'path' => '/artikel/kegiatan-baksos-robbani',
-        'page_title' => 'Kegiatan Baksos Santri Robbani',
+        'path' => '/artikel/kegiatan-baksos-ishum',
+        'page_title' => 'Kegiatan Baksos Santri Ishum',
         'referer' => 'https://www.facebook.com/',
         'referer_source' => 'Facebook',
         'device_type' => 'Desktop',

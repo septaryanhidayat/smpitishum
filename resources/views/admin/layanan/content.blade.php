@@ -63,17 +63,17 @@
                 <i class="fa-solid fa-arrow-left mr-1.5"></i> Daftar Permohonan
             </a>
 
-            <button type="button" @click="activeTab = 'izin'" :class="activeTab === 'izin' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer">
+            <button type="button" @click="activeTab = 'izin'" :class="activeTab === 'izin' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer">
                 <i class="fa-solid fa-school"></i>
                 <span>1. Izin Kunjungan Sekolah</span>
             </button>
 
-            <button type="button" @click="activeTab = 'kerjasama'" :class="activeTab === 'kerjasama' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer">
+            <button type="button" @click="activeTab = 'kerjasama'" :class="activeTab === 'kerjasama' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer">
                 <i class="fa-solid fa-handshake"></i>
                 <span>2. Permohonan Kerja Sama</span>
             </button>
 
-            <button type="button" @click="activeTab = 'sewa'" :class="activeTab === 'sewa' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer">
+            <button type="button" @click="activeTab = 'sewa'" :class="activeTab === 'sewa' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer">
                 <i class="fa-solid fa-boxes-packing"></i>
                 <span>3. Sewa Barang Milik Sekolah</span>
             </button>
@@ -88,8 +88,8 @@
     </div>
 
     {{-- ALERT INFO WORD TOOLBAR --}}
-    <div class="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-4 text-xs text-emerald-900 flex items-start space-x-3 shadow-xs">
-        <div class="w-8 h-8 rounded-xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+    <div class="bg-indigo-50/60 border border-indigo-200/80 rounded-2xl p-4 text-xs text-emerald-900 flex items-start space-x-3 shadow-xs">
+        <div class="w-8 h-8 rounded-xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
             <i class="fa-solid fa-spell-check"></i>
         </div>
         <div class="leading-relaxed">
@@ -133,8 +133,8 @@
                         <div class="accordion-item p-5 rounded-2xl border border-slate-200 bg-slate-50/60 space-y-3.5 transition" data-service="izin">
                             <div class="flex items-center justify-between gap-3">
                                 <div class="flex items-center space-x-2 flex-1">
-                                    <span class="item-number w-7 h-7 rounded-lg bg-[#00913e] text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">{{ $idx + 1 }}</span>
-                                    <input type="text" name="titles[]" value="{{ $item['title'] }}" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                                    <span class="item-number w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">{{ $idx + 1 }}</span>
+                                    <input type="text" name="titles[]" value="{{ $item['title'] }}" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                                 </div>
 
                                 <div class="flex items-center space-x-1">
@@ -152,7 +152,7 @@
 
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center space-x-1.5">
-                                    <i class="fa-solid fa-pen-nib text-[#00913e] text-xs"></i>
+                                    <i class="fa-solid fa-pen-nib text-indigo-600 text-xs"></i>
                                     <span>Rincian Kalimat / Isi Persyaratan (Ketik &amp; Format Menggunakan Toolbar Word di Atas):</span>
                                 </label>
                                 <input type="hidden" name="contents[]" id="input_izin_{{ $idx }}" value="{{ $item['content'] }}">
@@ -163,7 +163,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
-                    <button type="submit" class="py-3 px-6 rounded-xl bg-[#00913e] hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center space-x-2 shadow-md cursor-pointer">
+                    <button type="submit" class="py-3 px-6 rounded-xl bg-indigo-600 hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center space-x-2 shadow-md cursor-pointer">
                         <i class="fa-solid fa-floppy-disk"></i>
                         <span>Simpan Perubahan Izin Kunjungan</span>
                     </button>
@@ -203,8 +203,8 @@
                         <div class="accordion-item p-5 rounded-2xl border border-slate-200 bg-slate-50/60 space-y-3.5 transition" data-service="kerjasama">
                             <div class="flex items-center justify-between gap-3">
                                 <div class="flex items-center space-x-2 flex-1">
-                                    <span class="item-number w-7 h-7 rounded-lg bg-[#00913e] text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">{{ $idx + 1 }}</span>
-                                    <input type="text" name="titles[]" value="{{ $item['title'] }}" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                                    <span class="item-number w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">{{ $idx + 1 }}</span>
+                                    <input type="text" name="titles[]" value="{{ $item['title'] }}" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                                 </div>
 
                                 <div class="flex items-center space-x-1">
@@ -222,7 +222,7 @@
 
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center space-x-1.5">
-                                    <i class="fa-solid fa-pen-nib text-[#00913e] text-xs"></i>
+                                    <i class="fa-solid fa-pen-nib text-indigo-600 text-xs"></i>
                                     <span>Rincian Kalimat / Isi Persyaratan (Ketik &amp; Format Menggunakan Toolbar Word di Atas):</span>
                                 </label>
                                 <input type="hidden" name="contents[]" id="input_kerjasama_{{ $idx }}" value="{{ $item['content'] }}">
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
-                    <button type="submit" class="py-3 px-6 rounded-xl bg-[#00913e] hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center space-x-2 shadow-md cursor-pointer">
+                    <button type="submit" class="py-3 px-6 rounded-xl bg-indigo-600 hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center space-x-2 shadow-md cursor-pointer">
                         <i class="fa-solid fa-floppy-disk"></i>
                         <span>Simpan Perubahan Kerja Sama</span>
                     </button>
@@ -273,8 +273,8 @@
                         <div class="accordion-item p-5 rounded-2xl border border-slate-200 bg-slate-50/60 space-y-3.5 transition" data-service="sewa">
                             <div class="flex items-center justify-between gap-3">
                                 <div class="flex items-center space-x-2 flex-1">
-                                    <span class="item-number w-7 h-7 rounded-lg bg-[#00913e] text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">{{ $idx + 1 }}</span>
-                                    <input type="text" name="titles[]" value="{{ $item['title'] }}" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                                    <span class="item-number w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">{{ $idx + 1 }}</span>
+                                    <input type="text" name="titles[]" value="{{ $item['title'] }}" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                                 </div>
 
                                 <div class="flex items-center space-x-1">
@@ -292,7 +292,7 @@
 
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center space-x-1.5">
-                                    <i class="fa-solid fa-pen-nib text-[#00913e] text-xs"></i>
+                                    <i class="fa-solid fa-pen-nib text-indigo-600 text-xs"></i>
                                     <span>Rincian Kalimat / Isi Persyaratan (Ketik &amp; Format Menggunakan Toolbar Word di Atas):</span>
                                 </label>
                                 <input type="hidden" name="contents[]" id="input_sewa_{{ $idx }}" value="{{ $item['content'] }}">
@@ -303,7 +303,7 @@
                 </div>
 
                 <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
-                    <button type="submit" class="py-3 px-6 rounded-xl bg-[#00913e] hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center space-x-2 shadow-md cursor-pointer">
+                    <button type="submit" class="py-3 px-6 rounded-xl bg-indigo-600 hover:bg-[#05a849] text-white font-bold text-xs transition flex items-center space-x-2 shadow-md cursor-pointer">
                         <i class="fa-solid fa-floppy-disk"></i>
                         <span>Simpan Perubahan Sewa Barang</span>
                     </button>
@@ -416,8 +416,8 @@
         itemDiv.innerHTML = `
             <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center space-x-2 flex-1">
-                    <span class="item-number w-7 h-7 rounded-lg bg-[#00913e] text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">?</span>
-                    <input type="text" name="titles[]" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                    <span class="item-number w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">?</span>
+                    <input type="text" name="titles[]" required placeholder="Judul Akordion (misal: Persyaratan Pelayanan)" class="w-full bg-white border border-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                 </div>
 
                 <div class="flex items-center space-x-1">
@@ -435,7 +435,7 @@
 
             <div>
                 <label class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center space-x-1.5">
-                    <i class="fa-solid fa-pen-nib text-[#00913e] text-xs"></i>
+                    <i class="fa-solid fa-pen-nib text-indigo-600 text-xs"></i>
                     <span>Rincian Kalimat / Isi Persyaratan (Ketik &amp; Format Menggunakan Toolbar Word di Atas):</span>
                 </label>
                 <input type="hidden" name="contents[]" id="input_${newId}" value="<p>Tuliskan rincian persyaratan atau ketentuan di sini...</p>">

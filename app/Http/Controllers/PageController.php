@@ -13,10 +13,11 @@ class PageController extends Controller
 {
     public function sambutan()
     {
-        $page = Post::pages()->whereIn('slug', ['sambutan-kepala-sekolah', 'sambutan-ketua-dpd'])->first();
+        $page = Post::pages()->where('slug', 'sambutan-kepala-sekolah')->first();
 
         $kepsek = AnggotaDewan::where('position', 'like', '%Kepala Sekolah%')
-            ->orWhere('position', 'like', '%Kepala SMA%')
+            ->orWhere('position', 'like', '%Kepala SMPS%')
+            ->orWhere('position', 'like', '%Kepala SMP%')
             ->first();
 
         return view('frontend.pages.sambutan', compact('page', 'kepsek'));
@@ -50,7 +51,7 @@ class PageController extends Controller
 
     public function struktur()
     {
-        $page = Post::pages()->whereIn('slug', ['struktur-organisasi', 'struktur-kepengurusan'])->first();
+        $page = Post::pages()->where('slug', 'struktur-organisasi')->first();
         $bidangs = Bidang::orderBy('order', 'asc')->get();
         $dpcs = Dpc::orderBy('order', 'asc')->get();
         $dewan = AnggotaDewan::orderBy('order', 'asc')->get();

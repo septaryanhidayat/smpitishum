@@ -12,7 +12,7 @@
             <div>
                 <div class="flex items-center space-x-3">
                     <h2 class="text-xl font-black text-slate-900">Galeri Foto Dokumentasi Santri &amp; Sekolah</h2>
-                    <span class="px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-[#00913e] border border-emerald-200">
+                    <span class="px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-indigo-600 border border-indigo-200">
                         {{ $photos->total() }} Foto
                     </span>
                 </div>
@@ -25,14 +25,14 @@
             @csrf
             <div class="w-full md:w-5/12">
                 <label class="block text-xs font-bold text-slate-800 mb-1">Judul / Keterangan Foto <span class="text-red-500">*</span></label>
-                <input type="text" name="title" required placeholder="Contoh: Praktikum Biologi Laboratorium IPA..." class="w-full bg-white text-xs font-medium text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                <input type="text" name="title" required placeholder="Contoh: Praktikum Biologi Laboratorium IPA..." class="w-full bg-white text-xs font-medium text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             </div>
             <div class="w-full md:w-5/12">
                 <label class="block text-xs font-bold text-slate-800 mb-1">File Foto (JPG/PNG/WebP, Maks 5MB) <span class="text-red-500">*</span></label>
-                <input type="file" name="image" required accept="image/*" class="w-full text-xs text-slate-700 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#00913e] file:text-white hover:file:bg-[#094d28] cursor-pointer">
+                <input type="file" name="image" required accept="image/*" class="w-full text-xs text-slate-700 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-[#094d28] cursor-pointer">
             </div>
             <div class="w-full md:w-2/12 flex items-end pt-5 md:pt-0">
-                <button type="submit" class="w-full bg-[#00913e] hover:bg-[#094d28] text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-md transition flex items-center justify-center space-x-2 cursor-pointer">
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-[#094d28] text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-md transition flex items-center justify-center space-x-2 cursor-pointer">
                     <i class="fa-solid fa-upload"></i>
                     <span>Unggah Foto</span>
                 </button>
@@ -100,11 +100,11 @@
             @csrf
             <div class="w-full md:w-5/12">
                 <label class="block text-xs font-bold text-slate-800 mb-1">Judul Video <span class="text-red-500">*</span></label>
-                <input type="text" name="title" required placeholder="Judul video YouTube..." class="w-full bg-white text-xs font-medium text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                <input type="text" name="title" required placeholder="Judul video YouTube..." class="w-full bg-white text-xs font-medium text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             </div>
             <div class="w-full md:w-5/12">
                 <label class="block text-xs font-bold text-slate-800 mb-1">Link URL YouTube <span class="text-red-500">*</span></label>
-                <input type="url" name="youtube_url" required placeholder="https://www.youtube.com/watch?v=..." class="w-full bg-white text-xs font-medium text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                <input type="url" name="youtube_url" required placeholder="https://www.youtube.com/watch?v=..." class="w-full bg-white text-xs font-medium text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             </div>
             <div class="w-full md:w-2/12 flex items-end pt-5 md:pt-0">
                 <button type="submit" class="w-full bg-[#da251c] hover:bg-[#b91c1c] text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-md transition flex items-center justify-center space-x-2 cursor-pointer">
@@ -178,7 +178,7 @@
 
                 <div>
                     <label class="block text-xs font-bold text-slate-800 mb-1">Judul / Keterangan Foto <span class="text-red-500">*</span></label>
-                    <input type="text" name="title" x-model="editTitle" required class="w-full bg-white text-xs font-semibold text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                    <input type="text" name="title" x-model="editTitle" required class="w-full bg-white text-xs font-semibold text-slate-900 rounded-xl px-4 py-2.5 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                 </div>
 
                 <div>
@@ -191,7 +191,7 @@
                     <button type="button" @click="editModalOpen = false" class="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 transition cursor-pointer">
                         Batal
                     </button>
-                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#00913e] hover:bg-[#094d28] text-white text-xs font-extrabold shadow-md transition cursor-pointer">
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-[#094d28] text-white text-xs font-extrabold shadow-md transition cursor-pointer">
                         Simpan Perubahan
                     </button>
                 </div>

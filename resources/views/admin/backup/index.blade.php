@@ -32,7 +32,7 @@
         <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-200/80">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Ukuran Basis Data</span>
             <span class="text-2xl font-black text-slate-800">{{ $dbSize }}</span>
-            <span class="text-[11px] text-emerald-600 font-semibold block mt-1"><i class="fa-solid fa-check mr-1"></i>Kondisi Optimal</span>
+            <span class="text-[11px] text-indigo-600 font-semibold block mt-1"><i class="fa-solid fa-check mr-1"></i>Kondisi Optimal</span>
         </div>
 
         <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-200/80">

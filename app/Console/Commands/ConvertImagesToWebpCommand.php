@@ -212,12 +212,7 @@ class ConvertImagesToWebpCommand extends Command
     protected function ensureEssentialFallbackImages(): void
     {
         $fallbacks = [
-            'campus-ishum.webp' => ['campus-robbani.webp', 'campus-robbani.jpg', '2023/08/logo-ishum.png'],
-            'campus-robbani.webp' => ['campus-robbani.jpg', '2023/08/logo-ishum.png'],
-            'kepsek-agi-gustiawan.webp' => ['kepsek-agi-gustiawan.jpg'],
-            'lab-ishum.webp' => ['campus-robbani.webp', 'campus-robbani.jpg'],
-            'tahfidz-ishum.webp' => ['campus-robbani.webp', 'campus-robbani.jpg'],
-            'library-ishum.webp' => ['campus-robbani.webp', 'campus-robbani.jpg'],
+            'campus-smpit-ishum.webp' => ['campus-smpit-ishum.jpg', 'logo-ishum.png'],
         ];
 
         $uploadsDir = public_path('uploads');

@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-10 sm:py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-10 sm:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('layanan.index') }}" class="hover:text-white transition">Layanan Publik</a>
@@ -20,7 +20,7 @@
             </div>
             <div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Sewa Menyewa Barang Milik Sekolah</h1>
-                <p class="text-sm text-emerald-100 mt-1 font-light">
+                <p class="text-sm text-indigo-100 mt-1 font-light">
                     Penyewaan fasilitas gedung, laboratorium, ruang serbaguna, dan inventaris sekolah.
                 </p>
             </div>
@@ -32,28 +32,28 @@
 
     {{-- JUDUL RESMI HALAMAN (SESUAI ELEMENTOR ORIGINAL) --}}
     <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#00913e] tracking-tight uppercase">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-indigo-600 tracking-tight uppercase">
             PERMOHONAN SEWA MENYEWA BARANG MILIK SEKOLAH
         </h2>
         <p class="text-sm sm:text-base font-bold text-[#da251c] mt-1">
             SMPS IT Ishlahul Ummah Prabumulih
         </p>
-        <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
     {{-- NOTIFIKASI SUKSES --}}
     @if(session('success'))
-        <div class="bg-emerald-50 border-2 border-[#00913e] rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-lg animate-fadeIn">
-            <div class="w-16 h-16 rounded-full bg-[#00913e] text-white flex items-center justify-center text-2xl mx-auto shadow-md">
+        <div class="bg-indigo-50/60 border-2 border-indigo-600 rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-lg animate-fadeIn">
+            <div class="w-16 h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center text-2xl mx-auto shadow-md">
                 <i class="fa-solid fa-circle-check"></i>
             </div>
             <h3 class="font-extrabold text-xl text-emerald-950">Permohonan Sewa Terkirim!</h3>
-            <p class="text-xs sm:text-sm text-emerald-800 max-w-lg mx-auto leading-relaxed">
+            <p class="text-xs sm:text-sm text-indigo-800 max-w-lg mx-auto leading-relaxed">
                 {{ session('success') }}
             </p>
             @if(session('wa_url'))
                 <div class="pt-2">
-                    <a href="{{ session('wa_url') }}" target="_blank" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow-lg transition">
+                    <a href="{{ session('wa_url') }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow-lg transition">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Konfirmasi WhatsApp Pengelola Sarpras</span>
                     </a>
@@ -88,7 +88,7 @@
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Ishlahul Ummah Prabumulih</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Prabumulih Timur</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-emerald-600 font-bold hover:underline">0852-6990-8696</a></p><p><strong>Website :</strong> smpitishum.sch.id</p><p><strong>Email :</strong> <a href="mailto:smpitishlahulummah.2015@yahoo.com" class="text-emerald-600 font-bold hover:underline">smpitishlahulummah.2015@yahoo.com</a></p>'
+                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Ishlahul Ummah Prabumulih</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Prabumulih Timur</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-indigo-600 font-bold hover:underline">0852-6990-8696</a></p><p><strong>Website :</strong> smpitishum.sch.id</p><p><strong>Email :</strong> <a href="mailto:smpitishlahulummah.2015@yahoo.com" class="text-indigo-600 font-bold hover:underline">smpitishlahulummah.2015@yahoo.com</a></p>'
                 ]
             ];
             $tabs = !empty($accordions) ? $accordions : $defaultSewaTabs;
@@ -99,10 +99,10 @@
                 <div class="transition">
                     <button type="button" @click="activeTab = (activeTab === {{ $idx }} ? -1 : {{ $idx }})" class="w-full py-4 px-6 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition select-none">
                         <span class="flex items-center space-x-3">
-                            <span class="text-[#00913e] font-extrabold text-lg leading-none" x-text="activeTab === {{ $idx }} ? '−' : '+'"></span>
-                            <span class="font-extrabold text-sm sm:text-base text-[#00913e] tracking-tight">{{ $tab['title'] }}</span>
+                            <span class="text-indigo-600 font-extrabold text-lg leading-none" x-text="activeTab === {{ $idx }} ? '−' : '+'"></span>
+                            <span class="font-extrabold text-sm sm:text-base text-indigo-600 tracking-tight">{{ $tab['title'] }}</span>
                         </span>
-                        <i class="fa-solid fa-chevron-down text-xs text-gray-400 transform transition-transform duration-200" :class="activeTab === {{ $idx }} ? 'rotate-180 text-[#00913e]' : ''"></i>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-400 transform transition-transform duration-200" :class="activeTab === {{ $idx }} ? 'rotate-180 text-indigo-600' : ''"></i>
                     </button>
                     <div x-show="activeTab === {{ $idx }}" x-collapse class="px-6 pb-5 pt-1 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 bg-gray-50/50">
                         <div class="prose prose-sm max-w-none text-gray-700 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1 [&>p]:mb-2">
@@ -116,7 +116,7 @@
 
     {{-- JUDUL FORMULIR --}}
     <div class="text-center pt-2">
-        <h3 class="text-xl sm:text-2xl font-bold text-[#00913e]">
+        <h3 class="text-xl sm:text-2xl font-bold text-indigo-600">
             Silahkan isi Form dibawah ini
         </h3>
     </div>
@@ -134,7 +134,7 @@
                 <label for="name" class="block text-xs font-bold text-gray-700 mb-1">
                     Nama Lengkap <span class="text-red-500">*</span>
                 </label>
-                <input type="text" name="name" id="name" required value="{{ old('name') }}" placeholder="Nama Lengkap" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] focus:border-transparent transition">
+                <input type="text" name="name" id="name" required value="{{ old('name') }}" placeholder="Nama Lengkap" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition">
                 @error('name') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
@@ -143,7 +143,7 @@
                 <label for="agency" class="block text-xs font-bold text-gray-700 mb-1">
                     Asal Instansi <span class="text-red-500">*</span>
                 </label>
-                <input type="text" name="agency" id="agency" required value="{{ old('agency') }}" placeholder="Asal Instansi" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] focus:border-transparent transition">
+                <input type="text" name="agency" id="agency" required value="{{ old('agency') }}" placeholder="Asal Instansi" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition">
                 @error('agency') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
@@ -152,7 +152,7 @@
                 <label for="whatsapp" class="block text-xs font-bold text-gray-700 mb-1">
                     Nomor WhatsApp <span class="text-red-500">*</span>
                 </label>
-                <input type="text" name="whatsapp" id="whatsapp" required value="{{ old('whatsapp') }}" placeholder="Contoh: 085269908696" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] focus:border-transparent transition">
+                <input type="text" name="whatsapp" id="whatsapp" required value="{{ old('whatsapp') }}" placeholder="Contoh: 085269908696" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition">
                 @error('whatsapp') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
@@ -161,7 +161,7 @@
                 <label for="purpose" class="block text-xs font-bold text-gray-700 mb-1">
                     Keperluan <span class="text-red-500">*</span>
                 </label>
-                <textarea name="purpose" id="purpose" rows="3" required placeholder="Keperluan" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] focus:border-transparent transition leading-relaxed">{{ old('purpose') }}</textarea>
+                <textarea name="purpose" id="purpose" rows="3" required placeholder="Keperluan" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition leading-relaxed">{{ old('purpose') }}</textarea>
                 @error('purpose') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
@@ -170,7 +170,7 @@
                 <label class="block text-xs font-bold text-gray-700 mb-1">
                     Sertakan Surat <span class="text-red-500">*</span>
                 </label>
-                <input type="file" name="letter_file" required accept=".pdf,.doc,.docx,image/*" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#00913e] file:text-white hover:file:bg-[#007a34] file:cursor-pointer file:shadow-md transition bg-slate-50 rounded-xl border border-slate-200 p-2">
+                <input type="file" name="letter_file" required accept=".pdf,.doc,.docx,image/*" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 file:cursor-pointer file:shadow-md transition bg-slate-50 rounded-xl border border-slate-200 p-2">
                 @error('letter_file') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
@@ -179,7 +179,7 @@
                 <label class="block text-xs font-bold text-gray-700 mb-1">
                     Sertakan KTP <span class="text-red-500">*</span>
                 </label>
-                <input type="file" name="ktp_file" required accept="image/*,.pdf" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#00913e] file:text-white hover:file:bg-[#007a34] file:cursor-pointer file:shadow-md transition bg-slate-50 rounded-xl border border-slate-200 p-2">
+                <input type="file" name="ktp_file" required accept="image/*,.pdf" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 file:cursor-pointer file:shadow-md transition bg-slate-50 rounded-xl border border-slate-200 p-2">
                 @error('ktp_file') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
@@ -188,13 +188,13 @@
                 <label class="block text-xs font-bold text-gray-700 mb-1">
                     Sertakan NPWP (Opsional)
                 </label>
-                <input type="file" name="npwp_file" accept="image/*,.pdf" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#00913e] file:text-white hover:file:bg-[#007a34] file:cursor-pointer file:shadow-md transition bg-slate-50 rounded-xl border border-slate-200 p-2">
+                <input type="file" name="npwp_file" accept="image/*,.pdf" class="w-full text-xs text-slate-700 font-medium file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 file:cursor-pointer file:shadow-md transition bg-slate-50 rounded-xl border border-slate-200 p-2">
                 @error('npwp_file') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
             {{-- SUBMIT BUTTON --}}
             <div class="pt-2">
-                <button type="submit" class="w-full bg-[#00913e] hover:bg-emerald-700 text-white font-extrabold text-sm py-3 rounded-md shadow-md hover:shadow-lg transition cursor-pointer tracking-wider">
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm py-3 rounded-md shadow-md hover:shadow-lg transition cursor-pointer tracking-wider">
                     Send
                 </button>
             </div>

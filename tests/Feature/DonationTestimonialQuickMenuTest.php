@@ -29,7 +29,7 @@ test('donation page renders account number when configured in settings', functio
 test('admin can update donation settings', function () {
     $admin = User::create([
         'name' => 'Admin Settings',
-        'email' => 'admin_donasi@robbani.sch.id',
+        'email' => 'admin_donasi@smpitishum.sch.id',
         'password' => Hash::make('Secret123!'),
         'role' => 'admin',
     ]);
@@ -37,7 +37,7 @@ test('admin can update donation settings', function () {
     $response = $this->actingAs($admin)->post('/admin/settings', [
         'donation_bank_1_name' => 'Bank Syariah Indonesia (BSI)',
         'donation_bank_1_rekening' => '7188992211',
-        'donation_bank_1_holder' => 'YAYASAN SMA IT PLUS ROBBANI',
+        'donation_bank_1_holder' => 'YAYASAN ISHLAHUL UMMAH PRABUMULIH',
     ]);
 
     $response->assertRedirect();
@@ -50,7 +50,7 @@ test('admin can update donation settings', function () {
 test('admin can perform full CRUD on testimonials', function () {
     $admin = User::create([
         'name' => 'Admin Testi',
-        'email' => 'admin_testi@robbani.sch.id',
+        'email' => 'admin_testi@smpitishum.sch.id',
         'password' => Hash::make('Secret123!'),
         'role' => 'admin',
     ]);
@@ -64,7 +64,7 @@ test('admin can perform full CRUD on testimonials', function () {
     $response = $this->actingAs($admin)->post('/admin/testimonials', [
         'name' => 'Ustadz Ahmad Fauzi',
         'profession' => 'Wali Santri Angkatan I',
-        'content' => 'SMA IT Plus Robbani sangat amanah dalam mendidik karakter dan hafalan Al-Quran santri.',
+        'content' => 'SMPS IT Ishlahul Ummah sangat amanah dalam mendidik karakter dan hafalan Al-Quran santri.',
         'status' => 'publish',
     ]);
     $response->assertRedirect('/admin/testimonials');
@@ -77,7 +77,7 @@ test('admin can perform full CRUD on testimonials', function () {
     $response = $this->actingAs($admin)->put("/admin/testimonials/{$testi->id}", [
         'name' => 'Ustadz Ahmad Fauzi, M.Pd.I',
         'profession' => 'Wali Santri & Tokoh Pendidikan',
-        'content' => 'Pendidikan di SMA IT Plus Robbani unggul dalam akhlak dan sains.',
+        'content' => 'Pendidikan di SMPS IT Ishlahul Ummah unggul dalam akhlak dan sains.',
         'status' => 'publish',
     ]);
     $response->assertRedirect('/admin/testimonials');
@@ -92,7 +92,7 @@ test('admin can perform full CRUD on testimonials', function () {
 test('admin can perform full CRUD on quick menus', function () {
     $admin = User::create([
         'name' => 'Admin Quick Menu',
-        'email' => 'admin_qm@robbani.sch.id',
+        'email' => 'admin_qm@smpitishum.sch.id',
         'password' => Hash::make('Secret123!'),
         'role' => 'admin',
     ]);
@@ -136,7 +136,7 @@ test('admin can perform full CRUD on quick menus', function () {
 test('admin can update bidang icon and it displays on public page', function () {
     $admin = User::create([
         'name' => 'Admin Bidang',
-        'email' => 'admin_bidang@robbani.sch.id',
+        'email' => 'admin_bidang@smpitishum.sch.id',
         'password' => Hash::make('Secret123!'),
         'role' => 'admin',
     ]);

@@ -152,12 +152,10 @@ Route::get('/tag/{slug}', [ArticleController::class, 'tag'])->name('tag.show');
 
 // Profil Pages
 Route::get('/sambutan-kepala-sekolah', [PageController::class, 'sambutan'])->name('page.sambutan');
-Route::get('/sambutan-ketua-dpd', [PageController::class, 'sambutan']);
 Route::get('/tentang-kami', [PageController::class, 'tentangKami'])->name('page.tentang-kami');
 Route::get('/visi-dan-misi', [PageController::class, 'visiMisi'])->name('page.visi-misi');
 Route::get('/sejarah', [PageController::class, 'sejarah'])->name('page.sejarah');
 Route::get('/struktur-organisasi', [PageController::class, 'struktur'])->name('page.struktur');
-Route::get('/struktur-kepengurusan', [PageController::class, 'struktur']);
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('page.privacy-policy');
 
 // Dewan Guru & GTK
@@ -246,14 +244,16 @@ Route::get('/wp-content/uploads/{path}', function (string $path) {
     }
 
     // 1. If webp version exists in uploads, 301 redirect to it
-    $baseName = pathinfo($path, PATHINFO_DIRNAME).'/'.pathinfo($path, PATHINFO_FILENAME);
-    $webpPath = public_path('uploads/'.trim($baseName, '/').'.webp');
+    $dirName = pathinfo($path, PATHINFO_DIRNAME);
+    $dirPrefix = ($dirName === '.' || $dirName === '/' || empty($dirName)) ? '' : trim($dirName, '/').'/';
+    $baseName = $dirPrefix.pathinfo($path, PATHINFO_FILENAME);
+    $webpPath = public_path('uploads/'.$baseName.'.webp');
     $realUploadsBase = realpath(public_path('uploads'));
 
     if (file_exists($webpPath)) {
         $realWebp = realpath($webpPath);
         if ($realWebp && $realUploadsBase && str_starts_with($realWebp, $realUploadsBase)) {
-            return redirect('/uploads/'.trim($baseName, '/').'.webp', 301);
+            return redirect('/uploads/'.$baseName.'.webp', 301);
         }
     }
 
@@ -266,7 +266,8 @@ Route::get('/wp-content/uploads/{path}', function (string $path) {
         }
     }
 
-    abort(404);
+    // 3. SEO migration: 301 redirect to clean uploads WebP
+    return redirect('/uploads/'.$baseName.'.webp', 301);
 })->where('path', '.*');
 
 // Block legacy WordPress paths from bots and scanners (return 404 immediately without hitting page query)

@@ -19,18 +19,18 @@
             <a href="{{ route('admin.ppdb.index') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs transition {{ request()->routeIs('admin.ppdb.index') ? 'bg-[#da251c] text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200' }}">
                 <i class="fa-solid fa-users mr-1.5"></i> Data Calon Santri (Pendaftar)
             </a>
-            <button type="button" @click="currentTab = 'konten'" :class="currentTab === 'konten' ? 'bg-[#00913e] text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
+            <button type="button" @click="currentTab = 'konten'" :class="currentTab === 'konten' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
                 <i class="fa-solid fa-sliders"></i>
                 <span>Konten &amp; 10 Menu PPDB</span>
             </button>
-            <button type="button" @click="currentTab = 'formulir'" :class="currentTab === 'formulir' ? 'bg-[#00913e] text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
+            <button type="button" @click="currentTab = 'formulir'" :class="currentTab === 'formulir' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <span>Kustomisasi Formulir Online</span>
             </button>
         </div>
 
         <div class="flex items-center gap-2">
-            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition flex items-center space-x-1.5">
+            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-indigo-700 hover:bg-indigo-700 text-white shadow-xs transition flex items-center space-x-1.5">
                 <i class="fa-solid fa-file-excel"></i>
                 <span>Export Excel</span>
             </a>
@@ -55,7 +55,7 @@
             {{-- SECTION 1: STATUS & HERO PPDB --}}
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-6">
                 <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
-                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-lg">
+                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-lg">
                         <i class="fa-solid fa-bullhorn"></i>
                     </div>
                     <div>
@@ -67,27 +67,27 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tahun Pelajaran <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_year" required value="{{ old('ppdb_year', $settings['year']) }}" placeholder="Contoh: 2026/2027" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_year" required value="{{ old('ppdb_year', $settings['year']) }}" placeholder="Contoh: 2026/2027" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nama Gelombang Aktif</label>
-                        <input type="text" name="ppdb_wave" value="{{ old('ppdb_wave', $settings['wave']) }}" placeholder="Contoh: Gelombang 1 (Aktif)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_wave" value="{{ old('ppdb_wave', $settings['wave']) }}" placeholder="Contoh: Gelombang 1 (Aktif)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nominal Biaya Formulir <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_registration_fee" required value="{{ old('ppdb_registration_fee', $settings['registration_fee']) }}" placeholder="Contoh: Rp 250.000,-" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_registration_fee" required value="{{ old('ppdb_registration_fee', $settings['registration_fee']) }}" placeholder="Contoh: Rp 250.000,-" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div class="sm:col-span-3">
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Badge Promo / Potongan Biaya</label>
-                        <input type="text" name="ppdb_promo" value="{{ old('ppdb_promo', $settings['promo']) }}" placeholder="Contoh: Potongan Biaya Masuk Up to 50% OFF (*S&K berlaku)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_promo" value="{{ old('ppdb_promo', $settings['promo']) }}" placeholder="Contoh: Potongan Biaya Masuk Up to 50% OFF (*S&K berlaku)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div class="sm:col-span-3">
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Deskripsi Singkat SPMB PPDB</label>
-                        <textarea name="ppdb_tagline" rows="2" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ old('ppdb_tagline', $settings['tagline']) }}</textarea>
+                        <textarea name="ppdb_tagline" rows="2" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ old('ppdb_tagline', $settings['tagline']) }}</textarea>
                     </div>
                 </div>
             </div>
@@ -107,12 +107,12 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">YouTube Video ID atau URL Lengkap <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_youtube_id" required value="{{ old('ppdb_youtube_id', $settings['youtube_id']) }}" placeholder="Contoh: IrPVG8CYjRc atau https://www.youtube.com/watch?v=IrPVG8CYjRc" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_youtube_id" required value="{{ old('ppdb_youtube_id', $settings['youtube_id']) }}" placeholder="Contoh: IrPVG8CYjRc atau https://www.youtube.com/watch?v=IrPVG8CYjRc" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Judul Teks Video</label>
-                        <input type="text" name="ppdb_video_title" value="{{ old('ppdb_video_title', $settings['video_title']) }}" placeholder="Video Profil & Dokumentasi SMPS IT Ishum" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_video_title" value="{{ old('ppdb_video_title', $settings['video_title']) }}" placeholder="Video Profil & Dokumentasi SMPS IT Ishum" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
             {{-- SECTION 3: JAM OPERASIONAL & SEKRETARIAT --}}
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-6">
                 <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
-                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-lg">
+                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-lg">
                         <i class="fa-regular fa-clock"></i>
                     </div>
                     <div>
@@ -132,17 +132,17 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Hari Kerja (Senin - Jum'at) <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_operational_weekday" required value="{{ old('ppdb_operational_weekday', $settings['operational_weekday']) }}" placeholder="Senin – Jum'at: Pukul 08.00 – 15.00 WIB" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_operational_weekday" required value="{{ old('ppdb_operational_weekday', $settings['operational_weekday']) }}" placeholder="Senin – Jum'at: Pukul 08.00 – 15.00 WIB" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Hari Sabtu <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_operational_weekend" required value="{{ old('ppdb_operational_weekend', $settings['operational_weekend']) }}" placeholder="Sabtu: Pukul 08.00 – 12.00 WIB" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_operational_weekend" required value="{{ old('ppdb_operational_weekend', $settings['operational_weekend']) }}" placeholder="Sabtu: Pukul 08.00 – 12.00 WIB" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Alamat Sekretariat SPMB <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_secretariat" required value="{{ old('ppdb_secretariat', $settings['secretariat']) }}" placeholder="Kompleks SMPS IT Ishum, Jl. Sadewa RT 01 RW 04 Karang Raja" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_secretariat" required value="{{ old('ppdb_secretariat', $settings['secretariat']) }}" placeholder="Kompleks SMPS IT Ishum, Jl. Sadewa RT 01 RW 04 Karang Raja" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                 </div>
             </div>
@@ -162,22 +162,22 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nama Bank <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_bank_name" required value="{{ old('ppdb_bank_name', $settings['bank_name']) }}" placeholder="Bank Syariah Indonesia (BSI)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_bank_name" required value="{{ old('ppdb_bank_name', $settings['bank_name']) }}" placeholder="Bank Syariah Indonesia (BSI)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Kode Bank <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_bank_code" required value="{{ old('ppdb_bank_code', $settings['bank_code']) }}" placeholder="451" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_bank_code" required value="{{ old('ppdb_bank_code', $settings['bank_code']) }}" placeholder="451" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nomor Rekening <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_bank_account" required value="{{ old('ppdb_bank_account', $settings['bank_account']) }}" placeholder="7011304251" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_bank_account" required value="{{ old('ppdb_bank_account', $settings['bank_account']) }}" placeholder="7011304251" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Atas Nama Rekening <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_bank_holder" required value="{{ old('ppdb_bank_holder', $settings['bank_holder']) }}" placeholder="YL. Fatmawati" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_bank_holder" required value="{{ old('ppdb_bank_holder', $settings['bank_holder']) }}" placeholder="YL. Fatmawati" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
             {{-- SECTION 5: KONTAK HOTLINE WHATSAPP --}}
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-6">
                 <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
-                    <div class="w-10 h-10 rounded-2xl bg-green-100 text-[#00913e] flex items-center justify-center font-bold text-lg">
+                    <div class="w-10 h-10 rounded-2xl bg-green-100 text-indigo-600 flex items-center justify-center font-bold text-lg">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
                     <div>
@@ -197,22 +197,22 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nomor WhatsApp Admin Utama <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_hotline_phone" required value="{{ old('ppdb_hotline_phone', $settings['hotline_phone']) }}" placeholder="0852-6990-8696" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_hotline_phone" required value="{{ old('ppdb_hotline_phone', $settings['hotline_phone']) }}" placeholder="0852-6990-8696" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Label Kontak Utama</label>
-                        <input type="text" name="ppdb_hotline_name" value="{{ old('ppdb_hotline_name', $settings['hotline_name']) }}" placeholder="Admin Hotline PPDB" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_hotline_name" value="{{ old('ppdb_hotline_name', $settings['hotline_name']) }}" placeholder="Admin Hotline PPDB" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nomor WhatsApp CS 2 / Kepala Sekolah</label>
-                        <input type="text" name="ppdb_hotline_2_phone" value="{{ old('ppdb_hotline_2_phone', $settings['hotline_2_phone']) }}" placeholder="0822-8157-3615" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_hotline_2_phone" value="{{ old('ppdb_hotline_2_phone', $settings['hotline_2_phone']) }}" placeholder="0822-8157-3615" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Label Kontak 2</label>
-                        <input type="text" name="ppdb_hotline_2_name" value="{{ old('ppdb_hotline_2_name', $settings['hotline_2_name']) }}" placeholder="Ust. Agi (Kepala Sekolah)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_hotline_2_name" value="{{ old('ppdb_hotline_2_name', $settings['hotline_2_name']) }}" placeholder="Ust. Agi (Kepala Sekolah)" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                 </div>
             </div>
@@ -220,7 +220,7 @@
             {{-- SECTION 6: KONTEN LENGKAP 10 ACCORDION MENU PPDB --}}
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xs border border-slate-200/80 space-y-6">
                 <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
-                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-lg">
+                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-lg">
                         <i class="fa-solid fa-layer-group"></i>
                     </div>
                     <div>
@@ -233,69 +233,69 @@
                     
                     {{-- KOLOM KIRI (6 MENU) --}}
                     <div class="space-y-5">
-                        <div class="p-3 bg-emerald-50 text-[#00913e] rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-2">
+                        <div class="p-3 bg-indigo-50/60 text-indigo-600 rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-2">
                             <i class="fa-solid fa-columns"></i>
                             <span>Kolom Kiri (Jalur &amp; Persyaratan)</span>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">1. Alur Pendaftaran</label>
-                            <textarea name="ppdb_alur" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_alur', $settings['alur']) }}</textarea>
+                            <textarea name="ppdb_alur" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_alur', $settings['alur']) }}</textarea>
                             <p class="text-[10px] text-slate-400 mt-1">Gunakan baris baru untuk memisahkan setiap tahapan alur.</p>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">2. Syarat Pendaftaran</label>
-                            <textarea name="ppdb_syarat" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_syarat', $settings['syarat']) }}</textarea>
+                            <textarea name="ppdb_syarat" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_syarat', $settings['syarat']) }}</textarea>
                             <p class="text-[10px] text-slate-400 mt-1">Gunakan baris baru untuk memisahkan setiap poin syarat berkas.</p>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">3. Jalur Prestasi &amp; Keringanan</label>
-                            <textarea name="ppdb_prestasi" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_prestasi', $settings['prestasi']) }}</textarea>
+                            <textarea name="ppdb_prestasi" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_prestasi', $settings['prestasi']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">4. Jalur Hafizh Al-Qur'an (Tahfidz)</label>
-                            <textarea name="ppdb_tahfidz" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_tahfidz', $settings['tahfidz']) }}</textarea>
+                            <textarea name="ppdb_tahfidz" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_tahfidz', $settings['tahfidz']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">5. Jalur Alumni SMPIT Ishum</label>
-                            <textarea name="ppdb_alumni" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_alumni', $settings['alumni']) }}</textarea>
+                            <textarea name="ppdb_alumni" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_alumni', $settings['alumni']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">6. Jalur Reguler / Tes Mandiri</label>
-                            <textarea name="ppdb_mandiri" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_mandiri', $settings['mandiri']) }}</textarea>
+                            <textarea name="ppdb_mandiri" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_mandiri', $settings['mandiri']) }}</textarea>
                         </div>
                     </div>
 
                     {{-- KOLOM KANAN (4 MENU) --}}
                     <div class="space-y-5">
-                        <div class="p-3 bg-emerald-50 text-[#00913e] rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-2">
+                        <div class="p-3 bg-indigo-50/60 text-indigo-600 rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-2">
                             <i class="fa-solid fa-columns"></i>
                             <span>Kolom Kanan (Jadwal &amp; Biaya)</span>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">7. Jadwal Gelombang PPDB</label>
-                            <textarea name="ppdb_jadwal_gelombang" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_jadwal_gelombang', $settings['jadwal_gelombang']) }}</textarea>
+                            <textarea name="ppdb_jadwal_gelombang" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_jadwal_gelombang', $settings['jadwal_gelombang']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">8. Rincian Biaya &amp; Fasilitas Seragam</label>
-                            <textarea name="ppdb_biaya" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_biaya', $settings['biaya']) }}</textarea>
+                            <textarea name="ppdb_biaya" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_biaya', $settings['biaya']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">9. Pilihan Program: Boarding (Asrama) &amp; Full Day</label>
-                            <textarea name="ppdb_boarding" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_boarding', $settings['boarding']) }}</textarea>
+                            <textarea name="ppdb_boarding" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_boarding', $settings['boarding']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">10. Pengumuman Kelulusan &amp; Daftar Ulang</label>
-                            <textarea name="ppdb_kelulusan" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_kelulusan', $settings['kelulusan']) }}</textarea>
+                            <textarea name="ppdb_kelulusan" rows="5" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_kelulusan', $settings['kelulusan']) }}</textarea>
                         </div>
                     </div>
 
@@ -317,12 +317,12 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Judul Ucapan Penutup</label>
-                        <input type="text" name="ppdb_closing_title" value="{{ old('ppdb_closing_title', $settings['closing_title']) }}" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="ppdb_closing_title" value="{{ old('ppdb_closing_title', $settings['closing_title']) }}" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Isi Doa &amp; Harapan</label>
-                        <textarea name="ppdb_closing_desc" rows="3" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ old('ppdb_closing_desc', $settings['closing_desc']) }}</textarea>
+                        <textarea name="ppdb_closing_desc" rows="3" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ old('ppdb_closing_desc', $settings['closing_desc']) }}</textarea>
                     </div>
                 </div>
             </div>
@@ -335,7 +335,7 @@
             {{-- 1. STATUS & PENGUMUMAN FORMULIR (KOMPAK & BERSIH) --}}
             <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-xs border border-slate-200/80 space-y-4">
                 <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
-                    <div class="w-8 h-8 rounded-xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-sm">
+                    <div class="w-8 h-8 rounded-xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-sm">
                         <i class="fa-solid fa-power-off"></i>
                     </div>
                     <div>
@@ -347,7 +347,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Status Formulir PPDB Online</label>
-                        <select name="ppdb_form_status" class="w-full bg-slate-50 text-xs font-bold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <select name="ppdb_form_status" class="w-full bg-slate-50 text-xs font-bold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                             <option value="1" {{ ($settings['form_status'] ?? '1') === '1' ? 'selected' : '' }}>🟢 BUKA PENDAFTARAN (Formulir Aktif Dapat Diisi)</option>
                             <option value="0" {{ ($settings['form_status'] ?? '1') === '0' ? 'selected' : '' }}>🔴 TUTUP PENDAFTARAN (Tampilkan Pemberitahuan Tutup)</option>
                         </select>
@@ -355,7 +355,7 @@
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Konfirmasi WhatsApp Otomatis</label>
-                        <select name="ppdb_form_wa_confirm" class="w-full bg-slate-50 text-xs font-bold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <select name="ppdb_form_wa_confirm" class="w-full bg-slate-50 text-xs font-bold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                             <option value="1" {{ ($settings['form_wa_confirm'] ?? '1') === '1' ? 'selected' : '' }}>🟢 Aktif (Arahkan otomatis ke WA Panitia setelah submit)</option>
                             <option value="0" {{ ($settings['form_wa_confirm'] ?? '1') === '0' ? 'selected' : '' }}>⚪ Simpan di Database Saja (Tanpa redirect WhatsApp)</option>
                         </select>
@@ -363,12 +363,12 @@
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Pesan Saat Formulir Ditutup</label>
-                        <textarea name="ppdb_form_closed_message" rows="2" class="w-full bg-slate-50 text-xs rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ old('ppdb_form_closed_message', $settings['form_closed_message']) }}</textarea>
+                        <textarea name="ppdb_form_closed_message" rows="2" class="w-full bg-slate-50 text-xs rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ old('ppdb_form_closed_message', $settings['form_closed_message']) }}</textarea>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Kotak Pengumuman / Info di Atas Formulir</label>
-                        <textarea name="ppdb_form_announcement" rows="2" class="w-full bg-slate-50 text-xs rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ old('ppdb_form_announcement', $settings['form_announcement']) }}</textarea>
+                        <textarea name="ppdb_form_announcement" rows="2" class="w-full bg-slate-50 text-xs rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ old('ppdb_form_announcement', $settings['form_announcement']) }}</textarea>
                     </div>
                 </div>
             </div>
@@ -384,7 +384,7 @@
                                 <i class="fa-solid fa-layer-group"></i>
                             </span>
                             <h3 class="font-extrabold text-slate-900 text-base">2. Struktur &amp; Kolom Isian Formulir Online</h3>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-50 text-[#00913e] border border-emerald-200">
+                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-indigo-50/60 text-indigo-600 border border-indigo-200">
                                 {{ count($schema) }} Kolom
                             </span>
                         </div>
@@ -392,7 +392,7 @@
                     </div>
 
                     <div class="flex items-center gap-2">
-                        <button type="button" @click="showAddFieldModal = true" class="bg-[#00913e] hover:bg-[#007a34] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition flex items-center gap-2 cursor-pointer">
+                        <button type="button" @click="showAddFieldModal = true" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition flex items-center gap-2 cursor-pointer">
                             <i class="fa-solid fa-plus-circle"></i>
                             <span>Tambah Kolom Baru</span>
                         </button>
@@ -407,14 +407,14 @@
                 <div class="p-4 bg-slate-50/70 border-b border-slate-100 space-y-3">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
-                            <button type="button" @click="activeCategory = 'all'" :class="activeCategory === 'all' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-3 py-1.5 rounded-xl text-xs font-bold transition shrink-0 cursor-pointer">
+                            <button type="button" @click="activeCategory = 'all'" :class="activeCategory === 'all' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-3 py-1.5 rounded-xl text-xs font-bold transition shrink-0 cursor-pointer">
                                 Semua ({{ count($schema) }})
                             </button>
                             @foreach($sections as $sKey => $sInfo)
                                 @php
                                     $countInSec = collect($schema)->where('section', $sKey)->count();
                                 @endphp
-                                <button type="button" @click="activeCategory = '{{ $sKey }}'" :class="activeCategory === '{{ $sKey }}' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-3 py-1.5 rounded-xl text-xs font-bold transition shrink-0 cursor-pointer flex items-center gap-1.5">
+                                <button type="button" @click="activeCategory = '{{ $sKey }}'" :class="activeCategory === '{{ $sKey }}' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-3 py-1.5 rounded-xl text-xs font-bold transition shrink-0 cursor-pointer flex items-center gap-1.5">
                                     <i class="{{ $sInfo['icon'] }} text-[10px]"></i>
                                     <span>{{ $sInfo['name'] }}</span>
                                     <span class="text-[10px] opacity-80 font-normal">({{ $countInSec }})</span>
@@ -424,7 +424,7 @@
 
                         <div class="relative w-full sm:w-64 shrink-0">
                             <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                            <input type="text" x-model="searchQuery" placeholder="Cari nama kolom..." class="w-full bg-white text-xs rounded-xl pl-8 pr-3 py-1.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                            <input type="text" x-model="searchQuery" placeholder="Cari nama kolom..." class="w-full bg-white text-xs rounded-xl pl-8 pr-3 py-1.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                         </div>
                     </div>
                 </div>
@@ -441,7 +441,7 @@
                                 'file' => ['label' => 'Upload File', 'icon' => 'fa-solid fa-paperclip', 'color' => 'bg-amber-50 text-amber-700 border-amber-200'],
                                 'date' => ['label' => 'Tanggal', 'icon' => 'fa-solid fa-calendar', 'color' => 'bg-indigo-50 text-indigo-700 border-indigo-200'],
                                 'number' => ['label' => 'Angka', 'icon' => 'fa-solid fa-hashtag', 'color' => 'bg-cyan-50 text-cyan-700 border-cyan-200'],
-                                'textarea' => ['label' => 'Paragraf', 'icon' => 'fa-solid fa-align-left', 'color' => 'bg-emerald-50 text-emerald-700 border-emerald-200'],
+                                'textarea' => ['label' => 'Paragraf', 'icon' => 'fa-solid fa-align-left', 'color' => 'bg-indigo-50 text-indigo-700 border-indigo-200'],
                                 'tel' => ['label' => 'Telepon/WA', 'icon' => 'fa-solid fa-phone', 'color' => 'bg-teal-50 text-teal-700 border-teal-200'],
                                 default => ['label' => 'Teks', 'icon' => 'fa-solid fa-font', 'color' => 'bg-slate-100 text-slate-700 border-slate-200'],
                             };
@@ -462,7 +462,7 @@
 
                                     <div class="flex-1 min-w-0 flex flex-wrap items-center gap-2">
                                         <input type="text" name="fields[{{ $f['key'] }}][label]" value="{{ $f['label'] }}" 
-                                               class="bg-slate-50 hover:bg-white focus:bg-white text-xs sm:text-sm font-bold text-slate-800 rounded-lg px-2.5 py-1.5 border border-slate-200 focus:border-[#00913e] focus:outline-none focus:ring-1 focus:ring-[#00913e] transition w-full sm:w-72 max-w-full"
+                                               class="bg-slate-50 hover:bg-white focus:bg-white text-xs sm:text-sm font-bold text-slate-800 rounded-lg px-2.5 py-1.5 border border-slate-200 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 transition w-full sm:w-72 max-w-full"
                                                title="Klik untuk mengubah label/judul isian">
                                         
                                         <span class="text-[10px] font-bold px-2 py-0.5 rounded-md border uppercase {{ $typeMeta['color'] }}">
@@ -490,7 +490,7 @@
                                 <div class="flex items-center gap-2 sm:gap-3 shrink-0 pl-11 md:pl-0">
                                     {{-- Toggle Tampil --}}
                                     <label class="inline-flex items-center gap-1.5 cursor-pointer select-none bg-white hover:bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-200 shadow-2xs transition text-xs font-semibold text-slate-700">
-                                        <input type="checkbox" name="fields[{{ $f['key'] }}][enabled]" value="1" {{ !empty($f['enabled']) ? 'checked' : '' }} class="w-3.5 h-3.5 rounded text-[#00913e] focus:ring-[#00913e] border-slate-300">
+                                        <input type="checkbox" name="fields[{{ $f['key'] }}][enabled]" value="1" {{ !empty($f['enabled']) ? 'checked' : '' }} class="w-3.5 h-3.5 rounded text-indigo-600 focus:ring-indigo-600 border-slate-300">
                                         <span>Tampil</span>
                                     </label>
 
@@ -527,7 +527,7 @@
                                             <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                                 Teks Bantuan / Placeholder
                                             </label>
-                                            <input type="text" name="fields[{{ $f['key'] }}][placeholder]" value="{{ $f['placeholder'] ?? '' }}" placeholder="Contoh teks bantuan saat kosong..." class="w-full bg-slate-50 text-xs rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                                            <input type="text" name="fields[{{ $f['key'] }}][placeholder]" value="{{ $f['placeholder'] ?? '' }}" placeholder="Contoh teks bantuan saat kosong..." class="w-full bg-slate-50 text-xs rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                                         </div>
                                     @endif
 
@@ -536,7 +536,7 @@
                                             <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                                 Petunjuk Upload Dokumen
                                             </label>
-                                            <input type="text" name="fields[{{ $f['key'] }}][placeholder]" value="{{ $f['placeholder'] ?? '' }}" placeholder="Format JPG, PNG, atau PDF (Maks 5 MB)" class="w-full bg-slate-50 text-xs rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                                            <input type="text" name="fields[{{ $f['key'] }}][placeholder]" value="{{ $f['placeholder'] ?? '' }}" placeholder="Format JPG, PNG, atau PDF (Maks 5 MB)" class="w-full bg-slate-50 text-xs rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                                         </div>
                                     @endif
 
@@ -545,14 +545,14 @@
                                             <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                                 Placeholder Pilihan Awal
                                             </label>
-                                            <input type="text" name="fields[{{ $f['key'] }}][placeholder]" value="{{ $f['placeholder'] ?? '' }}" placeholder="Pilih salah satu..." class="w-full bg-slate-50 text-xs rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                                            <input type="text" name="fields[{{ $f['key'] }}][placeholder]" value="{{ $f['placeholder'] ?? '' }}" placeholder="Pilih salah satu..." class="w-full bg-slate-50 text-xs rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                                         </div>
 
                                         <div>
                                             <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                                                Daftar Pilihan Dropdown <span class="text-emerald-700 font-bold">(1 baris = 1 opsi)</span>
+                                                Daftar Pilihan Dropdown <span class="text-indigo-700 font-bold">(1 baris = 1 opsi)</span>
                                             </label>
-                                            <textarea name="fields[{{ $f['key'] }}][options]" rows="4" class="w-full bg-slate-50 text-xs font-mono rounded-xl p-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ implode("\n", $f['options'] ?? []) }}</textarea>
+                                            <textarea name="fields[{{ $f['key'] }}][options]" rows="4" class="w-full bg-slate-50 text-xs font-mono rounded-xl p-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ implode("\n", $f['options'] ?? []) }}</textarea>
                                         </div>
                                     @endif
                                 </div>
@@ -583,23 +583,23 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                                Pilihan Gelombang <span class="text-emerald-700 font-bold">(1 baris = 1 opsi)</span>
+                                Pilihan Gelombang <span class="text-indigo-700 font-bold">(1 baris = 1 opsi)</span>
                             </label>
-                            <textarea name="ppdb_form_waves" rows="5" class="w-full bg-white text-xs font-semibold rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_form_waves', $settings['form_waves']) }}</textarea>
+                            <textarea name="ppdb_form_waves" rows="5" class="w-full bg-white text-xs font-semibold rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_form_waves', $settings['form_waves']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                                Pilihan Jalur Masuk <span class="text-emerald-700 font-bold">(1 baris = 1 opsi)</span>
+                                Pilihan Jalur Masuk <span class="text-indigo-700 font-bold">(1 baris = 1 opsi)</span>
                             </label>
-                            <textarea name="ppdb_form_tracks" rows="5" class="w-full bg-white text-xs font-semibold rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_form_tracks', $settings['form_tracks']) }}</textarea>
+                            <textarea name="ppdb_form_tracks" rows="5" class="w-full bg-white text-xs font-semibold rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_form_tracks', $settings['form_tracks']) }}</textarea>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                                Pilihan Program Belajar <span class="text-emerald-700 font-bold">(1 baris = 1 opsi)</span>
+                                Pilihan Program Belajar <span class="text-indigo-700 font-bold">(1 baris = 1 opsi)</span>
                             </label>
-                            <textarea name="ppdb_form_programs" rows="5" class="w-full bg-white text-xs font-semibold rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed">{{ old('ppdb_form_programs', $settings['form_programs']) }}</textarea>
+                            <textarea name="ppdb_form_programs" rows="5" class="w-full bg-white text-xs font-semibold rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_form_programs', $settings['form_programs']) }}</textarea>
                         </div>
                     </div>
 
@@ -618,14 +618,14 @@
         {{-- SUBMIT BAR STICKY --}}
         <div class="sticky bottom-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-200 flex items-center justify-between z-20">
             <div class="text-xs text-slate-500 flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-[#00913e]"></i>
+                <i class="fa-solid fa-circle-check text-indigo-600"></i>
                 <span>Semua perubahan konten &amp; pengaturan formulir langsung diterapkan ke halaman website.</span>
             </div>
             <div class="flex items-center space-x-3">
                 <a href="{{ route('admin.ppdb.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-bold transition">
                     Batal
                 </a>
-                <button type="submit" class="bg-[#00913e] hover:bg-[#007a34] text-white font-black text-xs sm:text-sm px-8 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition cursor-pointer flex items-center space-x-2">
+                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm px-8 py-3 rounded-xl shadow-lg shadow-indigo-600/25 transition cursor-pointer flex items-center space-x-2">
                     <i class="fa-solid fa-floppy-disk"></i>
                     <span>Simpan Seluruh Pengaturan PPDB</span>
                 </button>
@@ -653,7 +653,7 @@
             <div class="relative bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6" @click.away="showAddFieldModal = false">
                 <div class="flex items-center justify-between pb-4 border-b border-slate-100">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-[#00913e] flex items-center justify-center font-bold text-lg">
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center font-bold text-lg">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                         <div>
@@ -671,13 +671,13 @@
 
                     <div>
                         <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nama / Label Kolom <span class="text-red-500">*</span></label>
-                        <input type="text" name="label" required placeholder="Contoh: Nomor Kartu Keluarga, Ukuran Baju, dsb..." class="w-full bg-slate-50 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] text-xs font-semibold">
+                        <input type="text" name="label" required placeholder="Contoh: Nomor Kartu Keluarga, Ukuran Baju, dsb..." class="w-full bg-slate-50 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-xs font-semibold">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">Kategori / Bagian <span class="text-red-500">*</span></label>
-                            <select name="section" required class="w-full bg-slate-50 rounded-xl px-3 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] text-xs font-semibold">
+                            <select name="section" required class="w-full bg-slate-50 rounded-xl px-3 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-xs font-semibold">
                                 @foreach($sections as $sKey => $sInfo)
                                     <option value="{{ $sKey }}">{{ $sInfo['name'] }}</option>
                                 @endforeach
@@ -686,7 +686,7 @@
 
                         <div>
                             <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">Tipe Input <span class="text-red-500">*</span></label>
-                            <select name="type" x-model="newFieldType" required class="w-full bg-slate-50 rounded-xl px-3 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] text-xs font-semibold">
+                            <select name="type" x-model="newFieldType" required class="w-full bg-slate-50 rounded-xl px-3 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-xs font-semibold">
                                 <option value="text">Teks Pendek</option>
                                 <option value="number">Angka / Nomor</option>
                                 <option value="date">Tanggal</option>
@@ -700,14 +700,14 @@
 
                     <div>
                         <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">Placeholder / Petunjuk Isian</label>
-                        <input type="text" name="placeholder" placeholder="Contoh: Masukkan 16 digit no KK..." class="w-full bg-slate-50 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] text-xs">
+                        <input type="text" name="placeholder" placeholder="Contoh: Masukkan 16 digit no KK..." class="w-full bg-slate-50 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-xs">
                     </div>
 
                     <div x-show="newFieldType === 'select'" style="display: none;">
                         <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                            Opsi Pilihan Dropdown <span class="text-emerald-700 font-normal">(1 baris = 1 opsi)</span> <span class="text-red-500">*</span>
+                            Opsi Pilihan Dropdown <span class="text-indigo-700 font-normal">(1 baris = 1 opsi)</span> <span class="text-red-500">*</span>
                         </label>
-                        <textarea name="options" rows="3" placeholder="Opsi 1&#10;Opsi 2&#10;Opsi 3" class="w-full bg-slate-50 font-mono rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] text-xs"></textarea>
+                        <textarea name="options" rows="3" placeholder="Opsi 1&#10;Opsi 2&#10;Opsi 3" class="w-full bg-slate-50 font-mono rounded-xl p-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-xs"></textarea>
                     </div>
 
                     <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
@@ -715,14 +715,14 @@
                             <span class="font-bold text-slate-800 block text-xs">Wajib Diisi oleh Pendaftar?</span>
                             <span class="text-[10px] text-slate-500">Jika aktif, formulir tidak dapat dikirim sebelum kolom ini diisi.</span>
                         </div>
-                        <input type="checkbox" name="required" value="1" class="w-5 h-5 rounded text-[#00913e] focus:ring-[#00913e] border-slate-300">
+                        <input type="checkbox" name="required" value="1" class="w-5 h-5 rounded text-indigo-600 focus:ring-indigo-600 border-slate-300">
                     </div>
 
                     <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-100">
                         <button type="button" @click="showAddFieldModal = false" class="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-bold transition cursor-pointer">
                             Batal
                         </button>
-                        <button type="submit" class="bg-[#00913e] hover:bg-[#007a34] text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-md shadow-emerald-500/25 transition flex items-center space-x-2 cursor-pointer">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-md shadow-indigo-600/25 transition flex items-center space-x-2 cursor-pointer">
                             <i class="fa-solid fa-plus"></i>
                             <span>Tambahkan Kolom</span>
                         </button>

@@ -184,7 +184,7 @@
         <img src="/uploads/logo-ishum-square.png" alt="Logo Ishum">
         <div class="header-text">
             <h2>YAYASAN ISHLAHUL UMMAH PRABUMULIH</h2>
-            <h3>SMA ISLAM TERPADU ISHLAHUL UMMAH</h3>
+            <h3>SMP ISLAM TERPADU ISHLAHUL UMMAH</h3>
             <p><strong>TERAKREDITASI BAN-SM (ANGGOTA JSIT INDONESIA)</strong> &bull; NPSN: 69990882</p>
             <p>Jalan Sadewa RT 01 RW 04 Kelurahan Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumsel 31111</p>
             <p>Telp/WA: 0852-6990-8696 | Email: smpitishlahulummah.2015@yahoo.com | Web: www.ishum.sch.id</p>
@@ -265,7 +265,7 @@
             <p>Mengetahui,</p>
             <p><strong>Kepala SMPS IT Ishlahul Ummah</strong></p>
             <div class="sig-space"></div>
-            <p><strong><u>Mulyani Rahayu, S.T., M.Pd</u></strong></p>
+            <p><strong><u>Anita Carlyna, S.IP., M.Pd., Gr</u></strong></p>
             <p>NIY. 20190701001</p>
         </div>
         <div class="sig-box">

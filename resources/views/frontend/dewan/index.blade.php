@@ -5,9 +5,9 @@
 
 @section('content')
 {{-- HERO HEADER --}}
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <span>Profil</span>
@@ -15,7 +15,7 @@
             <span class="text-amber-300 font-semibold">Dewan Guru</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Dewan Guru & Tenaga Kependidikan</h1>
-        <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
+        <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Pendidik profesional, hafizh Qur'an, dan pakar sains yang siap mendampingi tumbuh kembang putra-putri Anda.
         </p>
     </div>
@@ -29,7 +29,7 @@
             Guru & Tenaga Kependidikan (GTK)
         </h2>
         <p class="text-xs sm:text-sm text-gray-500 mt-1">SMPS IT Ishlahul Ummah Prabumulih</p>
-        <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
+        <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -50,7 +50,7 @@
                 {{-- DESKRIPSI GURU --}}
                 <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                     <div>
-                        <h3 class="font-extrabold text-gray-900 text-lg leading-snug hover:text-[#00913e] transition">
+                        <h3 class="font-extrabold text-gray-900 text-lg leading-snug hover:text-indigo-600 transition">
                             {{ $d->name }}
                         </h3>
                         <span class="text-xs font-semibold text-orange-600 block mt-1">{{ $d->position }}</span>
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-                        <span class="font-medium text-emerald-700">SMPS IT Ishlahul Ummah Prabumulih</span>
+                        <span class="font-medium text-indigo-700">SMPS IT Ishlahul Ummah Prabumulih</span>
                         <span class="inline-flex items-center text-amber-500 font-semibold">
                             <i class="fa-solid fa-award mr-1"></i> Pendidik Berdedikasi
                         </span>

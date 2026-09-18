@@ -47,7 +47,7 @@ test('articles page renders successfully', function () {
 test('static profil pages render successfully', function () {
     Post::create([
         'title' => 'Sambutan Kepala Sekolah',
-        'slug' => 'sambutan-ketua-dpd',
+        'slug' => 'sambutan-kepala-sekolah',
         'content' => 'Isi sambutan kepala sekolah',
         'status' => 'publish',
         'type' => 'page',
@@ -190,11 +190,11 @@ test('site settings update dynamically reflects across header, footer, and conta
 });
 
 test('sambutan page renders dynamic content from database', function () {
-    $page = Post::where('slug', 'sambutan-ketua-dpd')->first();
+    $page = Post::where('slug', 'sambutan-kepala-sekolah')->first();
     if (! $page) {
         $page = Post::create([
             'title' => 'Sambutan Kepala Sekolah',
-            'slug' => 'sambutan-ketua-dpd',
+            'slug' => 'sambutan-kepala-sekolah',
             'content' => '<p>Uji coba pidato resmi dinamis kepala sekolah.</p>',
             'status' => 'publish',
             'type' => 'page',

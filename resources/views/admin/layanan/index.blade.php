@@ -20,9 +20,9 @@
             <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider block mb-1">Disetujui</span>
             <div class="text-xl sm:text-2xl font-black text-blue-800">{{ $stats['approved'] }}</div>
         </div>
-        <div class="bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200/60 shadow-xs">
-            <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block mb-1">Selesai</span>
-            <div class="text-xl sm:text-2xl font-black text-emerald-800">{{ $stats['completed'] }}</div>
+        <div class="bg-indigo-50/60/70 p-4 rounded-2xl border border-indigo-200/60 shadow-xs">
+            <span class="text-[11px] font-bold text-indigo-700 uppercase tracking-wider block mb-1">Selesai</span>
+            <div class="text-xl sm:text-2xl font-black text-indigo-800">{{ $stats['completed'] }}</div>
         </div>
         <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/60 shadow-xs">
             <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Izin Kunjungan</span>
@@ -41,16 +41,16 @@
     {{-- ACTION BAR & FILTERS --}}
     <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-xs border border-slate-100 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         <div class="flex flex-wrap items-center gap-2">
-            <a href="{{ route('admin.layanan.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ !request('type') || request('type') === 'all' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
+            <a href="{{ route('admin.layanan.index') }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ !request('type') || request('type') === 'all' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
                 Semua Layanan
             </a>
-            <a href="{{ route('admin.layanan.index', ['type' => 'izin_kunjungan', 'status' => request('status')]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ request('type') === 'izin_kunjungan' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
+            <a href="{{ route('admin.layanan.index', ['type' => 'izin_kunjungan', 'status' => request('status')]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ request('type') === 'izin_kunjungan' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
                 Izin Kunjungan
             </a>
-            <a href="{{ route('admin.layanan.index', ['type' => 'kerja_sama', 'status' => request('status')]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ request('type') === 'kerja_sama' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
+            <a href="{{ route('admin.layanan.index', ['type' => 'kerja_sama', 'status' => request('status')]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ request('type') === 'kerja_sama' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
                 Kerja Sama
             </a>
-            <a href="{{ route('admin.layanan.index', ['type' => 'sewa_barang', 'status' => request('status')]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ request('type') === 'sewa_barang' ? 'bg-[#00913e] text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
+            <a href="{{ route('admin.layanan.index', ['type' => 'sewa_barang', 'status' => request('status')]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold transition {{ request('type') === 'sewa_barang' ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">
                 Sewa Barang
             </a>
         </div>
@@ -65,7 +65,7 @@
                 @if(request('type'))
                     <input type="hidden" name="type" value="{{ request('type') }}">
                 @endif
-                <select name="status" onchange="this.form.submit()" class="bg-slate-50 border border-slate-200 text-xs font-semibold rounded-xl px-3 py-2 text-slate-700 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                <select name="status" onchange="this.form.submit()" class="bg-slate-50 border border-slate-200 text-xs font-semibold rounded-xl px-3 py-2 text-slate-700 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                     <option value="all" {{ request('status') === 'all' ? 'selected' : '' }}>Semua Status</option>
                     <option value="pending" {{ request('status') === 'pending' ? 'selected' : '' }}>Menunggu</option>
                     <option value="approved" {{ request('status') === 'approved' ? 'selected' : '' }}>Disetujui</option>
@@ -74,7 +74,7 @@
                 </select>
 
                 <div class="relative">
-                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama / instansi..." class="bg-slate-50 border border-slate-200 text-xs rounded-xl pl-8 pr-3 py-2 text-slate-700 w-40 sm:w-48 focus:ring-2 focus:ring-[#00913e] focus:outline-none">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama / instansi..." class="bg-slate-50 border border-slate-200 text-xs rounded-xl pl-8 pr-3 py-2 text-slate-700 w-40 sm:w-48 focus:ring-2 focus:ring-indigo-600 focus:outline-none">
                     <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-slate-400 text-xs"></i>
                 </div>
             </form>
@@ -130,7 +130,7 @@
 
                             <td class="py-3.5 px-4 max-w-xs">
                                 @if($sub->whatsapp)
-                                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $sub->whatsapp) }}" target="_blank" class="text-emerald-600 hover:text-emerald-700 font-semibold text-xs inline-flex items-center mb-1 hover:underline">
+                                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $sub->whatsapp) }}" target="_blank" class="text-indigo-600 hover:text-indigo-700 font-semibold text-xs inline-flex items-center mb-1 hover:underline">
                                         <i class="fa-brands fa-whatsapp mr-1 text-emerald-500"></i> {{ $sub->whatsapp }}
                                     </a>
                                 @endif
@@ -147,7 +147,7 @@
                                         </a>
                                     @endif
                                     @if($sub->ktp_path)
-                                        <a href="{{ $sub->ktp_path }}" target="_blank" class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition" title="Lihat KTP Pemohon">
+                                        <a href="{{ $sub->ktp_path }}" target="_blank" class="w-7 h-7 rounded-lg bg-indigo-50/60 text-indigo-600 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition" title="Lihat KTP Pemohon">
                                             <i class="fa-solid fa-id-card text-xs"></i>
                                         </a>
                                     @endif

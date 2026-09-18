@@ -279,7 +279,7 @@
                     </a>
 
                     <a href="{{ route('admin.posts.index', ['type' => 'ekskul']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'ekskul' ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Ekstrakurikuler">
-                        <i class="fa-solid fa-people-group text-xs w-4 text-center text-emerald-400"></i>
+                        <i class="fa-solid fa-people-group text-xs w-4 text-center text-amber-400"></i>
                         <span class="sidebar-label">Ekstrakurikuler</span>
                     </a>
 
@@ -313,7 +313,7 @@
                     </a>
 
                     <a href="{{ route('admin.ppdb.content') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.ppdb.content*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kelola Halaman PPDB">
-                        <i class="fa-solid fa-file-pen text-xs w-4 text-center text-emerald-400"></i>
+                        <i class="fa-solid fa-file-pen text-xs w-4 text-center text-amber-400"></i>
                         <span class="sidebar-label">Kelola Halaman PPDB</span>
                     </a>
 
@@ -349,7 +349,7 @@
                     </a>
 
                     <a href="{{ route('admin.layanan.content') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.layanan.content*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kelola Konten Layanan">
-                        <i class="fa-solid fa-file-shield text-xs w-4 text-center text-emerald-400"></i>
+                        <i class="fa-solid fa-file-shield text-xs w-4 text-center text-amber-400"></i>
                         <span class="sidebar-label">Konten Layanan &amp; Syarat</span>
                     </a>
                 </div>
@@ -453,12 +453,12 @@
 
         {{-- Flash Messages --}}
         @if(session('success'))
-            <div class="mx-6 sm:mx-8 mt-6 p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-2xl shadow-xs flex items-center justify-between">
+            <div class="mx-6 sm:mx-8 mt-6 p-4 bg-indigo-50/60 border-l-4 border-emerald-500 rounded-r-2xl shadow-xs flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>
-                    <p class="text-xs sm:text-sm font-semibold text-emerald-800">{{ session('success') }}</p>
+                    <p class="text-xs sm:text-sm font-semibold text-indigo-800">{{ session('success') }}</p>
                 </div>
-                <button onclick="this.parentElement.remove()" class="text-emerald-600 hover:text-emerald-800 text-xs">
+                <button onclick="this.parentElement.remove()" class="text-indigo-600 hover:text-indigo-800 text-xs">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>

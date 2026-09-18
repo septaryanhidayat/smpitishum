@@ -4,9 +4,9 @@
 @section('meta_description', Str::limit(strip_tags($item->content), 155))
 
 @section('content')
-<div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
+<div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-xs text-emerald-200 mb-3 flex items-center space-x-2">
+        <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
             <a href="{{ route('prestasi.index') }}" class="hover:text-white transition">Prestasi</a>
@@ -19,7 +19,7 @@
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight max-w-4xl">
             {{ $item->title }}
         </h1>
-        <div class="flex items-center space-x-4 text-xs text-emerald-100 mt-3">
+        <div class="flex items-center space-x-4 text-xs text-indigo-100 mt-3">
             <span class="flex items-center space-x-1.5">
                 <i class="fa-regular fa-calendar"></i>
                 <span>{{ $item->published_at ? $item->published_at->format('d F Y') : $item->created_at->format('d F Y') }}</span>
@@ -52,7 +52,7 @@
                 <div class="pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
                     <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Bagikan Kabar Baik Ini:</span>
                     <div class="flex items-center space-x-2">
-                        <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' ' . url()->current()) }}" target="_blank" class="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm hover:bg-emerald-600 transition shadow-sm" title="Bagikan ke WhatsApp">
+                        <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' ' . url()->current()) }}" target="_blank" class="w-9 h-9 rounded-full bg-indigo-50/600 text-white flex items-center justify-center text-sm hover:bg-indigo-600 transition shadow-sm" title="Bagikan ke WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank" class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm hover:bg-blue-700 transition shadow-sm" title="Bagikan ke Facebook">
@@ -77,7 +77,7 @@
                                 <img src="{{ $rel->featured_image ?: '/uploads/campus-smpit-ishum.webp' }}" alt="{{ $rel->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
-                                <h4 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-[#00913e] transition line-clamp-2 leading-snug">
+                                <h4 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
                                     {{ $rel->title }}
                                 </h4>
                                 <span class="text-[10px] text-gray-400 mt-1 block">
@@ -91,12 +91,12 @@
                 </div>
             </div>
 
-            <div class="bg-gradient-to-br from-emerald-900 to-[#00913e] text-white p-6 rounded-3xl shadow-lg space-y-3">
+            <div class="bg-gradient-to-br from-indigo-900 to-blue-900 text-white p-6 rounded-3xl shadow-lg space-y-3">
                 <h3 class="font-black text-lg">Ingin Berprestasi Bersama Kami?</h3>
-                <p class="text-xs text-emerald-100 leading-relaxed">
+                <p class="text-xs text-indigo-100 leading-relaxed">
                     Daftarkan putra-putri Anda di SMPS IT Ishlahul Ummah Prabumulih dan wujudkan potensi terbaiknya.
                 </p>
-                <a href="{{ route('ppdb.index') }}" class="inline-block w-full text-center bg-white text-[#00913e] font-bold py-2.5 px-4 rounded-xl text-xs hover:bg-emerald-50 transition shadow-md">
+                <a href="{{ route('ppdb.index') }}" class="inline-block w-full text-center bg-white text-indigo-600 font-bold py-2.5 px-4 rounded-xl text-xs hover:bg-indigo-50/60 transition shadow-md">
                     Daftar PPDB Online Sekarang
                 </a>
             </div>
