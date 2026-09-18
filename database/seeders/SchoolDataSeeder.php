@@ -47,7 +47,7 @@ class SchoolDataSeeder extends Seeder
             'site_logo_square' => '/uploads/logo-ishum-square.png',
             'og_title' => 'SMPS IT Ishlahul Ummah Prabumulih',
             'og_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih: Informasi SPMB Gelombang Exclusive, Berita & Prestasi, Profil Guru, Fasilitas, dan Program Tahfidz.',
-            'og_image' => '/uploads/og-image.jpg',
+            'og_image' => '/uploads/logo-ishum-square.png',
             'meta_keywords' => 'smps it ishlahul ummah prabumulih, smp it ishum, sekolah islam terpadu prabumulih, spmb smp it ishum, tahfidz prabumulih, jsit prabumulih',
             'npsn' => '69787455',
             'akreditasi' => 'B (Terakreditasi BAN-SM)',

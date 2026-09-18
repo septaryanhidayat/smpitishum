@@ -1,6 +1,6 @@
 {{-- TOP MINI BAR (Elegan: Kontak Telepon & Email Resmi SMPS IT Ishlahul Ummah Prabumulih) --}}
-<div class="bg-[#0f172a] text-slate-200 text-xs py-1.5 sm:py-2 border-b border-indigo-900/60 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center text-center">
+<div class="w-full max-w-full bg-[#0f172a] text-slate-200 text-xs py-1.5 sm:py-2 border-b border-indigo-900/60 overflow-hidden box-border">
+    <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center text-center">
         <div class="flex items-center justify-center space-x-3 sm:space-x-6">
             <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="inline-flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold whitespace-nowrap" aria-label="Hubungi Telepon {{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}">
                 <i class="fa-solid fa-phone mr-1.5 text-amber-400" aria-hidden="true"></i>
@@ -25,14 +25,14 @@
 </div>
 
 {{-- MAIN STICKY NAVBAR (Royal Indigo & Electric Blue #4338ca / #2563eb / Radiant Gold #f59e0b) --}}
-<header class="sticky top-0 z-50 bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16 sm:h-20">
+<header class="sticky top-0 z-50 w-full max-w-full overflow-x-clip bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md box-border">
+    <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 box-border">
+        <div class="flex justify-between items-center h-16 sm:h-20 w-full max-w-full">
             
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
-            <a href="{{ route('home') }}" class="flex items-center group min-w-0 flex-1 sm:flex-initial mr-2" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="h-12 sm:h-16 flex items-center py-1">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="h-9 sm:h-14 w-auto max-w-[160px] xs:max-w-[200px] sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
+            <a href="{{ route('home') }}" class="flex items-center group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[55%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
+                <div class="h-12 sm:h-16 flex items-center py-1 min-w-0 max-w-full">
+                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="h-8 sm:h-14 w-auto max-w-full sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
                 </div>
             </a>
 
@@ -184,19 +184,19 @@
             </div>
 
             {{-- MOBILE TOP RIGHT: Tombol SPMB & Hamburger --}}
-            <div class="flex lg:hidden items-center space-x-1.5 shrink-0">
-                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2.5 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-black shadow transition flex items-center min-h-[36px]">
+            <div class="flex lg:hidden items-center space-x-1.5 shrink-0 ml-auto">
+                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-black shadow transition flex items-center min-h-[34px] flex-shrink-0">
                     <span>SPMB</span>
                 </a>
-                <button id="mobile-menu-toggle" type="button" class="text-white hover:text-amber-200 p-1.5 sm:p-2 rounded-lg focus:outline-none min-w-[38px] min-h-[38px] flex items-center justify-center" aria-label="Buka Menu Navigasi">
-                    <i class="fa-solid fa-bars text-xl sm:text-2xl" aria-hidden="true"></i>
+                <button id="mobile-menu-toggle" type="button" class="text-white hover:text-amber-200 p-1 rounded-lg focus:outline-none w-9 h-9 flex items-center justify-center flex-shrink-0 cursor-pointer" aria-label="Buka Menu Navigasi">
+                    <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </div>
 
     {{-- MOBILE MENU DRAWER (Struktur Rapi & Terorganisir) --}}
-    <div id="mobile-menu" class="hidden lg:hidden bg-white text-gray-800 border-t-4 border-indigo-600 px-5 pt-4 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto">
+    <div id="mobile-menu" class="hidden lg:hidden w-full max-w-full overflow-x-hidden box-border bg-white text-gray-800 border-t-4 border-indigo-600 px-4 sm:px-5 pt-4 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto">
         <form action="{{ route('artikel.index') }}" method="GET" class="relative mb-3">
             <input type="text" name="q" placeholder="Cari info & artikel sekolah..." aria-label="Cari artikel sekolah" value="{{ request('q') }}" class="w-full bg-gray-100 text-xs text-gray-800 rounded-full pl-9 pr-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-400 text-xs" aria-hidden="true"></i>
