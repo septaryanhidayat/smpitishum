@@ -66,46 +66,49 @@
     @stack('styles')
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
+    <div id="app-wrapper" class="w-full max-w-full overflow-x-hidden relative flex flex-col min-h-screen">
 
-    {{-- HEADER --}}
-    @include('partials.header')
+        {{-- HEADER --}}
+        @include('partials.header')
 
-    {{-- FLASH MESSAGES --}}
-    @if(session('success'))
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
-            <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg shadow-sm flex items-center justify-between">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-circle-check text-green-600 text-lg mr-3"></i>
-                    <p class="text-sm font-medium text-green-800">{{ session('success') }}</p>
+        {{-- FLASH MESSAGES --}}
+        @if(session('success'))
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
+                <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg shadow-sm flex items-center justify-between">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-circle-check text-green-600 text-lg mr-3"></i>
+                        <p class="text-sm font-medium text-green-800">{{ session('success') }}</p>
+                    </div>
+                    <button type="button" onclick="this.parentElement.remove()" class="text-green-600 hover:text-green-800 text-sm min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Tutup notifikasi">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
                 </div>
-                <button type="button" onclick="this.parentElement.remove()" class="text-green-600 hover:text-green-800 text-sm min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Tutup notifikasi">
-                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                </button>
             </div>
-        </div>
-    @endif
+        @endif
 
-    @if(session('error'))
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
-            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg shadow-sm flex items-center justify-between">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-triangle-exclamation text-red-500 text-lg mr-3" aria-hidden="true"></i>
-                    <p class="text-sm font-medium text-red-800">{{ session('error') }}</p>
+        @if(session('error'))
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg shadow-sm flex items-center justify-between">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500 text-lg mr-3" aria-hidden="true"></i>
+                        <p class="text-sm font-medium text-red-800">{{ session('error') }}</p>
+                    </div>
+                    <button type="button" onclick="this.parentElement.remove()" class="text-red-600 hover:text-red-800 text-sm min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Tutup notifikasi error">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
                 </div>
-                <button type="button" onclick="this.parentElement.remove()" class="text-red-600 hover:text-red-800 text-sm min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Tutup notifikasi error">
-                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                </button>
             </div>
-        </div>
-    @endif
+        @endif
 
-    {{-- MAIN CONTENT --}}
-    <main class="flex-grow w-full max-w-full overflow-x-hidden">
-        @yield('content')
-    </main>
+        {{-- MAIN CONTENT --}}
+        <main class="flex-grow w-full max-w-full overflow-x-hidden">
+            @yield('content')
+        </main>
 
-    {{-- FOOTER --}}
-    @include('partials.footer')
+        {{-- FOOTER --}}
+        @include('partials.footer')
+
+    </div>
 
     {{-- FLOATING MULTI-BAHASA (Kiri Bawah) --}}
     <div class="gtranslate_wrapper"></div>

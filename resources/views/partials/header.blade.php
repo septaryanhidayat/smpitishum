@@ -1,32 +1,38 @@
 {{-- TOP MINI BAR (Elegan: Kontak Telepon & Email Resmi SMPS IT Ishlahul Ummah Prabumulih) --}}
-<div class="bg-[#0f172a] text-slate-200 text-xs py-2 border-b border-indigo-900/60 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-center sm:justify-start items-center space-x-2 sm:space-x-6 text-center flex-wrap">
-        <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold whitespace-nowrap" aria-label="Hubungi Telepon {{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}">
-            <i class="fa-solid fa-phone mr-1.5 text-amber-400" aria-hidden="true"></i>
-            <span>{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}</span>
-        </a>
-        <span class="text-indigo-900 hidden sm:inline" aria-hidden="true">|</span>
-        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}" class="hidden sm:flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold truncate max-w-xs" aria-label="Kirim Email ke {{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}">
-            <i class="fa-solid fa-envelope mr-1.5 text-amber-400" aria-hidden="true"></i>
-            <span class="truncate">{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}</span>
-        </a>
-        <span class="hidden md:inline text-indigo-900" aria-hidden="true">|</span>
-        <span class="hidden md:flex items-center text-slate-300 text-xs">
-            <i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i>
-            <span>Prabumulih Timur, Sumatera Selatan</span>
-        </span>
+<div class="bg-[#0f172a] text-slate-200 text-xs py-1.5 sm:py-2 border-b border-indigo-900/60 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center text-center">
+        <div class="flex items-center justify-center space-x-3 sm:space-x-6">
+            <a href="tel:{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}" class="inline-flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold whitespace-nowrap" aria-label="Hubungi Telepon {{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}">
+                <i class="fa-solid fa-phone mr-1.5 text-amber-400" aria-hidden="true"></i>
+                <span class="whitespace-nowrap">{{ $siteSettings['contact_phone'] ?? '0852-6990-8696' }}</span>
+            </a>
+            <span class="text-indigo-900/80 hidden sm:inline" aria-hidden="true">|</span>
+            <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}" class="hidden sm:inline-flex items-center text-slate-200 hover:text-amber-300 transition py-0.5 text-[11px] sm:text-xs font-semibold truncate max-w-xs" aria-label="Kirim Email ke {{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}">
+                <i class="fa-solid fa-envelope mr-1.5 text-amber-400" aria-hidden="true"></i>
+                <span class="truncate">{{ $siteSettings['contact_email'] ?? 'smpitishlahulummah.2015@yahoo.com' }}</span>
+            </a>
+            <span class="hidden md:inline text-indigo-900/80" aria-hidden="true">|</span>
+            <span class="hidden md:inline-flex items-center text-slate-300 text-xs">
+                <i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i>
+                <span>Prabumulih Timur, Sumatera Selatan</span>
+            </span>
+        </div>
+        <div class="hidden sm:flex items-center space-x-2 text-[11px] text-slate-300">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-1"></span>
+            <span>SPMB T.P 2026/2027 Dibuka</span>
+        </div>
     </div>
 </div>
 
 {{-- MAIN STICKY NAVBAR (Royal Indigo & Electric Blue #4338ca / #2563eb / Radiant Gold #f59e0b) --}}
 <header class="sticky top-0 z-50 bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16 sm:h-20">
             
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
-            <a href="{{ route('home') }}" class="flex items-center space-x-3 group flex-shrink-0" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="h-14 sm:h-16 flex items-center py-1">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="max-h-11 sm:max-h-16 w-auto object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
+            <a href="{{ route('home') }}" class="flex items-center group min-w-0 flex-1 sm:flex-initial mr-2" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
+                <div class="h-12 sm:h-16 flex items-center py-1">
+                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="h-9 sm:h-14 w-auto max-w-[160px] xs:max-w-[200px] sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
                 </div>
             </a>
 
@@ -178,12 +184,12 @@
             </div>
 
             {{-- MOBILE TOP RIGHT: Tombol SPMB & Hamburger --}}
-            <div class="flex lg:hidden items-center space-x-2">
-                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 px-3.5 py-2 rounded-full text-xs font-black shadow transition min-h-[44px] flex items-center">
-                    SPMB
+            <div class="flex lg:hidden items-center space-x-1.5 shrink-0">
+                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2.5 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-black shadow transition flex items-center min-h-[36px]">
+                    <span>SPMB</span>
                 </a>
-                <button id="mobile-menu-toggle" type="button" class="text-white hover:text-amber-200 p-2 rounded-lg focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Buka Menu Navigasi">
-                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                <button id="mobile-menu-toggle" type="button" class="text-white hover:text-amber-200 p-1.5 sm:p-2 rounded-lg focus:outline-none min-w-[38px] min-h-[38px] flex items-center justify-center" aria-label="Buka Menu Navigasi">
+                    <i class="fa-solid fa-bars text-xl sm:text-2xl" aria-hidden="true"></i>
                 </button>
             </div>
         </div>

@@ -33,20 +33,20 @@
                 {{-- Konten Hero Rata Tengah --}}
                 <div class="absolute inset-0 flex items-center justify-center pt-2 pb-14 sm:pb-14 px-2">
                     <div class="max-w-4xl mx-auto px-2 sm:px-6 text-center text-white space-y-2.5 sm:space-y-4 w-full">
-                        <div>
-                            <span class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[95%] truncate sm:overflow-visible">
-                                <i class="fa-solid fa-star text-[9px] mr-1"></i>
-                                <span>SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
+                        <div class="flex justify-center">
+                            <span class="inline-flex items-center justify-center px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[92%] sm:max-w-none text-center">
+                                <i class="fa-solid fa-star text-[9px] mr-1.5 shrink-0"></i>
+                                <span class="truncate sm:overflow-visible">SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
                             </span>
                         </div>
                         <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-snug sm:leading-tight px-1" x-text="slide.title"></h1>
                         <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none px-2" x-text="slide.subtitle"></p>
-                        <div class="pt-1 sm:pt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-xs sm:max-w-md mx-auto">
-                            <a :href="slide.btn_link" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
+                        <div class="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-[270px] sm:max-w-md mx-auto">
+                            <a :href="slide.btn_link" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
                                 <span x-text="slide.btn_text"></span>
                                 <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                             </a>
-                            <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600/80 hover:bg-indigo-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105">
+                            <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105">
                                 <i class="fa-solid fa-graduation-cap mr-2"></i>
                                 <span>Info SPMB</span>
                             </a>
@@ -57,11 +57,11 @@
         </template>
     </div>
 
-    {{-- Carousel Controls (Panah Samping) --}}
-    <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length" class="absolute left-1.5 sm:left-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide sebelumnya">
+    {{-- Carousel Controls (Panah Samping - disembunyikan di layar mobile agar tidak menutupi teks) --}}
+    <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length" class="hidden sm:flex absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide sebelumnya">
         <i class="fa-solid fa-chevron-left text-xs sm:text-sm" aria-hidden="true"></i>
     </button>
-    <button @click="activeSlide = (activeSlide + 1) % slides.length" class="absolute right-1.5 sm:right-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide berikutnya">
+    <button @click="activeSlide = (activeSlide + 1) % slides.length" class="hidden sm:flex absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide berikutnya">
         <i class="fa-solid fa-chevron-right text-xs sm:text-sm" aria-hidden="true"></i>
     </button>
 
