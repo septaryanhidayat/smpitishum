@@ -6,5 +6,3 @@ deployment:
     - /bin/chmod -R 775 $REPOPATH/storage $REPOPATH/bootstrap/cache
     - /bin/chmod -R 755 $REPOPATH/public
     - /bin/touch $REPOPATH/public/index.php
-    - if [ -d "/home/berandad/public_html" ]; then /bin/cp -r $REPOPATH/public/. /home/berandad/public_html/ 2>/dev/null || true; fi
-    - if [ -d "/home/berandad/smpitishumpbm.sch.id" ]; then /bin/cp -r $REPOPATH/public/. /home/berandad/smpitishumpbm.sch.id/ 2>/dev/null || true; fi

@@ -161,27 +161,8 @@ switch ($action) {
         @exec($cmd, $output, $returnCode);
         $results['Git Pull & Sync'] = empty($output) ? 'Perintah dieksekusi' : implode("\n", $output);
 
-        // Langsung sinkronkan aset public ke folder web root
-        $sourcePublic = $laravelRoot.'/public';
-        foreach (['/home/berandad/smpitishum.sch.id/public', '/home/berandad/public_html'] as $targetDir) {
-            if (is_dir($targetDir) && is_dir($sourcePublic)) {
-                $iterator = new RecursiveIteratorIterator(
-                    new RecursiveDirectoryIterator($sourcePublic, RecursiveDirectoryIterator::SKIP_DOTS),
-                    RecursiveIteratorIterator::SELF_FIRST
-                );
-                foreach ($iterator as $item) {
-                    $subPath = $iterator->getSubPathName();
-                    $target = $targetDir.'/'.$subPath;
-                    if ($item->isDir()) {
-                        if (! is_dir($target)) {
-                            @mkdir($target, 0755, true);
-                        }
-                    } else {
-                        @copy($item->getPathname(), $target);
-                    }
-                }
-            }
-        }
+        // Pastikan izin folder public internal di dalam repositori adalah 0755
+        @chmod($laravelRoot.'/public', 0755);
 
         // Jalankan clear cache jika vendor tersedia
         if ($hasVendor) {
@@ -254,8 +235,6 @@ switch ($action) {
 
                 $targetDirs = array_unique([
                     $currentDir,
-                    '/home/berandad/smpitishum.sch.id/public',
-                    '/home/berandad/public_html',
                 ]);
 
                 foreach ($targetDirs as $targetDir) {

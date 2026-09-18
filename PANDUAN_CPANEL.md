@@ -134,10 +134,12 @@ Berdasarkan pengaturan Git di cPanel Anda:
 5. Klik tombol biru **Deploy HEAD Commit** untuk menjalankan proses deployment otomatis yang didefinisikan dalam `.cpanel.yml`.
 
 ### Otomasi File `.cpanel.yml`:
-File `.cpanel.yml` telah dikonfigurasi untuk:
-- Mengatur izin akses direktori `storage/` dan `bootstrap/cache` ke `0775`.
-- Mengatur direktori `public/` ke `0755`.
-- Otomatis menyalin (*synchronize*) aset web dan file `.htaccess` ke `/home/berandad/public_html` (jika domain Anda mengarah ke `public_html`).
+File `.cpanel.yml` terisolasi penuh dan aman:
+- Hanya beroperasi 100% di dalam direktori repositori: `/home/berandad/repositories/smpitishum/`.
+- **SAMA SEKALI TIDAK** menyentuh atau mengganggu folder `public_html` (web utama Anda tetap aman tanpa tersentuh).
+- Mengatur izin akses direktori internal `storage/` dan `bootstrap/cache` ke `0775`.
+- Mengatur direktori internal `public/` ke `0755`.
+- Menyentuh (*touch*) file `public/index.php` untuk memicu reload cache server.
 
 ---
 
