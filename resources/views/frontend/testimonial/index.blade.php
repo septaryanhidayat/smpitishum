@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Testimonial Wali Santri & Alumni - SMPS IT Ishlahul Ummah Prabumulih')
+@section('title', 'Testimonial Wali Murid & Alumni - SMPS IT Ishlahul Ummah Prabumulih')
 @section('meta_description', 'Suara, apresiasi, dan kesan para orang tua murid dan alumni terhadap mutu pendidikan di SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Testimonial Orang Tua & Alumni</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Kesan, apresiasi, dan pengalaman nyata para orang tua santri dan alumni mengenai kualitas pendidikan karakter dan akademik di SMPS IT Ishlahul Ummah Prabumulih.
+            Kesan, apresiasi, dan pengalaman nyata para orang tua siswa dan alumni mengenai kualitas pendidikan karakter dan akademik di SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
 </div>

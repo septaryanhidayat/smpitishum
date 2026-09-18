@@ -14,22 +14,28 @@
     <meta name="google-site-verification" content="{{ $siteSettings['google_site_verification'] }}">
     @endif
 
-    {{-- Open Graph / Facebook / WhatsApp --}}
+    {{-- Open Graph / Facebook / WhatsApp / Telegram --}}
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:site_name" content="{{ $siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih' }}">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og_title', View::yieldContent('title', $siteSettings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))">
+    <meta property="og:title" content="@yield('og_title', View::yieldContent('title', ($siteSettings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih') . ' - Sekolah Menengah Pertama Islam Terpadu Prabumulih'))">
     <meta property="og:description" content="@yield('og_description', View::yieldContent('meta_description', $siteSettings['og_description'] ?? $siteSettings['site_description'] ?? 'Official Website SMPS IT Ishlahul Ummah Prabumulih.'))">
-    <meta property="og:image" content="@yield('og_image', asset($siteSettings['og_image'] ?? '/uploads/logo-ishum-square.png'))">
-    <meta property="og:image:secure_url" content="@yield('og_image', asset($siteSettings['og_image'] ?? '/uploads/logo-ishum-square.png'))">
+    @php
+        $ogImageUrl = View::hasSection('og_image') ? View::yieldContent('og_image') : asset($siteSettings['og_image'] ?? '/uploads/og-image.jpg');
+    @endphp
+    <meta property="og:image" content="{{ $ogImageUrl }}">
+    <meta property="og:image:secure_url" content="{{ $ogImageUrl }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih' }}">
 
-    {{-- Twitter Cards --}}
+    {{-- Twitter / X Cards --}}
     <meta name="twitter:card" content="{{ $siteSettings['twitter_card'] ?? 'summary_large_image' }}">
     <meta name="twitter:site" content="@smpitishum">
     <meta name="twitter:title" content="@yield('og_title', View::yieldContent('title', $siteSettings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))">
     <meta name="twitter:description" content="@yield('og_description', View::yieldContent('meta_description', $siteSettings['og_description'] ?? $siteSettings['site_description'] ?? 'Official Website SMPS IT Ishlahul Ummah Prabumulih'))">
-    <meta name="twitter:image" content="@yield('og_image', asset($siteSettings['og_image'] ?? '/uploads/logo-ishum-square.png'))">
+    <meta name="twitter:image" content="{{ $ogImageUrl }}">
 
     {{-- Canonical URL --}}
     <link rel="canonical" href="{{ url()->current() }}">

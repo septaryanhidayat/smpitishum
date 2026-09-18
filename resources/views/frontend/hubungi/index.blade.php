@@ -82,7 +82,7 @@
                 <a href="https://wa.me/{{ $cleanWa }}" target="_blank" class="text-base font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block">
                     {{ $rawPhone }}
                 </a>
-                <p class="text-xs text-gray-500 mt-1">Konsultasi cepat PPDB dan beasiswa santri via chat.</p>
+                <p class="text-xs text-gray-500 mt-1">Konsultasi cepat PPDB dan beasiswa siswa via chat.</p>
             </div>
         </div>
 

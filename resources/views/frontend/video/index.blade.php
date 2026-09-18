@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', 'Galeri Video & Dokumentasi - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Kumpulan video profil sekolah, dokumentasi kegiatan santri, pentas prestasi, dan liputan pembelajaran SMPS IT Ishlahul Ummah Prabumulih.')
+@section('meta_description', 'Kumpulan video profil sekolah, dokumentasi kegiatan siswa, pentas prestasi, dan liputan pembelajaran SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,7 +14,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Video SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Dokumentasi video liputan kegiatan santri, tasmi' Al-Qur'an, praktikum sains, dan prestasi sekolah.
+            Dokumentasi video liputan kegiatan siswa, tasmi' Al-Qur'an, praktikum sains, dan prestasi sekolah.
         </p>
     </div>
 </div>
@@ -24,7 +24,7 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">DOKUMENTASI MULTIMEDIA</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Video Kegiatan Santri Ishum
+            Video Kegiatan Siswa Ishum
         </h2>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>

@@ -18,7 +18,7 @@
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ekstrakurikuler &amp; Club</h1>
                 <p class="text-sm text-indigo-100 mt-1 font-light">
-                    Mengasah bakat, kepemimpinan, kemandirian, dan persaudaraan santri SMPS IT Ishum.
+                    Mengasah bakat, kepemimpinan, kemandirian, dan persaudaraan siswa SMPS IT Ishum.
                 </p>
             </div>
         </div>

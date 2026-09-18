@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Detail Pendaftaran: ' . $ppdb->full_name)
-@section('header_title', 'Detail Calon Santri: ' . $ppdb->full_name)
+@section('header_title', 'Detail Calon Siswa: ' . $ppdb->full_name)
 
 @section('content')
 <div class="max-w-4xl mx-auto space-y-6">
@@ -62,7 +62,7 @@
                 <select name="status" class="w-full bg-white text-xs rounded-xl px-3 py-2 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     <option value="pending" {{ $ppdb->status === 'pending' ? 'selected' : '' }}>Menunggu Verifikasi</option>
                     <option value="verified" {{ $ppdb->status === 'verified' ? 'selected' : '' }}>Terverifikasi (Berkas Lengkap)</option>
-                    <option value="accepted" {{ $ppdb->status === 'accepted' ? 'selected' : '' }}>Diterima Sebagai Santri</option>
+                    <option value="accepted" {{ $ppdb->status === 'accepted' ? 'selected' : '' }}>Diterima Sebagai Siswa</option>
                     <option value="rejected" {{ $ppdb->status === 'rejected' ? 'selected' : '' }}>Ditolak / Berkas Tidak Sesuai</option>
                 </select>
             </div>

@@ -30,7 +30,7 @@
                 <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">Lagu Resmi Sekolah Islam Terpadu</span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">MARS JSIT INDONESIA</h2>
                 <p class="text-xs sm:text-sm text-gray-600 mt-1">
-                    Pedoman semangat santri & pendidik Jaringan Sekolah Islam Terpadu (JSIT) se-Indonesia
+                    Pedoman semangat siswa & pendidik Jaringan Sekolah Islam Terpadu (JSIT) se-Indonesia
                 </p>
             </div>
             <a href="https://www.youtube.com/watch?v=ijDo1wLvZ6w" target="_blank" class="inline-flex items-center bg-[#da251c] hover:bg-[#b91c1c] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition flex-shrink-0">
@@ -100,10 +100,10 @@
         {{-- Profil JSIT Indonesia --}}
         <div class="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 sm:p-8 border border-indigo-200">
             <h4 class="text-base font-bold text-emerald-950 flex items-center mb-3">
-                <i class="fa-solid fa-shield-halved text-indigo-600 mr-2"></i> 10 Karakter Santri JSIT (Muwashofat)
+                <i class="fa-solid fa-shield-halved text-indigo-600 mr-2"></i> 10 Karakter Siswa JSIT (Muwashofat)
             </h4>
             <p class="text-xs text-gray-700 mb-4 leading-relaxed font-medium">
-                Sebagai sekolah anggota resmi Jaringan Sekolah Islam Terpadu (JSIT) Indonesia, SMPS IT Ishlahul Ummah Prabumulih menanamkan 10 standar kompetensi lulusan santri:
+                Sebagai sekolah anggota resmi Jaringan Sekolah Islam Terpadu (JSIT) Indonesia, SMPS IT Ishlahul Ummah Prabumulih menanamkan 10 standar kompetensi lulusan siswa:
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-800">
                 <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">

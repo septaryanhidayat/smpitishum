@@ -15,7 +15,7 @@
             <div>
                 <div class="inline-flex items-center space-x-2 bg-emerald-100 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-black mb-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 animate-pulse"></span>
-                    <span>Pendaftaran Santri Baru Telah Dibuka</span>
+                    <span>Pendaftaran Siswa Baru Telah Dibuka</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight uppercase">
                     SPMB SMPS IT ISHLAHUL UMMAH <br class="hidden sm:inline">PRABUMULIH
@@ -49,7 +49,7 @@
                         $cleanHotline = '62' . substr($cleanHotline, 1);
                     }
                 @endphp
-                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="w-full sm:w-auto justify-center text-center inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
+                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" class="w-full sm:w-auto justify-center text-center inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>Hotline WhatsApp ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </a>
@@ -64,7 +64,7 @@
                         <i class="fa-solid fa-play-circle mr-1"></i> Profil Sekolah
                     </span>
                     <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">Mengenal SMPS IT Ishlahul Ummah Prabumulih</h2>
-                    <p class="text-xs sm:text-sm text-slate-600 mt-1">Saksikan video profil dan aktivitas pembelajaran santri kami secara visual.</p>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">Saksikan video profil dan aktivitas pembelajaran siswa kami secara visual.</p>
                 </div>
 
                 <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl border-4 border-slate-900 aspect-video max-w-4xl mx-auto bg-slate-950">
@@ -332,7 +332,7 @@
                     $cleanHotline2 = '62' . substr($cleanHotline2, 1);
                 }
             @endphp
-            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin berkonsultasi mengenai pendaftaran santri baru.') }}" target="_blank" class="group bg-white p-8 rounded-3xl border-2 border-indigo-200 hover:border-indigo-600 shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
+            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin berkonsultasi mengenai pendaftaran siswa baru.') }}" target="_blank" class="group bg-white p-8 rounded-3xl border-2 border-indigo-200 hover:border-indigo-600 shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
                 <div class="space-y-4">
                     <div class="w-20 h-20 mx-auto rounded-3xl bg-green-50 text-indigo-600 flex items-center justify-center text-4xl shadow-xs group-hover:scale-110 transition duration-300">
                         <i class="fa-brands fa-whatsapp text-4xl"></i>

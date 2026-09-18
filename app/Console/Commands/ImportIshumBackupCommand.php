@@ -696,7 +696,7 @@ class ImportIshumBackupCommand extends Command
             $cleanDesc = $this->cleanHtmlContent($desc);
 
             if (strlen(strip_tags($cleanDesc)) < 10) {
-                $cleanDesc = "<p>Program Unggulan {$item['title']} bertujuan melatih dan membina keunggulan santri/siswa dalam Al-Qur'an, wawasan kepemimpinan, dan lifeskill islami.</p>";
+                $cleanDesc = "<p>Program Unggulan {$item['title']} bertujuan melatih dan membina keunggulan siswa/siswa dalam Al-Qur'an, wawasan kepemimpinan, dan lifeskill islami.</p>";
             }
 
             Dpc::updateOrCreate(

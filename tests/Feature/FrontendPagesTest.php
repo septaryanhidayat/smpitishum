@@ -16,7 +16,7 @@ test('home page renders all authentic school sections successfully', function ()
     $response->assertSee('Menu Utama');
     $response->assertSee('Sambutan Kepala Sekolah');
     $response->assertSee('Artikel &amp; Kabar Kampus', false);
-    $response->assertSee('Prestasi Santri');
+    $response->assertSee('Prestasi Siswa');
     $response->assertSee('Dewan Guru');
     $response->assertSee('Galeri Video');
     $response->assertSee('E-Library');
@@ -131,7 +131,7 @@ test('feedback form submission works', function () {
     $this->get('/hubungi')->assertStatus(200);
 
     $response = $this->post('/hubungi', [
-        'nama' => 'Ahmad Calon Santri',
+        'nama' => 'Ahmad Calon Siswa',
         'email' => 'ahmad@example.com',
         'whatsapp' => '081234567890',
         'saran_kritik' => 'Mohon informasi jadwal tes masuk SPMB SMPS IT Ishlahul Ummah Prabumulih.',
@@ -141,7 +141,7 @@ test('feedback form submission works', function () {
     $response->assertSessionHas('success');
 
     $this->assertDatabaseHas('feedbacks', [
-        'name' => 'Ahmad Calon Santri',
+        'name' => 'Ahmad Calon Siswa',
         'email' => 'ahmad@example.com',
     ]);
 });
@@ -254,7 +254,7 @@ test('mars jsit page renders authentic mars jsit lyrics and video', function () 
     $response->assertSee('LIRIK MARS RESMI JSIT INDONESIA');
     $response->assertSee('Dengan berbekal semangat kami melangkah', false);
     $response->assertSee('Kami Jaringan Sekolah Islam Terpadu', false);
-    $response->assertSee('10 Karakter Santri JSIT (Muwashofat)', false);
+    $response->assertSee('10 Karakter Siswa JSIT (Muwashofat)', false);
 });
 
 test('ppdb page renders redesigned layout with youtube video and bsi account', function () {

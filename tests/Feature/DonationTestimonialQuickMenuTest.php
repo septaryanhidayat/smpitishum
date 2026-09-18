@@ -63,8 +63,8 @@ test('admin can perform full CRUD on testimonials', function () {
     // 2. Create / Store
     $response = $this->actingAs($admin)->post('/admin/testimonials', [
         'name' => 'Ustadz Ahmad Fauzi',
-        'profession' => 'Wali Santri Angkatan I',
-        'content' => 'SMPS IT Ishlahul Ummah sangat amanah dalam mendidik karakter dan hafalan Al-Quran santri.',
+        'profession' => 'Wali Murid Angkatan I',
+        'content' => 'SMPS IT Ishlahul Ummah sangat amanah dalam mendidik karakter dan hafalan Al-Quran siswa.',
         'status' => 'publish',
     ]);
     $response->assertRedirect('/admin/testimonials');
@@ -76,7 +76,7 @@ test('admin can perform full CRUD on testimonials', function () {
     // 3. Update
     $response = $this->actingAs($admin)->put("/admin/testimonials/{$testi->id}", [
         'name' => 'Ustadz Ahmad Fauzi, M.Pd.I',
-        'profession' => 'Wali Santri & Tokoh Pendidikan',
+        'profession' => 'Wali Murid & Tokoh Pendidikan',
         'content' => 'Pendidikan di SMPS IT Ishlahul Ummah unggul dalam akhlak dan sains.',
         'status' => 'publish',
     ]);

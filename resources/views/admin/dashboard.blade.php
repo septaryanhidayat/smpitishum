@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="text-3xl sm:text-4xl font-black text-white tracking-tight relative z-10">
-                {{ number_format($stats['visitor_hits'] ?? 53534) }}
+                {{ number_format($stats['visitor_hits'] ?? 0) }}
             </div>
             <div class="flex items-center space-x-2 text-xs text-sky-100 font-semibold mt-3 relative z-10">
                 <i class="fa-solid fa-arrow-trend-up text-white"></i>

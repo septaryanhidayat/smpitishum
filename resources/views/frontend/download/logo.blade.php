@@ -76,7 +76,7 @@
                     </div>
                     <div>
                         <strong class="text-gray-900 font-bold block">Mushaf Al-Qur'an Terbuka:</strong>
-                        Sumber mata air ilmu pengetahuan, pedoman adab, dan lentera pembimbing setiap langkah santri.
+                        Sumber mata air ilmu pengetahuan, pedoman adab, dan lentera pembimbing setiap langkah siswa.
                     </div>
                 </li>
                 <li class="flex items-start space-x-3">

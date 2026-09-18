@@ -94,8 +94,8 @@
                     </span>
                 </h3>
                 <div class="text-3xl sm:text-4xl lg:text-4xl font-bold text-white tracking-normal font-sans leading-tight pt-1 flex items-center justify-center md:justify-start" style="font-family: Arial, sans-serif;">
-                    <span id="footer-visitor-counter" data-target="{{ $rawVisitorHits ?? (int) str_replace(['.', ','], '', $visitorHits ?? '53512') }}">
-                        {{ $visitorHits ?? '53.512' }}
+                    <span id="footer-visitor-counter" data-target="{{ $rawVisitorHits ?? (int) str_replace(['.', ','], '', $visitorHits ?? '0') }}">
+                        {{ $visitorHits ?? '0' }}
                     </span>
                 </div>
                 <p class="text-xs text-slate-400 font-light text-center md:text-left">Kunjungan ke website resmi sekolah</p>
@@ -134,7 +134,7 @@
             const counterEl = document.getElementById('footer-visitor-counter');
             if (!counterEl) return;
 
-            const targetVal = parseInt(counterEl.getAttribute('data-target') || '53512', 10);
+            const targetVal = parseInt(counterEl.getAttribute('data-target') || '0', 10);
             let hasRun = false;
 
             const runCounterAnimation = () => {

@@ -142,22 +142,22 @@ class HomeController extends Controller
 
         $fallbackRow1 = [
             ['url' => '/uploads/campus-smpit-ishum.webp', 'title' => 'Gedung Kampus SMPS IT Ishlahul Ummah Prabumulih'],
-            ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Aktivitas Belajar & Karakter Santri Terpadu'],
-            ['url' => '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp', 'title' => 'Laboratorium Komputer & Digital Santri'],
+            ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Aktivitas Belajar & Karakter Siswa Terpadu'],
+            ['url' => '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp', 'title' => 'Laboratorium Komputer & Digital Siswa'],
             ['url' => '/uploads/flyer-spmb-smpit-ishum.webp', 'title' => 'Class Meeting & SPMB Exclusive SMP IT Ishum'],
             ['url' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp', 'title' => 'Aula Pertemuan & Munaqosah Qur\'an SIT'],
-            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an Santri'],
+            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an Siswa'],
         ];
 
         $fallbackRow2 = [
             ['url' => '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Terpadu'],
             ['url' => '/uploads/ishum/post_3467_IMG-20241020-WA0004-scaled.webp', 'title' => 'Ibadah Yaumiyah & Pembiasaan Akhlakul Karimah'],
             ['url' => '/uploads/campus-smpit-ishum.webp', 'title' => 'Gerbang Utama Kampus SMPS IT Ishlahul Ummah'],
-            ['url' => '/uploads/ishum/post_3472_IMG-20241020-WA0003-scaled.webp', 'title' => 'Muhadharah & Pembinaan Da\'i Muda Santri'],
+            ['url' => '/uploads/ishum/post_3472_IMG-20241020-WA0003-scaled.webp', 'title' => 'Muhadharah & Pembinaan Da\'i Muda Siswa'],
             ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Sarana Olahraga & Lapangan Kampus Ishum'],
-            ['url' => '/uploads/ishum/post_3478_IMG-20241020-WA0008-scaled.webp', 'title' => 'Ukhuwah Islamiyah & Kebersamaan Santri'],
-            ['url' => '/uploads/ishum/prestasi_3513_IMG-20240928-WA0038.webp', 'title' => 'Apresiasi & Penganugerahan Prestasi Santri'],
-            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Wisuda Tahfidz Qur\'an Santri Ishum'],
+            ['url' => '/uploads/ishum/post_3478_IMG-20241020-WA0008-scaled.webp', 'title' => 'Ukhuwah Islamiyah & Kebersamaan Siswa'],
+            ['url' => '/uploads/ishum/prestasi_3513_IMG-20240928-WA0038.webp', 'title' => 'Apresiasi & Penganugerahan Prestasi Siswa'],
+            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Wisuda Tahfidz Qur\'an Siswa Ishum'],
         ];
 
         if (! empty($dbGallery)) {
@@ -192,7 +192,7 @@ class HomeController extends Controller
         $testimonials = Testimonial::where('status', 'publish')->take(4)->get();
 
         // 14. Visitor counter hits
-        $visitorHits = view()->shared('visitorHits') ?? '53.512';
+        $visitorHits = view()->shared('visitorHits') ?? '0';
 
         // 15. Popup Banner Settings
         $popupSettings = [

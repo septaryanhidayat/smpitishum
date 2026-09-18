@@ -9,7 +9,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
                 <h2 class="text-lg font-black text-slate-800">Daftar Program Unggulan Sekolah</h2>
-                <p class="text-xs text-slate-500 mt-0.5">Kelola foto kegiatan, kategori program, koordinator, dan deskripsi capaian santri.</p>
+                <p class="text-xs text-slate-500 mt-0.5">Kelola foto kegiatan, kategori program, koordinator, dan deskripsi capaian siswa.</p>
             </div>
             <a href="{{ route('admin.dpc.create') }}" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-[#094d28] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition self-start sm:self-auto">
                 <i class="fa-solid fa-plus"></i>

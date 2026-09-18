@@ -132,7 +132,7 @@ test('gallery displays uploaded photos on galeri page and home page', function (
         'type' => 'gallery',
         'status' => 'publish',
         'featured_image' => '/uploads/galeri/test_tahfidz.webp',
-        'content' => 'Dokumentasi wisuda santri penghafal Quran.',
+        'content' => 'Dokumentasi wisuda siswa penghafal Quran.',
         'published_at' => now(),
     ]);
 
@@ -159,7 +159,7 @@ test('admin can manage bidang with rich content', function () {
     $bidang = Bidang::create([
         'name' => 'Laboratorium Komputer & Riset IT',
         'slug' => 'lab-komputer',
-        'description' => '<p>Fasilitas komputasi modern untuk santri.</p>',
+        'description' => '<p>Fasilitas komputasi modern untuk siswa.</p>',
         'order' => 1,
     ]);
 

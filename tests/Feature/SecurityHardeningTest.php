@@ -100,13 +100,13 @@ it('sanitizes feedback inputs and strips html tags', function () {
         'nama' => '<b>Ahmad</b> <script>alert("xss")</script>',
         'email' => 'ahmad@example.com',
         'whatsapp' => '+62 822-8004-1658',
-        'saran_kritik' => 'Halo <h1>Ustadz Ishum</h1>, info pendaftaran santri baru.',
+        'saran_kritik' => 'Halo <h1>Ustadz Ishum</h1>, info pendaftaran siswa baru.',
     ]);
 
     $response->assertRedirect(route('hubungi'));
     $saved = Feedback::first();
     expect($saved)->not->toBeNull()
         ->and($saved->name)->toBe('Ahmad alert("xss")')
-        ->and($saved->message)->toBe('Halo Ustadz Ishum, info pendaftaran santri baru.')
+        ->and($saved->message)->toBe('Halo Ustadz Ishum, info pendaftaran siswa baru.')
         ->and($saved->whatsapp)->toBe('+62 822-8004-1658');
 });

@@ -56,7 +56,7 @@ test('admin can manage posts and convert images to webp on upload', function () 
 
     // Create post
     $response = $this->post('/admin/posts', [
-        'title' => 'Prestasi Santri Ishum Juara Sains',
+        'title' => 'Prestasi Siswa Ishum Juara Sains',
         'content' => '<p>Konten artikel pengujian baru.</p>',
         'excerpt' => 'Ringkasan artikel pengujian',
         'status' => 'publish',
@@ -66,7 +66,7 @@ test('admin can manage posts and convert images to webp on upload', function () 
     $response->assertRedirect('/admin/posts');
     $response->assertSessionHas('success');
 
-    $post = Post::where('title', 'Prestasi Santri Ishum Juara Sains')->first();
+    $post = Post::where('title', 'Prestasi Siswa Ishum Juara Sains')->first();
     expect($post)->not->toBeNull();
     expect($post->featured_image)->toEndWith('.webp');
 
@@ -79,14 +79,14 @@ test('admin can manage posts and convert images to webp on upload', function () 
     $this->get("/admin/posts/{$post->id}/edit")->assertStatus(200);
 
     $updateResponse = $this->put("/admin/posts/{$post->id}", [
-        'title' => 'Prestasi Santri Ishum Juara Sains Diperbarui',
+        'title' => 'Prestasi Siswa Ishum Juara Sains Diperbarui',
         'content' => '<p>Konten yang sudah diedit.</p>',
         'status' => 'publish',
     ]);
     $updateResponse->assertRedirect('/admin/posts');
 
     $post->refresh();
-    expect($post->title)->toBe('Prestasi Santri Ishum Juara Sains Diperbarui');
+    expect($post->title)->toBe('Prestasi Siswa Ishum Juara Sains Diperbarui');
 
     // Delete post
     $this->delete("/admin/posts/{$post->id}")->assertRedirect('/admin/posts');
@@ -101,7 +101,7 @@ test('admin can manage feedbacks and settings', function () {
     ]);
 
     $feedback = Feedback::create([
-        'name' => 'Wali Santri',
+        'name' => 'Wali Murid',
         'email' => 'wali@gmail.com',
         'message' => 'Alhamdulillah pendidikan di SMPS IT Ishum sangat memuaskan.',
         'status' => 'unread',
@@ -110,7 +110,7 @@ test('admin can manage feedbacks and settings', function () {
     $this->actingAs($admin);
 
     // Feedbacks index
-    $this->get('/admin/feedbacks')->assertStatus(200)->assertSee('Wali Santri');
+    $this->get('/admin/feedbacks')->assertStatus(200)->assertSee('Wali Murid');
 
     // Mark as read
     $this->post("/admin/feedbacks/{$feedback->id}/read")->assertRedirect();

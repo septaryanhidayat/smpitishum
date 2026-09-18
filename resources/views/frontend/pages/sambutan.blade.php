@@ -81,7 +81,7 @@
         {{-- CTA DAFTAR SPMB --}}
         <div class="mt-10 pt-8 border-t border-gray-100 bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-900 rounded-2xl p-5 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl border border-indigo-500/30 text-center sm:text-left">
             <div>
-                <h4 class="text-lg sm:text-xl font-extrabold text-white">Pendaftaran Santri Baru (SPMB Online)</h4>
+                <h4 class="text-lg sm:text-xl font-extrabold text-white">Pendaftaran Siswa Baru (SPMB Online)</h4>
                 <p class="text-xs sm:text-sm text-indigo-200 mt-1">Mari bergabung bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Gelombang exclusive kuota terbatas telah dibuka.</p>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto flex-shrink-0">

@@ -218,7 +218,6 @@ Route::get('/download-file/{id}', [DownloadController::class, 'downloadFile']);
 // Program Unggulan
 Route::get('/program-unggulan', [PageController::class, 'dpc'])->name('dpc.index');
 Route::get('/unggulan', fn () => redirect()->route('dpc.index'));
-Route::get('/dpc', [PageController::class, 'dpc']);
 
 // Dewan Guru & GTK Alias
 Route::get('/guru', fn () => redirect()->route('dewan.index'));

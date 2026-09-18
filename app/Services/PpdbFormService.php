@@ -88,7 +88,7 @@ class PpdbFormService
                 'type' => 'select',
                 'required' => false,
                 'enabled' => true,
-                'options' => ['Boarding School (Asrama Santri)', 'Full Day School (Sekolah Terpadu)'],
+                'options' => ['Boarding School (Asrama Siswa)', 'Full Day School (Sekolah Terpadu)'],
                 'placeholder' => 'Pilih Program Belajar...',
                 'is_system' => true,
             ],

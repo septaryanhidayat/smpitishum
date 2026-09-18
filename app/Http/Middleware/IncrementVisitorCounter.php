@@ -26,7 +26,7 @@ class IncrementVisitorCounter
         $counterFile = storage_path('app/visitor_hits.txt');
 
         // Ambil base hit counter dari database Setting jika ada
-        $baseHits = 12850;
+        $baseHits = 0;
         try {
             if (Schema::hasTable('settings')) {
                 $baseSetting = Setting::get('analytics_base_hits');

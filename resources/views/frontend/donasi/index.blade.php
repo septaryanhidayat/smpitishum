@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', 'Infaq Pembangunan & Beasiswa Pendidikan - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Salurkan infaq pembangunan sarana laboratorium sains, asrama santri, dan beasiswa pendidikan dhuafa berprestasi melalui rekening resmi SMPS IT Ishlahul Ummah Prabumulih.')
+@section('meta_description', 'Salurkan infaq pembangunan sarana laboratorium sains, asrama siswa, dan beasiswa pendidikan dhuafa berprestasi melalui rekening resmi SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 @php
@@ -44,7 +44,7 @@
                 Infaq Pembangunan & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-200">Beasiswa Ishum</span>
             </h1>
             <p class="text-sm sm:text-base text-indigo-100 mt-4 leading-relaxed font-light">
-                Mari bergotong royong membangun sarana laboratorium riset modern, masjid kampus, fasilitas asrama tahfidz, dan program beasiswa bagi santri berprestasi di SMPS IT Ishlahul Ummah Prabumulih.
+                Mari bergotong royong membangun sarana laboratorium riset modern, masjid kampus, fasilitas asrama tahfidz, dan program beasiswa bagi siswa berprestasi di SMPS IT Ishlahul Ummah Prabumulih.
             </p>
         </div>
     </div>
@@ -252,11 +252,11 @@
             <span>Akuntabilitas & Tata Kelola Infaq Yayasan</span>
         </h4>
         <p class="leading-relaxed text-gray-600">
-            Pengelolaan infaq pembangunan dan beasiswa pendidikan santri diatur secara profesional oleh Yayasan Ishum Prabumulih dengan prinsip amanah, transparan, dan dapat dipertanggungjawabkan secara berkala.
+            Pengelolaan infaq pembangunan dan beasiswa pendidikan siswa diatur secara profesional oleh Yayasan Ishum Prabumulih dengan prinsip amanah, transparan, dan dapat dipertanggungjawabkan secara berkala.
         </p>
         <ul class="list-disc list-inside space-y-1 text-gray-600 text-xs">
             <li>100% dana infaq pembangunan dialokasikan langsung untuk sarana belajar, laboratorium, dan masjid kampus.</li>
-            <li>Program beasiswa disalurkan langsung kepada santri berprestasi dari keluarga prasejahtera dan dhuafa.</li>
+            <li>Program beasiswa disalurkan langsung kepada siswa berprestasi dari keluarga prasejahtera dan dhuafa.</li>
             <li>Laporan keuangan disajikan secara berkala dalam forum komite dan rapat tahunan yayasan.</li>
         </ul>
     </div>

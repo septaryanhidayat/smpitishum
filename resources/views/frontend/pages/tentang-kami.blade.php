@@ -48,7 +48,7 @@
                     Assalamu'alaikum Warahmatullahi Wabarakatuh. SMPS IT Ishlahul Ummah Prabumulih berdiri dengan tekad kuat menyajikan pendidikan menengah pertama yang seimbang antara kematangan spiritual, kemuliaan akhlak, dan keunggulan sains-teknologi. Kami meyakini bahwa generasi terbaik adalah generasi yang menjadikan Al-Qur'an sebagai pedoman hidup sekaligus terampil menguasai ilmu pengetahuan modern.
                 </p>
                 <p class="text-gray-600 text-xs sm:text-base leading-relaxed text-left sm:text-justify">
-                    Dengan tenaga pendidik berkompeten, kurikulum terintegrasi JSIT dan nasional, sarana laboratorium modern, serta pembiasaan karakter Islami yang kondusif, kami berkomitmen mengantarkan setiap santri menggapai masa depan mulia dan siap berprestasi ke jenjang pendidikan unggulan.
+                    Dengan tenaga pendidik berkompeten, kurikulum terintegrasi JSIT dan nasional, sarana laboratorium modern, serta pembiasaan karakter Islami yang kondusif, kami berkomitmen mengantarkan setiap siswa menggapai masa depan mulia dan siap berprestasi ke jenjang pendidikan unggulan.
                 </p>
                 <div class="pt-4 flex justify-center lg:justify-start">
                     <a href="{{ route('page.sambutan') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition">
@@ -202,7 +202,7 @@
                         <li>Menyelenggarakan pembelajaran terpadu antara kurikulum nasional dan nilai-nilai Al-Qur'an.</li>
                         <li>Menumbuhkan kecintaan membaca, menghafal, dan mengamalkan Al-Qur'an dalam kehidupan sehari-hari.</li>
                         <li>Mengembangkan potensi akademik, riset sains, dan teknologi berbasis kecakapan abad ke-21.</li>
-                        <li>Membina kepemimpinan, kemandirian santri, dan kepedulian sosial melalui sistem boarding school.</li>
+                        <li>Membina kepemimpinan, kemandirian siswa, dan kepedulian sosial melalui sistem boarding school.</li>
                     </ol>
                 </div>
                 <div class="pt-2">

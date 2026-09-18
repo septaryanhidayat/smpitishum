@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', 'Prestasi Siswa & Guru - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Raihan prestasi membanggakan santri dan guru SMPS IT Ishlahul Ummah Prabumulih di tingkat Kota, Provinsi, Nasional, hingga Internasional.')
+@section('meta_description', 'Raihan prestasi membanggakan siswa dan guru SMPS IT Ishlahul Ummah Prabumulih di tingkat Kota, Provinsi, Nasional, hingga Internasional.')
 
 @section('content')
 {{-- HERO HEADER --}}

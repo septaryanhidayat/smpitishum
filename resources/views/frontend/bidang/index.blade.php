@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', 'Fasilitas & Sarana Prasarana - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Fasilitas belajar modern, laboratorium sains, ruang multimedia, perpustakaan digital, asrama santri, dan sarana olahraga SMPS IT Ishlahul Ummah Prabumulih.')
+@section('meta_description', 'Fasilitas belajar modern, laboratorium sains, ruang multimedia, perpustakaan digital, asrama siswa, dan sarana olahraga SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}

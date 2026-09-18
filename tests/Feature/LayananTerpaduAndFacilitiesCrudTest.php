@@ -258,7 +258,7 @@ test('admin can manage bidang (fasilitas & sarana sekolah) with thumbnail', func
     // Update
     $updateResponse = $this->actingAs($admin)->put(route('admin.bidang.update', $bidang), [
         'name' => 'Laboratorium Multimedia Modern',
-        'description' => 'Sarana riset komputer dan robotika santri terkini.',
+        'description' => 'Sarana riset komputer dan robotika siswa terkini.',
         'icon' => 'fa-solid fa-microchip',
         'thumbnail' => '/uploads/lab-multimedia-v2.webp',
         'order' => 2,

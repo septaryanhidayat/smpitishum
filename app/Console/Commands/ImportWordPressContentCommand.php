@@ -510,7 +510,7 @@ class ImportWordPressContentCommand extends Command
                 );
             } elseif ($type === 'testimonial') {
                 $testimoni = $meta['isi-testimoni'] ?? $rawContent;
-                $profesi = $meta['alumni-tahun'] ?? 'Wali Santri SMPS IT Ishum';
+                $profesi = $meta['alumni-tahun'] ?? 'Wali Murid SMPS IT Ishum';
                 Testimonial::updateOrCreate(
                     ['name' => $title],
                     [
@@ -554,11 +554,11 @@ class ImportWordPressContentCommand extends Command
 
         $currentTable = '';
         while (($line = fgets($fp)) !== false) {
-            if (str_contains($line, 'INSERT INTO `wp1pksoi_jet_cct_download`')) {
+            if (str_contains($line, '_jet_cct_download`')) {
                 $currentTable = 'download';
 
                 continue;
-            } elseif (str_contains($line, 'INSERT INTO `wp1pksoi_jet_cct_kritik`')) {
+            } elseif (str_contains($line, '_jet_cct_kritik`')) {
                 $currentTable = 'kritik';
 
                 continue;

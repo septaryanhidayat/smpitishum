@@ -11,7 +11,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
             <div>
                 <div class="flex items-center space-x-3">
-                    <h2 class="text-xl font-black text-slate-900">Galeri Foto Dokumentasi Santri &amp; Sekolah</h2>
+                    <h2 class="text-xl font-black text-slate-900">Galeri Foto Dokumentasi Siswa &amp; Sekolah</h2>
                     <span class="px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-indigo-600 border border-indigo-200">
                         {{ $photos->total() }} Foto
                     </span>

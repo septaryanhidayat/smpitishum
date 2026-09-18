@@ -9,7 +9,7 @@
     {{-- TOP NAVIGATION TABS & EXPORT BUTTONS --}}
     <div class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4">
         <a href="{{ route('admin.ppdb.index') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-indigo-600 text-white shadow-md transition">
-            <i class="fa-solid fa-users mr-1.5"></i> Data Calon Santri (Pendaftar)
+            <i class="fa-solid fa-users mr-1.5"></i> Data Calon Siswa (Pendaftar)
         </a>
         <a href="{{ route('admin.ppdb.content') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">
             <i class="fa-solid fa-sliders mr-1.5"></i> Pengaturan &amp; Konten Halaman PPDB
@@ -56,7 +56,7 @@
         {{-- SEARCH & FILTER BAR --}}
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
-                <h2 class="text-lg font-black text-slate-800">Daftar Calon Santri Baru (2026/2027)</h2>
+                <h2 class="text-lg font-black text-slate-800">Daftar Calon Siswa Baru (2026/2027)</h2>
                 <p class="text-xs text-slate-500 mt-0.5">Kelola formulir masuk, verifikasi berkas akta & bukti transfer, dan status penerimaan.</p>
             </div>
 

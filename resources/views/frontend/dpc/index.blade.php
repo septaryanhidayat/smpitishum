@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Unggulan SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Kurikulum terintegrasi yang dirancang khusus untuk mengoptimalkan potensi ruhiyah, intelektual, dan kepemimpinan santri.
+            Kurikulum terintegrasi yang dirancang khusus untuk mengoptimalkan potensi ruhiyah, intelektual, dan kepemimpinan siswa.
         </p>
     </div>
 </div>
@@ -28,7 +28,7 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
             Program Khusus Siswa Ishum
         </h2>
-        <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan santri menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan siswa menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 

@@ -97,7 +97,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
                 <h2 class="text-lg font-black text-slate-800">Pengumuman & Siaran Resmi</h2>
-                <p class="text-xs text-slate-500 mt-0.5">Terbitkan pengumuman resmi bagi santri, wali santri, guru, dan publik.</p>
+                <p class="text-xs text-slate-500 mt-0.5">Terbitkan pengumuman resmi bagi siswa, wali murid, guru, dan publik.</p>
             </div>
         </div>
 
@@ -107,7 +107,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="sm:col-span-2">
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Judul Pengumuman *</label>
-                    <input type="text" name="title" required placeholder="Contoh: Pengumuman Seleksi Penerimaan Santri Baru (PPDB)" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                    <input type="text" name="title" required placeholder="Contoh: Pengumuman Seleksi Penerimaan Siswa Baru (PPDB)" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Status Publikasi</label>

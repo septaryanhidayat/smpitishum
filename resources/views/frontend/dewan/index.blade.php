@@ -24,7 +24,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
     
     <div class="text-center max-w-2xl mx-auto">
-        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Pendidik & Pembimbing Santri</span>
+        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Pendidik & Pembimbing Siswa</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
             Guru & Tenaga Kependidikan (GTK)
         </h2>

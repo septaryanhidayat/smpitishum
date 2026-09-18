@@ -60,7 +60,7 @@
                                     {{ $settings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih - Generasi Qur\'ani & Unggul Sains' }}
                                 </h4>
                                 <p id="ogPreviewDesc" class="text-[11px] text-gray-500 line-clamp-2 mt-1">
-                                    {{ $settings['og_description'] ?? 'Website Resmi SMPS IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, kepesantrenan, kegiatan siswa, dan PPDB Online.' }}
+                                    {{ $settings['og_description'] ?? 'Website Resmi SMPS IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, pembinaan karakter & tahfidz, kegiatan siswa, dan PPDB Online.' }}
                                 </p>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                         </label>
                         <textarea name="og_description" id="ogDescInput" rows="2" 
                                   class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed"
-                                  placeholder="Deskripsi ringkas yang tampil di bawah judul medsos" required>{{ $settings['og_description'] ?? 'Website Resmi SMPS IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, program tahfidz, sains & teknologi, dan penerimaan santri baru.' }}</textarea>
+                                  placeholder="Deskripsi ringkas yang tampil di bawah judul medsos" required>{{ $settings['og_description'] ?? 'Website Resmi SMPS IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, program tahfidz, sains & teknologi, dan penerimaan siswa baru.' }}</textarea>
                     </div>
 
                     <div>
@@ -263,7 +263,7 @@
                 <div class="flex items-center space-x-2.5">
                     <span class="w-7 h-7 rounded-lg bg-emerald-100 text-indigo-600 flex items-center justify-center text-xs font-bold">5</span>
                     <div>
-                        <h2 class="font-bold text-sm text-gray-900">Pengaturan Rekening Infaq & Beasiswa Santri</h2>
+                        <h2 class="font-bold text-sm text-gray-900">Pengaturan Rekening Infaq & Beasiswa Siswa</h2>
                         <p class="text-[11px] text-gray-500">Konfigurasi rekening Bank Syariah Indonesia (BSI), Muamalat, dan nomor konfirmasi transfer</p>
                     </div>
                 </div>

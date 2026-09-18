@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">E-Book & Modul Pembelajaran Digital</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Buku panduan siswa, modul tahfidz mutqin, buku saku adab santri, dan materi suplemen sains SMPS IT Ishlahul Ummah Prabumulih.
+            Buku panduan siswa, modul tahfidz mutqin, buku saku adab siswa, dan materi suplemen sains SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
 </div>
@@ -27,9 +27,9 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">SUMBER BELAJAR DIGITAL RESMI</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Modul Pembelajaran &amp; Literasi Santri
+            Modul Pembelajaran &amp; Literasi Siswa
         </h2>
-        <p class="text-xs sm:text-sm text-gray-500 mt-1">Silakan unduh modul resmi pegangan santri dan guru untuk memperluas wawasan keislaman, sains terpadu, dan pembinaan karakter.</p>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">Silakan unduh modul resmi pegangan siswa dan guru untuk memperluas wawasan keislaman, sains terpadu, dan pembinaan karakter.</p>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 

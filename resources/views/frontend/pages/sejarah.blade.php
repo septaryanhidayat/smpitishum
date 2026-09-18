@@ -55,11 +55,11 @@
                         </p>
 
                         <p>
-                            Seiring berjalannya waktu, sekolah terus memperluas sarana dan prasarana pendidikan. Pembangunan laboratorium sains mutakhir, laboratorium komputer multimedia terintegrasi, perpustakaan digital, serta asrama santri (Islamic Boarding School) yang representatif menjadi bukti komitmen nyata dalam menghadirkan lingkungan belajar yang holistik.
+                            Seiring berjalannya waktu, sekolah terus memperluas sarana dan prasarana pendidikan. Pembangunan laboratorium sains mutakhir, laboratorium komputer multimedia terintegrasi, perpustakaan digital, serta asrama siswa (Islamic Boarding School) yang representatif menjadi bukti komitmen nyata dalam menghadirkan lingkungan belajar yang holistik.
                         </p>
 
                         <p>
-                            Berbagai prestasi membanggakan berhasil diraih oleh santri-santriwati SMPS IT Ishlahul Ummah Prabumulih, mulai dari juara Olimpiade Sains Nasional tingkat daerah hingga nasional, kejuaraan Musabaqah Hifdzil Qur’an (MHQ), kompetisi robotika, hingga keberhasilan meluluskan alumni ke berbagai perguruan tinggi negeri ternama (PTN) dan universitas di Timur Tengah.
+                            Berbagai prestasi membanggakan berhasil diraih oleh siswa-siswi SMPS IT Ishlahul Ummah Prabumulih, mulai dari juara Olimpiade Sains Nasional tingkat daerah hingga nasional, kejuaraan Musabaqah Hifdzil Qur’an (MHQ), kompetisi robotika, hingga keberhasilan meluluskan alumni ke berbagai perguruan tinggi negeri ternama (PTN) dan universitas di Timur Tengah.
                         </p>
 
                         <p>

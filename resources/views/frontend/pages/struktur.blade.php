@@ -99,7 +99,7 @@
                 <h2 class="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                     Program Unggulan Siswa Ishum
                 </h2>
-                <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan santri menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
+                <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan siswa menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
             </div>
             <a href="{{ route('dpc.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center text-xs font-bold text-indigo-600 hover:text-[#da251c] flex-shrink-0 transition">
                 <span>Lihat Semua Program</span>

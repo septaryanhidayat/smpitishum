@@ -42,6 +42,10 @@ mkdir -p storage/framework/sessions \
          bootstrap/cache \
          public/uploads
 
+if [ ! -f "storage/app/visitor_hits.txt" ]; then
+    echo "0" > storage/app/visitor_hits.txt
+fi
+
 # 3. Set hak akses (permissions) yang aman untuk web server cPanel
 echo -e "${YELLOW}[4/6] Mengatur hak akses folder (permissions)...${NC}"
 chmod -R 775 storage bootstrap/cache 2>/dev/null || true

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', 'Galeri Dokumentasi Foto - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Dokumentasi foto kegiatan belajar mengajar, tahfidz, laboratorium sains, wisuda, dan prestasi santri SMPS IT Ishlahul Ummah Prabumulih.')
+@section('meta_description', 'Dokumentasi foto kegiatan belajar mengajar, tahfidz, laboratorium sains, wisuda, dan prestasi siswa SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,7 +14,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Foto SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Rekam jejak visual dinamika belajar, pembiasaan ibadah, praktikum sains, dan keceriaan santri di lingkungan kampus.
+            Rekam jejak visual dinamika belajar, pembiasaan ibadah, praktikum sains, dan keceriaan siswa di lingkungan kampus.
         </p>
     </div>
 </div>
@@ -22,7 +22,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12" x-data="{ lightboxOpen: false, activeImg: '', activeTitle: '' }">
     
     <div class="text-center max-w-2xl mx-auto">
-        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">ALBUM KEGIATAN SANTRI</span>
+        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">ALBUM Kegiatan Siswa</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
             Dokumentasi Sekolah Ishum
         </h2>

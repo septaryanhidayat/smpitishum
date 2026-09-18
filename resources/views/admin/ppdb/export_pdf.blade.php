@@ -252,7 +252,7 @@
             @empty
                 <tr>
                     <td colspan="14" class="text-center" style="padding: 20px; color: #94a3b8;">
-                        Belum ada data calon santri yang mendaftar.
+                        Belum ada data calon siswa yang mendaftar.
                     </td>
                 </tr>
             @endforelse

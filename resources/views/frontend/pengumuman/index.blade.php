@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Papan Pengumuman Sekolah</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Informasi penting, edaran akademik, jadwal kegiatan santri, dan pengumuman resmi SMPS IT Ishlahul Ummah Prabumulih.
+            Informasi penting, edaran akademik, jadwal kegiatan siswa, dan pengumuman resmi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
 </div>

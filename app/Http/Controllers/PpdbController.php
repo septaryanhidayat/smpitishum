@@ -40,15 +40,15 @@ class PpdbController extends Controller
             'hotline_2_phone' => Setting::get('ppdb_hotline_2_phone', '0822-8157-3615'),
             'hotline_2_name' => Setting::get('ppdb_hotline_2_name', 'Ust. Agi (Kepala Sekolah)'),
             'alur' => Setting::get('ppdb_alur', "Siapkan berkas foto/scan bukti transfer biaya pendaftaran melalui Bank Syariah Indonesia (BSI) nomor rekening 7011304251 a.n. YL. Fatmawati.\nSiapkan berkas foto/scan akta kelahiran dan kartu keluarga.\nMengisi formulir PPDB secara online pada website resmi.\nKonfirmasi pengisian formulir kepada panitia melalui WhatsApp (0821-8268-0647).\nPendaftaran selesai dan berkas diverifikasi tim panitia untuk tahapan tes wawancara dan tahfidz."),
-            'syarat' => Setting::get('ppdb_syarat', "Mengisi Formulir Pendaftaran online dengan data yang benar dan lengkap.\nMelampirkan bukti transfer biaya pendaftaran.\nMelampirkan scan/fotokopi Akta Kelahiran dan Kartu Keluarga (KK).\nMelampirkan fotokopi rapor SMP/MTs semester 1-5.\nPas foto terbaru calon santri ukuran 3x4 berwarna."),
+            'syarat' => Setting::get('ppdb_syarat', "Mengisi Formulir Pendaftaran online dengan data yang benar dan lengkap.\nMelampirkan bukti transfer biaya pendaftaran.\nMelampirkan scan/fotokopi Akta Kelahiran dan Kartu Keluarga (KK).\nMelampirkan fotokopi rapor SMP/MTs semester 1-5.\nPas foto terbaru calon siswa ukuran 3x4 berwarna."),
             'prestasi' => Setting::get('ppdb_prestasi', "Bebas tes tulis akademik bagi Juara 1, 2, atau 3 tingkat Kota/Kabupaten, Provinsi, maupun Nasional.\nDiskon khusus biaya pendaftaran dan prioritas penerimaan."),
             'tahfidz' => Setting::get('ppdb_tahfidz', "Tahfidz minimal 3 Juz: Beasiswa potongan biaya pendaftaran & SPP.\nTahfidz 5 Juz atau lebih: Beasiswa SPP berkala dan pembinaan khusus Sanad/Mutqin.\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Ishum."),
             'alumni' => Setting::get('ppdb_alumni', 'Keringanan istimewa bagi lulusan SMPIT Ishlahul Ummah Prabumulih yang melanjutkan ke SMPS IT Ishlahul Ummah Prabumulih berupa potongan biaya uang pangkal & pendaftaran langsung tanpa biaya seleksi.'),
-            'mandiri' => Setting::get('ppdb_mandiri', "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Santri."),
+            'mandiri' => Setting::get('ppdb_mandiri', "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa."),
             'jadwal_gelombang' => Setting::get('ppdb_jadwal_gelombang', "Gelombang 1: Oktober s/d Desember (Diskon Biaya Masuk s/d 50%)\nGelombang 2: Januari s/d April\nGelombang 3: Mei s/d Juli (Khusus sisa kuota)\n* Pendaftaran akan ditutup otomatis apabila kuota per kelas telah terpenuhi."),
-            'biaya' => Setting::get('ppdb_biaya', "Biaya Formulir Pendaftaran: Ditransfer ke rekening BSI sekolah 7011304251.\nPaket Seragam Sekolah (4 stel seragam lengkap + atribut dan jilbab/peci).\nBiaya Orientasi Santri (MPLS) & Baitul Maqdis Leadership Camp.\nUntuk rincian lengkap uang pangkal dan SPP bulanan, hubungi langsung panitia PPDB."),
+            'biaya' => Setting::get('ppdb_biaya', "Biaya Formulir Pendaftaran: Ditransfer ke rekening BSI sekolah 7011304251.\nPaket Seragam Sekolah (4 stel seragam lengkap + atribut dan jilbab/peci).\nBiaya Orientasi Siswa (MPLS) & Baitul Maqdis Leadership Camp.\nUntuk rincian lengkap uang pangkal dan SPP bulanan, hubungi langsung panitia PPDB."),
             'boarding' => Setting::get('ppdb_boarding', "Program Boarding (Asrama): Fasilitas asrama bersih, ber-AC/ventilasi sehat, makan 3x sehari, pendampingan tahfidz 24 jam bersama musyrif.\nProgram Full Day School: Pembelajaran terpadu hingga sore hari, shalat berjamaah, makan siang sehat, dan ekstrakurikuler."),
-            'kelulusan' => Setting::get('ppdb_kelulusan', 'Hasil seleksi diumumkan melalui website resmi dan notifikasi WhatsApp kepada orang tua calon santri. Calon santri yang dinyatakan lulus wajib melakukan daftar ulang sesuai jadwal yang ditentukan panitia.'),
+            'kelulusan' => Setting::get('ppdb_kelulusan', 'Hasil seleksi diumumkan melalui website resmi dan notifikasi WhatsApp kepada orang tua calon siswa. Calon Siswa yang dinyatakan lulus wajib melakukan daftar ulang sesuai jadwal yang ditentukan panitia.'),
             'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SMPS IT Ishlahul Ummah Prabumulih'),
             'closing_desc' => Setting::get('ppdb_closing_desc', 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin'),
         ];
@@ -66,7 +66,7 @@ class PpdbController extends Controller
     {
         $rawWaves = Setting::get('ppdb_form_waves', "Gelombang 1 (Early Bird)\nGelombang 2 (Reguler)\nGelombang 3 (Prestasi)");
         $rawTracks = Setting::get('ppdb_form_tracks', "Jalur Reguler / Tes Mandiri\nJalur Prestasi Akademik & Non-Akademik\nJalur Hafizh Al-Qur'an (Tahfidz)\nJalur Alumni SMPIT Ishum\nJalur Beasiswa / Afirmasi");
-        $rawPrograms = Setting::get('ppdb_form_programs', "Boarding School (Asrama Santri)\nFull Day School (Sekolah Terpadu)");
+        $rawPrograms = Setting::get('ppdb_form_programs', "Boarding School (Asrama Siswa)\nFull Day School (Sekolah Terpadu)");
 
         $waves = array_values(array_filter(array_map('trim', explode("\n", (string) $rawWaves))));
         $tracks = array_values(array_filter(array_map('trim', explode("\n", (string) $rawTracks))));
@@ -233,7 +233,7 @@ class PpdbController extends Controller
             'wave' => $validated['wave'] ?? Setting::get('ppdb_wave', 'Gelombang 1'),
             'track' => $validated['track'] ?? 'Reguler',
             'program_type' => $validated['program_type'] ?? 'Boarding School',
-            'full_name' => $validated['full_name'] ?? 'Calon Santri',
+            'full_name' => $validated['full_name'] ?? 'Calon Siswa',
             'birth_place' => $validated['birth_place'] ?? '-',
             'birth_date' => $validated['birth_date'] ?? '2008-01-01',
             'gender' => $validated['gender'] ?? 'Laki-laki',
@@ -276,7 +276,7 @@ class PpdbController extends Controller
 
         ActivityLog::create([
             'user_id' => null,
-            'user_name' => 'Calon Santri: '.$registration->full_name,
+            'user_name' => 'Calon Siswa: '.$registration->full_name,
             'action' => 'ppdb_registration',
             'description' => "Pendaftaran PPDB Baru: {$registration->full_name} ({$registration->registration_number}) - {$registration->track} / {$registration->program_type}",
             'ip_address' => $request->ip(),
@@ -330,7 +330,7 @@ class PpdbController extends Controller
             $cleanPhone = '6282182680647';
         }
 
-        $text = "*FORMULIR PENDAFTARAN SANTRI BARU (PPDB)*\n";
+        $text = "*FORMULIR PENDAFTARAN Siswa Baru (PPDB)*\n";
         $text .= "*SMPS IT ISHLAHUL UMMAH PRABUMULIH*\n";
         $text .= "----------------------------------------\n";
         $text .= '📋 *No. Registrasi:* '.$registration->registration_number."\n";
@@ -394,7 +394,7 @@ class PpdbController extends Controller
             $text .= "\n";
         }
 
-        $text .= "Mohon untuk memverifikasi pendaftaran calon santri baru kami. Terima kasih.\nWassalamu'alaikum Wr. Wb.";
+        $text .= "Mohon untuk memverifikasi pendaftaran calon siswa baru kami. Terima kasih.\nWassalamu'alaikum Wr. Wb.";
 
         return 'https://api.whatsapp.com/send?phone='.$cleanPhone.'&text='.rawurlencode($text);
     }

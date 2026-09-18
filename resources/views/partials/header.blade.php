@@ -92,7 +92,7 @@
                     <div class="absolute left-0 top-full pt-1 w-60 hidden group-hover:block transition-all duration-150 z-50">
                         <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2.5 text-gray-800 animate-fadeIn">
                             <a href="{{ route('artikel.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
-                                <i class="fa-solid fa-newspaper w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Berita &amp; Prestasi Santri
+                                <i class="fa-solid fa-newspaper w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Berita &amp; Prestasi Siswa
                             </a>
                             <a href="{{ route('galeri.index') }}" class="block px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center">
                                 <i class="fa-solid fa-images w-5 text-indigo-600 mr-2 text-sm" aria-hidden="true"></i> Galeri Foto Kegiatan
@@ -226,7 +226,7 @@
             <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
                 <i class="fa-solid fa-newspaper mr-2 text-amber-500"></i> Kabar &amp; Galeri
             </div>
-            <a href="{{ route('artikel.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Berita &amp; Prestasi Santri</a>
+            <a href="{{ route('artikel.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Berita &amp; Prestasi Siswa</a>
             <a href="{{ route('galeri.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Galeri Foto Kegiatan</a>
             <a href="{{ route('video.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Video Kegiatan</a>
             <a href="{{ route('agenda.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Agenda Akademik</a>

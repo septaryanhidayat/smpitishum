@@ -14,7 +14,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Agenda Kegiatan</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Agenda Akademik & Santri</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Agenda Akademik & Siswa</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Jadwal kegiatan belajar, agenda tasmi' Al-Qur'an, olimpiade sains, dan ekstrakurikuler SMPS IT Ishlahul Ummah Prabumulih.
         </p>

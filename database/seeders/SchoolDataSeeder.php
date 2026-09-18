@@ -47,7 +47,7 @@ class SchoolDataSeeder extends Seeder
             'site_logo_square' => '/uploads/logo-ishum-square.png',
             'og_title' => 'SMPS IT Ishlahul Ummah Prabumulih',
             'og_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih: Informasi SPMB Gelombang Exclusive, Berita & Prestasi, Profil Guru, Fasilitas, dan Program Tahfidz.',
-            'og_image' => '/uploads/campus-smpit-ishum.webp',
+            'og_image' => '/uploads/og-image.jpg',
             'meta_keywords' => 'smps it ishlahul ummah prabumulih, smp it ishum, sekolah islam terpadu prabumulih, spmb smp it ishum, tahfidz prabumulih, jsit prabumulih',
             'npsn' => '69787455',
             'akreditasi' => 'B (Terakreditasi BAN-SM)',
@@ -135,7 +135,7 @@ class SchoolDataSeeder extends Seeder
             [
                 'name' => 'Bina Pribadi Islam (BPI) & Karakter Islami',
                 'slug' => 'bina-pribadi-islam-bpi',
-                'address' => 'Pembinaan Karakter Santri',
+                'address' => 'Pembinaan Karakter Siswa',
                 'description' => 'Halaqah pekanan pembinaan adab, pembiasaan ibadah yaumiyah, dzikir ma\'tsurat, serta penanaman akhlaqul karimah.',
                 'order' => 2,
             ],
@@ -164,7 +164,7 @@ class SchoolDataSeeder extends Seeder
                 'name' => 'IU Berkhidmat (Bakti Sosial Masyarakat)',
                 'slug' => 'iu-berkhidmat-bakti-sosial',
                 'address' => 'Kepedulian Sosial & Dakwah',
-                'description' => 'Kiprah nyata santri dalam melayani dan memberikan kontribusi positif bagi masyarakat di Kota Prabumulih.',
+                'description' => 'Kiprah nyata siswa dalam melayani dan memberikan kontribusi positif bagi masyarakat di Kota Prabumulih.',
                 'order' => 6,
             ],
         ];
@@ -259,11 +259,11 @@ class SchoolDataSeeder extends Seeder
                 'download_count' => 342,
             ],
             [
-                'title' => 'Buku Saku Adab & 10 Karakter (Muwashofat) Santri JSIT',
-                'description' => 'Pedoman pembiasaan akhlak islami, adab kepada guru dan orang tua, tata tertib santri asrama dan sekolah.',
+                'title' => 'Buku Saku Adab & 10 Karakter (Muwashofat) Siswa JSIT',
+                'description' => 'Pedoman pembiasaan akhlak islami, adab kepada guru dan orang tua, tata tertib siswa asrama dan sekolah.',
                 'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/buku-saku-adab-karakter-santri.pdf',
-                'cover_image' => '/uploads/covers/cover-karakter-santri.webp',
+                'file_path' => '/uploads/downloads/buku-saku-adab-karakter-siswa.pdf',
+                'cover_image' => '/uploads/covers/cover-karakter-siswa.webp',
                 'file_type' => 'PDF',
                 'file_size' => '6.9 KB',
                 'download_count' => 284,
@@ -289,7 +289,7 @@ class SchoolDataSeeder extends Seeder
                 'download_count' => 210,
             ],
             [
-                'title' => 'Buku Saku Kosakata Harian Bilingual Bahasa Arab & Inggris Santri',
+                'title' => 'Buku Saku Kosakata Harian Bilingual Bahasa Arab & Inggris Siswa',
                 'description' => 'Modul percakapan bilingual harian asrama dan lingkungan sekolah untuk mempercepat penguasaan active speaking.',
                 'category_type' => 'E-Book',
                 'file_path' => '/uploads/downloads/buku-saku-kosakata-bilingual.pdf',
@@ -367,9 +367,9 @@ class SchoolDataSeeder extends Seeder
                 'content' => <<<'HTML'
 <p><strong>Bismillahirrohmanirrohim. Assalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
 <p>Segala puji dan syukur kita panjatkan kehadirat Allah SWT yang senantiasa melimpahkan rahmat, taufik, dan inayah-Nya kepada kita semua. Sholawat beriring salam senantiasa tercurah kepada junjungan alam Nabi Besar Muhammad SAW, para keluarga, sahabat, dan pengikutnya hingga akhir zaman.</p>
-<p>Selamat datang di website resmi <strong>SMPS IT Ishlahul Ummah Prabumulih</strong>. Di era transformasi digital dan revolusi industri saat ini, kehadiran media informasi digital menjadi sarana vital untuk mempererat ukhuwah, menyajikan transparansi kegiatan sekolah, serta memberikan kemudahan akses informasi bagi para orang tua, santri, dan masyarakat luas.</p>
+<p>Selamat datang di website resmi <strong>SMPS IT Ishlahul Ummah Prabumulih</strong>. Di era transformasi digital dan revolusi industri saat ini, kehadiran media informasi digital menjadi sarana vital untuk mempererat ukhuwah, menyajikan transparansi kegiatan sekolah, serta memberikan kemudahan akses informasi bagi para orang tua, siswa, dan masyarakat luas.</p>
 <p>Sebagai Sekolah Menengah Pertama Islam Terpadu di bawah naungan <strong>Yayasan Ishlahul Ummah Prabumulih</strong>, kami berkomitmen menghadirkan pendidikan holistik yang memadukan keunggulan kurikulum nasional, penguatan adab Islami, target hafalan Al-Qur'an 2 juz mutqin, kompetensi sains-teknologi, dan pembiasaan bahasa asing (Arab dan Inggris).</p>
-<p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada Pembina dan Pengurus Yayasan Ishlahul Ummah, seluruh asatidz dan asatidzah, staf kependidikan, serta para wali santri yang senantiasa membersamai langkah kami dalam mendidik generasi terbaik umat. Mari bersama-sama kita wujudkan anak-anak yang sholih-sholihah, cerdas, berprestasi, dan berakhlakul karimah.</p>
+<p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada Pembina dan Pengurus Yayasan Ishlahul Ummah, seluruh asatidz dan asatidzah, staf kependidikan, serta para wali murid yang senantiasa membersamai langkah kami dalam mendidik generasi terbaik umat. Mari bersama-sama kita wujudkan anak-anak yang sholih-sholihah, cerdas, berprestasi, dan berakhlakul karimah.</p>
 <p><em>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</em></p>
 <p><strong>Kepala SMPS IT Ishlahul Ummah Prabumulih</strong><br>
 <strong>Anita Carlyna, S.IP., M.Pd., Gr</strong></p>
@@ -390,7 +390,7 @@ HTML,
 <ol class="list-decimal pl-6 space-y-2.5 text-gray-700">
     <li><strong>Unggul dalam Akhlakul Karimah:</strong> Menanamkan aqidah yang lurus, ibadah yang benar, dan akhlak mulia berlandaskan Al-Qur'an dan As-Sunnah.</li>
     <li><strong>Unggul Prestasi Akademik & Non-Akademik:</strong> Menyelenggarakan pembelajaran aktif, kreatif, dan menantang untuk meraih prestasi di tingkat kota, provinsi, dan nasional.</li>
-    <li><strong>Berprestasi dalam Bahasa & MIPA:</strong> Membekali santri dengan kecakapan berbahasa asing (Arab & Inggris) serta kemampuan sains dan nalar matematika.</li>
+    <li><strong>Berprestasi dalam Bahasa & MIPA:</strong> Membekali siswa dengan kecakapan berbahasa asing (Arab & Inggris) serta kemampuan sains dan nalar matematika.</li>
     <li><strong>Target Tahfidzul Qur'an:</strong> Membina kemampuan tahsin dan tahfidz Al-Qur'an dengan target minimal 2 juz mutqin serta hafalan 12 hadits pilihan.</li>
     <li><strong>Lingkungan Pendidikan Islami Profesional:</strong> Mewujudkan iklim sekolah yang kondusif, amanah, ramah anak, dan berbudaya Islami.</li>
 </ol>
@@ -401,7 +401,7 @@ HTML,
     <li>Mencapai target hafalan minimal 2 juz Al-Qur'an (Juz 29 dan Juz 30) dengan tajwid tartil.</li>
     <li>Menghasilkan peserta didik yang berkarakter mandiri, santun, berpikir kritis, dan adaptif terhadap teknologi.</li>
     <li>Meraih prestasi gemilang dalam kompetisi sains, keolahragaan, seni Islam, dan baris-berbaris.</li>
-    <li>Mempersiapkan santri melanjutkan ke jenjang lanjutan/MA/Pesantren unggulan dengan bekal ilmu dan iman yang kokoh.</li>
+    <li>Mempersiapkan siswa melanjutkan ke jenjang lanjutan/MA/Pesantren unggulan dengan bekal ilmu dan iman yang kokoh.</li>
 </ul>
 HTML,
             ],
@@ -437,7 +437,7 @@ HTML,
                 'content' => <<<'HTML'
 <h3>Sejarah dan Latar Belakang Pendirian</h3>
 <p><strong>SMPS IT Ishlahul Ummah Prabumulih</strong> didirikan di bawah naungan <strong>Yayasan Ishlahul Ummah Prabumulih</strong> sebagai wujud kepedulian terhadap pentingnya pendidikan generasi muda Islam yang seimbang antara ilmu pengetahuan umum dan pemahaman agama yang mendalam.</p>
-<p>Berawal dari kesuksesan pembinaan di tingkat sekolah dasar (SDIT Ishlahul Ummah), masyarakat dan para wali santri mendambakan kelanjutan pendidikan tingkat pertama yang tetap mengusung nilai-nilai Qur'ani dan pembiasaan adab Islami. Maka berdirilah SMPS IT Ishlahul Ummah Prabumulih untuk melayani kebutuhan masyarakat Prabumulih dan sekitarnya.</p>
+<p>Berawal dari kesuksesan pembinaan di tingkat sekolah dasar (SDIT Ishlahul Ummah), masyarakat dan para wali murid mendambakan kelanjutan pendidikan tingkat pertama yang tetap mengusung nilai-nilai Qur'ani dan pembiasaan adab Islami. Maka berdirilah SMPS IT Ishlahul Ummah Prabumulih untuk melayani kebutuhan masyarakat Prabumulih dan sekitarnya.</p>
 <p>Di bawah kepemimpinan <strong>Ibu Anita Carlyna, S.IP., M.Pd., Gr</strong> beserta jajaran dewan guru yang amanah dan kompeten, SMPS IT Ishlahul Ummah terus berinovasi dalam metode pembelajaran, sarana prasarana modern, pembinaan tahfidz 2 juz mutqin, serta prestasi siswa di berbagai ajang kejuaraan daerah dan nasional.</p>
 HTML,
             ],
@@ -466,13 +466,13 @@ HTML,
                 'featured_image' => '/uploads/campus-smpit-ishum.webp',
                 'content' => <<<'HTML'
 <h3>Investasi Akhirat Melalui Pendidikan Islam</h3>
-<p>Yayasan Ishlahul Ummah Prabumulih membuka kesempatan seluas-luasnya bagi kaum muslimin dan para dermawan untuk menyalurkan infaq dan sedekah jariyah. Dana yang terhimpun disalurkan untuk pengembangan fasilitas laboratorium, masjid kampus, ruang kelas digital, serta beasiswa pendidikan bagi santri penghafal Al-Qur'an.</p>
+<p>Yayasan Ishlahul Ummah Prabumulih membuka kesempatan seluas-luasnya bagi kaum muslimin dan para dermawan untuk menyalurkan infaq dan sedekah jariyah. Dana yang terhimpun disalurkan untuk pengembangan fasilitas laboratorium, masjid kampus, ruang kelas digital, serta beasiswa pendidikan bagi siswa penghafal Al-Qur'an.</p>
 HTML,
             ],
             [
                 'slug' => 'e-book',
                 'title' => 'E-Library & Modul Pembelajaran SMPS IT Ishum',
-                'excerpt' => 'Kumpulan buku pelajaran, panduan kurikulum, dan modul e-library santri SMPS IT Ishlahul Ummah.',
+                'excerpt' => 'Kumpulan buku pelajaran, panduan kurikulum, dan modul e-library siswa SMPS IT Ishlahul Ummah.',
                 'featured_image' => '/uploads/activities-smpit-ishum.webp',
                 'content' => <<<'HTML'
 <h3>Pusat E-Library & Buku Digital</h3>
@@ -531,13 +531,13 @@ HTML,
 
         $galleryItems = [
             ['url' => '/uploads/galeri/galeri-kampus-terpadu.webp', 'title' => 'Gedung Kampus Terpadu SMPS IT Ishlahul Ummah'],
-            ['url' => '/uploads/galeri/galeri-perpustakaan.webp', 'title' => 'Perpustakaan & Ruang Literasi Santri Ishum'],
-            ['url' => '/uploads/galeri/galeri-lab-sains.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Santri'],
+            ['url' => '/uploads/galeri/galeri-perpustakaan.webp', 'title' => 'Perpustakaan & Ruang Literasi Siswa Ishum'],
+            ['url' => '/uploads/galeri/galeri-lab-sains.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Siswa'],
             ['url' => '/uploads/galeri/galeri-suasana-kelas.webp', 'title' => 'Suasana Belajar Interaktif & Nyaman di Kelas'],
             ['url' => '/uploads/galeri/galeri-wisuda-tahfidz.webp', 'title' => 'Wisuda Tahfidz & Munaqosah Al-Qur\'an Mutqin'],
             ['url' => '/uploads/galeri/galeri-panahan-pramuka.webp', 'title' => 'Ekstrakurikuler Panahan & Kepramukaan SIT'],
-            ['url' => '/uploads/galeri/galeri-upacara-santri.webp', 'title' => 'Upacara Bendera & Pembinaan Karakter Santri'],
-            ['url' => '/uploads/galeri/galeri-class-meeting.webp', 'title' => 'Semarak Class Meeting & Sportivitas Santri'],
+            ['url' => '/uploads/galeri/galeri-upacara-siswa.webp', 'title' => 'Upacara Bendera & Pembinaan Karakter Siswa'],
+            ['url' => '/uploads/galeri/galeri-class-meeting.webp', 'title' => 'Semarak Class Meeting & Sportivitas Siswa'],
         ];
 
         foreach ($galleryItems as $idx => $g) {

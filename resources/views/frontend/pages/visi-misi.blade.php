@@ -95,7 +95,7 @@
                         <div class="space-y-1">
                             <h3 class="font-bold text-sm sm:text-base text-gray-900">Pembentukan Karakter Mandiri & Kepemimpinan Ishum</h3>
                             <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                Membentuk karakter santri yang amanah, santun, berjiwa kewirausahaan, disiplin, berintegritas moral, dan memiliki kecakapan memimpin peradaban masa depan.
+                                Membentuk karakter siswa yang amanah, santun, berjiwa kewirausahaan, disiplin, berintegritas moral, dan memiliki kecakapan memimpin peradaban masa depan.
                             </p>
                         </div>
                     </div>

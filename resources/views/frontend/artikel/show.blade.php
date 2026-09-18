@@ -6,7 +6,7 @@
 @section('og_description', $post->meta_description ?: Str::limit(strip_tags($post->content), 160))
 @section('meta_keywords', $post->meta_keywords)
 @section('og_type', 'article')
-@section('og_image', $post->featured_image ? asset($post->featured_image) : asset('/uploads/campus-smpit-ishum.webp'))
+@section('og_image', $post->featured_image ? asset($post->featured_image) : asset('/uploads/og-image.jpg'))
 
 @section('content')
 {{-- BREADCRUMB HEADER --}}
@@ -207,7 +207,7 @@
             {{-- Banner PPDB --}}
             <div class="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-indigo-900 to-blue-900 p-6 text-white text-center space-y-3">
                 <span class="inline-block bg-[#da251c] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white">PPDB Online</span>
-                <h4 class="text-lg font-extrabold text-white">Penerimaan Santri Baru</h4>
+                <h4 class="text-lg font-extrabold text-white">Penerimaan Siswa Baru</h4>
                 <p class="text-xs text-indigo-100">Jadilah bagian dari generasi Qur'ani dan saintis berprestasi di SMPS IT Ishlahul Ummah Prabumulih.</p>
                 <a href="{{ route('ppdb.index') }}" class="inline-block w-full bg-[#da251c] hover:bg-[#b91c1c] text-white font-bold py-2.5 rounded-xl text-xs transition shadow">
                     Daftar Sekarang

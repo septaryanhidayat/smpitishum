@@ -257,7 +257,7 @@
                 <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[10px] sm:text-xs font-black uppercase tracking-wider max-w-[95%]">
                         <i class="fa-solid fa-certificate text-xs flex-shrink-0"></i>
-                        <span class="truncate sm:overflow-visible">Penerimaan Santri Baru Gelombang Exclusive</span>
+                        <span class="truncate sm:overflow-visible">Penerimaan Siswa Baru Gelombang Exclusive</span>
                     </div>
 
                     <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
@@ -275,7 +275,7 @@
                                 <i class="fa-solid fa-users"></i>
                             </div>
                             <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">KUOTA TERBATAS</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">Hanya 24 Santri</p>
+                            <p class="text-xs text-amber-300 font-bold mt-0.5">Hanya 24 Siswa</p>
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
@@ -458,17 +458,17 @@
 </section>
 
 {{-- ========================================================
-     SECTION #3: PRESTASI SANTRI SMPS IT ISHLAHUL UMMAH
+     SECTION #3: Prestasi Siswa SMPS IT ISHLAHUL UMMAH
      ======================================================== --}}
 <section class="py-12 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-8 reveal-fade-up">
             <span class="text-xs uppercase tracking-widest text-amber-500 font-bold block mb-1">Kebanggaan Sekolah</span>
             <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                Prestasi Santri SMPS IT
+                Prestasi Siswa SMPS IT
             </h2>
             <p class="text-xs sm:text-sm text-gray-700 mt-1 font-medium">
-                Capaian membanggakan santri SMPS IT Ishlahul Ummah Prabumulih di bidang tahfidz, sains, bahasa, dan keolahragaan
+                Capaian membanggakan siswa SMPS IT Ishlahul Ummah Prabumulih di bidang tahfidz, sains, bahasa, dan keolahragaan
             </p>
             <div class="w-16 h-1 bg-amber-400 mx-auto mt-2.5 rounded-full"></div>
         </div>
@@ -499,7 +499,7 @@
         </div>
 
         <div class="text-center mt-8 reveal-fade-up">
-            <a href="{{ route('artikel.index') }}?kategori=prestasi" aria-label="Lihat Semua Prestasi Santri" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-7 py-2.5 rounded-full shadow-md transition">
+            <a href="{{ route('artikel.index') }}?kategori=prestasi" aria-label="Lihat Semua Prestasi Siswa" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-7 py-2.5 rounded-full shadow-md transition">
                 Lihat Semua Prestasi <i class="fa-solid fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
             </a>
         </div>
@@ -550,13 +550,13 @@
                 </div>
             </div>
 
-            {{-- KOLOM 2: KESISWAAN & ADAB SANTRI --}}
+            {{-- KOLOM 2: KESISWAAN & ADAB SISWA --}}
             <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between reveal-fade-up delay-2">
                 <div>
                     <div class="flex items-center justify-between pb-3 mb-4 border-b border-gray-100">
                         <h2 class="text-lg font-black text-gray-900 flex items-center">
                             <span class="w-2.5 h-2.5 rounded-full bg-amber-500 mr-2" aria-hidden="true"></span>
-                            Kesiswaan &amp; Adab Santri
+                            Kesiswaan &amp; Adab Siswa
                         </h2>
                         <span class="text-xs text-amber-600 font-bold">10 Karakter Muwashofat</span>
                     </div>
@@ -602,7 +602,7 @@
                 Program Unggulan SMPS IT
             </h2>
             <p class="text-xs sm:text-sm text-gray-700 mt-1 font-medium">
-                Tahfidz Al-Qur'an 2 Juz Mutqin, Bilingual Arabic-English, Bina Prestasi Sains &amp; Kepemimpinan Santri
+                Tahfidz Al-Qur'an 2 Juz Mutqin, Bilingual Arabic-English, Bina Prestasi Sains &amp; Kepemimpinan Siswa
             </p>
             <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2.5 rounded-full"></div>
         </div>
@@ -648,7 +648,7 @@
                 Dewan Guru &amp; Tenaga Kependidikan
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 mt-1">
-                Para asatidz dan asatidzah berdedikasi tinggi yang membina dan mendidik santri dengan penuh keikhlasan
+                Para asatidz dan asatidzah berdedikasi tinggi yang membina dan mendidik siswa dengan penuh keikhlasan
             </p>
             <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2 rounded-full"></div>
         </div>
@@ -808,14 +808,14 @@
 </section>
 
 {{-- ========================================================
-     SECTION #13: DOKUMENTASI & GALERI FOTO KEGIATAN SANTRI
+     SECTION #13: DOKUMENTASI & GALERI FOTO Kegiatan Siswa
      ======================================================== --}}
 <section class="py-16 bg-slate-950 text-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center mb-10 reveal-fade-up">
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                Galeri Foto Santri
+                Galeri Foto Siswa
             </h2>
             <p class="text-xs sm:text-sm text-amber-400 font-bold tracking-wide mt-2">
                 Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Kampus SMPS IT Ishlahul Ummah
@@ -988,7 +988,7 @@
                     E-Library &amp; Modul Pembelajaran
                 </h2>
                 <p class="text-xs sm:text-sm text-indigo-300 font-semibold mt-1">
-                    Unduh Modul Kurikulum JSIT, Tahfidzul Qur'an &amp; Panduan Belajar Santri
+                    Unduh Modul Kurikulum JSIT, Tahfidzul Qur'an &amp; Panduan Belajar Siswa
                 </p>
                 <div class="w-16 h-1 bg-amber-400 mx-auto mt-2 rounded-full"></div>
             </div>
@@ -1069,14 +1069,14 @@
 </section>
 
 {{-- ========================================================
-     SECTION #16: TESTIMONIAL ALUMNI & WALI SANTRI
+     SECTION #16: TESTIMONIAL ALUMNI & Wali Murid
      ======================================================== --}}
 <section class="py-12 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-8 reveal-fade-up">
             <span class="text-xs uppercase tracking-widest text-indigo-600 font-bold block mb-1">Kisah Inspiratif</span>
             <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                Testimoni Wali Santri &amp; Alumni
+                Testimoni Wali Murid &amp; Alumni
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 mt-1">
                 Kesan mendalam mengenai penguatan aqidah, tahfidz Al-Qur'an 2 juz mutqin, dan prestasi akademik di SMPS IT Ishlahul Ummah Prabumulih
@@ -1101,7 +1101,7 @@
                     </div>
                     <div class="min-w-0 w-full text-center sm:text-left">
                         <h3 class="font-bold text-xs text-gray-900 break-words leading-tight">{{ $t->name }}</h3>
-                        <p class="text-[11px] text-indigo-600 font-semibold break-words mt-0.5">{{ $t->profession ?? 'Wali Santri / Alumni' }}</p>
+                        <p class="text-[11px] text-indigo-600 font-semibold break-words mt-0.5">{{ $t->profession ?? 'Wali Murid / Alumni' }}</p>
                     </div>
                 </div>
             </div>
@@ -1130,7 +1130,7 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition">SPMB Online SMPS IT</h3>
-                    <p class="text-xs text-gray-600 mt-0.5">Pendaftaran santri baru gelombang exclusive</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Pendaftaran siswa baru gelombang exclusive</p>
                 </div>
             </a>
 
@@ -1140,7 +1140,7 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition">Hotline WA: 0852-6990-8696</h3>
-                    <p class="text-xs text-gray-600 mt-0.5">Layanan informasi SPMB &amp; kegiatan santri</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Layanan informasi SPMB &amp; kegiatan siswa</p>
                 </div>
             </a>
 
@@ -1149,7 +1149,7 @@
                     <i class="fa-solid fa-hand-holding-heart"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-sm text-gray-900 group-hover:text-blue-600 transition">Infaq &amp; Beasiswa Santri</h3>
+                    <h3 class="font-bold text-sm text-gray-900 group-hover:text-blue-600 transition">Infaq &amp; Beasiswa Siswa</h3>
                     <p class="text-xs text-gray-600 mt-0.5">Dukung sarana &amp; beasiswa penghafal Qur'an</p>
                 </div>
             </a>

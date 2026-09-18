@@ -324,14 +324,13 @@ class VisitorTrackerService
             'fasilitas' => 'Fasilitas & Sarana Kampus',
             'agenda' => 'Agenda & Kalender Akademik',
             'pengumuman' => 'Pengumuman Resmi Sekolah',
-            'video' => 'Galeri Video Santri',
+            'video' => 'Galeri Video Siswa',
             'galeri' => 'Galeri Foto Kegiatan',
             'download' => 'Pusat Unduhan Berkas',
             'e-book' => 'Download Modul & E-Book',
             'hymne-mars' => 'Hymne & Mars JSIT',
             'hubungi' => 'Konsultasi & Informasi SPMB',
             'donasi' => 'Infaq & Beasiswa Ishum',
-            'dpc' => 'Program Unggulan Sekolah',
             'program-unggulan' => 'Program Unggulan Sekolah',
         ];
 
