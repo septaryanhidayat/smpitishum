@@ -75,6 +75,13 @@
     <div class="pt-6">
         {{ $videos->links() }}
     </div>
+
+    <div class="text-center pt-6 pb-2 reveal-fade-up">
+        <a href="https://www.youtube.com/@smpitishlahulummahprabumul6398" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg hover:shadow-red-600/30 transition transform hover:-translate-y-0.5">
+            <i class="fa-brands fa-youtube mr-2 text-base"></i>
+            <span>Kunjungi &amp; Subscribe Channel YouTube Resmi Sekolah</span>
+        </a>
+    </div>
 </div>
 
 <script>

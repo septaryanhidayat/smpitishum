@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\Download;
 use App\Models\Dpc;
 use App\Models\Post;
+use Database\Seeders\DatabaseSeeder;
 
 test('halaman program unggulan / dpc menampilkan program sekolah', function () {
     Dpc::create([
@@ -92,4 +93,30 @@ test('footer memuat live counter pengunjung dan copyright sekolah', function () 
     $response->assertSee('Pengunjung');
     $response->assertSee('Galeri');
     $response->assertSee('Kabar Sekolah');
+});
+
+test('dewan guru menampilkan ustadz fulan dan ustadzah fulanah dengan avatar abu-abu', function () {
+    $this->seed(DatabaseSeeder::class);
+    $response = $this->get(route('dewan.index'));
+
+    $response->assertStatus(200);
+    $response->assertSee('Anita Carlyna');
+    $response->assertSee('Ustadz Fulan');
+    $response->assertSee('Ustadzah Fulanah');
+    $response->assertSee('avatar-ustadz.svg');
+    $response->assertSee('avatar-ustadzah.svg');
+});
+
+test('galeri video dan beranda menampilkan video resmi youtube smp it ishum', function () {
+    $this->seed(DatabaseSeeder::class);
+    $responseVideo = $this->get(route('video.index'));
+    $responseVideo->assertStatus(200);
+    $responseVideo->assertSee('_ltiwpOmK1k');
+    $responseVideo->assertSee('Mengenal Lebih Dekat Profil dan Visi SMP IT Ishlahul Ummah Prabumulih');
+    $responseVideo->assertSee('https://www.youtube.com/@smpitishlahulummahprabumul6398');
+
+    $responseHome = $this->get(route('home'));
+    $responseHome->assertStatus(200);
+    $responseHome->assertSee('Galeri Video Resmi YouTube');
+    $responseHome->assertSee('_ltiwpOmK1k');
 });

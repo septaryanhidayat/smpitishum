@@ -11,63 +11,63 @@
             "order": 1
         },
         {
-            "name": "Sesiana Giovani Lestari, S.Pd",
-            "slug": "sesiana-giovani-lestari-spd",
+            "name": "Ustadz Fulan, S.Pd.",
+            "slug": "ustadz-fulan-spd",
             "position": "Waka Kurikulum & Guru IPA",
             "fraction": "Guru IPA & Kurikulum",
-            "photo": "/uploads/dewan/guru-ipa.webp",
+            "photo": "/uploads/dewan/avatar-ustadz.svg",
             "profile_summary": "Tenaga pendidik profesional SMPS IT Ishlahul Ummah Prabumulih dalam bidang Ilmu Pengetahuan Alam dan koordinator integrasi Kurikulum Merdeka dengan kurikulum JSIT.",
-            "education": "S1 Pendidikan Biologi, Universitas Muhammadiyah Palembang",
+            "education": "S1 Pendidikan IPA / Sains",
             "order": 2
         },
         {
-            "name": "Nisa'ul Istiqomah, S.T",
-            "slug": "nisaul-istiqomah-st",
-            "position": "Guru Matematika & Pembimbing MIPA",
-            "fraction": "Guru Matematika",
-            "photo": "/uploads/dewan/guru-kelas.webp",
-            "profile_summary": "Tenaga pendidik matematika dan pembimbing klub olimpiade sains siswa SMPS IT Ishlahul Ummah Prabumulih.",
-            "education": "S1 Teknik Kimia, Universitas Sriwijaya",
+            "name": "Ustadzah Fulanah, S.Pd.I",
+            "slug": "ustadzah-fulanah-spdi",
+            "position": "Guru Tahsin & Tahfidz Al-Qur'an (TTQ)",
+            "fraction": "Guru TTQ & Keislaman",
+            "photo": "/uploads/dewan/avatar-ustadzah.svg",
+            "profile_summary": "Pengampu program Tahsin dan Tahfidz Al-Qur'an siswa, membimbing hafalan mutqin minimal 2 juz serta tartil bacaan bersanad.",
+            "education": "S1 Pendidikan Agama Islam",
             "order": 3
         },
         {
-            "name": "Herman Nurdiansyah, S.E",
-            "slug": "herman-nurdiansyah-se",
-            "position": "Guru PAI, Hadits & PJOK",
-            "fraction": "Guru PAI & Olahraga",
-            "photo": "/uploads/dewan/guru-pjok.webp",
-            "profile_summary": "Guru Pendidikan Agama Islam, Hadits, dan PJOK, aktif membina kedisiplinan, kepemimpinan, dan kebugaran jasmani siswa.",
-            "education": "STEI Al-Furqon",
+            "name": "Ustadz Fulan, S.Kom.",
+            "slug": "ustadz-fulan-skom",
+            "position": "Guru Informatika & Pembina OSIS",
+            "fraction": "Guru Informatika & Kesiswaan",
+            "photo": "/uploads/dewan/avatar-ustadz.svg",
+            "profile_summary": "Membina kompetensi literasi digital, teknologi informasi, dan memfasilitasi kegiatan kesiswaan serta kepemimpinan siswa OSIS SMP IT.",
+            "education": "S1 Ilmu Komputer / Teknik Informatika",
             "order": 4
         },
         {
-            "name": "Helen Azmi, S.Pd",
-            "slug": "helen-azmi-spd",
-            "position": "Guru Tahsin & Tahfidz Al-Qur'an (TTQ)",
-            "fraction": "Guru TTQ & Keislaman",
-            "photo": "/uploads/dewan/guru-tahfidz.webp",
-            "profile_summary": "Pengampu program Tahsin dan Tahfidz Al-Qur'an siswa, membimbing hafalan mutqin minimal 2 juz serta tartil bacaan bersanad.",
-            "education": "S1 Pendidikan Agama Islam, STAI Raudhatul Ulum",
+            "name": "Ustadzah Fulanah, S.Pd.",
+            "slug": "ustadzah-fulanah-spd",
+            "position": "Guru Bahasa Inggris & Literasi",
+            "fraction": "Guru Bahasa Inggris",
+            "photo": "/uploads/dewan/avatar-ustadzah.svg",
+            "profile_summary": "Pengampu mata pelajaran Bahasa Inggris aktif dan pembina kegiatan English Club, storytelling, dan literasi bahasa siswa.",
+            "education": "S1 Pendidikan Bahasa Inggris",
             "order": 5
         },
         {
-            "name": "Ahmad Fauzan, S.Pd.I",
-            "slug": "ahmad-fauzan-spdi",
-            "position": "Guru Bahasa Arab & Pembina OSIS",
-            "fraction": "Guru Bahasa Arab",
-            "photo": "/uploads/dewan/guru-bahasa.webp",
-            "profile_summary": "Membina kompetensi percakapan Bahasa Arab harian dan memfasilitasi kegiatan kesiswaan serta kepemimpinan siswa OSIS SMP IT.",
-            "education": "S1 Pendidikan Bahasa Arab, UIN Raden Fatah",
+            "name": "Ustadz Fulan, S.Or.",
+            "slug": "ustadz-fulan-sor",
+            "position": "Guru PJOK & Pembina Kepanduan SIT",
+            "fraction": "Guru PJOK & Olahraga",
+            "photo": "/uploads/dewan/avatar-ustadz.svg",
+            "profile_summary": "Guru Pendidikan Jasmani, Olahraga, dan Kesehatan, aktif membina kedisiplinan, kepanduan Pramuka SIT, dan kebugaran jasmani siswa.",
+            "education": "S1 Pendidikan Kepelatihan Olahraga",
             "order": 6
         },
         {
-            "name": "Sarah Ramadhani, S.Pd",
-            "slug": "sarah-ramadhani-spd",
-            "position": "Guru Bahasa Inggris & Literasi",
-            "fraction": "Guru Bahasa Inggris",
-            "photo": "/uploads/dewan/guru-kelas.webp",
-            "profile_summary": "Pengampu mata pelajaran Bahasa Inggris aktif dan pembina kegiatan English Club, storytelling, dan debat siswa.",
-            "education": "S1 Pendidikan Bahasa Inggris, Universitas Sriwijaya",
+            "name": "Ustadzah Fulanah, S.Si.",
+            "slug": "ustadzah-fulanah-ssi",
+            "position": "Guru Matematika & Pembimbing MIPA",
+            "fraction": "Guru Matematika",
+            "photo": "/uploads/dewan/avatar-ustadzah.svg",
+            "profile_summary": "Tenaga pendidik matematika dan pembimbing klub olimpiade sains siswa SMPS IT Ishlahul Ummah Prabumulih.",
+            "education": "S1 Matematika / Sains Terpadu",
             "order": 7
         }
     ],
@@ -123,67 +123,115 @@
     ],
     "galleries": [
         {
-            "title": "Perpustakaan & Literasi Digital Siswa",
-            "image": "/uploads/galeri/galeri-perpustakaan.webp",
-            "category": "Fasilitas & Belajar"
+            "url": "/uploads/galeri/galeri-kampus-terpadu.webp",
+            "title": "Gedung Kampus Terpadu SMPS IT Ishlahul Ummah"
         },
         {
-            "title": "Praktikum Sains di Laboratorium IPA",
-            "image": "/uploads/galeri/galeri-lab-sains.webp",
-            "category": "Akademik & Sains"
+            "url": "/uploads/galeri/galeri-perpustakaan.webp",
+            "title": "Perpustakaan & Ruang Literasi Siswa Ishum"
         },
         {
-            "title": "Latihan Olahraga Sunnah Panahan & Pramuka SIT",
-            "image": "/uploads/galeri/galeri-panahan-pramuka.webp",
-            "category": "Ekstrakurikuler"
+            "url": "/uploads/galeri/galeri-lab-sains.webp",
+            "title": "Laboratorium IPA & Eksperimen Sains Siswa"
         },
         {
-            "title": "Suasana Pembelajaran Interaktif Kelas Multimedia",
-            "image": "/uploads/galeri/galeri-suasana-kelas.webp",
-            "category": "Pembelajaran"
+            "url": "/uploads/galeri/galeri-suasana-kelas.webp",
+            "title": "Suasana Belajar Interaktif & Nyaman di Kelas"
         },
         {
-            "title": "Upacara Bendera Senin & Pembinaan Karakter Siswa",
-            "image": "/uploads/galeri/galeri-upacara-siswa.webp",
-            "category": "Karakter & Ibadah"
+            "url": "/uploads/galeri/galeri-wisuda-tahfidz.webp",
+            "title": "Wisuda Tahfidz & Munaqosah Al-Qur'an Mutqin"
         },
         {
-            "title": "Wisuda Tahfidz & Munaqosah Al-Qur'an 2 Juz Mutqin",
-            "image": "/uploads/galeri/galeri-wisuda-tahfidz.webp",
-            "category": "Tahfidz Al-Qur'an"
+            "url": "/uploads/galeri/galeri-panahan-pramuka.webp",
+            "title": "Ekstrakurikuler Panahan & Kepramukaan SIT"
         },
         {
-            "title": "Semarak Class Meeting Semester Genap",
-            "image": "/uploads/galeri/galeri-class-meeting.webp",
-            "category": "Class Meeting"
+            "url": "/uploads/galeri/galeri-upacara-siswa.webp",
+            "title": "Upacara Bendera & Pembinaan Karakter Siswa"
         },
         {
-            "title": "Kompleks Kampus Hijau SMPS IT Ishlahul Ummah Prabumulih",
-            "image": "/uploads/galeri/galeri-kampus-terpadu.webp",
-            "category": "Kampus"
+            "url": "/uploads/galeri/galeri-class-meeting.webp",
+            "title": "Semarak Class Meeting & Sportivitas Siswa"
         }
     ],
     "videos": [
         {
-            "title": "Profil Singkat SMPS IT Ishlahul Ummah Prabumulih",
-            "slug": "profil-singkat-smps-it-ishlahul-ummah-prabumulih",
-            "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "youtube_id": "dQw4w9WgXcQ",
-            "description": "Mengenal lebih dekat SMPS IT Ishlahul Ummah Prabumulih: fasilitas, kurikulum terpadu, dan pembinaan karakter generasi Qur'ani."
+            "title": "Mengenal Lebih Dekat Profil dan Visi SMP IT Ishlahul Ummah Prabumulih",
+            "slug": "mengenal-lebih-dekat-profil-dan-visi-smp-it-ishlahul-ummah-prabumulih",
+            "youtube_url": "https://www.youtube.com/watch?v=_ltiwpOmK1k",
+            "youtube_id": "_ltiwpOmK1k",
+            "description": "Mengenal lebih dekat profil resmi SMPS IT Ishlahul Ummah Prabumulih: visi kelembagaan, sarana prasarana terpadu, dan pembinaan karakter generasi Qur'ani."
         },
         {
-            "title": "Dokumentasi Class Meeting & Semangat Ukhuwah Siswa",
-            "slug": "dokumentasi-class-meeting-dan-semangat-ukhuwah-siswa",
-            "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "youtube_id": "dQw4w9WgXcQ",
-            "description": "Rangkaian semarak Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih."
+            "title": "Budayakan 5S ~ Senyum Sapa Salam Sopan & Santun | SMPS IT Ishlahul Ummah Prabumulih",
+            "slug": "budayakan-5s-senyum-sapa-salam-sopan-santun",
+            "youtube_url": "https://www.youtube.com/watch?v=sBS7nP9bb1Q",
+            "youtube_id": "sBS7nP9bb1Q",
+            "description": "Penanaman adab dan akhlak mulia melalui pembiasaan budaya 5S (Senyum, Sapa, Salam, Sopan, dan Santun) dalam keseharian siswa dan civitas akademika."
         },
         {
-            "title": "Tilawah Al-Qur'an & Munaqosah Tahfidz Siswa",
-            "slug": "tilawah-al-quran-dan-munaqosah-tahfidz-siswa",
-            "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "youtube_id": "dQw4w9WgXcQ",
-            "description": "Gema lantunan ayat suci Al-Qur'an siswa SMPS IT Ishlahul Ummah pada program tahfidz mutqin."
+            "title": "Tutorial Penggunaan Alat Pemadam Api Ringan (APAR) Bersama BPBD Kota Prabumulih",
+            "slug": "tutorial-penggunaan-alat-pemadam-api-ringan-apar-bpbd",
+            "youtube_url": "https://www.youtube.com/watch?v=_Bide_e-eCw",
+            "youtube_id": "_Bide_e-eCw",
+            "description": "Edukasi tanggap darurat dan pelatihan praktis pemadaman api menggunakan APAR bekerja sama dengan Badan Penanggulangan Bencana Daerah (BPBD) Kota Prabumulih."
+        },
+        {
+            "title": "Jambore Daerah Sumsel IX Tahun 2026 | SMP IT Ishlahul Ummah Prabumulih",
+            "slug": "jambore-daerah-sumsel-ix-tahun-2026",
+            "youtube_url": "https://www.youtube.com/watch?v=v5DIIOd7_94",
+            "youtube_id": "v5DIIOd7_94",
+            "description": "Dokumentasi kontingen kepanduan Pramuka SIT SMPS IT Ishlahul Ummah Prabumulih dalam ajang bergengsi Jambore Daerah Sumatera Selatan IX."
+        },
+        {
+            "title": "Tilawah Al-Qur'an Siswa | Syazani Jalil Gumilar",
+            "slug": "tilawah-al-quran-siswa-syazani-jalil-gumilar",
+            "youtube_url": "https://www.youtube.com/watch?v=tQhpl36L_h0",
+            "youtube_id": "tQhpl36L_h0",
+            "description": "Lantunan ayat suci Al-Qur'an tartil dan merdu yang dibawakan oleh siswa SMPS IT Ishlahul Ummah Prabumulih."
+        },
+        {
+            "title": "Praktik Manasik Haji SMP IT Ishlahul Ummah Prabumulih",
+            "slug": "praktik-manasik-haji-smp-it-ishlahul-ummah-prabumulih",
+            "youtube_url": "https://www.youtube.com/watch?v=3BwYjZrjzfQ",
+            "youtube_id": "3BwYjZrjzfQ",
+            "description": "Pembelajaran langsung fiqih ibadah haji dan umrah melalui simulasi manasik haji terpadu di lingkungan sekolah."
+        },
+        {
+            "title": "Pentas Seni | Tari Kreasi - Sanggar Ceria SMP IT Ishlahul Ummah Prabumulih",
+            "slug": "pentas-seni-tari-kreasi-sanggar-ceria",
+            "youtube_url": "https://www.youtube.com/watch?v=XZSRif9HjNE",
+            "youtube_id": "XZSRif9HjNE",
+            "description": "Kreativitas seni pertunjukan dan tari kreasi nusantara islami oleh Sanggar Ceria siswi SMPS IT Ishlahul Ummah."
+        },
+        {
+            "title": "Nonton Bareng Edukatif | Children of Heaven ~ SMP IT Ishlahul Ummah Prabumulih",
+            "slug": "nonton-bareng-edukatif-children-of-heaven",
+            "youtube_url": "https://www.youtube.com/watch?v=M3JI1sI7VGA",
+            "youtube_id": "M3JI1sI7VGA",
+            "description": "Apresiasi karya sinema edukatif Children of Heaven untuk menumbuhkan nilai empati, kesederhanaan, dan cinta keluarga bagi siswa."
+        },
+        {
+            "title": "ISHOMA ~ Isi Hari Obrolan Makna | Aninda Izzati",
+            "slug": "ishoma-isi-hari-obrolan-makna-aninda-izzati",
+            "youtube_url": "https://www.youtube.com/watch?v=q18kFzeWhjk",
+            "youtube_id": "q18kFzeWhjk",
+            "description": "Program bincang santai dan inspiratif siswa ISHOMA (Isi Hari Obrolan Makna) seputar motivasi belajar dan prestasi generasi muda."
+        },
+        {
+            "title": "Tips Hafalan Qur'an: Kunci Kelancaran Muroja'ah",
+            "slug": "tips-hafalan-quran-kunci-kelancaran-murojaah",
+            "youtube_url": "https://www.youtube.com/watch?v=La-a0-J64HE",
+            "youtube_id": "La-a0-J64HE",
+            "description": "Kiat sukses dan motivasi menjaga kelancaran hafalan Al-Qur'an melalui istiqomah muroja'ah harian bersama asatidz pembimbing."
+        },
+        {
+            "title": "Dokumentasi Ceria Siswa & Guru SMPS IT Ishlahul Ummah",
+            "slug": "dokumentasi-ceria-siswa-guru-smps-it-ishlahul-ummah",
+            "youtube_url": "https://www.youtube.com/watch?v=LS9Cc0lHbBY",
+            "youtube_id": "LS9Cc0lHbBY",
+            "description": "Potret kekeluargaan, kehangatan ukhuwah, dan kebersamaan guru dan siswa dalam berbagai momen bermakna di sekolah."
         }
     ],
     "testimonials": [
@@ -350,40 +398,6 @@
             "file_attachment": null,
             "status": "publish",
             "featured_image": "/uploads/fasilitas/fasilitas-gedung-utama.webp"
-        }
-    ],
-    "galleries": [
-        {
-            "url": "/uploads/galeri/galeri-kampus-terpadu.webp",
-            "title": "Gedung Kampus Terpadu SMPS IT Ishlahul Ummah"
-        },
-        {
-            "url": "/uploads/galeri/galeri-perpustakaan.webp",
-            "title": "Perpustakaan & Ruang Literasi Siswa Ishum"
-        },
-        {
-            "url": "/uploads/galeri/galeri-lab-sains.webp",
-            "title": "Laboratorium IPA & Eksperimen Sains Siswa"
-        },
-        {
-            "url": "/uploads/galeri/galeri-suasana-kelas.webp",
-            "title": "Suasana Belajar Interaktif & Nyaman di Kelas"
-        },
-        {
-            "url": "/uploads/galeri/galeri-wisuda-tahfidz.webp",
-            "title": "Wisuda Tahfidz & Munaqosah Al-Qur'an Mutqin"
-        },
-        {
-            "url": "/uploads/galeri/galeri-panahan-pramuka.webp",
-            "title": "Ekstrakurikuler Panahan & Kepramukaan SIT"
-        },
-        {
-            "url": "/uploads/galeri/galeri-upacara-siswa.webp",
-            "title": "Upacara Bendera & Pembinaan Karakter Siswa"
-        },
-        {
-            "url": "/uploads/galeri/galeri-class-meeting.webp",
-            "title": "Semarak Class Meeting & Sportivitas Siswa"
         }
     ]
 }

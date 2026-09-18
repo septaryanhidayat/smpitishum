@@ -20,7 +20,7 @@
     }
 }" x-init="autoSlide()">
     {{-- Banner Images & Content --}}
-    <div class="relative h-[440px] sm:h-[480px] lg:h-[520px] w-full overflow-hidden">
+    <div class="relative min-h-[380px] h-[380px] sm:h-[460px] lg:h-[520px] w-full overflow-hidden">
         @foreach($heroSlides as $index => $slide)
             <div x-show="activeSlide === {{ $index }}" 
                  x-transition:enter="transition ease-out duration-700" 
@@ -34,7 +34,7 @@
             >
                 <img src="{{ asset($slide['image']) }}" 
                      alt="{{ $slide['title'] }}" 
-                     class="w-full h-full object-cover object-center brightness-60"
+                     class="w-full h-full object-cover object-[center_35%] brightness-60"
                      width="1376"
                      height="768"
                      @if($index === 0)
@@ -675,8 +675,8 @@
         <div class="hidden md:grid md:grid-cols-4 gap-6">
             @foreach($dewan as $index => $d)
             <div class="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 text-center group hover:shadow-xl transition transform hover:-translate-y-1 reveal-fade-up delay-{{ $index + 1 }}">
-                <div class="h-64 rounded-2xl overflow-hidden mb-3 bg-gray-100 border border-gray-100">
-                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="240" height="256" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-3 bg-slate-100 border border-slate-100">
+                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="240" height="300" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/dewan/avatar-default.svg'">
                 </div>
                 <h3 class="font-black text-sm text-gray-900 group-hover:text-indigo-600 transition">
                     {{ $d->name }}
@@ -692,8 +692,8 @@
         <div class="grid md:hidden grid-cols-2 gap-3.5">
             @foreach($dewan as $index => $d)
             <div class="bg-white rounded-2xl p-2.5 shadow-sm border border-gray-100 text-center reveal-fade-up delay-{{ $index + 1 }}">
-                <div class="h-44 rounded-xl overflow-hidden mb-2 bg-gray-100">
-                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="180" height="176" loading="lazy" decoding="async" class="w-full h-full object-cover object-top" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                <div class="aspect-[4/5] rounded-xl overflow-hidden mb-2 bg-slate-100 border border-slate-100">
+                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="180" height="225" loading="lazy" decoding="async" class="w-full h-full object-cover object-top" onerror="this.src='/uploads/dewan/avatar-default.svg'">
                 </div>
                 <h3 class="font-bold text-xs text-gray-900 leading-tight">
                     {{ $d->name }}
@@ -733,7 +733,18 @@
             <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-xl border border-slate-800 group hover:border-indigo-500 transition reveal-fade-up delay-{{ ($index % 3) + 1 }}">
                 <div class="aspect-video relative overflow-hidden bg-black">
                     @if(!empty($v->youtube_id))
-                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/{{ $v->youtube_id }}" title="{{ $v->title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    <button type="button" class="w-full h-full relative overflow-hidden cursor-pointer group/vid block focus:outline-none" onclick="playHomeVideo(this, '{{ $v->youtube_id }}', '{{ addslashes($v->title) }}')" aria-label="Putar video: {{ $v->title }}">
+                        <img src="{{ $v->thumbnail_url }}" 
+                             alt="Thumbnail video: {{ $v->title }}" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover/vid:scale-105" 
+                             loading="lazy" 
+                             onerror="this.src='https://img.youtube.com/vi/{{ $v->youtube_id }}/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-black/35 group-hover/vid:bg-black/15 transition flex items-center justify-center" aria-hidden="true">
+                            <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-xl group-hover/vid:scale-110 group-hover/vid:bg-red-500 transition-all">
+                                <i class="fa-solid fa-play text-base ml-0.5"></i>
+                            </div>
+                        </div>
+                    </button>
                     @else
                     <div class="w-full h-full flex items-center justify-center bg-slate-900 text-gray-500">
                         <i class="fa-brands fa-youtube text-4xl text-red-500"></i>
@@ -748,6 +759,14 @@
             </div>
             @endforeach
         </div>
+
+        <script>
+        function playHomeVideo(el, id, title) {
+            if (!id) return;
+            el.onclick = null;
+            el.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="' + (title || 'YouTube video') + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        }
+        </script>
 
         <div class="text-center mt-10 reveal-fade-up">
             <a href="https://www.youtube.com/@smpitishlahulummahprabumul6398" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg transition">

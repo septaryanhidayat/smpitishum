@@ -220,8 +220,11 @@ class SchoolDataSeeder extends Seeder
         // 7. Video YouTube
         Video::truncate();
         $videos = $data['videos'] ?? [];
-        foreach ($videos as $v) {
-            Video::create($v);
+        foreach ($videos as $idx => $v) {
+            Video::create(array_merge($v, [
+                'created_at' => now()->subMinutes($idx * 5),
+                'updated_at' => now()->subMinutes($idx * 5),
+            ]));
         }
 
         // 8. Pengumuman
@@ -451,11 +454,11 @@ HTML,
 <ul class="space-y-3 text-gray-800">
     <li><strong>Yayasan Penyelenggara:</strong> Yayasan Ishlahul Ummah Prabumulih</li>
     <li><strong>Kepala Sekolah:</strong> Anita Carlyna, S.IP., M.Pd., Gr</li>
-    <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> Sesiana Giovani Lestari, S.Pd</li>
-    <li><strong>Koordinator Bidang Kesiswaan & Ekskul:</strong> Ahmad Fauzan, S.Pd.I</li>
-    <li><strong>Koordinator Tahsin & Tahfidz Al-Qur'an (TTQ):</strong> Helen Azmi, S.Pd</li>
-    <li><strong>Koordinator BPI & Bina Karakter:</strong> Nisa'ul Istiqomah, S.T</li>
-    <li><strong>Dewan Guru & Tenaga Kependidikan:</strong> Guru-guru profesional lulusan universitas terkemuka.</li>
+    <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> Ustadz Fulan, S.Pd.</li>
+    <li><strong>Koordinator Bidang Kesiswaan &amp; Ekskul:</strong> Ustadz Fulan, S.Kom.</li>
+    <li><strong>Koordinator Tahsin &amp; Tahfidz Al-Qur'an (TTQ):</strong> Ustadzah Fulanah, S.Pd.I</li>
+    <li><strong>Koordinator BPI &amp; Bina Karakter:</strong> Ustadzah Fulanah, S.Si.</li>
+    <li><strong>Dewan Guru &amp; Tenaga Kependidikan:</strong> Asatidz dan asatidzah profesional berdedikasi tinggi.</li>
 </ul>
 HTML,
             ],

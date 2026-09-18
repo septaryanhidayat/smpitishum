@@ -34,7 +34,7 @@ class HomeController extends Controller
             [
                 'title' => 'SPMB Gelombang Exclusive TP Baru',
                 'subtitle' => 'Kuota Terbatas Hanya 24 Orang & Promo Cash Back 1 Juta Alumni SDIT Ishum.',
-                'image' => '/uploads/flyer-spmb-smpit-ishum.webp',
+                'image' => '/uploads/tahfidz-smpit-ishum.webp',
                 'btn_text' => 'Daftar SPMB Online',
                 'btn_link' => route('ppdb.index', [], false),
             ],
