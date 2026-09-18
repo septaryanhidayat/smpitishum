@@ -26,33 +26,39 @@ class SchoolDataSeeder extends Seeder
         $dataFile = __DIR__.'/data/ishum_data.json';
         $data = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
 
-        // 1. Settings SMA Islam Terpadu Ishlahul Ummah Prabumulih
+        // 1. Settings SMPS IT Ishlahul Ummah Prabumulih
         $settings = [
-            'site_name' => 'SMA Islam Terpadu Ishlahul Ummah Prabumulih',
-            'site_tagline' => 'Tanggap, Tangkas dan Tangguh Menuju Indonesia Emas',
-            'site_description' => 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih (SMA IT Ishum). Sekolah Islam Terpadu pertama di Prabumulih yang tergabung dalam JSIT Indonesia dengan kurikulum terpadu.',
-            'contact_email' => 'smaitishlahulummah2019@gmail.com',
-            'contact_phone' => '0821-8268-0647',
-            'contact_whatsapp' => '0821-8268-0647',
-            'contact_address' => 'Jalan Sadewa RT 01 RW 03 Kelurahan Karang Raja, Kecamatan Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31111',
-            'social_facebook' => 'https://facebook.com/smait.ishlahulummah.3',
-            'social_instagram' => 'https://instagram.com/smait_ishum_prabumulih',
-            'social_youtube' => 'https://www.youtube.com/channel/UCUJgvV-nqy89f3m8Hw2QrGg/videos',
-            'social_tiktok' => 'https://tiktok.com/@smait_ishum',
-            'banner_daftar_url' => '/hubungi',
+            'site_name' => 'SMPS IT Ishlahul Ummah Prabumulih',
+            'site_tagline' => 'Membina Generasi Qur\'ani, Cerdas, Berakhlak Mulia & Berprestasi Global',
+            'site_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih (SMP IT Ishum). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kota Prabumulih dengan kurikulum terpadu nasional dan pembinaan karakter Qur\'ani.',
+            'contact_email' => 'smpitishlahulummah.2015@yahoo.com',
+            'contact_phone' => '0852-6990-8696',
+            'contact_whatsapp' => '0852-6990-8696',
+            'contact_phone_alt' => '0853-7897-4396',
+            'contact_address' => 'Jalan Sadewa No. 45 RT 01 RW 04 Kelurahan Karang Raja, Kecamatan Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31113',
+            'social_facebook' => 'https://www.facebook.com/smpitishlahulummah.prabumulih?locale=sw_KE',
+            'social_instagram' => 'https://www.instagram.com/smpitishlahulummahprabumulih/',
+            'social_youtube' => 'https://www.youtube.com/@smpitishlahulummahprabumul6398',
+            'social_tiktok' => 'https://www.tiktok.com/@smpitishlahulummahprabumulih',
+            'google_maps_url' => 'https://maps.app.goo.gl/oN2gtn7TuTGELXJ86',
+            'banner_daftar_url' => '/spmb',
             'banner_donasi_url' => '/donasi',
             'site_logo' => '/uploads/logo-ishum.png',
             'site_logo_square' => '/uploads/logo-ishum-square.png',
-            'og_title' => 'SMA Islam Terpadu Ishlahul Ummah Prabumulih',
-            'og_description' => 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih: Informasi PPDB, Berita & Prestasi, Profil Guru, Fasilitas, dan Kurikulum Terpadu.',
-            'og_image' => '/uploads/kepsek-agi-gustiawan.jpg',
-            'meta_keywords' => 'sma it ishlahul ummah prabumulih, sma it ishum, sekolah islam terpadu prabumulih, jsit prabumulih, ppdb sma it ishum, tahfidz prabumulih',
-            'npsn' => '69990882',
-            'akreditasi' => 'TERAKREDITASI BAN -SM',
+            'og_title' => 'SMPS IT Ishlahul Ummah Prabumulih',
+            'og_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih: Informasi SPMB Gelombang Exclusive, Berita & Prestasi, Profil Guru, Fasilitas, dan Program Tahfidz.',
+            'og_image' => '/uploads/campus-smpit-ishum.webp',
+            'meta_keywords' => 'smps it ishlahul ummah prabumulih, smp it ishum, sekolah islam terpadu prabumulih, spmb smp it ishum, tahfidz prabumulih, jsit prabumulih',
+            'npsn' => '69787455',
+            'akreditasi' => 'B (Terakreditasi BAN-SM)',
             'no_sk_akreditasi' => '1036/BAN-SM/SK/2021',
-            'sk_pendirian' => '2.16.72.04.001 (2020-10-23)',
-            'sk_izin' => '0876/DPMPTSP.V/IX/2023 (2023-09-05)',
-            'kepala_sekolah' => 'Agi Gustiawan, S. Pd',
+            'sk_pendirian' => '2.16.72.04.001',
+            'sk_izin' => '0876/DPMPTSP.V/IX/2023',
+            'kepala_sekolah' => 'Mulyani Rahayu, S.T., M.Pd',
+            'spmb_promo_title' => 'SPMB Gelombang Exclusive',
+            'spmb_promo_cashback' => 'Cash Back 1 Juta',
+            'spmb_promo_quota' => '24 Siswa per Kelas',
+            'spmb_promo_note' => '*Khusus Alumni SDIT Ishum dan SDIT Ishum 2',
             'donation_bank_1_name' => 'Bank Syariah Indonesia (BSI)',
             'donation_bank_1_code' => '451',
             'donation_bank_1_rekening' => '718-293-8401',
@@ -60,10 +66,10 @@ class SchoolDataSeeder extends Seeder
             'donation_bank_2_name' => 'Bank Sumsel Babel Syariah',
             'donation_bank_2_code' => '120',
             'donation_bank_2_rekening' => '801-09-00123',
-            'donation_bank_2_holder' => 'SMA IT ISHLAHUL UMMAH',
-            'donation_confirm_phone' => '0821-8268-0647',
-            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMA IT Ishlahul Ummah, saya telah menyalurkan infaq pembangunan.",
-            'donation_intro_text' => 'Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur\'an, dan pengembangan kampus SMA IT Ishlahul Ummah Prabumulih.',
+            'donation_bank_2_holder' => 'SMP IT ISHLAHUL UMMAH PRABUMULIH',
+            'donation_confirm_phone' => '0852-6990-8696',
+            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMPS IT Ishlahul Ummah, saya telah menyalurkan infaq pembangunan.",
+            'donation_intro_text' => 'Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur\'an, dan pengembangan kampus SMPS IT Ishlahul Ummah Prabumulih.',
         ];
 
         foreach ($settings as $key => $value) {
@@ -91,13 +97,13 @@ class SchoolDataSeeder extends Seeder
         AnggotaDewan::truncate();
         $gurus = $data['gurus'] ?? [
             [
-                'name' => 'Agi Gustiawan, S. Pd',
-                'slug' => 'agi-gustiawan-s-pd',
+                'name' => 'Mulyani Rahayu, S.T., M.Pd',
+                'slug' => 'mulyani-rahayu-st-mpd',
                 'position' => 'Kepala Sekolah',
                 'fraction' => 'Pimpinan Sekolah',
-                'photo' => '/uploads/kepsek-agi-gustiawan.jpg',
-                'profile_summary' => 'Kepala SMA Islam Terpadu Ishlahul Ummah Prabumulih. Berkomitmen mendidik generasi Qur\'ani yang tanggap, tangkas, dan tangguh menuju Indonesia Emas.',
-                'education' => 'S1 Pendidikan',
+                'photo' => '/uploads/campus-smpit-ishum.webp',
+                'profile_summary' => 'Kepala SMPS IT Ishlahul Ummah Prabumulih. Berkomitmen mendidik generasi Qur\'ani yang cerdas, berakhlak mulia, dan berprestasi global.',
+                'education' => 'S1 Teknik, S2 Manajemen Pendidikan',
                 'order' => 1,
             ],
         ];
@@ -111,19 +117,19 @@ class SchoolDataSeeder extends Seeder
         $facilities = $data['facilities'] ?? [];
         foreach ($facilities as $fac) {
             Bidang::create(array_merge($fac, [
-                'address' => 'Kampus SMA IT Ishlahul Ummah Prabumulih',
-                'phone' => '0821-8268-0647',
-                'email' => 'smaitishlahulummah2019@gmail.com',
+                'address' => 'Kampus SMPS IT Ishlahul Ummah Prabumulih',
+                'phone' => '0852-6990-8696',
+                'email' => 'smpitishlahulummah.2015@yahoo.com',
             ]));
         }
 
         // 5. Program Unggulan (Dpcs)
         $programs = [
             [
-                'name' => 'Program Tahfidz Mutqin 30 Juz',
-                'slug' => 'program-tahfidz-mutqin-30-juz',
+                'name' => 'Program Tahfidz 2 Juz Mutqin & Hadits',
+                'slug' => 'program-tahfidz-2-juz-mutqin',
                 'address' => 'Kurikulum Khusus Keislaman',
-                'description' => 'Bimbingan intensif membaca Al-Qur\'an dengan tartil, tahsin bersanad, dan hafalan mutqin serta program Munaqosah TTQ kelas akhir.',
+                'description' => 'Bimbingan intensif membaca Al-Qur\'an dengan tartil, tahsin bersanad, dan hafalan mutqin minimal 2 juz serta 12 hadits pilihan.',
                 'order' => 1,
             ],
             [
@@ -243,8 +249,8 @@ class SchoolDataSeeder extends Seeder
         Download::truncate();
         $localDownloads = [
             [
-                'title' => "Panduan Mutqin Tahfidz Al-Qur'an 30 Juz SMA IT Ishlahul Ummah",
-                'description' => 'Modul resmi kurikulum tahfidz mutqin SMA IT Ishlahul Ummah Prabumulih berbasis standar JSIT Indonesia.',
+                'title' => "Panduan Kurikulum Tahfidz Al-Qur'an 2 Juz SMPS IT Ishlahul Ummah",
+                'description' => 'Modul resmi kurikulum tahfidz mutqin SMPS IT Ishlahul Ummah Prabumulih berbasis standar JSIT Indonesia.',
                 'category_type' => 'E-Book',
                 'file_path' => '/uploads/downloads/panduan-mutqin-tahfidz-ishum.pdf',
                 'cover_image' => '/uploads/covers/cover-tahfidz-mutqin.webp',
@@ -263,8 +269,8 @@ class SchoolDataSeeder extends Seeder
                 'download_count' => 284,
             ],
             [
-                'title' => 'Petunjuk Praktikum Laboratorium Sains Terpadu SMA IT Ishum',
-                'description' => 'Pedoman eksperimen laboratorium biologi, kimia, dan fisika untuk siswa kelas X-XII SMA IT Ishlahul Ummah.',
+                'title' => 'Petunjuk Praktikum Laboratorium IPA Terpadu SMPS IT Ishum',
+                'description' => 'Pedoman eksperimen laboratorium biologi dan fisika untuk siswa kelas VII-IX SMPS IT Ishlahul Ummah.',
                 'category_type' => 'E-Book',
                 'file_path' => '/uploads/downloads/petunjuk-praktikum-sains-terpadu.pdf',
                 'cover_image' => '/uploads/covers/cover-praktikum-sains.webp',
@@ -293,8 +299,8 @@ class SchoolDataSeeder extends Seeder
                 'download_count' => 312,
             ],
             [
-                'title' => 'Panduan Sukses Seleksi Masuk PTN (SNBP, SNBT & Kedinasan)',
-                'description' => 'Strategi sukses menembus perguruan tinggi negeri impian, pembedahan materi Tes Potensi Skolastik (TPS).',
+                'title' => 'Panduan Sukses Asesmen Nasional & Masuk SMA/MA Unggulan Favorit',
+                'description' => 'Strategi sukses menembus SMA/MA favorit impian, pembedahan materi literasi dan numerasi Asesmen Nasional.',
                 'category_type' => 'E-Book',
                 'file_path' => '/uploads/downloads/panduan-sukses-snbt-ptn.pdf',
                 'cover_image' => '/uploads/covers/cover-sukses-snbt.webp',
@@ -304,8 +310,8 @@ class SchoolDataSeeder extends Seeder
             ],
 
             [
-                'title' => 'Logo Resmi SMA IT Ishlahul Ummah Prabumulih (High Resolution)',
-                'description' => 'File logo resmi SMA IT Ishlahul Ummah Prabumulih format PNG transparan.',
+                'title' => 'Logo Resmi SMPS IT Ishlahul Ummah Prabumulih (High Resolution)',
+                'description' => 'File logo resmi SMPS IT Ishlahul Ummah Prabumulih format PNG transparan.',
                 'category_type' => 'Logo',
                 'file_path' => '/uploads/logo-ishum.png',
                 'file_type' => 'PNG',
@@ -314,7 +320,7 @@ class SchoolDataSeeder extends Seeder
             ],
             [
                 'title' => 'Logo Lambang Ishlahul Ummah Square HD',
-                'description' => 'Logo lambang persegi SMA IT Ishlahul Ummah Prabumulih format PNG.',
+                'description' => 'Logo lambang persegi SMPS IT Ishlahul Ummah Prabumulih format PNG.',
                 'category_type' => 'Logo',
                 'file_path' => '/uploads/logo-ishum-square.png',
                 'file_type' => 'PNG',
@@ -355,124 +361,128 @@ class SchoolDataSeeder extends Seeder
         $officialPages = [
             [
                 'slug' => 'sambutan-kepala-sekolah',
-                'title' => 'Sambutan Kepala Sekolah SMA IT Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Sambutan resmi Kepala Sekolah SMA IT Ishlahul Ummah Prabumulih, Agi Gustiawan, S. Pd.',
-                'featured_image' => '/uploads/kepsek-agi-gustiawan.jpg',
+                'title' => 'Sambutan Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Mulyani Rahayu, S.T., M.Pd.',
+                'featured_image' => '/uploads/campus-smpit-ishum.webp',
                 'content' => <<<'HTML'
-<p><strong>Selamat datang (ahlan wa sahlan) di website resmi SMA IT Ishlahul Ummah Prabumulih</strong></p>
-<p>Segala puji hanya untuk Allah SWT atas segala nikmat, karunia dan hidayah-Nya. Sholawat serta salam semoga tercurahkan kepada suri tauladan kita umat Islam Muhammad Rasulullah SAW, serta para sahabat, keluarga dan pengikutnya yang setia hingga akhir zaman.</p>
-<p>Generasi Z tak lepas dari perkembangan teknologi yang pesat. Segenap civitas akademik harus bisa beradaptasi dengan segala perubahan, salah satunya dengan kewajiban lembaga untuk membuat website sekolah. Alhamdulillah dengan adanya website ini semoga dapat memudahkan ayah bunda, saudara/i mengeksplor SMA IT Ishlahul Ummah lebih dekat dan lebih akurat.</p>
-<p>Terimakasih kepada semua pihak yang telah mendukung terutama <strong>Ust. H. Mat Amin, S.Ag</strong> selaku Pembina Yayasan Ishlahul Ummah dan <strong>Ummi Hj. TL. Fasmawati, S.Ag</strong> selaku Ketua Yayasan Ishlahul Ummah Prabumulih serta para dewan guru, karyawan, sahabat Ishum dimanapun berada. Semoga layanan website kami dapat bermanfaat dan membantu pengunjung sekalian mendapatkan informasi yang diinginkan. Kritik dan saran kami harapkan untuk kemajuan SMA IT Ishlahul Ummah Prabumulih.</p>
-<p><em>Salam mendidik sepenuh cinta.</em></p>
-<p><strong>Kepala SMA IT Ishlahul Ummah</strong><br>
-<strong>Agi Gustiawan, S. Pd</strong></p>
+<p><strong>Bismillahirrohmanirrohim. Assalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
+<p>Segala puji dan syukur kita panjatkan kehadirat Allah SWT yang senantiasa melimpahkan rahmat, taufik, dan inayah-Nya kepada kita semua. Sholawat beriring salam senantiasa tercurah kepada junjungan alam Nabi Besar Muhammad SAW, para keluarga, sahabat, dan pengikutnya hingga akhir zaman.</p>
+<p>Selamat datang di website resmi <strong>SMPS IT Ishlahul Ummah Prabumulih</strong>. Di era transformasi digital dan revolusi industri saat ini, kehadiran media informasi digital menjadi sarana vital untuk mempererat ukhuwah, menyajikan transparansi kegiatan sekolah, serta memberikan kemudahan akses informasi bagi para orang tua, santri, dan masyarakat luas.</p>
+<p>Sebagai Sekolah Menengah Pertama Islam Terpadu di bawah naungan <strong>Yayasan Ishlahul Ummah Prabumulih</strong>, kami berkomitmen menghadirkan pendidikan holistik yang memadukan keunggulan kurikulum nasional, penguatan adab Islami, target hafalan Al-Qur'an 2 juz mutqin, kompetensi sains-teknologi, dan pembiasaan bahasa asing (Arab dan Inggris).</p>
+<p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada Pembina dan Pengurus Yayasan Ishlahul Ummah, seluruh asatidz dan asatidzah, staf kependidikan, serta para wali santri yang senantiasa membersamai langkah kami dalam mendidik generasi terbaik umat. Mari bersama-sama kita wujudkan anak-anak yang sholih-sholihah, cerdas, berprestasi, dan berakhlakul karimah.</p>
+<p><em>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</em></p>
+<p><strong>Kepala SMPS IT Ishlahul Ummah Prabumulih</strong><br>
+<strong>Mulyani Rahayu, S.T., M.Pd</strong></p>
 HTML,
             ],
             [
                 'slug' => 'visi-dan-misi',
-                'title' => 'Visi dan Misi SMA IT Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Visi, Misi, dan Tujuan penyelenggaraan pendidikan SMA IT Ishlahul Ummah Prabumulih.',
+                'title' => 'Visi dan Misi SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Visi, Misi, dan Tujuan penyelenggaraan pendidikan SMPS IT Ishlahul Ummah Prabumulih.',
                 'featured_image' => '/uploads/logo-ishum.png',
                 'content' => <<<'HTML'
 <h3>VISI SEKOLAH</h3>
-<blockquote class="text-xl font-bold text-school-green my-4 p-4 border-l-4 border-school-green bg-green-50 rounded-r-lg">
-“TERWUJUDNYA PESERTA DIDIK YANG TANGGAP, TANGKAS DAN TANGGUH DALAM RANGKA PERBAIKAN UMAT MENUJU INDONESIA EMAS”
+<blockquote class="text-xl font-bold text-school-primary my-4 p-4 border-l-4 border-school-primary bg-indigo-50/70 rounded-r-lg">
+“MENJADI LEMBAGA ISLAM TERPADU YANG MENCETAK GENERASI TERBAIK, BERKEPRIBADIAN ISLAMI, BERAKHLAK MULIA, CERDAS, BERPRESTASI, DAN BERWAWASAN GLOBAL”
 </blockquote>
 
 <h3>MISI SEKOLAH</h3>
-<ol class="list-decimal pl-6 space-y-2 text-gray-700">
-    <li>Menanamkan peserta didik akhlak mulia dan cara pandang kehidupan yang islami.</li>
-    <li>Melatih peserta didik untuk terlibat dalam memperbaiki permasalahan di masyarakat.</li>
-    <li>Menanamkan komitmen dan tanggung jawab dalam menjalankan perannya di keluarga, sekolah, dan masyarakat.</li>
+<ol class="list-decimal pl-6 space-y-2.5 text-gray-700">
+    <li><strong>Unggul dalam Akhlakul Karimah:</strong> Menanamkan aqidah yang lurus, ibadah yang benar, dan akhlak mulia berlandaskan Al-Qur'an dan As-Sunnah.</li>
+    <li><strong>Unggul Prestasi Akademik & Non-Akademik:</strong> Menyelenggarakan pembelajaran aktif, kreatif, dan menantang untuk meraih prestasi di tingkat kota, provinsi, dan nasional.</li>
+    <li><strong>Berprestasi dalam Bahasa & MIPA:</strong> Membekali santri dengan kecakapan berbahasa asing (Arab & Inggris) serta kemampuan sains dan nalar matematika.</li>
+    <li><strong>Target Tahfidzul Qur'an:</strong> Membina kemampuan tahsin dan tahfidz Al-Qur'an dengan target minimal 2 juz mutqin serta hafalan 12 hadits pilihan.</li>
+    <li><strong>Lingkungan Pendidikan Islami Profesional:</strong> Mewujudkan iklim sekolah yang kondusif, amanah, ramah anak, dan berbudaya Islami.</li>
 </ol>
 
 <h3 class="mt-8">TUJUAN PENDIDIKAN</h3>
 <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li>Mempunyai aqidah yang lurus dan melaksanakan ibadah/kebaikan dengan kesadaran serta tanggung jawab.</li>
-    <li>Mampu membaca Al-Qur'an dengan tartil serta menghafal dengan mutqin.</li>
-    <li>Terbiasa bersikap santun, berakhlak mulia, berpikir kritis, mandiri dan kreatif.</li>
-    <li>Berprestasi dalam kompetisi tingkat kota, provinsi, dan nasional.</li>
-    <li>Mampu beradaptasi dengan perkembangan IPTEK dan IMTAQ.</li>
-    <li>Menjadi penggerak dalam kebaikan di masyarakat.</li>
+    <li>Mencetak lulusan yang tertib dalam mendirikan sholat fardhu berjamaah dan gemar mengamalkan sunnah.</li>
+    <li>Mencapai target hafalan minimal 2 juz Al-Qur'an (Juz 29 dan Juz 30) dengan tajwid tartil.</li>
+    <li>Menghasilkan peserta didik yang berkarakter mandiri, santun, berpikir kritis, dan adaptif terhadap teknologi.</li>
+    <li>Meraih prestasi gemilang dalam kompetisi sains, keolahragaan, seni Islam, dan baris-berbaris.</li>
+    <li>Mempersiapkan santri melanjutkan ke jenjang SMA/MA/Pesantren unggulan dengan bekal ilmu dan iman yang kokoh.</li>
 </ul>
 HTML,
             ],
             [
                 'slug' => 'tentang-kami',
-                'title' => 'Profil SMA Islam Terpadu Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Profil resmi lembaga pendidikan Islam terpadu SMA IT Ishlahul Ummah Kota Prabumulih.',
-                'featured_image' => '/uploads/logo-ishum.png',
+                'title' => 'Profil SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Profil resmi lembaga pendidikan SMPS IT Ishlahul Ummah Kota Prabumulih.',
+                'featured_image' => '/uploads/campus-smpit-ishum.webp',
                 'content' => <<<'HTML'
 <h3>Profil Singkat Sekolah</h3>
-<p><strong>SMA Islam Terpadu Ishlahul Ummah Prabumulih</strong> adalah lembaga pendidikan menengah atas bernafaskan Islam Terpadu pertama dan satu-satunya yang tergabung bersama <strong>JSIT (Jaringan Sekolah Islam Terpadu)</strong> di Kota Prabumulih, Sumatera Selatan.</p>
-<p>Didirikan dengan tekad mempersiapkan generasi emas yang tanggap, tangkas, dan tangguh, sekolah memadukan kurikulum nasional dengan kurikulum khas keislaman seperti Tahsin-Tahfidz Al-Qur'an, Bina Pribadi Islam (BPI), dan penguatan adab Islami.</p>
+<p><strong>SMPS IT Ishlahul Ummah Prabumulih</strong> adalah lembaga pendidikan formal tingkat menengah pertama berbasis Islam Terpadu di Kota Prabumulih, Sumatera Selatan, di bawah naungan <strong>Yayasan Ishlahul Ummah Prabumulih</strong>.</p>
+<p>Berlokasi strategis di Jl. Sadewa No. 45 Kelurahan Karang Raja, sekolah ini memadukan kurikulum nasional Kementerian Pendidikan Dasar dan Menengah dengan kurikulum khas Sekolah Islam Terpadu (SIT). Dengan pendekatan holistik, siswa dibina kecerdasan spiritual (SQ), emosional (EQ), dan intelektualnya (IQ) secara seimbang.</p>
 
 <h4 class="mt-6 font-bold text-gray-900">Identitas Sekolah</h4>
 <table class="w-full text-left border-collapse my-4 text-sm">
-    <tr class="border-b"><td class="py-2 font-semibold w-1/3">Nama Sekolah</td><td class="py-2">SMA Islam Terpadu Ishlahul Ummah Prabumulih</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">NPSN</td><td class="py-2">69990882</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">Akreditasi</td><td class="py-2">TERAKREDITASI BAN - SM (1036/BAN-SM/SK/2021)</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">SK Pendirian</td><td class="py-2">2.16.72.04.001 (2020-10-23)</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">SK Izin Operasional</td><td class="py-2">0876/DPMPTSP.V/IX/2023 (2023-09-05)</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">Alamat Kampus</td><td class="py-2">Jalan Sadewa RT 01 RW 03 Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">Telepon / WhatsApp</td><td class="py-2">0821-8268-0647</td></tr>
-    <tr class="border-b"><td class="py-2 font-semibold">Email</td><td class="py-2">smaitishlahulummah2019@gmail.com</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold w-1/3 text-gray-800">Nama Resmi Sekolah</td><td class="py-2.5 text-gray-700">SMPS IT ISHLAHUL UMMAH PRABUMULIH</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">NPSN</td><td class="py-2.5 text-gray-700">69787455</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Bentuk Pendidikan</td><td class="py-2.5 text-gray-700">SMP (Sekolah Menengah Pertama)</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Status Sekolah</td><td class="py-2.5 text-gray-700">Swasta (Yayasan Ishlahul Ummah)</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Akreditasi</td><td class="py-2.5 text-gray-700"><span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">TERAKREDITASI B</span></td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Kepala Sekolah</td><td class="py-2.5 text-gray-700">Mulyani Rahayu, S.T., M.Pd</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Alamat Kampus</td><td class="py-2.5 text-gray-700">Jl. Sadewa No. 45 RT 01 RW 04, Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31113</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Telepon / WhatsApp</td><td class="py-2.5 text-gray-700">0852-6990-8696 / 0853-7897-4396</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Email Resmi</td><td class="py-2.5 text-gray-700">smpitishlahulummah.2015@yahoo.com</td></tr>
 </table>
 HTML,
             ],
             [
                 'slug' => 'sejarah',
-                'title' => 'Sejarah SMA IT Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Napak tilas perjalanan dan sejarah berdirinya SMA IT Ishlahul Ummah di Kota Prabumulih.',
-                'featured_image' => '/uploads/logo-ishum.png',
+                'title' => 'Sejarah SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Napak tilas perjalanan dan sejarah berdirinya SMPS IT Ishlahul Ummah di Kota Prabumulih.',
+                'featured_image' => '/uploads/campus-smpit-ishum.webp',
                 'content' => <<<'HTML'
-<h3>Sejarah Pendirian Sekolah</h3>
-<p><strong>SMA IT ISHLAHUL UMMAH PRABUMULIH</strong> berdiri pada tanggal <strong>19 Januari 2019</strong>, yang diprakarsai oleh <strong>H. Mat Amin, S.Ag</strong> selaku Pembina Yayasan dan <strong>Hj. TL. Fasmawati, S.Ag</strong> selaku Ketua Yayasan Ishlahul Ummah Prabumulih.</p>
-<p>Kehadiran SMA IT Ishum menjadikannya sebagai SMA pertama dan satu-satunya yang tergabung bersama <strong>JSIT (Jaringan Sekolah Islam Terpadu)</strong> di Kota Prabumulih, melengkapi jenjang pendidikan terpadu dari tingkat dasar (SD IT) dan menengah pertama (SMP IT).</p>
-<p>Pada tahun pertama berdirinya, SMA IT Ishlahul Ummah Prabumulih dipimpin oleh <strong>Ustadzah Mulyani Rahayu, S.T., M.Pd</strong> yang saat itu juga memegang amanah sebagai Kepala SMP IT Ishlahul Ummah hingga tahun kedua. Selanjutnya kepemimpinan diamanahkan kepada <strong>Ustadzah Anita Carlyna, S.IP., M.Pd</strong>, dan saat ini dipimpin oleh <strong>Ustadz Agi Gustiawan, S. Pd</strong>.</p>
-<p>Dengan semangat <em>“Mendidik Sepenuh Cinta”</em>, SMA IT Ishum terus berkomitmen mencetak generasi Qur'ani yang berilmu, berakhlak mulia, dan siap memimpin perbaikan umat.</p>
+<h3>Sejarah dan Latar Belakang Pendirian</h3>
+<p><strong>SMPS IT Ishlahul Ummah Prabumulih</strong> didirikan di bawah naungan <strong>Yayasan Ishlahul Ummah Prabumulih</strong> sebagai wujud kepedulian terhadap pentingnya pendidikan generasi muda Islam yang seimbang antara ilmu pengetahuan umum dan pemahaman agama yang mendalam.</p>
+<p>Berawal dari kesuksesan pembinaan di tingkat sekolah dasar (SDIT Ishlahul Ummah), masyarakat dan para wali santri mendambakan kelanjutan pendidikan tingkat pertama yang tetap mengusung nilai-nilai Qur'ani dan pembiasaan adab Islami. Maka berdirilah SMPS IT Ishlahul Ummah Prabumulih untuk melayani kebutuhan masyarakat Prabumulih dan sekitarnya.</p>
+<p>Di bawah kepemimpinan <strong>Ibu Mulyani Rahayu, S.T., M.Pd</strong> beserta jajaran dewan guru yang amanah dan kompeten, SMPS IT Ishlahul Ummah terus berinovasi dalam metode pembelajaran, sarana prasarana modern, pembinaan tahfidz 2 juz mutqin, serta prestasi siswa di berbagai ajang kejuaraan daerah dan nasional.</p>
 HTML,
             ],
             [
                 'slug' => 'struktur-organisasi',
-                'title' => 'Struktur Organisasi SMA IT Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Bagan kepemimpinan, yayasan, dan dewan guru SMA IT Ishlahul Ummah Prabumulih.',
+                'title' => 'Struktur Organisasi SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Bagan kepemimpinan, yayasan, dan dewan guru SMPS IT Ishlahul Ummah Prabumulih.',
                 'featured_image' => '/uploads/logo-ishum.png',
                 'content' => <<<'HTML'
-<h3>Struktur Manajemen & Pengelola Yayasan</h3>
+<h3>Struktur Manajemen Sekolah & Yayasan</h3>
 <ul class="space-y-3 text-gray-800">
-    <li><strong>Pembina Yayasan Ishlahul Ummah:</strong> Ust. H. Mat Amin, S.Ag</li>
-    <li><strong>Ketua Yayasan Ishlahul Ummah:</strong> Ummi Hj. TL. Fasmawati, S.Ag</li>
-    <li><strong>Kepala Sekolah:</strong> Agi Gustiawan, S. Pd</li>
+    <li><strong>Yayasan Penyelenggara:</strong> Yayasan Ishlahul Ummah Prabumulih</li>
+    <li><strong>Kepala Sekolah:</strong> Mulyani Rahayu, S.T., M.Pd</li>
     <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> Anita Carlyna, S.IP., M.Pd</li>
-    <li><strong>Dewan Guru & Tenaga Kependidikan:</strong> Didukung oleh tenaga pendidik profesional lulusan universitas terkemuka.</li>
+    <li><strong>Koordinator Bidang Kesiswaan & Ekskul:</strong> Ahmad Fauzan, S.Pd.I</li>
+    <li><strong>Koordinator Tahsin & Tahfidz Al-Qur'an (TTQ):</strong> Helen Azmi, S.Pd</li>
+    <li><strong>Koordinator BPI & Bina Karakter:</strong> Sesiana Giovani Lestari, S.Pd</li>
+    <li><strong>Dewan Guru & Tenaga Kependidikan:</strong> Guru-guru profesional lulusan universitas terkemuka.</li>
 </ul>
 HTML,
             ],
             [
                 'slug' => 'donasi',
-                'title' => 'Infaq & Wakaf Pembangunan SMA IT Ishlahul Ummah',
+                'title' => 'Infaq & Wakaf Pembangunan SMPS IT Ishlahul Ummah Prabumulih',
                 'excerpt' => 'Salurkan infaq dan wakaf terbaik Anda untuk sarana pendidikan Islam dan beasiswa tahfidz di Kota Prabumulih.',
-                'featured_image' => '/uploads/logo-ishum.png',
+                'featured_image' => '/uploads/campus-smpit-ishum.webp',
                 'content' => <<<'HTML'
 <h3>Investasi Akhirat Melalui Pendidikan Islam</h3>
-<p>Yayasan Ishlahul Ummah Prabumulih membuka kesempatan seluas-luasnya bagi kaum muslimin dan para dermawan untuk menyalurkan infaq dan sedekah jariyah. Dana yang terhimpun disalurkan untuk pembangunan sarana laboratorium, mushola, ruang kelas baru, dan beasiswa pendidikan santri berprestasi.</p>
+<p>Yayasan Ishlahul Ummah Prabumulih membuka kesempatan seluas-luasnya bagi kaum muslimin dan para dermawan untuk menyalurkan infaq dan sedekah jariyah. Dana yang terhimpun disalurkan untuk pengembangan fasilitas laboratorium, masjid kampus, ruang kelas digital, serta beasiswa pendidikan bagi santri penghafal Al-Qur'an.</p>
 HTML,
             ],
             [
                 'slug' => 'e-book',
-                'title' => 'E-Library & Modul Pembelajaran SMA IT Ishum',
-                'excerpt' => 'Kumpulan buku pelajaran, panduan kurikulum, dan modul e-library santri SMA IT Ishum.',
-                'featured_image' => '/uploads/logo-ishum.png',
+                'title' => 'E-Library & Modul Pembelajaran SMPS IT Ishum',
+                'excerpt' => 'Kumpulan buku pelajaran, panduan kurikulum, dan modul e-library santri SMPS IT Ishlahul Ummah.',
+                'featured_image' => '/uploads/activities-smpit-ishum.webp',
                 'content' => <<<'HTML'
 <h3>Pusat E-Library & Buku Digital</h3>
-<p>Daftar koleksi buku pelajaran Kurikulum Merdeka, modul guru, dan bacaan islami yang dapat diakses dan diunduh oleh civitas akademika SMA IT Ishlahul Ummah Prabumulih.</p>
+<p>Daftar koleksi buku pelajaran Kurikulum Merdeka, modul tahfidz 2 juz, dan bacaan islami yang dapat diakses dan diunduh oleh civitas akademika SMPS IT Ishlahul Ummah Prabumulih.</p>
 HTML,
             ],
             [
                 'slug' => 'hymne-mars',
                 'title' => 'Mars & Hymne Jaringan Sekolah Islam Terpadu',
-                'excerpt' => 'Lagu mars dan hymne Sekolah Islam Terpadu kebanggaan SMA IT Ishlahul Ummah.',
+                'excerpt' => 'Lagu mars dan hymne Sekolah Islam Terpadu kebanggaan SMPS IT Ishlahul Ummah Prabumulih.',
                 'featured_image' => '/uploads/logo-ishum.png',
                 'content' => <<<'HTML'
 <h3>Mars JSIT Indonesia</h3>
@@ -481,25 +491,25 @@ HTML,
             ],
             [
                 'slug' => 'logo',
-                'title' => 'Logo Resmi SMA IT Ishlahul Ummah Prabumulih',
-                'excerpt' => 'Makna filosofis lambang dan logo resmi SMA Islam Terpadu Ishlahul Ummah Prabumulih.',
+                'title' => 'Logo Resmi SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Makna filosofis lambang dan logo resmi SMPS IT Ishlahul Ummah Prabumulih.',
                 'featured_image' => '/uploads/logo-ishum.png',
                 'content' => <<<'HTML'
-<h3>Filosofi Logo SMA IT Ishlahul Ummah</h3>
-<p>Logo SMA Islam Terpadu Ishlahul Ummah Prabumulih memadukan lambang perisai keimanan, kubah masjid, Al-Qur'an terbuka, dan obor semangat dengan skema warna dominan hijau Islami dan merah yang melambangkan keberanian, ketangguhan, serta cita-cita luhur menuju perbaikan umat.</p>
+<h3>Filosofi Logo SMPS IT Ishlahul Ummah Prabumulih</h3>
+<p>Logo SMPS IT Ishlahul Ummah Prabumulih memadukan lambang perisai keimanan, kubah masjid, Al-Qur'an terbuka, dan obor semangat menuju terwujudnya generasi Qur'ani yang cerdas dan berakhlakul karimah.</p>
 HTML,
             ],
             [
                 'slug' => 'hubungi',
-                'title' => 'Kontak & Sekretariat PPDB SMA IT Ishum',
-                'excerpt' => 'Alamat dan kontak resmi sekretariat SMA Islam Terpadu Ishlahul Ummah Prabumulih.',
-                'featured_image' => '/uploads/logo-ishum.png',
+                'title' => 'Kontak & Sekretariat SPMB SMPS IT Ishum',
+                'excerpt' => 'Alamat dan kontak resmi sekretariat SMPS IT Ishlahul Ummah Prabumulih.',
+                'featured_image' => '/uploads/campus-smpit-ishum.webp',
                 'content' => <<<'HTML'
-<h3>Sekretariat Sekolah & Panitia PPDB</h3>
-<p>Silakan kunjungi kampus kami atau hubungi panitia PPDB untuk informasi pendaftaran peserta didik baru, jadwal seleksi, dan beasiswa.</p>
-<p><strong>Alamat:</strong> Jalan Sadewa RT 01 RW 03 Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31111.<br>
-<strong>WhatsApp / Telp:</strong> 0821-8268-0647<br>
-<strong>Email:</strong> smaitishlahulummah2019@gmail.com</p>
+<h3>Sekretariat Sekolah & Panitia SPMB</h3>
+<p>Silakan kunjungi kampus kami atau hubungi panitia SPMB untuk informasi pendaftaran peserta didik baru gelombang exclusive, jadwal seleksi, dan cashback 1 juta.</p>
+<p><strong>Alamat Kampus:</strong> Jalan Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31113.<br>
+<strong>WhatsApp / Telp:</strong> 0852-6990-8696 / 0853-7897-4396<br>
+<strong>Email:</strong> smpitishlahulummah.2015@yahoo.com</p>
 HTML,
             ],
         ];
@@ -516,19 +526,19 @@ HTML,
             );
         }
 
-        // Galeri Foto Dokumentasi Sekolah Ishum
+        // Galeri Foto Dokumentasi Sekolah SMP IT Ishum
         $galleryItems = [
-            ['url' => '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp', 'title' => 'Gedung Kampus SMA IT Ishlahul Ummah Prabumulih'],
-            ['url' => '/uploads/ishum/post_3442_IMG-20241020-WA0006-scaled.webp', 'title' => 'Aktivitas Belajar & Karakter Santri Terpadu'],
+            ['url' => '/uploads/campus-smpit-ishum.webp', 'title' => 'Gedung Kampus SMPS IT Ishlahul Ummah Prabumulih'],
+            ['url' => '/uploads/flyer-spmb-smpit-ishum.webp', 'title' => 'Class Meeting Semester Genap SMP IT Ishum'],
+            ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Aktivitas Belajar Interaktif & Karakter Santri'],
+            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an 2 Juz Mutqin'],
             ['url' => '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp', 'title' => 'Laboratorium Komputer & Digital Santri'],
-            ['url' => '/uploads/ishum/post_3460_IMG-20241020-WA0007-scaled.webp', 'title' => 'Pembinaan Disiplin & Kesiswaan Santri Ishum'],
+            ['url' => '/uploads/ishum/post_3460_IMG-20241020-WA0007-scaled.webp', 'title' => 'Pembinaan Disiplin & Kepemimpinan Santri'],
             ['url' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp', 'title' => 'Aula Pertemuan & Munaqosah Qur\'an SIT'],
-            ['url' => '/uploads/ishum/post_3464_IMG-20241020-WA0005-scaled.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an Santri'],
             ['url' => '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Terpadu'],
             ['url' => '/uploads/ishum/post_3467_IMG-20241020-WA0004-scaled.webp', 'title' => 'Ibadah Yaumiyah & Pembiasaan Akhlakul Karimah'],
-            ['url' => '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp', 'title' => 'Gerbang Utama Kampus SMA IT Ishlahul Ummah'],
-            ['url' => '/uploads/ishum/post_3472_IMG-20241020-WA0003-scaled.webp', 'title' => 'Muhadharah & Pembinaan Da\'i Muda Santri'],
-            ['url' => '/uploads/ishum/fasilitas_2059_IMG-20221101-WA0010.webp', 'title' => 'Sarana Olahraga & Mushola Kampus Ishum'],
+            ['url' => '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp', 'title' => 'Halaman Kampus SMPS IT Ishlahul Ummah'],
+            ['url' => '/uploads/ishum/post_3472_IMG-20241020-WA0003-scaled.webp', 'title' => 'Muhadharah & Pembinaan Khitabah Santri'],
             ['url' => '/uploads/ishum/post_3478_IMG-20241020-WA0008-scaled.webp', 'title' => 'Ukhuwah Islamiyah & Kebersamaan Santri'],
             ['url' => '/uploads/ishum/prestasi_3513_IMG-20240928-WA0038.webp', 'title' => 'Apresiasi & Penganugerahan Prestasi Santri'],
             ['url' => '/uploads/ishum/fasilitas_3431_IMG-20241014-WA0013-scaled.webp', 'title' => 'Ruang UKS & Pelayanan Kesehatan Sekolah'],

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>@yield('title', ($siteSettings['site_name'] ?? 'SMA Islam Terpadu Ishlahul Ummah Prabumulih') . ' - ' . ($siteSettings['site_tagline'] ?? 'Tanggap, Tangkas dan Tangguh Menuju Indonesia Emas'))</title>
-    <meta name="description" content="@yield('meta_description', $siteSettings['site_description'] ?? 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih (SMA IT Ishum). Sekolah Islam Terpadu pertama di Prabumulih yang tergabung dalam JSIT.')">
-    <meta name="keywords" content="@yield('meta_keywords', $siteSettings['meta_keywords'] ?? 'sma it ishlahul ummah prabumulih, sma it ishum, sma islam terpadu prabumulih, jsit prabumulih, ppdb sma it ishum, tahfidz prabumulih')">
-    <meta name="author" content="SMA Islam Terpadu Ishlahul Ummah Prabumulih">
+    <title>@yield('title', ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih') . ' - ' . ($siteSettings['site_tagline'] ?? 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia'))</title>
+    <meta name="description" content="@yield('meta_description', $siteSettings['site_description'] ?? 'Official Website SMPS IT Ishlahul Ummah Prabumulih (SMP IT Ishum). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kota Prabumulih.')">
+    <meta name="keywords" content="@yield('meta_keywords', $siteSettings['meta_keywords'] ?? 'smps it ishlahul ummah prabumulih, smp it ishum, smp islam terpadu prabumulih, jsit prabumulih, spmb smp it ishum, tahfidz prabumulih')">
+    <meta name="author" content="SMPS IT Ishlahul Ummah Prabumulih">
     <meta name="robots" content="index, follow">
     @if(!empty($siteSettings['google_site_verification']))
     <meta name="google-site-verification" content="{{ $siteSettings['google_site_verification'] }}">
@@ -17,18 +17,18 @@
     {{-- Open Graph / Facebook / WhatsApp --}}
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="@yield('og_type', 'website')">
-    <meta property="og:site_name" content="{{ $siteSettings['site_name'] ?? 'SMA Islam Terpadu Ishlahul Ummah Prabumulih' }}">
+    <meta property="og:site_name" content="{{ $siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih' }}">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og_title', View::yieldContent('title', $siteSettings['og_title'] ?? 'SMA Islam Terpadu Ishlahul Ummah Prabumulih'))">
-    <meta property="og:description" content="@yield('og_description', View::yieldContent('meta_description', $siteSettings['og_description'] ?? $siteSettings['site_description'] ?? 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih.'))">
+    <meta property="og:title" content="@yield('og_title', View::yieldContent('title', $siteSettings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))">
+    <meta property="og:description" content="@yield('og_description', View::yieldContent('meta_description', $siteSettings['og_description'] ?? $siteSettings['site_description'] ?? 'Official Website SMPS IT Ishlahul Ummah Prabumulih.'))">
     <meta property="og:image" content="@yield('og_image', asset($siteSettings['og_image'] ?? '/uploads/logo-ishum-square.png'))">
     <meta property="og:image:secure_url" content="@yield('og_image', asset($siteSettings['og_image'] ?? '/uploads/logo-ishum-square.png'))">
 
     {{-- Twitter Cards --}}
     <meta name="twitter:card" content="{{ $siteSettings['twitter_card'] ?? 'summary_large_image' }}">
-    <meta name="twitter:site" content="@smait_ishum">
-    <meta name="twitter:title" content="@yield('og_title', View::yieldContent('title', $siteSettings['og_title'] ?? 'SMA Islam Terpadu Ishlahul Ummah Prabumulih'))">
-    <meta name="twitter:description" content="@yield('og_description', View::yieldContent('meta_description', $siteSettings['og_description'] ?? $siteSettings['site_description'] ?? 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih'))">
+    <meta name="twitter:site" content="@smpitishum">
+    <meta name="twitter:title" content="@yield('og_title', View::yieldContent('title', $siteSettings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))">
+    <meta name="twitter:description" content="@yield('og_description', View::yieldContent('meta_description', $siteSettings['og_description'] ?? $siteSettings['site_description'] ?? 'Official Website SMPS IT Ishlahul Ummah Prabumulih'))">
     <meta name="twitter:image" content="@yield('og_image', asset($siteSettings['og_image'] ?? '/uploads/logo-ishum-square.png'))">
 
     {{-- Canonical URL --}}
@@ -122,8 +122,8 @@
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    {{-- FLOATING BACK TO TOP BUTTON (Kanan Bawah - Warna Hijau Sekolah) --}}
-    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-5 right-5 z-50 bg-[#00913e] hover:bg-[#007532] text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none duration-300 cursor-pointer" aria-label="Kembali ke atas halaman">
+    {{-- FLOATING BACK TO TOP BUTTON (Kanan Bawah - Warna Indigo Sekolah) --}}
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-5 right-5 z-50 bg-indigo-600 hover:bg-indigo-700 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none duration-300 cursor-pointer ring-2 ring-amber-400/40" aria-label="Kembali ke atas halaman">
         <i class="fa-solid fa-chevron-up text-sm" aria-hidden="true"></i>
     </button>
 

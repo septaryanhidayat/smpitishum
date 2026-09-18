@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Data Alumni - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Database dan profil alumni SMA Islam Terpadu Ishlahul Ummah Prabumulih: jejak langkah lulusan di perguruan tinggi dan dunia profesional.')
+@section('title', 'Data Alumni - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Database dan profil alumni SMPS IT Ishlahul Ummah Prabumulih: jejak langkah lulusan di perguruan tinggi dan dunia profesional.')
 
 @section('content')
 <div class="bg-gradient-to-r from-emerald-950 via-[#00913e] to-emerald-900 text-white py-12">
@@ -18,7 +18,7 @@
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Data Alumni Kebanggaan</h1>
                 <p class="text-sm text-emerald-100 mt-1 font-light">
-                    Kiprah dan rekam jejak lulusan SMA IT Ishlahul Ummah Prabumulih di berbagai penjuru nusantara.
+                    Kiprah dan rekam jejak lulusan SMPS IT Ishlahul Ummah Prabumulih di berbagai penjuru nusantara.
                 </p>
             </div>
         </div>
@@ -36,7 +36,7 @@
                     {{ $item->title }}
                 </h3>
                 <span class="text-xs text-[#00913e] font-semibold mt-1">
-                    {{ $item->excerpt ?: 'Alumni SMA IT Ishum' }}
+                    {{ $item->excerpt ?: 'Alumni SMPS IT Ishum' }}
                 </span>
                 <span class="inline-block mt-3 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
                     Terverifikasi

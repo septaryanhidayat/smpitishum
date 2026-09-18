@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Visi dan Misi - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Visi dan Misi resmi SMA Islam Terpadu Ishlahul Ummah Prabumulih: Membentuk generasi Qur\'ani, berakhlak mulia, dan unggul dalam sains teknologi.')
+@section('title', 'Visi dan Misi - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Visi dan Misi resmi SMPS IT Ishlahul Ummah Prabumulih: Membentuk generasi Qur\'ani, berakhlak mulia, dan unggul dalam sains teknologi.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Visi & Misi Sekolah</h1>
         <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
-            Arah dan komitmen luhur SMA IT Ishlahul Ummah Prabumulih dalam membimbing generasi unggul berkarakter Qur'ani dan berwawasan masa depan.
+            Arah dan komitmen luhur SMPS IT Ishlahul Ummah Prabumulih dalam membimbing generasi unggul berkarakter Qur'ani dan berwawasan masa depan.
         </p>
     </div>
 </div>
@@ -132,7 +132,7 @@
                     @forelse($latestPosts ?? [] as $lp)
                         <a href="{{ route('artikel.show', $lp->slug) }}" class="flex items-center space-x-3 group">
                             <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
-                                <img src="{{ $lp->featured_image }}" alt="{{ $lp->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.src='/uploads/gedung-smait-ishum.webp'">
+                                <img src="{{ $lp->featured_image }}" alt="{{ $lp->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-gray-800 group-hover:text-[#00913e] transition line-clamp-2 leading-snug">
@@ -170,7 +170,7 @@
                                     {{ $la->title }}
                                 </h4>
                                 <span class="text-[11px] text-gray-400 block mt-1">
-                                    <i class="fa-solid fa-location-dot mr-1 text-orange-400"></i> {{ $la->location ?: 'Kampus SMA IT Ishlahul Ummah Prabumulih' }}
+                                    <i class="fa-solid fa-location-dot mr-1 text-orange-400"></i> {{ $la->location ?: 'Kampus SMPS IT Ishlahul Ummah Prabumulih' }}
                                 </span>
                             </div>
                         </a>
@@ -187,7 +187,7 @@
                 </div>
                 <h3 class="text-xl font-extrabold">PPDB Telah Dibuka!</h3>
                 <p class="text-xs text-emerald-100 leading-relaxed">
-                    Wujudkan impian putra-putri Anda menjadi hafizh Qur'an yang cerdas sains bersama SMA IT Ishlahul Ummah Prabumulih.
+                    Wujudkan impian putra-putri Anda menjadi hafizh Qur'an yang cerdas sains bersama SMPS IT Ishlahul Ummah Prabumulih.
                 </p>
                 <div class="pt-2">
                     <a href="{{ route('ppdb.index') }}" class="block w-full bg-[#da251c] hover:bg-[#b91c1c] text-white py-3 rounded-xl font-bold text-xs shadow-lg transition">

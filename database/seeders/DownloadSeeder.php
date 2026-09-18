@@ -11,14 +11,14 @@ class DownloadSeeder extends Seeder
     {
         $downloads = [
             [
-                'title' => 'Logo Resmi SMA IT Plus Robbani (Vector SVG & PNG)',
+                'title' => 'Logo Resmi SMPS IT Ishlahul Ummah (Vector SVG & PNG)',
                 'file_path' => '/uploads/logo-robbani.png',
                 'file_type' => 'PNG',
                 'category_type' => 'Aset Visual',
                 'download_count' => 520,
             ],
             [
-                'title' => 'Mars SMA IT Plus Robbani (Paduan Suara & Orkestra)',
+                'title' => 'Mars SMPS IT Ishlahul Ummah (Paduan Suara & Orkestra)',
                 'file_path' => '/uploads/mars-robbani.mp3',
                 'file_type' => 'MP3',
                 'category_type' => 'Audio',

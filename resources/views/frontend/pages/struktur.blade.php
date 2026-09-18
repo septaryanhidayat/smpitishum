@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Struktur Organisasi - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Bagan struktur organisasi dan manajemen SMA Islam Terpadu Ishlahul Ummah Prabumulih.')
+@section('title', 'Struktur Organisasi - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Bagan struktur organisasi dan manajemen SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Struktur Organisasi Sekolah</h1>
         <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
-            Susunan manajemen kepemimpinan dan organisasi SMA IT Ishlahul Ummah Prabumulih.
+            Susunan manajemen kepemimpinan dan organisasi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
 </div>
@@ -44,7 +44,7 @@
                 </div>
                 <h3 class="font-bold text-gray-800 text-base">Bagan Struktur Organisasi</h3>
                 <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
-                    Susunan bagan dan formatur struktur organisasi SMA IT Ishlahul Ummah Prabumulih saat ini sedang dalam proses pembaruan data resmi.
+                    Susunan bagan dan formatur struktur organisasi SMPS IT Ishlahul Ummah Prabumulih saat ini sedang dalam proses pembaruan data resmi.
                 </p>
             </div>
         @endif
@@ -55,7 +55,7 @@
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
             <div>
                 <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">Sarana &amp; Prasarana Sekolah</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">Fasilitas Unggulan SMA IT Ishlahul Ummah Prabumulih</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">Fasilitas Unggulan SMPS IT Ishlahul Ummah Prabumulih</h2>
             </div>
             <a href="{{ route('bidang.index') }}" class="inline-flex items-center text-xs font-bold text-[#00913e] hover:text-[#da251c] flex-shrink-0 transition">
                 <span>Lihat Selengkapnya</span>
@@ -68,7 +68,7 @@
                 <a href="{{ route('bidang.show', $b->slug) }}" class="rounded-2xl border border-gray-100 hover:border-[#00913e] hover:shadow-xl transition group bg-white overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 w-full overflow-hidden bg-slate-100 relative">
-                            <img src="{{ $b->thumbnail_url }}" alt="{{ $b->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/gedung-smait-ishum.webp'">
+                            <img src="{{ $b->thumbnail_url }}" alt="{{ $b->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             <span class="absolute top-3 left-3 bg-[#00913e] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
                                 Fasilitas Sekolah
                             </span>

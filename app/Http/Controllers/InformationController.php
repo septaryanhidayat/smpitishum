@@ -215,7 +215,7 @@ class InformationController extends Controller
             'status' => 'info',
         ]);
 
-        $waText = urlencode("Assalamu'alaikum Humas SMA IT Ishlahul Ummah Prabumulih,\n\nSaya telah mengajukan Permohonan Izin Kunjungan ke Sekolah:\n- Nama: {$validated['name']}\n- Instansi: {$validated['agency']}\n- Keperluan: {$validated['purpose']}\n\nMohon konfirmasi dan tindak lanjutnya. Terima kasih.");
+        $waText = urlencode("Assalamu'alaikum Humas SMPS IT Ishlahul Ummah Prabumulih,\n\nSaya telah mengajukan Permohonan Izin Kunjungan ke Sekolah:\n- Nama: {$validated['name']}\n- Instansi: {$validated['agency']}\n- Keperluan: {$validated['purpose']}\n\nMohon konfirmasi dan tindak lanjutnya. Terima kasih.");
         $waUrl = "https://wa.me/6282182680647?text={$waText}";
 
         return redirect()->route('layanan.izin')->with('success', 'Permohonan izin kunjungan Anda berhasil dikirim! Silakan konfirmasi via WhatsApp untuk respon cepat.')->with('wa_url', $waUrl);
@@ -290,7 +290,7 @@ class InformationController extends Controller
             'status' => 'info',
         ]);
 
-        $waText = urlencode("Assalamu'alaikum Humas SMA IT Ishlahul Ummah Prabumulih,\n\nSaya telah mengajukan Permohonan Kerja Sama / Kemitraan:\n- Nama: {$validated['name']}\n- Lembaga/Instansi: {$validated['agency']}\n- Rencana Kemitraan: {$validated['purpose']}\n\nMohon informasi waktu koordinasi dan tindak lanjutnya. Terima kasih.");
+        $waText = urlencode("Assalamu'alaikum Humas SMPS IT Ishlahul Ummah Prabumulih,\n\nSaya telah mengajukan Permohonan Kerja Sama / Kemitraan:\n- Nama: {$validated['name']}\n- Lembaga/Instansi: {$validated['agency']}\n- Rencana Kemitraan: {$validated['purpose']}\n\nMohon informasi waktu koordinasi dan tindak lanjutnya. Terima kasih.");
         $waUrl = "https://wa.me/6282182680647?text={$waText}";
 
         return redirect()->route('layanan.kerjasama')->with('success', 'Permohonan kerja sama berhasil dikirim! Silakan konfirmasi via WhatsApp untuk respon cepat.')->with('wa_url', $waUrl);
@@ -373,7 +373,7 @@ class InformationController extends Controller
             'status' => 'info',
         ]);
 
-        $waText = urlencode("Assalamu'alaikum Humas Sarpras SMA IT Ishlahul Ummah Prabumulih,\n\nSaya telah mengajukan Permohonan Sewa Fasilitas/Barang Sekolah:\n- Nama: {$validated['name']}\n- Instansi/Komunitas: {$validated['agency']}\n- Fasilitas/Barang: {$validated['purpose']}\n\nMohon konfirmasi ketersediaan jadwal dan syarat sewanya. Terima kasih.");
+        $waText = urlencode("Assalamu'alaikum Humas Sarpras SMPS IT Ishlahul Ummah Prabumulih,\n\nSaya telah mengajukan Permohonan Sewa Fasilitas/Barang Sekolah:\n- Nama: {$validated['name']}\n- Instansi/Komunitas: {$validated['agency']}\n- Fasilitas/Barang: {$validated['purpose']}\n\nMohon konfirmasi ketersediaan jadwal dan syarat sewanya. Terima kasih.");
         $waUrl = "https://wa.me/6282182680647?text={$waText}";
 
         return redirect()->route('layanan.sewa')->with('success', 'Permohonan sewa barang/fasilitas berhasil dikirim! Silakan konfirmasi via WhatsApp untuk respon cepat.')->with('wa_url', $waUrl);
@@ -401,7 +401,7 @@ class InformationController extends Controller
     }
 
     /**
-     * Default detailed accordions from original Elementor SMAIT ISHUM portal
+     * Default detailed accordions from SMPS IT Ishlahul Ummah Prabumulih portal
      */
     public static function getDefaultAccordions(string $type): array
     {
@@ -421,11 +421,11 @@ class InformationController extends Controller
                 ],
                 [
                     'title' => 'Produk Layanan',
-                    'content' => '<p>Surat Persetujuan Kunjungan ke SMA IT Ishlahul Ummah Prabumulih</p>',
+                    'content' => '<p>Surat Persetujuan Kunjungan ke SMPS IT Ishlahul Ummah Prabumulih</p>',
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan secara tertulis melalui kotak saran di kantor sekolah atau melalui email: smaitishlahulummah2019@gmail.com dan WhatsApp: 082182680647</p>',
+                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan secara tertulis melalui kotak saran di kantor sekolah atau melalui email: smpitishlahulummah.2015@yahoo.com dan WhatsApp: 0852-6990-8696</p>',
                 ],
             ],
             'kerjasama' => [
@@ -451,7 +451,7 @@ class InformationController extends Controller
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan melalui email: smaitishlahulummah2019@gmail.com atau WhatsApp Humas: 082182680647</p>',
+                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan melalui email: smpitishlahulummah.2015@yahoo.com atau WhatsApp Humas: 0852-6990-8696</p>',
                 ],
             ],
             'sewa' => [

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Middleware\IncrementVisitorCounter;
+use App\Http\Middleware\SecurityHeaders;
+use App\Http\Middleware\SecurityMonitorMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,9 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
-            \App\Http\Middleware\IncrementVisitorCounter::class,
-            \App\Http\Middleware\SecurityHeaders::class,
-            \App\Http\Middleware\SecurityMonitorMiddleware::class,
+            IncrementVisitorCounter::class,
+            SecurityHeaders::class,
+            SecurityMonitorMiddleware::class,
         ]);
         $middleware->trustProxies(at: '*');
     })

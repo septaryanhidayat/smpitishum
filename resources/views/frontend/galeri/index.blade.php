@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Galeri Dokumentasi Foto - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Dokumentasi foto kegiatan belajar mengajar, tahfidz, laboratorium sains, wisuda, dan prestasi santri SMA Islam Terpadu Ishlahul Ummah Prabumulih.')
+@section('title', 'Galeri Dokumentasi Foto - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Dokumentasi foto kegiatan belajar mengajar, tahfidz, laboratorium sains, wisuda, dan prestasi santri SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,7 +12,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Galeri</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Foto SMA IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Foto SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
             Rekam jejak visual dinamika belajar, pembiasaan ibadah, praktikum sains, dan keceriaan santri di lingkungan kampus.
         </p>
@@ -33,7 +33,7 @@
         @forelse($galleryImages as $idx => $img)
             <div class="group relative rounded-2xl overflow-hidden bg-gray-100 shadow-md hover:shadow-2xl transition transform hover:-translate-y-1 aspect-square cursor-pointer reveal-fade-up delay-{{ $idx % 4 }}"
                  @click="activeImg = '{{ $img->featured_image }}'; activeTitle = '{{ addslashes($img->title) }}'; lightboxOpen = true">
-                <img src="{{ $img->featured_image }}" alt="{{ $img->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='/uploads/gedung-smait-ishum.webp'">
+                <img src="{{ $img->featured_image }}" alt="{{ $img->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
                     <span class="text-white text-xs font-bold line-clamp-2 leading-snug">{{ $img->title }}</span>
                     <span class="text-[10px] text-amber-300 mt-1 font-semibold flex items-center">

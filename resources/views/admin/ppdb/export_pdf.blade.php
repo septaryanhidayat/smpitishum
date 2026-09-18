@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekap Pendaftar PPDB - SMA IT Ishlahul Ummah Prabumulih</title>
+    <title>Rekap Pendaftar PPDB - SMPS IT Ishlahul Ummah Prabumulih</title>
     <link rel="icon" type="image/png" href="/uploads/logo-ishum-square.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -187,7 +187,7 @@
             <h3>SMA ISLAM TERPADU ISHLAHUL UMMAH</h3>
             <p><strong>TERAKREDITASI BAN-SM (ANGGOTA JSIT INDONESIA)</strong> &bull; NPSN: 69990882</p>
             <p>Jalan Sadewa RT 01 RW 04 Kelurahan Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumsel 31111</p>
-            <p>Telp/WA: 0821-8268-0647 | Email: smaitishlahulummah2019@gmail.com | Web: www.ishum.sch.id</p>
+            <p>Telp/WA: 0852-6990-8696 | Email: smpitishlahulummah.2015@yahoo.com | Web: www.ishum.sch.id</p>
         </div>
     </div>
 
@@ -263,9 +263,9 @@
     <div class="signatures">
         <div class="sig-box">
             <p>Mengetahui,</p>
-            <p><strong>Kepala SMA IT Ishlahul Ummah</strong></p>
+            <p><strong>Kepala SMPS IT Ishlahul Ummah</strong></p>
             <div class="sig-space"></div>
-            <p><strong><u>Agi Gustiawan, S. Pd</u></strong></p>
+            <p><strong><u>Mulyani Rahayu, S.T., M.Pd</u></strong></p>
             <p>NIY. 20190701001</p>
         </div>
         <div class="sig-box">
@@ -273,7 +273,7 @@
             <p><strong>Ketua Panitia PPDB</strong></p>
             <div class="sig-space"></div>
             <p><strong><u>Panitia SPMB Ishum</u></strong></p>
-            <p>SMA IT Ishlahul Ummah</p>
+            <p>SMPS IT Ishlahul Ummah</p>
         </div>
     </div>
 

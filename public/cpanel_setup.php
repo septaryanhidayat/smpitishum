@@ -4,22 +4,22 @@ use Illuminate\Contracts\Console\Kernel;
 
 /**
  * cPanel Setup, Maintenance & Diagnostic Helper for Laravel
- * DPD PKS Ogan Ilir
+ * SMPS IT Ishlahul Ummah Prabumulih
  *
- * Akses: https://pksoganilir.com/cpanel_setup.php?token=PksOi2026Setup&action=status
+ * Akses: cpanel_setup.php?token=SmpItIshum2026Setup&action=status
  */
 
 // 1. Auto-detect Laravel repository root directory
 $possibleRoots = [
     __DIR__.'/..',
-    dirname(__DIR__).'/repositories/pksoi',
-    dirname(__DIR__).'/laravel_pksoi',
-    dirname(__DIR__).'/pksoi',
-    ($_SERVER['HOME'] ?? '').'/repositories/pksoi',
-    ($_SERVER['HOME'] ?? '').'/laravel_pksoi',
-    '/home/berandad/repositories/pksoi',
-    '/home/berandad/laravel_pksoi',
-    '/home/berandad/pksoi',
+    dirname(__DIR__).'/repositories/smpitishum',
+    dirname(__DIR__).'/laravel_smpitishum',
+    dirname(__DIR__).'/smpitishum',
+    ($_SERVER['HOME'] ?? '').'/repositories/smpitishum',
+    ($_SERVER['HOME'] ?? '').'/laravel_smpitishum',
+    '/home/berandad/repositories/smpitishum',
+    '/home/berandad/laravel_smpitishum',
+    '/home/berandad/smpitishum',
 ];
 
 $laravelRoot = null;
@@ -34,7 +34,7 @@ if (! $laravelRoot) {
 }
 
 // 2. Secret Token Authentication
-$secretToken = 'PksOi2026Setup';
+$secretToken = 'SmpItIshum2026Setup';
 
 // Parse .env directly if it exists to get custom token if defined
 $envFile = $laravelRoot.'/.env';
@@ -60,7 +60,7 @@ if (! isset($_GET['token']) || empty($_GET['token']) || ! hash_equals($secretTok
     http_response_code(403);
     echo '<!DOCTYPE html><html><body style="background:#0f172a;color:#ef4444;font-family:sans-serif;text-align:center;padding:50px;">';
     echo '<h2>403 Forbidden: Token Akses Tidak Valid!</h2>';
-    echo '<p style="color:#94a3b8;">Gunakan URL: <code>cpanel_setup.php?token=PksOi2026Setup&action=status</code></p>';
+    echo '<p style="color:#94a3b8;">Gunakan URL: <code>cpanel_setup.php?token=SmpItIshum2026Setup&action=status</code></p>';
     echo '</body></html>';
     exit;
 }
@@ -161,9 +161,9 @@ switch ($action) {
         @exec($cmd, $output, $returnCode);
         $results['Git Pull & Sync'] = empty($output) ? 'Perintah dieksekusi' : implode("\n", $output);
 
-        // Langsung sinkronkan aset public ke folder web root pksoganilir.com
+        // Langsung sinkronkan aset public ke folder web root
         $sourcePublic = $laravelRoot.'/public';
-        foreach (['/home/berandad/pksoganilir.com/public'] as $targetDir) {
+        foreach (['/home/berandad/smpitishum.sch.id/public', '/home/berandad/public_html'] as $targetDir) {
             if (is_dir($targetDir) && is_dir($sourcePublic)) {
                 $iterator = new RecursiveIteratorIterator(
                     new RecursiveDirectoryIterator($sourcePublic, RecursiveDirectoryIterator::SKIP_DOTS),
@@ -254,7 +254,8 @@ switch ($action) {
 
                 $targetDirs = array_unique([
                     $currentDir,
-                    '/home/berandad/pksoganilir.com/public',
+                    '/home/berandad/smpitishum.sch.id/public',
+                    '/home/berandad/public_html',
                 ]);
 
                 foreach ($targetDirs as $targetDir) {
@@ -278,7 +279,7 @@ switch ($action) {
                     }
                 }
 
-                $results['Asset Sync'] = "Berhasil menyinkronkan {$synced} file aset dari repositori public/ ke folder web document root pksoganilir.com!";
+                $results['Asset Sync'] = "Berhasil menyinkronkan {$synced} file aset dari repositori public/ ke folder web document root!";
                 $results['storage:link'] = runArtisanCmd($kernel, 'storage:link');
                 $results['cache:clear'] = runArtisanCmd($kernel, 'optimize:clear');
                 $results['config:cache'] = runArtisanCmd($kernel, 'config:cache');
@@ -335,15 +336,15 @@ switch ($action) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cPanel Helper & Diagnostic - DPD PKS Ogan Ilir</title>
+    <title>cPanel Helper & Diagnostic - SMPS IT Ishlahul Ummah Prabumulih</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; padding: 2rem 1rem; color: #e2e8f0; margin: 0; }
-        .card { max-width: 800px; margin: 0 auto; background: #1e293b; border-radius: 12px; border: 1px solid #334155; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); padding: 2rem; }
-        h1 { font-size: 1.4rem; color: #f97316; margin-top: 0; margin-bottom: 1.5rem; border-bottom: 2px solid #ea580c; padding-bottom: 0.5rem; }
+        .card { max-width: 800px; margin: 0 auto; background: #1e1b4b; border-radius: 16px; border: 1px solid #4338ca; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); padding: 2rem; }
+        h1 { font-size: 1.4rem; color: #fbbf24; margin-top: 0; margin-bottom: 1.5rem; border-bottom: 2px solid #4f46e5; padding-bottom: 0.5rem; }
         .section-title { font-size: 0.95rem; font-weight: 700; color: #cbd5e1; margin-top: 1.5rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .nav-links { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-        .nav-links a { background: #ea580c; color: white; padding: 8px 14px; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600; display: inline-block; transition: background 0.2s; }
-        .nav-links a:hover { background: #c2410c; }
+        .nav-links a { background: #4f46e5; color: white; padding: 8px 14px; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600; display: inline-block; transition: background 0.2s; }
+        .nav-links a:hover { background: #4338ca; }
         .nav-links a.green { background: #16a34a; }
         .nav-links a.green:hover { background: #15803d; }
         .nav-links a.blue { background: #2563eb; }
@@ -351,7 +352,7 @@ switch ($action) {
         .nav-links a.gray { background: #475569; }
         .nav-links a.gray:hover { background: #334155; }
         .result-box { background: #020617; border: 1px solid #334155; color: #38bdf8; padding: 1.25rem; border-radius: 8px; font-family: monospace; font-size: 0.85rem; overflow-x: auto; line-height: 1.6; }
-        .result-box strong { color: #f97316; }
+        .result-box strong { color: #fbbf24; }
         .warning { margin-top: 1.5rem; font-size: 0.85rem; color: #fca5a5; background: #450a0a; border: 1px solid #991b1b; padding: 1rem; border-radius: 6px; }
         .terminal-box { background: #020617; border: 1px solid #1e3a8a; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-size: 0.85rem; color: #93c5fd; }
         .terminal-cmd { background: #0f172a; padding: 0.5rem; border-radius: 4px; color: #a5f3fc; font-family: monospace; margin: 0.5rem 0; word-break: break-all; }
@@ -359,7 +360,7 @@ switch ($action) {
 </head>
 <body>
     <div class="card">
-        <h1>🛠️ Helper &amp; Diagnostik cPanel - DPD PKS Ogan Ilir</h1>
+        <h1>🛠️ Helper &amp; Diagnostik cPanel - SMPS IT Ishlahul Ummah Prabumulih</h1>
         
         <div class="section-title">1. Diagnostik &amp; Persiapan Awal</div>
         <div class="nav-links">

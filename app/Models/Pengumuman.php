@@ -28,7 +28,7 @@ class Pengumuman extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/gedung-smait-ishum.webp';
+        return '/uploads/campus-smpit-ishum.webp';
     }
 
     public function getPostDateAttribute()

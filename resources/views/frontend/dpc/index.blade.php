@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Program Unggulan Sekolah - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Program unggulan SMA IT Ishlahul Ummah Prabumulih: Tahfidz Qur\'an Mutqin, Sains & Robotika, Islamic Boarding, Bilingual Camp, dan Sukses Masuk PTN.')
+@section('title', 'Program Unggulan Sekolah - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Program unggulan SMPS IT Ishlahul Ummah Prabumulih: Tahfidz Qur\'an Mutqin, Sains & Robotika, Islamic Boarding, Bilingual Camp, dan Sukses Masuk PTN.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,7 +14,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Program Unggulan</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Unggulan SMA IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Unggulan SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
             Kurikulum terintegrasi yang dirancang khusus untuk mengoptimalkan potensi ruhiyah, intelektual, dan kepemimpinan santri.
         </p>
@@ -69,7 +69,7 @@
                         <i class="fa-solid fa-star text-amber-400 text-xs"></i>
                         <span>Unggulan Terpadu</span>
                     </span>
-                    <span class="text-[11px] text-gray-400 font-medium">SMA IT Ishum</span>
+                    <span class="text-[11px] text-gray-400 font-medium">SMPS IT Ishum</span>
                 </div>
             </div>
         @empty

@@ -300,7 +300,7 @@ class ExportMySQLDatabaseCommand extends Command
         ];
 
         $out = "-- ========================================================\n";
-        $out .= "-- Database Clean Production Dump: SMA IT PLUS ROBBANI\n";
+        $out .= "-- Database Clean Production Dump: SMPS IT PLUS ROBBANI\n";
         $out .= "-- Generated for cPanel / phpMyAdmin Import\n";
         $out .= "-- Target Engine: MySQL 8.x / MariaDB 10.x\n";
         $out .= '-- Date: '.date('Y-m-d H:i:s')."\n";

@@ -88,7 +88,7 @@ test('footer memuat live counter pengunjung dan copyright sekolah', function () 
     $response = $this->get(route('home'));
 
     $response->assertStatus(200);
-    $response->assertSee('SMA Islam Terpadu Ishlahul Ummah Prabumulih');
+    $response->assertSee('SMPS IT Ishlahul Ummah Prabumulih');
     $response->assertSee('Pengunjung');
     $response->assertSee('Galeri');
     $response->assertSee('Kabar Sekolah');

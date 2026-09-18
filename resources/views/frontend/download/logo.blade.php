@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Logo Resmi & Identitas Visual - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Aset resmi logo SMA IT Ishlahul Ummah Prabumulih, panduan identitas visual, filosofi lambang sekolah, dan unduhan logo resolusi tinggi SVG dan PNG.')
+@section('title', 'Logo Resmi & Identitas Visual - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Aset resmi logo SMPS IT Ishlahul Ummah Prabumulih, panduan identitas visual, filosofi lambang sekolah, dan unduhan logo resolusi tinggi SVG dan PNG.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,9 +14,9 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Logo</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Logo Resmi SMA IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Logo Resmi SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
-            Identitas visual, filosofi lambang sekolah, panduan palet warna, dan aset unduhan resmi SMA IT Ishlahul Ummah Prabumulih.
+            Identitas visual, filosofi lambang sekolah, panduan palet warna, dan aset unduhan resmi SMPS IT Ishlahul Ummah Prabumulih.
         </p>
     </div>
 </div>
@@ -28,14 +28,14 @@
         <div class="max-w-2xl mx-auto">
             <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Identitas Visual Resmi</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-                Logo & Lambang SMA IT Ishlahul Ummah Prabumulih
+                Logo & Lambang SMPS IT Ishlahul Ummah Prabumulih
             </h2>
             <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
         </div>
 
         {{-- DISPLAY EMBLEM LOGO --}}
         <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-3xl bg-emerald-50/50 p-8 shadow-inner border border-emerald-100 flex items-center justify-center relative group">
-            <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMA IT Ishlahul Ummah Prabumulih" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
+            <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
         </div>
 
         <div>

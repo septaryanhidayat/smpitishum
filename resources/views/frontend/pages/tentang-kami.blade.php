@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Tentang Kami - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Mengenal profil, sejarah, visi misi, fasilitas, dewan guru, serta keunggulan SMA IT Ishlahul Ummah Prabumulih Prabumulih.')
+@section('title', 'Tentang Kami - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Mengenal profil, sejarah, visi misi, fasilitas, dewan guru, serta keunggulan SMPS IT Ishlahul Ummah Prabumulih Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER & BREADCRUMB --}}
@@ -14,7 +14,7 @@
             <span>/</span>
             <span class="text-[#ef4444] font-semibold">Tentang Kami</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Profil SMA IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Profil SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-gray-200 mt-2 font-light">
             Mengenal lebih dekat visi, nilai pendidikan Qur'ani, fasilitas, dan keunggulan civitas akademika Ishum.
         </p>
@@ -28,10 +28,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div class="lg:col-span-4 flex justify-center">
                 <div class="w-56 h-72 sm:w-64 sm:h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-4 ring-green-100 bg-green-50 relative group">
-                    <img src="/uploads/kepsek-agi-gustiawan.webp" alt="Agi Gustiawan, S. Pd - Kepala Sekolah" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    <img src="/uploads/campus-smpit-ishum.webp" alt="Mulyani Rahayu, S.T., M.Pd - Kepala Sekolah" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                     <div class="absolute bottom-3 left-3 text-white">
-                        <span class="block text-sm font-extrabold">Agi Gustiawan, S. Pd</span>
+                        <span class="block text-sm font-extrabold">Mulyani Rahayu, S.T., M.Pd</span>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 </h2>
                 <div class="w-16 h-1 bg-[#00913e] rounded-full"></div>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    Assalamu'alaikum Warahmatullahi Wabarakatuh. SMA IT Ishlahul Ummah Prabumulih berdiri dengan tekad kuat menyajikan pendidikan menengah atas yang seimbang antara kematangan spiritual, kemuliaan akhlak, dan keunggulan sains-teknologi. Kami meyakini bahwa generasi terbaik adalah generasi yang menjadikan Al-Qur'an sebagai pedoman hidup sekaligus terampil menguasai ilmu pengetahuan modern.
+                    Assalamu'alaikum Warahmatullahi Wabarakatuh. SMPS IT Ishlahul Ummah Prabumulih berdiri dengan tekad kuat menyajikan pendidikan menengah atas yang seimbang antara kematangan spiritual, kemuliaan akhlak, dan keunggulan sains-teknologi. Kami meyakini bahwa generasi terbaik adalah generasi yang menjadikan Al-Qur'an sebagai pedoman hidup sekaligus terampil menguasai ilmu pengetahuan modern.
                 </p>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
                     Dengan tenaga pendidik berkompeten, kurikulum terintegrasi, sarana laboratorium modern, serta lingkungan Islamic Boarding yang kondusif, kami berkomitmen mengantarkan setiap santri menggapai masa depan mulia dan berprestasi di perguruan tinggi terkemuka.
@@ -69,12 +69,12 @@
                     <span>Jejak Langkah</span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-                    Sejarah Berdirinya SMA IT Ishlahul Ummah Prabumulih
+                    Sejarah Berdirinya SMPS IT Ishlahul Ummah Prabumulih
                 </h2>
                 <span class="block text-xs sm:text-sm font-semibold text-[#da251c]">Komitmen Membangun Pendidikan Berkualitas</span>
                 <div class="w-16 h-1 bg-[#da251c] rounded-full"></div>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    SMA IT Ishlahul Ummah Prabumulih didirikan di Kabupaten Prabumulih atas inisiatif para tokoh pendidikan dan alim ulama yang mendambakan hadirnya institusi pendidikan menengah atas Islam terpadu yang bermutu tinggi, berwawasan global, namun tetap berakar kuat pada nilai-nilai tradisi keislaman.
+                    SMPS IT Ishlahul Ummah Prabumulih didirikan di Kabupaten Prabumulih atas inisiatif para tokoh pendidikan dan alim ulama yang mendambakan hadirnya institusi pendidikan menengah atas Islam terpadu yang bermutu tinggi, berwawasan global, namun tetap berakar kuat pada nilai-nilai tradisi keislaman.
                 </p>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
                     Seiring berjalannya waktu, sekolah ini terus berkembang dengan fasilitas modern, akreditasi unggul, serta jejaring prestasi siswa yang menjuarai berbagai kompetisi sains nasional dan hafidz Qur'an hingga 30 juz.
@@ -88,7 +88,7 @@
             </div>
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
                 <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-h-80 bg-gray-50">
-                    <img src="/uploads/gedung-smait-ishum.webp" alt="Kampus SMA IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover object-center">
+                    <img src="/uploads/campus-smpit-ishum.webp" alt="Kampus SMPS IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover object-center">
                 </div>
             </div>
         </div>
@@ -162,7 +162,7 @@
         <div class="text-center max-w-2xl mx-auto">
             <span class="text-xs font-bold text-[#00913e] uppercase tracking-wider block">Pedoman Pendidikan</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-                Visi dan Misi SMA IT Ishlahul Ummah Prabumulih
+                Visi dan Misi SMPS IT Ishlahul Ummah Prabumulih
             </h2>
             <div class="w-16 h-1 bg-[#da251c] mx-auto rounded-full mt-3"></div>
         </div>
@@ -223,7 +223,7 @@
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                 Komentar Alumni &amp; Orang Tua
             </h2>
-            <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-1">Pengalaman berharga belajar dan bertumbuh di SMA IT Ishlahul Ummah Prabumulih</p>
+            <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-1">Pengalaman berharga belajar dan bertumbuh di SMPS IT Ishlahul Ummah Prabumulih</p>
             <div class="w-16 h-1 bg-[#da251c] mx-auto rounded-full mt-3"></div>
         </div>
 
@@ -262,7 +262,7 @@
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
                 <span class="text-xs font-bold text-[#00913e] uppercase tracking-wider block">Lokasi Sekolah</span>
-                <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">Alamat SMA IT Ishlahul Ummah Prabumulih</h2>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">Alamat SMPS IT Ishlahul Ummah Prabumulih</h2>
                 <p class="text-xs text-gray-500 mt-1">Jl. Lintas Timur KM 35, Kel. Prabumulih Indah, Kec. Kota Prabumulih, Sumatera Selatan 30662</p>
             </div>
             <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-[#00913e] hover:bg-[#007532] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow transition flex-shrink-0">

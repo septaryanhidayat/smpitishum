@@ -17,7 +17,7 @@ test('dpc page displays real subdistricts without lorem ipsum', function () {
     $this->seed();
     $response = $this->get('/program-unggulan');
     $response->assertStatus(200);
-    $response->assertSee('Program Tahfidz Mutqin 30 Juz');
+    $response->assertSee('Program Tahfidz');
     $response->assertDontSee('Lorem Ipsum is simply dummy text');
 });
 

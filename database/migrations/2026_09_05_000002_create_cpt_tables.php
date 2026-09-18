@@ -38,8 +38,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('position'); // e.g. Ketua Fraksi PKS DPRD OI
-            $table->string('fraction')->nullable()->default('Fraksi PKS');
+            $table->string('position'); // e.g. Guru Kelas, Waka Kurikulum
+            $table->string('fraction')->nullable()->default('Guru & Tenaga Kependidikan');
             $table->text('profile_summary')->nullable();
             $table->text('education')->nullable();
             $table->string('photo')->nullable();

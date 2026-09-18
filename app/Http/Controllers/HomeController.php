@@ -15,27 +15,27 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // 1. Hero slides data - SMA Islam Terpadu Ishlahul Ummah Prabumulih
+        // 1. Hero slides data - SMPS IT Ishlahul Ummah Prabumulih
         $heroSlides = [
             [
                 'title' => 'Selamat Datang di Website Resmi',
-                'subtitle' => 'SMA Islam Terpadu Ishlahul Ummah Prabumulih',
-                'image' => '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp',
+                'subtitle' => 'SMPS IT Ishlahul Ummah Prabumulih',
+                'image' => '/uploads/campus-smpit-ishum.webp',
                 'btn_text' => 'Sambutan Kepala Sekolah',
                 'btn_link' => route('page.sambutan', [], false),
             ],
             [
-                'title' => 'Tanggap, Tangkas dan Tangguh Menuju Indonesia Emas',
-                'subtitle' => 'Sekolah Islam Terpadu Pertama di Prabumulih Tergabung dalam JSIT dengan Kurikulum Terpadu & Tahfidzul Qur\'an.',
-                'image' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp',
+                'title' => 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia',
+                'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kota Prabumulih dengan Kurikulum Terpadu & Tahfidz Al-Qur\'an.',
+                'image' => '/uploads/activities-smpit-ishum.webp',
                 'btn_text' => 'Profil Singkat Sekolah',
                 'btn_link' => route('page.tentang-kami', [], false),
             ],
             [
-                'title' => 'Penerimaan Peserta Didik Baru (PPDB)',
-                'subtitle' => 'Mari Bergabung dengan Keluarga Besar SMA IT Ishlahul Ummah Prabumulih.',
-                'image' => '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp',
-                'btn_text' => 'Daftar PPDB Online',
+                'title' => 'SPMB Gelombang Exclusive TP Baru',
+                'subtitle' => 'Kuota Terbatas Hanya 24 Orang & Promo Cash Back 1 Juta Alumni SDIT Ishum.',
+                'image' => '/uploads/flyer-spmb-smpit-ishum.webp',
+                'btn_text' => 'Daftar SPMB Online',
                 'btn_link' => route('ppdb.index', [], false),
             ],
         ];
@@ -141,23 +141,23 @@ class HomeController extends Controller
             ->toArray();
 
         $fallbackRow1 = [
-            ['url' => '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp', 'title' => 'Gedung Kampus SMA IT Ishlahul Ummah Prabumulih'],
-            ['url' => '/uploads/ishum/post_3442_IMG-20241020-WA0006-scaled.webp', 'title' => 'Aktivitas Belajar & Karakter Santri Terpadu'],
+            ['url' => '/uploads/campus-smpit-ishum.webp', 'title' => 'Gedung Kampus SMPS IT Ishlahul Ummah Prabumulih'],
+            ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Aktivitas Belajar & Karakter Santri Terpadu'],
             ['url' => '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp', 'title' => 'Laboratorium Komputer & Digital Santri'],
-            ['url' => '/uploads/ishum/post_3460_IMG-20241020-WA0007-scaled.webp', 'title' => 'Pembinaan Disiplin & Kesiswaan Santri Ishum'],
+            ['url' => '/uploads/flyer-spmb-smpit-ishum.webp', 'title' => 'Class Meeting & SPMB Exclusive SMP IT Ishum'],
             ['url' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp', 'title' => 'Aula Pertemuan & Munaqosah Qur\'an SIT'],
-            ['url' => '/uploads/ishum/post_3464_IMG-20241020-WA0005-scaled.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an Santri'],
+            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Halaqah Tahfidz & Tartil Qur\'an Santri'],
         ];
 
         $fallbackRow2 = [
             ['url' => '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp', 'title' => 'Laboratorium IPA & Eksperimen Sains Terpadu'],
             ['url' => '/uploads/ishum/post_3467_IMG-20241020-WA0004-scaled.webp', 'title' => 'Ibadah Yaumiyah & Pembiasaan Akhlakul Karimah'],
-            ['url' => '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp', 'title' => 'Gerbang Utama Kampus SMA IT Ishlahul Ummah'],
+            ['url' => '/uploads/campus-smpit-ishum.webp', 'title' => 'Gerbang Utama Kampus SMPS IT Ishlahul Ummah'],
             ['url' => '/uploads/ishum/post_3472_IMG-20241020-WA0003-scaled.webp', 'title' => 'Muhadharah & Pembinaan Da\'i Muda Santri'],
-            ['url' => '/uploads/ishum/fasilitas_2059_IMG-20221101-WA0010.webp', 'title' => 'Sarana Olahraga & Mushola Kampus Ishum'],
+            ['url' => '/uploads/activities-smpit-ishum.webp', 'title' => 'Sarana Olahraga & Lapangan Kampus Ishum'],
             ['url' => '/uploads/ishum/post_3478_IMG-20241020-WA0008-scaled.webp', 'title' => 'Ukhuwah Islamiyah & Kebersamaan Santri'],
             ['url' => '/uploads/ishum/prestasi_3513_IMG-20240928-WA0038.webp', 'title' => 'Apresiasi & Penganugerahan Prestasi Santri'],
-            ['url' => '/uploads/ishum/fasilitas_3431_IMG-20241014-WA0013-scaled.webp', 'title' => 'Ruang UKS & Pelayanan Kesehatan Sekolah'],
+            ['url' => '/uploads/tahfidz-smpit-ishum.webp', 'title' => 'Wisuda Tahfidz Qur\'an Santri Ishum'],
         ];
 
         if (! empty($dbGallery)) {
@@ -197,12 +197,12 @@ class HomeController extends Controller
         // 15. Popup Banner Settings
         $popupSettings = [
             'active' => Setting::get('popup_active', '1'),
-            'image' => Setting::get('popup_image', '/uploads/popup/popup-ppdb.webp'),
-            'title' => Setting::get('popup_title', 'Penerimaan Peserta Didik Baru (PPDB) TP 2025/2026'),
-            'subtitle' => Setting::get('popup_subtitle', 'Potongan Biaya Masuk s.d 50% - Kuota Terbatas!'),
+            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-smpit-ishum.webp'),
+            'title' => Setting::get('popup_title', 'SPMB Gelombang Exclusive SMPS IT Ishlahul Ummah'),
+            'subtitle' => Setting::get('popup_subtitle', 'Kuota Hanya 24 Orang - Cash Back Rp 1.000.000,-'),
             'link' => Setting::get('popup_link', '/ppdb'),
             'target' => Setting::get('popup_target', '_self'),
-            'button_text' => Setting::get('popup_button_text', 'Daftar PPDB Sekarang'),
+            'button_text' => Setting::get('popup_button_text', 'Daftar SPMB Sekarang'),
         ];
 
         return view('frontend.home', compact(

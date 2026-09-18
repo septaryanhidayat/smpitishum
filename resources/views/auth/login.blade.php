@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrator - SMA IT Ishlahul Ummah Prabumulih</title>
+    <title>Login Administrator - SMPS IT Ishlahul Ummah Prabumulih</title>
     <link rel="icon" type="image/svg+xml" href="/uploads/logo-ishum-square.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +18,11 @@
         <div class="text-center mb-8">
             <a href="{{ route('home') }}" class="inline-block group">
                 <div class="w-24 h-24 mx-auto p-2 bg-white rounded-2xl border border-emerald-100 flex items-center justify-center shadow-md group-hover:scale-105 transition duration-300">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMA IT Ishlahul Ummah Prabumulih" class="max-h-full max-w-full object-contain">
+                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="max-h-full max-w-full object-contain">
                 </div>
             </a>
             <h1 class="text-2xl font-extrabold text-gray-900 mt-4 tracking-tight">Panel Administrator</h1>
-            <p class="text-xs text-gray-500 mt-1">Sistem Informasi SMA IT Ishlahul Ummah Prabumulih</p>
+            <p class="text-xs text-gray-500 mt-1">Sistem Informasi SMPS IT Ishlahul Ummah Prabumulih</p>
         </div>
 
         {{-- Error Alert --}}

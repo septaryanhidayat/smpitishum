@@ -23,11 +23,11 @@ class ImportIshumBackupCommand extends Command
 {
     protected $signature = 'app:import-ishum-backup {--force : Overwrite existing records}';
 
-    protected $description = 'Import 100% of SMA IT Ishum WordPress backup, convert all images to WebP, and populate Laravel models';
+    protected $description = 'Import SMPS IT Ishum WordPress backup, convert all images to WebP, and populate Laravel models';
 
     protected WebpService $webpService;
 
-    protected string $uploadsSource = 'D:/SIM/SMAIT ISHUM PBM/well-known/wp-content/uploads';
+    protected string $uploadsSource = 'D:/SIM/SMPIT ISHUM PBM/well-known/wp-content/uploads';
 
     protected array $attachmentsMap = []; // attachment_id => relative_path
 
@@ -44,7 +44,7 @@ class ImportIshumBackupCommand extends Command
         ini_set('memory_limit', '1024M');
         set_time_limit(0);
 
-        $this->info('=== STARTING SMA IT ISHUMLAH UMMAH DATA MIGRATION ===');
+        $this->info('=== STARTING SMPS IT ISHUMLAH UMMAH DATA MIGRATION ===');
 
         $scratchDir = 'C:/Users/RYAN/.gemini/antigravity-ide/brain/c1a9ab74-f347-4491-ac2b-b207e5661e84/scratch';
         $attachmentsFile = $scratchDir.'/attachments.json';
@@ -68,14 +68,14 @@ class ImportIshumBackupCommand extends Command
         // 1. Ensure Admin User
         $this->info('Step 1: Setting up Admin User...');
         $adminUser = User::updateOrCreate(
-            ['email' => 'admin@smaitishumpbm.sch.id'],
+            ['email' => 'admin@smpitishum.sch.id'],
             [
-                'name' => 'Administrator ISHUM',
+                'name' => 'Administrator SMPS IT ISHUM',
                 'password' => Hash::make('AdminIshum2026!'),
                 'role' => 'admin',
             ]
         );
-        $this->line(' - Admin ready: admin@smaitishumpbm.sch.id');
+        $this->line(' - Admin ready: admin@smpitishum.sch.id');
 
         // 2. Populate Settings from myschool
         $this->info('Step 2: Populating Website Settings from myschool...');
@@ -294,32 +294,32 @@ class ImportIshumBackupCommand extends Command
         $fotoKasek = $this->getWebpUrl($myschool['foto-kasek'] ?? null) ?: '/uploads/kepsek-agi-gustiawan.jpg';
 
         $settings = [
-            'site_name' => $myschool['nama-sekolah'] ?? 'SMA IT Ishlahul Ummah Prabumulih',
+            'site_name' => $myschool['nama-sekolah'] ?? 'SMPS IT Ishlahul Ummah Prabumulih',
             'site_tagline' => 'Tanggap, Tangkas dan Tangguh Menuju Indonesia Emas',
-            'site_description' => 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih (SMA IT Ishum). Sekolah Islam Terpadu pertama di Prabumulih yang tergabung dalam JSIT Indonesia dengan kurikulum terpadu.',
+            'site_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih (SMPS IT Ishum). Sekolah Islam Terpadu pertama di Prabumulih yang tergabung dalam JSIT Indonesia dengan kurikulum terpadu.',
             'npsn' => $myschool['npsn'] ?? '69990882',
             'akreditasi' => $myschool['akreditasi'] ?? 'TERAKREDITASI BAN -SM',
             'no_sk_akreditasi' => $myschool['no-sk-akreditasi'] ?? '1036/BAN-SM/SK/2021 Pada Tanggal 25 Oktober 2021',
             'sk_pendirian' => $myschool['sk-pendirian'] ?? '2.16.72.04.001',
             'tanggal_sk_pendirian' => $myschool['tanggal-sk'] ?? '2020-10-23',
-            'sk_izin' => $myschool['sk-izin'] ?? '0876/DPMPTSP.V/IX/2023',
+            'sk_izin' => $myschool['sk-izin'] ?? '421.3/0876/DPMPTSP.V/IX/2023',
             'tanggal_sk_izin' => $myschool['tanggal-sk-izin'] ?? '2023-09-05',
-            'kepala_sekolah' => $myschool['kepala-sekolah'] ?? 'Agi Gustiawan, S. Pd',
+            'kepala_sekolah' => $myschool['kepala-sekolah'] ?? 'Mulyani Rahayu, S.T., M.Pd',
             'foto_kasek' => $fotoKasek,
             'site_logo' => $logoWebp,
             'site_logo_square' => $logoSquare,
-            'contact_address' => $myschool['alamat'] ?? 'Jalan Sadewa RT 01 RW 03 Kelurahan Karang Raja Kecamatan Prabumulih Timur Kota Prabumulih Provinsi Sumatera Selatan, Kode Pos 31111',
-            'contact_email' => $myschool['email'] ?? 'smaitishlahulummah2019@gmail.com',
-            'contact_phone' => $myschool['telp'] ?? '082182680647',
-            'contact_whatsapp' => '082182680647',
-            'social_facebook' => $myschool['facebook'] ?? 'https://facebook.com/smait.ishlahul.ummah.3',
-            'social_instagram' => $myschool['instagram'] ?? 'https://instagram.com/smait_ishum_prabumulih',
-            'social_youtube' => $myschool['youtube'] ?? 'https://www.youtube.com/channel/UCUJgvV-nqy89f3m8Hw2QrGg/videos',
-            'color_primary' => $myschool['primary'] ?? '#00913e',
-            'color_accent' => $myschool['accent'] ?? '#da251c',
-            'meta_keywords' => 'sma it ishlahul ummah prabumulih, sma it ishum, jsit prabumulih, ppdb sma it ishum, tahfidz prabumulih',
-            'og_title' => 'SMA Islam Terpadu Ishlahul Ummah Prabumulih',
-            'og_description' => 'Official Website SMA Islam Terpadu Ishlahul Ummah Prabumulih: Informasi PPDB, Berita & Prestasi, Profil Guru, Fasilitas, dan Kurikulum Terpadu.',
+            'contact_address' => $myschool['alamat'] ?? 'Jalan Sadewa No. 45 RT 01 RW 04 Kelurahan Karang Raja Kecamatan Prabumulih Timur Kota Prabumulih Provinsi Sumatera Selatan, Kode Pos 31113',
+            'contact_email' => $myschool['email'] ?? 'smpitishlahulummah.2015@yahoo.com',
+            'contact_phone' => $myschool['telp'] ?? '0852-6990-8696',
+            'contact_whatsapp' => '0852-6990-8696',
+            'social_facebook' => $myschool['facebook'] ?? 'https://www.facebook.com/smpitishlahulummah.prabumulih?locale=sw_KE',
+            'social_instagram' => $myschool['instagram'] ?? 'https://www.instagram.com/smpitishlahulummahprabumulih/',
+            'social_youtube' => $myschool['youtube'] ?? 'https://www.youtube.com/@smpitishlahulummahprabumul6398',
+            'color_primary' => $myschool['primary'] ?? '#4338ca',
+            'color_accent' => $myschool['accent'] ?? '#f59e0b',
+            'meta_keywords' => 'smps it ishlahul ummah prabumulih, smp it ishum, jsit prabumulih, spmb smp it ishum, tahfidz prabumulih',
+            'og_title' => 'SMPS IT Ishlahul Ummah Prabumulih',
+            'og_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih: Informasi SPMB, Berita & Prestasi, Profil Guru, Fasilitas, dan Kurikulum Terpadu.',
             'og_image' => $fotoKasek,
             'donation_bank_1_name' => 'Bank Syariah Indonesia (BSI)',
             'donation_bank_1_code' => '451',
@@ -328,10 +328,10 @@ class ImportIshumBackupCommand extends Command
             'donation_bank_2_name' => 'Bank Sumsel Babel Syariah',
             'donation_bank_2_code' => '120',
             'donation_bank_2_rekening' => '801-09-00123',
-            'donation_bank_2_holder' => 'SMA IT ISHLAHUL UMMAH',
+            'donation_bank_2_holder' => 'SMPS IT ISHLAHUL UMMAH',
             'donation_confirm_phone' => '0821-8268-0647',
-            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMA IT Ishlahul Ummah, saya telah menyalurkan infaq pembangunan.",
-            'donation_intro_text' => "Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur'an, dan pengembangan kampus SMA IT Ishlahul Ummah Prabumulih.",
+            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMPS IT Ishlahul Ummah, saya telah menyalurkan infaq pembangunan.",
+            'donation_intro_text' => "Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur'an, dan pengembangan kampus SMPS IT Ishlahul Ummah Prabumulih.",
         ];
 
         foreach ($settings as $k => $v) {
@@ -349,87 +349,87 @@ class ImportIshumBackupCommand extends Command
             'sambutan-kepala-sekolah' => [
                 'title' => 'Sambutan Kepala Sekolah',
                 'content' => $this->cleanHtmlContent($sambutanHtml),
-                'excerpt' => 'Sambutan resmi Kepala Sekolah SMA IT Ishlahul Ummah Prabumulih, Agi Gustiawan, S. Pd.',
-                'meta_title' => 'Sambutan Kepala Sekolah - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Pesan dan komitmen pembinaan karakter, iman, dan ilmu di SMA IT Ishlahul Ummah Prabumulih.',
+                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Agi Gustiawan, S. Pd.',
+                'meta_title' => 'Sambutan Kepala Sekolah - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Pesan dan komitmen pembinaan karakter, iman, dan ilmu di SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'visi-dan-misi' => [
                 'title' => 'Visi dan Misi',
                 'content' => '<div class="mb-6"><h3 class="text-xl font-bold text-[#00913e] mb-3">Visi Sekolah</h3>'.$this->cleanHtmlContent($visiHtml).'</div>'.
                              '<div><h3 class="text-xl font-bold text-[#00913e] mb-3">Misi Sekolah</h3>'.$this->cleanHtmlContent($misiHtml).'</div>',
-                'excerpt' => 'Visi & Misi resmi SMA IT Ishlahul Ummah Prabumulih menuju generasi emas tanggap, tangkas, dan tangguh.',
-                'meta_title' => 'Visi dan Misi - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Visi dan Misi pendidikan Islam terpadu SMA IT Ishlahul Ummah Prabumulih.',
+                'excerpt' => 'Visi & Misi resmi SMPS IT Ishlahul Ummah Prabumulih menuju generasi emas tanggap, tangkas, dan tangguh.',
+                'meta_title' => 'Visi dan Misi - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Visi dan Misi pendidikan Islam terpadu SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'tentang-kami' => [
                 'title' => 'Tentang Kami',
-                'content' => '<p>SMA IT Ishlahul Ummah Prabumulih adalah Sekolah Menengah Atas Islam Terpadu pertama di Kota Prabumulih yang berada di bawah naungan Yayasan Ishlahul Ummah dan tergabung dalam Jaringan Sekolah Islam Terpadu (JSIT) Indonesia.</p><p>Sekolah kami memadukan kurikulum nasional dan kurikulum keislaman khas JSIT yang menekankan pada pembentukan akidah salimah, ibadah shahihah, akhlak karimah, kemampuan tahfidz Al-Qur\'an, kepemimpinan, dan keunggulan akademik sains serta teknologi.</p>',
-                'excerpt' => 'Profil singkat SMA IT Ishlahul Ummah Prabumulih: Kurikulum terpadu JSIT dan Kurikulum Merdeka.',
-                'meta_title' => 'Tentang Kami - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Profil SMA IT Ishlahul Ummah Prabumulih, sekolah Islam terpadu di Prabumulih.',
+                'content' => '<p>SMPS IT Ishlahul Ummah Prabumulih adalah Sekolah Menengah Atas Islam Terpadu pertama di Kota Prabumulih yang berada di bawah naungan Yayasan Ishlahul Ummah dan tergabung dalam Jaringan Sekolah Islam Terpadu (JSIT) Indonesia.</p><p>Sekolah kami memadukan kurikulum nasional dan kurikulum keislaman khas JSIT yang menekankan pada pembentukan akidah salimah, ibadah shahihah, akhlak karimah, kemampuan tahfidz Al-Qur\'an, kepemimpinan, dan keunggulan akademik sains serta teknologi.</p>',
+                'excerpt' => 'Profil singkat SMPS IT Ishlahul Ummah Prabumulih: Kurikulum terpadu JSIT dan Kurikulum Merdeka.',
+                'meta_title' => 'Tentang Kami - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Profil SMPS IT Ishlahul Ummah Prabumulih, sekolah Islam terpadu di Prabumulih.',
             ],
             'sejarah' => [
                 'title' => 'Sejarah Singkat',
-                'content' => '<p>SMA IT Ishlahul Ummah Prabumulih didirikan atas aspirasi masyarakat muslim di Prabumulih yang mendambakan kelanjutan pendidikan Islam terpadu setelah jenjang SMP IT. Dengan izin operasional resmi nomor 0876/DPMPTSP.V/IX/2023 dan SK Pendirian 2.16.72.04.001 tertanggal 23 Oktober 2020, sekolah ini terus berkembang pesat menjadi institusi pendidikan unggulan di Sumatera Selatan.</p>',
-                'excerpt' => 'Sejarah berdirinya SMA IT Ishlahul Ummah Prabumulih.',
-                'meta_title' => 'Sejarah - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Sejarah perjalanan pendirian SMA IT Ishlahul Ummah Prabumulih.',
+                'content' => '<p>SMPS IT Ishlahul Ummah Prabumulih didirikan atas aspirasi masyarakat muslim di Prabumulih yang mendambakan kelanjutan pendidikan Islam terpadu setelah jenjang SMP IT. Dengan izin operasional resmi nomor 0876/DPMPTSP.V/IX/2023 dan SK Pendirian 2.16.72.04.001 tertanggal 23 Oktober 2020, sekolah ini terus berkembang pesat menjadi institusi pendidikan unggulan di Sumatera Selatan.</p>',
+                'excerpt' => 'Sejarah berdirinya SMPS IT Ishlahul Ummah Prabumulih.',
+                'meta_title' => 'Sejarah - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Sejarah perjalanan pendirian SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'struktur-organisasi' => [
                 'title' => 'Struktur Organisasi',
-                'content' => '<p>Struktur kepemimpinan dan manajemen SMA IT Ishlahul Ummah Prabumulih dipimpin oleh Kepala Sekolah Agi Gustiawan, S.Pd, didampingi oleh Wakil Kepala Sekolah Bidang Kurikulum Anita Carlyna, S.IP., M.Pd, serta staf pendidik dan tenaga kependidikan profesional.</p>',
-                'excerpt' => 'Bagan susunan struktur pimpinan dan manajemen SMA IT Ishlahul Ummah Prabumulih.',
-                'meta_title' => 'Struktur Organisasi - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Susunan pimpinan dan tata kelola SMA IT Ishlahul Ummah Prabumulih.',
+                'content' => '<p>Struktur kepemimpinan dan manajemen SMPS IT Ishlahul Ummah Prabumulih dipimpin oleh Kepala Sekolah Agi Gustiawan, S.Pd, didampingi oleh Wakil Kepala Sekolah Bidang Kurikulum Anita Carlyna, S.IP., M.Pd, serta staf pendidik dan tenaga kependidikan profesional.</p>',
+                'excerpt' => 'Bagan susunan struktur pimpinan dan manajemen SMPS IT Ishlahul Ummah Prabumulih.',
+                'meta_title' => 'Struktur Organisasi - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Susunan pimpinan dan tata kelola SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'kontak' => [
                 'title' => 'Kontak & Lokasi',
-                'content' => '<p>Silakan hubungi kami atau kunjungi kampus SMA IT Ishlahul Ummah Prabumulih di Jalan Sadewa RT 01 RW 03 Kelurahan Karang Raja Kecamatan Prabumulih Timur Kota Prabumulih.</p>',
-                'excerpt' => 'Kontak resmi, telepon, WhatsApp, email, dan alamat SMA IT Ishlahul Ummah.',
-                'meta_title' => 'Kontak Kami - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Hubungi SMA IT Ishlahul Ummah Prabumulih.',
+                'content' => '<p>Silakan hubungi kami atau kunjungi kampus SMPS IT Ishlahul Ummah Prabumulih di Jalan Sadewa RT 01 RW 03 Kelurahan Karang Raja Kecamatan Prabumulih Timur Kota Prabumulih.</p>',
+                'excerpt' => 'Kontak resmi, telepon, WhatsApp, email, dan alamat SMPS IT Ishlahul Ummah.',
+                'meta_title' => 'Kontak Kami - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Hubungi SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'layanan-terpadu-2' => [
                 'title' => 'Layanan Terpadu',
-                'content' => '<p>Layanan Terpadu SMA IT Ishlahul Ummah Prabumulih melayani berbagai permohonan administrasi secara transparan dan mudah, antara lain:</p><ul><li><strong>Permohonan Izin Kunjungan ke Sekolah:</strong> Pengajuan kunjungan edukatif, studi banding, atau instansi.</li><li><strong>Permohonan Kerja Sama:</strong> Kemitraan lembaga, magang, beasiswa, dan sponsorship.</li><li><strong>Permohonan Sewa Menyewa Barang / Fasilitas:</strong> Penyewaan aula, sarana olahraga, dan fasilitas sekolah.</li></ul>',
-                'excerpt' => 'Layanan administrasi terpadu SMA IT Ishlahul Ummah Prabumulih.',
-                'meta_title' => 'Layanan Terpadu - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Portal permohonan dan layanan terpadu SMA IT Ishlahul Ummah Prabumulih.',
+                'content' => '<p>Layanan Terpadu SMPS IT Ishlahul Ummah Prabumulih melayani berbagai permohonan administrasi secara transparan dan mudah, antara lain:</p><ul><li><strong>Permohonan Izin Kunjungan ke Sekolah:</strong> Pengajuan kunjungan edukatif, studi banding, atau instansi.</li><li><strong>Permohonan Kerja Sama:</strong> Kemitraan lembaga, magang, beasiswa, dan sponsorship.</li><li><strong>Permohonan Sewa Menyewa Barang / Fasilitas:</strong> Penyewaan aula, sarana olahraga, dan fasilitas sekolah.</li></ul>',
+                'excerpt' => 'Layanan administrasi terpadu SMPS IT Ishlahul Ummah Prabumulih.',
+                'meta_title' => 'Layanan Terpadu - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Portal permohonan dan layanan terpadu SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'izin-sekolah' => [
                 'title' => 'Permohonan Izin Kunjungan ke Sekolah',
-                'content' => '<p>Formulir dan prosedur permohonan izin kunjungan edukasi, studi banding, atau observasi ke SMA IT Ishlahul Ummah Prabumulih.</p>',
+                'content' => '<p>Formulir dan prosedur permohonan izin kunjungan edukasi, studi banding, atau observasi ke SMPS IT Ishlahul Ummah Prabumulih.</p>',
                 'excerpt' => 'Permohonan Izin Kunjungan ke Sekolah.',
-                'meta_title' => 'Permohonan Izin Kunjungan - SMA IT Ishlahul Ummah',
-                'meta_description' => 'Pengajuan izin kunjungan resmi ke SMA IT Ishlahul Ummah Prabumulih.',
+                'meta_title' => 'Permohonan Izin Kunjungan - SMPS IT Ishlahul Ummah',
+                'meta_description' => 'Pengajuan izin kunjungan resmi ke SMPS IT Ishlahul Ummah Prabumulih.',
             ],
             'permohonan-kerja-sama' => [
                 'title' => 'Permohonan Kerja Sama',
-                'content' => '<p>Layanan resmi permohonan kemitraan, kerjasama kelembagaan, dan kegiatan kolaboratif bersama SMA IT Ishlahul Ummah Prabumulih.</p>',
+                'content' => '<p>Layanan resmi permohonan kemitraan, kerjasama kelembagaan, dan kegiatan kolaboratif bersama SMPS IT Ishlahul Ummah Prabumulih.</p>',
                 'excerpt' => 'Permohonan Kerja Sama Kelembagaan.',
-                'meta_title' => 'Permohonan Kerja Sama - SMA IT Ishlahul Ummah',
-                'meta_description' => 'Kerjasama strategis dan kelembagaan bersama SMA IT Ishlahul Ummah.',
+                'meta_title' => 'Permohonan Kerja Sama - SMPS IT Ishlahul Ummah',
+                'meta_description' => 'Kerjasama strategis dan kelembagaan bersama SMPS IT Ishlahul Ummah.',
             ],
             'sewa-barang' => [
                 'title' => 'Permohonan Sewa Menyewa Barang Sekolah',
                 'content' => '<p>Layanan dan ketentuan penyewaan fasilitas sekolah (Hall Ishum, laboratorium, perlengkapan event) bagi masyarakat dan instansi.</p>',
                 'excerpt' => 'Permohonan Sewa Menyewa Barang / Fasilitas Sekolah.',
-                'meta_title' => 'Permohonan Sewa Barang - SMA IT Ishlahul Ummah',
+                'meta_title' => 'Permohonan Sewa Barang - SMPS IT Ishlahul Ummah',
                 'meta_description' => 'Ketentuan dan permohonan sewa sarana prasarana sekolah.',
             ],
             'data-alumni' => [
                 'title' => 'Data Alumni',
-                'content' => '<p>Daftar alumni kebanggaan SMA IT Ishlahul Ummah Prabumulih yang telah melanjutkan pendidikan ke berbagai perguruan tinggi negeri, kedinasan, kampus Islam terkemuka, dan berkarier di berbagai sektor.</p>',
-                'excerpt' => 'Data alumni dan rekam jejak lulusan SMA IT Ishlahul Ummah.',
-                'meta_title' => 'Data Alumni - SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Database alumni SMA IT Ishlahul Ummah Prabumulih.',
+                'content' => '<p>Daftar alumni kebanggaan SMPS IT Ishlahul Ummah Prabumulih yang telah melanjutkan pendidikan ke berbagai perguruan tinggi negeri, kedinasan, kampus Islam terkemuka, dan berkarier di berbagai sektor.</p>',
+                'excerpt' => 'Data alumni dan rekam jejak lulusan SMPS IT Ishlahul Ummah.',
+                'meta_title' => 'Data Alumni - SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Database alumni SMPS IT Ishlahul Ummah Prabumulih.',
             ],
-            'ppdb-sma-it-ishlahul-ummah-prabumulih' => [
-                'title' => 'Informasi PPDB Online',
-                'content' => '<p>Penerimaan Peserta Didik Baru (PPDB) SMA IT Ishlahul Ummah Prabumulih dibuka setiap tahun ajaran baru dengan jalur beasiswa tahfidz dan reguler. Pendaftaran dapat dilakukan langsung melalui portal online <a href="https://ppdb.smaitishumpbm.sch.id/" target="_blank" class="text-green-600 font-bold underline">https://ppdb.smaitishumpbm.sch.id/</a>.</p>',
-                'excerpt' => 'Informasi pendaftaran siswa baru SMA IT Ishlahul Ummah Prabumulih.',
-                'meta_title' => 'PPDB SMA IT Ishlahul Ummah Prabumulih',
-                'meta_description' => 'Informasi PPDB SMA IT Ishlahul Ummah Prabumulih.',
+            'ppdb-smp-it-ishlahul-ummah-prabumulih' => [
+                'title' => 'Informasi SPMB Online',
+                'content' => '<p>Penerimaan Peserta Didik Baru (SPMB) SMPS IT Ishlahul Ummah Prabumulih dibuka setiap tahun ajaran baru dengan jalur beasiswa tahfidz dan reguler. Pendaftaran dapat dilakukan langsung melalui portal online resmi atau hubungi WA 0852-6990-8696.</p>',
+                'excerpt' => 'Informasi pendaftaran siswa baru SMPS IT Ishlahul Ummah Prabumulih.',
+                'meta_title' => 'SPMB SMPS IT Ishlahul Ummah Prabumulih',
+                'meta_description' => 'Informasi SPMB SMPS IT Ishlahul Ummah Prabumulih.',
             ],
         ];
 
@@ -471,7 +471,7 @@ class ImportIshumBackupCommand extends Command
 
             // If empty content, provide a decent snippet from title
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>{$art['title']}. Dokumentasi dan liputan kegiatan resmi SMA IT Ishlahul Ummah Prabumulih.</p>";
+                $cleanContent = "<p>{$art['title']}. Dokumentasi dan liputan kegiatan resmi SMPS IT Ishlahul Ummah Prabumulih.</p>";
             }
 
             $date = ! empty($art['date']) && $art['date'] !== '0000-00-00 00:00:00' ? Carbon::parse($art['date']) : now();
@@ -487,7 +487,7 @@ class ImportIshumBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/campus-robbani.jpg',
                     'author_id' => $authorId,
                     'published_at' => $date,
-                    'meta_title' => $art['title'].' - SMA IT Ishlahul Ummah',
+                    'meta_title' => $art['title'].' - SMPS IT Ishlahul Ummah',
                     'meta_description' => Str::limit(strip_tags($cleanContent), 150),
                 ]
             );
@@ -511,7 +511,7 @@ class ImportIshumBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Selamat dan sukses atas raihan {$item['title']} oleh siswa-siswi SMA IT Ishlahul Ummah Prabumulih.</p>";
+                $cleanContent = "<p>Selamat dan sukses atas raihan {$item['title']} oleh siswa-siswi SMPS IT Ishlahul Ummah Prabumulih.</p>";
             }
 
             $date = ! empty($item['date']) && $item['date'] !== '0000-00-00 00:00:00' ? Carbon::parse($item['date']) : now();
@@ -527,7 +527,7 @@ class ImportIshumBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/campus-robbani.jpg',
                     'author_id' => $authorId,
                     'published_at' => $date,
-                    'meta_title' => 'Prestasi: '.$item['title'].' - SMA IT Ishlahul Ummah',
+                    'meta_title' => 'Prestasi: '.$item['title'].' - SMPS IT Ishlahul Ummah',
                     'meta_description' => Str::limit(strip_tags($cleanContent), 150),
                 ]
             );
@@ -551,7 +551,7 @@ class ImportIshumBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Ekstrakurikuler {$item['title']} merupakan salah satu wadah pengembangan minat, bakat, kepemimpinan, dan kreativitas siswa di SMA IT Ishlahul Ummah Prabumulih.</p>";
+                $cleanContent = "<p>Ekstrakurikuler {$item['title']} merupakan salah satu wadah pengembangan minat, bakat, kepemimpinan, dan kreativitas siswa di SMPS IT Ishlahul Ummah Prabumulih.</p>";
             }
 
             Post::updateOrCreate(
@@ -565,7 +565,7 @@ class ImportIshumBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/campus-robbani.jpg',
                     'author_id' => $authorId,
                     'published_at' => now(),
-                    'meta_title' => 'Ekstrakurikuler '.$item['title'].' - SMA IT Ishlahul Ummah',
+                    'meta_title' => 'Ekstrakurikuler '.$item['title'].' - SMPS IT Ishlahul Ummah',
                     'meta_description' => Str::limit(strip_tags($cleanContent), 150),
                 ]
             );
@@ -588,7 +588,7 @@ class ImportIshumBackupCommand extends Command
             }
 
             $tahun = $meta['lulus-tahun'] ?? '2022';
-            $content = "<p>Alumni SMA IT Ishlahul Ummah Prabumulih Angkatan Lulus {$tahun}.</p>";
+            $content = "<p>Alumni SMPS IT Ishlahul Ummah Prabumulih Angkatan Lulus {$tahun}.</p>";
 
             Post::updateOrCreate(
                 ['slug' => 'alumni-'.Str::slug($item['slug'] ?: $item['title'])],
@@ -601,7 +601,7 @@ class ImportIshumBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/logo-ishum-square.png',
                     'author_id' => $authorId,
                     'published_at' => now(),
-                    'meta_title' => 'Alumni: '.$item['title'].' - SMA IT Ishlahul Ummah',
+                    'meta_title' => 'Alumni: '.$item['title'].' - SMPS IT Ishlahul Ummah',
                 ]
             );
         }
@@ -634,8 +634,8 @@ class ImportIshumBackupCommand extends Command
                 [
                     'name' => $item['title'],
                     'position' => $jabatan,
-                    'fraction' => 'SMA IT Ishlahul Ummah',
-                    'profile_summary' => $summary ?: 'Tenaga pendidik profesional SMA IT Ishlahul Ummah Prabumulih.',
+                    'fraction' => 'SMPS IT Ishlahul Ummah',
+                    'profile_summary' => $summary ?: 'Tenaga pendidik profesional SMPS IT Ishlahul Ummah Prabumulih.',
                     'education' => 'S1 / S2 Pendidikan',
                     'photo' => $photo ?: '/uploads/logo-ishum-square.png',
                     'order' => $order++,
@@ -664,7 +664,7 @@ class ImportIshumBackupCommand extends Command
             $cleanDesc = $this->cleanHtmlContent($desc);
 
             if (strlen(strip_tags($cleanDesc)) < 10) {
-                $cleanDesc = "<p>Sarana {$item['title']} berstandar modern untuk menunjang kegiatan pembelajaran dan pembinaan karakter di SMA IT Ishlahul Ummah Prabumulih.</p>";
+                $cleanDesc = "<p>Sarana {$item['title']} berstandar modern untuk menunjang kegiatan pembelajaran dan pembinaan karakter di SMPS IT Ishlahul Ummah Prabumulih.</p>";
             }
 
             Bidang::updateOrCreate(
@@ -672,11 +672,11 @@ class ImportIshumBackupCommand extends Command
                 [
                     'name' => $item['title'],
                     'description' => $cleanDesc,
-                    'address' => 'Kampus SMA IT Ishlahul Ummah Prabumulih',
-                    'phone' => '082182680647',
-                    'email' => 'smaitishlahulummah2019@gmail.com',
+                    'address' => 'Kampus SMPS IT Ishlahul Ummah Prabumulih',
+                    'phone' => '0852-6990-8696',
+                    'email' => 'smpitishlahulummah.2015@yahoo.com',
                     'icon' => 'fa-solid fa-building-columns',
-                    'thumbnail' => $thumb ?: '/uploads/campus-robbani.jpg',
+                    'thumbnail' => $thumb ?: '/uploads/campus-smpit-ishum.webp',
                     'order' => $order++,
                 ]
             );
@@ -705,7 +705,7 @@ class ImportIshumBackupCommand extends Command
                     'name' => $item['title'],
                     'description' => $cleanDesc,
                     'head_name' => 'Koordinator Program',
-                    'address' => 'SMA IT Ishlahul Ummah Prabumulih',
+                    'address' => 'SMPS IT Ishlahul Ummah Prabumulih',
                     'order' => $order++,
                 ]
             );
@@ -724,7 +724,7 @@ class ImportIshumBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Agenda kegiatan {$ag['title']} SMA IT Ishlahul Ummah Prabumulih.</p>";
+                $cleanContent = "<p>Agenda kegiatan {$ag['title']} SMPS IT Ishlahul Ummah Prabumulih.</p>";
             }
 
             $date = ! empty($ag['date']) && $ag['date'] !== '0000-00-00 00:00:00' ? Carbon::parse($ag['date']) : now();
@@ -734,7 +734,7 @@ class ImportIshumBackupCommand extends Command
                 [
                     'title' => $ag['title'],
                     'content' => $cleanContent,
-                    'location' => 'Kampus SMA IT Ishlahul Ummah Prabumulih',
+                    'location' => 'Kampus SMPS IT Ishlahul Ummah Prabumulih',
                     'event_date' => $date,
                     'status' => 'publish',
                     'featured_image' => $img ?: '/uploads/campus-robbani.jpg',
@@ -752,7 +752,7 @@ class ImportIshumBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Pengumuman resmi: {$pe['title']} untuk seluruh civitas akademika SMA IT Ishlahul Ummah Prabumulih.</p>";
+                $cleanContent = "<p>Pengumuman resmi: {$pe['title']} untuk seluruh civitas akademika SMPS IT Ishlahul Ummah Prabumulih.</p>";
             }
 
             Pengumuman::updateOrCreate(
@@ -781,8 +781,8 @@ class ImportIshumBackupCommand extends Command
             Testimonial::updateOrCreate(
                 ['name' => $t['title']],
                 [
-                    'profession' => 'Wali Siswa SMA IT Ishum',
-                    'content' => $cleanMsg ?: 'Alhamdulillah pendidikan di SMA IT Ishlahul Ummah membina anak kami menjadi pribadi berakhlak mulia dan giat beribadah.',
+                    'profession' => 'Wali Siswa SMPS IT Ishum',
+                    'content' => $cleanMsg ?: 'Alhamdulillah pendidikan di SMPS IT Ishlahul Ummah membina anak kami menjadi pribadi berakhlak mulia dan giat beribadah.',
                     'photo' => $photo ?: '/uploads/logo-ishum-square.png',
                     'status' => 'publish',
                 ]
@@ -827,7 +827,7 @@ class ImportIshumBackupCommand extends Command
             ['title' => 'Unggulan', 'url' => '/unggulan', 'icon' => 'fa-solid fa-award', 'badge' => 'Terpadu', 'order' => 8],
             ['title' => 'Layanan Terpadu', 'url' => '/layanan-terpadu-2', 'icon' => 'fa-solid fa-handshake-angle', 'badge' => 'Online', 'order' => 9],
             ['title' => 'Data Alumni', 'url' => '/data-alumni', 'icon' => 'fa-solid fa-user-graduate', 'badge' => null, 'order' => 10],
-            ['title' => 'Info PPDB', 'url' => 'https://ppdb.smaitishumpbm.sch.id/', 'icon' => 'fa-solid fa-graduation-cap', 'badge' => 'Buka', 'order' => 11],
+            ['title' => 'Info SPMB', 'url' => '/ppdb', 'icon' => 'fa-solid fa-graduation-cap', 'badge' => 'Buka', 'order' => 11],
         ];
 
         foreach ($defaultMenus as $menu) {

@@ -19,7 +19,7 @@
                     Selamat Datang, {{ auth()->user()->name }}! 👋
                 </h2>
                 <p class="text-xs sm:text-sm text-slate-300 max-w-xl font-light leading-relaxed">
-                    Panel kendali resmi SMA Islam Terpadu Ishlahul Ummah Prabumulih. Anda dapat mengelola seluruh konten, memantau aktivitas sistem, mengedit informasi sekolah, serta mengamankan website secara terpusat.
+                    Panel kendali resmi SMPS IT Ishlahul Ummah Prabumulih. Anda dapat mengelola seluruh konten, memantau aktivitas sistem, mengedit informasi sekolah, serta mengamankan website secara terpusat.
                 </p>
             </div>
 

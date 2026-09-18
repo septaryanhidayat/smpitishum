@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'SPMB / PPDB Online ' . ($settings['year'] ?? '2026/2027') . ' - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Penerimaan Peserta Didik Baru (PPDB/SPMB) SMA Islam Terpadu Ishlahul Ummah Prabumulih Tahun Pelajaran ' . ($settings['year'] ?? '2026/2027') . '. Informasi alur, syarat, jadwal, biaya, dan formulir pendaftaran online.')
+@section('title', 'SPMB / PPDB Online ' . ($settings['year'] ?? '2026/2027') . ' - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Penerimaan Peserta Didik Baru (PPDB/SPMB) SMPS IT Ishlahul Ummah Prabumulih Tahun Pelajaran ' . ($settings['year'] ?? '2026/2027') . '. Informasi alur, syarat, jadwal, biaya, dan formulir pendaftaran online.')
 
 @section('content')
 <div class="bg-gradient-to-b from-emerald-50/50 via-white to-gray-50 py-10">
@@ -10,7 +10,7 @@
         {{-- HEADER BRAND & HERO TITLE --}}
         <div class="text-center space-y-4 reveal-fade-up">
             <div class="inline-block p-2.5 bg-white rounded-3xl shadow-md border border-emerald-100">
-                <img src="/uploads/logo-ishum-square.png" alt="Logo SMA IT Ishlahul Ummah" class="h-24 sm:h-28 w-auto object-contain mx-auto">
+                <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah" class="h-24 sm:h-28 w-auto object-contain mx-auto">
             </div>
             <div>
                 <div class="inline-flex items-center space-x-2 bg-emerald-100 text-[#00913e] px-4 py-1.5 rounded-full text-xs font-black mb-2">
@@ -18,7 +18,7 @@
                     <span>Pendaftaran Santri Baru Telah Dibuka</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight uppercase">
-                    SPMB SMA IT ISHLAHUL UMMAH <br class="hidden sm:inline">PRABUMULIH
+                    SPMB SMPS IT ISHLAHUL UMMAH <br class="hidden sm:inline">PRABUMULIH
                 </h1>
                 <p class="text-sm sm:text-base font-extrabold text-[#da251c] mt-1.5">
                     Tahun Pelajaran {{ $settings['year'] ?? '2026/2027' }} &bull; {{ $settings['wave'] ?? 'Gelombang Aktif' }}
@@ -44,45 +44,44 @@
                     <span>Beranda Sekolah</span>
                 </a>
                 @php
-                    $cleanHotline = preg_replace('/[^0-9]/', '', (string) ($settings['hotline_phone'] ?? '082182680647'));
+                    $cleanHotline = preg_replace('/[^0-9]/', '', (string) ($settings['hotline_phone'] ?? '085269908696'));
                     if (str_starts_with($cleanHotline, '0')) {
                         $cleanHotline = '62' . substr($cleanHotline, 1);
                     }
                 @endphp
-                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMA IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#007532] text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
+                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin konsultasi pendaftaran santri baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#007532] text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition shadow-md">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>Hotline WhatsApp ({{ $settings['hotline_phone'] ?? '0821-8268-0647' }})</span>
+                    <span>Hotline WhatsApp ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </a>
             </div>
         </div>
 
-        {{-- VIDEO PROFILE RESMI SMA IT ISHLAHUL UMMAH EMBED --}}
+        {{-- VIDEO PROFILE RESMI SMPS IT ISHLAHUL UMMAH EMBED --}}
         @if(!empty($settings['youtube_id']))
-            <div class="bg-white p-4 sm:p-7 rounded-3xl shadow-xl border border-slate-200/80 overflow-hidden space-y-4">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 shadow-2xl border border-slate-800">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-100 reveal-fade-up">
+                <div class="text-center max-w-2xl mx-auto mb-6">
+                    <span class="text-xs font-black uppercase tracking-widest text-[#00913e] bg-emerald-50 px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-play-circle mr-1"></i> Profil Sekolah
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">Mengenal SMPS IT Ishlahul Ummah Prabumulih</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">Saksikan video profil dan aktivitas pembelajaran santri kami secara visual.</p>
+                </div>
+
+                <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl border-4 border-slate-900 aspect-video max-w-4xl mx-auto bg-slate-950">
                     <iframe 
-                        class="w-full h-full"
+                        class="absolute top-0 left-0 w-full h-full"
                         src="https://www.youtube.com/embed/{{ $settings['youtube_id'] }}?rel=0" 
-                        title="{{ $settings['video_title'] ?? 'Video Profil Resmi SPMB SMA IT Ishlahul Ummah Prabumulih' }}" 
+                        title="{{ $settings['video_title'] ?? 'Video Profil SMPS IT Ishlahul Ummah Prabumulih' }}" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
                     </iframe>
                 </div>
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 px-2">
-                    <div class="flex items-center space-x-3 text-left">
-                        <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-brands fa-youtube"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs sm:text-sm font-extrabold text-slate-900">{{ $settings['video_title'] ?? 'Video Profil & Dokumentasi SMA IT Ishum' }}</h4>
-                            <p class="text-xs text-slate-700 font-medium">Saksikan suasana pembelajaran, asrama, laboratorium, dan tahfidz Al-Qur'an.</p>
-                        </div>
+                <div class="mt-4 text-center">
+                    <div class="inline-flex items-center space-x-2 text-xs text-slate-700 bg-slate-100 px-4 py-2 rounded-xl">
+                        <i class="fa-brands fa-youtube text-red-600 text-sm"></i>
+                        <h4 class="text-xs sm:text-sm font-extrabold text-slate-900">{{ $settings['video_title'] ?? 'Video Profil & Dokumentasi SMPS IT Ishum' }}</h4>
                     </div>
-                    <a href="https://www.youtube.com/watch?v={{ $settings['youtube_id'] }}" target="_blank" class="inline-flex items-center space-x-1.5 text-xs font-bold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-xl transition flex-shrink-0">
-                        <span>Tonton di YouTube</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
                 </div>
             </div>
         @endif
@@ -113,7 +112,7 @@
                         </li>
                         <li class="flex items-center space-x-2">
                             <i class="fa-solid fa-location-dot text-[#da251c] font-bold"></i>
-                            <span><strong>Sekretariat:</strong> {{ $settings['secretariat'] ?? 'Kompleks SMA IT Ishum, Jl. Sadewa RT 01 RW 04 Karang Raja' }}</span>
+                            <span><strong>Sekretariat:</strong> {{ $settings['secretariat'] ?? 'Kompleks SMPS IT Ishum, Jl. Sadewa No. 45 RT 01 RW 04 Karang Raja' }}</span>
                         </li>
                     </ul>
                 </div>
@@ -316,7 +315,7 @@
                             Formulir Pendaftaran Online
                         </h3>
                         <p class="text-xs text-slate-700 font-medium mt-2 leading-relaxed">
-                            Silakan Bapak/Ibu mengisi formulir pendaftaran online ini sebagai syarat pendaftaran di SMA IT Ishlahul Ummah dengan data yang valid dan benar.
+                            Silakan Bapak/Ibu mengisi formulir pendaftaran online ini sebagai syarat pendaftaran di SMPS IT Ishlahul Ummah dengan data yang valid dan benar.
                         </p>
                     </div>
                 </div>
@@ -333,7 +332,7 @@
                     $cleanHotline2 = '62' . substr($cleanHotline2, 1);
                 }
             @endphp
-            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia PPDB SMA IT Ishlahul Ummah Prabumulih, saya ingin berkonsultasi mengenai pendaftaran santri baru.') }}" target="_blank" class="group bg-white p-8 rounded-3xl border-2 border-emerald-200 hover:border-[#00913e] shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
+            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia PPDB SMPS IT Ishlahul Ummah Prabumulih, saya ingin berkonsultasi mengenai pendaftaran santri baru.') }}" target="_blank" class="group bg-white p-8 rounded-3xl border-2 border-emerald-200 hover:border-[#00913e] shadow-md hover:shadow-2xl transition duration-300 text-center flex flex-col items-center justify-between">
                 <div class="space-y-4">
                     <div class="w-20 h-20 mx-auto rounded-3xl bg-green-50 text-[#00913e] flex items-center justify-center text-4xl shadow-xs group-hover:scale-110 transition duration-300">
                         <i class="fa-brands fa-whatsapp text-4xl"></i>
@@ -343,7 +342,7 @@
                             Konsultasi via WhatsApp
                         </h3>
                         <p class="text-xs text-slate-700 font-medium mt-2 leading-relaxed">
-                            Konfirmasi pendaftaran, pengiriman bukti transfer formulir, atau konsultasi langsung dengan panitia PPDB: <strong>{{ $settings['hotline_phone'] ?? '0821-8268-0647' }} ({{ $settings['hotline_name'] ?? 'Admin' }})</strong>
+                            Konfirmasi pendaftaran, pengiriman bukti transfer formulir, atau konsultasi langsung dengan panitia PPDB: <strong>{{ $settings['hotline_phone'] ?? '0852-6990-8696' }} ({{ $settings['hotline_name'] ?? 'Admin' }})</strong>
                             @if(!empty($settings['hotline_2_phone']))
                                 atau <strong>{{ $settings['hotline_2_phone'] }} ({{ $settings['hotline_2_name'] ?? 'Kepala Sekolah' }})</strong>.
                             @endif
@@ -352,7 +351,7 @@
                 </div>
                 <span class="mt-6 inline-flex items-center space-x-2 bg-[#00913e] hover:bg-[#007532] text-white text-xs font-black px-7 py-3.5 rounded-2xl shadow-md transition">
                     <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>Chat WhatsApp Panitia ({{ $settings['hotline_phone'] ?? '0821-8268-0647' }})</span>
+                    <span>Chat WhatsApp Panitia ({{ $settings['hotline_phone'] ?? '0852-6990-8696' }})</span>
                 </span>
             </a>
 
@@ -362,7 +361,7 @@
         <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-md border border-slate-200/80 text-center space-y-6">
             <div>
                 <h3 class="text-xl sm:text-2xl font-black text-[#da251c] tracking-tight">
-                    {{ $settings['closing_title'] ?? 'Terima Kasih Sudah Mendaftar di SMA Islam Terpadu Ishlahul Ummah Prabumulih' }}
+                    {{ $settings['closing_title'] ?? 'Terima Kasih Sudah Mendaftar di SMPS IT Ishlahul Ummah Prabumulih' }}
                 </h3>
                 <p class="text-xs sm:text-sm font-semibold text-[#00913e] mt-2 max-w-2xl mx-auto leading-relaxed">
                     {{ $settings['closing_desc'] ?? 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin' }}
@@ -387,7 +386,7 @@
                     Mendidik Sepenuh Cinta
                 </p>
                 <div class="mt-2 text-xs font-extrabold text-[#00913e] tracking-wider uppercase">
-                    SMA IT Ishlahul Ummah Prabumulih &bull; Anggota JSIT Indonesia
+                    SMPS IT Ishlahul Ummah Prabumulih &bull; Anggota JSIT Indonesia
                 </div>
             </div>
         </div>

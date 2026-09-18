@@ -42,9 +42,9 @@ class ImportWordPressContentCommand extends Command
 
     public function handle(): int
     {
-        $xmlPath = $this->option('xml') ?: base_path('dpdpksoganilir.WordPress.2026-09-05.xml');
-        $sqlPath = base_path('database/berandad_wppksoi.sql');
-        $uploadsDir = base_path('BACKUP WEb LAMA/wp-content/uploads');
+        $xmlPath = $this->option('xml') ?: base_path('database/import.xml');
+        $sqlPath = base_path('database/school.sql');
+        $uploadsDir = base_path('BACKUP/wp-content/uploads');
 
         if (! file_exists($xmlPath)) {
             $this->error("XML file not found at: {$xmlPath}");
@@ -111,14 +111,14 @@ class ImportWordPressContentCommand extends Command
             $displayName = (string) $author->author_display_name;
 
             if (! $email) {
-                $email = Str::slug($login).'@pksoganilir.com';
+                $email = Str::slug($login).'@smpitishum.sch.id';
             }
 
             User::updateOrCreate(
                 ['email' => $email],
                 [
                     'name' => $displayName ?: $login,
-                    'password' => Hash::make('AdminPksOi2026!'),
+                    'password' => Hash::make('AdminIshum2026!'),
                 ]
             );
             $this->line(" - User imported: {$displayName} ({$email})");
@@ -239,7 +239,7 @@ class ImportWordPressContentCommand extends Command
                 $this->urlMap[$guid] = $finalUrl;
             }
             $this->urlMap['http://oganilir.pks.id/wp-content/uploads/'.$attachedFile] = $finalUrl;
-            $this->urlMap['https://pksoganilir.com/wp-content/uploads/'.$attachedFile] = $finalUrl;
+            $this->urlMap['https://smpitishum.sch.id/wp-content/uploads/'.$attachedFile] = $finalUrl;
             $this->urlMap['/wp-content/uploads/'.$attachedFile] = $finalUrl;
 
             $count++;
@@ -451,7 +451,7 @@ class ImportWordPressContentCommand extends Command
                     [
                         'title' => $title,
                         'content' => $this->cleanHtmlContent($rawContent),
-                        'location' => 'Kabupaten Ogan Ilir',
+                        'location' => 'Kota Prabumulih',
                         'event_date' => $postDate ? Carbon::parse($postDate) : now(),
                         'status' => $status,
                         'featured_image' => $featuredImage,
@@ -478,40 +478,40 @@ class ImportWordPressContentCommand extends Command
                     [
                         'name' => $title,
                         'position' => $jabatan,
-                        'fraction' => 'Fraksi PKS',
+                        'fraction' => 'Guru & Tenaga Kependidikan',
                         'profile_summary' => $this->cleanHtmlContent($profil),
                         'photo' => $featuredImage,
                     ]
                 );
             } elseif ($type === 'fakultas') {
-                // Bidang DPD
+                // Bidang Sekolah
                 $desc = $meta['keunggulan'] ?? $rawContent;
                 Bidang::updateOrCreate(
                     ['slug' => $slug],
                     [
                         'name' => $title,
                         'description' => $this->cleanHtmlContent($desc),
-                        'address' => $meta['alamat'] ?? 'Jl. Komperta Taman Indralaya Blok C No. 05 Kel. Indralaya Mulya, Kab. Ogan Ilir',
-                        'phone' => $meta['telp'] ?? '082280041658',
-                        'email' => $meta['email'] ?? 'pksoganilir@gmail.com',
-                        'website' => $meta['website'] ?? 'https://pksoganilir.com',
+                        'address' => $meta['alamat'] ?? 'Jl. Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih',
+                        'phone' => $meta['telp'] ?? '0852-6990-8696',
+                        'email' => $meta['email'] ?? 'smpitishlahulummah.2015@yahoo.com',
+                        'website' => $meta['website'] ?? 'https://smpitishum.sch.id',
                         'thumbnail' => $featuredImage,
                     ]
                 );
             } elseif ($type === 'prodi') {
-                // DPC Kecamatan
+                // Unit / Ekstrakurikuler
                 $desc = $meta['info'] ?? $rawContent;
                 Dpc::updateOrCreate(
                     ['slug' => $slug],
                     [
                         'name' => $title,
                         'description' => $this->cleanHtmlContent($desc),
-                        'address' => 'Kabupaten Ogan Ilir',
+                        'address' => 'Kota Prabumulih',
                     ]
                 );
             } elseif ($type === 'testimonial') {
                 $testimoni = $meta['isi-testimoni'] ?? $rawContent;
-                $profesi = $meta['alumni-tahun'] ?? 'Masyarakat Ogan Ilir';
+                $profesi = $meta['alumni-tahun'] ?? 'Wali Santri SMPS IT Ishum';
                 Testimonial::updateOrCreate(
                     ['name' => $title],
                     [
@@ -609,21 +609,21 @@ class ImportWordPressContentCommand extends Command
     protected function populateSettings(): void
     {
         $settings = [
-            'site_name' => 'DPD PKS Ogan Ilir',
-            'site_tagline' => 'Berkhidmat untuk Rakyat',
-            'site_description' => 'Official Website Dewan Pengurus Daerah Partai Keadilan Sejahtera (PKS) Kabupaten Ogan Ilir.',
-            'contact_email' => 'pksoganilir@gmail.com',
-            'contact_phone' => '082280041658',
-            'contact_whatsapp' => '082280041658',
-            'contact_address' => 'Jl. Komperta Taman Indralaya Blok C No. 05 Kel. Indralaya Mulya, Kec. Indralaya, Kab. Ogan Ilir, Sumatera Selatan',
-            'social_facebook' => 'https://facebook.com/dpdpksoganilir',
-            'social_instagram' => 'https://instagram.com/dpdpksoganilir',
-            'social_youtube' => 'https://youtube.com/@pkstvoganilir',
-            'social_tiktok' => 'https://tiktok.com/@pksoganilir',
-            'social_twitter' => 'https://x.com/pksoganilir',
-            'banner_daftar_url' => 'https://daftar.pks.id',
+            'site_name' => 'SMPS IT Ishlahul Ummah Prabumulih',
+            'site_tagline' => 'Membina Generasi Qur\'ani, Cerdas, Berakhlak Mulia & Berprestasi Global',
+            'site_description' => 'Official Website SMPS IT Ishlahul Ummah Prabumulih (SMP IT Ishum). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kota Prabumulih.',
+            'contact_email' => 'smpitishlahulummah.2015@yahoo.com',
+            'contact_phone' => '0852-6990-8696',
+            'contact_whatsapp' => '0852-6990-8696',
+            'contact_address' => 'Jalan Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31113',
+            'social_facebook' => 'https://www.facebook.com/smpitishlahulummah.prabumulih?locale=sw_KE',
+            'social_instagram' => 'https://www.instagram.com/smpitishlahulummahprabumulih/',
+            'social_youtube' => 'https://www.youtube.com/@smpitishlahulummahprabumul6398',
+            'social_tiktok' => 'https://www.tiktok.com/@smpitishlahulummahprabumulih',
+            'social_twitter' => 'https://x.com/smpitishum',
+            'banner_daftar_url' => '/ppdb',
             'banner_donasi_url' => '/donasi',
-            'site_logo' => '/uploads/2023/08/logo-pks-ogan-ilir.webp',
+            'site_logo' => '/uploads/logo-ishum.png',
         ];
 
         foreach ($settings as $key => $val) {

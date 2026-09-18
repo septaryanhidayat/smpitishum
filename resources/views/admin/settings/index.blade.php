@@ -57,10 +57,10 @@
                             <div class="p-3 bg-white">
                                 <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">ishum.sch.id</p>
                                 <h4 id="ogPreviewTitle" class="text-xs font-bold text-gray-900 line-clamp-1 mt-0.5">
-                                    {{ $settings['og_title'] ?? 'SMA IT Ishlahul Ummah Prabumulih - Generasi Qur\'ani & Unggul Sains' }}
+                                    {{ $settings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih - Generasi Qur\'ani & Unggul Sains' }}
                                 </h4>
                                 <p id="ogPreviewDesc" class="text-[11px] text-gray-500 line-clamp-2 mt-1">
-                                    {{ $settings['og_description'] ?? 'Website Resmi SMA IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, kepesantrenan, kegiatan siswa, dan PPDB Online.' }}
+                                    {{ $settings['og_description'] ?? 'Website Resmi SMPS IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, kepesantrenan, kegiatan siswa, dan PPDB Online.' }}
                                 </p>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             Judul OpenGraph (OG Title) <span class="text-red-500">*</span>
                         </label>
                         <input type="text" name="og_title" id="ogTitleInput" 
-                               value="{{ $settings['og_title'] ?? 'SMA IT Ishlahul Ummah Prabumulih - Generasi Qur\'ani & Unggul Sains' }}" 
+                               value="{{ $settings['og_title'] ?? 'SMPS IT Ishlahul Ummah Prabumulih - Generasi Qur\'ani & Unggul Sains' }}" 
                                class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] font-medium"
                                placeholder="Judul website saat dibagikan ke medsos" required>
                         <p class="text-[11px] text-gray-400 mt-1">Direkomendasikan antara 40 - 60 karakter agar tidak terpotong di WhatsApp.</p>
@@ -85,7 +85,7 @@
                         </label>
                         <textarea name="og_description" id="ogDescInput" rows="2" 
                                   class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e] leading-relaxed"
-                                  placeholder="Deskripsi ringkas yang tampil di bawah judul medsos" required>{{ $settings['og_description'] ?? 'Website Resmi SMA IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, program tahfidz, sains & teknologi, dan penerimaan santri baru.' }}</textarea>
+                                  placeholder="Deskripsi ringkas yang tampil di bawah judul medsos" required>{{ $settings['og_description'] ?? 'Website Resmi SMPS IT Ishlahul Ummah Prabumulih. Menyajikan informasi akademik, program tahfidz, sains & teknologi, dan penerimaan santri baru.' }}</textarea>
                     </div>
 
                     <div>
@@ -152,7 +152,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Nama Website / Sekolah</label>
-                        <input type="text" name="site_name" value="{{ $settings['site_name'] ?? 'SMA IT Ishlahul Ummah Prabumulih' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="site_name" value="{{ $settings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Tagline / Slogan</label>
@@ -162,7 +162,7 @@
 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Deskripsi Default Website (SEO)</label>
-                    <textarea name="site_description" rows="2" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ $settings['site_description'] ?? 'Official Website SMA IT Ishlahul Ummah Prabumulih. Pusat keunggulan pendidikan Islam terpadu, tahfidzul Qur\'an, sains modern, dan teknologi.' }}</textarea>
+                    <textarea name="site_description" rows="2" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ $settings['site_description'] ?? 'Official Website SMPS IT Ishlahul Ummah Prabumulih. Pusat keunggulan pendidikan Islam terpadu, tahfidzul Qur\'an, sains modern, dan teknologi.' }}</textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
@@ -227,31 +227,31 @@
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                             <i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Facebook Page
                         </label>
-                        <input type="text" name="social_facebook" value="{{ $settings['social_facebook'] ?? 'https://www.facebook.com/smaitplusishum' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="social_facebook" value="{{ $settings['social_facebook'] ?? 'https://www.facebook.com/smpitishlahulummahprabumulih' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                             <i class="fa-brands fa-x-twitter text-black mr-1"></i> X / Twitter
                         </label>
-                        <input type="text" name="social_twitter" value="{{ $settings['social_twitter'] ?? 'https://x.com/smait_ishum' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="social_twitter" value="{{ $settings['social_twitter'] ?? 'https://x.com/smpitishum' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                             <i class="fa-brands fa-instagram text-pink-600 mr-1"></i> Instagram
                         </label>
-                        <input type="text" name="social_instagram" value="{{ $settings['social_instagram'] ?? 'https://www.instagram.com/smaitplusishum/' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="social_instagram" value="{{ $settings['social_instagram'] ?? 'https://www.instagram.com/smpitishlahulummahprabumulih/' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                             <i class="fa-brands fa-youtube text-red-600 mr-1"></i> YouTube Channel
                         </label>
-                        <input type="text" name="social_youtube" value="{{ $settings['social_youtube'] ?? 'https://www.youtube.com/@smaitplusishum' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="social_youtube" value="{{ $settings['social_youtube'] ?? 'https://www.youtube.com/@smpitishlahulummahprabumulih' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
                             <i class="fa-brands fa-tiktok text-black mr-1"></i> TikTok
                         </label>
-                        <input type="text" name="social_tiktok" value="{{ $settings['social_tiktok'] ?? 'https://www.tiktok.com/@smaitplusishum' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="social_tiktok" value="{{ $settings['social_tiktok'] ?? 'https://www.tiktok.com/@smpitishlahulummahprabumulih' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                 </div>
             </div>
@@ -341,11 +341,11 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Pesan Template WhatsApp Konfirmasi</label>
-                        <input type="text" name="donation_confirm_text" value="{{ $settings['donation_confirm_text'] ?? 'Assalamu\'alaikum Bendahara SMA IT Ishlahul Ummah Prabumulih, saya telah menyalurkan infaq beasiswa/pembangunan.' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
+                        <input type="text" name="donation_confirm_text" value="{{ $settings['donation_confirm_text'] ?? 'Assalamu\'alaikum Bendahara SMPS IT Ishlahul Ummah Prabumulih, saya telah menyalurkan infaq beasiswa/pembangunan.' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">
                     </div>
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Deskripsi / Ajakan Singkat Infaq</label>
-                        <textarea name="donation_intro_text" rows="2" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ $settings['donation_intro_text'] ?? 'Mari dukung generasi penghafal Al-Qur\'an dan calon cendekiawan muslim masa depan melalui program beasiswa dan pengembangan fasilitas SMA IT Ishlahul Ummah Prabumulih.' }}</textarea>
+                        <textarea name="donation_intro_text" rows="2" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#00913e]">{{ $settings['donation_intro_text'] ?? 'Mari dukung generasi penghafal Al-Qur\'an dan calon cendekiawan muslim masa depan melalui program beasiswa dan pengembangan fasilitas SMPS IT Ishlahul Ummah Prabumulih.' }}</textarea>
                     </div>
                 </div>
             </div>

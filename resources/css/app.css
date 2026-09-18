@@ -6,24 +6,36 @@
 
 @theme {
     --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --color-school-green: #00913e;
-    --color-school-green-dark: #007532;
-    --color-school-green-light: #05a849;
-    --color-school-green-accent: #10b981;
-    --color-school-red: #da251c;
-    --color-school-red-dark: #b91c1c;
-    --color-school-red-light: #ef4444;
-    --color-school-orange: #da251c;
-    --color-school-orange-dark: #b91c1c;
-    --color-school-orange-light: #ef4444;
+    --color-school-primary: #4338ca;
+    --color-school-primary-dark: #312e81;
+    --color-school-primary-light: #6366f1;
+    --color-school-indigo: #4f46e5;
+    --color-school-violet: #7c3aed;
+    --color-school-purple: #6b21a8;
+    --color-school-purple-dark: #581c87;
+    --color-school-blue: #2563eb;
+    --color-school-cyan: #0284c7;
     --color-school-gold: #f59e0b;
-    --color-school-dark: #111827;
-    --color-school-gray: #f8f9fa;
+    --color-school-gold-light: #fbbf24;
+    --color-school-dark: #0f172a;
+    --color-school-gray: #f8fafc;
+
+    /* Semantic Aliases */
+    --color-school-green: #4338ca;
+    --color-school-green-dark: #312e81;
+    --color-school-green-light: #6366f1;
+    --color-school-green-accent: #2563eb;
+    --color-school-red: #f59e0b;
+    --color-school-red-dark: #d97706;
+    --color-school-red-light: #fbbf24;
+    --color-school-orange: #f59e0b;
+    --color-school-orange-dark: #d97706;
+    --color-school-orange-light: #fbbf24;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #333333;
+    color: #1e293b;
     background-color: #ffffff;
     overflow-x: hidden;
 }
@@ -33,14 +45,14 @@ body {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-    background: #00913e;
+    background: #4f46e5;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #007532;
+    background: #4338ca;
 }
 
 /* Typography styles for article content */

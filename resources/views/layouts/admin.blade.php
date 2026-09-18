@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Admin Panel') - SMA IT Ishlahul Ummah Prabumulih</title>
+    <title>@yield('title', 'Admin Panel') - SMPS IT Ishlahul Ummah Prabumulih</title>
     <link rel="icon" type="image/svg+xml" href="/uploads/logo-ishum-square.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -429,7 +429,7 @@
                 </button>
                 <div>
                     <h1 class="font-extrabold text-lg sm:text-xl text-slate-800 tracking-tight">@yield('header_title', 'Panel Kontrol')</h1>
-                    <p class="text-[11px] text-slate-400">SMA Islam Terpadu Ishlahul Ummah Prabumulih</p>
+                    <p class="text-[11px] text-slate-400">SMPS IT Ishlahul Ummah Prabumulih</p>
                 </div>
             </div>
 
@@ -484,7 +484,7 @@
         {{-- Admin Footer & Watermark --}}
         <footer class="px-6 sm:px-8 py-4 border-t border-slate-200/80 bg-white/70 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
             <div>
-                &copy; {{ date('Y') }} SMA IT Ishlahul Ummah Prabumulih &bull; Panel Administrasi
+                &copy; {{ date('Y') }} SMPS IT Ishlahul Ummah Prabumulih &bull; Panel Administrasi
             </div>
             <div class="text-[11px] text-slate-400">
                 Developed by <a href="https://berandadigital.net" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-800 hover:underline font-medium">Beranda Teknologi Digital</a>

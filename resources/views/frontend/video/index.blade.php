@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Galeri Video & Dokumentasi - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Kumpulan video profil sekolah, dokumentasi kegiatan santri, pentas prestasi, dan liputan pembelajaran SMA IT Ishlahul Ummah Prabumulih.')
+@section('title', 'Galeri Video & Dokumentasi - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Kumpulan video profil sekolah, dokumentasi kegiatan santri, pentas prestasi, dan liputan pembelajaran SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,7 +12,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Galeri Video</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Video SMA IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Video SMPS IT Ishlahul Ummah Prabumulih</h1>
         <p class="text-sm text-emerald-100 mt-2 font-light max-w-2xl">
             Dokumentasi video liputan kegiatan santri, tasmi' Al-Qur'an, praktikum sains, dan prestasi sekolah.
         </p>
@@ -61,7 +61,7 @@
                     <span class="inline-flex items-center text-red-600 font-bold">
                         <i class="fa-brands fa-youtube mr-1.5 text-sm" aria-hidden="true"></i> YouTube
                     </span>
-                    <span>SMA IT Ishlahul Ummah Prabumulih</span>
+                    <span>SMPS IT Ishlahul Ummah Prabumulih</span>
                 </div>
             </div>
         @empty

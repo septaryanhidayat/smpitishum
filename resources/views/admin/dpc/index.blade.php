@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Program Unggulan Sekolah')
-@section('header_title', 'Program Unggulan SMA IT Ishlahul Ummah Prabumulih')
+@section('header_title', 'Program Unggulan SMPS IT Ishlahul Ummah Prabumulih')
 
 @section('content')
 <div class="space-y-6">
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="p-4 pt-2 border-t border-slate-200/70 flex items-center justify-between text-xs bg-white">
-                        <span class="text-slate-400 text-[11px] font-medium">SMA IT Ishum</span>
+                        <span class="text-slate-400 text-[11px] font-medium">SMPS IT Ishum</span>
                         <div class="flex items-center space-x-2">
                             <a href="{{ route('admin.dpc.edit', $d) }}" class="p-2 text-slate-600 hover:text-[#00913e] hover:bg-emerald-50 rounded-lg transition" title="Edit Program">
                                 <i class="fa-solid fa-pen-to-square"></i>

@@ -15,20 +15,20 @@ test('home page renders all authentic school sections successfully', function ()
     $response->assertStatus(200);
     $response->assertSee('Menu Utama');
     $response->assertSee('Sambutan Kepala Sekolah');
-    $response->assertSee('Kabar Sekolah');
-    $response->assertSee('Prestasi Siswa');
+    $response->assertSee('Artikel &amp; Kabar Kampus', false);
+    $response->assertSee('Prestasi Santri');
     $response->assertSee('Dewan Guru');
     $response->assertSee('Galeri Video');
     $response->assertSee('E-Library');
-    $response->assertSee('Daftar PPDB');
+    $response->assertSee('Daftar SPMB');
     $response->assertSee('Pengunjung');
 });
 
 test('articles page renders successfully', function () {
     $category = Category::firstOrCreate(['name' => 'Akademik'], ['slug' => 'akademik']);
     $post = Post::create([
-        'title' => 'Uji Coba Prestasi Siswa Robbani',
-        'slug' => 'uji-coba-prestasi-siswa-robbani',
+        'title' => 'Uji Coba Prestasi Siswa Ishum',
+        'slug' => 'uji-coba-prestasi-siswa-ishum',
         'content' => '<p>Konten artikel pengujian sekolah.</p>',
         'status' => 'publish',
         'type' => 'post',
@@ -37,9 +37,9 @@ test('articles page renders successfully', function () {
 
     $response = $this->get('/artikel');
     $response->assertStatus(200);
-    $response->assertSee('Uji Coba Prestasi Siswa Robbani');
+    $response->assertSee('Uji Coba Prestasi Siswa Ishum');
 
-    $detailResponse = $this->get('/artikel/uji-coba-prestasi-siswa-robbani');
+    $detailResponse = $this->get('/artikel/uji-coba-prestasi-siswa-ishum');
     $detailResponse->assertStatus(200);
     $detailResponse->assertSee('Konten artikel pengujian sekolah.');
 });
@@ -74,8 +74,8 @@ test('static profil pages render successfully', function () {
         'type' => 'page',
     ]);
     Post::create([
-        'title' => 'Berita Terkini Robbani',
-        'slug' => 'berita-terkini-robbani',
+        'title' => 'Berita Terkini Ishum',
+        'slug' => 'berita-terkini-ishum',
         'content' => 'Konten berita',
         'status' => 'publish',
         'type' => 'post',
@@ -90,15 +90,15 @@ test('static profil pages render successfully', function () {
 
     $this->get('/sambutan-kepala-sekolah')->assertStatus(200);
     $this->get('/tentang-kami')->assertStatus(200);
-    $this->get('/visi-dan-misi')->assertStatus(200)->assertSee('Berita Terkini Robbani')->assertSee('Ujian Tasmi Al-Quran');
-    $this->get('/sejarah')->assertStatus(200)->assertSee('Berita Terkini Robbani')->assertSee('Ujian Tasmi Al-Quran');
+    $this->get('/visi-dan-misi')->assertStatus(200)->assertSee('Berita Terkini Ishum')->assertSee('Ujian Tasmi Al-Quran');
+    $this->get('/sejarah')->assertStatus(200)->assertSee('Berita Terkini Ishum')->assertSee('Ujian Tasmi Al-Quran');
     $this->get('/struktur-organisasi')->assertStatus(200);
 });
 
 test('dewan, bidang, agenda, and pengumuman pages render successfully', function () {
     AnggotaDewan::create([
-        'name' => 'Ustadz Ahmad Robbani',
-        'slug' => 'ustadz-ahmad-robbani',
+        'name' => 'Ustadz Ahmad Ishum',
+        'slug' => 'ustadz-ahmad-ishum',
         'position' => 'Kepala Sekolah',
     ]);
 
@@ -120,7 +120,7 @@ test('dewan, bidang, agenda, and pengumuman pages render successfully', function
         'status' => 'publish',
     ]);
 
-    $this->get('/dewan-guru')->assertStatus(200)->assertSee('Ustadz Ahmad Robbani');
+    $this->get('/dewan-guru')->assertStatus(200)->assertSee('Ustadz Ahmad Ishum');
     $this->get('/fasilitas')->assertStatus(200)->assertSee('Laboratorium Biologi Modern');
     $this->get('/bidang/laboratorium-biologi-modern')->assertStatus(200);
     $this->get('/agenda')->assertStatus(200)->assertSee('Olimpiade Sains Sekolah');
@@ -134,7 +134,7 @@ test('feedback form submission works', function () {
         'nama' => 'Ahmad Calon Santri',
         'email' => 'ahmad@example.com',
         'whatsapp' => '081234567890',
-        'saran_kritik' => 'Mohon informasi jadwal tes masuk PPDB SMA IT Plus Robbani.',
+        'saran_kritik' => 'Mohon informasi jadwal tes masuk SPMB SMPS IT Ishlahul Ummah Prabumulih.',
     ]);
 
     $response->assertRedirect('/hubungi');
@@ -171,8 +171,8 @@ test('footer has visitor counter with data-target and responsive mobile center a
 
 test('site settings update dynamically reflects across header, footer, and contact page', function () {
     Setting::updateOrCreate(['key' => 'contact_phone'], ['value' => '0821-7788-9900', 'group' => 'general']);
-    Setting::updateOrCreate(['key' => 'contact_email'], ['value' => 'info@smaitplusrobbani.sch.id', 'group' => 'general']);
-    Setting::updateOrCreate(['key' => 'contact_address'], ['value' => 'Kampus Terpadu SMA IT Plus Robbani Ogan Ilir', 'group' => 'general']);
+    Setting::updateOrCreate(['key' => 'contact_email'], ['value' => 'info@smpitishum.sch.id', 'group' => 'general']);
+    Setting::updateOrCreate(['key' => 'contact_address'], ['value' => 'Kampus Terpadu SMPS IT Ishlahul Ummah Prabumulih', 'group' => 'general']);
 
     // Re-share to simulate fresh request
     $settings = Setting::all()->pluck('value', 'key')->toArray();
@@ -180,13 +180,13 @@ test('site settings update dynamically reflects across header, footer, and conta
 
     $home = $this->get('/');
     $home->assertSee('0821-7788-9900');
-    $home->assertSee('info@smaitplusrobbani.sch.id');
-    $home->assertSee('Kampus Terpadu SMA IT Plus Robbani Ogan Ilir');
+    $home->assertSee('info@smpitishum.sch.id');
+    $home->assertSee('Kampus Terpadu SMPS IT Ishlahul Ummah Prabumulih');
 
     $contact = $this->get('/hubungi');
     $contact->assertSee('0821-7788-9900');
-    $contact->assertSee('info@smaitplusrobbani.sch.id');
-    $contact->assertSee('Kampus Terpadu SMA IT Plus Robbani Ogan Ilir');
+    $contact->assertSee('info@smpitishum.sch.id');
+    $contact->assertSee('Kampus Terpadu SMPS IT Ishlahul Ummah Prabumulih');
 });
 
 test('sambutan page renders dynamic content from database', function () {
@@ -236,14 +236,14 @@ test('dewan guru page dynamically reflects updated name and photo from database'
     $res2->assertDontSee('Nama Guru Lama');
 });
 
-test('home page renders pksoganilir style gallery slider with 2 rows and ishum photos', function () {
+test('home page renders dual-row gallery slider with ishum photos', function () {
     $response = $this->get('/');
 
     $response->assertStatus(200);
     $response->assertSee('Galeri');
-    $response->assertSee('Dokumentasi Kegiatan Santri &amp; Kampus SMA IT Ishlahul Ummah', false);
+    $response->assertSee('Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Kampus SMPS IT Ishlahul Ummah', false);
     $response->assertSee(route('galeri.index'));
-    $response->assertSee('Selengkapnya');
+    $response->assertSee('Lihat Semua Dokumentasi');
 });
 
 test('mars jsit page renders authentic mars jsit lyrics and video', function () {

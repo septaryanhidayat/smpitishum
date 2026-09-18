@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Permohonan Izin Kunjungan ke Sekolah - SMA IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Formulir dan ketentuan permohonan izin kunjungan edukasi, studi banding, atau riset di SMA Islam Terpadu Ishlahul Ummah Prabumulih.')
+@section('title', 'Permohonan Izin Kunjungan ke Sekolah - SMPS IT Ishlahul Ummah Prabumulih')
+@section('meta_description', 'Formulir dan ketentuan permohonan izin kunjungan edukasi, studi banding, atau riset di SMPS IT Ishlahul Ummah Prabumulih.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -21,7 +21,7 @@
             <div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Izin Kunjungan ke Sekolah</h1>
                 <p class="text-sm text-emerald-100 mt-1 font-light">
-                    Pengajuan izin kunjungan instansi, studi banding, atau riset edukatif di SMA IT Ishum.
+                    Pengajuan izin kunjungan instansi, studi banding, atau riset edukatif di SMPS IT Ishum.
                 </p>
             </div>
         </div>
@@ -36,7 +36,7 @@
             PERMOHONAN IZIN KUNJUNGAN KE SEKOLAH
         </h2>
         <p class="text-sm sm:text-base font-bold text-[#da251c] mt-1">
-            SMA Islam Terpadu Ishlahul Ummah Prabumulih
+            SMPS IT Ishlahul Ummah Prabumulih
         </p>
         <div class="w-16 h-1 bg-[#00913e] mx-auto rounded-full mt-3"></div>
     </div>
@@ -84,7 +84,7 @@
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMA IT Ishlahul Ummah Prabumulih</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Prabumulih Timur</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-emerald-600 font-bold hover:underline">0821-8268-0647</a></p><p><strong>Website :</strong> smaitishumpbm.sch.id</p><p><strong>Email :</strong> <a href="mailto:smaitishlahulummah2019@gmail.com" class="text-emerald-600 font-bold hover:underline">smaitishlahulummah2019@gmail.com</a></p>'
+                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Ishlahul Ummah Prabumulih</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Prabumulih Timur</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-emerald-600 font-bold hover:underline">0852-6990-8696</a></p><p><strong>Website :</strong> smpitishum.sch.id</p><p><strong>Email :</strong> <a href="mailto:smpitishlahulummah.2015@yahoo.com" class="text-emerald-600 font-bold hover:underline">smpitishlahulummah.2015@yahoo.com</a></p>'
                 ]
             ];
             $tabs = !empty($accordions) ? $accordions : $defaultIzinTabs;
@@ -148,7 +148,7 @@
                 <label for="whatsapp" class="block text-xs font-bold text-gray-700 mb-1">
                     Nomor WhatsApp <span class="text-red-500">*</span>
                 </label>
-                <input type="text" name="whatsapp" id="whatsapp" required value="{{ old('whatsapp') }}" placeholder="Contoh: 082182680647" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] focus:border-transparent transition">
+                <input type="text" name="whatsapp" id="whatsapp" required value="{{ old('whatsapp') }}" placeholder="Contoh: 085269908696" class="w-full bg-white text-xs sm:text-sm text-gray-800 rounded-lg px-4 py-2.5 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00913e] focus:border-transparent transition">
                 @error('whatsapp') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
