@@ -32,7 +32,7 @@
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
             <a href="{{ route('home') }}" class="flex items-center group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[55%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
                 <div class="h-12 sm:h-16 flex items-center py-1 min-w-0 max-w-full">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" class="h-8 sm:h-14 w-auto max-w-full sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
+                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="240" height="56" fetchpriority="high" decoding="async" class="h-8 sm:h-14 w-auto max-w-full sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum-square.png'">
                 </div>
             </a>
 
@@ -185,7 +185,7 @@
 
             {{-- MOBILE TOP RIGHT: Tombol SPMB & Hamburger --}}
             <div class="flex lg:hidden items-center space-x-1.5 shrink-0 ml-auto">
-                <a href="{{ route('ppdb.index') }}" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-black shadow transition flex items-center min-h-[34px] flex-shrink-0">
+                <a href="{{ route('ppdb.index') }}" aria-label="Pendaftaran SPMB Online" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 px-2 sm:px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-black shadow transition flex items-center min-h-[34px] flex-shrink-0">
                     <span>SPMB</span>
                 </a>
                 <button id="mobile-menu-toggle" type="button" class="text-white hover:text-amber-200 p-1 rounded-lg focus:outline-none w-9 h-9 flex items-center justify-center flex-shrink-0 cursor-pointer" aria-label="Buka Menu Navigasi">

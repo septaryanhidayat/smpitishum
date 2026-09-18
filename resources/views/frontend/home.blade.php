@@ -2,32 +2,50 @@
 
 @section('title', 'SMPS IT Ishlahul Ummah Prabumulih - Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia')
 
+@push('preload')
+    <link rel="preload" as="image" href="{{ asset('/uploads/campus-smpit-ishum.webp') }}" type="image/webp" fetchpriority="high">
+@endpush
+
 @section('content')
 {{-- ========================================================
      SECTION #0: HERO SLIDER (Royal Indigo & Electric Blue)
      ======================================================== --}}
 <section class="relative bg-slate-950 overflow-hidden" x-data="{
     activeSlide: 0,
-    slides: {{ Js::from($heroSlides) }},
+    totalSlides: {{ count($heroSlides) }},
     autoSlide() {
         setInterval(() => {
-            this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+            this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
         }, 6500);
     }
 }" x-init="autoSlide()">
     {{-- Banner Images & Content --}}
     <div class="relative h-[440px] sm:h-[480px] lg:h-[520px] w-full overflow-hidden">
-        <template x-for="(slide, index) in slides" :key="index">
-            <div x-show="activeSlide === index" 
+        @foreach($heroSlides as $index => $slide)
+            <div x-show="activeSlide === {{ $index }}" 
                  x-transition:enter="transition ease-out duration-700" 
                  x-transition:enter-start="opacity-0 scale-105" 
                  x-transition:enter-end="opacity-100 scale-100" 
                  x-transition:leave="transition ease-in duration-500" 
                  x-transition:leave-start="opacity-100" 
                  x-transition:leave-end="opacity-0" 
-                 class="absolute inset-0">
-                
-                <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover object-center brightness-60">
+                 class="absolute inset-0"
+                 @if($index !== 0) style="display: none;" @endif
+            >
+                <img src="{{ asset($slide['image']) }}" 
+                     alt="{{ $slide['title'] }}" 
+                     class="w-full h-full object-cover object-center brightness-60"
+                     width="1376"
+                     height="768"
+                     @if($index === 0)
+                         fetchpriority="high"
+                         loading="eager"
+                         decoding="async"
+                     @else
+                         loading="lazy"
+                         decoding="async"
+                     @endif
+                >
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-indigo-950/60 to-slate-950/40"></div>
 
                 {{-- Konten Hero Rata Tengah --}}
@@ -35,43 +53,43 @@
                     <div class="max-w-4xl mx-auto px-2 sm:px-6 text-center text-white space-y-2.5 sm:space-y-4 w-full">
                         <div class="flex justify-center">
                             <span class="inline-flex items-center justify-center px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[92%] sm:max-w-none text-center">
-                                <i class="fa-solid fa-star text-[9px] mr-1.5 shrink-0"></i>
+                                <i class="fa-solid fa-star text-[9px] mr-1.5 shrink-0" aria-hidden="true"></i>
                                 <span class="truncate sm:overflow-visible">SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
                             </span>
                         </div>
-                        <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-snug sm:leading-tight px-1" x-text="slide.title"></h1>
-                        <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none px-2" x-text="slide.subtitle"></p>
+                        <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-snug sm:leading-tight px-1">{{ $slide['title'] }}</h1>
+                        <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none px-2">{{ $slide['subtitle'] }}</p>
                         <div class="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-[270px] sm:max-w-md mx-auto">
-                            <a :href="slide.btn_link" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
-                                <span x-text="slide.btn_text"></span>
-                                <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            <a href="{{ $slide['btn_link'] }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105" aria-label="{{ $slide['btn_text'] }}">
+                                <span>{{ $slide['btn_text'] }}</span>
+                                <i class="fa-solid fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
                             </a>
-                            <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105">
-                                <i class="fa-solid fa-graduation-cap mr-2"></i>
+                            <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105" aria-label="Informasi Pendaftaran SPMB Online">
+                                <i class="fa-solid fa-graduation-cap mr-2" aria-hidden="true"></i>
                                 <span>Info SPMB</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </template>
+        @endforeach
     </div>
 
     {{-- Carousel Controls (Panah Samping - disembunyikan di layar mobile agar tidak menutupi teks) --}}
-    <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length" class="hidden sm:flex absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide sebelumnya">
+    <button @click="activeSlide = (activeSlide - 1 + totalSlides) % totalSlides" class="hidden sm:flex absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide sebelumnya">
         <i class="fa-solid fa-chevron-left text-xs sm:text-sm" aria-hidden="true"></i>
     </button>
-    <button @click="activeSlide = (activeSlide + 1) % slides.length" class="hidden sm:flex absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide berikutnya">
+    <button @click="activeSlide = (activeSlide + 1) % totalSlides" class="hidden sm:flex absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-indigo-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-full items-center justify-center transition backdrop-blur z-20 shadow-lg border border-white/10" aria-label="Slide berikutnya">
         <i class="fa-solid fa-chevron-right text-xs sm:text-sm" aria-hidden="true"></i>
     </button>
 
     {{-- Dots Pagination di Tengah --}}
     <div class="absolute bottom-8 sm:bottom-11 left-1/2 -translate-x-1/2 flex space-x-1.5 z-20">
-        <template x-for="(slide, idx) in slides" :key="idx">
-            <button @click="activeSlide = idx" class="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center cursor-pointer" :aria-label="'Pilih slide ' + (idx + 1)">
-                <span class="h-2 sm:h-2.5 rounded-full transition-all duration-300" :class="activeSlide === idx ? 'w-6 sm:w-7 bg-amber-400 shadow-md shadow-amber-400/50' : 'w-2 sm:w-2.5 bg-white/60 hover:bg-white'"></span>
+        @foreach($heroSlides as $idx => $slide)
+            <button @click="activeSlide = {{ $idx }}" class="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center cursor-pointer" aria-label="Pilih slide {{ $idx + 1 }}">
+                <span class="h-2 sm:h-2.5 rounded-full transition-all duration-300" :class="activeSlide === {{ $idx }} ? 'w-6 sm:w-7 bg-amber-400 shadow-md shadow-amber-400/50' : 'w-2 sm:w-2.5 bg-white/60 hover:bg-white'"></span>
             </button>
-        </template>
+        @endforeach
     </div>
 </section>
 
@@ -243,7 +261,7 @@
                     <div class="relative group max-w-[260px] sm:max-w-xs md:max-w-sm w-full mx-auto">
                         <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 via-blue-400 to-indigo-500 rounded-2xl blur-xs opacity-75 group-hover:opacity-100 transition duration-500"></div>
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border-2 border-white/20 aspect-[3/4]">
-                            <img src="/uploads/flyer-spmb-smpit-ishum.png" alt="Flyer SPMB Gelombang Exclusive & Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                            <img src="/uploads/flyer-spmb-smpit-ishum.webp" alt="Flyer SPMB Gelombang Exclusive &amp; Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/flyer-spmb-smpit-ishum.png'">
                             <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-slate-950/85 backdrop-blur-md py-1.5 px-2.5 rounded-xl border border-white/10 text-center">
                                 <span class="text-[10px] sm:text-[11px] font-black text-amber-300 uppercase tracking-wider">
                                     <i class="fa-solid fa-bullhorn mr-1"></i> Pengumuman Resmi Sekolah
@@ -302,7 +320,7 @@
                             <span>Daftar SPMB Online</span>
                         </a>
 
-                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
+                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
                             <i class="fa-brands fa-whatsapp text-base mr-2"></i>
                             <span>Narahubung: 0852-6990-8696</span>
                         </a>
@@ -324,7 +342,7 @@
             <div class="lg:col-span-5 reveal-fade-up delay-1">
                 <div class="max-w-sm mx-auto">
                     <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-indigo-50 bg-gradient-to-b from-indigo-50 to-blue-100 aspect-[4/5] relative">
-                        <img src="/uploads/dewan/kepala-sekolah.webp" alt="Kepala SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
+                        <img src="/uploads/dewan/kepala-sekolah.webp" alt="Kepala SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr" width="400" height="500" loading="lazy" decoding="async" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-indigo-950/80 via-transparent to-transparent flex items-end p-5">
                             <div class="text-white text-center w-full">
                                 <span class="bg-amber-400 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Kepala Sekolah</span>
@@ -397,7 +415,7 @@
             <div class="lg:col-span-7 reveal-fade-up delay-1">
                 <article class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 h-full flex flex-col group">
                     <div class="relative h-60 sm:h-80 overflow-hidden bg-gray-100">
-                        <img src="{{ $featuredPost->featured_image_url }}" alt="{{ $featuredPost->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                        <img src="{{ $featuredPost->featured_image_url }}" alt="{{ $featuredPost->title }}" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                         @if($featuredPost->categories->isNotEmpty())
                         <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
                             {{ $featuredPost->categories->first()->name }}
@@ -435,7 +453,7 @@
                 @foreach($sidePosts as $index => $sp)
                 <article class="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-gray-100 hover:shadow-md transition flex items-center space-x-3 sm:space-x-4 group reveal-fade-up delay-{{ $index + 2 }}">
                     <div class="w-20 h-20 sm:w-28 sm:h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
-                        <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                        <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" width="112" height="96" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </div>
                     <div class="flex-1 min-w-0 space-y-1">
                         <div class="text-[11px] text-gray-500 flex items-center space-x-2">
@@ -478,7 +496,7 @@
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
                 <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
                     <a href="{{ route('artikel.show', $post->slug) }}" class="block w-full h-full" aria-label="Baca berita: {{ $post->title }}">
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </a>
                     <span class="absolute bottom-2.5 left-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">
                         <i class="fa-solid fa-trophy text-amber-400 mr-1"></i> Prestasi
@@ -528,7 +546,7 @@
                         @foreach($nasionalPosts as $post)
                         <div class="flex items-start space-x-3 group">
                             <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5">
-                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -565,7 +583,7 @@
                         @foreach($daerahPosts as $post)
                         <div class="flex items-start space-x-3 group">
                             <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5">
-                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
+                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -612,7 +630,7 @@
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
                 <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
                     <a href="{{ route('artikel.show', $post->slug) }}" class="block w-full h-full" aria-label="Baca program: {{ $post->title }}">
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
                     </a>
                 </div>
                 <div class="pt-3 flex-1 flex flex-col justify-between">
@@ -658,7 +676,7 @@
             @foreach($dewan as $index => $d)
             <div class="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 text-center group hover:shadow-xl transition transform hover:-translate-y-1 reveal-fade-up delay-{{ $index + 1 }}">
                 <div class="h-64 rounded-2xl overflow-hidden mb-3 bg-gray-100 border border-gray-100">
-                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="240" height="256" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                 </div>
                 <h3 class="font-black text-sm text-gray-900 group-hover:text-indigo-600 transition">
                     {{ $d->name }}
@@ -675,7 +693,7 @@
             @foreach($dewan as $index => $d)
             <div class="bg-white rounded-2xl p-2.5 shadow-sm border border-gray-100 text-center reveal-fade-up delay-{{ $index + 1 }}">
                 <div class="h-44 rounded-xl overflow-hidden mb-2 bg-gray-100">
-                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" class="w-full h-full object-cover object-top" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="180" height="176" loading="lazy" decoding="async" class="w-full h-full object-cover object-top" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                 </div>
                 <h3 class="font-bold text-xs text-gray-900 leading-tight">
                     {{ $d->name }}
@@ -732,7 +750,7 @@
         </div>
 
         <div class="text-center mt-10 reveal-fade-up">
-            <a href="https://www.youtube.com/@smpitishlahulummahprabumul6398" target="_blank" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg transition">
+            <a href="https://www.youtube.com/@smpitishlahulummahprabumul6398" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg transition">
                 <i class="fa-brands fa-youtube mr-2 text-base"></i>
                 <span>Subscribe Channel YouTube Resmi</span>
             </a>
@@ -861,7 +879,7 @@
                         <template x-for="(item, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-1.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-64 sm:h-80 md:h-96 lg:h-[380px] rounded-3xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800/80 group">
-                                    <img :src="item.url" :alt="item.title" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
                                         <span class="text-xs sm:text-sm font-bold text-white leading-snug drop-shadow-md" x-text="item.title"></span>
                                     </div>
@@ -918,7 +936,7 @@
                         <template x-for="(item, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-1.5 sm:px-2.5" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-52 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-xl bg-neutral-900 border border-neutral-800/80 group">
-                                    <img :src="item.url" :alt="item.title" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                         <span class="text-xs font-bold text-white leading-snug drop-shadow-md" x-text="item.title"></span>
                                     </div>
@@ -1037,7 +1055,7 @@
                         <template x-for="(eb, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-2.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
                                 <a href="{{ route('download.ebook') }}" class="group block relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800 transform hover:scale-104 transition duration-300 cursor-pointer h-72 sm:h-80 lg:h-96 w-full" :aria-label="'Unduh modul: ' + eb.title">
-                                    <img :src="eb.cover" :alt="eb.title" class="w-full h-full object-cover object-center group-hover:scale-106 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                    <img :src="eb.cover" :alt="eb.title" loading="lazy" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-106 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center p-3 text-center" aria-hidden="true">
                                         <span class="text-xs font-bold text-white truncate max-w-full" x-text="eb.title"></span>
                                     </div>
@@ -1097,7 +1115,7 @@
                 </div>
                 <div class="pt-4 mt-4 border-t border-gray-200/60 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3">
                     <div class="w-10 h-10 rounded-full overflow-hidden bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-xs flex-shrink-0 mx-auto sm:mx-0">
-                        <img src="{{ $t->photo_url }}" alt="Foto {{ $t->name }}" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($t->name) }}&background=4338ca&color=fff'">
+                        <img src="{{ $t->photo_url }}" alt="Foto {{ $t->name }}" width="40" height="40" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($t->name) }}&background=4338ca&color=fff'">
                     </div>
                     <div class="min-w-0 w-full text-center sm:text-left">
                         <h3 class="font-bold text-xs text-gray-900 break-words leading-tight">{{ $t->name }}</h3>
@@ -1134,7 +1152,7 @@
                 </div>
             </a>
 
-            <a href="https://wa.me/6285269908696" target="_blank" class="bg-white p-4 rounded-2xl border-t-4 border-amber-500 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-2" aria-label="Hubungi Hotline Sekolah via WhatsApp">
+            <a href="https://wa.me/6285269908696" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-2xl border-t-4 border-amber-500 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-2" aria-label="Hubungi Hotline Sekolah via WhatsApp">
                 <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-amber-500 group-hover:text-white transition mx-auto sm:mx-0" aria-hidden="true">
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>

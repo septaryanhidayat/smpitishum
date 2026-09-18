@@ -23,7 +23,7 @@
             {{-- KOLOM 1: LOGO ASLI SEKOLAH --}}
             <div class="lg:col-span-3 flex justify-center md:justify-start">
                 <div class="bg-white p-3.5 rounded-2xl shadow-lg inline-block border border-indigo-200/50">
-                    <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" class="w-28 sm:w-32 h-auto object-contain block mx-auto md:mx-0" onerror="this.src='/uploads/logo-ishum.png'">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" width="128" height="128" loading="lazy" decoding="async" class="w-28 sm:w-32 h-auto object-contain block mx-auto md:mx-0" onerror="this.src='/uploads/logo-ishum.png'">
                 </div>
             </div>
 
@@ -62,16 +62,16 @@
                 
                 {{-- Ikon Bulat Putih --}}
                 <div class="flex items-center justify-center md:justify-start space-x-2 pt-1 pb-3">
-                    <a href="{{ $siteSettings['social_facebook'] ?? 'https://www.facebook.com/smpitishlahulummah.prabumulih?locale=sw_KE' }}" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-amber-500 hover:scale-110 transition shadow" aria-label="Kunjungi Facebook SMPS IT Ishlahul Ummah Prabumulih">
+                    <a href="{{ $siteSettings['social_facebook'] ?? 'https://www.facebook.com/smpitishlahulummah.prabumulih?locale=sw_KE' }}" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-amber-500 hover:scale-110 transition shadow" aria-label="Kunjungi Facebook SMPS IT Ishlahul Ummah Prabumulih">
                         <i class="fa-brands fa-facebook-f text-base" aria-hidden="true"></i>
                     </a>
-                    <a href="{{ $siteSettings['social_instagram'] ?? 'https://www.instagram.com/smpitishlahulummahprabumulih/' }}" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-pink-600 hover:scale-110 transition shadow" aria-label="Kunjungi Instagram SMPS IT Ishlahul Ummah Prabumulih">
+                    <a href="{{ $siteSettings['social_instagram'] ?? 'https://www.instagram.com/smpitishlahulummahprabumulih/' }}" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-pink-600 hover:scale-110 transition shadow" aria-label="Kunjungi Instagram SMPS IT Ishlahul Ummah Prabumulih">
                         <i class="fa-brands fa-instagram text-base" aria-hidden="true"></i>
                     </a>
-                    <a href="{{ $siteSettings['social_youtube'] ?? 'https://www.youtube.com/@smpitishlahulummahprabumul6398' }}" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-red-600 hover:scale-110 transition shadow" aria-label="Kunjungi YouTube SMPS IT Ishlahul Ummah Prabumulih">
+                    <a href="{{ $siteSettings['social_youtube'] ?? 'https://www.youtube.com/@smpitishlahulummahprabumul6398' }}" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-red-600 hover:scale-110 transition shadow" aria-label="Kunjungi YouTube SMPS IT Ishlahul Ummah Prabumulih">
                         <i class="fa-brands fa-youtube text-base" aria-hidden="true"></i>
                     </a>
-                    <a href="https://wa.me/6285269908696" target="_blank" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-indigo-600 hover:scale-110 transition shadow" aria-label="Hubungi WhatsApp SMPS IT Ishlahul Ummah Prabumulih">
+                    <a href="https://wa.me/6285269908696" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-indigo-600 hover:scale-110 transition shadow" aria-label="Hubungi WhatsApp SMPS IT Ishlahul Ummah Prabumulih">
                         <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="w-full space-y-1.5 text-sm sm:text-[15px] text-slate-200 pt-1 flex flex-col items-center md:items-start">
                     <div class="flex items-center justify-center md:justify-start space-x-3">
                         <i class="fa-solid fa-globe text-amber-400 w-4 text-center text-sm flex-shrink-0" aria-hidden="true"></i>
-                        <a href="https://smpitishum.sch.id" target="_blank" class="text-slate-200 hover:text-amber-300 transition py-0.5 font-medium">smpitishum.sch.id</a>
+                        <a href="https://smpitishum.sch.id" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-amber-300 transition py-0.5 font-medium">smpitishum.sch.id</a>
                     </div>
                 </div>
             </div>

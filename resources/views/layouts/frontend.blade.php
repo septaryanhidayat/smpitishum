@@ -44,13 +44,24 @@
     {{-- Favicon --}}
     <link rel="icon" type="image/png" href="{{ asset($siteSettings['site_favicon'] ?? '/uploads/logo-ishum-square.png') }}">
 
-    {{-- Google Fonts Poppins --}}
+    {{-- Critical Preload Stack --}}
+    @stack('preload')
+
+    {{-- DNS Prefetch & Preconnect for CDNs --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.gtranslate.net">
 
-    {{-- FontAwesome 6 Icons --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
+    {{-- Google Fonts Poppins (Non-render-blocking) --}}
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+
+    {{-- FontAwesome 6 Icons (Non-render-blocking) --}}
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer"></noscript>
 
     {{-- Vite CSS & JS --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -130,7 +141,16 @@
             "flag_style": "3d"
         };
     </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var gt = document.createElement('script');
+                gt.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+                gt.defer = true;
+                document.body.appendChild(gt);
+            }, 1200);
+        });
+    </script>
 
     {{-- FLOATING BACK TO TOP BUTTON (Kanan Bawah - Warna Indigo Sekolah) --}}
     <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-5 right-5 z-50 bg-indigo-600 hover:bg-indigo-700 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none duration-300 cursor-pointer ring-2 ring-amber-400/40" aria-label="Kembali ke atas halaman">
