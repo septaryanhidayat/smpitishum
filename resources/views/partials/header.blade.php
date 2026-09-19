@@ -30,16 +30,17 @@
         <div class="flex justify-between items-center h-16 sm:h-20 w-full max-w-full">
             
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
-            <a href="{{ route('home') }}" class="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[78%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="h-11 xs:h-12 sm:h-14 md:h-15 w-auto flex-shrink-0 flex items-center justify-center">
-                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="60" height="60" fetchpriority="high" decoding="async" class="h-full w-auto object-contain transform group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/logo-ishum.png'">
+            <a href="{{ route('home') }}" class="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[76%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 shrink-0 flex items-center justify-center overflow-hidden" style="width: clamp(40px, 4.5vw, 54px); height: clamp(40px, 4.5vw, 54px); max-width: 54px; max-height: 54px; min-width: 40px; min-height: 40px;">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="54" height="54" fetchpriority="high" decoding="async" class="w-full h-full object-contain pointer-events-none select-none transition duration-300 group-hover:scale-105" style="max-width: 54px; max-height: 54px; width: 100%; height: 100%; object-fit: contain; display: block;" onerror="this.src='/uploads/logo-ishum.png'">
                 </div>
-                <div class="flex flex-col min-w-0 justify-center leading-tight space-y-0.5">
-                    <span class="text-[8.5px] xs:text-[9.5px] sm:text-[11px] md:text-xs font-extrabold uppercase tracking-wide text-amber-400 truncate">YAYASAN ISHLAHUL UMMAH PRABUMULIH</span>
-                    <span class="text-[13px] xs:text-[15px] sm:text-[18px] md:text-[21px] font-black uppercase text-white tracking-tight leading-none truncate group-hover:text-amber-300 transition">SMPS IT ISHLAHUL UMMAH</span>
-                    <span class="text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-wider text-amber-400 truncate">KOTA PRABUMULIH &bull; TERAKREDITASI B</span>
+                <div class="flex flex-col min-w-0 justify-center leading-none space-y-0.5 select-none">
+                    <span class="text-[8px] sm:text-[10px] md:text-[11.5px] font-extrabold uppercase tracking-wide text-amber-400 truncate leading-tight">YAYASAN ISHLAHUL UMMAH PRABUMULIH</span>
+                    <span class="text-[13px] sm:text-[16px] md:text-[20px] font-black uppercase text-white tracking-tight leading-none truncate group-hover:text-amber-300 transition">SMPS IT ISHLAHUL UMMAH</span>
+                    <span class="text-[7.5px] sm:text-[9px] md:text-[10.5px] font-bold uppercase tracking-wider text-amber-400 truncate leading-tight">KOTA PRABUMULIH &bull; TERAKREDITASI B</span>
                 </div>
             </a>
+
 
             {{-- DESKTOP NAVIGATION (Ringkas, Rapi & Elegan) --}}
             <nav class="hidden lg:flex items-center space-x-1 xl:space-x-1.5 font-bold text-xs xl:text-sm text-white" aria-label="Navigasi Utama">
