@@ -205,6 +205,26 @@ class HomeController extends Controller
             'button_text' => Setting::get('popup_button_text', 'Daftar SPMB Sekarang'),
         ];
 
+        // 16. SPMB Banner & Promo Highlight Settings
+        $spmbBanner = [
+            'badge' => Setting::get('spmb_banner_badge', 'PENERIMAAN SISWA BARU GELOMBANG EXCLUSIVE'),
+            'title' => Setting::get('spmb_banner_title', 'SPMB Gelombang Exclusive & Class Meeting Semester Genap'),
+            'year' => Setting::get('spmb_banner_year', Setting::get('ppdb_year', '2027-2028')),
+            'description' => Setting::get('spmb_banner_description', 'Bergabunglah bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.'),
+            'card1_title' => Setting::get('spmb_banner_card1_title', 'KUOTA TERBATAS'),
+            'card1_desc' => Setting::get('spmb_banner_card1_desc', 'Hanya 24 Siswa'),
+            'card2_title' => Setting::get('spmb_banner_card2_title', 'CASH BACK 1 JUTA'),
+            'card2_desc' => Setting::get('spmb_banner_card2_desc', 'Alumni SDIT Ishum 1 & 2'),
+            'card3_title' => Setting::get('spmb_banner_card3_title', 'CLASS MEETING'),
+            'card3_desc' => Setting::get('spmb_banner_card3_desc', 'Mulai Rabu, 17 Juni'),
+            'flyer_image' => Setting::get('spmb_banner_flyer_image', '/uploads/flyer-spmb-smpit-ishum.webp'),
+            'flyer_label' => Setting::get('spmb_banner_flyer_label', 'Pengumuman Resmi Sekolah'),
+            'btn_text' => Setting::get('spmb_banner_btn_text', 'Daftar SPMB Online'),
+            'btn_url' => Setting::get('spmb_banner_btn_url', '/ppdb'),
+            'contact_text' => Setting::get('spmb_banner_contact_text', 'Narahubung: 0852-6990-8696'),
+            'contact_phone' => Setting::get('spmb_banner_contact_phone', '0852-6990-8696'),
+        ];
+
         return view('frontend.home', compact(
             'heroSlides',
             'sambutan',
@@ -224,7 +244,8 @@ class HomeController extends Controller
             'ebooks',
             'testimonials',
             'visitorHits',
-            'popupSettings'
+            'popupSettings',
+            'spmbBanner'
         ));
     }
 }

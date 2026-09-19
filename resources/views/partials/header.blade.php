@@ -30,9 +30,14 @@
         <div class="flex justify-between items-center h-16 sm:h-20 w-full max-w-full">
             
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
-            <a href="{{ route('home') }}" class="flex items-center group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[55%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="h-12 sm:h-16 flex items-center py-1 min-w-0 max-w-full">
-                    <img src="/uploads/logo-ishum.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="240" height="56" fetchpriority="high" decoding="async" class="h-8 sm:h-14 w-auto max-w-full sm:max-w-none object-contain transform group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/logo-ishum-square.png'">
+            <a href="{{ route('home') }}" class="flex items-center space-x-2.5 sm:space-x-3 group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[72%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
+                <div class="h-11 w-11 sm:h-14 sm:w-14 flex-shrink-0 flex items-center justify-center">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="56" height="56" fetchpriority="high" decoding="async" class="h-full w-full object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum.png'">
+                </div>
+                <div class="flex flex-col min-w-0 leading-tight">
+                    <span class="text-[8px] sm:text-[10px] font-extrabold uppercase tracking-widest text-amber-300 truncate">Yayasan Ishlahul Ummah</span>
+                    <span class="text-xs sm:text-base font-black text-white tracking-tight truncate group-hover:text-amber-300 transition">SMPS IT ISHLAHUL UMMAH</span>
+                    <span class="text-[8px] sm:text-[9px] font-bold text-indigo-200 tracking-wider uppercase truncate">Kota Prabumulih &bull; Terakreditasi B</span>
                 </div>
             </a>
 

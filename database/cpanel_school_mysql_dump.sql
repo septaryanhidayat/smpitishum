@@ -827,6 +827,35 @@ INSERT INTO `visitor_logs` (`id`, `ip_address`, `session_id`, `user_agent`, `dev
   (26, '127.0.0.1', 'QixdasB28n97lZUjm5yfqxMemNJOLxCZqbpE1sp7', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36', 'Desktop', 'Chrome', 'Windows 10/11', '', 'Direct / Langsung', 'http://smpitishum.test/tentang-kami', '/tentang-kami', 'Profil & Tentang Kami', 'Indonesia', 'ID', 'Lokal / Server', 'Sumatera Selatan', '0', '2026-09-18 09:02:57', '2026-09-18 09:02:57'),
   (27, '127.0.0.1', '8ioqQjQZjozQI4jmroxTA6fY46y7yZ3X546f1Tn5', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36', 'Desktop', 'Chrome', 'Windows 10/11', '', 'Direct / Langsung', 'http://smpitishum.test/sambutan-kepala-sekolah', '/sambutan-kepala-sekolah', 'Sambutan Kepala Sekolah', 'Indonesia', 'ID', 'Lokal / Server', 'Sumatera Selatan', '0', '2026-09-18 09:02:57', '2026-09-18 09:02:57');
 
+-- --------------------------------------------------------
+-- Table structure for table `ppdb_tracks`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `ppdb_tracks`;
+CREATE TABLE `ppdb_tracks` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `percentage` varchar(50) NOT NULL DEFAULT '0%',
+  `quota` varchar(100) NULL DEFAULT NULL,
+  `cashback_info` varchar(255) NULL DEFAULT NULL,
+  `description` text NULL DEFAULT NULL,
+  `order` int(11) NOT NULL DEFAULT 0,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ppdb_tracks_slug_unique` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table `ppdb_tracks`
+INSERT INTO `ppdb_tracks` (`id`, `name`, `slug`, `percentage`, `quota`, `cashback_info`, `description`, `order`, `is_active`, `created_at`, `updated_at`) VALUES
+  (1, 'Jalur First Brive', 'jalur-first-brive', '10%', 'Kuota Khusus', 'Diskon Formulir & Uang Masuk', 'Jalur pendaftaran khusus bagi pendaftar paling awal (Early Bird) dengan keringanan biaya pendidikan sebesar 10% dan prioritas penempatan kelas.', 1, 1, '2026-09-20 00:00:00', '2026-09-20 00:00:00'),
+  (2, 'Jalur Mutasi Kerja', 'jalur-mutasi-kerja', '5%', '5 Siswa', 'Potongan Khusus Anak Pindahan Tugas', 'Jalur afirmasi khusus bagi calon siswa pindahan atau anak pegawai/karyawan instansi yang mengalami mutasi kerja kedinasan ke Kota Prabumulih.', 2, 1, '2026-09-20 00:00:00', '2026-09-20 00:00:00'),
+  (3, 'Jalur Tahfidz', 'jalur-tahfidz', '5%', '10 Siswa', 'Tahfidz 4-5 Juz Cashback Rp 750.000,- | >5 Juz Cashback Rp 1.000.000,-', 'Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-\nTahfidz >5 Juz Cashback Rp. 1.000.000,-\n\nMengikuti tes sima\'an tahfidz bersama dewan musyrif Al-Qur\'an Ishum.\nKuota Jalur Tahfidz Hanya 10 Siswa', 3, 1, '2026-09-20 00:00:00', '2026-09-20 00:00:00'),
+  (4, 'Jalur Alumni', 'jalur-alumni', '25%', '50 Siswa', 'Potongan Uang Pangkal Rp 1.000.000,-', 'Keringanan istimewa bagi lulusan SD IT Ishlahul Ummah dan SD IT Ishlahul Ummah Prabumulih 2 yang melanjutkan ke SMPS IT Ishlahul Ummah Prabumulih berupa potongan biaya uang pangkal sebesar Rp. 1.000.000,- dengan kuota (hanya 50 siswa)', 4, 1, '2026-09-20 00:00:00', '2026-09-20 00:00:00'),
+  (5, 'Jalur Prestasi', 'jalur-prestasi', '30%', 'Kuota Terbatas', 'Beasiswa Prestasi s/d 30%', 'Keringanan biaya khusus bagi siswa berprestasi Akademik (Peringkat 1-3 Paralel) dan Non-Akademik (Juara 1-3 OSN, O2SN, FLS2N, MTQ/MHQ) minimal tingkat Kota/Kabupaten dengan melampirkan sertifikat/piagam kejuaraan resmi.', 5, 1, '2026-09-20 00:00:00', '2026-09-20 00:00:00'),
+  (6, 'Jalur Reguler', 'jalur-reguler', '25%', 'Sisa Kuota', 'Jalur Seleksi & Tes Mandiri', 'Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa.', 6, 1, '2026-09-20 00:00:00', '2026-09-20 00:00:00');
+
 SET FOREIGN_KEY_CHECKS=1;
 -- ==========================================================
 -- END OF DUMP

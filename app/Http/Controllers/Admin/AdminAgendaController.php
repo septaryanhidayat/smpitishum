@@ -70,6 +70,37 @@ class AdminAgendaController extends Controller
         return back()->with('success', 'Agenda kegiatan berhasil dihapus.');
     }
 
+    public function updateAgenda(Request $request, Agenda $agenda)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'event_date' => 'required|date',
+            'location' => 'required|string|max:255',
+            'content' => 'nullable|string',
+            'status' => 'required|in:upcoming,ongoing,completed,publish',
+        ]);
+
+        $agenda->update([
+            'title' => $validated['title'],
+            'event_date' => $validated['event_date'],
+            'location' => $validated['location'],
+            'content' => $validated['content'] ?? '',
+            'status' => $validated['status'],
+        ]);
+
+        ActivityLog::create([
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()->name,
+            'action' => 'agenda_update',
+            'description' => "Memperbarui Agenda Kegiatan: {$agenda->title}",
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'status' => 'info',
+        ]);
+
+        return redirect()->route('admin.agenda.index')->with('success', 'Agenda kegiatan berhasil diperbarui.');
+    }
+
     public function storePengumuman(Request $request)
     {
         $validated = $request->validate([
@@ -95,7 +126,34 @@ class AdminAgendaController extends Controller
             'status' => 'info',
         ]);
 
-        return back()->with('success', 'Pengumuman resmi berhasil diterbitkan.');
+        return redirect()->route('admin.agenda.index')->with('success', 'Pengumuman resmi berhasil diterbitkan.');
+    }
+
+    public function updatePengumuman(Request $request, Pengumuman $pengumuman)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'status' => 'required|in:publish,draft',
+        ]);
+
+        $pengumuman->update([
+            'title' => $validated['title'],
+            'content' => $validated['content'],
+            'status' => $validated['status'],
+        ]);
+
+        ActivityLog::create([
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()->name,
+            'action' => 'pengumuman_update',
+            'description' => "Memperbarui Pengumuman: {$pengumuman->title}",
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'status' => 'info',
+        ]);
+
+        return redirect()->route('admin.agenda.index')->with('success', 'Pengumuman resmi berhasil diperbarui.');
     }
 
     public function destroyPengumuman(Request $request, Pengumuman $pengumuman)

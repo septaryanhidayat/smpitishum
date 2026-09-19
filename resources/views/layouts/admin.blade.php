@@ -196,9 +196,9 @@
         <div class="flex-1 overflow-y-auto custom-scrollbar p-3 flex flex-col">
             <nav class="space-y-3.5 text-xs font-medium">
                 
-                {{-- SECTION 1: UTAMA --}}
+                {{-- SECTION 1: DASHBOARD & ANALITIK --}}
                 <div class="space-y-0.5">
-                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Utama</span>
+                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Navigasi Utama</span>
                     <div class="sidebar-section-divider hidden"></div>
                     
                     <a href="{{ route('admin.dashboard') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.dashboard') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Dashboard Utama">
@@ -211,98 +211,21 @@
                         <span class="sidebar-label">Analitik Pengunjung</span>
                     </a>
 
-                    <a href="{{ route('admin.posts.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.posts*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Berita & Artikel">
-                        <i class="fa-solid fa-newspaper text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Berita &amp; Artikel</span>
-                    </a>
-
-                    <a href="{{ route('admin.pages.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.pages*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Halaman Profil Statis">
-                        <i class="fa-solid fa-file-lines text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Halaman Profil Statis</span>
-                    </a>
-
                     <a href="{{ route('admin.quick-menus.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.quick-menus*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Menu Cepat Beranda">
-                        <i class="fa-solid fa-compass text-xs w-4 text-center"></i>
+                        <i class="fa-solid fa-compass text-xs w-4 text-center text-amber-400"></i>
                         <span class="sidebar-label">Menu Cepat Beranda</span>
                     </a>
                 </div>
 
-                {{-- SECTION 2: PENDIDIK & SARANA --}}
+                {{-- SECTION 2: SPMB & PPDB ONLINE (PRIORITAS KHUSUS) --}}
                 <div class="space-y-0.5">
-                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Pendidik &amp; Fasilitas</span>
-                    <div class="sidebar-section-divider hidden"></div>
-                    
-                    <a href="{{ route('admin.dewan.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.dewan*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Dewan Guru & GTK">
-                        <i class="fa-solid fa-chalkboard-user text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Dewan Guru &amp; GTK</span>
-                    </a>
-
-                    <a href="{{ route('admin.bidang.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.bidang*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Fasilitas & Sarana">
-                        <i class="fa-solid fa-layer-group text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Fasilitas &amp; Sarana</span>
-                    </a>
-
-                    <a href="{{ route('admin.dpc.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.dpc*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Program Unggulan">
-                        <i class="fa-solid fa-star-and-crescent text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Program Unggulan</span>
-                    </a>
-                </div>
-
-                {{-- SECTION 3: PUBLIKASI & MEDIA --}}
-                <div class="space-y-0.5">
-                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Publikasi &amp; Media</span>
-                    <div class="sidebar-section-divider hidden"></div>
-                    
-                    <a href="{{ route('admin.popup.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.popup*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Popup Banner Beranda">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-bullhorn text-xs w-4 text-center text-amber-300"></i>
-                            <span class="sidebar-label">Popup Banner Beranda</span>
-                        </div>
-                        @if(\App\Models\Setting::get('popup_active', '1') == '1')
-                            <span class="sidebar-badge w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Popup Aktif"></span>
-                        @endif
-                    </a>
-
-                    <a href="{{ route('admin.media.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.media*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Galeri Foto & Video">
-                        <i class="fa-solid fa-photo-film text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Galeri Foto &amp; Video</span>
-                    </a>
-
-                    <a href="{{ route('admin.agenda.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.agenda*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Agenda & Pengumuman">
-                        <i class="fa-solid fa-calendar-days text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Agenda &amp; Pengumuman</span>
-                    </a>
-
-                    <a href="{{ route('admin.posts.index', ['type' => 'prestasi']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'prestasi' ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Prestasi Siswa">
-                        <i class="fa-solid fa-trophy text-xs w-4 text-center text-amber-400"></i>
-                        <span class="sidebar-label">Prestasi Siswa</span>
-                    </a>
-
-                    <a href="{{ route('admin.posts.index', ['type' => 'ekskul']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'ekskul' ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Ekstrakurikuler">
-                        <i class="fa-solid fa-people-group text-xs w-4 text-center text-amber-400"></i>
-                        <span class="sidebar-label">Ekstrakurikuler</span>
-                    </a>
-
-                    <a href="{{ route('admin.posts.index', ['type' => 'alumni']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'alumni' ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Data Alumni">
-                        <i class="fa-solid fa-user-graduate text-xs w-4 text-center text-cyan-400"></i>
-                        <span class="sidebar-label">Data Alumni</span>
-                    </a>
-
-                    <a href="{{ route('admin.downloads.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.downloads*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Download Center">
-                        <i class="fa-solid fa-download text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Download Center</span>
-                    </a>
-                </div>
-
-                {{-- SECTION 4: INTERAKSI & PPDB --}}
-                <div class="space-y-0.5">
-                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Interaksi &amp; PPDB</span>
+                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-amber-400 uppercase block py-0.5">SPMB &amp; PPDB Online</span>
                     <div class="sidebar-section-divider hidden"></div>
 
-                    <a href="{{ route('admin.ppdb.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.ppdb.index') || request()->routeIs('admin.ppdb.show') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Pendaftar PPDB">
+                    <a href="{{ route('admin.ppdb.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.ppdb.index') || request()->routeIs('admin.ppdb.show') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Pendaftar Calon Siswa">
                         <div class="flex items-center space-x-3">
                             <i class="fa-solid fa-graduation-cap text-xs w-4 text-center text-amber-300"></i>
-                            <span class="sidebar-label font-bold">Pendaftar PPDB</span>
+                            <span class="sidebar-label font-bold">Pendaftar Calon Siswa</span>
                         </div>
                         @php $pendingPpdb = \App\Models\PpdbRegistration::where('status', 'pending')->count(); @endphp
                         @if($pendingPpdb > 0)
@@ -312,30 +235,95 @@
                         @endif
                     </a>
 
-                    <a href="{{ route('admin.ppdb.content') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.ppdb.content*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kelola Halaman PPDB">
-                        <i class="fa-solid fa-file-pen text-xs w-4 text-center text-amber-400"></i>
-                        <span class="sidebar-label">Kelola Halaman PPDB</span>
+                    <a href="{{ route('admin.ppdb.content') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.ppdb.content*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kelola Halaman & Banner PPDB">
+                        <i class="fa-solid fa-sliders text-xs w-4 text-center text-indigo-400"></i>
+                        <span class="sidebar-label">Konten, Banner &amp; Jalur</span>
+                    </a>
+                </div>
+
+                {{-- SECTION 3: PUBLIKASI & MEDIA --}}
+                <div class="space-y-0.5">
+                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Publikasi &amp; Konten</span>
+                    <div class="sidebar-section-divider hidden"></div>
+
+                    <a href="{{ route('admin.posts.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.posts*') && !request('type') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Berita & Artikel">
+                        <i class="fa-solid fa-newspaper text-xs w-4 text-center text-rose-400"></i>
+                        <span class="sidebar-label">Berita &amp; Artikel</span>
                     </a>
 
-                    <a href="{{ route('admin.testimonials.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.testimonials*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Testimonial Masyarakat">
-                        <i class="fa-solid fa-comments text-xs w-4 text-center"></i>
-                        <span class="sidebar-label">Testimonial Masyarakat</span>
+                    <a href="{{ route('admin.agenda.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.agenda*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Agenda & Pengumuman">
+                        <i class="fa-solid fa-calendar-days text-xs w-4 text-center text-indigo-400"></i>
+                        <span class="sidebar-label">Agenda &amp; Pengumuman</span>
                     </a>
 
-                    <a href="{{ route('admin.feedbacks.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.feedbacks*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kotak Aspirasi">
+                    <a href="{{ route('admin.posts.index', ['type' => 'prestasi']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'prestasi' ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Prestasi Siswa">
+                        <i class="fa-solid fa-trophy text-xs w-4 text-center text-amber-400"></i>
+                        <span class="sidebar-label">Prestasi Siswa</span>
+                    </a>
+
+                    <a href="{{ route('admin.posts.index', ['type' => 'ekskul']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'ekskul' ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Ekstrakurikuler">
+                        <i class="fa-solid fa-people-group text-xs w-4 text-center text-emerald-400"></i>
+                        <span class="sidebar-label">Ekstrakurikuler</span>
+                    </a>
+
+                    <a href="{{ route('admin.media.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.media*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Galeri Foto & Video">
+                        <i class="fa-solid fa-photo-film text-xs w-4 text-center text-purple-400"></i>
+                        <span class="sidebar-label">Galeri Foto &amp; Video</span>
+                    </a>
+
+                    <a href="{{ route('admin.downloads.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.downloads*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Download Center">
+                        <i class="fa-solid fa-download text-xs w-4 text-center text-sky-400"></i>
+                        <span class="sidebar-label">Download Center</span>
+                    </a>
+
+                    <a href="{{ route('admin.popup.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.popup*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Popup Banner Beranda">
                         <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-inbox text-xs w-4 text-center"></i>
-                            <span class="sidebar-label">Kotak Aspirasi</span>
+                            <i class="fa-solid fa-bullhorn text-xs w-4 text-center text-amber-300"></i>
+                            <span class="sidebar-label">Popup Banner Beranda</span>
                         </div>
-                        @php $unread = \App\Models\Feedback::where('status', 'unread')->count(); @endphp
-                        @if($unread > 0)
-                            <span class="sidebar-badge bg-red-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">
-                                {{ $unread }}
-                            </span>
+                        @if(\App\Models\Setting::get('popup_active', '1') == '1')
+                            <span class="sidebar-badge w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Popup Aktif"></span>
                         @endif
                     </a>
+                </div>
 
-                    <a href="{{ route('admin.layanan.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.layanan.index') || request()->routeIs('admin.layanan.show') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Permohonan Layanan Terpadu">
+                {{-- SECTION 4: PROFIL & AKADEMIK --}}
+                <div class="space-y-0.5">
+                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Profil &amp; Sekolah</span>
+                    <div class="sidebar-section-divider hidden"></div>
+                    
+                    <a href="{{ route('admin.pages.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.pages*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Halaman Profil Statis">
+                        <i class="fa-solid fa-file-lines text-xs w-4 text-center text-blue-400"></i>
+                        <span class="sidebar-label">Halaman Profil Statis</span>
+                    </a>
+
+                    <a href="{{ route('admin.dewan.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.dewan*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Dewan Guru & GTK">
+                        <i class="fa-solid fa-chalkboard-user text-xs w-4 text-center text-emerald-400"></i>
+                        <span class="sidebar-label">Dewan Guru &amp; GTK</span>
+                    </a>
+
+                    <a href="{{ route('admin.bidang.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.bidang*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Fasilitas & Sarana">
+                        <i class="fa-solid fa-layer-group text-xs w-4 text-center text-teal-400"></i>
+                        <span class="sidebar-label">Fasilitas &amp; Sarana</span>
+                    </a>
+
+                    <a href="{{ route('admin.dpc.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.dpc*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Program Unggulan">
+                        <i class="fa-solid fa-star-and-crescent text-xs w-4 text-center text-amber-400"></i>
+                        <span class="sidebar-label">Program Unggulan</span>
+                    </a>
+
+                    <a href="{{ route('admin.posts.index', ['type' => 'alumni']) }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request('type') === 'alumni' ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Data Alumni">
+                        <i class="fa-solid fa-user-graduate text-xs w-4 text-center text-cyan-400"></i>
+                        <span class="sidebar-label">Data Alumni</span>
+                    </a>
+                </div>
+
+                {{-- SECTION 5: LAYANAN & INTERAKSI --}}
+                <div class="space-y-0.5">
+                    <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Layanan &amp; Aspirasi</span>
+                    <div class="sidebar-section-divider hidden"></div>
+
+                    <a href="{{ route('admin.layanan.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.layanan.index') || request()->routeIs('admin.layanan.show') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Permohonan Layanan Terpadu">
                         <div class="flex items-center space-x-3">
                             <i class="fa-solid fa-handshake-angle text-xs w-4 text-center text-teal-300"></i>
                             <span class="sidebar-label font-bold">Layanan Terpadu</span>
@@ -348,30 +336,48 @@
                         @endif
                     </a>
 
-                    <a href="{{ route('admin.layanan.content') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.layanan.content*') ? 'bg-gradient-to-r from-[#00913e] to-[#05a849] text-white font-bold shadow-md' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kelola Konten Layanan">
+                    <a href="{{ route('admin.layanan.content') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.layanan.content*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kelola Konten Layanan">
                         <i class="fa-solid fa-file-shield text-xs w-4 text-center text-amber-400"></i>
                         <span class="sidebar-label">Konten Layanan &amp; Syarat</span>
                     </a>
+
+                    <a href="{{ route('admin.feedbacks.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.feedbacks*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Kotak Aspirasi">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-inbox text-xs w-4 text-center text-indigo-400"></i>
+                            <span class="sidebar-label">Kotak Aspirasi</span>
+                        </div>
+                        @php $unread = \App\Models\Feedback::where('status', 'unread')->count(); @endphp
+                        @if($unread > 0)
+                            <span class="sidebar-badge bg-red-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">
+                                {{ $unread }}
+                            </span>
+                        @endif
+                    </a>
+
+                    <a href="{{ route('admin.testimonials.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.testimonials*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Testimonial Masyarakat">
+                        <i class="fa-solid fa-comments text-xs w-4 text-center text-pink-400"></i>
+                        <span class="sidebar-label">Testimonial Masyarakat</span>
+                    </a>
                 </div>
 
-                {{-- SECTION 5: SISTEM, KEAMANAN & SEO --}}
+                {{-- SECTION 6: SISTEM, KEAMANAN & SEO --}}
                 <div class="space-y-0.5">
                     <span class="sidebar-section-title px-3 text-[10px] font-bold tracking-wider text-slate-400 uppercase block py-0.5">Sistem &amp; Keamanan</span>
                     <div class="sidebar-section-divider hidden"></div>
                     
                     <a href="{{ route('admin.settings.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.settings*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Pengaturan & SEO">
-                        <i class="fa-solid fa-gear text-xs w-4 text-center"></i>
+                        <i class="fa-solid fa-gear text-xs w-4 text-center text-slate-400"></i>
                         <span class="sidebar-label">Pengaturan &amp; SEO</span>
                     </a>
 
                     <a href="{{ route('admin.users.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.users*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Pengguna & Role">
-                        <i class="fa-solid fa-users-gear text-xs w-4 text-center"></i>
+                        <i class="fa-solid fa-users-gear text-xs w-4 text-center text-slate-400"></i>
                         <span class="sidebar-label">Pengguna &amp; Role</span>
                     </a>
 
                     <a href="{{ route('admin.security.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.security*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Log & Keamanan">
                         <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-shield-halved text-xs w-4 text-center"></i>
+                            <i class="fa-solid fa-shield-halved text-xs w-4 text-center text-red-400"></i>
                             <span class="sidebar-label">Log &amp; Keamanan</span>
                         </div>
                         @php $dangerCount = \App\Models\ActivityLog::where('status', 'danger')->count(); @endphp
@@ -383,7 +389,7 @@
                     </a>
 
                     <a href="{{ route('admin.backup.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.backup*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Backup Database">
-                        <i class="fa-solid fa-database text-xs w-4 text-center"></i>
+                        <i class="fa-solid fa-database text-xs w-4 text-center text-amber-400"></i>
                         <span class="sidebar-label">Backup Database</span>
                     </a>
                 </div>

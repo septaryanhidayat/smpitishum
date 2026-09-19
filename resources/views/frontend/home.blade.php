@@ -261,10 +261,10 @@
                     <div class="relative group max-w-[260px] sm:max-w-xs md:max-w-sm w-full mx-auto">
                         <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 via-blue-400 to-indigo-500 rounded-2xl blur-xs opacity-75 group-hover:opacity-100 transition duration-500"></div>
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border-2 border-white/20 aspect-[3/4]">
-                            <img src="/uploads/flyer-spmb-smpit-ishum.webp" alt="Flyer SPMB Gelombang Exclusive &amp; Class Meeting Semester Genap SMP IT Ishlahul Ummah Prabumulih" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/flyer-spmb-smpit-ishum.png'">
+                            <img src="{{ $spmbBanner['flyer_image'] ?? '/uploads/flyer-spmb-smpit-ishum.webp' }}" alt="{{ $spmbBanner['title'] ?? 'Flyer SPMB Gelombang Exclusive' }}" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/flyer-spmb-smpit-ishum.png'">
                             <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-slate-950/85 backdrop-blur-md py-1.5 px-2.5 rounded-xl border border-white/10 text-center">
                                 <span class="text-[10px] sm:text-[11px] font-black text-amber-300 uppercase tracking-wider">
-                                    <i class="fa-solid fa-bullhorn mr-1"></i> Pengumuman Resmi Sekolah
+                                    <i class="fa-solid fa-bullhorn mr-1"></i> {{ $spmbBanner['flyer_label'] ?? 'Pengumuman Resmi Sekolah' }}
                                 </span>
                             </div>
                         </div>
@@ -275,15 +275,15 @@
                 <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[10px] sm:text-xs font-black uppercase tracking-wider max-w-[95%]">
                         <i class="fa-solid fa-certificate text-xs flex-shrink-0"></i>
-                        <span class="truncate sm:overflow-visible">Penerimaan Siswa Baru Gelombang Exclusive</span>
+                        <span class="truncate sm:overflow-visible">{{ $spmbBanner['badge'] ?? 'Penerimaan Siswa Baru Gelombang Exclusive' }}</span>
                     </div>
 
                     <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
-                        SPMB Gelombang Exclusive &amp; Class Meeting Semester Genap
+                        {{ $spmbBanner['title'] ?? 'SPMB Gelombang Exclusive & Class Meeting Semester Genap' }}
                     </h2>
 
                     <p class="text-xs sm:text-base text-indigo-100 leading-relaxed">
-                        Bergabunglah bersama keluarga besar <strong>SMPS IT Ishlahul Ummah Prabumulih</strong>. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing &amp; teknologi.
+                        {!! nl2br(e($spmbBanner['description'] ?? "Bergabunglah bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.")) !!}
                     </p>
 
                     {{-- 3 Key Benefit Cards --}}
@@ -292,37 +292,43 @@
                             <div class="text-amber-400 text-lg sm:text-xl font-black mb-1">
                                 <i class="fa-solid fa-users"></i>
                             </div>
-                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">KUOTA TERBATAS</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">Hanya 24 Siswa</p>
+                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card1_title'] ?? 'KUOTA TERBATAS' }}</h4>
+                            <p class="text-xs text-amber-300 font-bold mt-0.5">{{ $spmbBanner['card1_desc'] ?? 'Hanya 24 Siswa' }}</p>
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
                             <div class="text-amber-400 text-lg sm:text-xl font-black mb-1">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </div>
-                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">CASH BACK 1 JUTA</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">Alumni SDIT Ishum 1 &amp; 2</p>
+                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card2_title'] ?? 'CASH BACK 1 JUTA' }}</h4>
+                            <p class="text-xs text-amber-300 font-bold mt-0.5">{{ $spmbBanner['card2_desc'] ?? 'Alumni SDIT Ishum 1 & 2' }}</p>
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
                             <div class="text-amber-400 text-lg sm:text-xl font-black mb-1">
                                 <i class="fa-solid fa-calendar-check"></i>
                             </div>
-                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">CLASS MEETING</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">Mulai Rabu, 17 Juni</p>
+                            <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card3_title'] ?? 'CLASS MEETING' }}</h4>
+                            <p class="text-xs text-amber-300 font-bold mt-0.5">{{ $spmbBanner['card3_desc'] ?? 'Mulai Rabu, 17 Juni' }}</p>
                         </div>
                     </div>
 
                     {{-- Action Hotline & Buttons --}}
+                    @php
+                        $cleanBannerPhone = preg_replace('/[^0-9]/', '', (string) ($spmbBanner['contact_phone'] ?? '085269908696'));
+                        if (str_starts_with($cleanBannerPhone, '0')) {
+                            $cleanBannerPhone = '62' . substr($cleanBannerPhone, 1);
+                        }
+                    @endphp
                     <div class="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 justify-center lg:justify-start w-full">
-                        <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
+                        <a href="{{ $spmbBanner['btn_url'] ?? route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105">
                             <i class="fa-solid fa-graduation-cap mr-2"></i>
-                            <span>Daftar SPMB Online</span>
+                            <span>{{ $spmbBanner['btn_text'] ?? 'Daftar SPMB Online' }}</span>
                         </a>
 
-                        <a href="https://wa.me/6285269908696?text=Halo%20Admin%20SMP%20IT%20Ishlahul%20Ummah%20Prabumulih,%20saya%20ingin%20informasi%20SPMB%20Gelombang%20Exclusive" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
+                        <a href="https://wa.me/{{ $cleanBannerPhone }}?text={{ urlencode('Halo Admin SMP IT Ishlahul Ummah Prabumulih, saya ingin informasi ' . ($spmbBanner['title'] ?? 'SPMB Gelombang Exclusive')) }}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
                             <i class="fa-brands fa-whatsapp text-base mr-2"></i>
-                            <span>Narahubung: 0852-6990-8696</span>
+                            <span>{{ $spmbBanner['contact_text'] ?? ('Narahubung: ' . ($spmbBanner['contact_phone'] ?? '0852-6990-8696')) }}</span>
                         </a>
                     </div>
                 </div>

@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ActivityLog;
 use App\Models\PpdbRegistration;
+use App\Models\PpdbTrack;
 use App\Models\Setting;
 use App\Services\PpdbFormService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AdminPpdbController extends Controller
 {
@@ -108,12 +110,13 @@ class AdminPpdbController extends Controller
     {
         $settings = [
             'status' => Setting::get('ppdb_status', '1'),
-            'year' => Setting::get('ppdb_year', '2026/2027'),
+            'year' => Setting::get('ppdb_year', '2027/2028'),
             'wave' => Setting::get('ppdb_wave', 'Gelombang 1 (Aktif)'),
             'promo' => Setting::get('ppdb_promo', 'Potongan Biaya Masuk Up to 50% OFF (*S&K berlaku)'),
             'tagline' => Setting::get('ppdb_tagline', "Mendidik Sepenuh Cinta. Mewujudkan generasi Qur'ani berkarakter tangguh, cerdas sains, mandiri, dan berwawasan global di bawah naungan JSIT Indonesia."),
             'youtube_id' => Setting::get('ppdb_youtube_id', 'IrPVG8CYjRc'),
             'video_title' => Setting::get('ppdb_video_title', 'Video Profil & Dokumentasi SMPS IT Ishum'),
+            'video_desc' => Setting::get('ppdb_video_desc', 'Saksikan video profil dan aktivitas pembelajaran siswa kami secara visual.'),
             'operational_weekday' => Setting::get('ppdb_operational_weekday', "Senin – Jum'at: Pukul 08.00 – 15.00 WIB"),
             'operational_weekend' => Setting::get('ppdb_operational_weekend', 'Sabtu: Pukul 08.00 – 12.00 WIB'),
             'secretariat' => Setting::get('ppdb_secretariat', 'Kompleks SMPS IT Ishum, Jl. Sadewa RT 01 RW 04 Karang Raja'),
@@ -122,16 +125,12 @@ class AdminPpdbController extends Controller
             'bank_code' => Setting::get('ppdb_bank_code', '451'),
             'bank_account' => Setting::get('ppdb_bank_account', '7011304251'),
             'bank_holder' => Setting::get('ppdb_bank_holder', 'YL. Fatmawati'),
-            'hotline_phone' => Setting::get('ppdb_hotline_phone', '0821-8268-0647'),
+            'hotline_phone' => Setting::get('ppdb_hotline_phone', '0852-6990-8696'),
             'hotline_name' => Setting::get('ppdb_hotline_name', 'Admin Hotline PPDB'),
-            'hotline_2_phone' => Setting::get('ppdb_hotline_2_phone', '0822-8157-3615'),
-            'hotline_2_name' => Setting::get('ppdb_hotline_2_name', 'Ust. Agi (Kepala Sekolah)'),
-            'alur' => Setting::get('ppdb_alur', "Siapkan berkas foto/scan bukti transfer biaya pendaftaran melalui Bank Syariah Indonesia (BSI) nomor rekening 7011304251 a.n. YL. Fatmawati.\nSiapkan berkas foto/scan akta kelahiran dan kartu keluarga.\nMengisi formulir PPDB secara online pada website resmi.\nKonfirmasi pengisian formulir kepada panitia melalui WhatsApp (0821-8268-0647).\nPendaftaran selesai dan berkas diverifikasi tim panitia untuk tahapan tes wawancara dan tahfidz."),
+            'hotline_2_phone' => Setting::get('ppdb_hotline_2_phone', '0853-7897-4396'),
+            'hotline_2_name' => Setting::get('ppdb_hotline_2_name', 'Kepala Sekolah'),
+            'alur' => Setting::get('ppdb_alur', "Siapkan berkas foto/scan bukti transfer biaya pendaftaran melalui Bank Syariah Indonesia (BSI) nomor rekening 7011304251 a.n. YL. Fatmawati.\nSiapkan berkas foto/scan akta kelahiran dan kartu keluarga.\nMengisi formulir PPDB secara online pada website resmi.\nKonfirmasi pengisian formulir kepada panitia melalui WhatsApp (0852-6990-8696).\nPendaftaran selesai dan berkas diverifikasi tim panitia untuk tahapan tes wawancara dan tahfidz."),
             'syarat' => Setting::get('ppdb_syarat', "Mengisi Formulir Pendaftaran online dengan data yang benar dan lengkap.\nMelampirkan bukti transfer biaya pendaftaran.\nMelampirkan scan/fotokopi Akta Kelahiran dan Kartu Keluarga (KK).\nMelampirkan fotokopi rapor SMP/MTs semester 1-5.\nPas foto terbaru calon siswa ukuran 3x4 berwarna."),
-            'prestasi' => Setting::get('ppdb_prestasi', "Bebas tes tulis akademik bagi Juara 1, 2, atau 3 tingkat Kota/Kabupaten, Provinsi, maupun Nasional.\nDiskon khusus biaya pendaftaran dan prioritas penerimaan."),
-            'tahfidz' => Setting::get('ppdb_tahfidz', "Tahfidz minimal 3 Juz: Beasiswa potongan biaya pendaftaran & SPP.\nTahfidz 5 Juz atau lebih: Beasiswa SPP berkala dan pembinaan khusus Sanad/Mutqin.\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Ishum."),
-            'alumni' => Setting::get('ppdb_alumni', 'Keringanan istimewa bagi lulusan SMPIT Ishlahul Ummah Prabumulih yang melanjutkan ke SMPS IT Ishlahul Ummah Prabumulih berupa potongan biaya uang pangkal & pendaftaran langsung tanpa biaya seleksi.'),
-            'mandiri' => Setting::get('ppdb_mandiri', "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa."),
             'jadwal_gelombang' => Setting::get('ppdb_jadwal_gelombang', "Gelombang 1: Oktober s/d Desember (Diskon Biaya Masuk s/d 50%)\nGelombang 2: Januari s/d April\nGelombang 3: Mei s/d Juli (Khusus sisa kuota)\n* Pendaftaran akan ditutup otomatis apabila kuota per kelas telah terpenuhi."),
             'biaya' => Setting::get('ppdb_biaya', "Biaya Formulir Pendaftaran: Ditransfer ke rekening BSI sekolah 7011304251.\nPaket Seragam Sekolah (4 stel seragam lengkap + atribut dan jilbab/peci).\nBiaya Orientasi Siswa (MPLS) & Baitul Maqdis Leadership Camp.\nUntuk rincian lengkap uang pangkal dan SPP bulanan, hubungi langsung panitia PPDB."),
             'boarding' => Setting::get('ppdb_boarding', "Program Boarding (Asrama): Fasilitas asrama bersih, ber-AC/ventilasi sehat, makan 3x sehari, pendampingan tahfidz 24 jam bersama musyrif.\nProgram Full Day School: Pembelajaran terpadu hingga sore hari, shalat berjamaah, makan siang sehat, dan ekstrakurikuler."),
@@ -139,13 +138,36 @@ class AdminPpdbController extends Controller
             'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SMPS IT Ishlahul Ummah Prabumulih'),
             'closing_desc' => Setting::get('ppdb_closing_desc', 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin'),
 
+            // FOTO DOKUMENTASI FASILITAS PPDB
+            'image_1' => Setting::get('ppdb_image_1', '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp'),
+            'image_2' => Setting::get('ppdb_image_2', '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp'),
+            'image_3' => Setting::get('ppdb_image_3', '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp'),
+
+            // BANNER SPMB BERANDA & HIGHLIGHT
+            'banner_badge' => Setting::get('spmb_banner_badge', 'PENERIMAAN SISWA BARU GELOMBANG EXCLUSIVE'),
+            'banner_title' => Setting::get('spmb_banner_title', 'SPMB Gelombang Exclusive & Class Meeting Semester Genap'),
+            'banner_year' => Setting::get('spmb_banner_year', Setting::get('ppdb_year', '2027-2028')),
+            'banner_desc' => Setting::get('spmb_banner_description', 'Bergabunglah bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.'),
+            'banner_card1_title' => Setting::get('spmb_banner_card1_title', 'KUOTA TERBATAS'),
+            'banner_card1_desc' => Setting::get('spmb_banner_card1_desc', 'Hanya 24 Siswa'),
+            'banner_card2_title' => Setting::get('spmb_banner_card2_title', 'CASH BACK 1 JUTA'),
+            'banner_card2_desc' => Setting::get('spmb_banner_card2_desc', 'Alumni SDIT Ishum 1 & 2'),
+            'banner_card3_title' => Setting::get('spmb_banner_card3_title', 'CLASS MEETING'),
+            'banner_card3_desc' => Setting::get('spmb_banner_card3_desc', 'Mulai Rabu, 17 Juni'),
+            'banner_flyer_image' => Setting::get('spmb_banner_flyer_image', '/uploads/flyer-spmb-smpit-ishum.webp'),
+            'banner_flyer_label' => Setting::get('spmb_banner_flyer_label', 'Pengumuman Resmi Sekolah'),
+            'banner_btn_text' => Setting::get('spmb_banner_btn_text', 'Daftar SPMB Online'),
+            'banner_btn_url' => Setting::get('spmb_banner_btn_url', '/ppdb'),
+            'banner_contact_text' => Setting::get('spmb_banner_contact_text', 'Narahubung: 0852-6990-8696'),
+            'banner_contact_phone' => Setting::get('spmb_banner_contact_phone', '0852-6990-8696'),
+
             // PENGATURAN & FLEKSIBILITAS FORMULIR ONLINE
             'form_status' => Setting::get('ppdb_form_status', '1'),
             'form_closed_message' => Setting::get('ppdb_form_closed_message', 'Pendaftaran PPDB online saat ini sedang ditutup sementara atau kuota telah terpenuhi. Silakan hubungi panitia melalui WhatsApp untuk informasi gelombang berikutnya.'),
             'form_announcement' => Setting::get('ppdb_form_announcement', 'Pastikan nomor WhatsApp yang diisi aktif untuk pengiriman kartu peserta ujian dan informasi jadwal seleksi.'),
             'form_wa_confirm' => Setting::get('ppdb_form_wa_confirm', '1'),
             'form_waves' => Setting::get('ppdb_form_waves', "Gelombang 1 (Early Bird)\nGelombang 2 (Reguler)\nGelombang 3 (Prestasi)"),
-            'form_tracks' => Setting::get('ppdb_form_tracks', "Jalur Reguler / Tes Mandiri\nJalur Prestasi Akademik & Non-Akademik\nJalur Hafizh Al-Qur'an (Tahfidz)\nJalur Alumni SMPIT Ishum\nJalur Beasiswa / Afirmasi"),
+            'form_tracks' => Setting::get('ppdb_form_tracks', "Jalur First Brive (10%)\nJalur Mutasi Kerja (5%)\nJalur Tahfidz (5%)\nJalur Alumni (25%)\nJalur Prestasi (30%)\nJalur Reguler (25%)"),
             'form_programs' => Setting::get('ppdb_form_programs', "Boarding School (Asrama Siswa)\nFull Day School (Sekolah Terpadu)"),
             'form_require_payment' => Setting::get('ppdb_form_require_payment', '1'),
             'form_require_birth_cert' => Setting::get('ppdb_form_require_birth_cert', '1'),
@@ -157,12 +179,13 @@ class AdminPpdbController extends Controller
 
         $schema = PpdbFormService::getSchema();
         $sections = PpdbFormService::getSections();
+        $tracks = PpdbTrack::ordered()->get();
 
-        return view('admin.ppdb.content', compact('settings', 'schema', 'sections'));
+        return view('admin.ppdb.content', compact('settings', 'schema', 'sections', 'tracks'));
     }
 
     /**
-     * Update PPDB Page Content & Form Settings.
+     * Update PPDB Page Content, SPMB Banner & Form Settings.
      */
     public function updateContent(Request $request)
     {
@@ -174,6 +197,7 @@ class AdminPpdbController extends Controller
             'ppdb_tagline' => 'nullable|string|max:1000',
             'ppdb_youtube_id' => 'required|string|max:255',
             'ppdb_video_title' => 'nullable|string|max:255',
+            'ppdb_video_desc' => 'nullable|string|max:500',
             'ppdb_operational_weekday' => 'required|string|max:255',
             'ppdb_operational_weekend' => 'required|string|max:255',
             'ppdb_secretariat' => 'required|string|max:500',
@@ -198,6 +222,27 @@ class AdminPpdbController extends Controller
             'ppdb_kelulusan' => 'nullable|string',
             'ppdb_closing_title' => 'nullable|string|max:255',
             'ppdb_closing_desc' => 'nullable|string|max:1000',
+            'ppdb_image_1' => 'nullable|string|max:255',
+            'ppdb_image_2' => 'nullable|string|max:255',
+            'ppdb_image_3' => 'nullable|string|max:255',
+
+            // SPMB Banner Fields
+            'spmb_banner_badge' => 'nullable|string|max:255',
+            'spmb_banner_title' => 'nullable|string|max:255',
+            'spmb_banner_year' => 'nullable|string|max:100',
+            'spmb_banner_description' => 'nullable|string|max:1000',
+            'spmb_banner_card1_title' => 'nullable|string|max:100',
+            'spmb_banner_card1_desc' => 'nullable|string|max:100',
+            'spmb_banner_card2_title' => 'nullable|string|max:100',
+            'spmb_banner_card2_desc' => 'nullable|string|max:100',
+            'spmb_banner_card3_title' => 'nullable|string|max:100',
+            'spmb_banner_card3_desc' => 'nullable|string|max:100',
+            'spmb_banner_flyer_image' => 'nullable|string|max:255',
+            'spmb_banner_flyer_label' => 'nullable|string|max:100',
+            'spmb_banner_btn_text' => 'nullable|string|max:100',
+            'spmb_banner_btn_url' => 'nullable|string|max:255',
+            'spmb_banner_contact_text' => 'nullable|string|max:100',
+            'spmb_banner_contact_phone' => 'nullable|string|max:50',
 
             // Form settings
             'ppdb_form_status' => 'nullable|string',
@@ -221,8 +266,50 @@ class AdminPpdbController extends Controller
             $validated['ppdb_youtube_id'] = $matches[1];
         }
 
+        // Handle SPMB Flyer upload if provided
+        if ($request->hasFile('spmb_banner_flyer_file')) {
+            $file = $request->file('spmb_banner_flyer_file');
+            $fileName = 'flyer-spmb-'.time().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('uploads'), $fileName);
+            $validated['spmb_banner_flyer_image'] = '/uploads/'.$fileName;
+        }
+
+        // Handle Facility Documentation Photos upload
+        for ($i = 1; $i <= 3; $i++) {
+            $fileInput = "ppdb_image_{$i}_file";
+            if ($request->hasFile($fileInput)) {
+                $file = $request->file($fileInput);
+                $destDir = public_path('uploads/ishum');
+                if (! file_exists($destDir)) {
+                    mkdir($destDir, 0755, true);
+                }
+                $fileName = "fasilitas_ppdb_{$i}_".time().'.'.$file->getClientOriginalExtension();
+                $file->move($destDir, $fileName);
+                $validated["ppdb_image_{$i}"] = '/uploads/ishum/'.$fileName;
+            }
+        }
+
+        // Keep year in sync if needed
+        if (! empty($validated['spmb_banner_year']) && empty($validated['ppdb_year'])) {
+            $validated['ppdb_year'] = $validated['spmb_banner_year'];
+        }
+
         foreach ($validated as $key => $val) {
-            Setting::set($key, $val ?? '', 'ppdb');
+            Setting::set($key, $val ?? '', str_starts_with($key, 'spmb_') ? 'spmb' : 'ppdb');
+        }
+
+        // Synchronize legacy accordion track descriptions to PpdbTrack models if present
+        if (! empty($validated['ppdb_tahfidz'])) {
+            PpdbTrack::where('slug', 'like', '%tahfidz%')->update(['description' => $validated['ppdb_tahfidz']]);
+        }
+        if (! empty($validated['ppdb_alumni'])) {
+            PpdbTrack::where('slug', 'like', '%alumni%')->update(['description' => $validated['ppdb_alumni']]);
+        }
+        if (! empty($validated['ppdb_prestasi'])) {
+            PpdbTrack::where('slug', 'like', '%prestasi%')->update(['description' => $validated['ppdb_prestasi']]);
+        }
+        if (! empty($validated['ppdb_mandiri'])) {
+            PpdbTrack::where('slug', 'like', '%reguler%')->orWhere('slug', 'like', '%mandiri%')->update(['description' => $validated['ppdb_mandiri']]);
         }
 
         // Handle dynamic fields batch update if submitted
@@ -255,13 +342,130 @@ class AdminPpdbController extends Controller
             'user_id' => auth()->id(),
             'user_name' => auth()->user()->name ?? 'Admin',
             'action' => 'ppdb_content_update',
-            'description' => 'Memperbarui konten informasi PPDB dan konfigurasi fleksibilitas formulir pendaftaran',
+            'description' => 'Memperbarui konten informasi PPDB, banner SPMB beranda, dan konfigurasi formulir online',
             'ip_address' => $request->ip(),
             'user_agent' => $request->userAgent(),
             'status' => 'info',
         ]);
 
-        return back()->with('success', 'Seluruh pengaturan konten PPDB dan konfigurasi formulir online berhasil disimpan!');
+        return redirect()->route('admin.ppdb.content')->with('success', 'Konten PPDB, Banner SPMB, dan pengaturan formulir berhasil disimpan!');
+    }
+
+    /**
+     * Store new dynamic PPDB track.
+     */
+    public function storeTrack(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'percentage' => 'nullable|string|max:50',
+            'quota' => 'nullable|string|max:100',
+            'cashback_info' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'is_active' => 'nullable',
+        ]);
+
+        $maxOrder = PpdbTrack::max('order') ?? 0;
+
+        $track = PpdbTrack::create([
+            'name' => $validated['name'],
+            'slug' => Str::slug($validated['name']).'-'.time(),
+            'percentage' => ! empty($validated['percentage']) ? $validated['percentage'] : '0%',
+            'quota' => $validated['quota'] ?? null,
+            'cashback_info' => $validated['cashback_info'] ?? null,
+            'description' => $validated['description'] ?? '',
+            'order' => $maxOrder + 1,
+            'is_active' => $request->has('is_active') ? (bool) $request->input('is_active') : true,
+        ]);
+
+        $this->syncFormTracksSetting();
+
+        ActivityLog::create([
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()->name,
+            'action' => 'ppdb_track_create',
+            'description' => "Menambahkan Jalur PPDB: {$track->name} ({$track->percentage})",
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'status' => 'info',
+        ]);
+
+        return redirect()->route('admin.ppdb.content', ['tab' => 'jalur'])->with('success', "Jalur pendaftaran '{$track->name}' berhasil ditambahkan.");
+    }
+
+    /**
+     * Update existing dynamic PPDB track.
+     */
+    public function updateTrack(Request $request, PpdbTrack $track)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'percentage' => 'nullable|string|max:50',
+            'quota' => 'nullable|string|max:100',
+            'cashback_info' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'is_active' => 'nullable',
+        ]);
+
+        $track->update([
+            'name' => $validated['name'],
+            'percentage' => ! empty($validated['percentage']) ? $validated['percentage'] : '0%',
+            'quota' => $validated['quota'] ?? null,
+            'cashback_info' => $validated['cashback_info'] ?? null,
+            'description' => $validated['description'] ?? '',
+            'is_active' => $request->has('is_active') ? (bool) $request->input('is_active') : false,
+        ]);
+
+        $this->syncFormTracksSetting();
+
+        ActivityLog::create([
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()->name,
+            'action' => 'ppdb_track_update',
+            'description' => "Memperbarui Jalur PPDB: {$track->name}",
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'status' => 'info',
+        ]);
+
+        return redirect()->route('admin.ppdb.content', ['tab' => 'jalur'])->with('success', "Jalur pendaftaran '{$track->name}' berhasil diperbarui.");
+    }
+
+    /**
+     * Delete dynamic PPDB track.
+     */
+    public function destroyTrack(Request $request, PpdbTrack $track)
+    {
+        $name = $track->name;
+        $track->delete();
+
+        $this->syncFormTracksSetting();
+
+        ActivityLog::create([
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()->name,
+            'action' => 'ppdb_track_delete',
+            'description' => "Menghapus Jalur PPDB: {$name}",
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'status' => 'warning',
+        ]);
+
+        return redirect()->route('admin.ppdb.content', ['tab' => 'jalur'])->with('success', "Jalur pendaftaran '{$name}' berhasil dihapus.");
+    }
+
+    /**
+     * Helper to synchronize active tracks with ppdb_form_tracks text setting.
+     */
+    protected function syncFormTracksSetting(): void
+    {
+        $activeTracks = PpdbTrack::active()->ordered()->get();
+        if ($activeTracks->count() > 0) {
+            $formatted = $activeTracks->map(function ($t) {
+                return ! empty($t->percentage) && $t->percentage !== '0%' ? "{$t->name} ({$t->percentage})" : $t->name;
+            })->toArray();
+            Setting::set('ppdb_form_tracks', implode("\n", $formatted), 'ppdb');
+        }
     }
 
     /**

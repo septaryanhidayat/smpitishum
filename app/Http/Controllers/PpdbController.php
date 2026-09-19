@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ActivityLog;
 use App\Models\PpdbRegistration;
+use App\Models\PpdbTrack;
 use App\Models\Setting;
 use App\Services\PpdbFormService;
 use App\Services\WebpService;
@@ -21,12 +22,13 @@ class PpdbController extends Controller
     {
         $settings = [
             'status' => Setting::get('ppdb_status', '1'),
-            'year' => Setting::get('ppdb_year', '2026/2027'),
+            'year' => Setting::get('ppdb_year', '2027/2028'),
             'wave' => Setting::get('ppdb_wave', 'Gelombang 1 (Aktif)'),
             'promo' => Setting::get('ppdb_promo', 'Potongan Biaya Masuk Up to 50% OFF (*S&K berlaku)'),
             'tagline' => Setting::get('ppdb_tagline', "Mendidik Sepenuh Cinta. Mewujudkan generasi Qur'ani berkarakter tangguh, cerdas sains, mandiri, dan berwawasan global di bawah naungan JSIT Indonesia."),
             'youtube_id' => Setting::get('ppdb_youtube_id', 'IrPVG8CYjRc'),
             'video_title' => Setting::get('ppdb_video_title', 'Video Profil & Dokumentasi SMPS IT Ishum'),
+            'video_desc' => Setting::get('ppdb_video_desc', 'Saksikan video profil dan aktivitas pembelajaran siswa kami secara visual.'),
             'operational_weekday' => Setting::get('ppdb_operational_weekday', "Senin – Jum'at: Pukul 08.00 – 15.00 WIB"),
             'operational_weekend' => Setting::get('ppdb_operational_weekend', 'Sabtu: Pukul 08.00 – 12.00 WIB'),
             'secretariat' => Setting::get('ppdb_secretariat', 'Kompleks SMPS IT Ishum, Jl. Sadewa RT 01 RW 04 Karang Raja'),
@@ -35,15 +37,15 @@ class PpdbController extends Controller
             'bank_code' => Setting::get('ppdb_bank_code', '451'),
             'bank_account' => Setting::get('ppdb_bank_account', '7011304251'),
             'bank_holder' => Setting::get('ppdb_bank_holder', 'YL. Fatmawati'),
-            'hotline_phone' => Setting::get('ppdb_hotline_phone', '0821-8268-0647'),
+            'hotline_phone' => Setting::get('ppdb_hotline_phone', '0852-6990-8696'),
             'hotline_name' => Setting::get('ppdb_hotline_name', 'Admin Hotline PPDB'),
-            'hotline_2_phone' => Setting::get('ppdb_hotline_2_phone', '0822-8157-3615'),
-            'hotline_2_name' => Setting::get('ppdb_hotline_2_name', 'Ust. Agi (Kepala Sekolah)'),
-            'alur' => Setting::get('ppdb_alur', "Siapkan berkas foto/scan bukti transfer biaya pendaftaran melalui Bank Syariah Indonesia (BSI) nomor rekening 7011304251 a.n. YL. Fatmawati.\nSiapkan berkas foto/scan akta kelahiran dan kartu keluarga.\nMengisi formulir PPDB secara online pada website resmi.\nKonfirmasi pengisian formulir kepada panitia melalui WhatsApp (0821-8268-0647).\nPendaftaran selesai dan berkas diverifikasi tim panitia untuk tahapan tes wawancara dan tahfidz."),
+            'hotline_2_phone' => Setting::get('ppdb_hotline_2_phone', '0853-7897-4396'),
+            'hotline_2_name' => Setting::get('ppdb_hotline_2_name', 'Kepala Sekolah'),
+            'alur' => Setting::get('ppdb_alur', "Siapkan berkas foto/scan bukti transfer biaya pendaftaran melalui Bank Syariah Indonesia (BSI) nomor rekening 7011304251 a.n. YL. Fatmawati.\nSiapkan berkas foto/scan akta kelahiran dan kartu keluarga.\nMengisi formulir PPDB secara online pada website resmi.\nKonfirmasi pengisian formulir kepada panitia melalui WhatsApp (0852-6990-8696).\nPendaftaran selesai dan berkas diverifikasi tim panitia untuk tahapan tes wawancara dan tahfidz."),
             'syarat' => Setting::get('ppdb_syarat', "Mengisi Formulir Pendaftaran online dengan data yang benar dan lengkap.\nMelampirkan bukti transfer biaya pendaftaran.\nMelampirkan scan/fotokopi Akta Kelahiran dan Kartu Keluarga (KK).\nMelampirkan fotokopi rapor SMP/MTs semester 1-5.\nPas foto terbaru calon siswa ukuran 3x4 berwarna."),
-            'prestasi' => Setting::get('ppdb_prestasi', "Bebas tes tulis akademik bagi Juara 1, 2, atau 3 tingkat Kota/Kabupaten, Provinsi, maupun Nasional.\nDiskon khusus biaya pendaftaran dan prioritas penerimaan."),
-            'tahfidz' => Setting::get('ppdb_tahfidz', "Tahfidz minimal 3 Juz: Beasiswa potongan biaya pendaftaran & SPP.\nTahfidz 5 Juz atau lebih: Beasiswa SPP berkala dan pembinaan khusus Sanad/Mutqin.\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Ishum."),
-            'alumni' => Setting::get('ppdb_alumni', 'Keringanan istimewa bagi lulusan SMPIT Ishlahul Ummah Prabumulih yang melanjutkan ke SMPS IT Ishlahul Ummah Prabumulih berupa potongan biaya uang pangkal & pendaftaran langsung tanpa biaya seleksi.'),
+            'prestasi' => Setting::get('ppdb_prestasi', 'Keringanan biaya khusus bagi siswa berprestasi Akademik (Peringkat 1-3 Paralel) dan Non-Akademik (Juara 1-3 OSN, O2SN, FLS2N, MTQ/MHQ) minimal tingkat Kota/Kabupaten dengan melampirkan sertifikat/piagam kejuaraan resmi.'),
+            'tahfidz' => Setting::get('ppdb_tahfidz', "Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-\nTahfidz >5 Juz Cashback Rp. 1.000.000,-\n\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Ishum.\nKuota Jalur Tahfidz Hanya 10 Siswa"),
+            'alumni' => Setting::get('ppdb_alumni', 'Keringanan istimewa bagi lulusan SD IT Ishlahul Ummah dan SD IT Ishlahul Ummah Prabumulih 2 yang melanjutkan ke SMPS IT Ishlahul Ummah Prabumulih berupa potongan biaya uang pangkal sebesar Rp. 1.000.000,- dengan kuota (hanya 50 siswa)'),
             'mandiri' => Setting::get('ppdb_mandiri', "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa."),
             'jadwal_gelombang' => Setting::get('ppdb_jadwal_gelombang', "Gelombang 1: Oktober s/d Desember (Diskon Biaya Masuk s/d 50%)\nGelombang 2: Januari s/d April\nGelombang 3: Mei s/d Juli (Khusus sisa kuota)\n* Pendaftaran akan ditutup otomatis apabila kuota per kelas telah terpenuhi."),
             'biaya' => Setting::get('ppdb_biaya', "Biaya Formulir Pendaftaran: Ditransfer ke rekening BSI sekolah 7011304251.\nPaket Seragam Sekolah (4 stel seragam lengkap + atribut dan jilbab/peci).\nBiaya Orientasi Siswa (MPLS) & Baitul Maqdis Leadership Camp.\nUntuk rincian lengkap uang pangkal dan SPP bulanan, hubungi langsung panitia PPDB."),
@@ -51,30 +53,38 @@ class PpdbController extends Controller
             'kelulusan' => Setting::get('ppdb_kelulusan', 'Hasil seleksi diumumkan melalui website resmi dan notifikasi WhatsApp kepada orang tua calon siswa. Calon Siswa yang dinyatakan lulus wajib melakukan daftar ulang sesuai jadwal yang ditentukan panitia.'),
             'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SMPS IT Ishlahul Ummah Prabumulih'),
             'closing_desc' => Setting::get('ppdb_closing_desc', 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin'),
+            'image_1' => Setting::get('ppdb_image_1', '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp'),
+            'image_2' => Setting::get('ppdb_image_2', '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp'),
+            'image_3' => Setting::get('ppdb_image_3', '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp'),
         ];
 
-        return view('frontend.ppdb.index', compact('settings'));
+        $tracks = PpdbTrack::active()->ordered()->get();
+
+        return view('frontend.ppdb.index', compact('settings', 'tracks'));
     }
 
-    /**
-     * Display the PPDB Registration Form.
-     */
     /**
      * Display the PPDB Registration Form.
      */
     public function form()
     {
         $rawWaves = Setting::get('ppdb_form_waves', "Gelombang 1 (Early Bird)\nGelombang 2 (Reguler)\nGelombang 3 (Prestasi)");
-        $rawTracks = Setting::get('ppdb_form_tracks', "Jalur Reguler / Tes Mandiri\nJalur Prestasi Akademik & Non-Akademik\nJalur Hafizh Al-Qur'an (Tahfidz)\nJalur Alumni SMPIT Ishum\nJalur Beasiswa / Afirmasi");
         $rawPrograms = Setting::get('ppdb_form_programs', "Boarding School (Asrama Siswa)\nFull Day School (Sekolah Terpadu)");
 
+        $activeTracks = PpdbTrack::active()->ordered()->get();
+        if ($activeTracks->count() > 0) {
+            $tracks = $activeTracks->map(fn ($t) => $t->formatted_label)->toArray();
+        } else {
+            $rawTracks = Setting::get('ppdb_form_tracks', "Jalur First Brive (10%)\nJalur Mutasi Kerja (5%)\nJalur Tahfidz (5%)\nJalur Alumni (25%)\nJalur Prestasi (30%)\nJalur Reguler (25%)");
+            $tracks = array_values(array_filter(array_map('trim', explode("\n", (string) $rawTracks))));
+        }
+
         $waves = array_values(array_filter(array_map('trim', explode("\n", (string) $rawWaves))));
-        $tracks = array_values(array_filter(array_map('trim', explode("\n", (string) $rawTracks))));
         $programs = array_values(array_filter(array_map('trim', explode("\n", (string) $rawPrograms))));
 
         $formSettings = [
             'status' => Setting::get('ppdb_form_status', '1'),
-            'year' => Setting::get('ppdb_year', '2026/2027'),
+            'year' => Setting::get('ppdb_year', '2027/2028'),
             'closed_message' => Setting::get('ppdb_form_closed_message', 'Pendaftaran PPDB online saat ini sedang ditutup sementara atau kuota telah terpenuhi. Silakan hubungi panitia melalui WhatsApp untuk informasi gelombang berikutnya.'),
             'announcement' => Setting::get('ppdb_form_announcement', 'Pastikan nomor WhatsApp yang diisi aktif untuk pengiriman kartu peserta ujian dan informasi jadwal seleksi.'),
             'waves' => $waves,

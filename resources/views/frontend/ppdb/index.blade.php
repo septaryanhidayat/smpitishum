@@ -220,41 +220,68 @@
                     </div>
                 </div>
 
-                {{-- 3. Jalur Prestasi --}}
-                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 3 ? null : 3)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
-                        <span>3. Jalur Prestasi &amp; Keringanan</span>
-                        <i class="fa-solid" :class="activeLeft === 3 ? 'fa-minus' : 'fa-plus'"></i>
-                    </button>
-                    <div x-show="activeLeft === 3" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['prestasi'] ?? '-' }}</div>
-                </div>
+                {{-- JALUR-JALUR PENDAFTARAN DINAMIS DARI DATABASE --}}
+                @if(isset($tracks) && $tracks->count() > 0)
+                    @foreach($tracks as $tIndex => $track)
+                        @php
+                            $trackIndex = $tIndex + 3;
+                        @endphp
+                        <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                            <button @click="activeLeft = (activeLeft === {{ $trackIndex }} ? null : {{ $trackIndex }})" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span>{{ $trackIndex }}. {{ $track->name }}</span>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-400 text-slate-950">{{ $track->percentage }}</span>
+                                    @if(!empty($track->quota))
+                                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/20 text-white">{{ $track->quota }}</span>
+                                    @endif
+                                </div>
+                                <i class="fa-solid" :class="activeLeft === {{ $trackIndex }} ? 'fa-minus' : 'fa-plus'"></i>
+                            </button>
+                            <div x-show="activeLeft === {{ $trackIndex }}" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">
+                                @if(!empty($track->cashback_info))
+                                    <div class="p-2.5 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 font-bold text-xs flex items-center gap-2 mb-2">
+                                        <i class="fa-solid fa-gift text-emerald-600"></i>
+                                        <span>{{ $track->cashback_info }}</span>
+                                    </div>
+                                @endif
+                                <div>{!! nl2br(e($track->description)) !!}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    {{-- Fallback jika data tracks belum diisi --}}
+                    <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                        <button @click="activeLeft = (activeLeft === 3 ? null : 3)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                            <span>3. Jalur Prestasi &amp; Keringanan</span>
+                            <i class="fa-solid" :class="activeLeft === 3 ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                        <div x-show="activeLeft === 3" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['prestasi'] ?? '-' }}</div>
+                    </div>
 
-                {{-- 4. Jalur Hafizh Al-Qur'an --}}
-                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 4 ? null : 4)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
-                        <span>4. Jalur Hafizh Al-Qur'an (Tahfidz)</span>
-                        <i class="fa-solid" :class="activeLeft === 4 ? 'fa-minus' : 'fa-plus'"></i>
-                    </button>
-                    <div x-show="activeLeft === 4" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['tahfidz'] ?? '-' }}</div>
-                </div>
+                    <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                        <button @click="activeLeft = (activeLeft === 4 ? null : 4)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                            <span>4. Jalur Hafizh Al-Qur'an (Tahfidz)</span>
+                            <i class="fa-solid" :class="activeLeft === 4 ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                        <div x-show="activeLeft === 4" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['tahfidz'] ?? '-' }}</div>
+                    </div>
 
-                {{-- 5. Jalur Alumni SMPIT Ishum --}}
-                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 5 ? null : 5)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
-                        <span>5. Jalur Alumni SMPIT Ishum</span>
-                        <i class="fa-solid" :class="activeLeft === 5 ? 'fa-minus' : 'fa-plus'"></i>
-                    </button>
-                    <div x-show="activeLeft === 5" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['alumni'] ?? '-' }}</div>
-                </div>
+                    <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                        <button @click="activeLeft = (activeLeft === 5 ? null : 5)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                            <span>5. Jalur Alumni SMPIT Ishum</span>
+                            <i class="fa-solid" :class="activeLeft === 5 ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                        <div x-show="activeLeft === 5" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['alumni'] ?? '-' }}</div>
+                    </div>
 
-                {{-- 6. Jalur Tes Mandiri --}}
-                <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
-                    <button @click="activeLeft = (activeLeft === 6 ? null : 6)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
-                        <span>6. Jalur Reguler / Tes Mandiri</span>
-                        <i class="fa-solid" :class="activeLeft === 6 ? 'fa-minus' : 'fa-plus'"></i>
-                    </button>
-                    <div x-show="activeLeft === 6" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['mandiri'] ?? '-' }}</div>
-                </div>
+                    <div class="rounded-2xl border border-indigo-200 overflow-hidden bg-white shadow-xs">
+                        <button @click="activeLeft = (activeLeft === 6 ? null : 6)" class="w-full bg-indigo-600 text-white px-5 py-3.5 flex items-center justify-between font-bold text-xs sm:text-sm text-left transition cursor-pointer">
+                            <span>6. Jalur Reguler / Tes Mandiri</span>
+                            <i class="fa-solid" :class="activeLeft === 6 ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                        <div x-show="activeLeft === 6" x-collapse class="p-5 text-xs text-slate-900 font-medium space-y-2 bg-white border-t border-indigo-100 leading-relaxed whitespace-pre-line text-slate-800">{{ $settings['mandiri'] ?? '-' }}</div>
+                    </div>
+                @endif
 
             </div>
 
@@ -371,13 +398,13 @@
             {{-- Dokumentasi Fasilitas Ishum --}}
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xs group">
-                    <img src="/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp" alt="Gerbang Utama Sekolah Ishum" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ $settings['image_1'] ?? '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp' }}" alt="Fasilitas SMPS IT Ishlahul Ummah 1" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp'">
                 </div>
                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xs group">
-                    <img src="/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp" alt="Gedung Sekolah Ishum" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ $settings['image_2'] ?? '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp' }}" alt="Fasilitas SMPS IT Ishlahul Ummah 2" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp'">
                 </div>
                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xs group">
-                    <img src="/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp" alt="Hall Ishlahul Ummah" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ $settings['image_3'] ?? '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp' }}" alt="Fasilitas SMPS IT Ishlahul Ummah 3" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp'">
                 </div>
             </div>
 

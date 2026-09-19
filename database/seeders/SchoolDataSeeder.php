@@ -10,6 +10,7 @@ use App\Models\Download;
 use App\Models\Dpc;
 use App\Models\Pengumuman;
 use App\Models\Post;
+use App\Models\PpdbTrack;
 use App\Models\QuickMenu;
 use App\Models\Setting;
 use App\Models\Tag;
@@ -59,6 +60,25 @@ class SchoolDataSeeder extends Seeder
             'spmb_promo_cashback' => 'Cash Back 1 Juta',
             'spmb_promo_quota' => '24 Siswa per Kelas',
             'spmb_promo_note' => '*Khusus Alumni SDIT Ishum dan SDIT Ishum 2',
+            'spmb_banner_badge' => 'PENERIMAAN SISWA BARU GELOMBANG EXCLUSIVE',
+            'spmb_banner_title' => 'SPMB Gelombang Exclusive & Class Meeting Semester Genap',
+            'spmb_banner_year' => '2027-2028',
+            'spmb_banner_description' => 'Bergabunglah bersama keluarga besar SMPS IT Ishlahul Ummah Prabumulih. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.',
+            'spmb_banner_card1_title' => 'KUOTA TERBATAS',
+            'spmb_banner_card1_desc' => 'Hanya 24 Siswa',
+            'spmb_banner_card2_title' => 'CASH BACK 1 JUTA',
+            'spmb_banner_card2_desc' => 'Alumni SDIT Ishum 1 & 2',
+            'spmb_banner_card3_title' => 'CLASS MEETING',
+            'spmb_banner_card3_desc' => 'Mulai Rabu, 17 Juni',
+            'spmb_banner_flyer_image' => '/uploads/flyer-spmb-smpit-ishum.webp',
+            'spmb_banner_flyer_label' => 'Pengumuman Resmi Sekolah',
+            'spmb_banner_btn_text' => 'Daftar SPMB Online',
+            'spmb_banner_btn_url' => '/ppdb',
+            'spmb_banner_contact_text' => 'Narahubung: 0852-6990-8696',
+            'spmb_banner_contact_phone' => '0852-6990-8696',
+            'ppdb_image_1' => '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp',
+            'ppdb_image_2' => '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp',
+            'ppdb_image_3' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp',
             'donation_bank_1_name' => 'Bank Syariah Indonesia (BSI)',
             'donation_bank_1_code' => '451',
             'donation_bank_1_rekening' => '718-293-8401',
@@ -555,5 +575,78 @@ HTML,
                 'published_at' => now()->subMinutes(14 - $idx),
             ]);
         }
+
+        // 11. Jalur Pendaftaran PPDB Dinamis (First Brive, Mutasi Kerja, Tahfidz, Alumni, Prestasi, Reguler)
+        PpdbTrack::truncate();
+        $defaultTracks = [
+            [
+                'name' => 'Jalur First Brive',
+                'slug' => 'jalur-first-brive',
+                'percentage' => '10%',
+                'quota' => 'Kuota Terbatas',
+                'cashback_info' => 'Cashback Khusus Pendaftar Gelombang Pertama',
+                'description' => 'Keringanan biaya dan prioritas pendaftaran bagi calon siswa yang mendaftar pada periode awal (First Brive). Mendapatkan potongan biaya masuk serta souvenir eksklusif sekolah.',
+                'order' => 1,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Jalur Mutasi Kerja',
+                'slug' => 'jalur-mutasi-kerja',
+                'percentage' => '5%',
+                'quota' => 'Kuota Khusus Mutasi',
+                'cashback_info' => 'Keringanan Khusus Pindahan Kedinasan / Perusahaan',
+                'description' => 'Jalur khusus bagi putra-putri dari orang tua yang mengalami mutasi kerja atau pindah tugas kedinasan (TNI, Polri, ASN, BUMN, Perusahaan Swasta) ke wilayah Kota Prabumulih dan sekitarnya.',
+                'order' => 2,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Jalur Tahfidz',
+                'slug' => 'jalur-tahfidz',
+                'percentage' => '5%',
+                'quota' => 'Hanya 10 Siswa',
+                'cashback_info' => 'Cashback Rp 750.000,- s/d Rp 1.000.000,-',
+                'description' => "Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-\nTahfidz >5 Juz Cashback Rp. 1.000.000,-\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Ishum.\nKuota Jalur Tahfidz Hanya 10 Siswa.",
+                'order' => 3,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Jalur Alumni',
+                'slug' => 'jalur-alumni',
+                'percentage' => '25%',
+                'quota' => 'Hanya 50 Siswa',
+                'cashback_info' => 'Potongan Uang Pangkal Rp 1.000.000,-',
+                'description' => 'Keringanan istimewa bagi lulusan SD IT Ishlahul Ummah dan SD IT Ishlahul Ummah Prabumulih 2 yang melanjutkan ke SMPS IT Ishlahul Ummah Prabumulih berupa potongan biaya uang pangkal sebesar Rp. 1.000.000,- dengan kuota (hanya 50 siswa).',
+                'order' => 4,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Jalur Prestasi',
+                'slug' => 'jalur-prestasi',
+                'percentage' => '30%',
+                'quota' => 'Prioritas Penerimaan',
+                'cashback_info' => 'Bebas Tes Akademik & Potongan Biaya',
+                'description' => 'Bebas tes tulis akademik bagi peraih Juara 1, 2, atau 3 tingkat Kota/Kabupaten, Provinsi, maupun Nasional pada bidang akademik, sains, seni, dan olahraga. Diskon khusus biaya masuk dan prioritas penerimaan.',
+                'order' => 5,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Jalur Reguler',
+                'slug' => 'jalur-reguler',
+                'percentage' => '25%',
+                'quota' => 'Sesuai Kuota Kelas',
+                'cashback_info' => 'Tes Mandiri Sekolah',
+                'description' => "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa.",
+                'order' => 6,
+                'is_active' => true,
+            ],
+        ];
+
+        foreach ($defaultTracks as $track) {
+            PpdbTrack::create($track);
+        }
+
+        // Sinkronisasi teks form tracks untuk kompatibilitas form
+        $trackNames = array_map(fn ($t) => "{$t['name']} ({$t['percentage']})", $defaultTracks);
+        Setting::set('ppdb_form_tracks', implode("\n", $trackNames), 'ppdb');
     }
 }

@@ -73,8 +73,10 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     // Agenda & Pengumuman
     Route::get('/agenda', [AdminAgendaController::class, 'index'])->name('agenda.index');
     Route::post('/agenda', [AdminAgendaController::class, 'storeAgenda'])->name('agenda.store');
+    Route::put('/agenda/{agenda}', [AdminAgendaController::class, 'updateAgenda'])->name('agenda.update');
     Route::delete('/agenda/{agenda}', [AdminAgendaController::class, 'destroyAgenda'])->name('agenda.destroy');
     Route::post('/pengumuman', [AdminAgendaController::class, 'storePengumuman'])->name('pengumuman.store');
+    Route::put('/pengumuman/{pengumuman}', [AdminAgendaController::class, 'updatePengumuman'])->name('pengumuman.update');
     Route::delete('/pengumuman/{pengumuman}', [AdminAgendaController::class, 'destroyPengumuman'])->name('pengumuman.destroy');
 
     // Download Center Management
@@ -87,6 +89,9 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::get('/ppdb', [AdminPpdbController::class, 'index'])->name('ppdb.index');
     Route::get('/ppdb/content', [AdminPpdbController::class, 'content'])->name('ppdb.content');
     Route::post('/ppdb/content', [AdminPpdbController::class, 'updateContent'])->name('ppdb.content.update');
+    Route::post('/ppdb/tracks', [AdminPpdbController::class, 'storeTrack'])->name('ppdb.tracks.store');
+    Route::put('/ppdb/tracks/{track}', [AdminPpdbController::class, 'updateTrack'])->name('ppdb.tracks.update');
+    Route::delete('/ppdb/tracks/{track}', [AdminPpdbController::class, 'destroyTrack'])->name('ppdb.tracks.destroy');
     Route::match(['POST'], '/ppdb/fields/add', [AdminPpdbController::class, 'addField'])->name('ppdb.fields.add');
     Route::post('/ppdb/fields', [AdminPpdbController::class, 'addField']);
     Route::post('/ppdb/fields/reset', [AdminPpdbController::class, 'resetFields'])->name('ppdb.fields.reset');
