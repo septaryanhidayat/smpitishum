@@ -137,10 +137,14 @@ try {
 
     $app->handleRequest(Request::capture());
 } catch (Throwable $e) {
-    http_response_code(500);
+    if (! headers_sent()) {
+        http_response_code(500);
+    }
     $isAjax = (! empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
     if ($isAjax) {
-        header('Content-Type: application/json');
+        if (! headers_sent()) {
+            header('Content-Type: application/json');
+        }
         echo json_encode(['error' => $e->getMessage()]);
         exit;
     }

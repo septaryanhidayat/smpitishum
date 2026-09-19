@@ -10,6 +10,7 @@ use App\Models\Setting;
 use App\Services\PpdbFormService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class AdminPpdbController extends Controller
@@ -179,7 +180,14 @@ class AdminPpdbController extends Controller
 
         $schema = PpdbFormService::getSchema();
         $sections = PpdbFormService::getSections();
-        $tracks = PpdbTrack::ordered()->get();
+        $tracks = collect();
+        try {
+            if (Schema::hasTable('ppdb_tracks')) {
+                $tracks = PpdbTrack::ordered()->get();
+            }
+        } catch (\Throwable $e) {
+            $tracks = collect();
+        }
 
         return view('admin.ppdb.content', compact('settings', 'schema', 'sections', 'tracks'));
     }
@@ -299,17 +307,23 @@ class AdminPpdbController extends Controller
         }
 
         // Synchronize legacy accordion track descriptions to PpdbTrack models if present
-        if (! empty($validated['ppdb_tahfidz'])) {
-            PpdbTrack::where('slug', 'like', '%tahfidz%')->update(['description' => $validated['ppdb_tahfidz']]);
-        }
-        if (! empty($validated['ppdb_alumni'])) {
-            PpdbTrack::where('slug', 'like', '%alumni%')->update(['description' => $validated['ppdb_alumni']]);
-        }
-        if (! empty($validated['ppdb_prestasi'])) {
-            PpdbTrack::where('slug', 'like', '%prestasi%')->update(['description' => $validated['ppdb_prestasi']]);
-        }
-        if (! empty($validated['ppdb_mandiri'])) {
-            PpdbTrack::where('slug', 'like', '%reguler%')->orWhere('slug', 'like', '%mandiri%')->update(['description' => $validated['ppdb_mandiri']]);
+        try {
+            if (Schema::hasTable('ppdb_tracks')) {
+                if (! empty($validated['ppdb_tahfidz'])) {
+                    PpdbTrack::where('slug', 'like', '%tahfidz%')->update(['description' => $validated['ppdb_tahfidz']]);
+                }
+                if (! empty($validated['ppdb_alumni'])) {
+                    PpdbTrack::where('slug', 'like', '%alumni%')->update(['description' => $validated['ppdb_alumni']]);
+                }
+                if (! empty($validated['ppdb_prestasi'])) {
+                    PpdbTrack::where('slug', 'like', '%prestasi%')->update(['description' => $validated['ppdb_prestasi']]);
+                }
+                if (! empty($validated['ppdb_mandiri'])) {
+                    PpdbTrack::where('slug', 'like', '%reguler%')->orWhere('slug', 'like', '%mandiri%')->update(['description' => $validated['ppdb_mandiri']]);
+                }
+            }
+        } catch (\Throwable $e) {
+            // Silently ignore if table does not exist yet
         }
 
         // Handle dynamic fields batch update if submitted
@@ -356,6 +370,10 @@ class AdminPpdbController extends Controller
      */
     public function storeTrack(Request $request)
     {
+        if (! Schema::hasTable('ppdb_tracks')) {
+            return back()->with('error', 'Tabel ppdb_tracks belum tersedia di database. Silakan jalankan migrasi database terlebih dahulu.');
+        }
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'percentage' => 'nullable|string|max:50',
@@ -459,12 +477,18 @@ class AdminPpdbController extends Controller
      */
     protected function syncFormTracksSetting(): void
     {
-        $activeTracks = PpdbTrack::active()->ordered()->get();
-        if ($activeTracks->count() > 0) {
-            $formatted = $activeTracks->map(function ($t) {
-                return ! empty($t->percentage) && $t->percentage !== '0%' ? "{$t->name} ({$t->percentage})" : $t->name;
-            })->toArray();
-            Setting::set('ppdb_form_tracks', implode("\n", $formatted), 'ppdb');
+        try {
+            if (Schema::hasTable('ppdb_tracks')) {
+                $activeTracks = PpdbTrack::active()->ordered()->get();
+                if ($activeTracks->count() > 0) {
+                    $formatted = $activeTracks->map(function ($t) {
+                        return ! empty($t->percentage) && $t->percentage !== '0%' ? "{$t->name} ({$t->percentage})" : $t->name;
+                    })->toArray();
+                    Setting::set('ppdb_form_tracks', implode("\n", $formatted), 'ppdb');
+                }
+            }
+        } catch (\Throwable $e) {
+            // Ignore if table does not exist yet
         }
     }
 

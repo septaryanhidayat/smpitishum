@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 use Illuminate\Contracts\Console\Kernel;
 
 /**
@@ -71,12 +74,49 @@ $hasVendor = file_exists($laravelRoot.'/vendor/autoload.php');
 $hasEnv = file_exists($envFile);
 
 // Helper function to recursively create directories and chmod
-function ensureDirWritable($dir)
-{
-    if (! is_dir($dir)) {
-        @mkdir($dir, 0775, true);
+if (! function_exists('ensureDirWritable')) {
+    function ensureDirWritable($dir)
+    {
+        if (! is_dir($dir)) {
+            @mkdir($dir, 0775, true);
+        }
+        @chmod($dir, 0775);
     }
-    @chmod($dir, 0775);
+}
+
+// Global Artisan Command Runner
+if (! function_exists('runArtisanCmd')) {
+    function runArtisanCmd($kernel, $command, $params = [])
+    {
+        ob_start();
+        try {
+            $kernel->call($command, $params);
+            $output = $kernel->output();
+        } catch (Throwable $e) {
+            $output = 'Error: '.$e->getMessage();
+        }
+        ob_end_clean();
+
+        return $output;
+    }
+}
+
+// Initialize Direct PDO Connection if DB credentials available
+$pdo = null;
+if ($hasEnv && ! empty($envVars['DB_DATABASE'])) {
+    $dbHost = $envVars['DB_HOST'] ?? '127.0.0.1';
+    $dbPort = $envVars['DB_PORT'] ?? '3306';
+    $dbName = $envVars['DB_DATABASE'];
+    $dbUser = $envVars['DB_USERNAME'] ?? 'root';
+    $dbPass = $envVars['DB_PASSWORD'] ?? '';
+    try {
+        $pdo = new PDO("mysql:host={$dbHost};port={$dbPort};dbname={$dbName};charset=utf8mb4", $dbUser, $dbPass, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_TIMEOUT => 5,
+        ]);
+    } catch (Throwable $e) {
+        $pdo = null;
+    }
 }
 
 // 3. Actions Handling
@@ -172,7 +212,7 @@ switch ($action) {
                 $kernel = $app->make(Kernel::class);
                 $results['optimize:clear'] = runArtisanCmd($kernel, 'optimize:clear');
             } catch (Throwable $e) {
-                // Ignore if bootstrap fails
+                $results['optimize:clear'] = 'Info: '.$e->getMessage();
             }
         }
         break;
@@ -182,29 +222,62 @@ switch ($action) {
     case 'optimize':
     case 'clear_cache':
     case 'migrate':
+        // 1. If action is migrate: run direct SQL migration first as foolproof guarantee
+        if ($action === 'migrate' && $pdo) {
+            try {
+                $pdo->exec("CREATE TABLE IF NOT EXISTS `ppdb_tracks` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) NOT NULL,
+                  `slug` varchar(255) NOT NULL,
+                  `percentage` varchar(30) NOT NULL DEFAULT '0%',
+                  `quota` varchar(100) DEFAULT NULL,
+                  `cashback_info` varchar(255) DEFAULT NULL,
+                  `description` text DEFAULT NULL,
+                  `order` int(11) NOT NULL DEFAULT 0,
+                  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `ppdb_tracks_slug_unique` (`slug`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+
+                $count = (int) $pdo->query('SELECT count(*) FROM `ppdb_tracks`')->fetchColumn();
+                if ($count === 0) {
+                    $pdo->exec("INSERT IGNORE INTO `ppdb_tracks` (`id`, `name`, `slug`, `percentage`, `quota`, `cashback_info`, `description`, `order`, `is_active`, `created_at`, `updated_at`) VALUES
+                    (1, 'Jalur First Brive', 'jalur-first-brive', '10%', '10 Siswa', 'Diskon Formulir 50% & Souvenir Eksklusif', 'Jalur pendaftaran gelombang perdana dengan diskon dan kuota khusus untuk pendaftar awal yang menyelesaikan registrasi pada periode pembukaan pertama.', 1, 1, NOW(), NOW()),
+                    (2, 'Jalur Mutasi Kerja', 'jalur-mutasi-kerja', '5%', '5 Siswa', 'Keringanan Khusus Mutasi Tugas', 'Jalur bagi calon siswa pindahan atau anak dari orang tua/wali yang mengalami mutasi tugas kedinasan/pekerjaan ke wilayah Prabumulih dan sekitarnya.', 2, 1, NOW(), NOW()),
+                    (3, 'Jalur Tahfidz Al-Qur\'an', 'jalur-tahfidz-al-quran', '5%', '10 Siswa', 'Cashback Rp. 750.000 s/d Rp. 1.000.000', 'Jalur khusus penghafal Al-Qur\'an:\\n- Tahfidz 4-5 Juz: Cashback Rp 750.000,-\\n- Tahfidz >5 Juz: Cashback Rp 1.000.000,-\\nWajib mengikuti tes sima\'an tahfidz bersama dewan musyrif Al-Qur\'an Ishum.', 3, 1, NOW(), NOW()),
+                    (4, 'Jalur Alumni SMPIT Ishum', 'jalur-alumni-smpit-ishum', '25%', '50 Siswa', 'Potongan Uang Pangkal Rp. 1.000.000,-', 'Keringanan istimewa bagi lulusan SD IT Ishlahul Ummah 1 dan SD IT Ishlahul Ummah 2 Prabumulih yang melanjutkan jenjang pendidikan ke SMPS IT Ishlahul Ummah Prabumulih.', 4, 1, NOW(), NOW()),
+                    (5, 'Jalur Prestasi', 'jalur-prestasi', '30%', '30 Siswa', 'Bebas Tes Akademik & Keringanan Biaya', 'Keringanan biaya khusus bagi siswa berprestasi Akademik (Peringkat 1-3 Paralel) dan Non-Akademik (Juara 1-3 OSN, O2SN, FLS2N, MTQ/MHQ) minimal tingkat Kota/Kabupaten.', 5, 1, NOW(), NOW()),
+                    (6, 'Jalur Reguler / Mandiri', 'jalur-reguler-mandiri', '25%', 'Kuota Reguler', 'Biaya Standar SPMB Berjenjang', 'Jalur seleksi tes mandiri masuk SMP IT Ishlahul Ummah melalui tahapan Tes Potensi Akademik (TPA), Tes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid), dan Wawancara Komitmen Orang Tua & Siswa.', 6, 1, NOW(), NOW());");
+                }
+
+                $hasMigrationsTable = $pdo->query("SHOW TABLES LIKE 'migrations'")->rowCount() > 0;
+                if ($hasMigrationsTable) {
+                    $hasMigrationRecord = $pdo->query("SELECT count(*) FROM `migrations` WHERE `migration` = '2026_09_20_000001_create_ppdb_tracks_table'")->fetchColumn() > 0;
+                    if (! $hasMigrationRecord) {
+                        $maxBatch = (int) $pdo->query('SELECT MAX(`batch`) FROM `migrations`')->fetchColumn();
+                        $nextBatch = max(1, $maxBatch + 1);
+                        $stmt = $pdo->prepare("INSERT INTO `migrations` (`migration`, `batch`) VALUES ('2026_09_20_000001_create_ppdb_tracks_table', ?)");
+                        $stmt->execute([$nextBatch]);
+                    }
+                }
+
+                $results['Direct SQL Migration'] = "SUKSES: Tabel 'ppdb_tracks' berhasil dibuat dan diverifikasi langsung di MySQL database!";
+            } catch (Throwable $e) {
+                $results['Direct SQL Migration'] = 'Info SQL: '.$e->getMessage();
+            }
+        }
+
         if (! $hasVendor) {
             $results['Error'] = "Perintah Artisan membutuhkan folder 'vendor/' yang berisi autoloader Laravel. Silakan jalankan 'composer install' di Terminal cPanel terlebih dahulu.";
             break;
         }
 
         try {
-            require $laravelRoot.'/vendor/autoload.php';
+            require_once $laravelRoot.'/vendor/autoload.php';
             $app = require_once $laravelRoot.'/bootstrap/app.php';
             $kernel = $app->make(Kernel::class);
-
-            function runArtisanCmd($kernel, $command, $params = [])
-            {
-                ob_start();
-                try {
-                    $kernel->call($command, $params);
-                    $output = $kernel->output();
-                } catch (Throwable $e) {
-                    $output = 'Error: '.$e->getMessage();
-                }
-                ob_end_clean();
-
-                return $output;
-            }
 
             if ($action === 'storage_link') {
                 $results['storage:link'] = runArtisanCmd($kernel, 'storage:link');
@@ -251,22 +324,22 @@ switch ($action) {
                                     @mkdir($target, 0755, true);
                                 }
                             } else {
-                                @copy($item->getPathname(), $target);
-                                $synced++;
+                                if (! file_exists($target) || filemtime($item->getRealPath()) > filemtime($target)) {
+                                    @copy($item->getRealPath(), $target);
+                                    $synced++;
+                                }
                             }
                         }
                     }
                 }
 
-                $results['Asset Sync'] = "Berhasil menyinkronkan {$synced} file aset dari repositori public/ ke folder web document root!";
+                $results['Sinkronisasi Public Assets'] = "SUKSES: Sinkronisasi {$synced} file aset dari {$sourcePublic} ke {$currentDir}";
                 $results['storage:link'] = runArtisanCmd($kernel, 'storage:link');
-                $results['cache:clear'] = runArtisanCmd($kernel, 'optimize:clear');
-                $results['config:cache'] = runArtisanCmd($kernel, 'config:cache');
-                $results['route:cache'] = runArtisanCmd($kernel, 'route:cache');
-                $results['view:cache'] = runArtisanCmd($kernel, 'view:cache');
+                $results['optimize:clear'] = runArtisanCmd($kernel, 'optimize:clear');
+                $results['migrate'] = runArtisanCmd($kernel, 'migrate', ['--force' => true]);
             }
         } catch (Throwable $e) {
-            $results['Bootstrap Error'] = $e->getMessage().' ('.$e->getFile().':'.$e->getLine().')';
+            $results['Artisan Error'] = 'Error saat mengeksekusi perintah Artisan: '.$e->getMessage();
         }
         break;
 
@@ -275,32 +348,32 @@ switch ($action) {
         $results['Host Permintaan'] = $_SERVER['HTTP_HOST'] ?? 'Tidak diketahui';
         $results['Dokumen Root ($_SERVER[DOCUMENT_ROOT])'] = $_SERVER['DOCUMENT_ROOT'] ?? 'Tidak diketahui';
         $results['Folder Aktif File (__DIR__)'] = __DIR__;
-        $results['Folder di Home (/home/berandad/*)'] = implode("\n", glob('/home/berandad/*') ?: []);
         $results['Lokasi Root Laravel'] = $laravelRoot;
+
+        // Current Git Commit Info
+        $gitCommit = @shell_exec('cd '.escapeshellarg($laravelRoot).' && git log -1 --pretty=format:"%h - %s (%ci)" 2>&1');
+        $results['Commit Git Aktif'] = ! empty($gitCommit) ? trim($gitCommit) : 'Perintah git tidak tersedia / direktori git tidak terdeteksi';
+
         $results['Versi PHP'] = PHP_VERSION.(version_compare(PHP_VERSION, '8.2.0', '>=') ? ' (OK)' : ' (TERLALU RENDAH - Butuh PHP 8.2+)');
         $results['Status vendor/'] = $hasVendor ? 'TERSEDIA (Autoloader Siap)' : 'BELUM ADA (Perlu composer install atau upload vendor.zip)';
         $results['Status file .env'] = $hasEnv ? 'TERSEDIA ('.$envFile.')' : 'BELUM ADA (Gunakan tombol Buat .env Otomatis)';
 
         // Test Database connection using PDO directly from .env variables
-        if ($hasEnv && ! empty($envVars['DB_DATABASE'])) {
-            $dbHost = $envVars['DB_HOST'] ?? '127.0.0.1';
-            $dbPort = $envVars['DB_PORT'] ?? '3306';
+        if ($pdo) {
             $dbName = $envVars['DB_DATABASE'];
-            $dbUser = $envVars['DB_USERNAME'] ?? 'root';
-            $dbPass = $envVars['DB_PASSWORD'] ?? '';
             try {
-                $pdo = new PDO("mysql:host={$dbHost};port={$dbPort};dbname={$dbName};charset=utf8mb4", $dbUser, $dbPass, [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_TIMEOUT => 3,
-                ]);
                 $stmt = $pdo->query("SELECT count(*) FROM information_schema.tables WHERE table_schema = '{$dbName}'");
                 $tableCount = $stmt->fetchColumn();
-                $results['Koneksi Database MySQL'] = "SUKSES TERHUBUNG ke database '{$dbName}' ({$tableCount} tabel terdeteksi)";
+
+                $trackTableExists = $pdo->query("SHOW TABLES LIKE 'ppdb_tracks'")->rowCount() > 0;
+                $trackStatus = $trackTableExists ? '✅ SUDAH ADA (Siap digunakan)' : '⚠️ BELUM ADA (Klik tombol Migrasi Database di bawah!)';
+
+                $results['Koneksi Database MySQL'] = "SUKSES TERHUBUNG ke database '{$dbName}' ({$tableCount} tabel terdeteksi)\nStatus Tabel ppdb_tracks: {$trackStatus}";
             } catch (Throwable $e) {
                 $results['Koneksi Database MySQL'] = 'GAGAL: '.$e->getMessage();
             }
         } else {
-            $results['Koneksi Database MySQL'] = 'Menunggu konfigurasi .env';
+            $results['Koneksi Database MySQL'] = 'Menunggu konfigurasi .env yang benar';
         }
 
         // Storage writable check
@@ -315,7 +388,7 @@ switch ($action) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cPanel Helper & Diagnostic - SMPS IT Ishlahul Ummah Prabumulih</title>
+    <title>cPanel Helper &amp; Diagnostik - SMPS IT Ishlahul Ummah Prabumulih</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; padding: 2rem 1rem; color: #e2e8f0; margin: 0; }
         .card { max-width: 800px; margin: 0 auto; background: #1e1b4b; border-radius: 16px; border: 1px solid #4338ca; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); padding: 2rem; }
@@ -359,7 +432,7 @@ switch ($action) {
             <a href="?token=<?= $secretToken ?>&amp;action=storage_link">🔗 Buat Storage Link</a>
             <a href="?token=<?= $secretToken ?>&amp;action=optimize">🚀 Optimasi Cache (Produksi)</a>
             <a href="?token=<?= $secretToken ?>&amp;action=clear_cache" class="gray">🧹 Bersihkan Cache</a>
-            <a href="?token=<?= $secretToken ?>&amp;action=migrate" class="gray">🗄️ Migrasi Database</a>
+            <a href="?token=<?= $secretToken ?>&amp;action=migrate" style="background:#ea580c;color:white;font-weight:bold;">🗄️ Migrasi Database (Buat Tabel)</a>
         </div>
 
         <div class="result-box">

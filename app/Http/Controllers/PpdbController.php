@@ -10,6 +10,7 @@ use App\Services\PpdbFormService;
 use App\Services\WebpService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class PpdbController extends Controller
 {
@@ -58,7 +59,14 @@ class PpdbController extends Controller
             'image_3' => (! empty(Setting::get('ppdb_image_3')) && file_exists(public_path(ltrim(Setting::get('ppdb_image_3'), '/')))) ? Setting::get('ppdb_image_3') : '/uploads/fasilitas/fasilitas-lab-ipa.webp',
         ];
 
-        $tracks = PpdbTrack::active()->ordered()->get();
+        $tracks = collect();
+        try {
+            if (Schema::hasTable('ppdb_tracks')) {
+                $tracks = PpdbTrack::active()->ordered()->get();
+            }
+        } catch (\Throwable $e) {
+            $tracks = collect();
+        }
 
         return view('frontend.ppdb.index', compact('settings', 'tracks'));
     }
@@ -71,7 +79,15 @@ class PpdbController extends Controller
         $rawWaves = Setting::get('ppdb_form_waves', "Gelombang 1 (Early Bird)\nGelombang 2 (Reguler)\nGelombang 3 (Prestasi)");
         $rawPrograms = Setting::get('ppdb_form_programs', "Boarding School (Asrama Siswa)\nFull Day School (Sekolah Terpadu)");
 
-        $activeTracks = PpdbTrack::active()->ordered()->get();
+        $activeTracks = collect();
+        try {
+            if (Schema::hasTable('ppdb_tracks')) {
+                $activeTracks = PpdbTrack::active()->ordered()->get();
+            }
+        } catch (\Throwable $e) {
+            $activeTracks = collect();
+        }
+
         if ($activeTracks->count() > 0) {
             $tracks = $activeTracks->map(fn ($t) => $t->formatted_label)->toArray();
         } else {
