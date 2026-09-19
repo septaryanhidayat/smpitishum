@@ -15,7 +15,7 @@
             "slug": "ustadz-fulan-spd",
             "position": "Waka Kurikulum & Guru IPA",
             "fraction": "Guru IPA & Kurikulum",
-            "photo": "/uploads/dewan/avatar-ustadz.svg",
+            "photo": "/uploads/dewan/avatar-default.svg",
             "profile_summary": "Tenaga pendidik profesional SMPS IT Ishlahul Ummah Prabumulih dalam bidang Ilmu Pengetahuan Alam dan koordinator integrasi Kurikulum Merdeka dengan kurikulum JSIT.",
             "education": "S1 Pendidikan IPA / Sains",
             "order": 2
@@ -25,7 +25,7 @@
             "slug": "ustadzah-fulanah-spdi",
             "position": "Guru Tahsin & Tahfidz Al-Qur'an (TTQ)",
             "fraction": "Guru TTQ & Keislaman",
-            "photo": "/uploads/dewan/avatar-ustadzah.svg",
+            "photo": "/uploads/dewan/avatar-default.svg",
             "profile_summary": "Pengampu program Tahsin dan Tahfidz Al-Qur'an siswa, membimbing hafalan mutqin minimal 2 juz serta tartil bacaan bersanad.",
             "education": "S1 Pendidikan Agama Islam",
             "order": 3
@@ -35,7 +35,7 @@
             "slug": "ustadz-fulan-skom",
             "position": "Guru Informatika & Pembina OSIS",
             "fraction": "Guru Informatika & Kesiswaan",
-            "photo": "/uploads/dewan/avatar-ustadz.svg",
+            "photo": "/uploads/dewan/avatar-default.svg",
             "profile_summary": "Membina kompetensi literasi digital, teknologi informasi, dan memfasilitasi kegiatan kesiswaan serta kepemimpinan siswa OSIS SMP IT.",
             "education": "S1 Ilmu Komputer / Teknik Informatika",
             "order": 4
@@ -45,7 +45,7 @@
             "slug": "ustadzah-fulanah-spd",
             "position": "Guru Bahasa Inggris & Literasi",
             "fraction": "Guru Bahasa Inggris",
-            "photo": "/uploads/dewan/avatar-ustadzah.svg",
+            "photo": "/uploads/dewan/avatar-default.svg",
             "profile_summary": "Pengampu mata pelajaran Bahasa Inggris aktif dan pembina kegiatan English Club, storytelling, dan literasi bahasa siswa.",
             "education": "S1 Pendidikan Bahasa Inggris",
             "order": 5
@@ -55,7 +55,7 @@
             "slug": "ustadz-fulan-sor",
             "position": "Guru PJOK & Pembina Kepanduan SIT",
             "fraction": "Guru PJOK & Olahraga",
-            "photo": "/uploads/dewan/avatar-ustadz.svg",
+            "photo": "/uploads/dewan/avatar-default.svg",
             "profile_summary": "Guru Pendidikan Jasmani, Olahraga, dan Kesehatan, aktif membina kedisiplinan, kepanduan Pramuka SIT, dan kebugaran jasmani siswa.",
             "education": "S1 Pendidikan Kepelatihan Olahraga",
             "order": 6
@@ -65,7 +65,7 @@
             "slug": "ustadzah-fulanah-ssi",
             "position": "Guru Matematika & Pembimbing MIPA",
             "fraction": "Guru Matematika",
-            "photo": "/uploads/dewan/avatar-ustadzah.svg",
+            "photo": "/uploads/dewan/avatar-default.svg",
             "profile_summary": "Tenaga pendidik matematika dan pembimbing klub olimpiade sains siswa SMPS IT Ishlahul Ummah Prabumulih.",
             "education": "S1 Matematika / Sains Terpadu",
             "order": 7

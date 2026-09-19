@@ -1,47 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" width="100%" height="100%">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
-    </linearGradient>
-    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#94a3b8"/>
-      <stop offset="100%" stop-color="#64748b"/>
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#cbd5e1"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background Canvas -->
-  <rect width="320" height="400" fill="url(#bgGrad)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="100%" height="100%">
+  <!-- Background Netral Bersih Abu-Abu Lembut -->
+  <rect width="240" height="280" fill="#f1f5f9"/>
   
-  <!-- Subtle circular accent behind avatar -->
-  <circle cx="160" cy="180" r="115" fill="#ffffff" opacity="0.6"/>
-  <circle cx="160" cy="180" r="105" fill="url(#accentGrad)" opacity="0.15"/>
-
-  <!-- Male Silhouette with Peci / Kopiah -->
-  <!-- Kopiah / Peci -->
-  <path d="M 124 102 C 124 84, 196 84, 196 102 L 194 116 L 126 116 Z" fill="url(#avatarGrad)"/>
-  <rect x="123" y="112" width="74" height="4" rx="2" fill="#475569" opacity="0.4"/>
-
-  <!-- Head & Face -->
-  <path d="M 128 116 C 128 116, 126 156, 160 156 C 194 156, 192 116, 192 116 Z" fill="url(#avatarGrad)"/>
-  <!-- Ears -->
-  <ellipse cx="126" cy="132" rx="4" ry="8" fill="url(#avatarGrad)"/>
-  <ellipse cx="194" cy="132" rx="4" ry="8" fill="url(#avatarGrad)"/>
-
-  <!-- Neck -->
-  <path d="M 148 152 L 148 175 C 148 180, 172 180, 172 175 L 172 152 Z" fill="url(#avatarGrad)"/>
-
-  <!-- Collar / Kemeja V-Shape -->
-  <path d="M 152 174 L 160 188 L 168 174 Z" fill="#ffffff" opacity="0.4"/>
-
-  <!-- Torso & Shoulders -->
-  <path d="M 72 260 C 72 205, 115 180, 142 176 L 160 196 L 178 176 C 205 180, 248 205, 248 260 L 248 400 L 72 400 Z" fill="url(#avatarGrad)"/>
-
-  <!-- Badge / Icon placeholder -->
-  <circle cx="160" cy="275" r="22" fill="#ffffff" opacity="0.25"/>
-  <path d="M 154 275 L 158 279 L 167 270" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
+  <!-- Lingkaran Aksen Halus di Belakang Kepala -->
+  <circle cx="120" cy="130" r="85" fill="#e2e8f0" opacity="0.8"/>
+  
+  <!-- Siluet Pengguna Netral Standar (Kepala) -->
+  <circle cx="120" cy="98" r="38" fill="#94a3b8"/>
+  
+  <!-- Siluet Pengguna Netral Standar (Bahu & Dada Melengkung Halus) -->
+  <path d="M 46 245 C 46 178, 80 156, 120 156 C 160 156, 194 178, 194 245 C 194 262, 194 280, 194 280 L 46 280 Z" fill="#94a3b8"/>
 </svg>

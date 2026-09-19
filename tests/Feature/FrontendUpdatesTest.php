@@ -103,8 +103,7 @@ test('dewan guru menampilkan ustadz fulan dan ustadzah fulanah dengan avatar abu
     $response->assertSee('Anita Carlyna');
     $response->assertSee('Ustadz Fulan');
     $response->assertSee('Ustadzah Fulanah');
-    $response->assertSee('avatar-ustadz.svg');
-    $response->assertSee('avatar-ustadzah.svg');
+    $response->assertSee('avatar-default.svg');
 });
 
 test('galeri video dan beranda menampilkan video resmi youtube smp it ishum', function () {

@@ -25,7 +25,8 @@
 </div>
 
 {{-- MAIN STICKY NAVBAR (Royal Indigo & Electric Blue #4338ca / #2563eb / Radiant Gold #f59e0b) --}}
-<header class="sticky top-0 z-50 w-full max-w-full overflow-x-clip bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md box-border">
+<header class="sticky top-0 z-50 w-full max-w-full overflow-x-clip bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md box-border" style="position: -webkit-sticky; position: sticky; top: 0; z-index: 50;">
+
     <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 box-border">
         <div class="flex justify-between items-center h-16 sm:h-20 w-full max-w-full">
             

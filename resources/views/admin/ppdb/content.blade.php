@@ -36,46 +36,41 @@
     }
 }">
 
-    {{-- TOP NAVIGATION TABS --}}
-    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
-        <div class="flex flex-wrap items-center gap-2">
-            <a href="{{ route('admin.ppdb.index') }}" class="px-4 py-2.5 rounded-xl font-bold text-xs transition {{ request()->routeIs('admin.ppdb.index') ? 'bg-[#da251c] text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200' }}">
-                <i class="fa-solid fa-users mr-1.5"></i> Data Calon Siswa
+    {{-- TOP NAVIGATION TABS & ACTIONS (Rapi, Terstruktur & Responsif) --}}
+    <div class="bg-white p-2 sm:p-2.5 rounded-2xl shadow-xs border border-slate-200/80 flex flex-col md:flex-row md:items-center justify-between gap-2.5">
+        <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            <a href="{{ route('admin.ppdb.index') }}" class="px-3.5 py-2 rounded-xl font-bold text-xs transition whitespace-nowrap {{ request()->routeIs('admin.ppdb.index') ? 'bg-[#da251c] text-white shadow-xs' : 'bg-slate-50 text-slate-700 hover:bg-slate-100' }}">
+                <i class="fa-solid fa-users mr-1.5"></i> Data Pendaftar
             </a>
-            <button type="button" @click="currentTab = 'jalur'" :class="currentTab === 'jalur' ? 'bg-[#da251c] text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-4 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
+            <button type="button" @click="currentTab = 'jalur'" :class="currentTab === 'jalur' ? 'bg-[#da251c] text-white shadow-xs' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'" class="px-3.5 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5 whitespace-nowrap">
                 <i class="fa-solid fa-route"></i>
-                <span>Jalur PPDB Dinamis</span>
+                <span>Jalur PPDB</span>
                 <span class="ml-1 px-1.5 py-0.2 rounded-full text-[10px] font-extrabold" :class="currentTab === 'jalur' ? 'bg-white/20 text-white' : 'bg-red-100 text-red-700'">{{ count($tracks) }}</span>
             </button>
-            <button type="button" @click="currentTab = 'banner'" :class="currentTab === 'banner' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-4 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
+            <button type="button" @click="currentTab = 'banner'" :class="currentTab === 'banner' ? 'bg-[#da251c] text-white shadow-xs' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'" class="px-3.5 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5 whitespace-nowrap">
                 <i class="fa-solid fa-bullhorn"></i>
-                <span>Banner SPMB &amp; Beranda</span>
+                <span>Banner SPMB</span>
             </button>
-            <button type="button" @click="currentTab = 'konten'" :class="currentTab === 'konten' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-4 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
+            <button type="button" @click="currentTab = 'konten'" :class="currentTab === 'konten' ? 'bg-[#da251c] text-white shadow-xs' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'" class="px-3.5 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5 whitespace-nowrap">
                 <i class="fa-solid fa-sliders"></i>
-                <span>Konten &amp; 10 Menu PPDB</span>
+                <span class="hidden sm:inline">Konten &amp; 10 Menu PPDB</span>
+                <span class="sm:hidden">Konten</span>
             </button>
-            <button type="button" @click="currentTab = 'formulir'" :class="currentTab === 'formulir' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" class="px-4 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5">
+            <button type="button" @click="currentTab = 'formulir'" :class="currentTab === 'formulir' ? 'bg-[#da251c] text-white shadow-xs' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'" class="px-3.5 py-2 rounded-xl font-bold text-xs transition cursor-pointer flex items-center space-x-1.5 whitespace-nowrap">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>Kustomisasi Formulir Online</span>
+                <span class="hidden sm:inline">Kustomisasi Formulir Online</span>
+                <span class="sm:hidden">Formulir</span>
             </button>
         </div>
 
-        <div class="flex items-center gap-2">
-            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition flex items-center space-x-1.5">
-                <i class="fa-solid fa-file-excel"></i>
-                <span>Excel</span>
-            </a>
-            <a href="{{ route('admin.ppdb.export.pdf') }}" target="_blank" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-red-600 hover:bg-red-700 text-white shadow-xs transition flex items-center space-x-1.5">
-                <i class="fa-solid fa-file-pdf"></i>
-                <span>PDF</span>
-            </a>
-            <a href="{{ route('ppdb.index') }}" target="_blank" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-800 hover:bg-slate-900 text-white shadow-xs transition flex items-center space-x-1.5">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <span>Pratinjau Web</span>
+        <div class="flex items-center gap-2 shrink-0">
+            <a href="{{ route('ppdb.index') }}" target="_blank" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-900 hover:bg-black text-white shadow-xs transition inline-flex items-center space-x-1.5">
+                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400"></i>
+                <span>Lihat Web PPDB</span>
             </a>
         </div>
     </div>
+
 
     {{-- ========================================================
          TAB 1: MANAJEMEN JALUR PENDAFTARAN PPDB DINAMIS
@@ -296,7 +291,24 @@
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Deskripsi Kotak 1</label>
-                                <input type="text" name="spmb_banner_card1_desc" value="{{ old('spmb_banner_card1_desc', $settings['banner_card1_desc']) }}" placeholder="Hanya 24 Siswa" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-amber-700">
+                                <input type="text" name="spmb_banner_card1_desc" value="{{ old('spmb_banner_card1_desc', $settings['banner_card1_desc']) }}" placeholder="Hanya 24 Siswa" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600" style="color: {{ old('spmb_banner_card1_color', $settings['banner_card1_color'] ?? '#f59e0b') }};">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1 flex items-center justify-between">
+                                    <span>Pilihan Warna Teks Deskripsi</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">Hex / Picker</span>
+                                </label>
+                                <div class="flex items-center gap-2">
+                                    <input type="color" name="spmb_banner_card1_color" value="{{ old('spmb_banner_card1_color', $settings['banner_card1_color'] ?? '#f59e0b') }}" onchange="this.nextElementSibling.value = this.value; this.closest('.space-y-3').querySelector('input[name=spmb_banner_card1_desc]').style.color = this.value" class="w-9 h-8 p-0.5 rounded-lg border border-slate-300 cursor-pointer bg-white shrink-0">
+                                    <input type="text" oninput="this.previousElementSibling.value = this.value; this.closest('.space-y-3').querySelector('input[name=spmb_banner_card1_desc]').style.color = this.value" value="{{ old('spmb_banner_card1_color', $settings['banner_card1_color'] ?? '#f59e0b') }}" class="flex-1 bg-white text-xs font-mono rounded-xl px-2.5 py-1.5 border border-slate-200" placeholder="#f59e0b">
+                                </div>
+                                <div class="flex items-center gap-1.5 mt-2">
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#f59e0b'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#f59e0b'; p.querySelector('input[name=spmb_banner_card1_desc]').style.color='#f59e0b';" class="w-5 h-5 rounded-full bg-amber-500 border border-slate-300 cursor-pointer shadow-xs" title="Kuning Emas"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#10b981'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#10b981'; p.querySelector('input[name=spmb_banner_card1_desc]').style.color='#10b981';" class="w-5 h-5 rounded-full bg-emerald-500 border border-slate-300 cursor-pointer shadow-xs" title="Hijau Emerald"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#38bdf8'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#38bdf8'; p.querySelector('input[name=spmb_banner_card1_desc]').style.color='#38bdf8';" class="w-5 h-5 rounded-full bg-sky-400 border border-slate-300 cursor-pointer shadow-xs" title="Biru Muda"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#ef4444'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#ef4444'; p.querySelector('input[name=spmb_banner_card1_desc]').style.color='#ef4444';" class="w-5 h-5 rounded-full bg-red-500 border border-slate-300 cursor-pointer shadow-xs" title="Merah"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#ffffff'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#ffffff'; p.querySelector('input[name=spmb_banner_card1_desc]').style.color='#ffffff';" class="w-5 h-5 rounded-full bg-white border border-slate-300 cursor-pointer shadow-xs" title="Putih"></button>
+                                </div>
                             </div>
                         </div>
 
@@ -312,7 +324,24 @@
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Deskripsi Kotak 2</label>
-                                <input type="text" name="spmb_banner_card2_desc" value="{{ old('spmb_banner_card2_desc', $settings['banner_card2_desc']) }}" placeholder="Alumni SDIT Ishum 1 & 2" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-amber-700">
+                                <input type="text" name="spmb_banner_card2_desc" value="{{ old('spmb_banner_card2_desc', $settings['banner_card2_desc']) }}" placeholder="Alumni SDIT Ishum 1 & 2" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600" style="color: {{ old('spmb_banner_card2_color', $settings['banner_card2_color'] ?? '#f59e0b') }};">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1 flex items-center justify-between">
+                                    <span>Pilihan Warna Teks Deskripsi</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">Hex / Picker</span>
+                                </label>
+                                <div class="flex items-center gap-2">
+                                    <input type="color" name="spmb_banner_card2_color" value="{{ old('spmb_banner_card2_color', $settings['banner_card2_color'] ?? '#f59e0b') }}" onchange="this.nextElementSibling.value = this.value; this.closest('.space-y-3').querySelector('input[name=spmb_banner_card2_desc]').style.color = this.value" class="w-9 h-8 p-0.5 rounded-lg border border-slate-300 cursor-pointer bg-white shrink-0">
+                                    <input type="text" oninput="this.previousElementSibling.value = this.value; this.closest('.space-y-3').querySelector('input[name=spmb_banner_card2_desc]').style.color = this.value" value="{{ old('spmb_banner_card2_color', $settings['banner_card2_color'] ?? '#f59e0b') }}" class="flex-1 bg-white text-xs font-mono rounded-xl px-2.5 py-1.5 border border-slate-200" placeholder="#f59e0b">
+                                </div>
+                                <div class="flex items-center gap-1.5 mt-2">
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#f59e0b'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#f59e0b'; p.querySelector('input[name=spmb_banner_card2_desc]').style.color='#f59e0b';" class="w-5 h-5 rounded-full bg-amber-500 border border-slate-300 cursor-pointer shadow-xs" title="Kuning Emas"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#10b981'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#10b981'; p.querySelector('input[name=spmb_banner_card2_desc]').style.color='#10b981';" class="w-5 h-5 rounded-full bg-emerald-500 border border-slate-300 cursor-pointer shadow-xs" title="Hijau Emerald"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#38bdf8'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#38bdf8'; p.querySelector('input[name=spmb_banner_card2_desc]').style.color='#38bdf8';" class="w-5 h-5 rounded-full bg-sky-400 border border-slate-300 cursor-pointer shadow-xs" title="Biru Muda"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#ef4444'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#ef4444'; p.querySelector('input[name=spmb_banner_card2_desc]').style.color='#ef4444';" class="w-5 h-5 rounded-full bg-red-500 border border-slate-300 cursor-pointer shadow-xs" title="Merah"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#ffffff'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#ffffff'; p.querySelector('input[name=spmb_banner_card2_desc]').style.color='#ffffff';" class="w-5 h-5 rounded-full bg-white border border-slate-300 cursor-pointer shadow-xs" title="Putih"></button>
+                                </div>
                             </div>
                         </div>
 
@@ -328,11 +357,29 @@
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Deskripsi Kotak 3</label>
-                                <input type="text" name="spmb_banner_card3_desc" value="{{ old('spmb_banner_card3_desc', $settings['banner_card3_desc']) }}" placeholder="Mulai Rabu, 17 Juni" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-amber-700">
+                                <input type="text" name="spmb_banner_card3_desc" value="{{ old('spmb_banner_card3_desc', $settings['banner_card3_desc']) }}" placeholder="Mulai Rabu, 17 Juni" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600" style="color: {{ old('spmb_banner_card3_color', $settings['banner_card3_color'] ?? '#f59e0b') }};">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1 flex items-center justify-between">
+                                    <span>Pilihan Warna Teks Deskripsi</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">Hex / Picker</span>
+                                </label>
+                                <div class="flex items-center gap-2">
+                                    <input type="color" name="spmb_banner_card3_color" value="{{ old('spmb_banner_card3_color', $settings['banner_card3_color'] ?? '#f59e0b') }}" onchange="this.nextElementSibling.value = this.value; this.closest('.space-y-3').querySelector('input[name=spmb_banner_card3_desc]').style.color = this.value" class="w-9 h-8 p-0.5 rounded-lg border border-slate-300 cursor-pointer bg-white shrink-0">
+                                    <input type="text" oninput="this.previousElementSibling.value = this.value; this.closest('.space-y-3').querySelector('input[name=spmb_banner_card3_desc]').style.color = this.value" value="{{ old('spmb_banner_card3_color', $settings['banner_card3_color'] ?? '#f59e0b') }}" class="flex-1 bg-white text-xs font-mono rounded-xl px-2.5 py-1.5 border border-slate-200" placeholder="#f59e0b">
+                                </div>
+                                <div class="flex items-center gap-1.5 mt-2">
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#f59e0b'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#f59e0b'; p.querySelector('input[name=spmb_banner_card3_desc]').style.color='#f59e0b';" class="w-5 h-5 rounded-full bg-amber-500 border border-slate-300 cursor-pointer shadow-xs" title="Kuning Emas"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#10b981'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#10b981'; p.querySelector('input[name=spmb_banner_card3_desc]').style.color='#10b981';" class="w-5 h-5 rounded-full bg-emerald-500 border border-slate-300 cursor-pointer shadow-xs" title="Hijau Emerald"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#38bdf8'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#38bdf8'; p.querySelector('input[name=spmb_banner_card3_desc]').style.color='#38bdf8';" class="w-5 h-5 rounded-full bg-sky-400 border border-slate-300 cursor-pointer shadow-xs" title="Biru Muda"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#ef4444'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#ef4444'; p.querySelector('input[name=spmb_banner_card3_desc]').style.color='#ef4444';" class="w-5 h-5 rounded-full bg-red-500 border border-slate-300 cursor-pointer shadow-xs" title="Merah"></button>
+                                    <button type="button" onclick="const p=this.closest('.space-y-3'); p.querySelector('input[type=color]').value='#ffffff'; p.querySelector('input[type=text][class*=\'font-mono\']').value='#ffffff'; p.querySelector('input[name=spmb_banner_card3_desc]').style.color='#ffffff';" class="w-5 h-5 rounded-full bg-white border border-slate-300 cursor-pointer shadow-xs" title="Putih"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 {{-- BROSUR / FLYER & TOMBOL AKSI --}}
                 <div class="pt-4 border-t border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">

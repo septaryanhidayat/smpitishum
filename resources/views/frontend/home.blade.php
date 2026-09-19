@@ -20,7 +20,7 @@
     }
 }" x-init="autoSlide()">
     {{-- Banner Images & Content --}}
-    <div class="relative min-h-[460px] h-[480px] sm:h-[480px] md:h-[520px] lg:h-[560px] w-full overflow-hidden">
+    <div class="relative min-h-[420px] h-[440px] sm:h-[480px] md:h-[520px] lg:h-[560px] w-full overflow-hidden">
         @foreach($heroSlides as $index => $slide)
             <div x-show="activeSlide === {{ $index }}" 
                  x-transition:enter="transition ease-out duration-700" 
@@ -34,7 +34,7 @@
             >
                 <img src="{{ asset($slide['image']) }}" 
                      alt="{{ $slide['title'] }}" 
-                     class="w-full h-full object-cover object-center sm:object-[center_35%] brightness-[0.62]"
+                     class="w-full h-full object-cover object-center brightness-[0.82] sm:brightness-[0.78]"
                      width="1376"
                      height="768"
                      @if($index === 0)
@@ -46,7 +46,9 @@
                          decoding="async"
                      @endif
                 >
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-indigo-950/50 to-slate-950/40"></div>
+                {{-- Uniform semi-transparent cover overlay without harsh bottom cutoff --}}
+                <div class="absolute inset-0 bg-slate-950/40 sm:bg-slate-950/35"></div>
+
 
                 {{-- Konten Hero Rata Tengah --}}
                 <div class="absolute inset-0 flex items-center justify-center pt-4 pb-14 sm:pb-14 px-3 sm:px-6">
@@ -293,7 +295,7 @@
                                 <i class="fa-solid fa-users"></i>
                             </div>
                             <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card1_title'] ?? 'KUOTA TERBATAS' }}</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">{{ $spmbBanner['card1_desc'] ?? 'Hanya 24 Siswa' }}</p>
+                            <p class="text-xs font-bold mt-0.5" style="color: {{ $spmbBanner['card1_color'] ?? '#fde047' }};">{{ $spmbBanner['card1_desc'] ?? 'Hanya 24 Siswa' }}</p>
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
@@ -301,7 +303,7 @@
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </div>
                             <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card2_title'] ?? 'CASH BACK 1 JUTA' }}</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">{{ $spmbBanner['card2_desc'] ?? 'Alumni SDIT Ishum 1 & 2' }}</p>
+                            <p class="text-xs font-bold mt-0.5" style="color: {{ $spmbBanner['card2_color'] ?? '#fde047' }};">{{ $spmbBanner['card2_desc'] ?? 'Alumni SDIT Ishum 1 & 2' }}</p>
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
@@ -309,8 +311,9 @@
                                 <i class="fa-solid fa-calendar-check"></i>
                             </div>
                             <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card3_title'] ?? 'CLASS MEETING' }}</h4>
-                            <p class="text-xs text-amber-300 font-bold mt-0.5">{{ $spmbBanner['card3_desc'] ?? 'Mulai Rabu, 17 Juni' }}</p>
+                            <p class="text-xs font-bold mt-0.5" style="color: {{ $spmbBanner['card3_color'] ?? '#fde047' }};">{{ $spmbBanner['card3_desc'] ?? 'Mulai Rabu, 17 Juni' }}</p>
                         </div>
+
                     </div>
 
                     {{-- Action Hotline & Buttons --}}

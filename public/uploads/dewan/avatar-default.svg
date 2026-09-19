@@ -1,8 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" width="100%" height="100%">
-  <!-- Background Abu-abu Polos -->
-  <rect width="240" height="300" fill="#e2e8f0"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="100%" height="100%">
+  <!-- Background Netral Bersih Abu-Abu Lembut -->
+  <rect width="240" height="280" fill="#f1f5f9"/>
   
-  <!-- Siluet Orang Abu-abu Polos Tanpa Hiasan -->
-  <circle cx="120" cy="100" r="45" fill="#94a3b8"/>
-  <path d="M 40 260 C 40 185, 75 165, 120 165 C 165 165, 200 185, 200 260 C 200 280, 200 300, 200 300 L 40 300 Z" fill="#94a3b8"/>
+  <!-- Lingkaran Aksen Halus di Belakang Kepala -->
+  <circle cx="120" cy="130" r="85" fill="#e2e8f0" opacity="0.8"/>
+  
+  <!-- Siluet Pengguna Netral Standar (Kepala) -->
+  <circle cx="120" cy="98" r="38" fill="#94a3b8"/>
+  
+  <!-- Siluet Pengguna Netral Standar (Bahu & Dada Melengkung Halus) -->
+  <path d="M 46 245 C 46 178, 80 156, 120 156 C 160 156, 194 178, 194 245 C 194 262, 194 280, 194 280 L 46 280 Z" fill="#94a3b8"/>
 </svg>

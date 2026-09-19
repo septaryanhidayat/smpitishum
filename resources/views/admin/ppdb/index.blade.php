@@ -6,29 +6,46 @@
 @section('content')
 <div class="space-y-6">
 
-    {{-- TOP NAVIGATION TABS & EXPORT BUTTONS --}}
-    <div class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4">
-        <a href="{{ route('admin.ppdb.index') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-indigo-600 text-white shadow-md transition">
-            <i class="fa-solid fa-users mr-1.5"></i> Data Calon Siswa (Pendaftar)
-        </a>
-        <a href="{{ route('admin.ppdb.content') }}" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">
-            <i class="fa-solid fa-sliders mr-1.5"></i> Pengaturan &amp; Konten Halaman PPDB
-        </a>
-        <div class="ml-auto flex flex-wrap items-center gap-2">
-            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-indigo-700 hover:bg-indigo-700 text-white shadow-sm transition flex items-center space-x-1.5">
+    {{-- TOP NAVIGATION TABS & ACTIONS (Rapi, Terstruktur & Responsif) --}}
+    <div class="bg-white p-2 sm:p-2.5 rounded-2xl shadow-xs border border-slate-200/80 flex flex-col md:flex-row md:items-center justify-between gap-2.5">
+        <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            <a href="{{ route('admin.ppdb.index') }}" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-[#da251c] text-white shadow-xs transition whitespace-nowrap">
+                <i class="fa-solid fa-users mr-1.5"></i> Data Pendaftar
+            </a>
+            <a href="{{ route('admin.ppdb.content', ['tab' => 'jalur']) }}" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200/60 transition whitespace-nowrap flex items-center space-x-1.5">
+                <i class="fa-solid fa-route"></i>
+                <span>Jalur PPDB</span>
+            </a>
+            <a href="{{ route('admin.ppdb.content', ['tab' => 'banner']) }}" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200/60 transition whitespace-nowrap flex items-center space-x-1.5">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Banner SPMB</span>
+            </a>
+            <a href="{{ route('admin.ppdb.content', ['tab' => 'konten']) }}" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200/60 transition whitespace-nowrap flex items-center space-x-1.5">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Konten Halaman</span>
+            </a>
+            <a href="{{ route('admin.ppdb.content', ['tab' => 'formulir']) }}" class="px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200/60 transition whitespace-nowrap flex items-center space-x-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Form Online</span>
+            </a>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0 border-t md:border-t-0 pt-2 md:pt-0 border-slate-100">
+            <a href="{{ route('admin.ppdb.export.excel') }}" class="px-3 py-2 rounded-xl font-bold text-xs bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition flex items-center space-x-1.5">
                 <i class="fa-solid fa-file-excel"></i>
-                <span>Export Excel</span>
+                <span>Excel</span>
             </a>
-            <a href="{{ route('admin.ppdb.export.pdf') }}" target="_blank" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-red-700 hover:bg-red-800 text-white shadow-sm transition flex items-center space-x-1.5">
+            <a href="{{ route('admin.ppdb.export.pdf') }}" target="_blank" class="px-3 py-2 rounded-xl font-bold text-xs bg-red-600 hover:bg-red-700 text-white shadow-xs transition flex items-center space-x-1.5">
                 <i class="fa-solid fa-file-pdf"></i>
-                <span>Export PDF</span>
+                <span>PDF</span>
             </a>
-            <a href="{{ route('ppdb.index') }}" target="_blank" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-slate-800 hover:bg-slate-900 text-white shadow-sm transition flex items-center space-x-1.5">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <span>Lihat Halaman PPDB</span>
+            <a href="{{ route('ppdb.index') }}" target="_blank" class="px-3 py-2 rounded-xl font-bold text-xs bg-slate-900 hover:bg-black text-white shadow-xs transition flex items-center space-x-1.5">
+                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400"></i>
+                <span>Lihat Web</span>
             </a>
         </div>
     </div>
+
 
     {{-- STATS CARDS --}}
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">

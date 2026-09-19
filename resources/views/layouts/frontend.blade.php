@@ -83,8 +83,9 @@
 
     @stack('styles')
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
-    <div id="app-wrapper" class="w-full max-w-full overflow-x-hidden relative flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen w-full max-w-full overflow-x-clip">
+    <div id="app-wrapper" class="w-full max-w-full overflow-x-clip relative flex flex-col min-h-screen">
+
 
         {{-- HEADER --}}
         @include('partials.header')

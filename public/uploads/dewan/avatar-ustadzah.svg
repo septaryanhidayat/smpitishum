@@ -1,38 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" width="100%" height="100%">
-  <defs>
-    <linearGradient id="bgGradFemale" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
-    </linearGradient>
-    <linearGradient id="avatarGradFemale" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#94a3b8"/>
-      <stop offset="100%" stop-color="#64748b"/>
-    </linearGradient>
-    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#cbd5e1"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background Canvas -->
-  <rect width="320" height="400" fill="url(#bgGradFemale)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="100%" height="100%">
+  <!-- Background Netral Bersih Abu-Abu Lembut -->
+  <rect width="240" height="280" fill="#f1f5f9"/>
   
-  <!-- Subtle circular accent behind avatar -->
-  <circle cx="160" cy="180" r="115" fill="#ffffff" opacity="0.6"/>
-  <circle cx="160" cy="180" r="105" fill="#cbd5e1" opacity="0.2"/>
-
-  <!-- Hijab Outer Shape -->
-  <path d="M 160 82 C 122 82, 102 125, 102 170 C 102 215, 82 250, 68 280 C 60 296, 68 400, 68 400 L 252 400 C 252 400, 260 296, 252 280 C 238 250, 218 215, 218 170 C 218 125, 198 82, 160 82 Z" fill="url(#avatarGradFemale)"/>
-
-  <!-- Inner Face Opening (Oval Silhouette) -->
-  <ellipse cx="160" cy="148" rx="30" ry="38" fill="#e2e8f0"/>
-  <ellipse cx="160" cy="148" rx="27" ry="35" fill="url(#faceGrad)"/>
-
-  <!-- Hijab drapery fold line -->
-  <path d="M 160 192 C 152 220, 142 245, 135 270" stroke="#475569" stroke-width="2" fill="none" opacity="0.25"/>
-  <path d="M 160 192 C 168 220, 178 245, 185 270" stroke="#475569" stroke-width="2" fill="none" opacity="0.25"/>
-
-  <!-- Chest emblem / Star icon subtle accent -->
-  <circle cx="160" cy="285" r="22" fill="#ffffff" opacity="0.25"/>
-  <path d="M 154 285 L 158 289 L 167 280" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
+  <!-- Lingkaran Aksen Halus di Belakang Kepala -->
+  <circle cx="120" cy="130" r="85" fill="#e2e8f0" opacity="0.8"/>
+  
+  <!-- Siluet Pengguna Netral Standar (Kepala) -->
+  <circle cx="120" cy="98" r="38" fill="#94a3b8"/>
+  
+  <!-- Siluet Pengguna Netral Standar (Bahu & Dada Melengkung Halus) -->
+  <path d="M 46 245 C 46 178, 80 156, 120 156 C 160 156, 194 178, 194 245 C 194 262, 194 280, 194 280 L 46 280 Z" fill="#94a3b8"/>
 </svg>

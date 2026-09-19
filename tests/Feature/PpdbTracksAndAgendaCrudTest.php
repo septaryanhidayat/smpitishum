@@ -115,18 +115,36 @@ test('admin can update agenda and pengumuman via PUT request', function () {
     expect($pengumuman->content)->toBe('Isi pengumuman diperbarui.');
 });
 
-test('spmb banner is fully customizable and visible on homepage', function () {
+test('spmb banner is fully customizable and visible on homepage with custom text colors', function () {
     Setting::set('spmb_banner_title', 'SPMB Tahun Ini Dibuka Lebar', 'spmb');
     Setting::set('spmb_banner_card1_title', 'KUOTA SANGAT TERBATAS', 'spmb');
     Setting::set('spmb_banner_card1_desc', 'Hanya 15 Siswa', 'spmb');
+    Setting::set('spmb_banner_card1_color', '#10b981', 'spmb');
     Setting::set('spmb_banner_card2_title', 'CASH BACK 2 JUTA', 'spmb');
     Setting::set('spmb_banner_card2_desc', 'Khusus Pendaftar Hari Ini', 'spmb');
+    Setting::set('spmb_banner_card2_color', '#ef4444', 'spmb');
 
     $homeResponse = $this->get(route('home'));
     $homeResponse->assertStatus(200);
     $homeResponse->assertSee('SPMB Tahun Ini Dibuka Lebar');
     $homeResponse->assertSee('KUOTA SANGAT TERBATAS');
     $homeResponse->assertSee('Hanya 15 Siswa');
+    $homeResponse->assertSee('#10b981');
     $homeResponse->assertSee('CASH BACK 2 JUTA');
     $homeResponse->assertSee('Khusus Pendaftar Hari Ini');
+    $homeResponse->assertSee('#ef4444');
+});
+
+test('redesigned ppdb page renders cleanly with bsi account and parent-friendly layout', function () {
+    $response = $this->get(route('ppdb.index'));
+    $response->assertStatus(200);
+    $response->assertSee('SPMB SMPS IT ISHLAHUL UMMAH');
+    $response->assertSee('Bank Syariah Indonesia (BSI)');
+    $response->assertSee('7011304251');
+    $response->assertSee('YL. Fatmawati');
+    $response->assertSee('padding-top: 56.25%', false);
+    $response->assertSee('Alur Pendaftaran');
+    $response->assertSee('Syarat Pendaftaran');
+    $response->assertSee('Program Boarding');
+    $response->assertSee('Program Full Day School');
 });
