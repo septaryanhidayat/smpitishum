@@ -93,6 +93,24 @@
                 </div>
             @endif
 
+            {{-- NOTIFIKASI JALUR TERPILIH OTOMATIS --}}
+            @if(request('jalur') || request('track'))
+                <div class="p-3.5 sm:p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between gap-3 shadow-xs">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <div>
+                            <span class="font-black text-emerald-900 block text-xs sm:text-sm">Jalur Pilihan: {{ request('jalur') ?? request('track') }}</span>
+                            <span class="text-[11px] text-emerald-700">Jalur pendaftaran ini telah otomatis terpilih pada kolom formulir di bawah.</span>
+                        </div>
+                    </div>
+                    <a href="{{ route('ppdb.index') }}" class="text-[11px] font-bold text-emerald-800 underline hover:text-emerald-950 shrink-0">
+                        Ganti Jalur
+                    </a>
+                </div>
+            @endif
+
             {{-- REGISTRATION FORM --}}
             <form action="{{ route('ppdb.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6 text-xs text-slate-700">
                 @csrf

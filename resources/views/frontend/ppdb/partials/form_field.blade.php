@@ -21,14 +21,24 @@
             <option value="">{{ $placeholder ?: 'Pilih ' . $label . '...' }}</option>
             @php
                 $opts = $options;
-                if (empty($opts)) {
+                if ($key === 'track' && !empty($formSettings['tracks'])) {
+                    $opts = $formSettings['tracks'];
+                } elseif (empty($opts)) {
                     if ($key === 'wave') $opts = $formSettings['waves'] ?? [];
                     elseif ($key === 'track') $opts = $formSettings['tracks'] ?? [];
                     elseif ($key === 'program_type') $opts = $formSettings['programs'] ?? [];
                 }
+
+                $selectedVal = old($key, request($key, ($key === 'track' ? (request('jalur') ?? request('track')) : null)));
+                $cleanSelected = !empty($selectedVal) ? strtolower(trim(preg_replace('/[^a-zA-Z0-9]/', '', (string)$selectedVal))) : '';
             @endphp
             @foreach($opts as $opt)
-                <option value="{{ $opt }}" {{ old($key) === $opt ? 'selected' : '' }}>{{ $opt }}</option>
+                @php
+                    $cleanOpt = strtolower(trim(preg_replace('/[^a-zA-Z0-9]/', '', (string)$opt)));
+                    $isSelected = ($selectedVal == $opt) || 
+                                  (!empty($cleanSelected) && (str_contains($cleanOpt, $cleanSelected) || str_contains($cleanSelected, $cleanOpt)));
+                @endphp
+                <option value="{{ $opt }}" {{ $isSelected ? 'selected' : '' }}>{{ $opt }}</option>
             @endforeach
         </select>
         @error($key) <p class="text-red-500 text-[11px] mt-1">{{ $message }}</p> @enderror

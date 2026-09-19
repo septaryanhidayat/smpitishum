@@ -665,24 +665,21 @@
                             <p class="text-[10px] text-slate-400 mt-1">Gunakan baris baru untuk memisahkan setiap poin syarat berkas.</p>
                         </div>
 
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">3. Jalur Prestasi &amp; Keringanan</label>
-                            <textarea name="ppdb_prestasi" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_prestasi', $settings['prestasi'] ?? '') }}</textarea>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">4. Jalur Hafizh Al-Qur'an (Tahfidz)</label>
-                            <textarea name="ppdb_tahfidz" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_tahfidz', $settings['tahfidz'] ?? '') }}</textarea>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">5. Jalur Alumni SMPIT Ishum</label>
-                            <textarea name="ppdb_alumni" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_alumni', $settings['alumni'] ?? '') }}</textarea>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">6. Jalur Reguler / Tes Mandiri</label>
-                            <textarea name="ppdb_mandiri" rows="4" class="w-full bg-slate-50 text-xs rounded-xl p-3.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 leading-relaxed">{{ old('ppdb_mandiri', $settings['mandiri'] ?? '') }}</textarea>
+                        {{-- INFORMASI PENGATURAN JALUR TERPUSAT --}}
+                        <div class="p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 text-xs text-amber-950 space-y-2">
+                            <div class="font-black flex items-center gap-2 text-amber-900 text-sm">
+                                <i class="fa-solid fa-route text-amber-600"></i>
+                                <span>Pengaturan Jalur Pendaftaran Dikelola Terpusat</span>
+                            </div>
+                            <p class="text-xs text-slate-700 leading-relaxed font-medium">
+                                Seluruh jalur masuk (Prestasi, Tahfidz, Alumni, Reguler, dsb.) beserta kuota, cashback, dan persentase kini dikelola secara dinamis di tab <strong>Jalur PPDB</strong> pada menu di atas.
+                            </p>
+                            <div class="pt-1">
+                                <button type="button" @click="currentTab = 'jalur'" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs shadow-xs transition cursor-pointer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    <span>Buka Manajemen Jalur PPDB</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 

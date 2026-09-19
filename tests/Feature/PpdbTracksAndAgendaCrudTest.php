@@ -139,7 +139,8 @@ test('redesigned ppdb page renders cleanly with bsi account and parent-friendly 
     $response = $this->get(route('ppdb.index'));
     $response->assertStatus(200);
     $response->assertSee('SPMB SMPS IT ISHLAHUL UMMAH');
-    $response->assertSee('Bank Syariah Indonesia (BSI)');
+    $response->assertSee('Info Rekening');
+    $response->assertDontSee('Info Biaya & Rekening BSI');
     $response->assertSee('7011304251');
     $response->assertSee('YL. Fatmawati');
     $response->assertSee('padding-top: 56.25%', false);
@@ -147,4 +148,13 @@ test('redesigned ppdb page renders cleanly with bsi account and parent-friendly 
     $response->assertSee('Syarat Pendaftaran');
     $response->assertSee('Program Boarding');
     $response->assertSee('Program Full Day School');
+});
+
+test('ppdb form automatically pre-selects chosen track from ppdb info page', function () {
+    $response = $this->get(route('ppdb.form', ['jalur' => 'Jalur Tahfidz']));
+    $response->assertStatus(200);
+    $response->assertSee('Jalur Pilihan: Jalur Tahfidz');
+    $response->assertSee('Jalur pendaftaran ini telah otomatis terpilih');
+    // Check that option matching Tahfidz has selected attribute
+    $response->assertSee('selected', false);
 });

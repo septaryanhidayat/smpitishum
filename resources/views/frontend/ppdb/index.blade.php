@@ -78,7 +78,7 @@
 
                 <a href="#rekening" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold border border-white/15 transition">
                     <i class="fa-solid fa-credit-card text-xs"></i>
-                    <span>Info Biaya & Rekening BSI</span>
+                    <span>Info Rekening</span>
                 </a>
             </div>
         </div>
@@ -201,7 +201,7 @@
                             </div>
 
                             <div class="pt-3.5 mt-3 border-t border-slate-100">
-                                <a href="{{ route('ppdb.form') }}" class="w-full inline-flex items-center justify-center space-x-1.5 bg-slate-50 group-hover:bg-indigo-600 text-slate-700 group-hover:text-white text-xs font-bold py-2 px-3 rounded-xl transition duration-200">
+                                <a href="{{ route('ppdb.form', ['jalur' => $track->name]) }}" class="w-full inline-flex items-center justify-center space-x-1.5 bg-slate-50 group-hover:bg-indigo-600 text-slate-700 group-hover:text-white text-xs font-bold py-2 px-3 rounded-xl transition duration-200">
                                     <span>Pilih Jalur Ini</span>
                                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                 </a>
@@ -238,7 +238,7 @@
                                 <p class="text-xs text-slate-600 leading-relaxed">{{ $ft['desc'] }}</p>
                             </div>
                             <div class="pt-3.5 mt-3 border-t border-slate-100">
-                                <a href="{{ route('ppdb.form') }}" class="w-full inline-flex items-center justify-center space-x-1.5 bg-indigo-600 text-white text-xs font-bold py-2 rounded-xl hover:bg-indigo-700 transition">
+                                <a href="{{ route('ppdb.form', ['jalur' => $ft['title']]) }}" class="w-full inline-flex items-center justify-center space-x-1.5 bg-indigo-600 text-white text-xs font-bold py-2 rounded-xl hover:bg-indigo-700 transition">
                                     <span>Pilih Jalur Ini</span>
                                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                 </a>
