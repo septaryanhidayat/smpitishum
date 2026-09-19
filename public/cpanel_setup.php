@@ -241,6 +241,12 @@ switch ($action) {
                   UNIQUE KEY `ppdb_tracks_slug_unique` (`slug`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
 
+                // Ensure percentage column exists if table was created previously without it
+                $cols = $pdo->query("SHOW COLUMNS FROM `ppdb_tracks` LIKE 'percentage'")->fetchAll();
+                if (empty($cols)) {
+                    $pdo->exec("ALTER TABLE `ppdb_tracks` ADD COLUMN `percentage` varchar(30) NOT NULL DEFAULT '0%' AFTER `slug`");
+                }
+
                 $count = (int) $pdo->query('SELECT count(*) FROM `ppdb_tracks`')->fetchColumn();
                 if ($count === 0) {
                     $pdo->exec("INSERT IGNORE INTO `ppdb_tracks` (`id`, `name`, `slug`, `percentage`, `quota`, `cashback_info`, `description`, `order`, `is_active`, `created_at`, `updated_at`) VALUES
@@ -252,18 +258,32 @@ switch ($action) {
                     (6, 'Jalur Reguler / Mandiri', 'jalur-reguler-mandiri', '25%', 'Kuota Reguler', 'Biaya Standar SPMB Berjenjang', 'Jalur seleksi tes mandiri masuk SMP IT Ishlahul Ummah melalui tahapan Tes Potensi Akademik (TPA), Tes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid), dan Wawancara Komitmen Orang Tua & Siswa.', 6, 1, NOW(), NOW());");
                 }
 
+                // Update default neutral avatar for anggota dewan
+                $hasDewan = $pdo->query("SHOW TABLES LIKE 'anggota_dewans'")->rowCount() > 0;
+                if ($hasDewan) {
+                    $pdo->exec("UPDATE `anggota_dewans` SET `photo` = '/uploads/dewan/avatar-default.svg' WHERE `photo` LIKE '%avatar-ustadz%' OR `photo` LIKE '%avatar-ustadzah%' OR `photo` IS NULL OR `photo` = ''");
+                }
+
                 $hasMigrationsTable = $pdo->query("SHOW TABLES LIKE 'migrations'")->rowCount() > 0;
                 if ($hasMigrationsTable) {
-                    $hasMigrationRecord = $pdo->query("SELECT count(*) FROM `migrations` WHERE `migration` = '2026_09_20_000001_create_ppdb_tracks_table'")->fetchColumn() > 0;
-                    if (! $hasMigrationRecord) {
-                        $maxBatch = (int) $pdo->query('SELECT MAX(`batch`) FROM `migrations`')->fetchColumn();
-                        $nextBatch = max(1, $maxBatch + 1);
-                        $stmt = $pdo->prepare("INSERT INTO `migrations` (`migration`, `batch`) VALUES ('2026_09_20_000001_create_ppdb_tracks_table', ?)");
-                        $stmt->execute([$nextBatch]);
+                    $maxBatch = (int) $pdo->query('SELECT MAX(`batch`) FROM `migrations`')->fetchColumn();
+                    $nextBatch = max(1, $maxBatch + 1);
+
+                    $migrationsToMark = [
+                        '2026_09_20_000001_create_ppdb_tracks_table',
+                        '2026_09_20_050000_update_anggota_dewan_default_avatar',
+                    ];
+
+                    foreach ($migrationsToMark as $mig) {
+                        $exists = $pdo->query("SELECT count(*) FROM `migrations` WHERE `migration` = '{$mig}'")->fetchColumn() > 0;
+                        if (! $exists) {
+                            $stmt = $pdo->prepare("INSERT INTO `migrations` (`migration`, `batch`) VALUES (?, ?)");
+                            $stmt->execute([$mig, $nextBatch]);
+                        }
                     }
                 }
 
-                $results['Direct SQL Migration'] = "SUKSES: Tabel 'ppdb_tracks' berhasil dibuat dan diverifikasi langsung di MySQL database!";
+                $results['Direct SQL Migration'] = "SUKSES: Tabel 'ppdb_tracks' disinkronkan dan avatar anggota dewan diperbarui ke avatar netral!";
             } catch (Throwable $e) {
                 $results['Direct SQL Migration'] = 'Info SQL: '.$e->getMessage();
             }
