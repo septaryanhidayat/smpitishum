@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Agenda & Pengumuman')
-@section('header_title', 'Agenda Kegiatan & Pengumuman Resmi')
+@section('title', 'Agenda & Info')
+@section('header_title', 'Agenda & Info')
 
 @section('content')
 <div class="space-y-8" x-data="{

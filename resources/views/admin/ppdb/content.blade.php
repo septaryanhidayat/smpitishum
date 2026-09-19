@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Kelola Konten, Banner SPMB & Jalur PPDB')
-@section('header_title', 'Kelola Konten, Banner SPMB & Jalur PPDB')
+@section('title', 'Konten & Jalur PPDB')
+@section('header_title', 'Konten & Jalur PPDB')
 
 @section('content')
 <div class="space-y-6" x-data="{ 

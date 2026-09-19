@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Backup Database')
-@section('header_title', 'Cadangan Basis Data (Database Backup)')
+@section('header_title', 'Backup Database')
 
 @section('content')
 <div class="space-y-6">

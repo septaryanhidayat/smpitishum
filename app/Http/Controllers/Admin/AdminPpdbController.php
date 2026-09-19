@@ -139,9 +139,9 @@ class AdminPpdbController extends Controller
             'closing_desc' => Setting::get('ppdb_closing_desc', 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin'),
 
             // FOTO DOKUMENTASI FASILITAS PPDB
-            'image_1' => Setting::get('ppdb_image_1', '/uploads/ishum/fasilitas_1377_IMG-20240528-WA0094-scaled.webp'),
-            'image_2' => Setting::get('ppdb_image_2', '/uploads/ishum/fasilitas_3427_IMG-20240528-WA0106-scaled.webp'),
-            'image_3' => Setting::get('ppdb_image_3', '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp'),
+            'image_1' => (! empty(Setting::get('ppdb_image_1')) && file_exists(public_path(ltrim(Setting::get('ppdb_image_1'), '/')))) ? Setting::get('ppdb_image_1') : '/uploads/fasilitas/fasilitas-gedung-utama.webp',
+            'image_2' => (! empty(Setting::get('ppdb_image_2')) && file_exists(public_path(ltrim(Setting::get('ppdb_image_2'), '/')))) ? Setting::get('ppdb_image_2') : '/uploads/fasilitas/fasilitas-ruang-kelas.webp',
+            'image_3' => (! empty(Setting::get('ppdb_image_3')) && file_exists(public_path(ltrim(Setting::get('ppdb_image_3'), '/')))) ? Setting::get('ppdb_image_3') : '/uploads/fasilitas/fasilitas-lab-ipa.webp',
 
             // BANNER SPMB BERANDA & HIGHLIGHT
             'banner_badge' => Setting::get('spmb_banner_badge', 'PENERIMAAN SISWA BARU GELOMBANG EXCLUSIVE'),

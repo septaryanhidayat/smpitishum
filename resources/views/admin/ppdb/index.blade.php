@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Data Pendaftaran PPDB')
-@section('header_title', 'Penerimaan Peserta Didik Baru (PPDB Online)')
+@section('title', 'Pendaftar SPMB')
+@section('header_title', 'Pendaftar SPMB')
 
 @section('content')
 <div class="space-y-6">

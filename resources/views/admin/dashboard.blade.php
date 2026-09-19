@@ -1,10 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard')
-@section('header_title', 'Dashboard Ringkasan Website')
+@section('title', 'Dashboard Ringkasan Website')
+@section('header_title', 'Dashboard')
 
 @section('content')
 <div class="space-y-8">
+    <span class="sr-only">Dashboard Ringkasan Website</span>
     
     {{-- 1. WELCOME HERO CARD --}}
     <div class="bg-gradient-to-r from-[#0b1120] via-slate-900 to-[#1e293b] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-slate-800">

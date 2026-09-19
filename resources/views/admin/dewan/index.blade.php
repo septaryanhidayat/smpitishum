@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Dewan Guru & Tenaga Kependidikan')
-@section('header_title', 'Dewan Guru & Tenaga Kependidikan (GTK)')
+@section('title', 'Guru & GTK')
+@section('header_title', 'Guru & GTK')
 
 @section('content')
 <div class="space-y-6">

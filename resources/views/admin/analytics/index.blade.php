@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Statistik & Analitik Pengunjung Real')
-@section('header_title', 'Analitik Pengunjung & Tren Pembaca')
+@section('title', 'Analitik')
+@section('header_title', 'Analitik')
 
 @section('content')
 <div class="space-y-8">

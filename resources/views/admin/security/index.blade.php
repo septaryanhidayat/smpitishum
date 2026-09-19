@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Log Aktivitas & Audit Keamanan')
-@section('header_title', 'Log Aktivitas & Audit Keamanan Siber')
+@section('title', 'Log Sistem')
+@section('header_title', 'Log Sistem')
 
 @section('content')
 <div class="space-y-6">

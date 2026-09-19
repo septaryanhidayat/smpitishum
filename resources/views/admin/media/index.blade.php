@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Galeri Foto & Video YouTube')
-@section('header_title', 'Galeri Foto & Video YouTube')
+@section('title', 'Galeri Media')
+@section('header_title', 'Galeri Media')
 
 @section('content')
 <div class="space-y-8" x-data="{ editModalOpen: false, editId: null, editTitle: '', editAction: '' }">

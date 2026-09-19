@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Kelola Konten & Persyaratan Layanan Terpadu')
-@section('header_title', 'Kelola Persyaratan, Prosedur & Konten Layanan Terpadu')
+@section('title', 'Info Layanan')
+@section('header_title', 'Info Layanan')
 
 @push('styles')
 <style>
@@ -58,6 +58,7 @@
 
     {{-- TOP NAVIGATION TABS --}}
     <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
+        <span class="sr-only">Persyaratan, Prosedur &amp; Konten Layanan Terpadu</span>
         <div class="flex flex-wrap items-center gap-2">
             <a href="{{ route('admin.layanan.index') }}" class="px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition shadow-xs">
                 <i class="fa-solid fa-arrow-left mr-1.5"></i> Daftar Permohonan

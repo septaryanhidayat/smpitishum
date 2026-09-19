@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Pengaturan Website & SEO')
-@section('header_title', 'Pengaturan Website, SEO & OpenGraph')
+@section('title', 'Pengaturan Web')
+@section('header_title', 'Pengaturan Web')
 
 @section('content')
 <div class="max-w-5xl space-y-6">
@@ -13,7 +13,7 @@
                 <i class="fa-solid fa-sliders"></i>
             </div>
             <div>
-                <h3 class="text-base font-bold">Pusat Konfigurasi & Optimasi Website Sekolah</h3>
+                <h3 class="text-base font-bold">Pengaturan Website &amp; Konfigurasi Sekolah</h3>
                 <p class="text-xs text-indigo-100">Kelola identitas sekolah, informasi kontak, serta pengaturan SEO & OpenGraph untuk berbagi ke WhatsApp & medsos.</p>
             </div>
         </div>

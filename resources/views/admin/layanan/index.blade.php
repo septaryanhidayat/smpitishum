@@ -1,10 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', 'Permohonan Layanan Terpadu')
-@section('header_title', 'Kelola Permohonan Layanan Terpadu Sekolah')
+@section('title', 'Layanan Terpadu')
+@section('header_title', 'Layanan Terpadu')
 
 @section('content')
 <div class="space-y-6">
+    <span class="sr-only">Kelola Permohonan Layanan Terpadu Sekolah</span>
 
     {{-- TOP STATISTICS CARDS --}}
     <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">

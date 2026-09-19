@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Kotak Aspirasi & Masukan')
-@section('header_title', 'Kotak Aspirasi / Kritik & Saran Masyarakat')
+@section('title', 'Kotak Aspirasi')
+@section('header_title', 'Kotak Aspirasi')
 
 @section('content')
 <div class="space-y-6">

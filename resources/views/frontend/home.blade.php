@@ -20,7 +20,7 @@
     }
 }" x-init="autoSlide()">
     {{-- Banner Images & Content --}}
-    <div class="relative min-h-[380px] h-[380px] sm:h-[460px] lg:h-[520px] w-full overflow-hidden">
+    <div class="relative min-h-[460px] h-[480px] sm:h-[480px] md:h-[520px] lg:h-[560px] w-full overflow-hidden">
         @foreach($heroSlides as $index => $slide)
             <div x-show="activeSlide === {{ $index }}" 
                  x-transition:enter="transition ease-out duration-700" 
@@ -34,7 +34,7 @@
             >
                 <img src="{{ asset($slide['image']) }}" 
                      alt="{{ $slide['title'] }}" 
-                     class="w-full h-full object-cover object-[center_35%] brightness-60"
+                     class="w-full h-full object-cover object-center sm:object-[center_35%] brightness-[0.62]"
                      width="1376"
                      height="768"
                      @if($index === 0)
@@ -46,26 +46,26 @@
                          decoding="async"
                      @endif
                 >
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-indigo-950/60 to-slate-950/40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-indigo-950/50 to-slate-950/40"></div>
 
                 {{-- Konten Hero Rata Tengah --}}
-                <div class="absolute inset-0 flex items-center justify-center pt-2 pb-14 sm:pb-14 px-2">
-                    <div class="max-w-4xl mx-auto px-2 sm:px-6 text-center text-white space-y-2.5 sm:space-y-4 w-full">
+                <div class="absolute inset-0 flex items-center justify-center pt-4 pb-14 sm:pb-14 px-3 sm:px-6">
+                    <div class="max-w-4xl mx-auto px-1 sm:px-6 text-center text-white space-y-3 sm:space-y-4 w-full">
                         <div class="flex justify-center">
-                            <span class="inline-flex items-center justify-center px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[92%] sm:max-w-none text-center">
+                            <span class="inline-flex items-center justify-center px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[95%] sm:max-w-none text-center">
                                 <i class="fa-solid fa-star text-[9px] mr-1.5 shrink-0" aria-hidden="true"></i>
                                 <span class="truncate sm:overflow-visible">SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
                             </span>
                         </div>
                         <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-snug sm:leading-tight px-1">{{ $slide['title'] }}</h1>
                         <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none px-2">{{ $slide['subtitle'] }}</p>
-                        <div class="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-[270px] sm:max-w-md mx-auto">
-                            <a href="{{ $slide['btn_link'] }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105" aria-label="{{ $slide['btn_text'] }}">
+                        <div class="pt-2 sm:pt-3 flex flex-row items-center justify-center gap-2 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
+                            <a href="{{ $slide['btn_link'] }}" class="flex-1 sm:flex-initial inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-4 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105" aria-label="{{ $slide['btn_text'] }}">
                                 <span>{{ $slide['btn_text'] }}</span>
-                                <i class="fa-solid fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
+                                <i class="fa-solid fa-arrow-right ml-1.5 text-xs hidden sm:inline" aria-hidden="true"></i>
                             </a>
-                            <a href="{{ route('ppdb.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105" aria-label="Informasi Pendaftaran SPMB Online">
-                                <i class="fa-solid fa-graduation-cap mr-2" aria-hidden="true"></i>
+                            <a href="{{ route('ppdb.index') }}" class="flex-1 sm:flex-initial inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-4 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105" aria-label="Informasi Pendaftaran SPMB Online">
+                                <i class="fa-solid fa-graduation-cap mr-1.5 text-xs" aria-hidden="true"></i>
                                 <span>Info SPMB</span>
                             </a>
                         </div>
