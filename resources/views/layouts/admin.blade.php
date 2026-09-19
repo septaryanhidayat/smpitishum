@@ -179,12 +179,12 @@
         {{-- Brand Logo Header with Minimize Toggle --}}
         <div class="sidebar-header h-16 flex items-center justify-between px-4 border-b border-slate-800/80 bg-[#070b14]/50 flex-shrink-0">
             <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2.5 group min-w-0" title="Admin Ishum Control Center">
-                <div class="w-9 h-9 rounded-xl bg-white p-1 flex items-center justify-center shadow-md group-hover:scale-105 transition flex-shrink-0">
-                    <img src="/uploads/logo-ishum-square.png" alt="Logo Ishum" class="h-7 w-auto object-contain">
+                <div class="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md group-hover:scale-105 transition flex-shrink-0">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo Ishum" class="h-8 w-auto object-contain">
                 </div>
                 <div class="sidebar-brand-text min-w-0">
                     <span class="font-black text-white text-sm tracking-tight block truncate">ADMIN ISHUM</span>
-                    <span class="text-[9px] text-[#da251c] font-semibold tracking-wider uppercase block">Control Center</span>
+                    <span class="text-[9px] text-amber-400 font-semibold tracking-wider uppercase block">Control Center</span>
                 </div>
             </a>
             <button id="sidebar-collapse-btn" class="text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition cursor-pointer flex-shrink-0" title="Perkecil / Perbesar Sidebar">
