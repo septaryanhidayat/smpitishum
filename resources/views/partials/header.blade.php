@@ -27,18 +27,17 @@
 {{-- MAIN STICKY NAVBAR (Royal Indigo & Electric Blue #4338ca / #2563eb / Radiant Gold #f59e0b) --}}
 <header class="sticky top-0 z-50 w-full max-w-full overflow-x-clip bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 shadow-xl border-b border-indigo-500/20 transition-all duration-300 backdrop-blur-md box-border">
     <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 box-border">
-        <div class="flex justify-between items-center h-18 sm:h-22 w-full max-w-full">
+        <div class="flex justify-between items-center h-16 sm:h-20 w-full max-w-full">
             
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
-            <a href="{{ route('home') }}" class="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[78%] sm:max-w-none py-1" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
-                <div class="h-12 w-12 xs:h-14 xs:w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 flex-shrink-0 flex items-center justify-center">
-                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="72" height="72" fetchpriority="high" decoding="async" class="h-full w-full object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-md" onerror="this.src='/uploads/logo-ishum.png'">
+            <a href="{{ route('home') }}" class="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[78%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
+                <div class="h-11 xs:h-12 sm:h-14 md:h-15 w-auto flex-shrink-0 flex items-center justify-center">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="60" height="60" fetchpriority="high" decoding="async" class="h-full w-auto object-contain transform group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/logo-ishum.png'">
                 </div>
-                <div class="flex flex-col min-w-0 justify-center leading-none space-y-0.5">
-                    <span class="text-[8px] xs:text-[9px] sm:text-[10.5px] md:text-[11px] font-extrabold uppercase tracking-wider text-amber-400 truncate">YAYASAN ISHLAHUL UMMAH PRABUMULIH</span>
-                    <span class="text-[12.5px] xs:text-[14.5px] sm:text-[17.5px] md:text-[20px] font-black text-white tracking-tight leading-tight truncate group-hover:text-amber-300 transition">SMPS IT ISHLAHUL UMMAH</span>
-                    <span class="text-[7.5px] xs:text-[8px] sm:text-[9.5px] md:text-[10px] font-bold uppercase tracking-wider text-amber-400 truncate">KOTA PRABUMULIH &bull; TERAKREDITASI B</span>
-                    <span class="text-[7px] xs:text-[7.5px] sm:text-[9px] md:text-[9.5px] font-medium text-slate-200/90 leading-tight truncate hidden xs:block">Membina Generasi Qur'ani, Cerdas &amp; Berakhlak Mulia</span>
+                <div class="flex flex-col min-w-0 justify-center leading-tight space-y-0.5">
+                    <span class="text-[8.5px] xs:text-[9.5px] sm:text-[11px] md:text-xs font-extrabold uppercase tracking-wide text-amber-400 truncate">YAYASAN ISHLAHUL UMMAH PRABUMULIH</span>
+                    <span class="text-[13px] xs:text-[15px] sm:text-[18px] md:text-[21px] font-black uppercase text-white tracking-tight leading-none truncate group-hover:text-amber-300 transition">SMPS IT ISHLAHUL UMMAH</span>
+                    <span class="text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-wider text-amber-400 truncate">KOTA PRABUMULIH &bull; TERAKREDITASI B</span>
                 </div>
             </a>
 
