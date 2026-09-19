@@ -276,6 +276,11 @@
                         <span class="sidebar-label">Download</span>
                     </a>
 
+                    <a href="{{ route('admin.hero.index') }}" class="sidebar-item flex items-center space-x-3 px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.hero*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Banner Hero Slider">
+                        <i class="fa-solid fa-images text-xs w-4 text-center text-amber-400"></i>
+                        <span class="sidebar-label">Banner Hero</span>
+                    </a>
+
                     <a href="{{ route('admin.popup.index') }}" class="sidebar-item flex items-center justify-between px-3 py-1.5 rounded-lg transition {{ request()->routeIs('admin.popup*') ? 'bg-gradient-to-r from-[#da251c] to-[#ef4444] text-white font-bold shadow-md shadow-red-500/20' : 'hover:bg-slate-800/70 text-slate-300 hover:text-white' }}" title="Popup Promo">
                         <div class="flex items-center space-x-3">
                             <i class="fa-solid fa-bullhorn text-xs w-4 text-center text-amber-300"></i>

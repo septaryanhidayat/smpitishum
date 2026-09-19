@@ -15,30 +15,86 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // 1. Hero slides data - SMPS IT Ishlahul Ummah Prabumulih
-        $heroSlides = [
-            [
-                'title' => 'Selamat Datang di Website Resmi',
-                'subtitle' => 'SMPS IT Ishlahul Ummah Prabumulih',
-                'image' => '/uploads/campus-smpit-ishum.webp',
-                'btn_text' => 'Sambutan Kepala Sekolah',
-                'btn_link' => route('page.sambutan', [], false),
-            ],
-            [
-                'title' => 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia',
-                'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kota Prabumulih dengan Kurikulum Terpadu & Tahfidz Al-Qur\'an.',
-                'image' => '/uploads/activities-smpit-ishum.webp',
-                'btn_text' => 'Profil Singkat Sekolah',
-                'btn_link' => route('page.tentang-kami', [], false),
-            ],
-            [
-                'title' => 'SPMB Gelombang Exclusive TP Baru',
-                'subtitle' => 'Kuota Terbatas Hanya 24 Orang & Promo Cash Back 1 Juta Alumni SDIT Ishum.',
-                'image' => '/uploads/tahfidz-smpit-ishum.webp',
-                'btn_text' => 'Daftar SPMB Online',
-                'btn_link' => route('ppdb.index', [], false),
-            ],
-        ];
+        // 1. Hero slides data - SMPS IT Ishlahul Ummah Prabumulih (Dynamic from Setting)
+        $rawHeroSlides = Setting::get('hero_slides');
+        $heroSlides = [];
+
+        if ($rawHeroSlides) {
+            $decoded = json_decode($rawHeroSlides, true);
+            if (is_array($decoded) && ! empty($decoded)) {
+                $heroSlides = $decoded;
+            }
+        }
+
+        if (empty($heroSlides)) {
+            $heroSlides = [
+                [
+                    'active' => true,
+                    'badge' => 'SMPS IT Unggulan Kota Prabumulih • Terakreditasi B',
+                    'title' => 'Selamat Datang di Website Resmi',
+                    'subtitle' => 'SMPS IT Ishlahul Ummah Prabumulih',
+                    'image' => '/uploads/campus-smpit-ishum.webp',
+                    'btn_text' => 'Sambutan Kepala Sekolah',
+                    'btn_link' => route('page.sambutan', [], false),
+                    'btn_target' => '_self',
+                    'btn2_active' => true,
+                    'btn2_text' => 'Info SPMB',
+                    'btn2_link' => route('ppdb.index', [], false),
+                    'btn2_target' => '_self',
+                ],
+                [
+                    'active' => true,
+                    'badge' => 'SMPS IT Unggulan Kota Prabumulih • Terakreditasi B',
+                    'title' => 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia',
+                    'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kota Prabumulih dengan Kurikulum Terpadu & Tahfidz Al-Qur\'an.',
+                    'image' => '/uploads/activities-smpit-ishum.webp',
+                    'btn_text' => 'Profil Singkat Sekolah',
+                    'btn_link' => route('page.tentang-kami', [], false),
+                    'btn_target' => '_self',
+                    'btn2_active' => true,
+                    'btn2_text' => 'Info SPMB',
+                    'btn2_link' => route('ppdb.index', [], false),
+                    'btn2_target' => '_self',
+                ],
+                [
+                    'active' => true,
+                    'badge' => 'SMPS IT Unggulan Kota Prabumulih • Terakreditasi B',
+                    'title' => 'SPMB Gelombang Exclusive TP Baru',
+                    'subtitle' => 'Kuota Terbatas Hanya 24 Orang & Promo Cash Back 1 Juta Alumni SDIT Ishum.',
+                    'image' => '/uploads/tahfidz-smpit-ishum.webp',
+                    'btn_text' => 'Daftar SPMB Online',
+                    'btn_link' => route('ppdb.index', [], false),
+                    'btn_target' => '_self',
+                    'btn2_active' => true,
+                    'btn2_text' => 'Info SPMB',
+                    'btn2_link' => route('ppdb.index', [], false),
+                    'btn2_target' => '_self',
+                ],
+            ];
+        }
+
+        // Filter only active slides
+        $heroSlides = array_values(array_filter($heroSlides, function ($slide) {
+            return ! isset($slide['active']) || $slide['active'] === true || $slide['active'] === '1' || $slide['active'] === 1;
+        }));
+
+        if (empty($heroSlides)) {
+            $heroSlides = [
+                [
+                    'badge' => 'SMPS IT Unggulan Kota Prabumulih • Terakreditasi B',
+                    'title' => 'Selamat Datang di Website Resmi',
+                    'subtitle' => 'SMPS IT Ishlahul Ummah Prabumulih',
+                    'image' => '/uploads/campus-smpit-ishum.webp',
+                    'btn_text' => 'Sambutan Kepala Sekolah',
+                    'btn_link' => route('page.sambutan', [], false),
+                    'btn_target' => '_self',
+                    'btn2_active' => true,
+                    'btn2_text' => 'Info SPMB',
+                    'btn2_link' => route('ppdb.index', [], false),
+                    'btn2_target' => '_self',
+                ],
+            ];
+        }
 
         // 2. Sambutan Kepala Sekolah
         $sambutan = Post::where('type', 'page')->where('slug', 'sambutan-kepala-sekolah')->first();

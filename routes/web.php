@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminDewanController;
 use App\Http\Controllers\Admin\AdminDownloadController;
 use App\Http\Controllers\Admin\AdminDpcController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
+use App\Http\Controllers\Admin\AdminHeroController;
 use App\Http\Controllers\Admin\AdminLayananController;
 use App\Http\Controllers\Admin\AdminMediaController;
 use App\Http\Controllers\Admin\AdminPageController;
@@ -103,6 +104,10 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::match(['POST', 'PUT'], '/ppdb/{ppdb}/status', [AdminPpdbController::class, 'updateStatus'])->name('ppdb.status');
     Route::delete('/ppdb/{ppdb}', [AdminPpdbController::class, 'destroy'])->name('ppdb.destroy');
     Route::get('/ppdb/{ppdb}/print', [AdminPpdbController::class, 'print'])->name('ppdb.print');
+
+    // Banner Hero Slider Beranda
+    Route::get('/hero', [AdminHeroController::class, 'index'])->name('hero.index');
+    Route::post('/hero', [AdminHeroController::class, 'update'])->name('hero.update');
 
     // Popup Banner Beranda
     Route::get('/popup', [AdminPopupController::class, 'index'])->name('popup.index');

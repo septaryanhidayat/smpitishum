@@ -32,11 +32,12 @@
                  class="absolute inset-0"
                  @if($index !== 0) style="display: none;" @endif
             >
-                <img src="{{ asset($slide['image']) }}" 
-                     alt="{{ $slide['title'] }}" 
+                <img src="{{ asset($slide['image'] ?? '/uploads/campus-smpit-ishum.webp') }}" 
+                     alt="{{ $slide['title'] ?? 'SMPS IT Ishlahul Ummah' }}" 
                      class="w-full h-full object-cover object-center brightness-[0.82] sm:brightness-[0.78]"
                      width="1376"
                      height="768"
+                     onerror="this.src='/uploads/campus-smpit-ishum.webp'"
                      @if($index === 0)
                          fetchpriority="high"
                          loading="eager"
@@ -53,23 +54,35 @@
                 {{-- Konten Hero Rata Tengah --}}
                 <div class="absolute inset-0 flex items-center justify-center pt-4 pb-14 sm:pb-14 px-3 sm:px-6">
                     <div class="max-w-4xl mx-auto px-1 sm:px-6 text-center text-white space-y-3 sm:space-y-4 w-full">
-                        <div class="flex justify-center">
-                            <span class="inline-flex items-center justify-center px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[95%] sm:max-w-none text-center">
-                                <i class="fa-solid fa-star text-[9px] mr-1.5 shrink-0" aria-hidden="true"></i>
-                                <span class="truncate sm:overflow-visible">SMPS IT Unggulan Kota Prabumulih • Terakreditasi B</span>
-                            </span>
-                        </div>
+                        @if(!empty($slide['badge']))
+                            <div class="flex justify-center">
+                                <span class="inline-flex items-center justify-center px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-normal sm:tracking-widest bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 max-w-[95%] sm:max-w-none text-center">
+                                    <i class="fa-solid fa-star text-[9px] mr-1.5 shrink-0" aria-hidden="true"></i>
+                                    <span class="truncate sm:overflow-visible">{{ $slide['badge'] }}</span>
+                                </span>
+                            </div>
+                        @endif
                         <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl leading-snug sm:leading-tight px-1">{{ $slide['title'] }}</h1>
                         <p class="text-xs sm:text-base md:text-lg text-indigo-100 font-medium max-w-2xl mx-auto drop-shadow line-clamp-3 sm:line-clamp-none px-2">{{ $slide['subtitle'] }}</p>
                         <div class="pt-2 sm:pt-3 flex flex-row items-center justify-center gap-2 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
-                            <a href="{{ $slide['btn_link'] }}" class="flex-1 sm:flex-initial inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-4 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105" aria-label="{{ $slide['btn_text'] }}">
-                                <span>{{ $slide['btn_text'] }}</span>
-                                <i class="fa-solid fa-arrow-right ml-1.5 text-xs hidden sm:inline" aria-hidden="true"></i>
-                            </a>
-                            <a href="{{ route('ppdb.index') }}" class="flex-1 sm:flex-initial inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-4 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105" aria-label="Informasi Pendaftaran SPMB Online">
-                                <i class="fa-solid fa-graduation-cap mr-1.5 text-xs" aria-hidden="true"></i>
-                                <span>Info SPMB</span>
-                            </a>
+                            @if(!empty($slide['btn_text']))
+                                <a href="{{ $slide['btn_link'] ?? '#' }}" 
+                                   @if(!empty($slide['btn_target'])) target="{{ $slide['btn_target'] }}" @endif
+                                   class="flex-1 sm:flex-initial inline-flex items-center justify-center bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-950 px-4 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-black text-xs sm:text-sm shadow-xl shadow-amber-500/25 transition transform hover:scale-105" 
+                                   aria-label="{{ $slide['btn_text'] }}">
+                                    <span>{{ $slide['btn_text'] }}</span>
+                                    <i class="fa-solid fa-arrow-right ml-1.5 text-xs hidden sm:inline" aria-hidden="true"></i>
+                                </a>
+                            @endif
+                            @if((!isset($slide['btn2_active']) || $slide['btn2_active']) && !empty($slide['btn2_text']))
+                                <a href="{{ $slide['btn2_link'] ?? route('ppdb.index') }}" 
+                                   @if(!empty($slide['btn2_target'])) target="{{ $slide['btn2_target'] }}" @endif
+                                   class="flex-1 sm:flex-initial inline-flex items-center justify-center bg-indigo-600/90 hover:bg-indigo-600 text-white px-4 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg backdrop-blur-sm border border-indigo-400/30 transition transform hover:scale-105" 
+                                   aria-label="{{ $slide['btn2_text'] }}">
+                                    <i class="fa-solid fa-graduation-cap mr-1.5 text-xs" aria-hidden="true"></i>
+                                    <span>{{ $slide['btn2_text'] }}</span>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -238,8 +238,13 @@
             <i class="fa-solid fa-bolt text-[#da251c]"></i>
             <span>Pusat Aksi Cepat</span>
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 text-center">
             
+            <a href="{{ route('admin.hero.index') }}" class="p-4 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200/70 hover:border-amber-200 text-slate-700 hover:text-amber-600 transition group">
+                <i class="fa-solid fa-images text-xl mb-2 text-amber-500 group-hover:scale-110 transition block"></i>
+                <span class="text-xs font-bold block">Banner Hero</span>
+            </a>
+
             <a href="{{ route('admin.posts.create') }}" class="p-4 rounded-2xl bg-slate-50 hover:bg-red-50 border border-slate-200/70 hover:border-red-200 text-slate-700 hover:text-[#da251c] transition group">
                 <i class="fa-solid fa-file-pen text-xl mb-2 text-[#da251c] group-hover:scale-110 transition block"></i>
                 <span class="text-xs font-bold block">Tulis Berita</span>
