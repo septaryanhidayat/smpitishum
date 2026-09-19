@@ -1215,7 +1215,7 @@
         </button>
 
         <a href="{{ $popupSettings['link'] ?? '/ppdb' }}" target="{{ $popupSettings['target'] ?? '_self' }}" class="block overflow-hidden group">
-            <img src="{{ asset($popupSettings['image']) }}" alt="{{ $popupSettings['title'] ?? 'SPMB SMPS IT Ishlahul Ummah' }}" class="w-full h-auto max-h-[70vh] object-contain sm:object-cover group-hover:scale-102 transition duration-500">
+            <img src="{{ asset($popupSettings['image']) }}" alt="{{ $popupSettings['title'] ?? 'SPMB SMPS IT Ishlahul Ummah' }}" class="w-full h-auto max-h-[75vh] object-contain group-hover:scale-102 transition duration-500" onerror="this.src='/uploads/flyer-spmb-smpit-ishum.webp'">
         </a>
 
         <div class="p-3.5 sm:p-4 bg-gradient-to-r from-indigo-950 to-blue-950 text-white flex items-center justify-between gap-3">

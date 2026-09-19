@@ -16,12 +16,12 @@ class AdminPopupController extends Controller
     {
         $popup = [
             'active' => Setting::get('popup_active', '1'),
-            'image' => Setting::get('popup_image', '/uploads/popup/popup-ppdb.webp'),
-            'title' => Setting::get('popup_title', 'Penerimaan Peserta Didik Baru (PPDB) TP 2025/2026'),
-            'subtitle' => Setting::get('popup_subtitle', 'Potongan Biaya Masuk s.d 50% - Kuota Terbatas!'),
+            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-smpit-ishum.webp'),
+            'title' => Setting::get('popup_title', 'Telah Dibuka SPMB 3T (TP 2027/2028)'),
+            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SMPS IT Ishlahul Ummah Prabumulih'),
             'link' => Setting::get('popup_link', '/ppdb'),
             'target' => Setting::get('popup_target', '_self'),
-            'button_text' => Setting::get('popup_button_text', 'Daftar PPDB Sekarang'),
+            'button_text' => Setting::get('popup_button_text', 'Info & Daftar SPMB'),
         ];
 
         return view('admin.popup.index', compact('popup'));

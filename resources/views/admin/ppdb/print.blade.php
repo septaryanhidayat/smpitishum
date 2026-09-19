@@ -132,7 +132,7 @@
                 <h2>SMPS IT Ishlahul Ummah Prabumulih</h2>
                 <p>NPSN: 69990882 &bull; Status Akreditasi B (BAN-SM: 074/BAP-SM/TU/XI/2016)</p>
                 <p>Jl. Lingkar Timur, Kel. Gunung Ibul, Kec. Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31111</p>
-                <p>Email: smpitishlahulummah.2015@yahoo.com | Website: https://smpitishum.sch.id | WA: 0852-6990-8696</p>
+                <p>Email: smpitishlahulummah.2015@yahoo.com | Website: https://smpitishumpbm.sch.id | WA: 0852-6990-8696</p>
             </div>
         </div>
 

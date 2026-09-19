@@ -80,7 +80,7 @@
                 <div class="w-full space-y-1.5 text-sm sm:text-[15px] text-slate-200 pt-1 flex flex-col items-center md:items-start">
                     <div class="flex items-center justify-center md:justify-start space-x-3">
                         <i class="fa-solid fa-globe text-amber-400 w-4 text-center text-sm flex-shrink-0" aria-hidden="true"></i>
-                        <a href="https://smpitishum.sch.id" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-amber-300 transition py-0.5 font-medium">smpitishum.sch.id</a>
+                        <a href="https://{{ $siteSettings['site_domain'] ?? 'smpitishumpbm.sch.id' }}" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-amber-300 transition py-0.5 font-medium">{{ $siteSettings['site_domain'] ?? 'smpitishumpbm.sch.id' }}</a>
                     </div>
                 </div>
             </div>

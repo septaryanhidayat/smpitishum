@@ -202,6 +202,11 @@
                         <input type="text" name="contact_phone" value="{{ $settings['contact_phone'] ?? '081278901234' }}" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                     <div class="sm:col-span-2">
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Alamat Domain Website (URL Resmi di Footer)</label>
+                        <input type="text" name="site_domain" value="{{ $settings['site_domain'] ?? 'smpitishumpbm.sch.id' }}" placeholder="Contoh: smpitishumpbm.sch.id" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 font-semibold">
+                        <p class="text-[11px] text-gray-400 mt-1">Alamat domain yang tampil di bagian footer website.</p>
+                    </div>
+                    <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Alamat Kampus</label>
                         <textarea name="contact_address" rows="2" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ $settings['contact_address'] ?? 'Jl. Pendidikan Karakter No. 12, Kompleks Islamic Centre Ishum' }}</textarea>
                     </div>

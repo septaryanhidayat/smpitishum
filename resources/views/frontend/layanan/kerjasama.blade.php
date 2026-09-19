@@ -88,7 +88,7 @@
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Ishlahul Ummah Prabumulih</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Prabumulih Timur</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-indigo-600 font-bold hover:underline">0852-6990-8696</a></p><p><strong>Website :</strong> smpitishum.sch.id</p><p><strong>Email :</strong> <a href="mailto:smpitishlahulummah.2015@yahoo.com" class="text-indigo-600 font-bold hover:underline">smpitishlahulummah.2015@yahoo.com</a></p>'
+                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Ishlahul Ummah Prabumulih</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Prabumulih Timur</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-indigo-600 font-bold hover:underline">0852-6990-8696</a></p><p><strong>Website :</strong> smpitishumpbm.sch.id</p><p><strong>Email :</strong> <a href="mailto:smpitishlahulummah.2015@yahoo.com" class="text-indigo-600 font-bold hover:underline">smpitishlahulummah.2015@yahoo.com</a></p>'
                 ]
             ];
             $tabs = !empty($accordions) ? $accordions : $defaultKerjasamaTabs;
