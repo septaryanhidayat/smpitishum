@@ -38,7 +38,7 @@
                 
                 {{-- FOTO GURU --}}
                 <div class="aspect-[4/5] w-full overflow-hidden bg-slate-100 relative group">
-                    <img src="{{ $d->photo_url }}" alt="{{ $d->name }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/dewan/avatar-default.svg'">
+                    <img src="{{ $d->photo_url }}" alt="{{ $d->name }}" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/dewan/avatar-default.svg'">
                     <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                     @if($d->fraction)
                     <span class="absolute bottom-3 left-4 text-[11px] font-extrabold text-white bg-orange-500 px-3 py-1 rounded-full shadow">

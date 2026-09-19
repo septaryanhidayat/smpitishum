@@ -75,6 +75,17 @@ img, video, iframe, canvas, svg {
     height: auto;
 }
 
+/* Pastikan gambar/media yang diberi class h-full atau object-cover selalu mengisi container tanpa letterboxing */
+img.h-full,
+video.h-full {
+    height: 100% !important;
+}
+
+img.object-cover,
+video.object-cover {
+    object-fit: cover !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

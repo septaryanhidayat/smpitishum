@@ -351,7 +351,7 @@
             <div class="lg:col-span-5 reveal-fade-up delay-1">
                 <div class="max-w-sm mx-auto">
                     <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-indigo-50 bg-gradient-to-b from-indigo-50 to-blue-100 aspect-[4/5] relative">
-                        <img src="/uploads/dewan/kepala-sekolah.webp" alt="Kepala SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr" width="400" height="500" loading="lazy" decoding="async" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
+                        <img src="/uploads/dewan/kepala-sekolah.webp" alt="Kepala SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr" width="400" height="500" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-indigo-950/80 via-transparent to-transparent flex items-end p-5">
                             <div class="text-white text-center w-full">
                                 <span class="bg-amber-400 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Kepala Sekolah</span>
@@ -424,7 +424,7 @@
             <div class="lg:col-span-7 reveal-fade-up delay-1">
                 <article class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 h-full flex flex-col group">
                     <div class="relative h-60 sm:h-80 overflow-hidden bg-gray-100">
-                        <img src="{{ $featuredPost->featured_image_url }}" alt="{{ $featuredPost->title }}" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                        <img src="{{ $featuredPost->featured_image_url }}" alt="{{ $featuredPost->title }}" width="600" height="320" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                         @if($featuredPost->categories->isNotEmpty())
                         <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
                             {{ $featuredPost->categories->first()->name }}
@@ -461,8 +461,8 @@
             <div class="lg:col-span-5 space-y-4">
                 @foreach($sidePosts as $index => $sp)
                 <article class="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-gray-100 hover:shadow-md transition flex items-center space-x-3 sm:space-x-4 group reveal-fade-up delay-{{ $index + 2 }}">
-                    <div class="w-20 h-20 sm:w-28 sm:h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
-                        <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" width="112" height="96" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                    <div class="w-20 h-20 sm:w-28 sm:h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 relative">
+                        <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" width="112" height="96" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </div>
                     <div class="flex-1 min-w-0 space-y-1">
                         <div class="text-[11px] text-gray-500 flex items-center space-x-2">
@@ -505,7 +505,7 @@
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
                 <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
                     <a href="{{ route('artikel.show', $post->slug) }}" class="block w-full h-full" aria-label="Baca berita: {{ $post->title }}">
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </a>
                     <span class="absolute bottom-2.5 left-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">
                         <i class="fa-solid fa-trophy text-amber-400 mr-1"></i> Prestasi
@@ -554,8 +554,8 @@
                     <div class="space-y-3.5">
                         @foreach($nasionalPosts as $post)
                         <div class="flex items-start space-x-3 group">
-                            <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5">
-                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5 relative">
+                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -591,8 +591,8 @@
                     <div class="space-y-3.5">
                         @foreach($daerahPosts as $post)
                         <div class="flex items-start space-x-3 group">
-                            <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5">
-                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5 relative">
+                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -639,7 +639,7 @@
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
                 <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
                     <a href="{{ route('artikel.show', $post->slug) }}" class="block w-full h-full" aria-label="Baca program: {{ $post->title }}">
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/tahfidz-smpit-ishum.webp'">
                     </a>
                 </div>
                 <div class="pt-3 flex-1 flex flex-col justify-between">
@@ -684,8 +684,8 @@
         <div class="hidden md:grid md:grid-cols-4 gap-6">
             @foreach($dewan as $index => $d)
             <div class="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 text-center group hover:shadow-xl transition transform hover:-translate-y-1 reveal-fade-up delay-{{ $index + 1 }}">
-                <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-3 bg-slate-100 border border-slate-100">
-                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="240" height="300" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/dewan/avatar-default.svg'">
+                <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-3 bg-slate-100 border border-slate-100 relative">
+                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="240" height="300" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/dewan/avatar-default.svg'">
                 </div>
                 <h3 class="font-black text-sm text-gray-900 group-hover:text-indigo-600 transition">
                     {{ $d->name }}
@@ -701,8 +701,8 @@
         <div class="grid md:hidden grid-cols-2 gap-3.5">
             @foreach($dewan as $index => $d)
             <div class="bg-white rounded-2xl p-2.5 shadow-sm border border-gray-100 text-center reveal-fade-up delay-{{ $index + 1 }}">
-                <div class="aspect-[4/5] rounded-xl overflow-hidden mb-2 bg-slate-100 border border-slate-100">
-                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="180" height="225" loading="lazy" decoding="async" class="w-full h-full object-cover object-top" onerror="this.src='/uploads/dewan/avatar-default.svg'">
+                <div class="aspect-[4/5] rounded-xl overflow-hidden mb-2 bg-slate-100 border border-slate-100 relative">
+                    <img src="{{ $d->photo_url }}" alt="Foto {{ $d->name }} - {{ $d->position }}" width="180" height="225" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-top" onerror="this.src='/uploads/dewan/avatar-default.svg'">
                 </div>
                 <h3 class="font-bold text-xs text-gray-900 leading-tight">
                     {{ $d->name }}
@@ -907,7 +907,7 @@
                         <template x-for="(item, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-1.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-64 sm:h-80 md:h-96 lg:h-[380px] rounded-3xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800/80 group">
-                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
                                         <span class="text-xs sm:text-sm font-bold text-white leading-snug drop-shadow-md" x-text="item.title"></span>
                                     </div>
@@ -964,7 +964,7 @@
                         <template x-for="(item, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-1.5 sm:px-2.5" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-52 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-xl bg-neutral-900 border border-neutral-800/80 group">
-                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                         <span class="text-xs font-bold text-white leading-snug drop-shadow-md" x-text="item.title"></span>
                                     </div>
@@ -1082,8 +1082,8 @@
                     <div class="flex transition-transform duration-500 ease-out" :style="'transform: translateX(-' + (current * (100 / perView)) + '%)'">
                         <template x-for="(eb, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-2.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
-                                <a href="{{ route('download.ebook') }}" class="group block relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800 transform hover:scale-104 transition duration-300 cursor-pointer h-72 sm:h-80 lg:h-96 w-full" :aria-label="'Unduh modul: ' + eb.title">
-                                    <img :src="eb.cover" :alt="eb.title" loading="lazy" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-106 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                <a href="{{ route('download.ebook') }}" class="group block relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800 transform hover:scale-104 transition duration-300 cursor-pointer aspect-[3/4] w-full" :aria-label="'Unduh modul: ' + eb.title">
+                                    <img :src="eb.cover" :alt="eb.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-106 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center p-3 text-center" aria-hidden="true">
                                         <span class="text-xs font-bold text-white truncate max-w-full" x-text="eb.title"></span>
                                     </div>

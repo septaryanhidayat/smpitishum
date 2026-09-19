@@ -57,9 +57,9 @@
                     <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ $idx % 4 }}">
                         <a href="{{ route('artikel.show', $post->slug) }}" class="block relative h-48 overflow-hidden bg-gray-100">
                             @if($post->featured_image)
-                                <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             @else
-                                <img src="/uploads/campus-smpit-ishum.webp" alt="{{ $post->title }}" class="w-full h-full object-cover">
+                                <img src="/uploads/campus-smpit-ishum.webp" alt="{{ $post->title }}" class="absolute inset-0 w-full h-full object-cover">
                             @endif
                             @if($post->categories->isNotEmpty())
                                 <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
