@@ -241,10 +241,20 @@ switch ($action) {
                   UNIQUE KEY `ppdb_tracks_slug_unique` (`slug`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
 
-                // Ensure percentage column exists if table was created previously without it
-                $cols = $pdo->query("SHOW COLUMNS FROM `ppdb_tracks` LIKE 'percentage'")->fetchAll();
-                if (empty($cols)) {
-                    $pdo->exec("ALTER TABLE `ppdb_tracks` ADD COLUMN `percentage` varchar(30) NOT NULL DEFAULT '0%' AFTER `slug`");
+                // Ensure all expected columns exist if table was created previously with older schema
+                $requiredCols = [
+                    'percentage' => "varchar(30) NOT NULL DEFAULT '0%'",
+                    'quota' => "varchar(100) DEFAULT NULL",
+                    'cashback_info' => "varchar(255) DEFAULT NULL",
+                    'description' => "text DEFAULT NULL",
+                    'order' => "int(11) NOT NULL DEFAULT 0",
+                    'is_active' => "tinyint(1) NOT NULL DEFAULT 1",
+                ];
+                foreach ($requiredCols as $col => $def) {
+                    $c = $pdo->query("SHOW COLUMNS FROM `ppdb_tracks` LIKE '{$col}'")->fetchAll();
+                    if (empty($c)) {
+                        $pdo->exec("ALTER TABLE `ppdb_tracks` ADD COLUMN `{$col}` {$def}");
+                    }
                 }
 
                 $count = (int) $pdo->query('SELECT count(*) FROM `ppdb_tracks`')->fetchColumn();
