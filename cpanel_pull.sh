@@ -23,11 +23,18 @@ echo -e "${BLUE}======================================================${NC}"
 echo -e "${BLUE}   MEMULAI PROSES PULL & UPDATE SMPIT ISHLAHUL UMMAH   ${NC}"
 echo -e "${BLUE}======================================================${NC}"
 
-# Tentukan lokasi direktori repository secara dinamis
+# Tentukan lokasi direktori repository secara dinamis (folder tempat skrip ini berada)
 TARGET_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$TARGET_DIR"
 
-echo -e "${YELLOW}[1/6] Direktori kerja:${NC} $TARGET_DIR"
+# SAFEGUARD: Pastikan hanya berjalan di folder repository Laravel ini, jangan sentuh folder lain
+if [ ! -f "$TARGET_DIR/artisan" ]; then
+    echo -e "${RED}ERROR: File 'artisan' tidak ditemukan di $TARGET_DIR!${NC}"
+    echo -e "${RED}Skrip dihentikan untuk keamanan agar tidak mengganggu folder web lain.${NC}"
+    exit 1
+fi
+
+echo -e "${YELLOW}[1/6] Direktori kerja repository:${NC} $TARGET_DIR"
 
 # 1. Tarik pembaruan terbaru dari GitHub (origin main)
 echo -e "${YELLOW}[2/6] Mengambil pembaruan terbaru dari GitHub (origin main)...${NC}"
