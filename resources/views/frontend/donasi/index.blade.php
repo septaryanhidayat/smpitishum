@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Infaq Pembangunan & Beasiswa Pendidikan - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Salurkan infaq pembangunan sarana laboratorium sains, asrama siswa, dan beasiswa pendidikan dhuafa berprestasi melalui rekening resmi SMPS IT Ishlahul Ummah Prabumulih.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Infaq Pembangunan & Beasiswa Pendidikan')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Salurkan infaq pembangunan sarana laboratorium sains, asrama siswa, dan beasiswa pendidikan dhuafa berprestasi melalui rekening resmi SMPS IT Ishlahul Ummah Prabumulih.'))
 
 @section('content')
 @php
@@ -41,10 +41,10 @@
                 <i class="fa-solid fa-hand-holding-heart mr-2"></i> Infaq & Shadaqah Jariyah
             </span>
             <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-                Infaq Pembangunan & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-200">Beasiswa Ishum</span>
+                {{ $page?->title ?? 'Infaq Pembangunan & Beasiswa Ishum' }}
             </h1>
             <p class="text-sm sm:text-base text-indigo-100 mt-4 leading-relaxed font-light">
-                Mari bergotong royong membangun sarana laboratorium riset modern, masjid kampus, fasilitas asrama tahfidz, dan program beasiswa bagi siswa berprestasi di SMPS IT Ishlahul Ummah Prabumulih.
+                {{ $page?->excerpt ?: 'Mari bergotong royong membangun sarana laboratorium riset modern, masjid kampus, fasilitas asrama tahfidz, dan program beasiswa bagi siswa berprestasi di SMPS IT Ishlahul Ummah Prabumulih.' }}
             </p>
         </div>
     </div>
@@ -59,6 +59,14 @@
         </p>
         <span class="block text-xs font-bold text-indigo-600 tracking-wider uppercase mt-3">— QS. Al-Baqarah: 261 —</span>
     </div>
+
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page->content))) > 10)
+    <div class="bg-white/95 backdrop-blur-md p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+            {!! $page->content !!}
+        </div>
+    </div>
+    @endif
 
     {{-- KARTU REKENING BANK & KONFIRMASI --}}
     <div class="space-y-6">

@@ -266,3 +266,66 @@ test('ppdb page renders redesigned layout with youtube video and bsi account', f
     $response->assertSee('YL. Fatmawati');
     $response->assertSee(route('ppdb.form'));
 });
+
+test('visi dan misi page dynamically reflects updated content from database', function () {
+    $page = Post::where('slug', 'visi-dan-misi')->first();
+    if (! $page) {
+        $page = Post::create([
+            'title' => 'Visi dan Misi SMPS IT Ishlahul Ummah',
+            'slug' => 'visi-dan-misi',
+            'content' => '<p>Konten Visi Misi Awal</p>',
+            'status' => 'publish',
+            'type' => 'page',
+        ]);
+    }
+
+    $page->update([
+        'title' => 'Visi dan Misi Unggulan 2026',
+        'content' => '<p>Mencetak 1000 Hafidz Mutqin dan Ilmuwan Muslim Dunia.</p>',
+    ]);
+
+    $response = $this->get('/visi-dan-misi');
+    $response->assertStatus(200);
+    $response->assertSee('Visi dan Misi Unggulan 2026');
+    $response->assertSee('Mencetak 1000 Hafidz Mutqin dan Ilmuwan Muslim Dunia.', false);
+});
+
+test('tentang kami page dynamically reflects updated content from database', function () {
+    $page = Post::where('slug', 'tentang-kami')->first();
+    if (! $page) {
+        $page = Post::create([
+            'title' => 'Profil SMPS IT Ishlahul Ummah',
+            'slug' => 'tentang-kami',
+            'content' => '<p>Profil Sekolah Awal</p>',
+            'status' => 'publish',
+            'type' => 'page',
+        ]);
+    }
+
+    $page->update([
+        'title' => 'Profil Lengkap SMPS IT Ishum 2026',
+        'content' => '<p>Sekolah pelopor adab dan digitalisasi di Prabumulih.</p>',
+    ]);
+
+    $response = $this->get('/tentang-kami');
+    $response->assertStatus(200);
+    $response->assertSee('Profil Lengkap SMPS IT Ishum 2026');
+    $response->assertSee('Sekolah pelopor adab dan digitalisasi di Prabumulih.', false);
+});
+
+test('privacy policy page renders dynamic content from database', function () {
+    $page = Post::where('slug', 'privacy-policy')->first();
+    if (! $page) {
+        $page = Post::create([
+            'title' => 'Kebijakan Privasi SMPS IT Ishlahul Ummah Prabumulih',
+            'slug' => 'privacy-policy',
+            'content' => '<p>Komitmen kami menjaga kerahasiaan data siswa dan wali murid.</p>',
+            'status' => 'publish',
+            'type' => 'page',
+        ]);
+    }
+
+    $response = $this->get('/privacy-policy');
+    $response->assertStatus(200);
+    $response->assertSee('Kebijakan Privasi SMPS IT Ishlahul Ummah Prabumulih');
+});

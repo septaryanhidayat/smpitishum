@@ -49,10 +49,8 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     // Posts Management
     Route::resource('posts', AdminPostController::class);
 
-    // Static Pages Management (Profil, Visi Misi, Sejarah, Sambutan, Struktur, Privacy Policy)
-    Route::get('/pages', [AdminPageController::class, 'index'])->name('pages.index');
-    Route::get('/pages/{page}/edit', [AdminPageController::class, 'edit'])->name('pages.edit');
-    Route::put('/pages/{page}', [AdminPageController::class, 'update'])->name('pages.update');
+    // Static Pages Management (Profil, Visi Misi, Sejarah, Sambutan, Struktur, Privacy Policy, etc.)
+    Route::resource('pages', AdminPageController::class)->except(['show']);
 
     // Dewan Guru & GTK
     Route::resource('dewan', AdminDewanController::class);

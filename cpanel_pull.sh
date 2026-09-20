@@ -71,7 +71,6 @@ if [ -f "artisan" ]; then
     $PHP_BIN artisan route:cache || true
     $PHP_BIN artisan view:cache || true
     $PHP_BIN artisan migrate --force || true
-    $PHP_BIN artisan db:seed --class=SchoolDataSeeder --force || true
     $PHP_BIN artisan storage:link || true
 fi
 

@@ -378,9 +378,7 @@ class SchoolDataSeeder extends Seeder
             $post->tags()->sync($selectedTags);
         }
 
-        // 13. Halaman Statis Resmi Sekolah
-        Post::where('type', 'page')->delete();
-
+        // 13. Halaman Statis Resmi Sekolah (Gunakan firstOrCreate agar editan admin di dashboard tidak terhapus)
         $officialPages = [
             [
                 'slug' => 'sambutan-kepala-sekolah',
@@ -535,10 +533,24 @@ HTML,
 <strong>Email:</strong> smpitishlahulummah.2015@yahoo.com</p>
 HTML,
             ],
+            [
+                'slug' => 'privacy-policy',
+                'title' => 'Kebijakan Privasi SMPS IT Ishlahul Ummah Prabumulih',
+                'excerpt' => 'Kebijakan privasi dan perlindungan data pengguna website resmi SMPS IT Ishlahul Ummah.',
+                'featured_image' => '/uploads/logo-ishum.png',
+                'content' => <<<'HTML'
+<h3>Kebijakan Privasi SMPS IT Ishlahul Ummah Prabumulih</h3>
+<p>Privasi Anda adalah prioritas bagi kami. SMPS IT Ishlahul Ummah Prabumulih berkomitmen melindungi setiap data pribadi yang Anda berikan melalui situs ini, baik saat mendaftar SPMB online maupun mengisi formulir kontak.</p>
+<h4>1. Pengumpulan Informasi</h4>
+<p>Informasi yang kami kumpulkan mencakup data pendaftaran calon siswa (nama, alamat, nomor telepon orang tua, data akademik) yang digunakan semata-mata untuk keperluan administrasi dan seleksi peserta didik baru.</p>
+<h4>2. Keamanan Data</h4>
+<p>Kami menerapkan standar perlindungan data yang ketat untuk mencegah akses tanpa izin atau penyalahgunaan informasi pribadi Anda.</p>
+HTML,
+            ],
         ];
 
         foreach ($officialPages as $p) {
-            Post::updateOrCreate(
+            Post::firstOrCreate(
                 ['slug' => $p['slug']],
                 array_merge($p, [
                     'type' => 'page',

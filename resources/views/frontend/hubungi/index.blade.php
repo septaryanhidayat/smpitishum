@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Hubungi Kami & Informasi PPDB - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Kontak resmi SMPS IT Ishlahul Ummah Prabumulih: Nomor telepon, WhatsApp humas PPDB, email resmi, alamat kampus, dan formulir pesan.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Hubungi Kami')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kontak resmi SMPS IT Ishlahul Ummah Prabumulih: Nomor telepon, WhatsApp humas PPDB, email resmi, alamat kampus, dan formulir pesan.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -10,11 +10,11 @@
         <nav class="text-xs text-indigo-200 mb-3 flex items-center justify-center sm:justify-start space-x-2 flex-wrap">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Hubungi Kami</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Hubungi Kami' }}</span>
         </nav>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Hubungi SMPS IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Hubungi SMPS IT Ishlahul Ummah Prabumulih' }}</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
-            Kami siap melayani pertanyaan seputar PPDB, kurikulum tahfidz & sains, program asrama, maupun kunjungan ke kampus.
+            {{ $page?->excerpt ?: 'Kami siap melayani pertanyaan seputar PPDB, kurikulum tahfidz & sains, program asrama, maupun kunjungan ke kampus.' }}
         </p>
     </div>
 </div>
@@ -99,6 +99,14 @@
             </div>
         </div>
     </div>
+
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+    <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 max-w-3xl mx-auto reveal-fade-up">
+        <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+            {!! $page?->content !!}
+        </div>
+    </div>
+    @endif
 
     {{-- FORMULIR KONSULTASI / PESAN --}}
     <div class="bg-white p-5 sm:p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 max-w-3xl mx-auto reveal-fade-up">

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Mars JSIT Indonesia - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Lagu resmi Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia di SMPS IT Ishlahul Ummah Prabumulih, membina generasi beriman, cerdas, berakhlak mulia, dan mandiri.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Mars JSIT Indonesia')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Lagu resmi Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia di SMPS IT Ishlahul Ummah Prabumulih.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,16 +12,24 @@
             <span>/</span>
             <a href="{{ route('download.index') }}" class="hover:text-white transition">Download</a>
             <span>/</span>
-            <span class="text-indigo-200 font-semibold">Mars JSIT Indonesia</span>
+            <span class="text-indigo-200 font-semibold">{{ $page?->title ?? 'Mars JSIT Indonesia' }}</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Lagu kebanggaan civitas akademika SMPS IT Ishlahul Ummah Prabumulih sebagai bagian dari Jaringan Sekolah Islam Terpadu (JSIT) Indonesia dalam membina generasi Rabbani yang unggul dan berdaya saing global.
+            {{ $page?->excerpt ?: 'Lagu kebanggaan civitas akademika SMPS IT Ishlahul Ummah Prabumulih sebagai bagian dari Jaringan Sekolah Islam Terpadu (JSIT) Indonesia dalam membina generasi Rabbani yang unggul dan berdaya saing global.' }}
         </p>
     </div>
 </div>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
+    
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page->content))) > 10)
+    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+            {!! $page->content !!}
+        </div>
+    </div>
+    @endif
     
     {{-- MARS JSIT INDONESIA --}}
     <article class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-100 space-y-8 reveal-fade-up">

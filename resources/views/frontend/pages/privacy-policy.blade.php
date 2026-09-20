@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Kebijakan Privasi - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Kebijakan Privasi resmi Website SMPS IT Ishlahul Ummah Prabumulih yang menjelaskan pengelolaan dan perlindungan data pengunjung, siswa, dan orang tua.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Kebijakan Privasi')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kebijakan Privasi resmi Website SMPS IT Ishlahul Ummah Prabumulih yang menjelaskan pengelolaan dan perlindungan data pengunjung, siswa, dan orang tua.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -10,11 +10,11 @@
         <nav class="text-xs text-indigo-200 mb-3 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-white transition">Beranda</a>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Kebijakan Privasi</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Kebijakan Privasi' }}</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Kebijakan Privasi (Privacy Policy)</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Kebijakan Privasi (Privacy Policy)' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Komitmen transparansi dan perlindungan privasi data setiap pengunjung situs resmi SMPS IT Ishlahul Ummah Prabumulih.
+            {{ $page?->excerpt ?: 'Komitmen transparansi dan perlindungan privasi data setiap pengunjung situs resmi SMPS IT Ishlahul Ummah Prabumulih.' }}
         </p>
     </div>
 </div>
@@ -26,7 +26,9 @@
         <div class="border-b border-gray-100 pb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
                 <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Dokumen Resmi</span>
-                <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">Kebijakan Privasi Website</h2>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">
+                    {{ $page?->title ?? 'Kebijakan Privasi Website' }}
+                </h2>
                 <p class="text-xs text-gray-500 mt-1">Website Resmi SMPS IT Ishlahul Ummah Prabumulih</p>
             </div>
             <div class="bg-indigo-50/60 text-indigo-600 px-4 py-2 rounded-xl text-xs font-bold border border-indigo-200">
@@ -36,8 +38,8 @@
 
         {{-- 9 PASAL KEBIJAKAN PRIVASI --}}
         <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-8">
-            @if(!empty($page->content) && strlen(trim(strip_tags($page->content))) > 50)
-                {!! $page->content !!}
+            @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+                {!! $page?->content !!}
             @else
                 <section class="space-y-2">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 flex items-center space-x-2">

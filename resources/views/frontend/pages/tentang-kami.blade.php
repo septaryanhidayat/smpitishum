@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Tentang Kami - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Mengenal profil, sejarah, visi misi, fasilitas, dewan guru, serta keunggulan SMPS IT Ishlahul Ummah Prabumulih Prabumulih.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Tentang Kami')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Mengenal profil, sejarah, visi misi, fasilitas, dewan guru, serta keunggulan SMPS IT Ishlahul Ummah Prabumulih.'))
 
 @section('content')
 {{-- HERO HEADER & BREADCRUMB --}}
@@ -12,16 +12,33 @@
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
-            <span class="text-amber-400 font-semibold">Tentang Kami</span>
+            <span class="text-amber-400 font-semibold">{{ $page?->title ?? 'Tentang Kami' }}</span>
         </nav>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Profil SMPS IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Profil SMPS IT Ishlahul Ummah Prabumulih' }}</h1>
         <p class="text-xs sm:text-sm text-gray-200 mt-2 font-light">
-            Mengenal lebih dekat visi, nilai pendidikan Qur'ani, fasilitas, dan keunggulan civitas akademika Ishum.
+            {{ $page?->excerpt ?: 'Mengenal lebih dekat visi, nilai pendidikan Qur\'ani, fasilitas, dan keunggulan civitas akademika Ishum.' }}
         </p>
     </div>
 </div>
 
 <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-12 sm:space-y-16">
+
+    {{-- SEKSI UTAMA: PROFIL SEKOLAH & IDENTITAS RESMI (DARI DASHBOARD ADMIN) --}}
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+    <section class="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="border-b border-gray-100 pb-5 mb-8">
+            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Identitas &amp; Profil Resmi</span>
+            <h2 class="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
+                {{ $page?->title ?? 'Profil SMPS IT Ishlahul Ummah Prabumulih' }}
+            </h2>
+            <div class="w-16 h-1 bg-[#da251c] rounded-full mt-3"></div>
+        </div>
+
+        <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-6">
+            {!! $page?->content !!}
+        </div>
+    </section>
+    @endif
 
     {{-- SEKSI 1: SAMBUTAN KEPALA SEKOLAH --}}
     <section class="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-100 reveal-fade-up">

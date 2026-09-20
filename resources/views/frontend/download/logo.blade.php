@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Logo Resmi & Identitas Visual - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Aset resmi logo SMPS IT Ishlahul Ummah Prabumulih, panduan identitas visual, filosofi lambang sekolah, dan unduhan logo resolusi tinggi SVG dan PNG.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Logo Resmi & Identitas Visual')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Aset resmi logo SMPS IT Ishlahul Ummah Prabumulih, panduan identitas visual, filosofi lambang sekolah, dan unduhan logo resolusi tinggi SVG dan PNG.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,11 +12,11 @@
             <span>/</span>
             <a href="{{ route('download.index') }}" class="hover:text-white transition">Download</a>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Logo</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Logo' }}</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Logo Resmi SMPS IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Logo Resmi SMPS IT Ishlahul Ummah Prabumulih' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Identitas visual, filosofi lambang sekolah, panduan palet warna, dan aset unduhan resmi SMPS IT Ishlahul Ummah Prabumulih.
+            {{ $page?->excerpt ?: 'Identitas visual, filosofi lambang sekolah, panduan palet warna, dan aset unduhan resmi SMPS IT Ishlahul Ummah Prabumulih.' }}
         </p>
     </div>
 </div>
@@ -187,6 +187,14 @@
             </div>
         </div>
     </div>
+
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+            {!! $page?->content !!}
+        </div>
+    </div>
+    @endif
 
 </div>
 @endsection

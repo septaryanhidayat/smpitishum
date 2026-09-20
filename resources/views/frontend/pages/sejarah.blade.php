@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Sejarah Sekolah - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Sejarah perjalanan dan perkembangan SMPS IT Ishlahul Ummah Prabumulih di Prabumulih Prabumulih dalam melahirkan generasi Qur\'ani dan saintis berprestasi.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Sejarah')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Sejarah perjalanan dan perkembangan SMPS IT Ishlahul Ummah Prabumulih dalam melahirkan generasi Qur\'ani dan saintis berprestasi.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,11 +12,11 @@
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Sejarah</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Sejarah' }}</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sejarah SMPS IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Sejarah SMPS IT Ishlahul Ummah Prabumulih' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Jejak langkah pengabdian, dedikasi pendidik, dan perjalanan membangun peradaban pendidikan Islam terpadu di Kabupaten Prabumulih.
+            {{ $page?->excerpt ?: 'Jejak langkah pengabdian, dedikasi pendidik, dan perjalanan membangun peradaban pendidikan Islam terpadu di Kabupaten Prabumulih.' }}
         </p>
     </div>
 </div>
@@ -36,15 +36,15 @@
                 <div class="border-b border-gray-100 pb-4">
                     <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Jejak Langkah & Perkembangan</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-                        Membangun Generasi Emas Ishum di Bumi Caram Seguguk
+                        {{ $page?->title ?? 'Membangun Generasi Emas Ishum di Bumi Caram Seguguk' }}
                     </h2>
                     <div class="w-16 h-1 bg-indigo-600 rounded-full mt-3"></div>
                 </div>
 
                 {{-- SEJARAH LENGKAP SEKOLAH --}}
                 <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-5">
-                    @if(!empty($page->content) && strlen(trim(strip_tags($page->content))) > 50)
-                        {!! $page->content !!}
+                    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+                        {!! $page?->content !!}
                     @else
                         <p>
                             SMPS IT Ishlahul Ummah Prabumulih didirikan atas dasar cita-cita luhur para tokoh pendidikan dan ulama di Kabupaten Prabumulih yang menginginkan hadirnya institusi pendidikan menengah atas yang memadukan secara harmonis antara kecerdasan spiritual berbasis Al-Qur'an dan kemajuan sains-teknologi modern.

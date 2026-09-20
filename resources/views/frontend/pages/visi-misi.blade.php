@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Visi dan Misi - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Visi dan Misi resmi SMPS IT Ishlahul Ummah Prabumulih: Membentuk generasi Qur\'ani, berakhlak mulia, dan unggul dalam sains teknologi.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Visi dan Misi')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Visi dan Misi resmi SMPS IT Ishlahul Ummah Prabumulih: Membentuk generasi Qur\'ani, berakhlak mulia, dan unggul dalam sains teknologi.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,11 +12,11 @@
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Visi dan Misi</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Visi dan Misi' }}</span>
         </nav>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Visi & Misi Sekolah</h1>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Visi & Misi Sekolah' }}</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
-            Arah dan komitmen luhur SMPS IT Ishlahul Ummah Prabumulih dalam membimbing generasi unggul berkarakter Qur'ani dan berwawasan masa depan.
+            {{ $page?->excerpt ?: 'Arah dan komitmen luhur SMPS IT Ishlahul Ummah Prabumulih dalam membimbing generasi unggul berkarakter Qur\'ani dan berwawasan masa depan.' }}
         </p>
     </div>
 </div>
@@ -26,94 +26,39 @@
         
         {{-- KOLOM UTAMA (2/3) --}}
         <div class="lg:col-span-8 space-y-8">
-            
-            {{-- KARTU VISI --}}
-            <div class="bg-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-gray-100 reveal-fade-up">
-                <div class="flex items-center space-x-3 mb-6">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-indigo-600 flex items-center justify-center text-2xl flex-shrink-0 shadow-inner">
-                        <i class="fa-solid fa-compass"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Falsafah Arah</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">Visi Sekolah</h2>
-                    </div>
+            <article class="bg-white rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-gray-100 reveal-fade-up space-y-6">
+                <div class="border-b border-gray-100 pb-5">
+                    <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Falsafah Arah &amp; Komitmen</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
+                        {{ $page?->title ?? 'Visi & Misi Sekolah' }}
+                    </h2>
+                    <div class="w-16 h-1 bg-indigo-600 rounded-full mt-3"></div>
                 </div>
-                <div class="w-16 h-1 bg-indigo-600 rounded-full mb-6"></div>
 
-                <div class="bg-gradient-to-r from-emerald-50/90 to-amber-50/70 p-6 sm:p-8 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
-                    <p class="text-lg sm:text-xl font-bold text-gray-900 leading-relaxed font-serif italic text-center sm:text-left">
-                        “Terwujudnya Generasi Ishum yang Beraqidah Kokoh, Berakhlak Qur'ani, Unggul dalam Sains & Teknologi, serta Berwawasan Lingkungan dan Global.”
-                    </p>
-                </div>
-            </div>
-
-            {{-- KARTU MISI --}}
-            <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up delay-1">
-                <div class="flex items-center space-x-3 mb-6">
-                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl flex-shrink-0 shadow-inner">
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold text-orange-600 uppercase tracking-wider block">Langkah Konkret</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">Misi Sekolah</h2>
-                    </div>
-                </div>
-                <div class="w-16 h-1 bg-orange-500 rounded-full mb-8"></div>
-
-                <div class="space-y-6">
-                    {{-- Misi 1 --}}
-                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-indigo-300 transition">
-                        <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-extrabold text-sm flex-shrink-0 shadow">
-                            1
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="font-bold text-sm sm:text-base text-gray-900">Pendidikan Berbasis Al-Qur'an & Sunnah</h3>
-                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                Menanamkan nilai-nilai Al-Qur'an dan Sunnah secara terpadu melalui kurikulum tahfidz mutqin, kajian adab islami, serta pembiasaan ibadah harian berdisiplin tinggi.
+                {{-- KONTEN DINAMIS DARI DATABASE / WYSIWYG ADMIN --}}
+                <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-6">
+                    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+                        {!! $page?->content !!}
+                    @else
+                        <div class="bg-gradient-to-r from-emerald-50/90 to-amber-50/70 p-6 sm:p-8 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                            <h3 class="text-lg font-bold text-indigo-900 mb-2">Visi Sekolah</h3>
+                            <p class="text-lg sm:text-xl font-bold text-gray-900 leading-relaxed font-serif italic">
+                                “Terwujudnya Generasi Ishum yang Beraqidah Kokoh, Berakhlak Qur'ani, Unggul dalam Sains & Teknologi, serta Berwawasan Lingkungan dan Global.”
                             </p>
                         </div>
-                    </div>
-
-                    {{-- Misi 2 --}}
-                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-orange-300 transition">
-                        <div class="w-9 h-9 rounded-xl bg-orange-500 text-white flex items-center justify-center font-extrabold text-sm flex-shrink-0 shadow">
-                            2
+                        <div class="space-y-4 pt-4">
+                            <h3 class="text-lg font-bold text-gray-900">Misi Sekolah</h3>
+                            <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                                <li>Menanamkan aqidah yang lurus, ibadah yang benar, dan akhlak mulia berlandaskan Al-Qur'an dan As-Sunnah.</li>
+                                <li>Menyelenggarakan pembelajaran aktif, kreatif, dan menantang untuk meraih prestasi di tingkat kota, provinsi, dan nasional.</li>
+                                <li>Membekali siswa dengan kecakapan berbahasa asing (Arab & Inggris) serta kemampuan sains dan nalar matematika.</li>
+                                <li>Membina kemampuan tahsin dan tahfidz Al-Qur'an dengan target minimal 2 juz mutqin serta hafalan 12 hadits pilihan.</li>
+                                <li>Mewujudkan iklim sekolah yang kondusif, amanah, ramah anak, dan berbudaya Islami.</li>
+                            </ol>
                         </div>
-                        <div class="space-y-1">
-                            <h3 class="font-bold text-sm sm:text-base text-gray-900">Keunggulan Akademik, Sains & Riset Digital</h3>
-                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                Mengembangkan potensi akademik siswa dalam penguasaan sains, matematika, teknologi informasi modern, dan robotika berbasis kecerdasan bernalar ilmiah.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Misi 3 --}}
-                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-indigo-300 transition">
-                        <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-extrabold text-sm flex-shrink-0 shadow">
-                            3
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="font-bold text-sm sm:text-base text-gray-900">Pembentukan Karakter Mandiri & Kepemimpinan Ishum</h3>
-                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                Membentuk karakter siswa yang amanah, santun, berjiwa kewirausahaan, disiplin, berintegritas moral, dan memiliki kecakapan memimpin peradaban masa depan.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Misi 4 --}}
-                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-amber-300 transition">
-                        <div class="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center font-extrabold text-sm flex-shrink-0 shadow">
-                            4
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="font-bold text-sm sm:text-base text-gray-900">Lingkungan Belajar Asri, Modern & Berwawasan Global</h3>
-                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                Mewujudkan iklim sekolah ramah anak, sarana laboratorium representatif, penguasaan bilingual (Arab-Inggris), dan kesadaran pelestarian lingkungan hidup.
-                            </p>
-                        </div>
-                    </div>
+                    @endif
                 </div>
-            </div>
+            </article>
         </div>
 
         {{-- SIDEBAR KANAN (1/3) --}}

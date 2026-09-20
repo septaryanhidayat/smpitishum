@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Struktur Organisasi - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Bagan struktur organisasi dan manajemen SMPS IT Ishlahul Ummah Prabumulih.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Struktur Organisasi')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Bagan struktur organisasi dan manajemen SMPS IT Ishlahul Ummah Prabumulih.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,11 +12,11 @@
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Struktur Organisasi</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Struktur Organisasi' }}</span>
         </nav>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Struktur Organisasi Sekolah</h1>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Struktur Organisasi Sekolah' }}</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
-            Susunan manajemen kepemimpinan dan organisasi SMPS IT Ishlahul Ummah Prabumulih.
+            {{ $page?->excerpt ?: 'Susunan manajemen kepemimpinan dan organisasi SMPS IT Ishlahul Ummah Prabumulih.' }}
         </p>
     </div>
 </div>
@@ -33,9 +33,9 @@
             <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
         </div>
 
-        @if(!empty($page?->content) && trim(strip_tags($page->content)) !== '')
+        @if(!empty($page?->content) && trim(strip_tags($page?->content ?? '')) !== '')
             <div class="prose-content max-w-4xl mx-auto text-gray-700 text-left sm:text-justify text-xs sm:text-base leading-relaxed bg-slate-50/70 p-5 sm:p-10 rounded-2xl border border-slate-100">
-                {!! $page->content !!}
+                {!! $page?->content !!}
             </div>
         @else
             <div class="max-w-md mx-auto text-center py-8 sm:py-12 px-4 space-y-4">

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Sambutan Kepala Sekolah - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Sambutan Kepala Sekolah')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Sambutan resmi Kepala Sekolah SMPS IT Ishlahul Ummah Prabumulih, Anita Carlyna, S.IP., M.Pd., Gr.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,11 +12,11 @@
             <span>/</span>
             <span>Profil</span>
             <span>/</span>
-            <span class="text-amber-400 font-bold">Sambutan Kepala Sekolah</span>
+            <span class="text-amber-400 font-bold">{{ $page?->title ?? 'Sambutan Kepala Sekolah' }}</span>
         </nav>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Sambutan Kepala Sekolah</h1>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Sambutan Kepala Sekolah' }}</h1>
         <p class="text-xs sm:text-sm text-gray-200 mt-2 font-light">
-            Pesan dan komitmen pembinaan karakter, iman, dan ilmu di SMPS IT Ishlahul Ummah Prabumulih.
+            {{ $page?->excerpt ?: 'Pesan dan komitmen pembinaan karakter, iman, dan ilmu di SMPS IT Ishlahul Ummah Prabumulih.' }}
         </p>
     </div>
 </div>
@@ -48,8 +48,8 @@
 
         {{-- KONTEN PIDATO RESMI (RATA PENUH & RAPI) --}}
         <div class="prose-content text-gray-800 text-xs sm:text-sm md:text-base leading-relaxed space-y-5 text-left sm:text-justify max-w-4xl mx-auto">
-            @if(!empty($page->content) && strlen(trim(strip_tags($page->content))) > 30)
-                {!! $page->content !!}
+            @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+                {!! $page?->content !!}
             @else
                 <p class="font-semibold text-gray-900 text-sm sm:text-lg">Assalamu'alaikum Warahmatullahi Wabarakatuh,</p>
 

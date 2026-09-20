@@ -180,3 +180,45 @@ test('admin can manage bidang with rich content', function () {
         'name' => 'Laboratorium Komputer & Riset IT Updated',
     ]);
 });
+
+test('admin can create and delete custom static page but cannot delete protected core page', function () {
+    $admin = User::create([
+        'name' => 'Admin Halaman',
+        'email' => 'halaman@smpitishum.sch.id',
+        'password' => Hash::make('Secret12345!'),
+        'role' => 'admin',
+    ]);
+
+    $this->actingAs($admin);
+
+    // Create new page
+    $response = $this->post('/admin/pages', [
+        'title' => 'Kurikulum Tahfidz Khusus',
+        'slug' => 'kurikulum-tahfidz-khusus',
+        'content' => '<p>Standar kurikulum tahfidz terpadu.</p>',
+        'excerpt' => 'Ringkasan kurikulum tahfidz.',
+    ]);
+
+    $response->assertRedirect('/admin/pages');
+    $this->assertDatabaseHas('posts', [
+        'slug' => 'kurikulum-tahfidz-khusus',
+        'type' => 'page',
+    ]);
+
+    $newPage = Post::where('slug', 'kurikulum-tahfidz-khusus')->first();
+
+    // Delete custom page
+    $delResponse = $this->delete("/admin/pages/{$newPage->id}");
+    $delResponse->assertRedirect('/admin/pages');
+    $this->assertDatabaseMissing('posts', ['id' => $newPage->id]);
+
+    // Try deleting protected core page (visi-dan-misi)
+    $corePage = Post::firstOrCreate(
+        ['slug' => 'visi-dan-misi'],
+        ['title' => 'Visi dan Misi', 'type' => 'page', 'status' => 'publish']
+    );
+
+    $protectedDelResponse = $this->delete("/admin/pages/{$corePage->id}");
+    $protectedDelResponse->assertSessionHas('error');
+    $this->assertDatabaseHas('posts', ['id' => $corePage->id]);
+});

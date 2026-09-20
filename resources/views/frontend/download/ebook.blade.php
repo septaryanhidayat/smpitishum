@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Download Modul Belajar & E-Book Siswa - SMPS IT Ishlahul Ummah Prabumulih')
-@section('meta_description', 'Kumpulan modul kurikulum, e-book materi tahfidz, panduan praktikum sains, dan buku digital gratis untuk siswa SMPS IT Ishlahul Ummah Prabumulih.')
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Download Modul Belajar & E-Book Siswa')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kumpulan modul kurikulum, e-book materi tahfidz, panduan praktikum sains, dan buku digital gratis untuk siswa SMPS IT Ishlahul Ummah Prabumulih.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,11 +12,11 @@
             <span>/</span>
             <a href="{{ route('download.index') }}" class="hover:text-white transition">Download</a>
             <span>/</span>
-            <span class="text-amber-300 font-semibold">Modul & E-Book</span>
+            <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Modul & E-Book' }}</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">E-Book & Modul Pembelajaran Digital</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'E-Book & Modul Pembelajaran Digital' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Buku panduan siswa, modul tahfidz mutqin, buku saku adab siswa, dan materi suplemen sains SMPS IT Ishlahul Ummah Prabumulih.
+            {{ $page?->excerpt ?: 'Buku panduan siswa, modul tahfidz mutqin, buku saku adab siswa, dan materi suplemen sains SMPS IT Ishlahul Ummah Prabumulih.' }}
         </p>
     </div>
 </div>
@@ -27,11 +27,19 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">SUMBER BELAJAR DIGITAL RESMI</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Modul Pembelajaran &amp; Literasi Siswa
+            {{ $page?->title ?? 'Modul Pembelajaran & Literasi Siswa' }}
         </h2>
-        <p class="text-xs sm:text-sm text-gray-500 mt-1">Silakan unduh modul resmi pegangan siswa dan guru untuk memperluas wawasan keislaman, sains terpadu, dan pembinaan karakter.</p>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">{{ $page?->excerpt ?: 'Silakan unduh modul resmi pegangan siswa dan guru untuk memperluas wawasan keislaman, sains terpadu, dan pembinaan karakter.' }}</p>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
+
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 10)
+    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 reveal-fade-up">
+        <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+            {!! $page?->content !!}
+        </div>
+    </div>
+    @endif
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($ebooks as $idx => $eb)
