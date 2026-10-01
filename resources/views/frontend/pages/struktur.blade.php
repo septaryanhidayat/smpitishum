@@ -68,7 +68,7 @@
                 <a href="{{ route('bidang.show', $b->slug) }}" class="rounded-2xl border border-gray-100 hover:border-indigo-600 hover:shadow-xl transition group bg-white overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 w-full overflow-hidden bg-slate-100 relative">
-                            <img src="{{ $b->thumbnail_url }}" alt="{{ $b->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                            <img src="{{ $b->thumbnail_url }}" alt="{{ $b->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-smpit-ishum.webp'">
                             <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
                                 Fasilitas Sekolah
                             </span>
@@ -112,7 +112,7 @@
                 <div class="rounded-2xl border border-gray-100 bg-white hover:border-indigo-600 hover:shadow-lg transition overflow-hidden group flex flex-col justify-between">
                     <div>
                         <div class="h-32 w-full overflow-hidden bg-slate-100 relative">
-                            <img src="{{ $dpc->thumbnail_url }}" alt="{{ $dpc->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/tahfidz-ishum.webp'">
+                            <img src="{{ $dpc->thumbnail_url }}" alt="{{ $dpc->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/tahfidz-smpit-ishum.webp'">
                         </div>
                         <div class="p-4 space-y-1">
                             <span class="text-[10px] font-bold text-indigo-600 block truncate uppercase tracking-wider">{{ $dpc->address ?: 'Program Unggulan' }}</span>

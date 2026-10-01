@@ -23,7 +23,7 @@
             {{-- KOLOM 1: LOGO ASLI SEKOLAH --}}
             <div class="lg:col-span-3 flex justify-center md:justify-start">
                 <div class="bg-white p-3.5 rounded-2xl shadow-lg inline-block border border-indigo-200/50">
-                    <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" width="128" height="128" loading="lazy" decoding="async" class="w-28 sm:w-32 h-auto object-contain block mx-auto md:mx-0" onerror="this.src='/uploads/logo-ishum.png'">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo Resmi SMPS IT Ishlahul Ummah Prabumulih" width="128" height="128" loading="lazy" decoding="async" class="w-28 sm:w-32 h-auto object-contain block mx-auto md:mx-0" onerror="this.onerror=null; this.src='/uploads/logo-ishum.png'">
                 </div>
             </div>
 

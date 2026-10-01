@@ -40,7 +40,7 @@
             {{-- Preview Foto Saat Ini --}}
             @if($testimonial->photo)
                 <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex items-center space-x-4">
-                    <img src="{{ $testimonial->photo_url }}" alt="{{ $testimonial->name }}" class="w-14 h-14 rounded-xl object-cover border border-slate-200 shadow-xs">
+                    <img src="{{ $testimonial->photo_url }}" alt="{{ $testimonial->name }}" class="w-14 h-14 rounded-xl object-cover border border-slate-200 shadow-xs" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name={{ urlencode($testimonial->name) }}&background=4338ca&color=fff'">
                     <div>
                         <span class="text-xs font-bold text-slate-700 block">Foto Saat Ini</span>
                         <span class="text-[11px] text-slate-400 font-mono">{{ $testimonial->photo }}</span>

@@ -33,7 +33,7 @@
             {{-- LOGO RESMI SMPS IT ISHLAHUL UMMAH PRABUMULIH --}}
             <a href="{{ route('home') }}" class="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0 flex-1 sm:flex-initial mr-2 max-w-[76%] sm:max-w-none" aria-label="Beranda SMPS IT Ishlahul Ummah Prabumulih">
                 <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 shrink-0 flex items-center justify-center overflow-hidden" style="width: clamp(40px, 4.5vw, 54px); height: clamp(40px, 4.5vw, 54px); max-width: 54px; max-height: 54px; min-width: 40px; min-height: 40px;">
-                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="54" height="54" fetchpriority="high" decoding="async" class="w-full h-full object-contain pointer-events-none select-none transition duration-300 group-hover:scale-105" style="max-width: 54px; max-height: 54px; width: 100%; height: 100%; object-fit: contain; display: block;" onerror="this.src='/uploads/logo-ishum.png'">
+                    <img src="/uploads/logo-ishum-square.png" alt="Logo SMPS IT Ishlahul Ummah Prabumulih" width="54" height="54" fetchpriority="high" decoding="async" class="w-full h-full object-contain pointer-events-none select-none transition duration-300 group-hover:scale-105" style="max-width: 54px; max-height: 54px; width: 100%; height: 100%; object-fit: contain; display: block;" onerror="this.onerror=null; this.src='/uploads/logo-ishum.png'">
                 </div>
                 <div class="flex flex-col min-w-0 justify-center leading-none space-y-0.5 select-none">
                     <span class="text-[8px] sm:text-[10px] md:text-[11.5px] font-extrabold uppercase tracking-wide text-amber-400 truncate leading-tight">YAYASAN ISHLAHUL UMMAH PRABUMULIH</span>
