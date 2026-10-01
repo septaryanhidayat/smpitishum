@@ -2,10 +2,12 @@
 
 use App\Models\Agenda;
 use App\Models\Pengumuman;
+use App\Models\Post;
 use App\Models\PpdbTrack;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Hash;
 
 uses(RefreshDatabase::class);
@@ -157,4 +159,119 @@ test('ppdb form automatically pre-selects chosen track from ppdb info page', fun
     $response->assertSee('Jalur pendaftaran ini telah otomatis terpilih');
     // Check that option matching Tahfidz has selected attribute
     $response->assertSee('selected', false);
+});
+
+test('ekstrakurikuler is visible in navbar, homepage, index and show page', function () {
+    $user = User::create([
+        'name' => 'Admin User',
+        'email' => 'admin_test_ekskul@ishum.sch.id',
+        'password' => Hash::make('Password123!'),
+        'role' => 'admin',
+    ]);
+
+    $ekskul = Post::create([
+        'title' => 'Pramuka SIT Terpadu',
+        'slug' => 'pramuka-sit-terpadu',
+        'type' => 'ekskul',
+        'content' => 'Kegiatan kepanduan berkarakter Islam.',
+        'status' => 'publish',
+        'author_id' => $user->id,
+    ]);
+
+    // 1. Visible in Navbar & Homepage
+    $homeResponse = $this->get(route('home'));
+    $homeResponse->assertStatus(200);
+    $homeResponse->assertSee('Ekstrakurikuler');
+    $homeResponse->assertSee(route('ekskul.index'));
+    $homeResponse->assertSee('Pramuka SIT Terpadu');
+
+    // 2. Index page
+    $indexResponse = $this->get(route('ekskul.index'));
+    $indexResponse->assertStatus(200);
+    $indexResponse->assertSee('Pramuka SIT Terpadu');
+
+    // 3. Show page
+    $showResponse = $this->get(route('ekskul.show', $ekskul->slug));
+    $showResponse->assertStatus(200);
+    $showResponse->assertSee('Pramuka SIT Terpadu');
+    $showResponse->assertSee('Kegiatan kepanduan berkarakter Islam.');
+});
+
+test('admin can upload photo and file when creating and updating agenda and pengumuman', function () {
+    $admin = User::create([
+        'name' => 'Admin Media Upload',
+        'email' => 'admin_media_upload@ishum.sch.id',
+        'password' => Hash::make('Password123!'),
+        'role' => 'admin',
+    ]);
+
+    $dummyImage = UploadedFile::fake()->image('poster.jpg', 600, 400);
+    $dummyFile = UploadedFile::fake()->create('edaran.pdf', 100, 'application/pdf');
+
+    // 1. Create Agenda with photo and file
+    $response = $this->actingAs($admin)->post(route('admin.agenda.store'), [
+        'title' => 'Munaqosah Tahfidz Akbar',
+        'event_date' => now()->addDays(5)->format('Y-m-d'),
+        'location' => 'Aula Utama',
+        'status' => 'upcoming',
+        'featured_image' => $dummyImage,
+        'file_attachment' => $dummyFile,
+    ]);
+    $response->assertSessionHas('success');
+
+    $agenda = Agenda::where('title', 'Munaqosah Tahfidz Akbar')->first();
+    expect($agenda)->not->toBeNull();
+    expect($agenda->featured_image)->not->toBeNull();
+    expect($agenda->file_attachment)->not->toBeNull();
+
+    // 2. Update Agenda with replacement file
+    $newDummyFile = UploadedFile::fake()->create('jadwal_revisi.pdf', 120, 'application/pdf');
+    $updateResponse = $this->actingAs($admin)->put(route('admin.agenda.update', $agenda), [
+        'title' => 'Munaqosah Tahfidz Akbar Revisi',
+        'event_date' => now()->addDays(6)->format('Y-m-d'),
+        'location' => 'Masjid Kampus',
+        'status' => 'upcoming',
+        'file_attachment' => $newDummyFile,
+    ]);
+    $updateResponse->assertRedirect(route('admin.agenda.index'));
+    $agenda->refresh();
+    expect($agenda->title)->toBe('Munaqosah Tahfidz Akbar Revisi');
+    expect($agenda->location)->toBe('Masjid Kampus');
+
+    // 3. Create Pengumuman with photo and file
+    $dummyImage2 = UploadedFile::fake()->image('banner_ppdb.png', 800, 600);
+    $dummyFile2 = UploadedFile::fake()->create('panduan_ppdb.pdf', 150, 'application/pdf');
+
+    $pResponse = $this->actingAs($admin)->post(route('admin.pengumuman.store'), [
+        'title' => 'Pengumuman Kelulusan SPMB',
+        'content' => 'Rincian kelulusan siswa baru gelombang exclusive.',
+        'status' => 'publish',
+        'featured_image' => $dummyImage2,
+        'file_attachment' => $dummyFile2,
+    ]);
+    $pResponse->assertRedirect(route('admin.agenda.index'));
+
+    $pengumuman = Pengumuman::where('title', 'Pengumuman Kelulusan SPMB')->first();
+    expect($pengumuman)->not->toBeNull();
+    expect($pengumuman->featured_image)->not->toBeNull();
+    expect($pengumuman->file_attachment)->not->toBeNull();
+
+    // 4. Update Pengumuman
+    $newImage = UploadedFile::fake()->image('banner_baru.jpg', 800, 600);
+    $pUpdate = $this->actingAs($admin)->put(route('admin.pengumuman.update', $pengumuman), [
+        'title' => 'Pengumuman Kelulusan SPMB Final',
+        'content' => 'Pengumuman kelulusan final.',
+        'status' => 'publish',
+        'featured_image' => $newImage,
+    ]);
+    $pUpdate->assertRedirect(route('admin.agenda.index'));
+    $pengumuman->refresh();
+    expect($pengumuman->title)->toBe('Pengumuman Kelulusan SPMB Final');
+
+    // Clean up test generated files
+    foreach ([$agenda->featured_image, $agenda->file_attachment, $pengumuman->featured_image, $pengumuman->file_attachment] as $f) {
+        if ($f && file_exists(public_path($f))) {
+            @unlink(public_path($f));
+        }
+    }
 });

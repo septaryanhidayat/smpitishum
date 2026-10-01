@@ -678,6 +678,123 @@
 </section>
 
 {{-- ========================================================
+     SECTION: EKSTRAKURIKULER & PENGEMBANGAN MINAT BAKAT
+     ======================================================== --}}
+<section class="py-14 sm:py-16 bg-gradient-to-b from-white via-indigo-50/20 to-slate-50 border-t border-gray-100 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 reveal-fade-up">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-indigo-600 font-bold block mb-1">
+                    <i class="fa-solid fa-people-group mr-1.5 text-amber-500"></i> Pengembangan Potensi Siswa
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+                    Ekstrakurikuler &amp; Club Santri
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-600 mt-1 font-light max-w-xl">
+                    Mengasah kepemimpinan, kemandirian, kecakapan teknologi, olahraga, dan seni Islami yang berlandaskan adab Qur'ani.
+                </p>
+            </div>
+            <div class="shrink-0">
+                <a href="{{ route('ekskul.index') }}" class="inline-flex items-center text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-800 transition group">
+                    <span>Lihat Semua Ekstrakurikuler</span>
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+
+        @if(isset($ekskulPosts) && $ekskulPosts->isNotEmpty())
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach($ekskulPosts as $idx => $ekskul)
+                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ ($idx % 3) + 1 }}">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
+                        <a href="{{ route('ekskul.show', $ekskul->slug) }}" class="block w-full h-full">
+                            <img src="{{ $ekskul->featured_image ?: '/uploads/campus-smpit-ishum.webp' }}" alt="{{ $ekskul->title }}" width="400" height="260" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                        </a>
+                        <span class="absolute top-3 left-3 bg-indigo-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1">
+                            <i class="fa-solid fa-star text-amber-300 text-[10px]"></i>
+                            <span>Club Pilihan</span>
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-base sm:text-lg group-hover:text-indigo-600 transition leading-snug">
+                                <a href="{{ route('ekskul.show', $ekskul->slug) }}">
+                                    {{ $ekskul->title }}
+                                </a>
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1.5 line-clamp-2 leading-relaxed font-light">
+                                {{ Str::limit(strip_tags($ekskul->content), 110) }}
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px] font-medium flex items-center">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-xs"></i> Setiap Pekan
+                            </span>
+                            <a href="{{ route('ekskul.show', $ekskul->slug) }}" class="font-bold text-indigo-600 hover:text-indigo-800 transition inline-flex items-center">
+                                <span>Detail</span>
+                                <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        @else
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @php
+                    $defaultEkskul = [
+                        ['title' => 'Pramuka SIT (Sekolah Islam Terpadu)', 'desc' => 'Kepanduan berkarakter Islam melatih kemandirian, kepemimpinan, dan kecintaan pada alam terbuka.', 'img' => '/uploads/activities-smpit-ishum.webp'],
+                        ['title' => 'Robotika & Coding IT Club', 'desc' => 'Pelatihan logika pemrograman dasar, perakitan mikrokontroler, dan persiapan olimpiade robotika.', 'img' => '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp'],
+                        ['title' => 'Tahfidz & TTQ Club (Tartil Qur\'an)', 'desc' => 'Pendalaman tajwid, makhorijul huruf, tilawah berirama, dan persiapan tasmi\' mutqin 2 juz.', 'img' => '/uploads/tahfidz-smpit-ishum.webp'],
+                        ['title' => 'English & Public Speaking Club', 'desc' => 'Latihan percakapan bahasa Inggris aktif, pidato 3 bahasa, dan pembiasaan retorika dakwah.', 'img' => '/uploads/campus-smpit-ishum.webp'],
+                        ['title' => 'Futsal & Olahraga Prestasi', 'desc' => 'Pembinaan kebugaran jasmani, teknik bermain futsal terpadu, dan kompetisi antarpelajar.', 'img' => '/uploads/activities-smpit-ishum.webp'],
+                        ['title' => 'Seni Hadrah & Kaligrafi Islam', 'desc' => 'Pelatihan tabuhan rebana hadrah, vokal sholawat, dan seni lukis kaligrafi mushaf.', 'img' => '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp'],
+                    ];
+                @endphp
+                @foreach($defaultEkskul as $idx => $dEks)
+                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ ($idx % 3) + 1 }}">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
+                        <img src="{{ $dEks['img'] }}" alt="{{ $dEks['title'] }}" width="400" height="260" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-indigo-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1">
+                            <i class="fa-solid fa-star text-amber-300 text-[10px]"></i>
+                            <span>Club Unggulan</span>
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-base sm:text-lg group-hover:text-indigo-600 transition leading-snug">
+                                {{ $dEks['title'] }}
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1.5 line-clamp-2 leading-relaxed font-light">
+                                {{ $dEks['desc'] }}
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500 text-[11px] font-medium flex items-center">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mr-1.5 text-xs"></i> Setiap Pekan
+                            </span>
+                            <a href="{{ route('ekskul.index') }}" class="font-bold text-indigo-600 hover:text-indigo-800 transition inline-flex items-center">
+                                <span>Selengkapnya</span>
+                                <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        @endif
+
+        <div class="text-center mt-10 reveal-fade-up">
+            <a href="{{ route('ekskul.index') }}" aria-label="Lihat Seluruh Pilihan Ekstrakurikuler" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-8 py-3 rounded-full shadow-md hover:shadow-lg transition">
+                <i class="fa-solid fa-people-group mr-2 text-amber-300"></i>
+                <span>Jelajahi Semua Ekstrakurikuler &amp; Club</span>
+                <i class="fa-solid fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+{{-- ========================================================
      SECTION #6 - 9: DEWAN GURU & TENAGA KEPENDIDIKAN (GTK)
      ======================================================== --}}
 <section class="py-12 bg-slate-50 border-t border-gray-100 overflow-hidden">

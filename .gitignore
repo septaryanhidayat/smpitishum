@@ -35,9 +35,14 @@ Thumbs.db
 /public/uploads/tmp/*
 /public/uploads/ppdb/*
 !/public/uploads/ppdb/.gitkeep
+/public/uploads/agenda/*
+!/public/uploads/agenda/.gitkeep
+/public/uploads/pengumuman/*
+!/public/uploads/pengumuman/.gitkeep
 # WordPress Raw Backups (Exceeds GitHub file limits)
 /BACKUP WEb LAMA/
 /database/berandad_wppksoi.sql
+/database/berandad_db_smpitishum.sql
 /dpdpksoganilir.WordPress.*.xml
 /Desain Web Lama/
 /scratch/

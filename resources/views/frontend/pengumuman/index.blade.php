@@ -51,9 +51,21 @@
                         <span>Baca Rincian Pengumuman</span>
                         <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
                     </a>
-                    <span class="text-[11px] text-gray-400 font-normal">
-                        {{ $item->created_at ? $item->created_at->translatedFormat('d M Y') : '' }}
-                    </span>
+                    <div class="flex items-center space-x-2">
+                        @if($item->featured_image)
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-indigo-50 text-indigo-700" title="Ada Foto Poster">
+                                <i class="fa-solid fa-image mr-1"></i> Foto
+                            </span>
+                        @endif
+                        @if($item->file_attachment)
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-rose-50 text-rose-700" title="Ada Berkas Lampiran">
+                                <i class="fa-solid fa-file-pdf mr-1"></i> Lampiran
+                            </span>
+                        @endif
+                        <span class="text-[11px] text-gray-400 font-normal">
+                            {{ $item->created_at ? $item->created_at->translatedFormat('d M Y') : '' }}
+                        </span>
+                    </div>
                 </div>
             </div>
         @empty

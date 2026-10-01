@@ -55,11 +55,23 @@
                             {!! strip_tags($agenda->content) !!}
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-gray-100">
+                    <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
                         <a href="{{ route('agenda.show', $agenda->slug) }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-orange-600">
                             <span>Detail Agenda</span>
                             <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
                         </a>
+                        <div class="flex items-center space-x-1.5">
+                            @if($agenda->featured_image)
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-indigo-50 text-indigo-700" title="Ada Foto Poster">
+                                    <i class="fa-solid fa-image mr-1"></i> Foto
+                                </span>
+                            @endif
+                            @if($agenda->file_attachment)
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-emerald-50 text-emerald-700" title="Ada Berkas Lampiran">
+                                    <i class="fa-solid fa-paperclip mr-1"></i> Berkas
+                                </span>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

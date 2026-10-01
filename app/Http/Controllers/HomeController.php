@@ -285,6 +285,13 @@ class HomeController extends Controller
             'contact_phone' => Setting::get('spmb_banner_contact_phone', '0852-6990-8696'),
         ];
 
+        // 17. Ekstrakurikuler & Club Minat Bakat Siswa
+        $ekskulPosts = Post::where('type', 'ekskul')
+            ->where('status', 'publish')
+            ->orderBy('id', 'asc')
+            ->take(6)
+            ->get();
+
         return view('frontend.home', compact(
             'heroSlides',
             'sambutan',
@@ -294,6 +301,7 @@ class HomeController extends Controller
             'nasionalPosts',
             'daerahPosts',
             'senayanPosts',
+            'ekskulPosts',
             'dewan',
             'videos',
             'announcements',

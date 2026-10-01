@@ -40,6 +40,21 @@
             <div class="prose-content text-gray-700 text-sm sm:text-base leading-relaxed">
                 {!! $agenda->content !!}
             </div>
+
+            @if($agenda->file_attachment)
+                <div class="p-4 bg-indigo-50/60 rounded-2xl border border-indigo-200 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-file-arrow-down text-2xl text-indigo-600"></i>
+                        <div>
+                            <span class="font-bold text-xs text-gray-800 block">Lampiran Dokumen Agenda</span>
+                            <span class="text-[11px] text-gray-500">Unduh dokumen berkas / jadwal agenda ini</span>
+                        </div>
+                    </div>
+                    <a href="{{ $agenda->file_attachment }}" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">
+                        Unduh File
+                    </a>
+                </div>
+            @endif
         </div>
 
         <div class="space-y-6">

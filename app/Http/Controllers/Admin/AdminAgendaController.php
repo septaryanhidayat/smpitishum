@@ -6,12 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\ActivityLog;
 use App\Models\Agenda;
 use App\Models\Pengumuman;
+use App\Services\WebpService;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class AdminAgendaController extends Controller
 {
+    public function __construct(
+        protected WebpService $webpService
+    ) {}
+
     public function index()
     {
         $agendas = Agenda::latest('event_date')->paginate(10, ['*'], 'agenda_page');
@@ -28,7 +34,22 @@ class AdminAgendaController extends Controller
             'location' => 'required|string|max:255',
             'content' => 'nullable|string',
             'status' => 'required|in:upcoming,ongoing,completed,publish',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
+            'file_attachment' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,jpg,jpeg,png|max:20480',
         ]);
+
+        $featuredImageUrl = null;
+        if ($request->hasFile('featured_image')) {
+            $converted = $this->webpService->processUploadedFile($request->file('featured_image'), 'agenda', 85, 1200);
+            if ($converted['success']) {
+                $featuredImageUrl = $converted['url'];
+            }
+        }
+
+        $fileAttachmentUrl = null;
+        if ($request->hasFile('file_attachment')) {
+            $fileAttachmentUrl = $this->handleFileUpload($request->file('file_attachment'), 'agenda');
+        }
 
         $agenda = Agenda::create([
             'title' => $validated['title'],
@@ -37,6 +58,8 @@ class AdminAgendaController extends Controller
             'location' => $validated['location'],
             'content' => $validated['content'] ?? '',
             'status' => $validated['status'],
+            'featured_image' => $featuredImageUrl,
+            'file_attachment' => $fileAttachmentUrl,
         ]);
 
         ActivityLog::create([
@@ -78,15 +101,36 @@ class AdminAgendaController extends Controller
             'location' => 'required|string|max:255',
             'content' => 'nullable|string',
             'status' => 'required|in:upcoming,ongoing,completed,publish',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
+            'file_attachment' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,jpg,jpeg,png|max:20480',
+            'remove_featured_image' => 'nullable|boolean',
+            'remove_file_attachment' => 'nullable|boolean',
         ]);
 
-        $agenda->update([
+        $data = [
             'title' => $validated['title'],
             'event_date' => $validated['event_date'],
             'location' => $validated['location'],
             'content' => $validated['content'] ?? '',
             'status' => $validated['status'],
-        ]);
+        ];
+
+        if ($request->hasFile('featured_image')) {
+            $converted = $this->webpService->processUploadedFile($request->file('featured_image'), 'agenda', 85, 1200);
+            if ($converted['success']) {
+                $data['featured_image'] = $converted['url'];
+            }
+        } elseif ($request->boolean('remove_featured_image')) {
+            $data['featured_image'] = null;
+        }
+
+        if ($request->hasFile('file_attachment')) {
+            $data['file_attachment'] = $this->handleFileUpload($request->file('file_attachment'), 'agenda');
+        } elseif ($request->boolean('remove_file_attachment')) {
+            $data['file_attachment'] = null;
+        }
+
+        $agenda->update($data);
 
         ActivityLog::create([
             'user_id' => Auth::id(),
@@ -107,13 +151,30 @@ class AdminAgendaController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'status' => 'required|in:publish,draft',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
+            'file_attachment' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,jpg,jpeg,png|max:20480',
         ]);
+
+        $featuredImageUrl = null;
+        if ($request->hasFile('featured_image')) {
+            $converted = $this->webpService->processUploadedFile($request->file('featured_image'), 'pengumuman', 85, 1200);
+            if ($converted['success']) {
+                $featuredImageUrl = $converted['url'];
+            }
+        }
+
+        $fileAttachmentUrl = null;
+        if ($request->hasFile('file_attachment')) {
+            $fileAttachmentUrl = $this->handleFileUpload($request->file('file_attachment'), 'pengumuman');
+        }
 
         $pengumuman = Pengumuman::create([
             'title' => $validated['title'],
             'slug' => Str::slug($validated['title']).'-'.time(),
             'content' => $validated['content'],
             'status' => $validated['status'],
+            'featured_image' => $featuredImageUrl,
+            'file_attachment' => $fileAttachmentUrl,
         ]);
 
         ActivityLog::create([
@@ -135,13 +196,34 @@ class AdminAgendaController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'status' => 'required|in:publish,draft',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
+            'file_attachment' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,jpg,jpeg,png|max:20480',
+            'remove_featured_image' => 'nullable|boolean',
+            'remove_file_attachment' => 'nullable|boolean',
         ]);
 
-        $pengumuman->update([
+        $data = [
             'title' => $validated['title'],
             'content' => $validated['content'],
             'status' => $validated['status'],
-        ]);
+        ];
+
+        if ($request->hasFile('featured_image')) {
+            $converted = $this->webpService->processUploadedFile($request->file('featured_image'), 'pengumuman', 85, 1200);
+            if ($converted['success']) {
+                $data['featured_image'] = $converted['url'];
+            }
+        } elseif ($request->boolean('remove_featured_image')) {
+            $data['featured_image'] = null;
+        }
+
+        if ($request->hasFile('file_attachment')) {
+            $data['file_attachment'] = $this->handleFileUpload($request->file('file_attachment'), 'pengumuman');
+        } elseif ($request->boolean('remove_file_attachment')) {
+            $data['file_attachment'] = null;
+        }
+
+        $pengumuman->update($data);
 
         ActivityLog::create([
             'user_id' => Auth::id(),
@@ -172,5 +254,43 @@ class AdminAgendaController extends Controller
         ]);
 
         return back()->with('success', 'Pengumuman berhasil dihapus.');
+    }
+
+    /**
+     * Handle document / generic file upload and return public URL.
+     */
+    protected function handleFileUpload(UploadedFile $file, string $subfolder = 'documents'): ?string
+    {
+        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $ext = strtolower($file->getClientOriginalExtension());
+        $slugName = Str::slug($originalName) ?: 'document';
+        $uniqueName = $slugName.'-'.time().'-'.Str::random(5).'.'.$ext;
+
+        $relativeDirectory = 'uploads/'.trim($subfolder, '/');
+        $targetDir = public_path($relativeDirectory);
+
+        if (! is_dir($targetDir)) {
+            mkdir($targetDir, 0755, true);
+        }
+
+        $file->move($targetDir, $uniqueName);
+        $filePath = '/'.$relativeDirectory.'/'.$uniqueName;
+
+        // Mirror file to active web document roots (cPanel separate docroot support)
+        $docRootCandidates = array_filter([
+            $_SERVER['DOCUMENT_ROOT'] ?? null,
+        ]);
+
+        foreach ($docRootCandidates as $docRoot) {
+            if ($docRoot && is_dir($docRoot) && realpath($docRoot) !== realpath(public_path())) {
+                $mirrorDir = rtrim($docRoot, '/\\').'/'.$relativeDirectory;
+                if (! is_dir($mirrorDir)) {
+                    @mkdir($mirrorDir, 0755, true);
+                }
+                @copy($targetDir.'/'.$uniqueName, $mirrorDir.'/'.$uniqueName);
+            }
+        }
+
+        return $filePath;
     }
 }

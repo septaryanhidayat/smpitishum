@@ -118,10 +118,28 @@ class InformationController extends Controller
     {
         $ekskul = Post::where('type', 'ekskul')
             ->where('status', 'publish')
-            ->latest('created_at')
+            ->latest('id')
             ->get();
 
         return view('frontend.ekskul.index', compact('ekskul'));
+    }
+
+    public function ekskulShow(string $slug)
+    {
+        $item = Post::where('type', 'ekskul')
+            ->where('slug', $slug)
+            ->where('status', 'publish')
+            ->firstOrFail();
+
+        $related = Post::where('type', 'ekskul')
+            ->where('id', '!=', $item->id)
+            ->where('status', 'publish')
+            ->latest('id')
+            ->take(4)
+            ->get();
+        $otherEkskul = $related;
+
+        return view('frontend.ekskul.show', compact('item', 'related', 'otherEkskul'));
     }
 
     public function alumni()

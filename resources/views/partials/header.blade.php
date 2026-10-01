@@ -53,7 +53,7 @@
 
                 {{-- 2. Profil Dropdown --}}
                 <div class="relative group py-2" id="nav-dropdown-profil">
-                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Profil" class="px-3 py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('sambutan*', 'tentang*', 'visi*', 'sejarah*', 'anggota*', 'struktur*', 'bidang*', 'dpc*', 'dewan*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Profil" class="px-3 py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('sambutan*', 'tentang*', 'visi*', 'sejarah*', 'anggota*', 'struktur*', 'bidang*', 'dpc*', 'dewan*', 'ekstrakurikuler*', 'ekskul*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
                         <span>Profil</span>
                         <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"></i>
                     </button>
@@ -84,6 +84,9 @@
                             </a>
                             <a href="{{ route('dpc.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
                                 <i class="fa-solid fa-star-and-crescent w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Program Unggulan
+                            </a>
+                            <a href="{{ route('ekskul.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
+                                <i class="fa-solid fa-people-group w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Ekstrakurikuler
                             </a>
                         </div>
                     </div>
@@ -226,6 +229,7 @@
             <a href="{{ route('page.struktur') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Struktur Organisasi</a>
             <a href="{{ route('bidang.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Fasilitas</a>
             <a href="{{ route('dpc.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Program Unggulan</a>
+            <a href="{{ route('ekskul.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Ekstrakurikuler &amp; Club</a>
         </div>
 
         {{-- Mobile Kabar Submenu --}}

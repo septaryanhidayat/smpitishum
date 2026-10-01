@@ -17,6 +17,7 @@ class Agenda extends Model
         'event_date',
         'status',
         'featured_image',
+        'file_attachment',
     ];
 
     protected $casts = [
