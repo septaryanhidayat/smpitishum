@@ -35,7 +35,7 @@ class PageController extends Controller
     {
         $page = Post::pages()->where('slug', 'visi-dan-misi')->first();
         $latestPosts = Post::articles()->published()->latest('published_at')->take(5)->get();
-        $latestAgendas = Agenda::where('status', 'publish')->orderBy('event_date', 'desc')->take(5)->get();
+        $latestAgendas = Agenda::where('status', '!=', 'draft')->orderBy('event_date', 'desc')->take(5)->get();
 
         return view('frontend.pages.visi-misi', compact('page', 'latestPosts', 'latestAgendas'));
     }
@@ -44,7 +44,7 @@ class PageController extends Controller
     {
         $page = Post::pages()->where('slug', 'sejarah')->first();
         $latestPosts = Post::articles()->published()->latest('published_at')->take(5)->get();
-        $latestAgendas = Agenda::where('status', 'publish')->orderBy('event_date', 'desc')->take(5)->get();
+        $latestAgendas = Agenda::where('status', '!=', 'draft')->orderBy('event_date', 'desc')->take(5)->get();
 
         return view('frontend.pages.sejarah', compact('page', 'latestPosts', 'latestAgendas'));
     }

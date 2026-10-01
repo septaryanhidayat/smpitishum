@@ -18,7 +18,7 @@ class InformationController extends Controller
 {
     public function agenda()
     {
-        $agendas = Agenda::where('status', 'publish')
+        $agendas = Agenda::where('status', '!=', 'draft')
             ->orderBy('event_date', 'desc')
             ->paginate(8);
 
@@ -27,9 +27,12 @@ class InformationController extends Controller
 
     public function agendaShow(string $slug)
     {
-        $agenda = Agenda::where('slug', $slug)->firstOrFail();
+        $agenda = Agenda::where('slug', $slug)
+            ->where('status', '!=', 'draft')
+            ->firstOrFail();
+
         $otherAgendas = Agenda::where('id', '!=', $agenda->id)
-            ->where('status', 'publish')
+            ->where('status', '!=', 'draft')
             ->orderBy('event_date', 'desc')
             ->take(4)
             ->get();

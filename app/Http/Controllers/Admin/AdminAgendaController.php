@@ -33,7 +33,7 @@ class AdminAgendaController extends Controller
             'event_date' => 'required|date',
             'location' => 'required|string|max:255',
             'content' => 'nullable|string',
-            'status' => 'required|in:upcoming,ongoing,completed,publish',
+            'status' => 'required|in:upcoming,ongoing,completed,publish,draft',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
             'file_attachment' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,jpg,jpeg,png|max:20480',
         ]);
@@ -100,7 +100,7 @@ class AdminAgendaController extends Controller
             'event_date' => 'required|date',
             'location' => 'required|string|max:255',
             'content' => 'nullable|string',
-            'status' => 'required|in:upcoming,ongoing,completed,publish',
+            'status' => 'required|in:upcoming,ongoing,completed,publish,draft',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
             'file_attachment' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,zip,rar,jpg,jpeg,png|max:20480',
             'remove_featured_image' => 'nullable|boolean',

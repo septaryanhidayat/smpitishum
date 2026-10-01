@@ -181,6 +181,7 @@ Route::get('/agenda/{slug}', [InformationController::class, 'agendaShow'])->name
 Route::get('/pengumuman', [InformationController::class, 'pengumuman'])->name('pengumuman.index');
 Route::get('/pengumuman/{slug}', [InformationController::class, 'pengumumanShow'])->name('pengumuman.show');
 Route::get('/prestasi', [InformationController::class, 'prestasi'])->name('prestasi.index');
+Route::get('/prestasi/{slug}', [InformationController::class, 'prestasiShow'])->name('prestasi.show');
 Route::get('/ekstrakurikuler', [InformationController::class, 'ekskul'])->name('ekskul.index');
 Route::get('/ekstrakurikuler/{slug}', [InformationController::class, 'ekskulShow'])->name('ekskul.show');
 Route::get('/ekskul', fn () => redirect()->route('ekskul.index'));

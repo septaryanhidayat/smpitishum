@@ -268,6 +268,10 @@ test('admin can upload photo and file when creating and updating agenda and peng
     $pengumuman->refresh();
     expect($pengumuman->title)->toBe('Pengumuman Kelulusan SPMB Final');
 
+    // 5. Verify that agenda with status 'upcoming' appears on frontend /agenda and homepage
+    $this->get(route('agenda.index'))->assertOk()->assertSee('Munaqosah Tahfidz Akbar Revisi');
+    $this->get(route('home'))->assertOk()->assertSee('Munaqosah Tahfidz Akbar Revisi');
+
     // Clean up test generated files
     foreach ([$agenda->featured_image, $agenda->file_attachment, $pengumuman->featured_image, $pengumuman->file_attachment] as $f) {
         if ($f && file_exists(public_path($f))) {

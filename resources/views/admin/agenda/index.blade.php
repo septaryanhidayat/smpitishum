@@ -63,9 +63,11 @@
                 <div>
                     <label class="block text-[11px] font-bold text-slate-600 mb-1">Status Agenda</label>
                     <select name="status" class="w-full bg-white text-xs text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                        <option value="upcoming">Akan Datang</option>
-                        <option value="ongoing">Sedang Berlangsung</option>
-                        <option value="completed">Selesai</option>
+                        <option value="upcoming">Akan Datang (Tampil di Web)</option>
+                        <option value="ongoing">Sedang Berlangsung (Tampil di Web)</option>
+                        <option value="completed">Selesai (Tampil di Web)</option>
+                        <option value="publish">Publikasi / Aktif (Tampil di Web)</option>
+                        <option value="draft">Draft (Disembunyikan dari Web)</option>
                     </select>
                 </div>
             </div>
@@ -374,9 +376,11 @@
                     <div>
                         <label class="block text-[11px] font-bold text-slate-700 mb-1">Status Kegiatan</label>
                         <select name="status" x-model="currentAgenda.status" class="w-full bg-slate-50 text-xs font-semibold text-slate-800 rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                            <option value="upcoming">Akan Datang</option>
-                            <option value="ongoing">Sedang Berlangsung</option>
-                            <option value="completed">Selesai</option>
+                            <option value="upcoming">Akan Datang (Tampil di Web)</option>
+                            <option value="ongoing">Sedang Berlangsung (Tampil di Web)</option>
+                            <option value="completed">Selesai (Tampil di Web)</option>
+                            <option value="publish">Publikasi / Aktif (Tampil di Web)</option>
+                            <option value="draft">Draft (Disembunyikan dari Web)</option>
                         </select>
                     </div>
                 </div>

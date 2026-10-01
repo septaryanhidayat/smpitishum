@@ -44,6 +44,25 @@
                 </div>
                 <div class="flex-grow flex flex-col justify-between space-y-3">
                     <div>
+                        <div class="flex items-center space-x-2 mb-1.5">
+                            @php
+                                $statusLabel = match($agenda->status) {
+                                    'upcoming' => 'Akan Datang',
+                                    'ongoing' => 'Sedang Berlangsung',
+                                    'completed' => 'Selesai',
+                                    default => 'Aktif',
+                                };
+                                $statusBadge = match($agenda->status) {
+                                    'upcoming' => 'bg-indigo-50 text-indigo-700 border-indigo-200',
+                                    'ongoing' => 'bg-amber-50 text-amber-800 border-amber-200',
+                                    'completed' => 'bg-slate-100 text-slate-600 border-slate-200',
+                                    default => 'bg-emerald-50 text-emerald-800 border-emerald-200',
+                                };
+                            @endphp
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold border {{ $statusBadge }}">
+                                {{ $statusLabel }}
+                            </span>
+                        </div>
                         <h2 class="font-extrabold text-base sm:text-lg text-gray-900 hover:text-indigo-600 transition leading-snug">
                             <a href="{{ route('agenda.show', $agenda->slug) }}">{{ $agenda->title }}</a>
                         </h2>

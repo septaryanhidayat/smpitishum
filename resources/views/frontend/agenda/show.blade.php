@@ -29,6 +29,24 @@
                     <i class="fa-solid fa-location-dot text-orange-500 mr-2 text-base"></i>
                     <span>{{ $agenda->location ?: 'Kampus SMPS IT Ishlahul Ummah Prabumulih' }}</span>
                 </div>
+                <span>&bull;</span>
+                @php
+                    $statusLabel = match($agenda->status) {
+                        'upcoming' => 'Akan Datang',
+                        'ongoing' => 'Sedang Berlangsung',
+                        'completed' => 'Selesai',
+                        default => 'Aktif',
+                    };
+                    $statusBadge = match($agenda->status) {
+                        'upcoming' => 'bg-indigo-100 text-indigo-700',
+                        'ongoing' => 'bg-amber-100 text-amber-800',
+                        'completed' => 'bg-slate-100 text-slate-600',
+                        default => 'bg-emerald-100 text-emerald-800',
+                    };
+                @endphp
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold {{ $statusBadge }}">
+                    {{ $statusLabel }}
+                </span>
             </div>
 
             @if($agenda->featured_image)

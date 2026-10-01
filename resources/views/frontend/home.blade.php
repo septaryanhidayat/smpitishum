@@ -984,13 +984,26 @@
                                 <span class="block text-sm font-black">{{ $ag->event_date ? $ag->event_date->format('d') : '-' }}</span>
                                 <span class="block text-[9px] uppercase font-bold">{{ $ag->event_date ? $ag->event_date->format('M') : '-' }}</span>
                             </div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-gray-900 hover:text-indigo-600 transition">
+                            <div class="flex-1 min-w-0">
+                                <h4 class="text-xs sm:text-sm font-bold text-gray-900 hover:text-indigo-600 transition leading-snug">
                                     <a href="{{ route('agenda.show', $ag->slug) }}">{{ $ag->title }}</a>
                                 </h4>
-                                <p class="text-[11px] text-gray-500 mt-1">
-                                    <i class="fa-solid fa-location-dot text-gray-400 mr-1"></i> {{ $ag->location ?? 'Kampus SMPS IT Ishum' }}
-                                </p>
+                                <div class="flex items-center flex-wrap gap-2 text-[11px] text-gray-500 mt-1">
+                                    <span>
+                                        <i class="fa-solid fa-location-dot text-gray-400 mr-1"></i> {{ $ag->location ?? 'Kampus SMPS IT Ishum' }}
+                                    </span>
+                                    @php
+                                        $agStatus = match($ag->status) {
+                                            'upcoming' => ['Akan Datang', 'bg-indigo-50 text-indigo-700'],
+                                            'ongoing' => ['Berlangsung', 'bg-amber-50 text-amber-800'],
+                                            'completed' => ['Selesai', 'bg-slate-100 text-slate-600'],
+                                            default => ['Aktif', 'bg-emerald-50 text-emerald-800'],
+                                        };
+                                    @endphp
+                                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded {{ $agStatus[1] }}">
+                                        {{ $agStatus[0] }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         @empty

@@ -183,7 +183,7 @@ class HomeController extends Controller
 
         // 10. Pengumuman & Agenda (Section 12 - 4 items each)
         $announcements = Pengumuman::where('status', 'publish')->latest()->take(4)->get();
-        $agendas = Agenda::where('status', 'publish')->orderBy('event_date', 'desc')->take(4)->get();
+        $agendas = Agenda::where('status', '!=', 'draft')->orderBy('event_date', 'desc')->take(4)->get();
 
         // 11. Galeri Foto Kegiatan Siswa & Sekolah
         $dbGallery = Post::whereIn('type', ['gallery', 'attachment'])
