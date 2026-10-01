@@ -9,6 +9,10 @@ class EkstrakurikulerSeeder extends Seeder
 {
     public function run(): void
     {
+        if (Post::where('type', 'ekskul')->exists()) {
+            return;
+        }
+
         $ekskulItems = [
             [
                 'title' => 'Pramuka SIT (Sekolah Islam Terpadu)',

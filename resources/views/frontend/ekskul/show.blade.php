@@ -39,15 +39,42 @@
         {{-- MAIN CONTENT --}}
         <div class="lg:col-span-2 space-y-8">
             <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm space-y-6">
-                @if($item->featured_image)
-                    <div class="rounded-2xl overflow-hidden shadow-md bg-gray-100 max-h-[460px]">
-                        <img src="{{ $item->featured_image }}" alt="{{ $item->title }}" class="w-full h-full object-cover" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                @php
+                    $thumb = $item->featured_image;
+                    if (!$thumb) {
+                        $t = strtolower($item->title);
+                        if (str_contains($t, 'basket') || str_contains($t, 'badminton') || str_contains($t, 'futsal') || str_contains($t, 'atletik')) {
+                            $thumb = '/uploads/activities-smpit-ishum.webp';
+                        } elseif (str_contains($t, 'digital') || str_contains($t, 'grafis') || str_contains($t, 'robotika') || str_contains($t, 'coding')) {
+                            $thumb = '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp';
+                        } elseif (str_contains($t, 'sains') || str_contains($t, 'matematika')) {
+                            $thumb = '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp';
+                        } elseif (str_contains($t, 'tari') || str_contains($t, 'ansambel') || str_contains($t, 'vocal') || str_contains($t, 'hadrah') || str_contains($t, 'kriya') || str_contains($t, 'cerita') || str_contains($t, 'dongeng') || str_contains($t, 'pantomim')) {
+                            $thumb = '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp';
+                        } elseif (str_contains($t, 'tahfidz') || str_contains($t, 'da\'i') || str_contains($t, 'dai')) {
+                            $thumb = '/uploads/tahfidz-smpit-ishum.webp';
+                        } else {
+                            $thumb = '/uploads/campus-smpit-ishum.webp';
+                        }
+                    }
+                    $hasContent = !empty(trim(strip_tags($item->content)));
+                @endphp
+
+                <div class="rounded-2xl overflow-hidden shadow-md bg-gray-100 max-h-[460px]">
+                    <img src="{{ $thumb }}" alt="{{ $item->title }}" class="w-full h-full object-cover" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                </div>
+
+                @if($hasContent)
+                    <div class="prose max-w-none text-gray-700 leading-relaxed text-sm sm:text-base space-y-4 font-light">
+                        {!! $item->content !!}
+                    </div>
+                @else
+                    <div class="prose max-w-none text-gray-700 leading-relaxed text-sm sm:text-base space-y-4 font-light">
+                        <p>Ekstrakurikuler <strong>{{ $item->title }}</strong> di <strong>SMPS IT Ishlahul Ummah Prabumulih</strong> merupakan salah satu program pengembangan diri yang dirancang untuk memfasilitasi minat, bakat, kreativitas, dan potensi santri.</p>
+                        <p>Melalui bimbingan pembina dan asatidz yang berkompeten, para santri diajak untuk mengasah keterampilan teknis, sportivitas, kekompakan tim, kemandirian, dan disiplin tinggi berlandaskan akhlakul karimah.</p>
+                        <p>Informasi jadwal pertemuan rutin, silabus kegiatan, dan persiapan lomba akan disampaikan secara berkala melalui pengumuman resmi sekolah.</p>
                     </div>
                 @endif
-
-                <div class="prose max-w-none text-gray-700 leading-relaxed text-sm sm:text-base space-y-4 font-light">
-                    {!! $item->content !!}
-                </div>
 
                 {{-- HIGHLIGHT KEUNGGULAN KLUB --}}
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gray-100">

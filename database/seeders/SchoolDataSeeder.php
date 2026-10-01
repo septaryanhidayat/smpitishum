@@ -634,16 +634,18 @@ HTML,
             ],
         ];
 
-        foreach ($ekskulItems as $idx => $e) {
-            Post::updateOrCreate(
-                ['slug' => $e['slug'], 'type' => 'ekskul'],
-                array_merge($e, [
-                    'type' => 'ekskul',
-                    'status' => 'publish',
-                    'author_id' => 1,
-                    'published_at' => now()->subDays(6 - $idx),
-                ])
-            );
+        if (! Post::where('type', 'ekskul')->exists()) {
+            foreach ($ekskulItems as $idx => $e) {
+                Post::updateOrCreate(
+                    ['slug' => $e['slug'], 'type' => 'ekskul'],
+                    array_merge($e, [
+                        'type' => 'ekskul',
+                        'status' => 'publish',
+                        'author_id' => 1,
+                        'published_at' => now()->subDays(6 - $idx),
+                    ])
+                );
+            }
         }
 
         // 11. Jalur Pendaftaran PPDB Dinamis (First Brive, Mutasi Kerja, Tahfidz, Alumni, Prestasi, Reguler)

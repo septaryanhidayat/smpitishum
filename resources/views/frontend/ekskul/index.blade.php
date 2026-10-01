@@ -38,10 +38,31 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($ekskul as $idx => $item)
+            @php
+                $thumb = $item->featured_image;
+                if (!$thumb) {
+                    $t = strtolower($item->title);
+                    if (str_contains($t, 'basket') || str_contains($t, 'badminton') || str_contains($t, 'futsal') || str_contains($t, 'atletik')) {
+                        $thumb = '/uploads/activities-smpit-ishum.webp';
+                    } elseif (str_contains($t, 'digital') || str_contains($t, 'grafis') || str_contains($t, 'robotika') || str_contains($t, 'coding')) {
+                        $thumb = '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp';
+                    } elseif (str_contains($t, 'sains') || str_contains($t, 'matematika')) {
+                        $thumb = '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp';
+                    } elseif (str_contains($t, 'tari') || str_contains($t, 'ansambel') || str_contains($t, 'vocal') || str_contains($t, 'hadrah') || str_contains($t, 'kriya') || str_contains($t, 'cerita') || str_contains($t, 'dongeng') || str_contains($t, 'pantomim')) {
+                        $thumb = '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp';
+                    } elseif (str_contains($t, 'tahfidz') || str_contains($t, 'da\'i') || str_contains($t, 'dai')) {
+                        $thumb = '/uploads/tahfidz-smpit-ishum.webp';
+                    } else {
+                        $thumb = '/uploads/campus-smpit-ishum.webp';
+                    }
+                }
+                $cleanDesc = trim(strip_tags($item->content));
+                $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 130) : (!empty($item->excerpt) ? $item->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan santri SMPS IT Ishlahul Ummah dalam bidang ' . $item->title . '.');
+            @endphp
             <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up">
                 <div class="relative h-56 overflow-hidden bg-gray-100">
                     <a href="{{ route('ekskul.show', $item->slug) }}" class="block w-full h-full">
-                        <img src="{{ $item->featured_image ?: '/uploads/campus-smpit-ishum.webp' }}" alt="{{ $item->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                        <img src="{{ $thumb }}" alt="{{ $item->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                     </a>
                     <span class="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-xs text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5">
                         <i class="fa-solid fa-star text-amber-300 text-xs"></i>
@@ -55,9 +76,9 @@
                                 {{ $item->title }}
                             </a>
                         </h3>
-                        <div class="prose text-xs sm:text-sm text-gray-600 mt-2 line-clamp-3 leading-relaxed font-light">
-                            {!! strip_tags($item->content) !!}
-                        </div>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-3 leading-relaxed font-light">
+                            {{ $desc }}
+                        </p>
                     </div>
                     <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
                         <span class="text-slate-500 font-medium inline-flex items-center">

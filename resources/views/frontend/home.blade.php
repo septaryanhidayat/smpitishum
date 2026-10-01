@@ -705,10 +705,31 @@
         @if(isset($ekskulPosts) && $ekskulPosts->isNotEmpty())
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($ekskulPosts as $idx => $ekskul)
+                @php
+                    $thumb = $ekskul->featured_image;
+                    if (!$thumb) {
+                        $t = strtolower($ekskul->title);
+                        if (str_contains($t, 'basket') || str_contains($t, 'badminton') || str_contains($t, 'futsal') || str_contains($t, 'atletik')) {
+                            $thumb = '/uploads/activities-smpit-ishum.webp';
+                        } elseif (str_contains($t, 'digital') || str_contains($t, 'grafis') || str_contains($t, 'robotika') || str_contains($t, 'coding')) {
+                            $thumb = '/uploads/ishum/fasilitas_1274_Ruang-Lab-Komputer1.webp';
+                        } elseif (str_contains($t, 'sains') || str_contains($t, 'matematika')) {
+                            $thumb = '/uploads/ishum/fasilitas_1275_R.-Lab-IPA.webp';
+                        } elseif (str_contains($t, 'tari') || str_contains($t, 'ansambel') || str_contains($t, 'vocal') || str_contains($t, 'hadrah') || str_contains($t, 'kriya') || str_contains($t, 'cerita') || str_contains($t, 'dongeng') || str_contains($t, 'pantomim')) {
+                            $thumb = '/uploads/ishum/fasilitas_1278_HALL-SIT-Ishlahul-Ummah_.webp';
+                        } elseif (str_contains($t, 'tahfidz') || str_contains($t, 'da\'i') || str_contains($t, 'dai')) {
+                            $thumb = '/uploads/tahfidz-smpit-ishum.webp';
+                        } else {
+                            $thumb = '/uploads/campus-smpit-ishum.webp';
+                        }
+                    }
+                    $cleanDesc = trim(strip_tags($ekskul->content));
+                    $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 110) : (!empty($ekskul->excerpt) ? $ekskul->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan santri dalam bidang ' . $ekskul->title . '.');
+                @endphp
                 <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ ($idx % 3) + 1 }}">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
                         <a href="{{ route('ekskul.show', $ekskul->slug) }}" class="block w-full h-full">
-                            <img src="{{ $ekskul->featured_image ?: '/uploads/campus-smpit-ishum.webp' }}" alt="{{ $ekskul->title }}" width="400" height="260" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                            <img src="{{ $thumb }}" alt="{{ $ekskul->title }}" width="400" height="260" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                         </a>
                         <span class="absolute top-3 left-3 bg-indigo-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1">
                             <i class="fa-solid fa-star text-amber-300 text-[10px]"></i>
@@ -723,7 +744,7 @@
                                 </a>
                             </h3>
                             <p class="text-xs text-gray-500 mt-1.5 line-clamp-2 leading-relaxed font-light">
-                                {{ Str::limit(strip_tags($ekskul->content), 110) }}
+                                {{ $desc }}
                             </p>
                         </div>
                         <div class="pt-3 border-t border-gray-50 flex items-center justify-between text-xs">
