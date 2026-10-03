@@ -955,11 +955,20 @@
                     </div>
                     <div class="space-y-3">
                         @forelse($announcements as $ann)
-                        <div class="bg-white p-4 rounded-2xl border border-gray-100 hover:border-indigo-400 transition shadow-xs">
-                            <span class="text-[10px] font-black text-amber-600 uppercase">{{ $ann->created_at ? $ann->created_at->translatedFormat('d F Y') : '-' }}</span>
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 hover:text-indigo-600 transition mt-1">
-                                <a href="{{ route('pengumuman.show', $ann->slug) }}">{{ $ann->title }}</a>
-                            </h4>
+                        <div class="bg-white p-3.5 rounded-2xl border border-gray-100 hover:border-indigo-400 hover:shadow-sm transition flex items-center space-x-3.5 shadow-xs group">
+                            <div class="w-14 h-14 rounded-xl overflow-hidden bg-indigo-50 flex-shrink-0 border border-indigo-100/60 flex items-center justify-center">
+                                @if($ann->featured_image)
+                                    <img src="{{ $ann->featured_image_url }}" alt="{{ $ann->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-smpit-ishum.webp'">
+                                @else
+                                    <i class="fa-solid fa-bullhorn text-indigo-500 text-lg"></i>
+                                @endif
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="text-[10px] font-black text-amber-600 uppercase block">{{ $ann->created_at ? $ann->created_at->translatedFormat('d F Y') : '-' }}</span>
+                                <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition mt-0.5 line-clamp-2 leading-snug">
+                                    <a href="{{ route('pengumuman.show', $ann->slug) }}">{{ $ann->title }}</a>
+                                </h4>
+                            </div>
                         </div>
                         @empty
                         <div class="text-xs text-gray-500 py-4 text-center">Belum ada pengumuman baru.</div>
@@ -979,7 +988,7 @@
                     </div>
                     <div class="space-y-3">
                         @forelse($agendas as $ag)
-                        <div class="bg-white p-4 rounded-2xl border border-gray-100 hover:border-amber-400 transition flex items-start space-x-3.5 shadow-xs">
+                        <div class="bg-white p-3.5 rounded-2xl border border-gray-100 hover:border-amber-400 hover:shadow-sm transition flex items-start space-x-3.5 shadow-xs">
                             <div class="bg-indigo-50 text-indigo-700 rounded-xl p-2.5 text-center flex-shrink-0 w-14 border border-indigo-100">
                                 <span class="block text-sm font-black">{{ $ag->event_date ? $ag->event_date->format('d') : '-' }}</span>
                                 <span class="block text-[9px] uppercase font-bold">{{ $ag->event_date ? $ag->event_date->format('M') : '-' }}</span>

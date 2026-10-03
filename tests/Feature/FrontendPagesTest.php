@@ -127,6 +127,39 @@ test('dewan, bidang, agenda, and pengumuman pages render successfully', function
     $this->get('/pengumuman')->assertStatus(200)->assertSee('Pengumuman PPDB Gelombang 1');
 });
 
+test('agenda and pengumuman pages display cards with photo banner and badges like program unggulan', function () {
+    Agenda::create([
+        'title' => 'Karnaval Akbar HUT Prabumulih',
+        'slug' => 'karnaval-akbar-hut-prabumulih',
+        'content' => 'Kegiatan parade siswa SMPS IT Ishlahul Ummah di jalan protokol kota.',
+        'location' => 'Jalan Jendral Sudirman',
+        'event_date' => now()->addDays(5),
+        'status' => 'upcoming',
+        'featured_image' => '/uploads/agenda/karnaval-test.webp',
+    ]);
+
+    Pengumuman::create([
+        'title' => 'Hasil Seleksi SPMB Gelombang 1',
+        'slug' => 'hasil-seleksi-spmb-gelombang-1',
+        'content' => 'Pengumuman kelulusan santri baru tahun ajaran 2026/2027.',
+        'status' => 'publish',
+        'featured_image' => '/uploads/pengumuman/hasil-spmb-test.webp',
+    ]);
+
+    $agendaResponse = $this->get(route('agenda.index'));
+    $agendaResponse->assertOk()
+        ->assertSee('Karnaval Akbar HUT Prabumulih')
+        ->assertSee('/uploads/agenda/karnaval-test.webp')
+        ->assertSee('Akan Datang')
+        ->assertSee('Jalan Jendral Sudirman');
+
+    $pengumumanResponse = $this->get(route('pengumuman.index'));
+    $pengumumanResponse->assertOk()
+        ->assertSee('Hasil Seleksi SPMB Gelombang 1')
+        ->assertSee('/uploads/pengumuman/hasil-spmb-test.webp')
+        ->assertSee('Pengumuman');
+});
+
 test('feedback form submission works', function () {
     $this->get('/hubungi')->assertStatus(200);
 

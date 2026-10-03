@@ -20,7 +20,7 @@ class InformationController extends Controller
     {
         $agendas = Agenda::where('status', '!=', 'draft')
             ->orderBy('event_date', 'desc')
-            ->paginate(8);
+            ->paginate(9);
 
         return view('frontend.agenda.index', compact('agendas'));
     }
@@ -44,7 +44,7 @@ class InformationController extends Controller
     {
         $pengumuman = Pengumuman::where('status', 'publish')
             ->latest()
-            ->paginate(8);
+            ->paginate(9);
 
         return view('frontend.pengumuman.index', compact('pengumuman'));
     }

@@ -51,7 +51,7 @@
 
             @if($agenda->featured_image)
                 <div class="rounded-2xl overflow-hidden shadow-md">
-                    <img src="{{ $agenda->featured_image }}" alt="{{ $agenda->title }}" class="w-full h-auto">
+                    <img src="{{ $agenda->featured_image_url }}" alt="{{ $agenda->title }}" class="w-full h-auto" onerror="this.onerror=null; this.src='/uploads/activities-smpit-ishum.webp'">
                 </div>
             @endif
 
@@ -82,11 +82,16 @@
                 </h3>
                 <div class="space-y-3 text-xs">
                     @foreach($otherAgendas as $oA)
-                        <a href="{{ route('agenda.show', $oA->slug) }}" class="block p-3 rounded-xl hover:bg-indigo-50/60 transition border border-gray-50">
-                            <span class="text-[10px] text-orange-600 font-bold block mb-1">
-                                {{ $oA->event_date ? $oA->event_date->format('d M Y') : '' }}
-                            </span>
-                            <h4 class="font-bold text-gray-800 line-clamp-2 leading-snug">{{ $oA->title }}</h4>
+                        <a href="{{ route('agenda.show', $oA->slug) }}" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-indigo-50/60 transition border border-gray-50 group">
+                            <div class="w-14 h-14 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
+                                <img src="{{ $oA->featured_image_url }}" alt="{{ $oA->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/activities-smpit-ishum.webp'">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="text-[10px] text-orange-600 font-bold block mb-1">
+                                    {{ $oA->event_date ? $oA->event_date->format('d M Y') : '' }}
+                                </span>
+                                <h4 class="font-bold text-gray-800 line-clamp-2 leading-snug group-hover:text-indigo-600 transition">{{ $oA->title }}</h4>
+                            </div>
                         </a>
                     @endforeach
                 </div>

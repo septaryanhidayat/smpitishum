@@ -26,45 +26,59 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">INFORMASI AKADEMIK</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Pengumuman & Surat Edaran Resmi
+            Pengumuman &amp; Surat Edaran Resmi
         </h2>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Kumpulan surat edaran resmi, kalender kegiatan, dan publikasi penting sekolah.</p>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($pengumuman as $idx => $item)
-            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md hover:shadow-xl border border-gray-100 flex flex-col justify-between space-y-4 transition transform hover:-translate-y-1 reveal-fade-up delay-{{ $idx % 4 }}">
+            <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition transform hover:-translate-y-1.5 flex flex-col justify-between group reveal-fade-up delay-{{ $idx % 3 }}">
                 <div>
-                    <div class="flex items-center space-x-2 text-xs text-indigo-600 font-bold mb-2">
-                        <i class="fa-solid fa-bullhorn text-orange-500"></i>
-                        <span>PENGUMUMAN RESMI</span>
+                    {{-- FOTO BANNER PENGUMUMAN SEPERTI PROGRAM UNGGULAN --}}
+                    <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
+                        <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-smpit-ishum.webp'">
+                        
+                        {{-- BADGE KATEGORI (TOP-LEFT) --}}
+                        <span class="absolute top-3.5 left-3.5 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-bullhorn text-[10px]"></i> Pengumuman
+                        </span>
+
+                        {{-- TANGGAL RILIS (TOP-RIGHT) --}}
+                        <span class="absolute top-3.5 right-3.5 bg-white/95 backdrop-blur-sm text-gray-700 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">
+                            {{ $item->created_at ? $item->created_at->translatedFormat('d M Y') : '' }}
+                        </span>
                     </div>
-                    <h2 class="font-extrabold text-base sm:text-lg text-gray-900 hover:text-indigo-600 transition leading-snug">
-                        <a href="{{ route('pengumuman.show', $item->slug) }}">{{ $item->title }}</a>
-                    </h2>
-                    <p class="text-xs text-gray-500 mt-2 line-clamp-3 leading-relaxed font-light">
-                        {{ Str::limit(strip_tags($item->content), 140) }}
-                    </p>
+
+                    <div class="p-6 sm:p-7 space-y-3">
+                        <h3 class="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-indigo-600 transition leading-snug line-clamp-2">
+                            <a href="{{ route('pengumuman.show', $item->slug) }}">{{ $item->title }}</a>
+                        </h3>
+
+                        <div class="text-xs text-[#da251c] font-semibold flex items-center">
+                            <i class="fa-solid fa-certificate text-[10px] mr-1.5"></i>
+                            <span>Publikasi Resmi SMPS IT Ishum</span>
+                        </div>
+
+                        <p class="text-xs text-gray-500 line-clamp-3 leading-relaxed font-light">
+                            {{ Str::limit(strip_tags($item->content), 120) }}
+                        </p>
+                    </div>
                 </div>
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-indigo-600">
-                    <a href="{{ route('pengumuman.show', $item->slug) }}" class="inline-flex items-center hover:text-orange-600">
-                        <span>Baca Rincian Pengumuman</span>
-                        <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+
+                {{-- FOOTER KARTU --}}
+                <div class="px-6 sm:px-7 pb-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                    <a href="{{ route('pengumuman.show', $item->slug) }}" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-orange-600 group/link">
+                        <span>Rincian Pengumuman</span>
+                        <i class="fa-solid fa-arrow-right ml-1.5 text-[10px] group-hover/link:translate-x-1 transition-transform"></i>
                     </a>
-                    <div class="flex items-center space-x-2">
-                        @if($item->featured_image)
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-indigo-50 text-indigo-700" title="Ada Foto Poster">
-                                <i class="fa-solid fa-image mr-1"></i> Foto
-                            </span>
-                        @endif
+                    <div class="flex items-center space-x-1.5">
                         @if($item->file_attachment)
                             <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-rose-50 text-rose-700" title="Ada Berkas Lampiran">
                                 <i class="fa-solid fa-file-pdf mr-1"></i> Lampiran
                             </span>
                         @endif
-                        <span class="text-[11px] text-gray-400 font-normal">
-                            {{ $item->created_at ? $item->created_at->translatedFormat('d M Y') : '' }}
-                        </span>
                     </div>
                 </div>
             </div>
