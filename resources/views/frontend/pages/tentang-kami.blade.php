@@ -279,7 +279,7 @@
         <div class="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 text-center sm:text-left">
             <div>
                 <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Lokasi Sekolah</span>
-                <h2 class="text-lg sm:text-2xl font-extrabold text-gray-900 mt-1">Alamat SMPS IT Ishlahul Ummah Prabumulih</h2>
+                <h2 class="text-lg sm:text-2xl font-extrabold text-gray-900 mt-1">Lokasi Kampus</h2>
                 <p class="text-xs text-gray-500 mt-1">Jl. Lintas Timur KM 35, Kel. Prabumulih Indah, Kec. Kota Prabumulih, Sumatera Selatan 30662</p>
             </div>
             <a href="https://maps.google.com" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center text-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow transition flex-shrink-0">

@@ -388,7 +388,7 @@ test('prestasi created in admin displays on homepage and dedicated prestasi page
     $prestasiIndex = $this->get('/prestasi');
     $prestasiIndex->assertStatus(200);
     $prestasiIndex->assertSee('Arumi Juara 2 Tahfidz Kota Prabumulih');
-    $prestasiIndex->assertSee('Prestasi &amp; Penghargaan', false);
+    $prestasiIndex->assertSee('Prestasi Siswa');
 
     // 3. Check Navbar has Prestasi Siswa
     $homeResponse->assertSee('Prestasi Siswa');

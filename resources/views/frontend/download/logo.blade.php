@@ -14,7 +14,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Logo' }}</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Logo Resmi SMPS IT Ishlahul Ummah Prabumulih' }}</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Logo Resmi Sekolah' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             {{ $page?->excerpt ?: 'Identitas visual, filosofi lambang sekolah, panduan palet warna, dan aset unduhan resmi SMPS IT Ishlahul Ummah Prabumulih.' }}
         </p>

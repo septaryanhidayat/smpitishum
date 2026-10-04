@@ -55,7 +55,7 @@
         <div class="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 mb-8 text-center sm:text-left">
             <div>
                 <span class="text-xs font-bold text-[#da251c] uppercase tracking-wider block">Sarana &amp; Prasarana Sekolah</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">Fasilitas Unggulan SMPS IT Ishlahul Ummah Prabumulih</h2>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">Fasilitas Unggulan</h2>
             </div>
             <a href="{{ route('bidang.index') }}" class="w-full sm:w-auto inline-flex items-center justify-center text-xs font-bold text-indigo-600 hover:text-[#da251c] flex-shrink-0 transition">
                 <span>Lihat Selengkapnya</span>

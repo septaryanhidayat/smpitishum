@@ -12,7 +12,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Galeri Video</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Video SMPS IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Galeri Video</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Dokumentasi video liputan kegiatan siswa, tasmi' Al-Qur'an, praktikum sains, dan prestasi sekolah.
         </p>

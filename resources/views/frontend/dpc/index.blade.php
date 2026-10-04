@@ -14,7 +14,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">Program Unggulan</span>
         </nav>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Unggulan SMPS IT Ishlahul Ummah Prabumulih</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Unggulan</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
             Kurikulum terintegrasi yang dirancang khusus untuk mengoptimalkan potensi ruhiyah, intelektual, dan kepemimpinan siswa.
         </p>

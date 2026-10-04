@@ -244,7 +244,7 @@
                         <i class="fa-solid fa-image"></i>
                     </div>
                     <div>
-                        <h4 class="text-sm font-bold text-gray-900 group-hover:text-indigo-700 transition">Logo Resmi SMPS IT</h4>
+                        <h4 class="text-sm font-bold text-gray-900 group-hover:text-indigo-700 transition">Logo Resmi</h4>
                         <p class="text-[11px] text-gray-500 leading-tight mt-0.5">File logo resolusi tinggi PNG &amp; SVG</p>
                     </div>
                 </a>
@@ -505,7 +505,7 @@
         <div class="text-center max-w-2xl mx-auto mb-8 reveal-fade-up">
             <span class="text-xs uppercase tracking-widest text-amber-500 font-bold block mb-1">Kebanggaan Sekolah</span>
             <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                Prestasi Siswa SMPS IT
+                Prestasi Siswa
             </h2>
             <p class="text-xs sm:text-sm text-gray-700 mt-1 font-medium">
                 Capaian membanggakan siswa SMPS IT Ishlahul Ummah Prabumulih di bidang tahfidz, sains, bahasa, dan keolahragaan
@@ -642,7 +642,7 @@
         <div class="text-center max-w-2xl mx-auto mb-8 reveal-fade-up">
             <span class="text-xs uppercase tracking-widest text-indigo-600 font-bold block mb-1">Pilar Pendidikan Islam</span>
             <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                Program Unggulan SMPS IT
+                Program Unggulan
             </h2>
             <p class="text-xs sm:text-sm text-gray-700 mt-1 font-medium">
                 Tahfidz Al-Qur'an 2 Juz Mutqin, Bilingual Arabic-English, Bina Prestasi Sains &amp; Kepemimpinan Siswa
@@ -1178,7 +1178,7 @@
                 SPMB GELOMBANG EXCLUSIVE
             </span>
             <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
-                Daftar Sekarang di SMPS IT Ishlahul Ummah Prabumulih
+                Daftar Sekarang
             </h2>
             <p class="text-xs sm:text-sm text-indigo-100 mt-1 max-w-2xl">
                 Wujudkan impian putra-putri Anda menjadi generasi berakhlak Qur'ani, cerdas, berdaya saing global, dan berprestasi. Kuota terbatas hanya 24 kursi per kelas!
@@ -1351,7 +1351,7 @@
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition">SPMB Online SMPS IT</h3>
+                    <h3 class="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition">SPMB Online</h3>
                     <p class="text-xs text-gray-600 mt-0.5">Pendaftaran siswa baru gelombang exclusive</p>
                 </div>
             </a>

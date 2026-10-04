@@ -17,7 +17,7 @@
                 <i class="fa-solid fa-trophy"></i>
             </div>
             <div>
-                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Prestasi &amp; Penghargaan</h1>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Prestasi Siswa</h1>
                 <p class="text-sm text-indigo-100 mt-1 font-light">
                     Bukti nyata kesungguhan pembinaan akademik, sains, tahfidz Qur'an, dan minat bakat di SMPS IT Ishum.
                 </p>

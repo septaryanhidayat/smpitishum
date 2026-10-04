@@ -104,7 +104,7 @@
     <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="space-y-1 text-center md:text-left">
             <span class="text-xs uppercase tracking-wider text-amber-300 font-bold block">Pusat Minat &amp; Bakat Santri</span>
-            <h3 class="text-xl sm:text-2xl font-black">Tertarik dengan Pilihan Ekstrakurikuler di SMPS IT Ishum?</h3>
+            <h3 class="text-xl sm:text-2xl font-black">Tertarik dengan Pilihan Ekstrakurikuler?</h3>
             <p class="text-xs sm:text-sm text-indigo-100 font-light">Daftarkan putra-putri Anda melalui SPMB Online atau hubungi guru pembina kami.</p>
         </div>
         <div class="flex items-center space-x-3 shrink-0">
