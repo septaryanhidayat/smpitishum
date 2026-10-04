@@ -31,9 +31,12 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($prestasi as $idx => $item)
             <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up">
-                <a href="{{ route('prestasi.show', $item->slug) }}" class="block relative h-52 overflow-hidden bg-gray-100">
-                    <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
-                    <span class="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5">
+                <a href="{{ route('prestasi.show', $item->slug) }}" class="block relative h-64 sm:h-72 overflow-hidden bg-slate-900/5 flex items-center justify-center p-2 group-hover:bg-slate-900/10 transition">
+                    {{-- Ambient background so there are no empty gaps --}}
+                    <img src="{{ $item->featured_image_url }}" alt="" class="absolute inset-0 w-full h-full object-cover blur-md opacity-30 scale-110 pointer-events-none" aria-hidden="true">
+                    {{-- Full uncropped image --}}
+                    <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="relative max-h-full max-w-full w-auto h-auto object-contain rounded-xl shadow-xs group-hover:scale-102 transition duration-300" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                    <span class="absolute top-3 left-3 z-10 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5">
                         <i class="fa-solid fa-award text-xs"></i>
                         <span>Juara &amp; Prestasi</span>
                     </span>

@@ -516,11 +516,14 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($fraksiPosts as $index => $post)
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
-                <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
-                    <a href="{{ $post->public_url }}" class="block w-full h-full" aria-label="Baca prestasi: {{ $post->title }}">
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
+                <div class="h-60 sm:h-64 overflow-hidden rounded-2xl bg-slate-900/5 shadow-sm relative flex items-center justify-center p-2">
+                    <a href="{{ $post->public_url }}" class="block w-full h-full relative flex items-center justify-center overflow-hidden rounded-xl" aria-label="Baca prestasi: {{ $post->title }}">
+                        {{-- Ambient backdrop --}}
+                        <img src="{{ $post->featured_image_url }}" alt="" class="absolute inset-0 w-full h-full object-cover blur-md opacity-30 scale-110 pointer-events-none" aria-hidden="true">
+                        {{-- Uncropped foreground image --}}
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="240" loading="lazy" decoding="async" class="relative max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-xs group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </a>
-                    <span class="absolute bottom-2.5 left-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">
+                    <span class="absolute bottom-2.5 left-2.5 z-10 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">
                         <i class="fa-solid fa-trophy text-amber-400 mr-1"></i> Prestasi
                     </span>
                 </div>
