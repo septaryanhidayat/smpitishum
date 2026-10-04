@@ -27,7 +27,7 @@
                 <span>&bull;</span>
                 <div class="flex items-center">
                     <i class="fa-solid fa-location-dot text-orange-500 mr-2 text-base"></i>
-                    <span>{{ $agenda->location ?: 'Kampus SMPS IT Ishlahul Ummah Prabumulih' }}</span>
+                    <span>{{ $agenda->location ?: 'Sekolah SMPS IT Ishlahul Ummah Prabumulih' }}</span>
                 </div>
                 <span>&bull;</span>
                 @php

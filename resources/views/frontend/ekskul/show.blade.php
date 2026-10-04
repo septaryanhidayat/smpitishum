@@ -70,8 +70,8 @@
                     </div>
                 @else
                     <div class="prose max-w-none text-gray-700 leading-relaxed text-sm sm:text-base space-y-4 font-light">
-                        <p>Ekstrakurikuler <strong>{{ $item->title }}</strong> di <strong>SMPS IT Ishlahul Ummah Prabumulih</strong> merupakan salah satu program pengembangan diri yang dirancang untuk memfasilitasi minat, bakat, kreativitas, dan potensi santri.</p>
-                        <p>Melalui bimbingan pembina dan asatidz yang berkompeten, para santri diajak untuk mengasah keterampilan teknis, sportivitas, kekompakan tim, kemandirian, dan disiplin tinggi berlandaskan akhlakul karimah.</p>
+                        <p>Ekstrakurikuler <strong>{{ $item->title }}</strong> di <strong>SMPS IT Ishlahul Ummah Prabumulih</strong> merupakan salah satu program pengembangan diri yang dirancang untuk memfasilitasi minat, bakat, kreativitas, dan potensi siswa.</p>
+                        <p>Melalui bimbingan pembina dan asatidz yang berkompeten, para siswa diajak untuk mengasah keterampilan teknis, sportivitas, kekompakan tim, kemandirian, dan disiplin tinggi berlandaskan akhlakul karimah.</p>
                         <p>Informasi jadwal pertemuan rutin, silabus kegiatan, dan persiapan lomba akan disampaikan secara berkala melalui pengumuman resmi sekolah.</p>
                     </div>
                 @endif

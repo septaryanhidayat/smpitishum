@@ -30,7 +30,7 @@
                 
                 {{-- GAMBAR ILUSTRASI SEJARAH --}}
                 <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 max-h-96">
-                    <img src="/uploads/campus-smpit-ishum.webp" alt="Kampus SMPS IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover">
+                    <img src="/uploads/campus-smpit-ishum.webp" alt="Gedung Sekolah SMPS IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover">
                 </div>
 
                 <div class="border-b border-gray-100 pb-4">
@@ -128,7 +128,7 @@
                                     {{ $la->title }}
                                 </h4>
                                 <span class="text-[11px] text-gray-400 block mt-1">
-                                    <i class="fa-solid fa-location-dot mr-1 text-orange-400"></i> {{ $la->location ?: 'Kampus SMPS IT Ishlahul Ummah Prabumulih' }}
+                                    <i class="fa-solid fa-location-dot mr-1 text-orange-400"></i> {{ $la->location ?: 'Sekolah SMPS IT Ishlahul Ummah Prabumulih' }}
                                 </span>
                             </div>
                         </a>

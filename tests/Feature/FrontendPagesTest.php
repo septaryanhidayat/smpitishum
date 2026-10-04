@@ -15,7 +15,7 @@ test('home page renders all authentic school sections successfully', function ()
     $response->assertStatus(200);
     $response->assertSee('Menu Utama');
     $response->assertSee('Sambutan Kepala Sekolah');
-    $response->assertSee('Artikel &amp; Kabar Kampus', false);
+    $response->assertSee('Artikel &amp; Kabar Sekolah', false);
     $response->assertSee('Prestasi Siswa');
     $response->assertSee('Dewan Guru');
     $response->assertSee('Galeri Video');
@@ -274,7 +274,7 @@ test('home page renders dual-row gallery slider with ishum photos', function () 
 
     $response->assertStatus(200);
     $response->assertSee('Galeri');
-    $response->assertSee('Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Kampus SMPS IT Ishlahul Ummah', false);
+    $response->assertSee('Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Sekolah SMPS IT Ishlahul Ummah', false);
     $response->assertSee(route('galeri.index'));
     $response->assertSee('Lihat Semua Dokumentasi');
 });

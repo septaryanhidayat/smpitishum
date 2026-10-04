@@ -44,7 +44,7 @@
                 {{ $page?->title ?? 'Infaq Pembangunan & Beasiswa Ishum' }}
             </h1>
             <p class="text-sm sm:text-base text-indigo-100 mt-4 leading-relaxed font-light">
-                {{ $page?->excerpt ?: 'Mari bergotong royong membangun sarana laboratorium riset modern, masjid kampus, fasilitas asrama tahfidz, dan program beasiswa bagi siswa berprestasi di SMPS IT Ishlahul Ummah Prabumulih.' }}
+                {{ $page?->excerpt ?: 'Mari bergotong royong membangun sarana laboratorium riset modern, masjid sekolah, fasilitas asrama tahfidz, dan program beasiswa bagi siswa berprestasi di SMPS IT Ishlahul Ummah Prabumulih.' }}
             </p>
         </div>
     </div>
@@ -263,7 +263,7 @@
             Pengelolaan infaq pembangunan dan beasiswa pendidikan siswa diatur secara profesional oleh Yayasan Ishum Prabumulih dengan prinsip amanah, transparan, dan dapat dipertanggungjawabkan secara berkala.
         </p>
         <ul class="list-disc list-inside space-y-1 text-gray-600 text-xs">
-            <li>100% dana infaq pembangunan dialokasikan langsung untuk sarana belajar, laboratorium, dan masjid kampus.</li>
+            <li>100% dana infaq pembangunan dialokasikan langsung untuk sarana belajar, laboratorium, dan masjid sekolah.</li>
             <li>Program beasiswa disalurkan langsung kepada siswa berprestasi dari keluarga prasejahtera dan dhuafa.</li>
             <li>Laporan keuangan disajikan secara berkala dalam forum komite dan rapat tahunan yayasan.</li>
         </ul>

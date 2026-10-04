@@ -414,7 +414,7 @@
 </section>
 
 {{-- ========================================================
-     SECTION #2: ARTIKEL & KABAR KAMPUS SEKOLAH
+     SECTION #2: ARTIKEL & KABAR SEKOLAH
      ======================================================== --}}
 <section class="py-12 bg-slate-50 border-t border-gray-100 overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -422,7 +422,7 @@
             <div>
                 <h2 class="text-xl sm:text-2xl font-black text-gray-900 flex items-center justify-center sm:justify-start">
                     <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 mr-2" aria-hidden="true"></span>
-                    Artikel &amp; Kabar Kampus
+                    Artikel &amp; Kabar Sekolah
                 </h2>
                 <div class="w-12 h-1 bg-amber-400 mt-1 mx-auto sm:mx-0 rounded-full"></div>
             </div>
@@ -691,7 +691,7 @@
                     <i class="fa-solid fa-people-group mr-1.5 text-amber-500"></i> Pengembangan Potensi Siswa
                 </span>
                 <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                    Ekstrakurikuler &amp; Club Santri
+                    Ekstrakurikuler &amp; Club Siswa
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 mt-1 font-light max-w-xl">
                     Mengasah kepemimpinan, kemandirian, kecakapan teknologi, olahraga, dan seni Islami yang berlandaskan adab Qur'ani.
@@ -727,7 +727,7 @@
                         }
                     }
                     $cleanDesc = trim(strip_tags($ekskul->content));
-                    $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 110) : (!empty($ekskul->excerpt) ? $ekskul->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan santri dalam bidang ' . $ekskul->title . '.');
+                    $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 110) : (!empty($ekskul->excerpt) ? $ekskul->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan siswa dalam bidang ' . $ekskul->title . '.');
                 @endphp
                 <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ ($idx % 3) + 1 }}">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
@@ -886,7 +886,7 @@
                 Galeri Video Resmi YouTube
             </h2>
             <p class="text-xs sm:text-sm text-amber-400 mt-1 font-semibold">
-                Dokumentasi Audio Visual Pembinaan &amp; Aktivitas Kampus SMPS IT Ishlahul Ummah Prabumulih
+                Dokumentasi Audio Visual Pembinaan &amp; Aktivitas Sekolah SMPS IT Ishlahul Ummah Prabumulih
             </p>
             <div class="w-16 h-1 bg-amber-400 mx-auto mt-3 rounded-full"></div>
         </div>
@@ -1002,7 +1002,7 @@
                                 </h4>
                                 <div class="flex items-center flex-wrap gap-2 text-[11px] text-gray-500 mt-1">
                                     <span>
-                                        <i class="fa-solid fa-location-dot text-gray-400 mr-1"></i> {{ $ag->location ?? 'Kampus SMPS IT Ishum' }}
+                                        <i class="fa-solid fa-location-dot text-gray-400 mr-1"></i> {{ $ag->location ?? 'Sekolah SMPS IT Ishum' }}
                                     </span>
                                     @php
                                         $agStatus = match($ag->status) {
@@ -1040,7 +1040,7 @@
                 Galeri Foto Siswa
             </h2>
             <p class="text-xs sm:text-sm text-amber-400 font-bold tracking-wide mt-2">
-                Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Kampus SMPS IT Ishlahul Ummah
+                Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Sekolah SMPS IT Ishlahul Ummah
             </p>
             <div class="w-12 h-1 bg-amber-400 mx-auto mt-2.5 rounded-full"></div>
         </div>

@@ -18,7 +18,7 @@
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Ekstrakurikuler &amp; Club</h1>
                 <p class="text-xs sm:text-sm text-indigo-100 mt-1 font-light">
-                    Mengasah minat bakat, kepemimpinan, kemandirian, dan persaudaraan santri SMPS IT Ishlahul Ummah.
+                    Mengasah minat bakat, kepemimpinan, kemandirian, dan persaudaraan siswa SMPS IT Ishlahul Ummah.
                 </p>
             </div>
         </div>
@@ -57,7 +57,7 @@
                     }
                 }
                 $cleanDesc = trim(strip_tags($item->content));
-                $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 130) : (!empty($item->excerpt) ? $item->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan santri SMPS IT Ishlahul Ummah dalam bidang ' . $item->title . '.');
+                $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 130) : (!empty($item->excerpt) ? $item->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan siswa SMPS IT Ishlahul Ummah dalam bidang ' . $item->title . '.');
             @endphp
             <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up">
                 <div class="relative h-56 overflow-hidden bg-gray-100">
@@ -103,7 +103,7 @@
     {{-- BANNER KONSULTASI EKSKUL --}}
     <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="space-y-1 text-center md:text-left">
-            <span class="text-xs uppercase tracking-wider text-amber-300 font-bold block">Pusat Minat &amp; Bakat Santri</span>
+            <span class="text-xs uppercase tracking-wider text-amber-300 font-bold block">Pusat Minat &amp; Bakat Siswa</span>
             <h3 class="text-xl sm:text-2xl font-black">Tertarik dengan Pilihan Ekstrakurikuler?</h3>
             <p class="text-xs sm:text-sm text-indigo-100 font-light">Daftarkan putra-putri Anda melalui SPMB Online atau hubungi guru pembina kami.</p>
         </div>

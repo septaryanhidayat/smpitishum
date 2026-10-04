@@ -105,7 +105,7 @@
             </div>
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
                 <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-h-80 bg-gray-50 w-full">
-                    <img src="/uploads/campus-smpit-ishum.webp" alt="Kampus SMPS IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover object-center">
+                    <img src="/uploads/campus-smpit-ishum.webp" alt="Gedung Sekolah SMPS IT Ishlahul Ummah Prabumulih" class="w-full h-full object-cover object-center">
                 </div>
             </div>
         </div>
@@ -274,12 +274,12 @@
     </section>
     @endif
 
-    {{-- SEKSI 6: GOOGLE MAPS KAMPUS --}}
+    {{-- SEKSI 6: GOOGLE MAPS SEKOLAH --}}
     <section class="bg-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-gray-100 reveal-fade-up space-y-6">
         <div class="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 text-center sm:text-left">
             <div>
                 <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Lokasi Sekolah</span>
-                <h2 class="text-lg sm:text-2xl font-extrabold text-gray-900 mt-1">Lokasi Kampus</h2>
+                <h2 class="text-lg sm:text-2xl font-extrabold text-gray-900 mt-1">Lokasi Sekolah</h2>
                 <p class="text-xs text-gray-500 mt-1">Jl. Lintas Timur KM 35, Kel. Prabumulih Indah, Kec. Kota Prabumulih, Sumatera Selatan 30662</p>
             </div>
             <a href="https://maps.google.com" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center text-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow transition flex-shrink-0">

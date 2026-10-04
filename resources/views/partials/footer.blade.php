@@ -30,7 +30,7 @@
             {{-- KOLOM 2: ALAMAT SEKOLAH & KONTAK --}}
             <div class="lg:col-span-4 space-y-3 footer-address-col text-center md:text-left flex flex-col items-center md:items-start">
                 <h3 class="w-full font-bold text-amber-400 text-base sm:text-lg tracking-wide uppercase text-center md:text-left">
-                    Alamat Kampus
+                    Alamat Sekolah
                 </h3>
                 <p class="w-full text-sm sm:text-[15px] text-slate-200 font-normal leading-relaxed text-center md:text-left pr-0 md:pr-4">
                     {{ $siteSettings['contact_address'] ?? 'Jalan Sadewa No. 45 RT 01 RW 04 Kelurahan Karang Raja, Kecamatan Prabumulih Timur, Kota Prabumulih, Sumatera Selatan 31113' }}

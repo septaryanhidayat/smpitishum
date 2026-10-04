@@ -185,7 +185,7 @@
                 <div class="flex items-center space-x-2.5">
                     <span class="w-7 h-7 rounded-lg bg-emerald-100 text-indigo-600 flex items-center justify-center text-xs font-bold">3</span>
                     <div>
-                        <h2 class="font-bold text-sm text-gray-900">Informasi Kontak & Kampus</h2>
+                        <h2 class="font-bold text-sm text-gray-900">Informasi Kontak & Sekolah</h2>
                         <p class="text-[11px] text-gray-500">Tampil di halaman kontak dan footer website</p>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                         <p class="text-[11px] text-gray-400 mt-1">Alamat domain yang tampil di bagian footer website.</p>
                     </div>
                     <div class="sm:col-span-2">
-                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Alamat Kampus</label>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Alamat Sekolah</label>
                         <textarea name="contact_address" rows="2" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl p-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">{{ $settings['contact_address'] ?? 'Jl. Pendidikan Karakter No. 12, Kompleks Islamic Centre Ishum' }}</textarea>
                     </div>
                 </div>

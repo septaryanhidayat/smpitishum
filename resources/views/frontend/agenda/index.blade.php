@@ -85,7 +85,7 @@
                         {{-- LOKASI --}}
                         <div class="text-xs text-gray-600 flex items-center font-medium">
                             <i class="fa-solid fa-location-dot text-orange-500 mr-2 text-xs flex-shrink-0"></i>
-                            <span class="line-clamp-1">{{ $agenda->location ?: 'Kampus SMPS IT Ishlahul Ummah' }}</span>
+                            <span class="line-clamp-1">{{ $agenda->location ?: 'Sekolah SMPS IT Ishlahul Ummah' }}</span>
                         </div>
 
                         {{-- RINGKASAN DESKRIPSI --}}

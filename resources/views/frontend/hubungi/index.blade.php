@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title', ($page?->meta_title ?: ($page?->title ?: 'Hubungi Kami')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Ishlahul Ummah Prabumulih'))
-@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kontak resmi SMPS IT Ishlahul Ummah Prabumulih: Nomor telepon, WhatsApp humas PPDB, email resmi, alamat kampus, dan formulir pesan.'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kontak resmi SMPS IT Ishlahul Ummah Prabumulih: Nomor telepon, WhatsApp humas PPDB, email resmi, alamat sekolah, dan formulir pesan.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,7 +14,7 @@
         </nav>
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Hubungi SMPS IT Ishlahul Ummah Prabumulih' }}</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
-            {{ $page?->excerpt ?: 'Kami siap melayani pertanyaan seputar PPDB, kurikulum tahfidz & sains, program asrama, maupun kunjungan ke kampus.' }}
+            {{ $page?->excerpt ?: 'Kami siap melayani pertanyaan seputar PPDB, kurikulum tahfidz & sains, program asrama, maupun kunjungan ke sekolah.' }}
         </p>
     </div>
 </div>

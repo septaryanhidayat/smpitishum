@@ -151,11 +151,11 @@
                         <span>Pilihan Jalur Masuk</span>
                     </div>
                     <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">
-                        Jalur Pendaftaran Santri Baru
+                        Jalur Pendaftaran Siswa Baru
                     </h2>
                 </div>
                 <p class="text-xs text-slate-500 max-w-md">
-                    Pilih jalur pendaftaran yang sesuai dengan kualifikasi, potensi, dan kebutuhan calon santri.
+                    Pilih jalur pendaftaran yang sesuai dengan kualifikasi, potensi, dan kebutuhan calon siswa.
                 </p>
             </div>
 
@@ -290,7 +290,7 @@
                         <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
                             <div class="w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 mt-0.5">1</div>
                             <div class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                                <strong>Mengisi Formulir Online:</strong> Buka formulir PPDB pada website ini dan isi identitas calon santri beserta orang tua/wali.
+                                <strong>Mengisi Formulir Online:</strong> Buka formulir PPDB pada website ini dan isi identitas calon siswa beserta orang tua/wali.
                             </div>
                         </div>
                         <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
@@ -302,13 +302,13 @@
                         <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
                             <div class="w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 mt-0.5">3</div>
                             <div class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                                <strong>Observasi & Tes Pemetaan:</strong> Calon santri mengikuti tes membaca Al-Qur'an (Tahsin), tes potensi akademik dasar, dan wawancara.
+                                <strong>Observasi & Tes Pemetaan:</strong> Calon siswa mengikuti tes membaca Al-Qur'an (Tahsin), tes potensi akademik dasar, dan wawancara.
                             </div>
                         </div>
                         <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
                             <div class="w-7 h-7 rounded-lg bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 mt-0.5">4</div>
                             <div class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                                <strong>Pengumuman & Daftar Ulang:</strong> Hasil seleksi diumumkan via WhatsApp dan calon santri melakukan registrasi ulang seragam & asrama.
+                                <strong>Pengumuman & Daftar Ulang:</strong> Hasil seleksi diumumkan via WhatsApp dan calon siswa melakukan registrasi ulang seragam & asrama.
                             </div>
                         </div>
                     @endif
@@ -364,7 +364,7 @@
                         </div>
                         <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-xs sm:text-sm text-slate-700 font-medium">
                             <i class="fa-solid fa-circle-check text-emerald-600 text-sm mt-0.5 shrink-0"></i>
-                            <span>Pas foto santri 3x4 berwarna (terbaru).</span>
+                            <span>Pas foto siswa 3x4 berwarna (terbaru).</span>
                         </div>
                     @endif
                 </div>
@@ -490,7 +490,7 @@
                     Pilihan Program Belajar
                 </h2>
                 <p class="text-xs text-slate-500">
-                    Dua pilihan kurikulum terpadu untuk membentuk karakter santri yang beriman, berilmu, dan berakhlak mulia.
+                    Dua pilihan kurikulum terpadu untuk membentuk karakter siswa yang beriman, berilmu, dan berakhlak mulia.
                 </p>
             </div>
 
@@ -505,14 +505,14 @@
                             <i class="fa-solid fa-hotel text-xl text-amber-400"></i>
                         </div>
                         <h3 class="text-lg sm:text-xl font-black text-white">
-                            Program Boarding (Asrama Santri)
+                            Program Boarding (Asrama Siswa)
                         </h3>
                         <p class="text-xs text-indigo-100 font-normal leading-relaxed">
                             Pembinaan karakter intensif 24 jam dengan bimbingan dewan asatidz/musyrif mukim.
                         </p>
                         <div class="bg-white/10 rounded-xl p-3 text-xs space-y-1.5">
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-300 text-[11px]"></i> Target hafalan Al-Qur'an intensif & Tahsin bersanad</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-300 text-[11px]"></i> Kamar santri ber-AC, bersih, dan ventilasi sehat</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-300 text-[11px]"></i> Kamar siswa ber-AC, bersih, dan ventilasi sehat</div>
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-300 text-[11px]"></i> Pembiasaan shalat berjamaah 5 waktu, tahajjud & dhuha</div>
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-300 text-[11px]"></i> Makan bergizi 3x sehari & belajar malam terarah</div>
                         </div>
@@ -554,7 +554,7 @@
         </section>
 
         {{-- ========================================================
-             7. FASILITAS KAMPUS & VIDEO PROFIL RESMI (NO BLACK VOID)
+             7. FASILITAS SEKOLAH & VIDEO PROFIL RESMI (NO BLACK VOID)
              ======================================================== --}}
         <section class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-xs border border-slate-200/80 space-y-5">
             <div class="text-center max-w-2xl mx-auto">
@@ -565,7 +565,7 @@
                     Fasilitas & Suasana Belajar
                 </h2>
                 <p class="text-xs text-slate-500">
-                    Sarana penunjang kegiatan santri yang modern, representatif, asri, dan nyaman.
+                    Sarana penunjang kegiatan siswa yang modern, representatif, asri, dan nyaman.
                 </p>
             </div>
 
@@ -579,7 +579,7 @@
                              onerror="this.src='/uploads/fasilitas/fasilitas-gedung-utama.webp'">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-2.5 left-3 right-3 text-white">
-                            <span class="text-[9px] uppercase tracking-wider text-amber-300 font-bold block">Gedung Kampus</span>
+                            <span class="text-[9px] uppercase tracking-wider text-amber-300 font-bold block">Gedung Sekolah</span>
                             <h4 class="text-xs font-black">Gedung Utama & Kelas Ber-AC</h4>
                         </div>
                     </div>
@@ -653,7 +653,7 @@
                         Formulir Pendaftaran Online
                     </h3>
                     <p class="text-xs text-red-100 leading-relaxed font-normal">
-                        Bapak/Ibu dapat mengisi data lengkap calon santri secara mandiri dari smartphone atau komputer kapan saja.
+                        Bapak/Ibu dapat mengisi data lengkap calon siswa secara mandiri dari smartphone atau komputer kapan saja.
                     </p>
                 </div>
                 <div class="pt-4 mt-3 border-t border-white/20">
@@ -674,7 +674,7 @@
                         Konsultasi & Konfirmasi WhatsApp
                     </h3>
                     <p class="text-xs text-emerald-100 leading-relaxed font-normal">
-                        Hubungi panitia penerimaan santri baru untuk informasi syarat, program asrama, atau pengiriman bukti transfer: <strong>{{ $settings['hotline_phone'] ?? '0852-6990-8696' }}</strong>
+                        Hubungi panitia penerimaan siswa baru untuk informasi syarat, program asrama, atau pengiriman bukti transfer: <strong>{{ $settings['hotline_phone'] ?? '0852-6990-8696' }}</strong>
                     </p>
                 </div>
                 <div class="pt-4 mt-3 border-t border-white/20">
