@@ -71,7 +71,7 @@
                                 </div>
                             </td>
                             <td class="py-3 px-4 font-bold text-gray-900 max-w-xs">
-                                <a href="{{ route('artikel.show', $p->slug) }}" target="_blank" class="hover:text-indigo-600 transition line-clamp-2">
+                                <a href="{{ $p->public_url }}" target="_blank" class="hover:text-indigo-600 transition line-clamp-2">
                                     {{ $p->title }}
                                 </a>
                             </td>

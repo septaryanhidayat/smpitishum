@@ -517,7 +517,7 @@
             @foreach($fraksiPosts as $index => $post)
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
                 <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
-                    <a href="{{ route('artikel.show', $post->slug) }}" class="block w-full h-full" aria-label="Baca berita: {{ $post->title }}">
+                    <a href="{{ $post->public_url }}" class="block w-full h-full" aria-label="Baca prestasi: {{ $post->title }}">
                         <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='/uploads/activities-smpit-ishum.webp'">
                     </a>
                     <span class="absolute bottom-2.5 left-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">
@@ -526,7 +526,7 @@
                 </div>
                 <div class="pt-3 flex-1 flex flex-col justify-between">
                     <h3 class="font-extrabold text-xs sm:text-sm text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
-                        <a href="{{ route('artikel.show', $post->slug) }}">
+                        <a href="{{ $post->public_url }}">
                             {{ $post->title }}
                         </a>
                     </h3>
@@ -539,7 +539,7 @@
         </div>
 
         <div class="text-center mt-8 reveal-fade-up">
-            <a href="{{ route('artikel.index') }}?kategori=prestasi" aria-label="Lihat Semua Prestasi Siswa" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-7 py-2.5 rounded-full shadow-md transition">
+            <a href="{{ route('prestasi.index') }}" aria-label="Lihat Semua Prestasi Siswa" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-7 py-2.5 rounded-full shadow-md transition">
                 Lihat Semua Prestasi <i class="fa-solid fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
             </a>
         </div>

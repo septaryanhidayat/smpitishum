@@ -62,6 +62,11 @@ class Post extends Model
         return $query->where('type', 'post');
     }
 
+    public function scopePrestasi($query)
+    {
+        return $query->where('type', 'prestasi');
+    }
+
     public function scopeAgendas($query)
     {
         return $query->where('type', 'agenda');
@@ -70,6 +75,16 @@ class Post extends Model
     public function scopePages($query)
     {
         return $query->where('type', 'page');
+    }
+
+    public function getPublicUrlAttribute(): string
+    {
+        return match ($this->type) {
+            'prestasi' => route('prestasi.show', $this->slug),
+            'ekskul' => route('ekskul.show', $this->slug),
+            'page' => url('/'.$this->slug),
+            default => route('artikel.show', $this->slug),
+        };
     }
 
     public function getFeaturedImageUrlAttribute(): string

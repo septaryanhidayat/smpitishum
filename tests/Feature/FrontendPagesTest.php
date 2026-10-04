@@ -362,3 +362,56 @@ test('privacy policy page renders dynamic content from database', function () {
     $response->assertStatus(200);
     $response->assertSee('Kebijakan Privasi SMPS IT Ishlahul Ummah Prabumulih');
 });
+
+test('prestasi created in admin displays on homepage and dedicated prestasi page', function () {
+    $category = Category::firstOrCreate(['slug' => 'prestasi-siswa'], ['name' => 'Prestasi Siswa']);
+
+    $prestasi = Post::create([
+        'title' => 'Arumi Juara 2 Tahfidz Kota Prabumulih',
+        'slug' => 'arumi-juara-2-tahfidz-kota-prabumulih',
+        'content' => '<p>Selamat atas keberhasilan ananda Arumi meraih juara 2.</p>',
+        'excerpt' => 'Arumi juara 2 lomba tahfidz tingkat kota.',
+        'status' => 'publish',
+        'type' => 'prestasi',
+        'published_at' => now(),
+    ]);
+    $prestasi->categories()->attach($category->id);
+
+    // 1. Check Homepage
+    $homeResponse = $this->get('/');
+    $homeResponse->assertStatus(200);
+    $homeResponse->assertSee('Arumi Juara 2 Tahfidz Kota Prabumulih');
+    $homeResponse->assertSee(route('prestasi.show', 'arumi-juara-2-tahfidz-kota-prabumulih'));
+    $homeResponse->assertSee(route('prestasi.index'));
+
+    // 2. Check /prestasi index page
+    $prestasiIndex = $this->get('/prestasi');
+    $prestasiIndex->assertStatus(200);
+    $prestasiIndex->assertSee('Arumi Juara 2 Tahfidz Kota Prabumulih');
+    $prestasiIndex->assertSee('Prestasi &amp; Penghargaan', false);
+
+    // 3. Check Navbar has Prestasi Siswa
+    $homeResponse->assertSee('Prestasi Siswa');
+});
+
+test('prestasi detail page renders successfully and article route redirects to it', function () {
+    $prestasi = Post::create([
+        'title' => 'Azzam Juara 3 Tahfidz Festival 2026',
+        'slug' => 'azzam-juara-3-tahfidz-festival-2026',
+        'content' => '<p>Prestasi membanggakan Muhammad Azzam.</p>',
+        'excerpt' => 'Azzam juara 3 tahfidz.',
+        'status' => 'publish',
+        'type' => 'prestasi',
+        'published_at' => now(),
+    ]);
+
+    // Detail route
+    $detailResponse = $this->get('/prestasi/azzam-juara-3-tahfidz-festival-2026');
+    $detailResponse->assertStatus(200);
+    $detailResponse->assertSee('Azzam Juara 3 Tahfidz Festival 2026');
+    $detailResponse->assertSee('Prestasi membanggakan Muhammad Azzam.', false);
+
+    // Accessing via /artikel/{slug} should redirect 301 to /prestasi/{slug}
+    $artikelRedirect = $this->get('/artikel/azzam-juara-3-tahfidz-festival-2026');
+    $artikelRedirect->assertRedirect('/prestasi/azzam-juara-3-tahfidz-festival-2026');
+});

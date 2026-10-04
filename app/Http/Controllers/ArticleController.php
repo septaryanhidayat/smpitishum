@@ -11,7 +11,7 @@ class ArticleController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Post::posts()->published()->with(['categories', 'author']);
+        $query = Post::whereIn('type', ['post', 'prestasi'])->published()->with(['categories', 'author']);
 
         // Search filter
         if ($search = $request->input('q')) {
@@ -24,7 +24,12 @@ class ArticleController extends Controller
         // Category filter
         $activeCategory = null;
         if ($categorySlug = $request->input('kategori')) {
-            $activeCategory = Category::where('slug', $categorySlug)->first();
+            if ($categorySlug === 'prestasi') {
+                $activeCategory = Category::whereIn('slug', ['prestasi-siswa', 'prestasi'])->first();
+            } else {
+                $activeCategory = Category::where('slug', $categorySlug)->first();
+            }
+
             if ($activeCategory) {
                 $query->whereHas('categories', function ($q) use ($activeCategory) {
                     $q->where('categories.id', $activeCategory->id);
@@ -45,7 +50,7 @@ class ArticleController extends Controller
 
         $posts = $query->orderBy('published_at', 'desc')->orderBy('id', 'desc')->paginate(9)->withQueryString();
         $categories = Category::withCount('posts')->orderBy('posts_count', 'desc')->get();
-        $recentPosts = Post::posts()->published()->orderBy('published_at', 'desc')->orderBy('id', 'desc')->take(5)->get();
+        $recentPosts = Post::whereIn('type', ['post', 'prestasi'])->published()->orderBy('published_at', 'desc')->orderBy('id', 'desc')->take(5)->get();
         $tags = Tag::all();
 
         return view('frontend.artikel.index', compact(
@@ -60,11 +65,22 @@ class ArticleController extends Controller
 
     public function show(string $slug)
     {
-        $post = Post::posts()
-            ->published()
+        $post = Post::published()
             ->where('slug', $slug)
             ->with(['categories', 'tags', 'author'])
-            ->firstOrFail();
+            ->first();
+
+        if (! $post) {
+            abort(404);
+        }
+
+        if ($post->type === 'prestasi') {
+            return redirect()->route('prestasi.show', $post->slug, 301);
+        }
+
+        if ($post->type === 'ekskul') {
+            return redirect()->route('ekskul.show', $post->slug, 301);
+        }
 
         // Increment views count
         $post->increment('views_count');

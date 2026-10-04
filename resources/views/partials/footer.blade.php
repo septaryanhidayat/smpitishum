@@ -100,6 +100,8 @@
                 </div>
                 <p class="text-xs text-slate-400 font-light text-center md:text-left">Kunjungan ke website resmi sekolah</p>
                 <div class="pt-2 flex items-center justify-center md:justify-start gap-2 text-xs text-slate-400 text-center md:text-left">
+                    <a href="{{ route('prestasi.index') }}" class="hover:text-white transition">Prestasi Siswa</a>
+                    <span>&bull;</span>
                     <a href="{{ route('page.privacy-policy') }}" class="hover:text-white transition">Kebijakan Privasi</a>
                     <span>&bull;</span>
                     <a href="{{ route('hubungi') }}" class="hover:text-white transition">Kontak</a>

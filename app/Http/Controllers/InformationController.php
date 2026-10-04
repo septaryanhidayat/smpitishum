@@ -93,9 +93,16 @@ class InformationController extends Controller
 
     public function prestasi()
     {
-        $prestasi = Post::where('type', 'prestasi')
-            ->where('status', 'publish')
+        $prestasi = Post::where('status', 'publish')
+            ->where(function ($q) {
+                $q->where('type', 'prestasi')
+                    ->orWhere(function ($sub) {
+                        $sub->where('type', 'post')
+                            ->whereHas('categories', fn ($c) => $c->where('slug', 'prestasi-siswa'));
+                    });
+            })
             ->latest('published_at')
+            ->latest('id')
             ->paginate(9);
 
         return view('frontend.prestasi.index', compact('prestasi'));
@@ -103,14 +110,28 @@ class InformationController extends Controller
 
     public function prestasiShow(string $slug)
     {
-        $item = Post::where('type', 'prestasi')
+        $item = Post::where('status', 'publish')
+            ->where(function ($q) {
+                $q->where('type', 'prestasi')
+                    ->orWhere(function ($sub) {
+                        $sub->where('type', 'post')
+                            ->whereHas('categories', fn ($c) => $c->where('slug', 'prestasi-siswa'));
+                    });
+            })
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $related = Post::where('type', 'prestasi')
+        $related = Post::where('status', 'publish')
+            ->where(function ($q) {
+                $q->where('type', 'prestasi')
+                    ->orWhere(function ($sub) {
+                        $sub->where('type', 'post')
+                            ->whereHas('categories', fn ($c) => $c->where('slug', 'prestasi-siswa'));
+                    });
+            })
             ->where('id', '!=', $item->id)
-            ->where('status', 'publish')
             ->latest('published_at')
+            ->latest('id')
             ->take(4)
             ->get();
 

@@ -40,7 +40,7 @@
             <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm space-y-6">
                 @if($item->featured_image)
                     <div class="rounded-2xl overflow-hidden shadow-md bg-gray-100 max-h-[480px]">
-                        <img src="{{ $item->featured_image }}" alt="{{ $item->title }}" class="w-full h-full object-cover" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                        <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="w-full h-full object-cover" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                     </div>
                 @endif
 
@@ -52,7 +52,7 @@
                 <div class="pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
                     <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Bagikan Kabar Baik Ini:</span>
                     <div class="flex items-center space-x-2">
-                        <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' ' . url()->current()) }}" target="_blank" class="w-9 h-9 rounded-full bg-indigo-50/600 text-white flex items-center justify-center text-sm hover:bg-indigo-600 transition shadow-sm" title="Bagikan ke WhatsApp">
+                        <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' ' . url()->current()) }}" target="_blank" class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm hover:bg-emerald-700 transition shadow-sm" title="Bagikan ke WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank" class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm hover:bg-blue-700 transition shadow-sm" title="Bagikan ke Facebook">
@@ -74,7 +74,7 @@
                     @forelse($related as $rel)
                         <a href="{{ route('prestasi.show', $rel->slug) }}" class="flex items-center space-x-3 group">
                             <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
-                                <img src="{{ $rel->featured_image ?: '/uploads/campus-smpit-ishum.webp' }}" alt="{{ $rel->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
+                                <img src="{{ $rel->featured_image_url }}" alt="{{ $rel->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='/uploads/campus-smpit-ishum.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
