@@ -11,7 +11,7 @@ class ArticleController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Post::whereIn('type', ['post', 'prestasi'])->published()->with(['categories', 'author']);
+        $query = Post::posts()->published()->with(['categories', 'author']);
 
         // Search filter
         if ($search = $request->input('q')) {
@@ -24,11 +24,7 @@ class ArticleController extends Controller
         // Category filter
         $activeCategory = null;
         if ($categorySlug = $request->input('kategori')) {
-            if ($categorySlug === 'prestasi') {
-                $activeCategory = Category::whereIn('slug', ['prestasi-siswa', 'prestasi'])->first();
-            } else {
-                $activeCategory = Category::where('slug', $categorySlug)->first();
-            }
+            $activeCategory = Category::where('slug', $categorySlug)->first();
 
             if ($activeCategory) {
                 $query->whereHas('categories', function ($q) use ($activeCategory) {
@@ -50,7 +46,7 @@ class ArticleController extends Controller
 
         $posts = $query->orderBy('published_at', 'desc')->orderBy('id', 'desc')->paginate(9)->withQueryString();
         $categories = Category::withCount('posts')->orderBy('posts_count', 'desc')->get();
-        $recentPosts = Post::whereIn('type', ['post', 'prestasi'])->published()->orderBy('published_at', 'desc')->orderBy('id', 'desc')->take(5)->get();
+        $recentPosts = Post::posts()->published()->orderBy('published_at', 'desc')->orderBy('id', 'desc')->take(5)->get();
         $tags = Tag::all();
 
         return view('frontend.artikel.index', compact(

@@ -128,39 +128,14 @@ class HomeController extends Controller
             $senayanPosts = $senayanPosts->merge($allPosts)->unique('id')->take(8);
         }
 
-        // 5. Berita Prestasi Siswa (Section 3 - 8 posts)
-        $prestasiPosts = Post::where('type', 'prestasi')
+        // 5. Prestasi Siswa SMPS IT (Section 3 - hanya yang diinput di dashboard admin sebagai prestasi)
+        $fraksiPosts = Post::where('type', 'prestasi')
             ->published()
             ->with(['categories'])
             ->orderBy('published_at', 'desc')
             ->orderBy('id', 'desc')
             ->take(8)
             ->get();
-
-        if ($prestasiPosts->count() < 8) {
-            $catPrestasiPosts = Post::posts()
-                ->published()
-                ->with(['categories'])
-                ->where(function ($q) {
-                    $q->whereHas('categories', fn ($c) => $c->whereIn('slug', ['prestasi-siswa', 'akademik-riset']))
-                        ->orWhereHas('tags', fn ($t) => $t->whereIn('slug', ['prestasi', 'juara', 'olimpiade', 'sains']));
-                })
-                ->whereNotIn('id', $senayanPosts->pluck('id'))
-                ->whereNotIn('id', $prestasiPosts->pluck('id'))
-                ->orderBy('published_at', 'desc')
-                ->orderBy('id', 'desc')
-                ->take(8 - $prestasiPosts->count())
-                ->get();
-
-            $fraksiPosts = $prestasiPosts->concat($catPrestasiPosts);
-        } else {
-            $fraksiPosts = $prestasiPosts;
-        }
-
-        if ($fraksiPosts->count() < 8) {
-            $fallbackPosts = $allPosts->whereNotIn('id', $senayanPosts->pluck('id'))->whereNotIn('id', $fraksiPosts->pluck('id'));
-            $fraksiPosts = $fraksiPosts->concat($fallbackPosts)->unique('id')->take(8);
-        }
 
         // 6. Kabar Akademik & Kurikulum (Section 4 Kolom 1 - 6 posts)
         $nasionalPosts = Post::posts()
