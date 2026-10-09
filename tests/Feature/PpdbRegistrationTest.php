@@ -247,3 +247,76 @@ test('public logo page renders properly', function () {
     $redirectResponse = $this->get('/download/logo');
     $redirectResponse->assertRedirect(route('download.logo'));
 });
+
+test('registration number generation avoids duplicates when gaps or higher sequence records exist', function () {
+    $year = date('Y');
+
+    // Create a record with sequence 0008 directly (simulating 8th registration)
+    PpdbRegistration::create([
+        'registration_number' => sprintf('PPDB-%s-0008', $year),
+        'full_name' => 'Existing Student 8',
+        'birth_place' => 'Prabumulih',
+        'birth_date' => '2010-01-01',
+        'gender' => 'Laki-laki',
+        'address' => 'Jl. Alamat',
+        'previous_school' => 'SD IT',
+        'phone' => '081234567890',
+        'father_name' => 'Ayah',
+        'mother_name' => 'Ibu',
+        'status' => 'pending',
+    ]);
+
+    // Notice there is only 1 row in the database, but registration number is 0008.
+    // In old code: count() + 1 = 2, but what if 0008 is reached and count is only 7?
+    // With our robust generator: next number MUST NOT collide with 0008 and must be at least 0009
+    $nextNumber = PpdbRegistration::generateRegistrationNumber($year);
+    expect($nextNumber)->toBe(sprintf('PPDB-%s-0009', $year));
+
+    // Now insert 0009
+    PpdbRegistration::create([
+        'registration_number' => $nextNumber,
+        'full_name' => 'Existing Student 9',
+        'birth_place' => 'Prabumulih',
+        'birth_date' => '2010-01-01',
+        'gender' => 'Laki-laki',
+        'address' => 'Jl. Alamat',
+        'previous_school' => 'SD IT',
+        'phone' => '081234567891',
+        'father_name' => 'Ayah',
+        'mother_name' => 'Ibu',
+        'status' => 'pending',
+    ]);
+
+    // Next should automatically be 0010
+    $nextNumber10 = PpdbRegistration::generateRegistrationNumber($year);
+    expect($nextNumber10)->toBe(sprintf('PPDB-%s-0010', $year));
+});
+
+test('public spmb url aliases redirect properly', function () {
+    $aliases = [
+        '/spmb',
+        '/form-ppdb',
+        '/ppdb/form',
+        '/formulir-spmb',
+        '/formulir_spmb',
+        '/form-spmb',
+        '/form_spmb',
+        '/formulir',
+        '/formulir-ppdb',
+        '/spmb/form',
+        '/spmb/formulir',
+        '/ppdb/formulir',
+    ];
+
+    foreach ($aliases as $url) {
+        $res = $this->get($url);
+        if ($url === '/spmb') {
+            $res->assertRedirect(route('ppdb.index'));
+        } else {
+            $res->assertRedirect(route('ppdb.form'));
+        }
+    }
+
+    $suksesRes = $this->get('/spmb/sukses');
+    $suksesRes->assertRedirect(route('ppdb.success'));
+});

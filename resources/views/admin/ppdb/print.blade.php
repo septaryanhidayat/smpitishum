@@ -137,7 +137,7 @@
         </div>
 
         <div class="title-badge">
-            <span>Tanda Bukti Pendaftaran PPDB 2026/2027</span>
+            <span>Tanda Bukti Pendaftaran PPDB {{ $ppdb->academic_year ?? '2026/2027' }}</span>
         </div>
 
         <div style="background: #fff8f8; border: 1px solid #fecaca; padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
@@ -147,7 +147,7 @@
             </div>
             <div>
                 <span style="color: #666; font-size: 11px;">Tanggal Daftar:</span>
-                <strong>{{ $ppdb->created_at->translatedFormat('d F Y, H:i') }} WIB</strong>
+                <strong>{{ $ppdb->created_at ? $ppdb->created_at->translatedFormat('d F Y, H:i') : '-' }} WIB</strong>
             </div>
             <div>
                 <span style="color: #666; font-size: 11px;">Status:</span>
@@ -169,7 +169,7 @@
             </tr>
             <tr>
                 <th>Tempat, Tanggal Lahir</th>
-                <td>: {{ $ppdb->birth_place }}, {{ $ppdb->birth_date->translatedFormat('d F Y') }}</td>
+                <td>: {{ $ppdb->birth_place }}, {{ $ppdb->birth_date ? $ppdb->birth_date->translatedFormat('d F Y') : '-' }}</td>
             </tr>
             <tr>
                 <th>Jenis Kelamin</th>
@@ -256,7 +256,7 @@
             <div class="sig-box">
                 <p>Prabumulih, {{ date('d F Y') }}<br>Panitia SPMB Ishum,</p>
                 <div class="sig-space"></div>
-                <p>( Panitia SPMB TP 2026/2027 )</p>
+                <p>( Panitia SPMB TP {{ $ppdb->academic_year ?? '2026/2027' }} )</p>
             </div>
         </div>
     </div>

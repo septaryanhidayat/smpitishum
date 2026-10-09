@@ -207,9 +207,21 @@ Route::get('/spmb', fn () => redirect()->route('ppdb.index'));
 Route::get('/form_ppdb', [PpdbController::class, 'form'])->name('ppdb.form');
 Route::get('/form-ppdb', fn () => redirect()->route('ppdb.form'));
 Route::get('/ppdb/form', fn () => redirect()->route('ppdb.form'));
+Route::get('/formulir-spmb', fn () => redirect()->route('ppdb.form'));
+Route::get('/formulir_spmb', fn () => redirect()->route('ppdb.form'));
+Route::get('/form-spmb', fn () => redirect()->route('ppdb.form'));
+Route::get('/form_spmb', fn () => redirect()->route('ppdb.form'));
+Route::get('/formulir', fn () => redirect()->route('ppdb.form'));
+Route::get('/formulir-ppdb', fn () => redirect()->route('ppdb.form'));
+Route::get('/spmb/form', fn () => redirect()->route('ppdb.form'));
+Route::get('/spmb/formulir', fn () => redirect()->route('ppdb.form'));
+Route::get('/ppdb/formulir', fn () => redirect()->route('ppdb.form'));
 Route::post('/form_ppdb', [PpdbController::class, 'store'])->middleware('throttle:15,1')->name('ppdb.store');
+Route::post('/form-ppdb', [PpdbController::class, 'store'])->middleware('throttle:15,1');
 Route::post('/ppdb/form', [PpdbController::class, 'store'])->middleware('throttle:15,1');
+Route::post('/ppdb/formulir', [PpdbController::class, 'store'])->middleware('throttle:15,1');
 Route::get('/ppdb/sukses', [PpdbController::class, 'success'])->name('ppdb.success');
+Route::get('/spmb/sukses', fn () => redirect()->route('ppdb.success'));
 
 // Download & Media
 Route::get('/download', [DownloadController::class, 'index'])->name('download.index');

@@ -21,7 +21,7 @@
                     Alhamdulillah, Formulir Telah Diterima!
                 </h1>
                 <p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
-                    Terima kasih telah mendaftar di SMPS IT Ishlahul Ummah Prabumulih Tahun Pelajaran 2026/2027.
+                    Terima kasih telah mendaftar di SMPS IT Ishlahul Ummah Prabumulih Tahun Pelajaran {{ $registration->academic_year ?? '2026/2027' }}.
                 </p>
             </div>
 
@@ -41,7 +41,7 @@
                 </div>
                 <div class="flex justify-between border-b border-slate-200 pb-2">
                     <span class="text-slate-500 font-medium">Tanggal Daftar</span>
-                    <span class="text-slate-700">{{ $registration->created_at->translatedFormat('d F Y, H:i') }} WIB</span>
+                    <span class="text-slate-700">{{ $registration->created_at ? $registration->created_at->translatedFormat('d F Y, H:i') : '-' }} WIB</span>
                 </div>
                 <div class="flex justify-between pt-1">
                     <span class="text-slate-500 font-medium">Status Berkas</span>
@@ -54,11 +54,11 @@
             {{-- ACTION BUTTONS: AUTO FORWARD TO WHATSAPP --}}
             <div class="space-y-4 pt-2">
                 <div class="p-3 bg-indigo-50/60 border border-indigo-300 rounded-2xl text-emerald-900 text-xs font-semibold flex items-center justify-center space-x-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-50/600 animate-ping"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
                     <span>Mengalihkan otomatis ke WhatsApp Admin dalam <strong id="countdown-sec" class="text-indigo-700 font-black text-sm">2</strong> detik...</span>
                 </div>
 
-                <a href="{{ $waUrl }}" id="wa-btn" class="w-full inline-flex items-center justify-center space-x-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-black text-sm sm:text-base py-4 px-6 rounded-2xl shadow-xl shadow-green-500/25 transition transform hover:-translate-y-0.5">
+                <a href="{{ $waUrl }}" id="wa-btn" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-black text-sm sm:text-base py-4 px-6 rounded-2xl shadow-xl shadow-green-500/25 transition transform hover:-translate-y-0.5">
                     <i class="fa-brands fa-whatsapp text-2xl"></i>
                     <span>FORWARD SEMUA DATA KE WHATSAPP ADMIN</span>
                 </a>

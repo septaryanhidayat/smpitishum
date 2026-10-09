@@ -83,6 +83,16 @@ class AdminPpdbController extends Controller
         if ($ppdb->payment_proof_path && file_exists(public_path($ppdb->payment_proof_path))) {
             @unlink(public_path($ppdb->payment_proof_path));
         }
+        if (! empty($ppdb->extra_fields) && is_array($ppdb->extra_fields)) {
+            foreach ($ppdb->extra_fields as $item) {
+                if (is_array($item) && ($item['type'] ?? '') === 'file' && ! empty($item['value'])) {
+                    $extraFilePath = public_path(ltrim($item['value'], '/'));
+                    if (file_exists($extraFilePath)) {
+                        @unlink($extraFilePath);
+                    }
+                }
+            }
+        }
 
         $ppdb->delete();
 

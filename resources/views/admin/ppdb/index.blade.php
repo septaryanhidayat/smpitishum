@@ -73,7 +73,7 @@
         {{-- SEARCH & FILTER BAR --}}
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
-                <h2 class="text-lg font-black text-slate-800">Daftar Calon Siswa Baru (2026/2027)</h2>
+                <h2 class="text-lg font-black text-slate-800">Daftar Calon Siswa Baru ({{ \App\Models\Setting::get('ppdb_year', '2026/2027') }})</h2>
                 <p class="text-xs text-slate-500 mt-0.5">Kelola formulir masuk, verifikasi berkas akta & bukti transfer, dan status penerimaan.</p>
             </div>
 
@@ -132,7 +132,7 @@
                                     <a href="{{ route('admin.ppdb.print', $reg) }}" target="_blank" class="p-1.5 text-indigo-600 hover:bg-indigo-50/60 rounded-lg transition" title="Cetak Bukti Pendaftaran">
                                         <i class="fa-solid fa-print"></i>
                                     </a>
-                                    <form action="{{ route('admin.ppdb.destroy', $reg) }}" method="POST" class="inline">
+                                    <form action="{{ route('admin.ppdb.destroy', $reg) }}" method="POST" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data pendaftaran {{ addslashes($reg->full_name) }}? Tindakan ini tidak dapat dibatalkan.');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition" title="Hapus Data">

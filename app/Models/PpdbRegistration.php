@@ -62,12 +62,40 @@ class PpdbRegistration extends Model
         'extra_fields' => 'array',
     ];
 
-    public static function generateRegistrationNumber(): string
+    /**
+     * Generate a guaranteed unique registration number for PPDB.
+     * Format: PPDB-{YEAR}-{SEQUENCE:4} (e.g., PPDB-2026-0009)
+     */
+    public static function generateRegistrationNumber(?string $year = null): string
     {
-        $year = date('Y');
-        $count = static::whereYear('created_at', $year)->count() + 1;
+        $year = $year ?: date('Y');
+        $prefix = "PPDB-{$year}-";
 
-        return sprintf('PPDB-%s-%04d', $year, $count);
+        // 1. Find the highest existing sequence number for this year
+        $existingNumbers = static::where('registration_number', 'like', "{$prefix}%")
+            ->pluck('registration_number');
+
+        $maxSequence = 0;
+        foreach ($existingNumbers as $regNum) {
+            if (preg_match('/^PPDB-\d{4}-(\d+)$/', $regNum, $matches)) {
+                $seq = (int) $matches[1];
+                if ($seq > $maxSequence) {
+                    $maxSequence = $seq;
+                }
+            }
+        }
+
+        // 2. Fallback to count in case non-standard numbers or existing records exist
+        $count = static::whereYear('created_at', $year)->count();
+        $nextSequence = max($maxSequence, $count);
+
+        // 3. Increment until a completely unused number is found
+        do {
+            $nextSequence++;
+            $candidate = sprintf('PPDB-%s-%04d', $year, $nextSequence);
+        } while (static::where('registration_number', $candidate)->exists());
+
+        return $candidate;
     }
 
     public function getStatusBadgeAttribute(): string

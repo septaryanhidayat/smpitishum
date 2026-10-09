@@ -9,7 +9,11 @@ use App\Models\Setting;
 use App\Services\PpdbFormService;
 use App\Services\WebpService;
 use Carbon\Carbon;
+use Illuminate\Database\QueryException;
+use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class PpdbController extends Controller
@@ -190,31 +194,13 @@ class PpdbController extends Controller
         // Process Standard Birth Certificate File
         $birthCertPath = null;
         if ($request->hasFile('birth_certificate')) {
-            $file = $request->file('birth_certificate');
-            $ext = strtolower($file->getClientOriginalExtension());
-            if ($ext === 'pdf') {
-                $filename = 'akta_'.time().'_'.uniqid().'.pdf';
-                $file->move(public_path('uploads/ppdb/akta'), $filename);
-                $birthCertPath = '/uploads/ppdb/akta/'.$filename;
-            } else {
-                $converted = $this->webpService->processUploadedFile($file, 'ppdb/akta', 82, 1600);
-                $birthCertPath = $converted['success'] ? $converted['url'] : null;
-            }
+            $birthCertPath = $this->saveUploadedFile($request->file('birth_certificate'), 'ppdb/akta', 'akta');
         }
 
         // Process Standard Payment Proof File
         $paymentProofPath = null;
         if ($request->hasFile('payment_proof')) {
-            $file = $request->file('payment_proof');
-            $ext = strtolower($file->getClientOriginalExtension());
-            if ($ext === 'pdf') {
-                $filename = 'bukti_bayar_'.time().'_'.uniqid().'.pdf';
-                $file->move(public_path('uploads/ppdb/bukti'), $filename);
-                $paymentProofPath = '/uploads/ppdb/bukti/'.$filename;
-            } else {
-                $converted = $this->webpService->processUploadedFile($file, 'ppdb/bukti', 82, 1600);
-                $paymentProofPath = $converted['success'] ? $converted['url'] : null;
-            }
+            $paymentProofPath = $this->saveUploadedFile($request->file('payment_proof'), 'ppdb/bukti', 'bukti_bayar');
         }
 
         // Collect extra fields (custom fields added dynamically)
@@ -224,16 +210,7 @@ class PpdbController extends Controller
             if (! in_array($key, $standardKeys, true)) {
                 if ($field['type'] === 'file') {
                     if ($request->hasFile($key)) {
-                        $file = $request->file($key);
-                        $ext = strtolower($file->getClientOriginalExtension());
-                        if ($ext === 'pdf') {
-                            $filename = $key.'_'.time().'_'.uniqid().'.pdf';
-                            $file->move(public_path('uploads/ppdb/extra'), $filename);
-                            $filePath = '/uploads/ppdb/extra/'.$filename;
-                        } else {
-                            $converted = $this->webpService->processUploadedFile($file, 'ppdb/extra', 82, 1600);
-                            $filePath = $converted['success'] ? $converted['url'] : null;
-                        }
+                        $filePath = $this->saveUploadedFile($request->file($key), 'ppdb/extra', $key);
                         $extraFields[$key] = [
                             'label' => $field['label'],
                             'value' => $filePath,
@@ -250,55 +227,85 @@ class PpdbController extends Controller
             }
         }
 
-        $regNumber = PpdbRegistration::generateRegistrationNumber();
-        $academicYear = Setting::get('ppdb_year', '2026/2027');
+        $academicYear = Setting::get('ppdb_year', '2027/2028');
+        $currentYear = date('Y');
 
-        // Safe registration attributes with defaults for non-nullable columns
-        $registration = PpdbRegistration::create([
-            'registration_number' => $regNumber,
-            'wave' => $validated['wave'] ?? Setting::get('ppdb_wave', 'Gelombang 1'),
-            'track' => $validated['track'] ?? 'Reguler',
-            'program_type' => $validated['program_type'] ?? 'Boarding School',
-            'full_name' => $validated['full_name'] ?? 'Calon Siswa',
-            'birth_place' => $validated['birth_place'] ?? '-',
-            'birth_date' => $validated['birth_date'] ?? '2008-01-01',
-            'gender' => $validated['gender'] ?? 'Laki-laki',
-            'address' => $validated['address'] ?? '-',
-            'living_with' => $validated['living_with'] ?? 'Orang Tua',
-            'child_order' => isset($validated['child_order']) ? (int) $validated['child_order'] : 1,
-            'siblings_count' => isset($validated['siblings_count']) ? (int) $validated['siblings_count'] : 1,
-            'previous_school' => $validated['previous_school'] ?? '-',
-            'nisn' => $validated['nisn'] ?? null,
-            'hobby' => $validated['hobby'] ?? '-',
-            'favorite_subject' => $validated['favorite_subject'] ?? null,
-            'ambition' => $validated['ambition'] ?? '-',
-            'achievements' => $validated['achievements'] ?? null,
-            'phone' => $validated['phone'] ?? '-',
+        // Safe registration creation with retry mechanism to prevent race conditions or unique key collisions
+        $registration = null;
+        $maxAttempts = 5;
 
-            'father_name' => $validated['father_name'] ?? '-',
-            'father_birth_place' => $validated['father_birth_place'] ?? null,
-            'father_birth_date' => $validated['father_birth_date'] ?? null,
-            'father_address' => $validated['father_address'] ?? null,
-            'father_education' => $validated['father_education'] ?? null,
-            'father_job' => $validated['father_job'] ?? null,
-            'father_income' => $validated['father_income'] ?? null,
-            'father_phone' => $validated['father_phone'] ?? null,
+        for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+            try {
+                $registration = DB::transaction(function () use ($validated, $birthCertPath, $paymentProofPath, $extraFields, $academicYear, $currentYear) {
+                    $regNumber = PpdbRegistration::generateRegistrationNumber($currentYear);
 
-            'mother_name' => $validated['mother_name'] ?? '-',
-            'mother_birth_place' => $validated['mother_birth_place'] ?? null,
-            'mother_birth_date' => $validated['mother_birth_date'] ?? null,
-            'mother_address' => $validated['mother_address'] ?? null,
-            'mother_education' => $validated['mother_education'] ?? null,
-            'mother_job' => $validated['mother_job'] ?? null,
-            'mother_income' => $validated['mother_income'] ?? null,
-            'mother_phone' => $validated['mother_phone'] ?? null,
+                    return PpdbRegistration::create([
+                        'registration_number' => $regNumber,
+                        'wave' => $validated['wave'] ?? Setting::get('ppdb_wave', 'Gelombang 1'),
+                        'track' => $validated['track'] ?? 'Reguler',
+                        'program_type' => $validated['program_type'] ?? 'Boarding School',
+                        'full_name' => $validated['full_name'] ?? 'Calon Siswa',
+                        'birth_place' => $validated['birth_place'] ?? '-',
+                        'birth_date' => $validated['birth_date'] ?? '2008-01-01',
+                        'gender' => $validated['gender'] ?? 'Laki-laki',
+                        'address' => $validated['address'] ?? '-',
+                        'living_with' => $validated['living_with'] ?? 'Orang Tua',
+                        'child_order' => isset($validated['child_order']) ? (int) $validated['child_order'] : 1,
+                        'siblings_count' => isset($validated['siblings_count']) ? (int) $validated['siblings_count'] : 1,
+                        'previous_school' => $validated['previous_school'] ?? '-',
+                        'nisn' => $validated['nisn'] ?? null,
+                        'hobby' => $validated['hobby'] ?? '-',
+                        'favorite_subject' => $validated['favorite_subject'] ?? null,
+                        'ambition' => $validated['ambition'] ?? '-',
+                        'achievements' => $validated['achievements'] ?? null,
+                        'phone' => $validated['phone'] ?? '-',
 
-            'birth_certificate_path' => $birthCertPath,
-            'payment_proof_path' => $paymentProofPath,
-            'extra_fields' => ! empty($extraFields) ? $extraFields : null,
-            'status' => 'pending',
-            'academic_year' => $academicYear,
-        ]);
+                        'father_name' => $validated['father_name'] ?? '-',
+                        'father_birth_place' => $validated['father_birth_place'] ?? null,
+                        'father_birth_date' => $validated['father_birth_date'] ?? null,
+                        'father_address' => $validated['father_address'] ?? null,
+                        'father_education' => $validated['father_education'] ?? null,
+                        'father_job' => $validated['father_job'] ?? null,
+                        'father_income' => $validated['father_income'] ?? null,
+                        'father_phone' => $validated['father_phone'] ?? null,
+
+                        'mother_name' => $validated['mother_name'] ?? '-',
+                        'mother_birth_place' => $validated['mother_birth_place'] ?? null,
+                        'mother_birth_date' => $validated['mother_birth_date'] ?? null,
+                        'mother_address' => $validated['mother_address'] ?? null,
+                        'mother_education' => $validated['mother_education'] ?? null,
+                        'mother_job' => $validated['mother_job'] ?? null,
+                        'mother_income' => $validated['mother_income'] ?? null,
+                        'mother_phone' => $validated['mother_phone'] ?? null,
+
+                        'birth_certificate_path' => $birthCertPath,
+                        'payment_proof_path' => $paymentProofPath,
+                        'extra_fields' => ! empty($extraFields) ? $extraFields : null,
+                        'status' => 'pending',
+                        'academic_year' => $academicYear,
+                    ]);
+                });
+
+                break;
+            } catch (UniqueConstraintViolationException $e) {
+                if ($attempt === $maxAttempts) {
+                    throw $e;
+                }
+                usleep(100000);
+            } catch (QueryException $e) {
+                if ($e->getCode() == 23000 || str_contains($e->getMessage(), '1062 Duplicate entry')) {
+                    if ($attempt === $maxAttempts) {
+                        throw $e;
+                    }
+                    usleep(100000);
+
+                    continue;
+                }
+                throw $e;
+            }
+        }
+
+        session(['ppdb_registered_id' => $registration->id]);
 
         ActivityLog::create([
             'user_id' => null,
@@ -347,20 +354,23 @@ class PpdbController extends Controller
      */
     public function buildWhatsAppUrl(PpdbRegistration $registration): string
     {
-        $adminPhone = Setting::get('ppdb_hotline_phone', Setting::get('contact_whatsapp', Setting::get('contact_phone', '082182680647')));
+        $adminPhone = Setting::get('ppdb_hotline_phone', Setting::get('contact_whatsapp', Setting::get('contact_phone', '085269908696')));
         $cleanPhone = preg_replace('/[^0-9]/', '', (string) $adminPhone);
         if (str_starts_with($cleanPhone, '0')) {
             $cleanPhone = '62'.substr($cleanPhone, 1);
+        } elseif (str_starts_with($cleanPhone, '8')) {
+            $cleanPhone = '62'.$cleanPhone;
         }
         if (empty($cleanPhone)) {
-            $cleanPhone = '6282182680647';
+            $cleanPhone = '6285269908696';
         }
 
         $text = "*FORMULIR PENDAFTARAN Siswa Baru (PPDB)*\n";
         $text .= "*SMPS IT ISHLAHUL UMMAH PRABUMULIH*\n";
         $text .= "----------------------------------------\n";
         $text .= '📋 *No. Registrasi:* '.$registration->registration_number."\n";
-        $text .= '📅 *Tanggal Daftar:* '.$registration->created_at->translatedFormat('d F Y, H:i')." WIB\n";
+        $createdAtStr = $registration->created_at ? $registration->created_at->translatedFormat('d F Y, H:i') : date('d F Y, H:i');
+        $text .= '📅 *Tanggal Daftar:* '.$createdAtStr." WIB\n";
         $text .= '🌊 *Gelombang:* '.($registration->wave ?: 'Gelombang 1')."\n";
         $text .= '🎯 *Jalur Pendaftaran:* '.($registration->track ?: 'Reguler')."\n";
         $text .= '🏫 *Program Pilihan:* '.($registration->program_type ?: 'Boarding School')."\n\n";
@@ -423,5 +433,62 @@ class PpdbController extends Controller
         $text .= "Mohon untuk memverifikasi pendaftaran calon siswa baru kami. Terima kasih.\nWassalamu'alaikum Wr. Wb.";
 
         return 'https://api.whatsapp.com/send?phone='.$cleanPhone.'&text='.rawurlencode($text);
+    }
+
+    /**
+     * Helper to process and safely save uploaded file (PDF / WebP conversion / Fallback).
+     */
+    protected function saveUploadedFile(UploadedFile $file, string $subfolder, string $prefix): ?string
+    {
+        $ext = strtolower($file->getClientOriginalExtension());
+        $destDir = public_path('uploads/'.trim($subfolder, '/'));
+        if (! is_dir($destDir)) {
+            @mkdir($destDir, 0755, true);
+        }
+
+        if ($ext === 'pdf') {
+            $filename = $prefix.'_'.time().'_'.uniqid().'.pdf';
+            $file->move($destDir, $filename);
+            $filePath = '/uploads/'.trim($subfolder, '/').'/'.$filename;
+            $this->mirrorToDocRoot($destDir.'/'.$filename, 'uploads/'.trim($subfolder, '/').'/'.$filename);
+
+            return $filePath;
+        }
+
+        // Convert image to WebP format
+        $converted = $this->webpService->processUploadedFile($file, $subfolder, 82, 1600);
+        if ($converted['success'] && ! empty($converted['url'])) {
+            return $converted['url'];
+        }
+
+        // Graceful fallback if WebP conversion fails
+        $safeExt = in_array($ext, ['jpg', 'jpeg', 'png', 'webp'], true) ? $ext : 'jpg';
+        $filename = $prefix.'_'.time().'_'.uniqid().'.'.$safeExt;
+        $file->move($destDir, $filename);
+        $filePath = '/uploads/'.trim($subfolder, '/').'/'.$filename;
+        $this->mirrorToDocRoot($destDir.'/'.$filename, 'uploads/'.trim($subfolder, '/').'/'.$filename);
+
+        return $filePath;
+    }
+
+    /**
+     * Mirror uploaded file to web document root (cPanel separate docroot support).
+     */
+    protected function mirrorToDocRoot(string $sourcePath, string $relativePath): void
+    {
+        $docRootCandidates = array_filter([
+            $_SERVER['DOCUMENT_ROOT'] ?? null,
+        ]);
+
+        foreach ($docRootCandidates as $docRoot) {
+            if ($docRoot && is_dir($docRoot) && realpath($docRoot) !== realpath(public_path())) {
+                $targetFile = rtrim($docRoot, '/\\').'/'.ltrim($relativePath, '/\\');
+                $targetDir = dirname($targetFile);
+                if (! is_dir($targetDir)) {
+                    @mkdir($targetDir, 0755, true);
+                }
+                @copy($sourcePath, $targetFile);
+            }
+        }
     }
 }

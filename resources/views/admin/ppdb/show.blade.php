@@ -90,7 +90,7 @@
             </div>
             <div>
                 <span class="text-slate-400 block mb-0.5">Tempat &amp; Tanggal Lahir</span>
-                <span class="font-semibold text-slate-800">{{ $ppdb->birth_place }}, {{ $ppdb->birth_date->translatedFormat('d F Y') }}</span>
+                <span class="font-semibold text-slate-800">{{ $ppdb->birth_place }}, {{ $ppdb->birth_date ? $ppdb->birth_date->translatedFormat('d F Y') : '-' }}</span>
             </div>
             <div>
                 <span class="text-slate-400 block mb-0.5">Jenis Kelamin</span>
