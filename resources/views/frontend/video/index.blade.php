@@ -33,12 +33,12 @@
         @forelse($videos as $idx => $vid)
             <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 flex flex-col justify-between group reveal-fade-up delay-{{ $idx % 3 }}">
                 <div>
-                    <button type="button" class="w-full relative pb-[56.25%] h-0 bg-black overflow-hidden cursor-pointer group/vid block focus:outline-none" onclick="playPageVideo(this, '{{ $vid->youtube_id }}', '{{ addslashes($vid->title) }}')" aria-label="Putar video: {{ $vid->title }}">
+                    <button type="button" class="w-full relative pb-[56.25%] h-0 bg-black overflow-hidden cursor-pointer group/vid block focus:outline-none" onclick="playPageVideo(this, '{{ $vid->youtube_id }}', {{ json_encode($vid->title) }})" aria-label="Putar video: {{ $vid->title }}">
                         <img src="{{ $vid->thumbnail_url }}" 
                              alt="Thumbnail video: {{ $vid->title }}" 
                              class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover/vid:scale-105"
                              loading="lazy"
-                             onerror="this.src='https://img.youtube.com/vi/{{ $vid->youtube_id }}/hqdefault.jpg'">
+                             onerror="this.onerror=null; this.src='/uploads/campus-smpit-ishum.webp';">
                         <div class="absolute inset-0 bg-black/30 group-hover/vid:bg-black/10 transition flex items-center justify-center" aria-hidden="true">
                             <div class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-xl group-hover/vid:scale-110 group-hover/vid:bg-red-600 transition-all">
                                 <i class="fa-solid fa-play text-xl ml-1"></i>
@@ -88,7 +88,7 @@
 function playPageVideo(el, id, title) {
     if (!id) return;
     el.onclick = null;
-    el.innerHTML = '<iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="' + (title || 'YouTube video') + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    el.innerHTML = '<iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="' + (title || 'YouTube video') + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 }
 </script>
 @endsection

@@ -120,27 +120,39 @@ class AdminMediaController extends Controller
 
     public function storeVideo(Request $request)
     {
+        $rawUrl = trim((string) $request->input('youtube_url'));
+        if (! empty($rawUrl) && ! str_starts_with($rawUrl, 'http://') && ! str_starts_with($rawUrl, 'https://') && ! str_starts_with($rawUrl, '<iframe')) {
+            $rawUrl = 'https://'.$rawUrl;
+            $request->merge(['youtube_url' => $rawUrl]);
+        }
+
+        $youtubeId = Video::extractYoutubeId($rawUrl);
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'youtube_url' => 'required|url',
+            'youtube_url' => 'required|string',
             'description' => 'nullable|string',
         ]);
 
-        // Extract YouTube video ID
-        preg_match('/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/', $validated['youtube_url'], $matches);
-        $youtubeId = $matches[1] ?? '';
+        if (! $youtubeId) {
+            return back()->withInput()->withErrors([
+                'youtube_url' => 'Tautan YouTube tidak valid. Harap masukkan URL video YouTube (contoh: https://www.youtube.com/watch?v=... atau https://youtu.be/...).',
+            ]);
+        }
+
+        $canonicalUrl = "https://www.youtube.com/watch?v={$youtubeId}";
 
         $video = Video::create([
             'title' => $validated['title'],
             'slug' => Str::slug($validated['title']).'-'.time(),
-            'youtube_url' => $validated['youtube_url'],
+            'youtube_url' => $canonicalUrl,
             'youtube_id' => $youtubeId,
             'description' => $validated['description'] ?? '',
         ]);
 
         ActivityLog::create([
             'user_id' => Auth::id(),
-            'user_name' => Auth::user()->name,
+            'user_name' => Auth::user()?->name ?? 'Admin',
             'action' => 'video_create',
             'description' => "Menambahkan Video YouTube: {$video->title}",
             'ip_address' => $request->ip(),
@@ -148,7 +160,51 @@ class AdminMediaController extends Controller
             'status' => 'info',
         ]);
 
-        return back()->with('success', 'Video YouTube berhasil ditambahkan.');
+        return back()->with('success', 'Video YouTube berhasil ditambahkan ke Galeri.');
+    }
+
+    public function updateVideo(Request $request, Video $video)
+    {
+        $rawUrl = trim((string) $request->input('youtube_url', $video->youtube_url));
+        if (! empty($rawUrl) && ! str_starts_with($rawUrl, 'http://') && ! str_starts_with($rawUrl, 'https://') && ! str_starts_with($rawUrl, '<iframe')) {
+            $rawUrl = 'https://'.$rawUrl;
+            $request->merge(['youtube_url' => $rawUrl]);
+        }
+
+        $youtubeId = Video::extractYoutubeId($rawUrl);
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'youtube_url' => 'required|string',
+            'description' => 'nullable|string',
+        ]);
+
+        if (! $youtubeId) {
+            return back()->withInput()->withErrors([
+                'youtube_url' => 'Tautan YouTube tidak valid. Harap masukkan URL video YouTube yang benar.',
+            ]);
+        }
+
+        $canonicalUrl = "https://www.youtube.com/watch?v={$youtubeId}";
+
+        $video->update([
+            'title' => $validated['title'],
+            'youtube_url' => $canonicalUrl,
+            'youtube_id' => $youtubeId,
+            'description' => $validated['description'] ?? '',
+        ]);
+
+        ActivityLog::create([
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()?->name ?? 'Admin',
+            'action' => 'video_update',
+            'description' => "Memperbarui Video YouTube: {$video->title}",
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'status' => 'info',
+        ]);
+
+        return back()->with('success', 'Video YouTube berhasil diperbarui.');
     }
 
     public function destroyVideo(Request $request, Video $video)
@@ -158,7 +214,7 @@ class AdminMediaController extends Controller
 
         ActivityLog::create([
             'user_id' => Auth::id(),
-            'user_name' => Auth::user()->name,
+            'user_name' => Auth::user()?->name ?? 'Admin',
             'action' => 'video_delete',
             'description' => "Menghapus Video YouTube: {$title}",
             'ip_address' => $request->ip(),
