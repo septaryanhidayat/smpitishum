@@ -138,7 +138,15 @@ class PpdbController extends Controller
     {
         $formStatus = Setting::get('ppdb_form_status', '1');
         if ($formStatus === '0') {
-            return back()->with('error', Setting::get('ppdb_form_closed_message', 'Pendaftaran PPDB online saat ini sedang ditutup.'));
+            $closedMessage = Setting::get('ppdb_form_closed_message', 'Pendaftaran PPDB online saat ini sedang ditutup.');
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $closedMessage,
+                ], 422);
+            }
+
+            return back()->with('error', $closedMessage);
         }
 
         $activeFields = PpdbFormService::getActiveFields();
@@ -166,7 +174,7 @@ class PpdbController extends Controller
 
             switch ($type) {
                 case 'file':
-                    $rules[$key] = "{$req}|file|mimes:jpeg,png,jpg,webp,pdf|max:5120";
+                    $rules[$key] = "{$req}|file|mimes:jpeg,png,jpg,webp,pdf|max:10240";
                     break;
                 case 'number':
                     $rules[$key] = "{$req}|numeric";
@@ -317,7 +325,18 @@ class PpdbController extends Controller
             'status' => 'info',
         ]);
 
-        return redirect()->route('ppdb.success', ['reg' => $registration->registration_number])
+        $redirectUrl = route('ppdb.success', ['reg' => $registration->registration_number]);
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'redirect_url' => $redirectUrl,
+                'reg_number' => $registration->registration_number,
+                'message' => 'Pendaftaran PPDB berhasil dikirim!',
+            ]);
+        }
+
+        return redirect()->to($redirectUrl)
             ->with('ppdb_success', [
                 'name' => $registration->full_name,
                 'reg_number' => $registration->registration_number,
@@ -440,7 +459,7 @@ class PpdbController extends Controller
      */
     protected function saveUploadedFile(UploadedFile $file, string $subfolder, string $prefix): ?string
     {
-        $ext = strtolower($file->getClientOriginalExtension());
+        $ext = strtolower($file->getClientOriginalExtension() ?: ($file->guessExtension() ?: 'jpg'));
         $destDir = public_path('uploads/'.trim($subfolder, '/'));
         if (! is_dir($destDir)) {
             @mkdir($destDir, 0755, true);

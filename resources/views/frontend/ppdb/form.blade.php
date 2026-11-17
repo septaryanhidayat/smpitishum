@@ -79,6 +79,14 @@
             @endif
 
             {{-- ERROR SUMMARY IF ANY --}}
+            <div id="ppdb-ajax-error-box" class="hidden p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs space-y-1.5 transition-all">
+                <p class="font-bold flex items-center">
+                    <i class="fa-solid fa-circle-exclamation mr-1.5 text-red-500"></i>
+                    <span id="ppdb-ajax-error-title">Mohon periksa kembali isian formulir:</span>
+                </p>
+                <ul id="ppdb-ajax-error-list" class="list-disc list-inside space-y-0.5"></ul>
+            </div>
+
             @if($errors->any())
                 <div class="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs space-y-1">
                     <p class="font-bold flex items-center">
@@ -161,13 +169,25 @@
                 @endforeach
 
                 {{-- SUBMIT BUTTON --}}
-                <div class="pt-8 pb-4 text-center">
+                <div class="pt-8 pb-4 text-center space-y-3">
                     <button type="submit" id="ppdb-submit-btn" class="w-full sm:w-auto sm:min-w-[320px] max-w-full bg-gradient-to-r from-[#da251c] to-[#b91c1c] hover:from-[#b91c1c] hover:to-[#991c1c] text-white font-black text-sm sm:text-lg px-6 sm:px-10 py-4 rounded-2xl shadow-xl shadow-red-500/30 hover:shadow-2xl transition-all transform hover:-translate-y-1 cursor-pointer uppercase tracking-wider inline-flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-paper-plane text-lg sm:text-xl"></i>
+                        <i class="fa-solid fa-paper-plane text-lg sm:text-xl" id="ppdb-submit-icon"></i>
                         <span id="ppdb-submit-label">Kirim Formulir Pendaftaran</span>
                     </button>
+
+                    {{-- UPLOAD PROGRESS BAR --}}
+                    <div id="ppdb-progress-box" class="hidden max-w-sm mx-auto space-y-1.5 pt-1">
+                        <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+                            <div id="ppdb-progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 35%"></div>
+                        </div>
+                        <p id="ppdb-progress-status" class="text-[11px] text-slate-500 font-bold">
+                            <i class="fa-solid fa-spinner fa-spin mr-1 text-indigo-600"></i>
+                            <span id="ppdb-progress-text">Mengirim formulir pendaftaran & berkas...</span>
+                        </p>
+                    </div>
+
                     @if($formSettings['wa_confirm'])
-                        <p class="text-xs text-slate-600 font-semibold mt-3">
+                        <p class="text-xs text-slate-600 font-semibold mt-2">
                             <i class="fa-brands fa-whatsapp text-indigo-600 mr-1 text-sm"></i>
                             Setelah formulir dikirim, seluruh data pendaftaran akan otomatis diteruskan ke WhatsApp Panitia PPDB.
                         </p>
@@ -193,21 +213,409 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const ppdbForm = document.querySelector('form[action="{{ route('ppdb.store') }}"]');
-        if (ppdbForm) {
-            ppdbForm.addEventListener('submit', function (e) {
-                const btn = document.getElementById('ppdb-submit-btn');
-                const label = document.getElementById('ppdb-submit-label');
-                if (btn && !btn.disabled) {
-                    setTimeout(() => {
-                        btn.disabled = true;
-                        btn.classList.add('opacity-75', 'cursor-not-allowed');
-                        if (label) {
-                            label.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Sedang Mengirim Pendaftaran...';
+        if (!ppdbForm) return;
+
+        // In-memory file storage: Holds safe, detached File instances created from memory buffers
+        // This permanently eliminates Android Chrome's net::ERR_UPLOAD_FILE_CHANGED bug.
+        const safeFileMap = new Map();
+
+        // Helper to format bytes cleanly
+        function formatBytes(bytes) {
+            if (!bytes || bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+        }
+
+        // Process file: reads bytes immediately into memory buffer and compresses images via Canvas
+        async function processFileToSafeBlob(file) {
+            const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+            const isImage = file.type.startsWith('image/') || /\.(jpe?g|png|webp|bmp|gif)$/i.test(file.name);
+
+            // 1. PDF File: Read raw bytes into memory buffer
+            if (isPdf) {
+                const buffer = await file.arrayBuffer();
+                const safeBlob = new Blob([buffer], { type: 'application/pdf' });
+                const safeFile = new File([safeBlob], file.name, {
+                    type: 'application/pdf',
+                    lastModified: Date.now()
+                });
+                return {
+                    file: safeFile,
+                    previewUrl: null,
+                    isImage: false,
+                    isPdf: true,
+                    originalSize: file.size,
+                    finalSize: safeFile.size
+                };
+            }
+
+            // 2. Image File: Compress client-side with Canvas (resolves phone camera 10MB+ images)
+            if (isImage) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = new Image();
+                        img.onload = function () {
+                            const canvas = document.createElement('canvas');
+                            let width = img.width;
+                            let height = img.height;
+                            const maxDimension = 1600;
+
+                            if (width > maxDimension || height > maxDimension) {
+                                if (width > height) {
+                                    height = Math.round((height * maxDimension) / width);
+                                    width = maxDimension;
+                                } else {
+                                    width = Math.round((width * maxDimension) / height);
+                                    height = maxDimension;
+                                }
+                            }
+
+                            canvas.width = width;
+                            canvas.height = height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0, width, height);
+
+                            // Prefer WebP export if supported, otherwise JPEG
+                            let targetMime = 'image/webp';
+                            try {
+                                const check = canvas.toDataURL('image/webp');
+                                if (!check.startsWith('data:image/webp')) {
+                                    targetMime = 'image/jpeg';
+                                }
+                            } catch (err) {
+                                targetMime = 'image/jpeg';
+                            }
+
+                            const extension = targetMime === 'image/webp' ? '.webp' : '.jpg';
+                            const baseName = file.name.replace(/\.[^.]+$/, '');
+                            const outFileName = (baseName || 'foto') + extension;
+
+                            canvas.toBlob(function (blob) {
+                                if (!blob) {
+                                    // Fallback if toBlob fails
+                                    const fallbackFile = new File([e.target.result], file.name, {
+                                        type: file.type || 'image/jpeg',
+                                        lastModified: Date.now()
+                                    });
+                                    resolve({
+                                        file: fallbackFile,
+                                        previewUrl: e.target.result,
+                                        isImage: true,
+                                        isPdf: false,
+                                        originalSize: file.size,
+                                        finalSize: fallbackFile.size
+                                    });
+                                    return;
+                                }
+
+                                const safeFile = new File([blob], outFileName, {
+                                    type: targetMime,
+                                    lastModified: Date.now()
+                                });
+
+                                resolve({
+                                    file: safeFile,
+                                    previewUrl: URL.createObjectURL(blob),
+                                    isImage: true,
+                                    isPdf: false,
+                                    originalSize: file.size,
+                                    finalSize: safeFile.size
+                                });
+                            }, targetMime, 0.82);
+                        };
+                        img.onerror = () => {
+                            // If image decoding fails, read as raw ArrayBuffer
+                            file.arrayBuffer().then(buf => {
+                                const safeBlob = new Blob([buf], { type: file.type || 'application/octet-stream' });
+                                const safeFile = new File([safeBlob], file.name, { type: file.type, lastModified: Date.now() });
+                                resolve({
+                                    file: safeFile,
+                                    previewUrl: null,
+                                    isImage: false,
+                                    isPdf: false,
+                                    originalSize: file.size,
+                                    finalSize: safeFile.size
+                                });
+                            }).catch(reject);
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            // 3. Fallback for any other file type
+            const buffer = await file.arrayBuffer();
+            const safeBlob = new Blob([buffer], { type: file.type || 'application/octet-stream' });
+            const safeFile = new File([safeBlob], file.name, {
+                type: file.type || 'application/octet-stream',
+                lastModified: Date.now()
+            });
+            return {
+                file: safeFile,
+                previewUrl: null,
+                isImage: false,
+                isPdf: false,
+                originalSize: file.size,
+                finalSize: safeFile.size
+            };
+        }
+
+        // Attach listeners to all PPDB file inputs
+        document.querySelectorAll('.ppdb-file-upload-wrapper').forEach(wrapper => {
+            const fieldKey = wrapper.getAttribute('data-field-key');
+            const fileInput = wrapper.querySelector('.ppdb-file-input');
+            const previewBox = wrapper.querySelector('.ppdb-file-preview');
+            const previewImg = wrapper.querySelector('.ppdb-preview-img');
+            const previewIcon = wrapper.querySelector('.ppdb-preview-icon');
+            const previewSpinner = wrapper.querySelector('.ppdb-preview-spinner');
+            const fileNameEl = wrapper.querySelector('.ppdb-file-name');
+            const fileSizeEl = wrapper.querySelector('.ppdb-file-size');
+            const fileStatusEl = wrapper.querySelector('.ppdb-file-status');
+            const removeBtn = wrapper.querySelector('.ppdb-remove-file');
+            const errorMsgEl = wrapper.querySelector('.ppdb-field-error');
+
+            if (!fileInput) return;
+
+            fileInput.addEventListener('change', async function () {
+                if (!this.files || this.files.length === 0) return;
+                const file = this.files[0];
+
+                // Clear previous errors
+                if (errorMsgEl) {
+                    errorMsgEl.textContent = '';
+                    errorMsgEl.classList.add('hidden');
+                }
+
+                // Show preview container with loading spinner
+                if (previewBox) previewBox.classList.remove('hidden');
+                if (previewSpinner) previewSpinner.classList.remove('hidden');
+                if (previewImg) previewImg.classList.add('hidden');
+                if (previewIcon) previewIcon.classList.add('hidden');
+                if (fileStatusEl) fileStatusEl.classList.add('hidden');
+                if (fileNameEl) fileNameEl.textContent = file.name;
+                if (fileSizeEl) fileSizeEl.textContent = 'Memproses berkas...';
+
+                try {
+                    const result = await processFileToSafeBlob(file);
+
+                    // Save detached File into memory map
+                    safeFileMap.set(fieldKey, result.file);
+
+                    // Update UI preview
+                    if (previewSpinner) previewSpinner.classList.add('hidden');
+                    if (result.isImage && result.previewUrl) {
+                        if (previewImg) {
+                            previewImg.src = result.previewUrl;
+                            previewImg.classList.remove('hidden');
                         }
-                    }, 50);
+                    } else if (result.isPdf) {
+                        if (previewIcon) previewIcon.classList.remove('hidden');
+                    } else {
+                        if (previewIcon) {
+                            previewIcon.className = 'ppdb-preview-icon fa-solid fa-file text-slate-500 text-2xl';
+                            previewIcon.classList.remove('hidden');
+                        }
+                    }
+
+                    if (fileNameEl) fileNameEl.textContent = result.file.name;
+                    if (fileSizeEl) {
+                        if (result.originalSize > result.finalSize && result.isImage) {
+                            fileSizeEl.textContent = formatBytes(result.originalSize) + ' → ' + formatBytes(result.finalSize) + ' (Dioptimalkan)';
+                        } else {
+                            fileSizeEl.textContent = formatBytes(result.finalSize);
+                        }
+                    }
+                    if (fileStatusEl) fileStatusEl.classList.remove('hidden');
+                } catch (err) {
+                    console.error('File process error:', err);
+                    if (previewSpinner) previewSpinner.classList.add('hidden');
+                    if (fileSizeEl) fileSizeEl.textContent = 'Gagal memproses file';
+                    if (errorMsgEl) {
+                        errorMsgEl.textContent = 'Gagal membaca berkas. Silakan pilih kembali file atau gunakan foto lain.';
+                        errorMsgEl.classList.remove('hidden');
+                    }
                 }
             });
-        }
+
+            if (removeBtn) {
+                removeBtn.addEventListener('click', function () {
+                    fileInput.value = '';
+                    safeFileMap.delete(fieldKey);
+                    if (previewBox) previewBox.classList.add('hidden');
+                    if (previewImg) {
+                        previewImg.src = '';
+                        previewImg.classList.add('hidden');
+                    }
+                    if (previewIcon) previewIcon.classList.add('hidden');
+                    if (errorMsgEl) {
+                        errorMsgEl.textContent = '';
+                        errorMsgEl.classList.add('hidden');
+                    }
+                });
+            }
+        });
+
+        // Form Submission Interception via AJAX Fetch
+        ppdbForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('ppdb-submit-btn');
+            const submitLabel = document.getElementById('ppdb-submit-label');
+            const submitIcon = document.getElementById('ppdb-submit-icon');
+            const progressBox = document.getElementById('ppdb-progress-box');
+            const progressBar = document.getElementById('ppdb-progress-bar');
+            const progressText = document.getElementById('ppdb-progress-text');
+            const errorBox = document.getElementById('ppdb-ajax-error-box');
+            const errorList = document.getElementById('ppdb-ajax-error-list');
+
+            // Hide previous errors
+            if (errorBox) errorBox.classList.add('hidden');
+            if (errorList) errorList.innerHTML = '';
+            document.querySelectorAll('.ppdb-field-error').forEach(el => {
+                el.textContent = '';
+                el.classList.add('hidden');
+            });
+
+            // Native HTML5 validation check
+            if (!ppdbForm.checkValidity()) {
+                ppdbForm.reportValidity();
+                return;
+            }
+
+            // Ensure required file inputs have safe files in memory
+            let missingRequiredFile = false;
+            document.querySelectorAll('.ppdb-file-upload-wrapper').forEach(wrapper => {
+                const key = wrapper.getAttribute('data-field-key');
+                const fileInput = wrapper.querySelector('.ppdb-file-input');
+                if (fileInput && fileInput.hasAttribute('required')) {
+                    if (!safeFileMap.has(key) && (!fileInput.files || fileInput.files.length === 0)) {
+                        missingRequiredFile = true;
+                        const err = wrapper.querySelector('.ppdb-field-error');
+                        if (err) {
+                            err.textContent = 'Berkas ini wajib diunggah.';
+                            err.classList.remove('hidden');
+                        }
+                    }
+                }
+            });
+
+            if (missingRequiredFile) {
+                if (errorBox) {
+                    errorBox.classList.remove('hidden');
+                    errorList.innerHTML = '<li>Silakan lengkapi berkas pendaftaran yang bertanda bintang (*).</li>';
+                    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            // Disable submit button and show loading progress
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            }
+            if (submitLabel) submitLabel.textContent = 'Sedang Mengunggah Formulir...';
+            if (submitIcon) submitIcon.className = 'fa-solid fa-spinner fa-spin text-lg sm:text-xl';
+            if (progressBox) progressBox.classList.remove('hidden');
+            if (progressBar) progressBar.style.width = '35%';
+            if (progressText) progressText.textContent = 'Menyiapkan berkas dan data pendaftaran...';
+
+            try {
+                // Build fresh FormData
+                const formData = new FormData(ppdbForm);
+
+                // Replace raw file inputs with safe detached File objects from memory
+                safeFileMap.forEach((safeFile, key) => {
+                    formData.set(key, safeFile);
+                });
+
+                if (progressBar) progressBar.style.width = '65%';
+                if (progressText) progressText.textContent = 'Mengirim data ke sistem sekolah...';
+
+                const response = await fetch(ppdbForm.action, {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                if (progressBar) progressBar.style.width = '90%';
+
+                const data = await response.json().catch(() => null);
+
+                if (response.ok && data && data.success) {
+                    if (progressBar) progressBar.style.width = '100%';
+                    if (progressText) progressText.textContent = 'Pendaftaran Berhasil! Mengalihkan...';
+                    if (submitLabel) submitLabel.textContent = 'Pendaftaran Berhasil!';
+                    window.location.href = data.redirect_url;
+                    return;
+                }
+
+                // If validation failed (HTTP 422)
+                if (response.status === 422 && data) {
+                    resetSubmitButton();
+                    if (errorBox) {
+                        errorBox.classList.remove('hidden');
+                        let errHtml = '';
+                        if (data.errors) {
+                            Object.keys(data.errors).forEach(field => {
+                                const msgs = data.errors[field];
+                                msgs.forEach(m => {
+                                    errHtml += `<li>${m}</li>`;
+                                });
+                                // Highlight specific field if present
+                                const fieldWrapper = document.querySelector(`.ppdb-file-upload-wrapper[data-field-key="${field}"]`);
+                                if (fieldWrapper) {
+                                    const fieldErr = fieldWrapper.querySelector('.ppdb-field-error');
+                                    if (fieldErr) {
+                                        fieldErr.textContent = msgs[0];
+                                        fieldErr.classList.remove('hidden');
+                                    }
+                                }
+                            });
+                        } else if (data.message) {
+                            errHtml = `<li>${data.message}</li>`;
+                        }
+                        if (errorList) errorList.innerHTML = errHtml;
+                        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+
+                // Any other server response error
+                throw new Error(data && data.message ? data.message : 'Terjadi kendala saat menyimpan pendaftaran. Status: ' + response.status);
+
+            } catch (err) {
+                console.error('Submission failed:', err);
+                resetSubmitButton();
+
+                if (errorBox) {
+                    errorBox.classList.remove('hidden');
+                    if (errorList) {
+                        errorList.innerHTML = `<li>Terjadi gangguan koneksi internet atau server saat mengirim berkas.</li>
+                        <li><strong>Catatan:</strong> Seluruh isian data yang telah Anda ketik tetap aman. Silakan klik tombol <strong>Kirim Formulir Pendaftaran</strong> kembali.</li>`;
+                    }
+                    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            function resetSubmitButton() {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                }
+                if (submitLabel) submitLabel.textContent = 'Kirim Formulir Pendaftaran';
+                if (submitIcon) submitIcon.className = 'fa-solid fa-paper-plane text-lg sm:text-xl';
+                if (progressBox) progressBox.classList.add('hidden');
+                if (progressBar) progressBar.style.width = '0%';
+            }
+        });
     });
 </script>
 @endsection
